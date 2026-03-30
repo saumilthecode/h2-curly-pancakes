@@ -1,0 +1,21 @@
+# macOS / Windows explorer metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Jupyter notebook autosaves
+.ipynb_checkpoints/
+
+# Python cache / local environments
+__pycache__/
+*.py[cod]
+.python-version
+.venv/
+venv/
+env/
+ENV/
+
+# Common editor swap / temp files
+*.swp
+*.swo
+*~

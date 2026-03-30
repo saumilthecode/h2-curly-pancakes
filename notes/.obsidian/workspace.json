@@ -41,7 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -182,16 +182,17 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "f6f0e05812a03fd2",
   "lastOpenFiles": [
-    "index.md",
-    "Data validation and verification.md",
-    "basic python.md",
     "Functions (functional abstraction).md",
+    "index.md",
+    "basic python.md",
     "conditionals.md",
+    "Data validation and verification.md",
     "Untitled.base",
     "Untitled.canvas",
     "2026-03-07.md",
