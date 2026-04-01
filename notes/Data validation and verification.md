@@ -52,3 +52,7 @@ mindmap
 | Length Check   | len(string) < 6:                                |
 | Type Check     | type(eval("string")) or .isnumeric()/.isalpha() |
 | Format Check   | [.find('@'):] == '@students.edu.sg':            |
+
+
+a , b = b,a 
+easier variable swap

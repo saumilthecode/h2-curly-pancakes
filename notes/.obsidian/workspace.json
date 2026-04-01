@@ -164,14 +164,23 @@
               "icon": "lucide-list",
               "title": "Outline of Functions (functional abstraction)"
             }
+          },
+          {
+            "id": "c4b9ac38f21e88d9",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 325.5,
-    "collapsed": true
+    "width": 325.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,9 +199,9 @@
   "lastOpenFiles": [
     "Functions (functional abstraction).md",
     "index.md",
+    "Data validation and verification.md",
     "basic python.md",
     "conditionals.md",
-    "Data validation and verification.md",
     "Untitled.base",
     "Untitled.canvas",
     "2026-03-07.md",
