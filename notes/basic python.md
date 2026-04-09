@@ -10,12 +10,13 @@ types
 ---
 shortcuts 
 
-| type()   | find out the type                                  |
-| -------- | -------------------------------------------------- |
-| upper()  | maker uppercase                                    |
-| lower()  | make lowercase                                     |
-| .index() | find the index of the character in the parenthesis |
-| ord()    | unicode char number                                |
+| type()     | find out the type                                  |
+| ---------- | -------------------------------------------------- |
+| upper()    | maker uppercase                                    |
+| lower()    | make lowercase                                     |
+| .index()   | find the index of the character in the parenthesis |
+| ord()      | unicode char number                                |
+| .isdigit() | are you a digit                                    |
 
 converters
 
