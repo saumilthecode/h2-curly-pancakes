@@ -1,5 +1,7 @@
-[[basic python]]
-[[conditionals]]
-[[Functions (functional abstraction)]]
-[[Data validation and verification]]
-
+1 - [[basic python]]
+2 - [[Conditionals]]
+3 - [[Functions (functional abstraction)]]
+4a - [[Data validation and verification]]
+5 - [[Iteration]]
+6 - [[Tuple]]
+7 - [[Lists]]

@@ -1,92 +1,109 @@
-types
+> [!summary] Quick View
+> Core ideas for types, operators, comparisons, booleans, and slicing.
 
-| int   | wholenumber |
-| ----- | ----------- |
-| float | decimals    |
-| bool  | True/False  |
-| str   | string      |
-| None  | null        |
+## Types
 
----
-shortcuts 
+| Type  | Meaning                  |
+| ----- | ------------------------ |
+| int   | whole number             |
+| float | decimal number           |
+| bool  | `True` / `False`         |
+| str   | string / text            |
+| None  | no value / null-like     |
 
-| type()     | find out the type                                  |
-| ---------- | -------------------------------------------------- |
-| upper()    | maker uppercase                                    |
-| lower()    | make lowercase                                     |
-| .index()   | find the index of the character in the parenthesis |
-| ord()      | unicode char number                                |
-| .isdigit() | are you a digit                                    |
+##  Functions and Methods
 
-converters
+| Function / method | What it does                                      |
+| ----------------- | ------------------------------------------------- |
+| `type(x)`         | finds the type of `x`                             |
+| `s.upper()`       | makes a string uppercase                          |
+| `s.lower()`       | makes a string lowercase                          |
+| `s.index(value)`  | finds the index of `value` inside a string        |
+| `ord(char)`       | gives the Unicode number of a character           |
+| `s.isdigit()`     | checks if a string contains only digits           |
 
-| str()   | turn anything into a string           |
-| ------- | ------------------------------------- |
-| float() | turn anything into a float            |
-| int()   | turn float into integer (no decimals) |
+## Type Conversion
 
----
-jargon
+| Function   | What it does                                  |
+| ---------- | --------------------------------------------- |
+| `str(x)`   | turns `x` into a string                       |
+| `float(x)` | turns `x` into a float                        |
+| `int(x)`   | turns `x` into an integer, removing decimals  |
 
+## Assignment
+
+```python
 a = 10
+```
 
-value of 10 is assigned to a
+The value `10` is assigned to the variable `a`.
 
----
-operations
+## Arithmetic Operators
 
-|* on a string multiplies it a number of times
+`*` on a string repeats it a number of times.
 
-| +   | plus                                    |
-| --- | --------------------------------------- |
-| -   | minus                                   |
-| *   | multiply                                |
-| **  | to the power of                         |
-| /   | divide to a float (including remainder) |
-| //  | floor divide (round down)               |
-| %   | find the remainder (remainder only)     |
+| Operator | Meaning                                 |
+| -------- | --------------------------------------- |
+| `+`      | plus                                    |
+| `-`      | minus                                   |
+| `*`      | multiply                                |
+| `**`     | to the power of                         |
+| `/`      | divide and return a float               |
+| `//`     | floor divide / round down               |
+| `%`      | remainder only                          |
 
----
-evals
+## Comparison Operators
 
-| >   | left more then right      |
-| --- | ------------------------- |
-| <   | right more then left      |
-| ==  | equal                     |
-| !=  | not equals to             |
-| >=  | greater then or equals to |
-| <=  | less than or equals to    |
-42 == 42 true
-42 == 42.0 true (only true if decimal 0)
-42 == "42" false
+| Operator | Meaning                         |
+| -------- | ------------------------------- |
+| `>`      | left is greater than right      |
+| `<`      | left is less than right         |
+| `==`     | equal to                        |
+| `!=`     | not equal to                    |
+| `>=`     | greater than or equal to        |
+| `<=`     | less than or equal to           |
 
----
-operators
+Examples:
 
-| and    | True if both side of the and are True |
-| ------ | ------------------------------------- |
-| or     | True if either side is True           |
-| not    | True if it is False                   |
-| in     |                                       |
-| not in |                                       |
-|        |                                       |
+```python
+42 == 42      # True
+42 == 42.0    # True, same numeric value
+42 == "42"    # False, number vs string
+```
 
----
+## Logical and Membership Operators
 
-| True  | 1   |
-| ----- | --- |
-| False | 0   |
+| Operator | Meaning                                      |
+| -------- | -------------------------------------------- |
+| `and`    | `True` if both sides are `True`              |
+| `or`     | `True` if either side is `True`              |
+| `not`    | flips `True` to `False`, or `False` to `True` |
+| `in`     | checks if a value exists inside something    |
+| `not in` | checks if a value does not exist inside it   |
 
----
+## Booleans
 
-Slicing
+| Boolean | Numeric value |
+| ------- | ------------- |
+| `True`  | `1`           |
+| `False` | `0`           |
 
-string = "HelloWorld"
+## Slicing
 
-string[2:5:1]
+```python
+text = "HelloWorld"
 
-2 - start
-5 - end
-1- step (interval
+text[start:end:step]
+text[2:5:1]  # "llo"
+```
 
-negative indexing makes it go from the back
+- `start` is where the slice begins.
+- `end` is where the slice stops, but it is not included.
+- `step` is the interval between characters.
+
+Negative indexing counts from the back of the string.
+
+## Related
+
+- [[Conditionals]]
+- [[Functions (functional abstraction)]]

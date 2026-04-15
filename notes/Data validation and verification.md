@@ -1,58 +1,44 @@
+> [!important] Key Distinction
+> - Validation checks whether data is sensible and reasonable.
+> - Verification checks whether data matches the original source.
 
-Data Verification
-- Verification simply ensures that the data entered matches the original source
-- prevent human error with double entry (pw changes)
+## Comparison
 
-Data Validation
-==to check to ensure that data entered is sensible and reasonable. does not check the accuracy==
+| Term           | What it means                                   | Example                                |
+| -------------- | ----------------------------------------------- | -------------------------------------- |
+| Verification   | checks that entered data matches the source     | double entry for password changes      |
+| Validation     | checks that entered data is sensible            | age is between `0` and `99`            |
 
-validation techniques
+## Validation Techniques
 
-```mermaid
-mindmap
-  root((Validation Techniques))
-    Check Digit
-      check one or two digits to verify the other digits are correct
-	      e.g. NRIC, ISBN, car plate number, credit card
+| Technique                     | What it checks                               | Example                               |
+| ---------------------------- | -------------------------------------------- | ------------------------------------- |
+| Check digit                  | uses extra digits to verify the rest         | NRIC, ISBN, credit card               |
+| Format check                 | checks the correct pattern / format          | date format, email format             |
+| Length check                 | checks a fixed number of characters          | phone number, password length         |
+| Lookup table / drop-down     | checks against a list of allowed values      | school name, day of the week          |
+| Type check                   | checks the correct data type                 | digits only, letters only             |
+| Spell check / autocorrect    | checks against a dictionary                  | product names, common words           |
+| Presence check               | checks that a required field is not empty    | username must be filled in            |
+| Range check                  | checks that data falls within limits         | age `0` to `99`, height `0.5` to `2.5` |
 
-    Format Check
-      check that data is in the correct format
-	      e.g. ddmmyyyy, NRIC
+## Python-Style Examples
 
-    Length Check
-      check that the length is a certain number
-	      e.g. phone number, credit card number
+| Check          | Example                                      |
+| -------------- | -------------------------------------------- |
+| Presence Check | `string != ""`                               |
+| Range Check    | `79999999 < n < 100000000`                   |
+| Length Check   | `len(string) < 6`                            |
+| Type Check     | `string.isnumeric()` or `string.isalpha()`   |
+| Format Check   | `email.endswith("@students.edu.sg")`         |
 
-    Lookup Table / Drop-Down Menu
-      looks up acceptable values in a table
-	      e.g. valid school names, road names, days, salutations
 
-    Type Check
-      check that input is the correct type
-	      e.g. isdigit, isalpha, alphanumeric
-
-    Spell Check / Autocorrect
-      check against a dictionary
-	      e.g. technical terms, product names
-
-    Presence Check
-      check a required field is not null
-	      e.g. value != ""
-
-    Range Check
-      check that data is within a restricted range
-	      e.g. 0 < age < 99, 0.5 < height < 2.5
+```python
+a, b = b, a
 ```
 
+This is an easier way to swap two variables.
 
+## Related
 
-| Presence Check | string == ''                                    |
-| -------------- | ----------------------------------------------- |
-| Range Check    | 79999999 < n < 100000000                        |
-| Length Check   | len(string) < 6:                                |
-| Type Check     | type(eval("string")) or .isnumeric()/.isalpha() |
-| Format Check   | [.find('@'):] == '@students.edu.sg':            |
-
-
-a , b = b,a 
-easier variable swap
+- [[basic python]]
