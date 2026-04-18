@@ -62,6 +62,58 @@ copied = lst.copy()
 
 Use `.copy()` when you want a new list instead of another variable pointing to the same list.
 
+## Iteration
+
+```python
+for i in range(len(lst)):
+    print(lst[i])
+```
+
+```python
+for ele in lst:
+    print(ele)
+```
+
+```python
+while lst:
+    lst.pop()
+```
+
+- `while lst:` runs while the list is not empty.
+- This can be used as a self-destructing loop if you keep removing items.
+
+## Adding Items
+
+- `lst.append(value)` adds one item to the end and mutates the list.
+- `lst.extend(values)` adds each item from another iterable to the end.
+- `lst = lst + [value]` also adds an item, but creates a new list.
+
+```python
+lst.append("hi")     # adds "hi" as one item
+lst.extend("hi")     # adds "h", "i"
+```
+
+- `.append()` adds the whole thing as one item.
+- `.extend()` goes through the item in its brackets.
+
+## Removing Items
+
+- `lst.pop()` removes and returns the last item by default.
+- `lst.pop(index)` removes and returns the item at that index.
+
+```python
+del lst[start:stop:step]
+```
+
+- `del lst[:]` clears the whole list.
+- `lst.clear()` also clears the whole list.
+- `del lst` deletes the variable itself.
+
+## Sorting
+
+- `sorted(lst)` returns a new sorted list.
+- `lst.sort()` sorts the same list in place.
+
 ## Related
 
 - [[Tuple]]

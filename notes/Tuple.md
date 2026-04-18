@@ -24,16 +24,14 @@ z = (x, y)
 flowchart LR
     xvar["x"] --> xtup["(1, 2)"]
     yvar["y"] --> ytup["(3, 4)"]
-    zvar["z"] --> ztup["(x, y)"]
-    ztup --> slot0["item 0"]
-    ztup --> slot1["item 1"]
-    slot0 --> xtup
-    slot1 --> ytup
+    zvar["z"] --> ztup["((1, 2), (3, 4))"]
+    ztup -->|item 0| xtup
+    ztup -->|item 1| ytup
 ```
 
-- `z` is `((1, 2), (3, 4))`
-- `z[0]` is `(1, 2)`
-- `z[1]` is `(3, 4)`
+- `z` evaluates to `((1, 2), (3, 4))`
+- `z[0]` is `(1, 2)` and `z[1]` is `(3, 4)`
+- `z` stores references to the two tuple objects, not the variable names `x` and `y`
 
 ## Reassigning and Deleting
 
