@@ -22,7 +22,7 @@
 | Presence check               | checks that a required field is not empty    | username must be filled in            |
 | Range check                  | checks that data falls within limits         | age `0` to `99`, height `0.5` to `2.5` |
 
-## Python-Style Examples
+## Python Examples
 
 | Check          | Example                                      |
 | -------------- | -------------------------------------------- |

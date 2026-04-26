@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "* index.md",
+                "file": "Tuple.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "* index"
+              "title": "Tuple"
             }
           }
         ]
@@ -197,14 +197,15 @@
   },
   "active": "f6f0e05812a03fd2",
   "lastOpenFiles": [
-    "Tuple.md",
     "Lists.md",
-    "Conditionals.md",
-    "basic python.md",
-    "Data validation and verification.md",
-    "Functions (functional abstraction).md",
-    "* index.md",
     "Iteration.md",
+    "Dictionary.md",
+    "Conditionals.md",
+    "Data validation and verification.md",
+    "Tuple.md",
+    "Functions (functional abstraction).md",
+    "basic python.md",
+    "* index.md",
     "Untitled.canvas",
     "2026-04-15.md",
     "Untitled.base",

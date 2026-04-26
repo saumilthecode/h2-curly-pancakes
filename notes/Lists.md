@@ -114,6 +114,11 @@ del lst[start:stop:step]
 - `sorted(lst)` returns a new sorted list.
 - `lst.sort()` sorts the same list in place.
 
+
+while lst:
+and 
+while len(lst) > 0: 
+are the same, both keeps the loop running when the lst is not empty
 ## Related
 
 - [[Tuple]]
