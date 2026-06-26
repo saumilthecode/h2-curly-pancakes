@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C2 - Data representation.md",
+                "file": "basic python.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C2 - Data representation"
+              "title": "basic python"
             }
           }
         ]
@@ -198,17 +198,18 @@
   },
   "active": "3e14a9d61c346303",
   "lastOpenFiles": [
-    "Recursion.md",
     "C2 - Data representation.md",
-    "recursion.png",
     "basic python.md",
-    "* index.md",
-    "Conditionals.md",
-    "Data validation and verification.md",
     "Dictionary.md",
+    "Lists.md",
+    "Conditionals.md",
+    "Types of Errors and Test Cases.md",
+    "Recursion.md",
+    "recursion.png",
+    "* index.md",
+    "Data validation and verification.md",
     "Functions (functional abstraction).md",
     "Iteration.md",
-    "Lists.md",
     "Tuple.md",
     "Untitled.canvas",
     "2026-04-15.md",
