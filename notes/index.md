@@ -1,17 +1,17 @@
 # H2 Computing Notes
 
-- [Basic Python](basic%20python.html)
-- [Conditionals](Conditionals.html)
-- [Functions](Functions%20%28functional%20abstraction%29.html)
-- [Data validation and verification](Data%20validation%20and%20verification.html)
-- [Types of Errors and Test Cases](Types%20of%20Errors%20and%20Test%20Cases.html)
-- [Iteration](Iteration.html)
-- [Tuple](Tuple.html)
-- [Lists](Lists.html)
-- [Dictionary](Dictionary.html)
-- [Recursion](Recursion.html)
-- [Data Abstraction](Data%20Abstraction.html)
-- [C2 - Data representation](C2%20-%20Data%20representation.html)
-- [C3 - Computer Network](C3%20-%20Computer%20Network.html)
-- [File Handling](File%20Handling.html)
-- [Random Generator](Random%20Generator.html)
+- [[basic python|Basic Python]]
+- [[Conditionals]]
+- [[Functions (functional abstraction)|Functions]]
+- [[Data validation and verification]]
+- [[Types of Errors and Test Cases]]
+- [[Iteration]]
+- [[Tuple]]
+- [[Lists]]
+- [[Dictionary]]
+- [[Recursion]]
+- [[Data Abstraction]]
+- [[C2 - Data representation]]
+- [[C3 - Computer Network]]
+- [[File Handling]]
+- [[Random Generator]]

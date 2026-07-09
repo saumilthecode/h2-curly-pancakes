@@ -15,6 +15,12 @@ venv/
 env/
 ENV/
 
+# Node dependencies
+node_modules/
+
+# Generated static site
+_site/
+
 # Common editor swap / temp files
 *.swp
 *.swo
