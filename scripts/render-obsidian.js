@@ -63,6 +63,29 @@ function titleFromFile(file) {
   return path.basename(file, ".md");
 }
 
+function readIndexEntries(knownNotes) {
+  const indexPath = path.join(notesDir, "index.md");
+  if (!fs.existsSync(indexPath)) return [];
+
+  const source = fs.readFileSync(indexPath, "utf8");
+  const entries = [];
+  const wikiLink = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+  let match;
+
+  while ((match = wikiLink.exec(source)) !== null) {
+    const target = match[1].trim();
+    const file = knownNotes.get(target.toLowerCase());
+    if (!file || file === "index.md") continue;
+
+    entries.push({
+      file,
+      title: (match[2] || target).trim(),
+    });
+  }
+
+  return entries;
+}
+
 function outputNameForMarkdown(file) {
   const base = path.basename(file, ".md");
   return `${base}.html`;
@@ -181,10 +204,10 @@ ${body ? `<div class="callout-content">${body}</div>` : ""}
   });
 }
 
-function renderMarkdown(file, source, knownNotes) {
+function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
   const transformed = transformObsidianSyntax(source, knownNotes);
   const body = transformCallouts(transformMermaid(md.render(transformed)));
-  const pageTitle = file === "index.md" ? "H2 Computing Notes" : titleFromFile(file);
+  const pageTitle = file === "index.md" ? "H2 Computing Notes" : displayTitles.get(file) || titleFromFile(file);
   const needsMermaid = source.includes("```mermaid");
 
   return `<!doctype html>
@@ -199,7 +222,7 @@ function renderMarkdown(file, source, knownNotes) {
   <div class="site-shell">
     <aside class="site-sidebar">
       <a class="site-title" href="index.html">H2 Computing Notes</a>
-      ${renderNav(knownNotes, file)}
+      ${renderNav(knownNotes, file, displayTitles, navEntries)}
     </aside>
     <main class="markdown-preview-view">
       ${file !== "index.md" ? `<h1>${escapeHtml(pageTitle)}</h1>` : ""}
@@ -211,14 +234,19 @@ function renderMarkdown(file, source, knownNotes) {
 </html>`;
 }
 
-function renderNav(knownNotes, currentFile) {
-  const ordered = Array.from(knownNotes.values())
+function renderNav(knownNotes, currentFile, displayTitles, navEntries) {
+  const indexFiles = new Set(navEntries.map((entry) => entry.file));
+  const ordered = [
+    ...navEntries.map((entry) => entry.file),
+    ...Array.from(knownNotes.values())
+      .filter((file) => !indexFiles.has(file)),
+  ]
     .filter((file) => file !== "index.md" && file !== "* index.md" && !file.startsWith("."))
-    .sort((a, b) => titleFromFile(a).localeCompare(titleFromFile(b)));
+    .filter((file, index, files) => files.indexOf(file) === index);
 
   const links = ordered
     .map((file) => {
-      const title = titleFromFile(file);
+      const title = displayTitles.get(file) || titleFromFile(file);
       const active = file === currentFile ? " active" : "";
       return `<a class="nav-link${active}" href="${encodeHref(outputNameForMarkdown(file))}">${escapeHtml(title)}</a>`;
     })
@@ -439,11 +467,14 @@ function main() {
     knownNotes.set(titleFromFile(file).toLowerCase(), file);
   }
 
+  const navEntries = readIndexEntries(knownNotes);
+  const displayTitles = new Map(navEntries.map((entry) => [entry.file, entry.title]));
+
   copyAssets();
 
   for (const file of noteFiles) {
     const source = fs.readFileSync(path.join(notesDir, file), "utf8");
-    const html = renderMarkdown(file, source, knownNotes);
+    const html = renderMarkdown(file, source, knownNotes, displayTitles, navEntries);
     fs.writeFileSync(path.join(outDir, outputNameForMarkdown(file)), html);
   }
 
