@@ -1,0 +1,6 @@
+title: H2 Computing Notes
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
