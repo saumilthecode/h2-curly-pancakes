@@ -43,11 +43,67 @@ flowchart LR
 
 ## Number Bases
 
+Base = how many different digit symbols a place can use before it carries to the next place.
+
 | Base | Name | Digits | Example |
 | ---- | ---- | ------ | ------- |
 | 2 | binary | `0`, `1` | `1011` |
 | 10 | decimal / denary | `0` to `9` | `255` |
 | 16 | hexadecimal | `0` to `9`, `A` to `F` | `FF` |
+
+## Base Cheat Table
+
+Every number base follows the same place-value rule. The rightmost place is worth `1`, then each step left multiplies by the base.
+
+| Base | Name | Digits allowed | Place values from right to left | Example meaning |
+| ---- | ---- | -------------- | ------------------------------- | --------------- |
+| `2` | binary | `0`, `1` | `1`, `2`, `4`, `8`, `16`, ... | `1011` = `1*8 + 0*4 + 1*2 + 1*1` = `11` |
+| `3` | ternary | `0`, `1`, `2` | `1`, `3`, `9`, `27`, ... | `102` = `1*9 + 0*3 + 2*1` = `11` |
+| `8` | octal | `0` to `7` | `1`, `8`, `64`, `512`, ... | `13` = `1*8 + 3*1` = `11` |
+| `10` | denary / decimal | `0` to `9` | `1`, `10`, `100`, `1000`, ... | `246` = `2*100 + 4*10 + 6*1` |
+| `16` | hexadecimal | `0` to `9`, `A` to `F` | `1`, `16`, `256`, `4096`, ... | `F6` = `15*16 + 6*1` = `246` |
+| `n` | base `n` | `0` to `n-1` | `1`, `n`, `n^2`, `n^3`, ... | digits are multiplied by powers of `n` |
+
+> [!important]
+> 2027 H2 Computing focuses on binary, denary/decimal, and hexadecimal. Other bases just help show the pattern.
+
+Carry rule:
+
+```text
+base 10: after 9, carry -> 10
+base 2:  after 1, carry -> 10
+base 16: after F, carry -> 10
+```
+
+That `10` does not always mean ten. It means "one group of the base and zero ones".
+
+## Decimal vs Everything Else
+
+In this topic, decimal usually means **base 10**. Denary also means **base 10**.
+
+| Word | Meaning here | Example | What the places mean |
+| ---- | ------------ | ------- | -------------------- |
+| decimal / denary | base 10 number | `246` | `2 hundreds + 4 tens + 6 ones` |
+| binary | base 2 number | `11110110` | `128 + 64 + 32 + 16 + 4 + 2` |
+| hexadecimal | base 16 number | `F6` | `15 sixteens + 6 ones` |
+
+These can all mean the same value:
+
+| Same value | Written as | Why |
+| ---------- | ---------- | --- |
+| decimal / denary | `246` | `2*100 + 4*10 + 6*1` |
+| binary | `11110110` | `1*128 + 1*64 + 1*32 + 1*16 + 0*8 + 1*4 + 1*2 + 0*1` |
+| hexadecimal | `F6` | `15*16 + 6*1` |
+
+The difference is not the value. The difference is the **number system used to write it**.
+
+```text
+246 base 10 = 11110110 base 2 = F6 base 16
+```
+
+> [!warning]
+> A "decimal number" can also mean a number with a decimal point, like `3.14`.
+> For C2 conversions, decimal/denary usually means base 10 positive integers, like `246`, unless the question says otherwise.
 
 Hex digit values:
 
