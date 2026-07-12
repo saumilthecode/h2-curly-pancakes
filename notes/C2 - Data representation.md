@@ -67,15 +67,67 @@ Every number base follows the same place-value rule. The rightmost place is wort
 > [!important]
 > 2027 H2 Computing focuses on binary, denary/decimal, and hexadecimal. Other bases just help show the pattern.
 
-Carry rule:
+## Carry Rule
 
-```text
-base 10: after 9, carry -> 10
-base 2:  after 1, carry -> 10
-base 16: after F, carry -> 10
+Carry means: when a column runs out of allowed digits, reset that column to `0` and add `1` to the column on the left.
+
+```mermaid
+flowchart LR
+  Full["current place is full"] --> Reset["write 0 in this place"]
+  Reset --> Carry["carry 1 to the next place left"]
 ```
 
-That `10` does not always mean ten. It means "one group of the base and zero ones".
+| Base | Digits allowed in one place | Biggest single digit | Next value after that | What written `10` means |
+| ---- | --------------------------- | -------------------- | --------------------- | ----------------------- |
+| base 2 | `0`, `1` | `1` | `10` | one `2` and zero `1`s |
+| base 10 | `0` to `9` | `9` | `10` | one `10` and zero `1`s |
+| base 16 | `0` to `F` | `F` | `10` | one `16` and zero `1`s |
+
+So `10` does not always mean ten. It means **one group of the base and zero ones**.
+
+Counting shows the carry:
+
+```text
+base 10:  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...
+base 2:   0, 1, 10, 11, 100, 101, 110, 111, 1000, ...
+base 16:  0, 1, 2, 3, ..., 8, 9, A, B, C, D, E, F, 10, 11, ...
+```
+
+Addition examples:
+
+```text
+base 10:
+  9 + 1 = 10
+  because after 9, the ones place resets to 0 and carries 1 ten.
+```
+
+```text
+base 2:
+  1 + 1 = 10
+  because after 1, the ones place resets to 0 and carries 1 two.
+
+  10 base 2 = 2 base 10
+```
+
+```text
+base 16:
+  F + 1 = 10
+  because after F, the ones place resets to 0 and carries 1 sixteen.
+
+  10 base 16 = 16 base 10
+```
+
+Carry can chain through several full places:
+
+```text
+binary:
+  111 + 1 = 1000
+  7   + 1 = 8
+
+hexadecimal:
+  FF  + 1 = 100
+  255 + 1 = 256
+```
 
 ## Decimal vs Everything Else
 
