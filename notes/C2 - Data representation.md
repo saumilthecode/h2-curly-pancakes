@@ -1,16 +1,5 @@
 > [!summary] Quick View
-> 2027 examinable core: represent positive integers in binary, decimal, and hexadecimal; use Unicode examples; use ASCII codes in programs.
-
-## Syllabus Anchor
-
-Aligned to 2027 H2 Computing `9569` data representation outcomes:
-
-- convert positive integers between decimal, binary, and hexadecimal
-- state uses of binary and hexadecimal
-- show Unicode examples for different languages
-- use ASCII character codes in programs
-
-This is a notes page, not the full syllabus.
+> Data representation = how the same value can be written using bits, binary, denary, hexadecimal, and character codes.
 
 ## Bits and Values
 
