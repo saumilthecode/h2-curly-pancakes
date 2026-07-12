@@ -27,6 +27,20 @@ This is a notes page, not the full syllabus.
 > [!tip]
 > More bits means more unique patterns. It does not automatically mean the values are signed unless the question says so.
 
+Bit place value picture:
+
+```text
+8-bit pattern:  1    1    1    1    0    1    1    0
+Place value:   128   64   32   16    8    4    2    1
+Contribution:  128 + 64 + 32 + 16 + 0  + 4  + 2  + 0 = 246
+```
+
+```mermaid
+flowchart LR
+  B7["bit 7<br/>128"] --> B6["bit 6<br/>64"] --> B5["bit 5<br/>32"] --> B4["bit 4<br/>16"]
+  B4 --> B3["bit 3<br/>8"] --> B2["bit 2<br/>4"] --> B1["bit 1<br/>2"] --> B0["bit 0<br/>1"]
+```
+
 ## Number Bases
 
 | Base | Name | Digits | Example |
@@ -46,9 +60,87 @@ Hex digit values:
 | `E` | `14` |
 | `F` | `15` |
 
+## Representing the Same Value
+
+Denary, binary, and hexadecimal can represent the same number. Only the base and place values change.
+
+```text
+Same value:
+
+denary       246
+binary       11110110
+hexadecimal  F6
+```
+
+Base means "what each place is worth as you move left".
+
+```text
+Denary / base 10:
+
+digits:       2       4       6
+places:     10^2    10^1    10^0
+values:      100      10       1
+meaning:   2*100 + 4*10 + 6*1 = 246
+```
+
+```text
+Binary / base 2:
+
+digits:       1     1     1     1     0     1     1     0
+places:     2^7   2^6   2^5   2^4   2^3   2^2   2^1   2^0
+values:     128    64    32    16     8     4     2     1
+meaning:    128 + 64 + 32 + 16 + 0 + 4 + 2 + 0 = 246
+```
+
+```text
+Hexadecimal / base 16:
+
+digits:       F       6
+places:     16^1    16^0
+values:      16       1
+meaning:   15*16 + 6*1 = 246
+```
+
+The pattern is always the same:
+
+```text
+moving left multiplies the place value by the base
+
+base 10:  ... 1000   100    10    1
+base 2:   ...    8     4     2    1
+base 16:  ... 4096   256    16    1
+```
+
+```mermaid
+flowchart TD
+  Value["same value: 246"] --> Denary["denary: 246<br/>2*100 + 4*10 + 6"]
+  Value --> Binary["binary: 11110110<br/>128 + 64 + 32 + 16 + 4 + 2"]
+  Value --> Hex["hex: F6<br/>15*16 + 6"]
+```
+
+Conversion direction map:
+
+```mermaid
+flowchart LR
+  Binary["binary<br/>base 2"] <-->|"place values<br/>or repeated division"| Decimal["decimal / denary<br/>base 10"]
+  Decimal <-->|"place values<br/>or repeated division"| Hex["hexadecimal<br/>base 16"]
+  Binary <-->|"group into 4 bits"| Hex
+```
+
 ## Base to Decimal
 
 Multiply each digit by its place value.
+
+Think of each digit sitting above a place value:
+
+```text
+Binary number:     1      0      1      1
+Place value:      2^3    2^2    2^1    2^0
+Decimal value:     8      4      2      1
+Contribution:      8      0      2      1
+
+Total = 8 + 0 + 2 + 1 = 11
+```
 
 ```text
 1011 base 2
@@ -73,6 +165,18 @@ Repeated division method:
 3. Continue with the quotient.
 4. Read remainders from bottom to top.
 
+Process picture:
+
+```mermaid
+flowchart TD
+  Start["start with decimal number"] --> Divide["divide by target base"]
+  Divide --> Remainder["write down the remainder"]
+  Remainder --> Check{"is quotient 0?"}
+  Check -- "no" --> Next["use quotient as new number"]
+  Next --> Divide
+  Check -- "yes" --> Read["read remainders from bottom to top"]
+```
+
 Example: convert decimal `246` to binary.
 
 | Division | Quotient | Remainder |
@@ -85,6 +189,14 @@ Example: convert decimal `246` to binary.
 | `7 / 2` | `3` | `1` |
 | `3 / 2` | `1` | `1` |
 | `1 / 2` | `0` | `1` |
+
+The confusing part is the reading direction:
+
+```text
+Remainders collected: 0  1  1  0  1  1  1  1
+                       |  |  |  |  |  |  |  |
+Answer reads:         1  1  1  1  0  1  1  0
+```
 
 ```text
 246 base 10 = 11110110 base 2
@@ -101,6 +213,14 @@ Example: convert decimal `51966` to hexadecimal.
 
 ```text
 51966 base 10 = CAFE base 16
+```
+
+Same idea visually:
+
+```text
+Remainders:  E   F   A   C
+             |   |   |   |
+Read this:   C   A   F   E
 ```
 
 ## Binary and Hex Shortcut
@@ -122,11 +242,27 @@ Binary to hex:
 = F6
 ```
 
+Visual:
+
+```text
+Binary:  1111   0110
+          |      |
+Hex:      F      6
+```
+
 Hex to binary:
 
 ```text
 2F
 = 0010 1111
+```
+
+Visual:
+
+```text
+Hex:      2      F
+          |      |
+Binary:  0010   1111
 ```
 
 Drop leading zeros only when they are not needed for a fixed-width representation.
@@ -146,9 +282,26 @@ Hexadecimal is used because it is a shorter way to write binary:
 - colour codes, for example `#FF0000`
 - byte values, for example `0x7F`
 
+Why hex is shorter:
+
+```text
+Binary byte:  1111 0110
+Hex byte:       F    6
+
+8 binary digits become 2 hex digits.
+```
+
 ## Coding Base Conversions
 
 For manual conversion questions, avoid `bin()`, `hex()`, and `int(value, base)` unless the question explicitly allows them.
+
+Code pattern map:
+
+```mermaid
+flowchart LR
+  ToDecimal["binary/hex to decimal"] --> Place["loop over digits<br/>digit * base ** power"]
+  FromDecimal["decimal to binary/hex"] --> Divide["while number > 0<br/>prepend remainder"]
+```
 
 Binary to decimal:
 
@@ -231,6 +384,14 @@ ASCII maps characters to integer codes.
 - It is enough for basic English letters, digits, punctuation, and control codes.
 - It is not enough for characters from many other languages.
 
+Character to code picture:
+
+```mermaid
+flowchart LR
+  Char["character<br/>A"] --> Code["ASCII decimal code<br/>65"]
+  Code --> Bits["binary pattern<br/>01000001"]
+```
+
 Common examples:
 
 | Character | Decimal code | Hex |
@@ -265,6 +426,14 @@ Why Unicode is needed:
 - ASCII only has 128 codes.
 - Different languages need far more characters.
 - A shared standard avoids different systems using different numbers for the same character.
+
+ASCII vs Unicode picture:
+
+```mermaid
+flowchart LR
+  ASCII["ASCII<br/>128 codes"] --> English["basic English letters<br/>digits<br/>punctuation"]
+  Unicode["Unicode<br/>many more code points"] --> Many["many languages<br/>symbols<br/>emoji"]
+```
 
 Examples:
 
