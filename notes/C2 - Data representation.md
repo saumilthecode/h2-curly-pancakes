@@ -105,6 +105,94 @@ The difference is not the value. The difference is the **number system used to w
 > A "decimal number" can also mean a number with a decimal point, like `3.14`.
 > For C2 conversions, decimal/denary usually means base 10 positive integers, like `246`, unless the question says otherwise.
 
+## Binary From Scratch
+
+Binary is **base 2**. That means each place can only hold two digits:
+
+- `0` means this place value is not used
+- `1` means this place value is used
+
+Binary place values double as you move left.
+
+```text
+Binary places:  ...   128    64    32    16     8     4     2     1
+```
+
+Think of binary as switches:
+
+```text
+binary:          1      1     0     1
+place value:     8      4     2     1
+switch meaning:  on     on    off   on
+
+value = 8 + 4 + 0 + 1 = 13
+```
+
+```mermaid
+flowchart LR
+  B8["8<br/>on"] --> B4["4<br/>on"] --> B2["2<br/>off"] --> B1["1<br/>on"]
+  B8 --> Total["13"]
+  B4 --> Total
+  B1 --> Total
+```
+
+So:
+
+```text
+1101 base 2 = 13 base 10
+```
+
+Counting in binary:
+
+| Denary | Binary | 4-bit binary |
+| ------ | ------ | ------------ |
+| `0` | `0` | `0000` |
+| `1` | `1` | `0001` |
+| `2` | `10` | `0010` |
+| `3` | `11` | `0011` |
+| `4` | `100` | `0100` |
+| `5` | `101` | `0101` |
+| `6` | `110` | `0110` |
+| `7` | `111` | `0111` |
+| `8` | `1000` | `1000` |
+| `9` | `1001` | `1001` |
+| `10` | `1010` | `1010` |
+| `11` | `1011` | `1011` |
+| `12` | `1100` | `1100` |
+| `13` | `1101` | `1101` |
+| `14` | `1110` | `1110` |
+| `15` | `1111` | `1111` |
+
+Why `10` in binary means two:
+
+```text
+10 base 2
+= 1*2^1 + 0*2^0
+= 1*2 + 0*1
+= 2
+```
+
+How to write a denary number in binary:
+
+1. Find the biggest power of 2 that fits.
+2. Put `1` under it.
+3. Subtract it.
+4. Move right through the smaller powers of 2.
+5. Put `1` if you need that value, otherwise put `0`.
+
+Example: write denary `13` in binary.
+
+```text
+Place values:  8   4   2   1
+Need 13:       yes yes no  yes
+Bits:          1   1   0   1
+
+13 base 10 = 1101 base 2
+```
+
+> [!tip]
+> Binary is not a different value. It is a different way to write the same value using only `0` and `1`.
+
 Hex digit values:
 
 | Hex | Decimal |
