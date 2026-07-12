@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dictionary.md",
+                "file": "C2 - Data representation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dictionary"
+              "title": "C2 - Data representation"
             }
           }
         ]
@@ -198,16 +198,20 @@
   },
   "active": "3e14a9d61c346303",
   "lastOpenFiles": [
+    "_config.yml",
+    "index.md",
+    "* index.md",
+    "Random Generator.md",
+    "File Handling.md",
+    "Lists.md",
+    "recursion.png",
+    "Recursion.md",
+    "Dictionary.md",
     "Functions (functional abstraction).md",
     "basic python.md",
     "C2 - Data representation.md",
-    "Dictionary.md",
-    "Lists.md",
     "Conditionals.md",
     "Types of Errors and Test Cases.md",
-    "Recursion.md",
-    "recursion.png",
-    "* index.md",
     "Data validation and verification.md",
     "Iteration.md",
     "Tuple.md",
