@@ -3,22 +3,7 @@
 
 ## Picture
 
-```text
-top
----
- 3  <- pop removes this first
- 5
- 7  <- pushed first, removed last
----
-bottom
-```
-
-```mermaid
-flowchart TD
-  Push["push(item)<br/>add to top"] --> Top["top of stack"]
-  Top --> Pop["pop()<br/>remove from top"]
-  Pop --> LIFO["LIFO<br/>newest item leaves first"]
-```
+![[stack-lifo.svg]]
 
 ## Operations
 
@@ -62,15 +47,7 @@ def clear(stack):
 
 ## Trace
 
-```text
-start:       []
-push 7:      [7]
-push 5:      [7, 5]
-push 3:      [7, 5, 3]
-pop -> 3:    [7, 5]
-pop -> 5:    [7]
-peek -> 7:   [7]
-```
+![[stack-trace.svg]]
 
 ## Pattern 1: Reverse
 
@@ -100,19 +77,7 @@ def reverse(string):
 
 Remainders come out backwards, so use a stack to reverse them.
 
-```text
-47 / 2 -> remainder 1
-23 / 2 -> remainder 1
-11 / 2 -> remainder 1
-5  / 2 -> remainder 1
-2  / 2 -> remainder 0
-1  / 2 -> remainder 1
-
-pushed:  1 1 1 1 0 1
-popped:  1 0 1 1 1 1
-
-47 base 10 = 101111 base 2
-```
+![[stack-binary.svg]]
 
 ```python
 def denary_to_binary(n):
@@ -136,12 +101,7 @@ def denary_to_binary(n):
 
 Use a stack to remember the latest unmatched opening bracket.
 
-```mermaid
-flowchart LR
-  Open["opening bracket<br/>( [ {"] --> Push["push"]
-  Close["closing bracket<br/>) ] }"] --> Pop["pop latest opening"]
-  Pop --> Match["check matching pair"]
-```
+![[stack-brackets.svg]]
 
 ```python
 def is_balanced(expr):

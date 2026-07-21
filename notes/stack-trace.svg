@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 360" role="img" aria-labelledby="title desc">
+  <title id="title">Stack operation trace</title>
+  <desc id="desc">A sequence of stack states after push and pop operations.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-weight: 750; font-size: 25px; }
+      .label { font-size: 18px; fill: #475569; }
+      .value { font-weight: 750; font-size: 23px; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .cell { fill: #dbeafe; stroke: #2563eb; stroke-width: 2.5; }
+      .pop { fill: #fee2e2; stroke: #dc2626; stroke-width: 2.5; }
+      .base { stroke: #334155; stroke-width: 4; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect x="18" y="18" width="1044" height="324" rx="22" fill="#f8fafc" stroke="#d8dee9" stroke-width="2"/>
+  <text x="44" y="62" class="title">Stack trace: only the top changes</text>
+
+  <g transform="translate(50 95)">
+    <rect width="150" height="205" rx="16" class="panel"/>
+    <text x="40" y="30" class="label">start</text>
+    <line x1="46" y1="170" x2="104" y2="170" class="base"/>
+    <text x="59" y="198" class="label">[]</text>
+  </g>
+  <path d="M 215 198 L 275 198" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="225" y="182" class="label">push 7</text>
+
+  <g transform="translate(290 95)">
+    <rect width="150" height="205" rx="16" class="panel"/>
+    <rect x="45" y="112" width="60" height="44" rx="8" class="cell"/>
+    <text x="68" y="141" class="value">7</text>
+    <line x1="44" y1="170" x2="106" y2="170" class="base"/>
+  </g>
+  <path d="M 455 198 L 515 198" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="465" y="182" class="label">push 5</text>
+
+  <g transform="translate(530 95)">
+    <rect width="150" height="205" rx="16" class="panel"/>
+    <rect x="45" y="112" width="60" height="44" rx="8" class="cell"/>
+    <text x="68" y="141" class="value">7</text>
+    <rect x="45" y="62" width="60" height="44" rx="8" class="cell"/>
+    <text x="68" y="91" class="value">5</text>
+    <line x1="44" y1="170" x2="106" y2="170" class="base"/>
+  </g>
+  <path d="M 695 198 L 755 198" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="705" y="182" class="label">push 3</text>
+
+  <g transform="translate(770 95)">
+    <rect width="150" height="205" rx="16" class="panel"/>
+    <rect x="45" y="112" width="60" height="44" rx="8" class="cell"/>
+    <text x="68" y="141" class="value">7</text>
+    <rect x="45" y="62" width="60" height="44" rx="8" class="cell"/>
+    <text x="68" y="91" class="value">5</text>
+    <rect x="45" y="12" width="60" height="44" rx="8" class="pop"/>
+    <text x="68" y="41" class="value">3</text>
+    <line x1="44" y1="170" x2="106" y2="170" class="base"/>
+  </g>
+  <path d="M 930 148 L 1000 108" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="955" y="160" class="label" fill="#dc2626">pop -> 3</text>
+  <rect x="988" y="70" width="58" height="42" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="1010" y="98" class="value">3</text>
+</svg>

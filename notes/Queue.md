@@ -3,18 +3,7 @@
 
 ## Picture
 
-```text
-dequeue here                         enqueue here
-   head                                  tail
-    |                                     |
-    v                                     v
- [ Jane, Asyraf, Sam, Sally ]
-```
-
-```mermaid
-flowchart LR
-  Head["head<br/>dequeue"] --> A["Jane"] --> B["Asyraf"] --> C["Sam"] --> D["Sally"] --> Tail["tail<br/>enqueue"]
-```
+![[queue-fifo.svg]]
 
 ## Operations
 
@@ -89,6 +78,8 @@ Stack: [1, 2, 3] -> pop()     -> 3
 Queue: [1, 2, 3] -> dequeue() -> 1
 ```
 
+![[stack-vs-queue.svg]]
+
 ## Uses
 
 - printer queue
@@ -134,11 +125,7 @@ print(print_job(hp_printer))  # phys quiz.doc
 
 Rotate once = dequeue head, enqueue it at tail.
 
-```text
-[A, B, C, D]
-rotate once  -> [B, C, D, A]
-rotate twice -> [C, D, A, B]
-```
+![[queue-rotation.svg]]
 
 ```python
 def current_song(playlist, minutes):
@@ -162,14 +149,7 @@ This follows the notebook rule: rotate `n` times, then remove the next player.
 
 Tiny trace for players `[A, B, C]`, `n = 1`:
 
-```text
-[A, B, C]
-rotate A to back -> [B, C, A]
-remove B         -> [C, A]
-rotate C to back -> [A, C]
-remove A         -> [C]
-winner = C
-```
+![[queue-pass-bomb.svg]]
 
 ```python
 def who_wins(players, n):
