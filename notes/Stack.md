@@ -1,21 +1,14 @@
 > [!summary] Quick View
-> Stack = last item pushed in is the first item popped out. This is LIFO.
+> Stack = LIFO: Last In, First Out. Add/remove only from the top.
 
-## Mental Model
-
-A stack is like a stack of plates.
-
-- Add only at the top.
-- Remove only from the top.
-- The newest item comes out first.
-- You cannot pop from an empty stack.
+## Picture
 
 ```text
 top
 ---
- 3  <- last pushed, first popped
+ 3  <- pop removes this first
  5
- 7  <- first pushed, last popped
+ 7  <- pushed first, removed last
 ---
 bottom
 ```
@@ -24,32 +17,28 @@ bottom
 flowchart TD
   Push["push(item)<br/>add to top"] --> Top["top of stack"]
   Top --> Pop["pop()<br/>remove from top"]
-  Pop --> LIFO["LIFO<br/>Last In, First Out"]
+  Pop --> LIFO["LIFO<br/>newest item leaves first"]
 ```
 
 ## Operations
 
-| Operation | Meaning | Python list version |
-| --------- | ------- | ------------------- |
-| `make_empty_stack()` | create an empty stack | `[]` |
-| `make_stack(seq)` | create a stack from a sequence | `list(seq)` |
-| `push(stack, item)` | add item to the top | `stack.append(item)` |
-| `pop(stack)` | remove and return top item | `stack.pop()` |
-| `peek(stack)` | return top item without removing | `stack[-1]` |
-| `is_empty_stack(stack)` | check if stack has no items | `stack == []` |
-| `clear(stack)` | remove everything | `stack.clear()` |
+| Operation | What it does | List code |
+| --------- | ------------ | --------- |
+| `make_empty_stack()` | creates empty stack | `[]` |
+| `push(stack, item)` | adds item to top | `append(item)` |
+| `pop(stack)` | removes and returns top item | `pop()` |
+| `peek(stack)` | returns top item only | `stack[-1]` |
+| `is_empty_stack(stack)` | checks empty stack | `stack == []` |
+| `clear(stack)` | removes everything | `clear()` |
 
 > [!important]
-> In these notes, the **top** of the stack is the **end** of the Python list.
+> Top of stack = end of the Python list.
 
-## Basic Implementation
+## Template
 
 ```python
 def make_empty_stack():
     return []
-
-def make_stack(seq):
-    return list(seq)
 
 def is_empty_stack(stack):
     return stack == []
@@ -71,22 +60,10 @@ def clear(stack):
     stack.clear()
 ```
 
-## Trace Example
-
-```python
-s = make_empty_stack()
-pop(s)       # None
-push(s, 7)   # [7]
-push(s, 5)   # [7, 5]
-push(s, 3)   # [7, 5, 3]
-pop(s)       # 3
-pop(s)       # 5
-peek(s)      # 7
-```
-
-State picture:
+## Trace
 
 ```text
+start:       []
 push 7:      [7]
 push 5:      [7, 5]
 push 3:      [7, 5, 3]
@@ -95,14 +72,14 @@ pop -> 5:    [7]
 peek -> 7:   [7]
 ```
 
-## Reverse a Sequence
+## Pattern 1: Reverse
 
-Push every character into the stack, then pop everything out.
+Push characters in, then pop them out.
 
 ```text
 input:   a b c d
-push:    [a, b, c, d]
-pop out: d c b a
+stack:   [a, b, c, d]
+pop:     d c b a
 ```
 
 ```python
@@ -119,11 +96,9 @@ def reverse(string):
     return result
 ```
 
-## Denary to Binary With a Stack
+## Pattern 2: Denary to Binary
 
-Repeated division gives remainders in reverse order. A stack fixes that because popping reverses the order.
-
-Example for `47`:
+Remainders come out backwards, so use a stack to reverse them.
 
 ```text
 47 / 2 -> remainder 1
@@ -133,8 +108,8 @@ Example for `47`:
 2  / 2 -> remainder 0
 1  / 2 -> remainder 1
 
-remainders pushed: 1 1 1 1 0 1
-pop order:         1 0 1 1 1 1
+pushed:  1 1 1 1 0 1
+popped:  1 0 1 1 1 1
 
 47 base 10 = 101111 base 2
 ```
@@ -157,16 +132,16 @@ def denary_to_binary(n):
     return result
 ```
 
-## Balanced Brackets
+## Pattern 3: Balanced Brackets
 
-Simple counting is not enough. `([)]` has two opening and two closing brackets, but it is not balanced.
+Use a stack to remember the latest unmatched opening bracket.
 
-Use a stack:
-
-1. Push opening brackets.
-2. When a closing bracket appears, pop the latest opening bracket.
-3. Check that the pair matches.
-4. At the end, the stack must be empty.
+```mermaid
+flowchart LR
+  Open["opening bracket<br/>( [ {"] --> Push["push"]
+  Close["closing bracket<br/>) ] }"] --> Pop["pop latest opening"]
+  Pop --> Match["check matching pair"]
+```
 
 ```python
 def is_balanced(expr):
@@ -184,71 +159,48 @@ def is_balanced(expr):
     return is_empty_stack(stack)
 ```
 
-Checks:
-
 ```python
 print(is_balanced("([]({()}))"))  # True
 print(is_balanced("(({}[)]))"))   # False
 ```
 
-## Infix, Prefix, Postfix
+## Pattern 4: Postfix
 
-| Notation | Operator position | Example |
-| -------- | ----------------- | ------- |
-| infix | between operands | `A + B` |
-| prefix | before operands | `+ A B` |
-| postfix | after operands | `A B +` |
+Postfix puts the operator after the operands. Keep this as a stack pattern, not a whole new topic.
 
-Postfix is useful because it can be evaluated with a stack.
-
-## Postfix Evaluation
+| Infix | Postfix |
+| ----- | ------- |
+| `A + B` | `A B +` |
+| `3 * 4 + 5` | `3 4 * 5 +` |
 
 Rule:
 
-- numbers get pushed
-- operators pop the right operand first, then the left operand
-- calculate and push the answer back
+- number -> push
+- operator -> pop `rhs`, pop `lhs`, calculate `lhs operator rhs`, push answer
 
-```python
-def calculate_postfix(tokens):
-    stack = make_empty_stack()
+Trace:
 
-    for token in tokens:
-        if token in ("+", "-", "*", "/"):
-            rhs = pop(stack)
-            lhs = pop(stack)
+```text
+postfix: 3 4 * 5 +
 
-            if token == "+":
-                push(stack, lhs + rhs)
-            elif token == "-":
-                push(stack, lhs - rhs)
-            elif token == "*":
-                push(stack, lhs * rhs)
-            else:
-                push(stack, lhs / rhs)
-        else:
-            push(stack, token)
+read 3:  push -> [3]
+read 4:  push -> [3, 4]
+read *:  pop 4, pop 3, push 12 -> [12]
+read 5:  push -> [12, 5]
+read +:  pop 5, pop 12, push 17 -> [17]
 
-    return pop(stack)
-```
-
-Examples:
-
-```python
-print(calculate_postfix((3, 4, "*", 5, "+")))       # 17
-print(calculate_postfix((3, 4, 5, "+", "*", 2, "/")))  # 13.5
+answer = 17
 ```
 
 > [!warning]
-> For `-` and `/`, operand order matters. In postfix `A B -`, calculate `A - B`, not `B - A`.
+> For `-` and `/`, order matters. Postfix `A B -` means `A - B`.
 
 ## Common Mistakes
 
-- Using `pop(0)` for a stack. That is queue behaviour.
-- Forgetting to handle empty-stack `pop()` and `peek()`.
-- Mixing up `peek()` and `pop()`: `peek()` does not remove.
-- Returning the stack from `push()`. Usually `push()` mutates the stack and returns nothing.
-- Reversing the binary result again after the stack already reversed it.
+- Stack uses `pop()`, not `pop(0)`.
+- `peek()` does not remove.
+- `pop()` on an empty stack should return `None`.
+- If you use a stack to reverse something, do not reverse it again.
 
 ## Related
 
