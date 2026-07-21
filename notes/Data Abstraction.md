@@ -40,6 +40,13 @@ It does not define:
 | Utility | performs useful operations using the ADT |
 | Predicate | returns `True` or `False` about the ADT |
 
+## Common ADTs
+
+| ADT | Main idea | Order rule | Main operations |
+| --- | --------- | ---------- | --------------- |
+| [[Stack]] | add/remove from the top | LIFO | `push`, `pop`, `peek` |
+| [[Queue]] | add at tail, remove from head | FIFO | `enqueue`, `dequeue`, `front` |
+
 ## Student Record ADT
 
 Data stored:
@@ -313,5 +320,7 @@ file.close()
 ## Related
 
 - [[Tuple]]
+- [[Stack]]
+- [[Queue]]
 - [[Functions (functional abstraction)]]
 - [[File Handling]]

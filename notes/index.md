@@ -11,6 +11,8 @@
 - [[Dictionary]]
 - [[Recursion]]
 - [[Data Abstraction]]
+- [[Stack]]
+- [[Queue]]
 - [[C2 - Data representation]]
 - [[C3 - Computer Network]]
 - [[File Handling]]

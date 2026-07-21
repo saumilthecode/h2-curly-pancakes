@@ -9,6 +9,8 @@
 8 - [[Dictionary]]
 9 - [[Recursion]]
 10 - [[Data Abstraction]]
+10b - [[Stack]]
+10c - [[Queue]]
 C2 - [[C2 - Data representation]]
 C3 - [[C3 - Computer Network]]
 BTB2 - [[File Handling]]
