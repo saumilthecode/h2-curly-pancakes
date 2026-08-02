@@ -3,25 +3,21 @@
 
 ## Formatting Trace
 
-<details open>
+<details>
 <summary>How fixed-width columns line up</summary>
-
-```python
-print("{0:<8}{1:<10}{2:>8.2f}".format(1, "cake", 4.56789))
-```
-
-Output shape:
-
-```text
-1       cake          4.57
-```
-
-| Part | Meaning |
-| ---- | ------- |
-| `{0:<8}` | value 0, left aligned, width 8 |
-| `{1:<10}` | value 1, left aligned, width 10 |
-| `{2:>8.2f}` | value 2, right aligned, width 8, 2 decimals |
-
+<pre><code>print("{0:&lt;8}{1:&lt;10}{2:&gt;8.2f}".format(1, "cake", 4.56789))</code></pre>
+<p>Output shape:</p>
+<pre><code>1       cake          4.57</code></pre>
+<table>
+  <thead>
+    <tr><th>Part</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>{0:&lt;8}</code></td><td>value 0, left aligned, width 8</td></tr>
+    <tr><td><code>{1:&lt;10}</code></td><td>value 1, left aligned, width 10</td></tr>
+    <tr><td><code>{2:&gt;8.2f}</code></td><td>value 2, right aligned, width 8, 2 decimals</td></tr>
+  </tbody>
+</table>
 </details>
 
 ## `print()` Options

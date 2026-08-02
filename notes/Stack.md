@@ -3,17 +3,20 @@
 
 ## Stack Trace
 
-<details open>
+<details>
 <summary>Push and pop example</summary>
-
-| Step | Operation | Stack after step | Return |
-| ---- | --------- | ---------------- | ------ |
-| 1 | start | `[]` | - |
-| 2 | `push("A")` | `["A"]` | - |
-| 3 | `push("B")` | `["A", "B"]` | - |
-| 4 | `peek()` | `["A", "B"]` | `"B"` |
-| 5 | `pop()` | `["A"]` | `"B"` |
-
+<table>
+  <thead>
+    <tr><th>Step</th><th>Operation</th><th>Stack after step</th><th>Return</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><code>start</code></td><td><code>[]</code></td><td>-</td></tr>
+    <tr><td>2</td><td><code>push("A")</code></td><td><code>["A"]</code></td><td>-</td></tr>
+    <tr><td>3</td><td><code>push("B")</code></td><td><code>["A", "B"]</code></td><td>-</td></tr>
+    <tr><td>4</td><td><code>peek()</code></td><td><code>["A", "B"]</code></td><td><code>"B"</code></td></tr>
+    <tr><td>5</td><td><code>pop()</code></td><td><code>["A"]</code></td><td><code>"B"</code></td></tr>
+  </tbody>
+</table>
 </details>
 
 ## Core Operations

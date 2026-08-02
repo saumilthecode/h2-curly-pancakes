@@ -3,16 +3,18 @@
 
 ## Collision Trace
 
-<details open>
+<details>
 <summary>`dbac` and `badc` both hash to index `3` when table size is `5`</summary>
-
-| Item | Hash value | Index calculation |
-| ---- | ---------- | ----------------- |
-| `dbac` | `988` | `988 % 5 = 3` |
-| `badc` | `988` | `988 % 5 = 3` |
-
-Both want the same slot, so use separate chaining or linear probing.
-
+<table>
+  <thead>
+    <tr><th>Item</th><th>Hash value</th><th>Index calculation</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>dbac</code></td><td><code>988</code></td><td><code>988 % 5 = 3</code></td></tr>
+    <tr><td><code>badc</code></td><td><code>988</code></td><td><code>988 % 5 = 3</code></td></tr>
+  </tbody>
+</table>
+<p>Both want the same slot, so use separate chaining or linear probing.</p>
 </details>
 
 ## Hashing Idea

@@ -3,17 +3,20 @@
 
 ## Queue Trace
 
-<details open>
+<details>
 <summary>Enqueue and dequeue example</summary>
-
-| Step | Operation | Queue after step | Return |
-| ---- | --------- | ---------------- | ------ |
-| 1 | start | `[]` | - |
-| 2 | `enqueue("A")` | `["A"]` | - |
-| 3 | `enqueue("B")` | `["A", "B"]` | - |
-| 4 | `front()` | `["A", "B"]` | `"A"` |
-| 5 | `dequeue()` | `["B"]` | `"A"` |
-
+<table>
+  <thead>
+    <tr><th>Step</th><th>Operation</th><th>Queue after step</th><th>Return</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><code>start</code></td><td><code>[]</code></td><td>-</td></tr>
+    <tr><td>2</td><td><code>enqueue("A")</code></td><td><code>["A"]</code></td><td>-</td></tr>
+    <tr><td>3</td><td><code>enqueue("B")</code></td><td><code>["A", "B"]</code></td><td>-</td></tr>
+    <tr><td>4</td><td><code>front()</code></td><td><code>["A", "B"]</code></td><td><code>"A"</code></td></tr>
+    <tr><td>5</td><td><code>dequeue()</code></td><td><code>["B"]</code></td><td><code>"A"</code></td></tr>
+  </tbody>
+</table>
 </details>
 
 ## Core Operations

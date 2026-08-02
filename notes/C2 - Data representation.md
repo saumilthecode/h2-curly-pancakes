@@ -24,16 +24,16 @@ Place value:   128   64   32   16    8    4    2    1
 Contribution:  128 + 64 + 32 + 16 + 0  + 4  + 2  + 0 = 246
 ```
 
-<details open>
+<details>
 <summary>Worked bit view: `246` as one byte</summary>
-
-| Bit | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Place value | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
-| Contribution | 128 | 64 | 32 | 16 | 0 | 4 | 2 | 0 |
-
-`128 + 64 + 32 + 16 + 4 + 2 = 246`
-
+<table>
+  <tbody>
+    <tr><th>Bit</th><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><th>Place value</th><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+    <tr><th>Contribution</th><td>128</td><td>64</td><td>32</td><td>16</td><td>0</td><td>4</td><td>2</td><td>0</td></tr>
+  </tbody>
+</table>
+<p><code>128 + 64 + 32 + 16 + 4 + 2 = 246</code></p>
 </details>
 
 ## Number Bases
