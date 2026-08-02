@@ -1,9 +1,11 @@
 > [!summary] Quick View
 > Queue = FIFO: First In, First Out. Add at tail, remove from head.
 
-## Picture
+## Queue Playground
 
-![[queue-fifo.svg]]
+<iframe class="note-widget-frame queue-simulator" src="./pictures/queue-simulator.html" title="Interactive queue playground" style="width:100%;height:520px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+
+[Open standalone queue playground](./pictures/queue-simulator.html)
 
 ## Operations
 
@@ -78,8 +80,6 @@ Stack: [1, 2, 3] -> pop()     -> 3
 Queue: [1, 2, 3] -> dequeue() -> 1
 ```
 
-![[stack-vs-queue.svg]]
-
 ## Uses
 
 - printer queue
@@ -125,8 +125,6 @@ print(print_job(hp_printer))  # phys quiz.doc
 
 Rotate once = dequeue head, enqueue it at tail.
 
-![[queue-rotation.svg]]
-
 ```python
 def current_song(playlist, minutes):
     song_queue = make_queue(playlist)
@@ -148,8 +146,6 @@ def current_song(playlist, minutes):
 This follows the notebook rule: rotate `n` times, then remove the next player.
 
 Tiny trace for players `[A, B, C]`, `n = 1`:
-
-![[queue-pass-bomb.svg]]
 
 ```python
 def who_wins(players, n):

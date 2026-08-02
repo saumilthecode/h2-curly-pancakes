@@ -24,11 +24,9 @@ Place value:   128   64   32   16    8    4    2    1
 Contribution:  128 + 64 + 32 + 16 + 0  + 4  + 2  + 0 = 246
 ```
 
-```mermaid
-flowchart LR
-  B7["bit 7<br/>128"] --> B6["bit 6<br/>64"] --> B5["bit 5<br/>32"] --> B4["bit 4<br/>16"]
-  B4 --> B3["bit 3<br/>8"] --> B2["bit 2<br/>4"] --> B1["bit 1<br/>2"] --> B0["bit 0<br/>1"]
-```
+<iframe class="note-widget-frame base-converter" src="./pictures/base-converter.html" title="Interactive base converter" style="width:100%;height:820px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+
+[Open standalone base converter](./pictures/base-converter.html)
 
 ## Number Bases
 
@@ -167,14 +165,6 @@ place value:     8      4     2     1
 switch meaning:  on     on    off   on
 
 value = 8 + 4 + 0 + 1 = 13
-```
-
-```mermaid
-flowchart LR
-  B8["8<br/>on"] --> B4["4<br/>on"] --> B2["2<br/>off"] --> B1["1<br/>on"]
-  B8 --> Total["13"]
-  B4 --> Total
-  B1 --> Total
 ```
 
 So:

@@ -25,7 +25,7 @@ def factorial(n):
 - arrows down go first
 - arrows up are returns
 
-![[recursion.png]]
+![[pictures/recursion.png]]
 
 ## Debugging
 

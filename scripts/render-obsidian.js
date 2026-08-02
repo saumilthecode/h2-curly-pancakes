@@ -261,10 +261,34 @@ function copyAssets() {
   fs.writeFileSync(path.join(assetsDir, "site.css"), siteCss());
 
   for (const entry of fs.readdirSync(notesDir, { withFileTypes: true })) {
-    if (!entry.isFile()) continue;
-    const ext = path.extname(entry.name).toLowerCase();
-    if ([".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"].includes(ext)) {
-      fs.copyFileSync(path.join(notesDir, entry.name), path.join(outDir, entry.name));
+    const source = path.join(notesDir, entry.name);
+    const destination = path.join(outDir, entry.name);
+
+    if (entry.isDirectory() && entry.name === "pictures") {
+      copyDir(source, destination);
+      continue;
+    }
+
+    if (entry.isFile()) {
+      const ext = path.extname(entry.name).toLowerCase();
+      if ([".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"].includes(ext)) {
+        fs.copyFileSync(source, destination);
+      }
+    }
+  }
+}
+
+function copyDir(source, destination) {
+  fs.mkdirSync(destination, { recursive: true });
+
+  for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
+    const sourcePath = path.join(source, entry.name);
+    const destinationPath = path.join(destination, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDir(sourcePath, destinationPath);
+    } else if (entry.isFile()) {
+      fs.copyFileSync(sourcePath, destinationPath);
     }
   }
 }
@@ -437,6 +461,21 @@ pre code {
   margin: 1rem 0;
   border-radius: 8px;
 }
+
+.note-widget-frame {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.note-widget-frame.base-converter { height: 820px; }
+.note-widget-frame.stack-simulator { height: 520px; }
+.note-widget-frame.queue-simulator { height: 520px; }
+.note-widget-frame.hash-playground { height: 620px; }
+.note-widget-frame.print-format { height: 600px; }
 
 .mermaid {
   margin: 1rem 0;

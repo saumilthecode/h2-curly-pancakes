@@ -1,9 +1,11 @@
 > [!summary] Quick View
 > Stack = LIFO: Last In, First Out. Add/remove only from the top.
 
-## Picture
+## Stack Playground
 
-![[stack-lifo.svg]]
+<iframe class="note-widget-frame stack-simulator" src="./pictures/stack-simulator.html" title="Interactive stack playground" style="width:100%;height:520px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+
+[Open standalone stack playground](./pictures/stack-simulator.html)
 
 ## Operations
 
@@ -47,7 +49,7 @@ def clear(stack):
 
 ## Trace
 
-![[stack-trace.svg]]
+Use the playground above to trace `push`, `pop`, and `peek`.
 
 ## Pattern 1: Reverse
 
@@ -77,8 +79,6 @@ def reverse(string):
 
 Remainders come out backwards, so use a stack to reverse them.
 
-![[stack-binary.svg]]
-
 ```python
 def denary_to_binary(n):
     if n == 0:
@@ -100,8 +100,6 @@ def denary_to_binary(n):
 ## Pattern 3: Balanced Brackets
 
 Use a stack to remember the latest unmatched opening bracket.
-
-![[stack-brackets.svg]]
 
 ```python
 def is_balanced(expr):

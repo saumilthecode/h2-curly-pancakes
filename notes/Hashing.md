@@ -10,7 +10,11 @@ Hashing creates a digital fingerprint of data.
 - A good hash is fixed-size and hard to reverse.
 - Collisions can happen: different data can produce the same index or hash.
 
-![[hash-checksum.svg]]
+## Hash Table Playground
+
+<iframe class="note-widget-frame hash-playground" src="./pictures/hash-playground.html" title="Interactive hash table playground" style="width:100%;height:620px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+
+[Open standalone hash table playground](./pictures/hash-playground.html)
 
 ## Simple Hash Function
 
@@ -74,8 +78,6 @@ A hash table is an array/list where the hash value decides the index.
 index = hash_value(item) % len(table)
 ```
 
-![[hash-table-index.svg]]
-
 Without collisions:
 
 ```python
@@ -118,8 +120,6 @@ hash_value("badc") % 5 = 3
 
 Separate chaining stores a list at the collided index.
 
-![[hash-chain.svg]]
-
 ```python
 def hashtable_chain(seq):
     table = init_table(len(seq))
@@ -158,8 +158,6 @@ Linear probing searches for the next empty slot.
 - If full, try the next index.
 - If at the end, wrap back to index `0`.
 - Stop after checking at most `len(table)` slots.
-
-![[hash-linear.svg]]
 
 Core wrap-around pattern:
 
