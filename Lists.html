@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lists</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link active" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Lists</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">A list is an ordered, mutable collection that allows duplicate values.</div>
+</aside>
+<h2 id="basics" tabindex="-1"><a class="header-anchor" href="#basics">Basics</a></h2>
+<ul>
+<li>Lists use square brackets: <code>[]</code></li>
+<li>Lists are mutable, so you can change their contents.</li>
+<li>Lists allow duplicate values.</li>
+<li>Empty lists are allowed: <code>[]</code></li>
+</ul>
+<h2 id="creating-lists" tabindex="-1"><a class="header-anchor" href="#creating-lists">Creating Lists</a></h2>
+<pre><code class="language-python">numbers = [1, 2, 3]
+empty = []
+</code></pre>
+<pre><code class="language-python">list(tup)      # converts a tuple to a list
+list(&quot;abc&quot;)    # ['a', 'b', 'c']
+list(range(5)) # [0, 1, 2, 3, 4]
+</code></pre>
+<h2 id="access-and-update" tabindex="-1"><a class="header-anchor" href="#access-and-update">Access and Update</a></h2>
+<pre><code class="language-python">lst = list(range(5))
+lst[4] = 5
+</code></pre>
+<p>This changes the item at index <code>4</code> to <code>5</code>.</p>
+<h2 id="common-operations" tabindex="-1"><a class="header-anchor" href="#common-operations">Common Operations</a></h2>
+<ul>
+<li><code>in</code> checks whether an item is in the list.</li>
+<li><code>not in</code> checks whether an item is not in the list.</li>
+<li><code>len(lst)</code> gives the number of elements.</li>
+<li><code>sum(lst)</code> adds the numerical elements in the list.</li>
+<li><code>max(lst)</code> gives the largest element.</li>
+<li><code>min(lst)</code> gives the smallest element.</li>
+</ul>
+<aside class="callout callout-note">
+<div class="callout-title"><span class="callout-icon">✎</span><span>note</span></div>
+<div class="callout-content"><code>max()</code> and <code>min()</code> work when the elements can be compared with each other. A mixed list of numbers and strings will cause an error.</div>
+</aside>
+<h2 id="useful-methods" tabindex="-1"><a class="header-anchor" href="#useful-methods">Useful Methods</a></h2>
+<pre><code class="language-python">lst = [3, 1, 4, 7, 3]
+</code></pre>
+<ul>
+<li><code>lst.index(3)</code> gives the first position of <code>3</code>, which is <code>0</code>.</li>
+<li><code>lst.index(5)</code> gives an error because <code>5</code> is not in the list.</li>
+<li><code>lst.count(3)</code> gives the number of times <code>3</code> appears, which is <code>2</code>.</li>
+<li><code>lst.reverse()</code> reverses the list in place.</li>
+<li><code>lst.copy()</code> makes a copy of the list.</li>
+</ul>
+<h2 id="copying-lists" tabindex="-1"><a class="header-anchor" href="#copying-lists">Copying Lists</a></h2>
+<pre><code class="language-python">copied = lst.copy()
+</code></pre>
+<p>Use <code>.copy()</code> when you want a new list instead of another variable pointing to the same list.</p>
+<h2 id="iteration" tabindex="-1"><a class="header-anchor" href="#iteration">Iteration</a></h2>
+<pre><code class="language-python">for i in range(len(lst)):
+    print(lst[i])
+</code></pre>
+<pre><code class="language-python">for ele in lst:
+    print(ele)
+</code></pre>
+<pre><code class="language-python">while lst:
+    lst.pop()
+</code></pre>
+<ul>
+<li><code>while lst:</code> runs while the list is not empty.</li>
+<li>This can be used as a self-destructing loop if you keep removing items.</li>
+</ul>
+<h2 id="adding-items" tabindex="-1"><a class="header-anchor" href="#adding-items">Adding Items</a></h2>
+<ul>
+<li><code>lst.append(value)</code> adds one item to the end and mutates the list.</li>
+<li><code>lst.extend(values)</code> adds each item from another iterable to the end.</li>
+<li><code>lst = lst + [value]</code> also adds an item, but creates a new list.</li>
+</ul>
+<pre><code class="language-python">lst.append(&quot;hi&quot;)     # adds &quot;hi&quot; as one item
+lst.extend(&quot;hi&quot;)     # adds &quot;h&quot;, &quot;i&quot;
+</code></pre>
+<ul>
+<li><code>.append()</code> adds the whole thing as one item.</li>
+<li><code>.extend()</code> goes through the item in its brackets.</li>
+</ul>
+<h2 id="removing-items" tabindex="-1"><a class="header-anchor" href="#removing-items">Removing Items</a></h2>
+<ul>
+<li><code>lst.pop()</code> removes and returns the last item by default.</li>
+<li><code>lst.pop(index)</code> removes and returns the item at that index.</li>
+</ul>
+<pre><code class="language-python">del lst[start:stop:step]
+</code></pre>
+<ul>
+<li><code>del lst[:]</code> clears the whole list.</li>
+<li><code>lst.clear()</code> also clears the whole list.</li>
+<li><code>del lst</code> deletes the variable itself.</li>
+</ul>
+<h2 id="sorting" tabindex="-1"><a class="header-anchor" href="#sorting">Sorting</a></h2>
+<ul>
+<li><code>sorted(lst)</code> returns a new sorted list.</li>
+<li><code>lst.sort()</code> sorts the same list in place.</li>
+</ul>
+<p>while lst:
+and
+while len(lst) &gt; 0:
+are the same, both keeps the loop running when the lst is not empty</p>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Tuple.html">Tuple</a></li>
+<li><a class="internal-link" href="Iteration.html">Iteration</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

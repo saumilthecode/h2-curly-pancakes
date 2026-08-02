@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Types of Errors and Test Cases</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link active" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Types of Errors and Test Cases</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Debugging finds bugs. Test cases check expected behaviour across meaningful input categories.</div>
+</aside>
+<h2 id="common-error-types" tabindex="-1"><a class="header-anchor" href="#common-error-types">Common Error Types</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing <code>return</code></td>
+<td>function produces <code>None</code> unintentionally</td>
+</tr>
+<tr>
+<td>Incompatible types</td>
+<td>operation between incompatible types</td>
+</tr>
+<tr>
+<td>Wrong argument count</td>
+<td>call does not match function signature</td>
+</tr>
+<tr>
+<td>Syntax error</td>
+<td>invalid Python grammar</td>
+</tr>
+<tr>
+<td>Arithmetic error</td>
+<td>e.g. division by zero</td>
+</tr>
+<tr>
+<td>Undeclared variable</td>
+<td>name used before assignment</td>
+</tr>
+<tr>
+<td>Infinite loop/recursion</td>
+<td>stop condition never reached</td>
+</tr>
+<tr>
+<td>Floating point imprecision</td>
+<td>binary float rounding issue</td>
+</tr>
+<tr>
+<td>Logic error</td>
+<td>code runs but answer is wrong</td>
+</tr>
+</tbody>
+</table>
+<h2 id="debugging-approach" tabindex="-1"><a class="header-anchor" href="#debugging-approach">Debugging Approach</a></h2>
+<ul>
+<li>Read the error message.</li>
+<li>Check variable values.</li>
+<li>Try smaller or different inputs.</li>
+<li>Add <code>print</code> statements to trace execution.</li>
+<li>Narrow the bug systematically.</li>
+</ul>
+<h2 id="test-case-categories" tabindex="-1"><a class="header-anchor" href="#test-case-categories">Test Case Categories</a></h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td>typical valid input</td>
+</tr>
+<tr>
+<td>Boundary / extreme</td>
+<td>valid edge of accepted range</td>
+</tr>
+<tr>
+<td>Abnormal</td>
+<td>invalid input that should be rejected</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>large data to test efficiency / response time</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example" tabindex="-1"><a class="header-anchor" href="#example">Example</a></h2>
+<p>For percentage calculation:</p>
+<ul>
+<li>normal: <code>20/80 -&gt; 25%</code></li>
+<li>boundary: <code>0/80 -&gt; 0%</code>, <code>60/60 -&gt; 100%</code></li>
+<li>abnormal: negative score or score greater than total should return error</li>
+</ul>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Conditionals.html">Conditionals</a></li>
+<li><a class="internal-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuple</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link active" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Tuple</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">A tuple is an ordered, immutable collection.</div>
+</aside>
+<h2 id="basics" tabindex="-1"><a class="header-anchor" href="#basics">Basics</a></h2>
+<ul>
+<li>Tuples are immutable, so their contents cannot be changed after creation.</li>
+<li>Tuples usually use round brackets: <code>()</code></li>
+<li>A single-item tuple needs a trailing comma: <code>(a,)</code></li>
+</ul>
+<pre><code class="language-python">tup = (1, 2, 3)
+single = (5,)
+</code></pre>
+<h2 id="box-and-pointer-view" tabindex="-1"><a class="header-anchor" href="#box-and-pointer-view">Box-and-Pointer View</a></h2>
+<pre><code class="language-python">x = (1, 2)
+y = (3, 4)
+z = (x, y)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td><code>(1, 2)</code></td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td><code>(3, 4)</code></td>
+</tr>
+<tr>
+<td><code>z</code></td>
+<td><code>((1, 2), (3, 4))</code></td>
+</tr>
+<tr>
+<td><code>z[0]</code></td>
+<td>same tuple value as <code>x</code></td>
+</tr>
+<tr>
+<td><code>z[1]</code></td>
+<td>same tuple value as <code>y</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>z</code> evaluates to <code>((1, 2), (3, 4))</code></li>
+<li><code>z[0]</code> is <code>(1, 2)</code> and <code>z[1]</code> is <code>(3, 4)</code></li>
+<li><code>z</code> stores references to the two tuple objects, not the variable names <code>x</code> and <code>y</code></li>
+</ul>
+<h2 id="reassigning-and-deleting" tabindex="-1"><a class="header-anchor" href="#reassigning-and-deleting">Reassigning and Deleting</a></h2>
+<pre><code class="language-python">tup = tup + (1, 2)
+
+# a new tuple is created
+</code></pre>
+<pre><code class="language-python">del tup
+</code></pre>
+<p>This deletes the whole tuple variable.</p>
+<h2 id="operations" tabindex="-1"><a class="header-anchor" href="#operations">Operations</a></h2>
+<pre><code class="language-python">tup * 3
+# repeats it three times
+</code></pre>
+<h2 id="membership" tabindex="-1"><a class="header-anchor" href="#membership">Membership</a></h2>
+<pre><code class="language-python">tup = (&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+
+&quot;b&quot; in tup  # True
+&quot;z&quot; in tup  # False
+</code></pre>
+<h2 id="iteration" tabindex="-1"><a class="header-anchor" href="#iteration">Iteration</a></h2>
+<pre><code class="language-python">for ele in tup:
+    print(ele)
+</code></pre>
+<pre><code class="language-python">for i in range(len(tup)):
+    print(tup[i])
+</code></pre>
+<h2 id="conversion-and-useful-functions" tabindex="-1"><a class="header-anchor" href="#conversion-and-useful-functions">Conversion and Useful Functions</a></h2>
+<pre><code class="language-python">tuple(&quot;abc&quot;)  # ('a', 'b', 'c')
+sorted(tup)   # returns a list
+max(tup)
+min(tup)
+</code></pre>
+<h2 id="identity-vs-equality" tabindex="-1"><a class="header-anchor" href="#identity-vs-equality">Identity vs Equality</a></h2>
+<ol>
+<li>Identity: <code>is</code><br>
+Checks whether two variables refer to the same object.</li>
+<li>Equality: <code>==</code><br>
+Checks whether two values are the same.</li>
+</ol>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Lists.html">Lists</a></li>
+<li><a class="internal-link" href="Iteration.html">Iteration</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

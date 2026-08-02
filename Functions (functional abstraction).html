@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Functions</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link active" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Functions</h1>
+      <aside class="callout callout-info">
+<div class="callout-title"><span class="callout-icon">i</span><span>Main Idea</span></div>
+<div class="callout-content">Break a big problem into smaller reusable functions.</div>
+</aside>
+<h2 id="function-template" tabindex="-1"><a class="header-anchor" href="#function-template">Function Template</a></h2>
+<pre><code class="language-python">def name(formal_parameters):
+    # body / logic
+    return value
+</code></pre>
+<h2 id="parts-of-a-function" tabindex="-1"><a class="header-anchor" href="#parts-of-a-function">Parts of a Function</a></h2>
+<ul>
+<li><code>name</code> is the name of the function.</li>
+<li><code>formal_parameters</code> are the inputs listed in the function definition.</li>
+<li>The body is the actual logic.</li>
+</ul>
+<h2 id="return-and-type-hints" tabindex="-1"><a class="header-anchor" href="#return-and-type-hints">Return and Type Hints</a></h2>
+<pre><code class="language-python">def add(x: int, y: int) -&gt; int:
+    return x + y
+</code></pre>
+<ul>
+<li><code>return</code> sends a value back to the code that called the function. It is not the same as <code>print</code>.</li>
+<li>Type hints such as <code>x: int</code> and <code>-&gt; int</code> help readability, but Python does not enforce them by default.</li>
+</ul>
+<h2 id="scope" tabindex="-1"><a class="header-anchor" href="#scope">Scope</a></h2>
+<aside class="callout callout-note">
+<div class="callout-title"><span class="callout-icon">✎</span><span>Scope Rule</span></div>
+<div class="callout-content">Local variables only exist inside the function where they are created.</div>
+</aside>
+<ul>
+<li>Global scope cannot use local variables from inside a function.</li>
+<li>Local scope can access global variables, unless it is trying to reassign them.</li>
+<li>One local scope cannot access another function's local variables.</li>
+<li>You can use the same variable name in different scopes.</li>
+</ul>
+<h2 id="built-in-immutable-values" tabindex="-1"><a class="header-anchor" href="#built-in-immutable-values">Built-in Immutable Values</a></h2>
+<p>Built-in data types include <code>int</code>, <code>float</code>, <code>bool</code>, and <code>str</code>.
+Values like numbers and strings are immutable. Variables are names that can be reassigned to different values.</p>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="basic%20python.html">basic python</a></li>
+<li><a class="internal-link" href="Conditionals.html">Conditionals</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

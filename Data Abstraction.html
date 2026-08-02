@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Abstraction</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link active" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Data Abstraction</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Data abstraction hides how data is stored and exposes only the operations needed to use it.</div>
+</aside>
+<h2 id="abstraction" tabindex="-1"><a class="header-anchor" href="#abstraction">Abstraction</a></h2>
+<p>Functional abstraction hides how a function works.</p>
+<pre><code class="language-python">result = function(input)
+</code></pre>
+<ul>
+<li>You only need to know what the function does.</li>
+<li>You do not need to know the implementation inside the function.</li>
+</ul>
+<p>Data abstraction hides how data is represented.</p>
+<ul>
+<li>You only need to know what data you are dealing with.</li>
+<li>You interact with the data through provided functions.</li>
+<li>The internal storage can change without changing the code that uses the ADT.</li>
+</ul>
+<h2 id="abstract-data-type" tabindex="-1"><a class="header-anchor" href="#abstract-data-type">Abstract Data Type</a></h2>
+<p>An Abstract Data Type (ADT) defines:</p>
+<ul>
+<li>the data being represented</li>
+<li>the operations allowed on that data</li>
+</ul>
+<p>It does not define:</p>
+<ul>
+<li>exactly how the data is stored</li>
+<li>exactly how each operation is implemented</li>
+</ul>
+<h2 id="adt-function-types" tabindex="-1"><a class="header-anchor" href="#adt-function-types">ADT Function Types</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constructor</td>
+<td>creates a new ADT value</td>
+</tr>
+<tr>
+<td>Accessor / Getter</td>
+<td>retrieves data from the ADT</td>
+</tr>
+<tr>
+<td>Modifier / Setter</td>
+<td>changes data in the ADT</td>
+</tr>
+<tr>
+<td>Utility</td>
+<td>performs useful operations using the ADT</td>
+</tr>
+<tr>
+<td>Predicate</td>
+<td>returns <code>True</code> or <code>False</code> about the ADT</td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-adts" tabindex="-1"><a class="header-anchor" href="#common-adts">Common ADTs</a></h2>
+<table>
+<thead>
+<tr>
+<th>ADT</th>
+<th>Main idea</th>
+<th>Order rule</th>
+<th>Main operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="internal-link" href="Stack.html">Stack</a></td>
+<td>add/remove from the top</td>
+<td>LIFO</td>
+<td><code>push</code>, <code>pop</code>, <code>peek</code></td>
+</tr>
+<tr>
+<td><a class="internal-link" href="Queue.html">Queue</a></td>
+<td>add at tail, remove from head</td>
+<td>FIFO</td>
+<td><code>enqueue</code>, <code>dequeue</code>, <code>front</code></td>
+</tr>
+<tr>
+<td><a class="internal-link" href="Hashing.html">Hashing</a></td>
+<td>map data to an index/value</td>
+<td>direct lookup</td>
+<td><code>hash</code>, <code>search</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="student-record-adt" tabindex="-1"><a class="header-anchor" href="#student-record-adt">Student Record ADT</a></h2>
+<p>Data stored:</p>
+<ul>
+<li>name</li>
+<li>NRIC</li>
+<li>class</li>
+<li>address</li>
+</ul>
+<p>Constructor:</p>
+<pre><code class="language-python">make_record(name, id, class_name, address)
+</code></pre>
+<p>Accessors:</p>
+<pre><code class="language-python">get_name(student)
+get_class(student)
+get_address(student)
+</code></pre>
+<p>Modifiers:</p>
+<pre><code class="language-python">set_class(student, new_class)
+set_address(student, new_address)
+</code></pre>
+<p>The ADT may choose not to provide access to sensitive data such as NRIC.</p>
+<p>Same ADT, different internal representation:</p>
+<pre><code class="language-python">def make_record(name, nric, class_name, address):
+    return [name, nric, class_name, address]
+
+def get_name(student):
+    return student[0]
+</code></pre>
+<pre><code class="language-python">def make_record(name, nric, class_name, address):
+    student = {}
+    student[&quot;name&quot;] = name
+    student[&quot;nric&quot;] = nric
+    student[&quot;class&quot;] = class_name
+    student[&quot;address&quot;] = address
+    return student
+
+def get_name(student):
+    return student[&quot;name&quot;]
+</code></pre>
+<p>Code using <code>get_name(student)</code> does not need to know whether the record is stored as a list or dictionary.</p>
+<h2 id="position-adt" tabindex="-1"><a class="header-anchor" href="#position-adt">Position ADT</a></h2>
+<p>A position ADT represents the coordinates of a point.</p>
+<p>Constructor:</p>
+<pre><code class="language-python">make_point(xcoord, ycoord)
+</code></pre>
+<p>Accessors:</p>
+<pre><code class="language-python">get_x(point)
+get_y(point)
+</code></pre>
+<p>Utility functions:</p>
+<pre><code class="language-python">midpoint(point1, point2)
+gradient(point1, point2)
+distance(point1, point2)
+equation(point1, point2)
+display(point)
+</code></pre>
+<p>Common formulas:</p>
+<pre><code class="language-text">midpoint = ((x1 + x2) / 2, (y1 + y2) / 2)
+gradient = (y2 - y1) / (x2 - x1)
+distance = sqrt((x2 - x1)^2 + (y2 - y1)^2)
+y = mx + c
+</code></pre>
+<p>Example implementation:</p>
+<pre><code class="language-python">def make_point(xcoord, ycoord):
+    return (xcoord, ycoord)
+
+def get_x(point):
+    return point[0]
+
+def get_y(point):
+    return point[1]
+
+def midpoint(point1, point2):
+    return ((get_x(point1) + get_x(point2)) / 2,
+            (get_y(point1) + get_y(point2)) / 2)
+
+def gradient(point1, point2):
+    rise = get_y(point2) - get_y(point1)
+    run = get_x(point2) - get_x(point1)
+    return rise / run
+
+def distance(point1, point2):
+    rise = get_y(point2) - get_y(point1)
+    run = get_x(point2) - get_x(point1)
+    return (rise ** 2 + run ** 2) ** 0.5
+</code></pre>
+<h2 id="rational-number-adt" tabindex="-1"><a class="header-anchor" href="#rational-number-adt">Rational Number ADT</a></h2>
+<p>A rational number ADT represents a fraction with:</p>
+<ul>
+<li>integer numerator</li>
+<li>non-zero integer denominator</li>
+</ul>
+<p>Constructor:</p>
+<pre><code class="language-python">make_rat(numer, denom)
+</code></pre>
+<p>Accessors:</p>
+<pre><code class="language-python">get_numer(rat)
+get_denom(rat)
+</code></pre>
+<p>Utility functions:</p>
+<pre><code class="language-python">add(rat1, rat2)
+sub(rat1, rat2)
+mul(rat1, rat2)
+div(rat1, rat2)
+print_rat(rat)
+</code></pre>
+<p>Arithmetic:</p>
+<pre><code class="language-text">n1/d1 + n2/d2 = (n1*d2 + n2*d1) / (d1*d2)
+n1/d1 - n2/d2 = (n1*d2 - n2*d1) / (d1*d2)
+n1/d1 * n2/d2 = (n1*n2) / (d1*d2)
+n1/d1 / n2/d2 = (n1*d2) / (d1*n2)
+</code></pre>
+<p>Predicates:</p>
+<pre><code class="language-python">is_equal(rat1, rat2)
+is_whole(rat)
+</code></pre>
+<pre><code class="language-text">n1/d1 == n2/d2 when n1*d2 == n2*d1
+n1/d1 is whole when n1 % d1 == 0
+</code></pre>
+<p>Example implementation:</p>
+<pre><code class="language-python">def make_rat(numer, denom):
+    return (numer, denom)
+
+def get_numer(rat):
+    return rat[0]
+
+def get_denom(rat):
+    return rat[1]
+
+def add(rat1, rat2):
+    numer = get_numer(rat1) * get_denom(rat2) + get_numer(rat2) * get_denom(rat1)
+    denom = get_denom(rat1) * get_denom(rat2)
+    return make_rat(numer, denom)
+
+def is_equal(rat1, rat2):
+    return get_numer(rat1) * get_denom(rat2) == get_numer(rat2) * get_denom(rat1)
+
+def is_whole(rat):
+    return get_numer(rat) % get_denom(rat) == 0
+</code></pre>
+<p>To automatically simplify fractions:</p>
+<pre><code class="language-python">from math import gcd
+
+def make_rat(n, d):
+    divisor = gcd(n, d)
+    return (n // divisor, d // divisor)
+</code></pre>
+<h2 id="group-adt-practice" tabindex="-1"><a class="header-anchor" href="#group-adt-practice">Group ADT Practice</a></h2>
+<pre><code class="language-python">def make_student(name, gender, score):
+    return (name, gender, score)
+
+def get_name(student):
+    return student[0]
+
+def get_gender(student):
+    return student[1]
+
+def get_score(student):
+    return student[2]
+
+def size(group):
+    return len(group)
+</code></pre>
+<p>Average score:</p>
+<pre><code class="language-python">def average_score(group):
+    total_score = 0
+
+    for student in group:
+        total_score += get_score(student)
+
+    return round(total_score / size(group), 2)
+</code></pre>
+<p>Filter names by gender:</p>
+<pre><code class="language-python">def create_list(group, gender):
+    result = ()
+
+    for student in group:
+        if get_gender(student) == gender:
+            result += (get_name(student),)
+
+    return result
+</code></pre>
+<h2 id="reading-tabulated-data" tabindex="-1"><a class="header-anchor" href="#reading-tabulated-data">Reading Tabulated Data</a></h2>
+<p>CSV and TXT files are common ways to store tabulated data.</p>
+<pre><code class="language-python">file = open(&quot;data.csv&quot;)
+lines = file.readlines()
+
+for line in lines[1:]:
+    line = line.strip()
+    line = line.split(&quot;,&quot;)
+    name, gender, score = line
+    print(name, score)
+
+file.close()
+</code></pre>
+<ul>
+<li><code>lines[1:]</code> skips the header.</li>
+<li><code>.strip()</code> removes the newline.</li>
+<li><code>.split(&quot;,&quot;)</code> separates comma-separated fields.</li>
+</ul>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Tuple.html">Tuple</a></li>
+<li><a class="internal-link" href="Stack.html">Stack</a></li>
+<li><a class="internal-link" href="Queue.html">Queue</a></li>
+<li><a class="internal-link" href="Hashing.html">Hashing</a></li>
+<li><a class="internal-link" href="Functions%20(functional%20abstraction).html">Functions (functional abstraction)</a></li>
+<li><a class="internal-link" href="File%20Handling.html">File Handling</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

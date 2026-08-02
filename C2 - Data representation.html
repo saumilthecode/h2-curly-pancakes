@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C2 - Data representation</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link active" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>C2 - Data representation</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Data representation = how the same value can be written using bits, binary, denary, hexadecimal, and character codes.</div>
+</aside>
+<h2 id="bits-and-values" tabindex="-1"><a class="header-anchor" href="#bits-and-values">Bits and Values</a></h2>
+<ul>
+<li>Bit: one binary digit, <code>0</code> or <code>1</code></li>
+<li>Byte: 8 bits</li>
+<li><code>n</code> bits can represent <code>2 ** n</code> different patterns</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Bits</th>
+<th>Number of patterns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td><code>16</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>256</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>65,536</code></td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout-tip">
+<div class="callout-title"><span class="callout-icon">!</span><span>tip</span></div>
+<div class="callout-content">More bits means more unique patterns. It does not automatically mean the values are signed unless the question says so.</div>
+</aside>
+<p>Bit place value picture:</p>
+<pre><code class="language-text">8-bit pattern:  1    1    1    1    0    1    1    0
+Place value:   128   64   32   16    8    4    2    1
+Contribution:  128 + 64 + 32 + 16 + 0  + 4  + 2  + 0 = 246
+</code></pre>
+<details>
+<summary>Worked bit view: `246` as one byte</summary>
+<table>
+  <tbody>
+    <tr><th>Bit</th><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><th>Place value</th><td>128</td><td>64</td><td>32</td><td>16</td><td>8</td><td>4</td><td>2</td><td>1</td></tr>
+    <tr><th>Contribution</th><td>128</td><td>64</td><td>32</td><td>16</td><td>0</td><td>4</td><td>2</td><td>0</td></tr>
+  </tbody>
+</table>
+<p><code>128 + 64 + 32 + 16 + 4 + 2 = 246</code></p>
+</details>
+<h2 id="number-bases" tabindex="-1"><a class="header-anchor" href="#number-bases">Number Bases</a></h2>
+<p>Base = how many different digit symbols a place can use before it carries to the next place.</p>
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th>Name</th>
+<th>Digits</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>binary</td>
+<td><code>0</code>, <code>1</code></td>
+<td><code>1011</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>decimal / denary</td>
+<td><code>0</code> to <code>9</code></td>
+<td><code>255</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td>hexadecimal</td>
+<td><code>0</code> to <code>9</code>, <code>A</code> to <code>F</code></td>
+<td><code>FF</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="base-cheat-table" tabindex="-1"><a class="header-anchor" href="#base-cheat-table">Base Cheat Table</a></h2>
+<p>Every number base follows the same place-value rule. The rightmost place is worth <code>1</code>, then each step left multiplies by the base.</p>
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th>Name</th>
+<th>Digits allowed</th>
+<th>Place values from right to left</th>
+<th>Example meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2</code></td>
+<td>binary</td>
+<td><code>0</code>, <code>1</code></td>
+<td><code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, ...</td>
+<td><code>1011</code> = <code>1*8 + 0*4 + 1*2 + 1*1</code> = <code>11</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>ternary</td>
+<td><code>0</code>, <code>1</code>, <code>2</code></td>
+<td><code>1</code>, <code>3</code>, <code>9</code>, <code>27</code>, ...</td>
+<td><code>102</code> = <code>1*9 + 0*3 + 2*1</code> = <code>11</code></td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td>octal</td>
+<td><code>0</code> to <code>7</code></td>
+<td><code>1</code>, <code>8</code>, <code>64</code>, <code>512</code>, ...</td>
+<td><code>13</code> = <code>1*8 + 3*1</code> = <code>11</code></td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td>denary / decimal</td>
+<td><code>0</code> to <code>9</code></td>
+<td><code>1</code>, <code>10</code>, <code>100</code>, <code>1000</code>, ...</td>
+<td><code>246</code> = <code>2*100 + 4*10 + 6*1</code></td>
+</tr>
+<tr>
+<td><code>16</code></td>
+<td>hexadecimal</td>
+<td><code>0</code> to <code>9</code>, <code>A</code> to <code>F</code></td>
+<td><code>1</code>, <code>16</code>, <code>256</code>, <code>4096</code>, ...</td>
+<td><code>F6</code> = <code>15*16 + 6*1</code> = <code>246</code></td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>base <code>n</code></td>
+<td><code>0</code> to <code>n-1</code></td>
+<td><code>1</code>, <code>n</code>, <code>n^2</code>, <code>n^3</code>, ...</td>
+<td>digits are multiplied by powers of <code>n</code></td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout-important">
+<div class="callout-title"><span class="callout-icon">!</span><span>important</span></div>
+<div class="callout-content">2027 H2 Computing focuses on binary, denary/decimal, and hexadecimal. Other bases just help show the pattern.</div>
+</aside>
+<h2 id="carry-rule" tabindex="-1"><a class="header-anchor" href="#carry-rule">Carry Rule</a></h2>
+<p>Carry means: when a column runs out of allowed digits, reset that column to <code>0</code> and add <code>1</code> to the column on the left.</p>
+<pre><code class="language-text">current place is full -&gt; write 0 in this place -&gt; carry 1 to the next place left
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th>Digits allowed in one place</th>
+<th>Biggest single digit</th>
+<th>Next value after that</th>
+<th>What written <code>10</code> means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base 2</td>
+<td><code>0</code>, <code>1</code></td>
+<td><code>1</code></td>
+<td><code>10</code></td>
+<td>one <code>2</code> and zero <code>1</code>s</td>
+</tr>
+<tr>
+<td>base 10</td>
+<td><code>0</code> to <code>9</code></td>
+<td><code>9</code></td>
+<td><code>10</code></td>
+<td>one <code>10</code> and zero <code>1</code>s</td>
+</tr>
+<tr>
+<td>base 16</td>
+<td><code>0</code> to <code>F</code></td>
+<td><code>F</code></td>
+<td><code>10</code></td>
+<td>one <code>16</code> and zero <code>1</code>s</td>
+</tr>
+</tbody>
+</table>
+<p>So <code>10</code> does not always mean ten. It means <strong>one group of the base and zero ones</strong>.</p>
+<p>Counting shows the carry:</p>
+<pre><code class="language-text">base 10:  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...
+base 2:   0, 1, 10, 11, 100, 101, 110, 111, 1000, ...
+base 16:  0, 1, 2, 3, ..., 8, 9, A, B, C, D, E, F, 10, 11, ...
+</code></pre>
+<p>Addition examples:</p>
+<pre><code class="language-text">base 10:
+  9 + 1 = 10
+  because after 9, the ones place resets to 0 and carries 1 ten.
+</code></pre>
+<pre><code class="language-text">base 2:
+  1 + 1 = 10
+  because after 1, the ones place resets to 0 and carries 1 two.
+
+  10 base 2 = 2 base 10
+</code></pre>
+<pre><code class="language-text">base 16:
+  F + 1 = 10
+  because after F, the ones place resets to 0 and carries 1 sixteen.
+
+  10 base 16 = 16 base 10
+</code></pre>
+<p>Carry can chain through several full places:</p>
+<pre><code class="language-text">binary:
+  111 + 1 = 1000
+  7   + 1 = 8
+
+hexadecimal:
+  FF  + 1 = 100
+  255 + 1 = 256
+</code></pre>
+<h2 id="decimal-vs-everything-else" tabindex="-1"><a class="header-anchor" href="#decimal-vs-everything-else">Decimal vs Everything Else</a></h2>
+<p>In this topic, decimal usually means <strong>base 10</strong>. Denary also means <strong>base 10</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Meaning here</th>
+<th>Example</th>
+<th>What the places mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>decimal / denary</td>
+<td>base 10 number</td>
+<td><code>246</code></td>
+<td><code>2 hundreds + 4 tens + 6 ones</code></td>
+</tr>
+<tr>
+<td>binary</td>
+<td>base 2 number</td>
+<td><code>11110110</code></td>
+<td><code>128 + 64 + 32 + 16 + 4 + 2</code></td>
+</tr>
+<tr>
+<td>hexadecimal</td>
+<td>base 16 number</td>
+<td><code>F6</code></td>
+<td><code>15 sixteens + 6 ones</code></td>
+</tr>
+</tbody>
+</table>
+<p>These can all mean the same value:</p>
+<table>
+<thead>
+<tr>
+<th>Same value</th>
+<th>Written as</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>decimal / denary</td>
+<td><code>246</code></td>
+<td><code>2*100 + 4*10 + 6*1</code></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><code>11110110</code></td>
+<td><code>1*128 + 1*64 + 1*32 + 1*16 + 0*8 + 1*4 + 1*2 + 0*1</code></td>
+</tr>
+<tr>
+<td>hexadecimal</td>
+<td><code>F6</code></td>
+<td><code>15*16 + 6*1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The difference is not the value. The difference is the <strong>number system used to write it</strong>.</p>
+<pre><code class="language-text">246 base 10 = 11110110 base 2 = F6 base 16
+</code></pre>
+<aside class="callout callout-warning">
+<div class="callout-title"><span class="callout-icon">!</span><span>warning</span></div>
+<div class="callout-content">A &quot;decimal number&quot; can also mean a number with a decimal point, like <code>3.14</code>.
+For C2 conversions, decimal/denary usually means base 10 positive integers, like <code>246</code>, unless the question says otherwise.</div>
+</aside>
+<h2 id="binary-from-scratch" tabindex="-1"><a class="header-anchor" href="#binary-from-scratch">Binary From Scratch</a></h2>
+<p>Binary is <strong>base 2</strong>. That means each place can only hold two digits:</p>
+<ul>
+<li><code>0</code> means this place value is not used</li>
+<li><code>1</code> means this place value is used</li>
+</ul>
+<p>Binary place values double as you move left.</p>
+<pre><code class="language-text">Binary places:  ...   128    64    32    16     8     4     2     1
+</code></pre>
+<p>Think of binary as switches:</p>
+<pre><code class="language-text">binary:          1      1     0     1
+place value:     8      4     2     1
+switch meaning:  on     on    off   on
+
+value = 8 + 4 + 0 + 1 = 13
+</code></pre>
+<p>So:</p>
+<pre><code class="language-text">1101 base 2 = 13 base 10
+</code></pre>
+<p>Counting in binary:</p>
+<table>
+<thead>
+<tr>
+<th>Denary</th>
+<th>Binary</th>
+<th>4-bit binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0000</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>0001</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>10</code></td>
+<td><code>0010</code></td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>11</code></td>
+<td><code>0011</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>100</code></td>
+<td><code>0100</code></td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td><code>101</code></td>
+<td><code>0101</code></td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td><code>110</code></td>
+<td><code>0110</code></td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td><code>111</code></td>
+<td><code>0111</code></td>
+</tr>
+<tr>
+<td><code>8</code></td>
+<td><code>1000</code></td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td><code>1001</code></td>
+<td><code>1001</code></td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td><code>1010</code></td>
+<td><code>1010</code></td>
+</tr>
+<tr>
+<td><code>11</code></td>
+<td><code>1011</code></td>
+<td><code>1011</code></td>
+</tr>
+<tr>
+<td><code>12</code></td>
+<td><code>1100</code></td>
+<td><code>1100</code></td>
+</tr>
+<tr>
+<td><code>13</code></td>
+<td><code>1101</code></td>
+<td><code>1101</code></td>
+</tr>
+<tr>
+<td><code>14</code></td>
+<td><code>1110</code></td>
+<td><code>1110</code></td>
+</tr>
+<tr>
+<td><code>15</code></td>
+<td><code>1111</code></td>
+<td><code>1111</code></td>
+</tr>
+</tbody>
+</table>
+<p>Why <code>10</code> in binary means two:</p>
+<pre><code class="language-text">10 base 2
+= 1*2^1 + 0*2^0
+= 1*2 + 0*1
+= 2
+</code></pre>
+<p>How to write a denary number in binary:</p>
+<ol>
+<li>Find the biggest power of 2 that fits.</li>
+<li>Put <code>1</code> under it.</li>
+<li>Subtract it.</li>
+<li>Move right through the smaller powers of 2.</li>
+<li>Put <code>1</code> if you need that value, otherwise put <code>0</code>.</li>
+</ol>
+<p>Example: write denary <code>13</code> in binary.</p>
+<pre><code class="language-text">Place values:  8   4   2   1
+Need 13:       yes yes no  yes
+Bits:          1   1   0   1
+
+13 base 10 = 1101 base 2
+</code></pre>
+<aside class="callout callout-tip">
+<div class="callout-title"><span class="callout-icon">!</span><span>tip</span></div>
+<div class="callout-content">Binary is not a different value. It is a different way to write the same value using only <code>0</code> and <code>1</code>.</div>
+</aside>
+<p>Hex digit values:</p>
+<table>
+<thead>
+<tr>
+<th>Hex</th>
+<th>Decimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td><code>11</code></td>
+</tr>
+<tr>
+<td><code>C</code></td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td><code>13</code></td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td><code>14</code></td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td><code>15</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="representing-the-same-value" tabindex="-1"><a class="header-anchor" href="#representing-the-same-value">Representing the Same Value</a></h2>
+<p>Denary, binary, and hexadecimal can represent the same number. Only the base and place values change.</p>
+<pre><code class="language-text">Same value:
+
+denary       246
+binary       11110110
+hexadecimal  F6
+</code></pre>
+<p>Base means &quot;what each place is worth as you move left&quot;.</p>
+<pre><code class="language-text">Denary / base 10:
+
+digits:       2       4       6
+places:     10^2    10^1    10^0
+values:      100      10       1
+meaning:   2*100 + 4*10 + 6*1 = 246
+</code></pre>
+<pre><code class="language-text">Binary / base 2:
+
+digits:       1     1     1     1     0     1     1     0
+places:     2^7   2^6   2^5   2^4   2^3   2^2   2^1   2^0
+values:     128    64    32    16     8     4     2     1
+meaning:    128 + 64 + 32 + 16 + 0 + 4 + 2 + 0 = 246
+</code></pre>
+<pre><code class="language-text">Hexadecimal / base 16:
+
+digits:       F       6
+places:     16^1    16^0
+values:      16       1
+meaning:   15*16 + 6*1 = 246
+</code></pre>
+<p>The pattern is always the same:</p>
+<pre><code class="language-text">moving left multiplies the place value by the base
+
+base 10:  ... 1000   100    10    1
+base 2:   ...    8     4     2    1
+base 16:  ... 4096   256    16    1
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Same value: <code>246</code></th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>denary <code>246</code></td>
+<td><code>2*100 + 4*10 + 6</code></td>
+</tr>
+<tr>
+<td>binary <code>11110110</code></td>
+<td><code>128 + 64 + 32 + 16 + 4 + 2</code></td>
+</tr>
+<tr>
+<td>hex <code>F6</code></td>
+<td><code>15*16 + 6</code></td>
+</tr>
+</tbody>
+</table>
+<p>Conversion direction map:</p>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary/hex</td>
+<td>decimal</td>
+<td>place values</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>binary/hex</td>
+<td>repeated division</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>hex</td>
+<td>group bits into 4s</td>
+</tr>
+<tr>
+<td>hex</td>
+<td>binary</td>
+<td>expand each hex digit to 4 bits</td>
+</tr>
+</tbody>
+</table>
+<h2 id="base-to-decimal" tabindex="-1"><a class="header-anchor" href="#base-to-decimal">Base to Decimal</a></h2>
+<p>Multiply each digit by its place value.</p>
+<p>Think of each digit sitting above a place value:</p>
+<pre><code class="language-text">Binary number:     1      0      1      1
+Place value:      2^3    2^2    2^1    2^0
+Decimal value:     8      4      2      1
+Contribution:      8      0      2      1
+
+Total = 8 + 0 + 2 + 1 = 11
+</code></pre>
+<pre><code class="language-text">1011 base 2
+= 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0
+= 8 + 0 + 2 + 1
+= 11
+</code></pre>
+<pre><code class="language-text">2F base 16
+= 2*16^1 + 15*16^0
+= 32 + 15
+= 47
+</code></pre>
+<h2 id="decimal-to-another-base" tabindex="-1"><a class="header-anchor" href="#decimal-to-another-base">Decimal to Another Base</a></h2>
+<p>Repeated division method:</p>
+<ol>
+<li>Divide by the target base.</li>
+<li>Record the remainder.</li>
+<li>Continue with the quotient.</li>
+<li>Read remainders from bottom to top.</li>
+</ol>
+<p>Process picture:</p>
+<pre><code class="language-text">start number -&gt; divide by target base -&gt; record remainder
+use quotient as next number -&gt; repeat until quotient is 0
+answer = remainders read from bottom to top
+</code></pre>
+<p>Example: convert decimal <code>246</code> to binary.</p>
+<table>
+<thead>
+<tr>
+<th>Division</th>
+<th>Quotient</th>
+<th>Remainder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>246 / 2</code></td>
+<td><code>123</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>123 / 2</code></td>
+<td><code>61</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>61 / 2</code></td>
+<td><code>30</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>30 / 2</code></td>
+<td><code>15</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>15 / 2</code></td>
+<td><code>7</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>7 / 2</code></td>
+<td><code>3</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>3 / 2</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>1 / 2</code></td>
+<td><code>0</code></td>
+<td><code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The confusing part is the reading direction:</p>
+<pre><code class="language-text">Remainders collected: 0  1  1  0  1  1  1  1
+                       |  |  |  |  |  |  |  |
+Answer reads:         1  1  1  1  0  1  1  0
+</code></pre>
+<pre><code class="language-text">246 base 10 = 11110110 base 2
+</code></pre>
+<p>Example: convert decimal <code>51966</code> to hexadecimal.</p>
+<table>
+<thead>
+<tr>
+<th>Division</th>
+<th>Quotient</th>
+<th>Remainder</th>
+<th>Hex digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>51966 / 16</code></td>
+<td><code>3247</code></td>
+<td><code>14</code></td>
+<td><code>E</code></td>
+</tr>
+<tr>
+<td><code>3247 / 16</code></td>
+<td><code>202</code></td>
+<td><code>15</code></td>
+<td><code>F</code></td>
+</tr>
+<tr>
+<td><code>202 / 16</code></td>
+<td><code>12</code></td>
+<td><code>10</code></td>
+<td><code>A</code></td>
+</tr>
+<tr>
+<td><code>12 / 16</code></td>
+<td><code>0</code></td>
+<td><code>12</code></td>
+<td><code>C</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-text">51966 base 10 = CAFE base 16
+</code></pre>
+<p>Same idea visually:</p>
+<pre><code class="language-text">Remainders:  E   F   A   C
+             |   |   |   |
+Read this:   C   A   F   E
+</code></pre>
+<h2 id="binary-and-hex-shortcut" tabindex="-1"><a class="header-anchor" href="#binary-and-hex-shortcut">Binary and Hex Shortcut</a></h2>
+<p>One hex digit is exactly 4 bits.</p>
+<table>
+<thead>
+<tr>
+<th>Binary</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0000</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>0001</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>1010</code></td>
+<td><code>A</code></td>
+</tr>
+<tr>
+<td><code>1111</code></td>
+<td><code>F</code></td>
+</tr>
+</tbody>
+</table>
+<p>Binary to hex:</p>
+<pre><code class="language-text">11110110
+= 1111 0110
+= F6
+</code></pre>
+<p>Visual:</p>
+<pre><code class="language-text">Binary:  1111   0110
+          |      |
+Hex:      F      6
+</code></pre>
+<p>Hex to binary:</p>
+<pre><code class="language-text">2F
+= 0010 1111
+</code></pre>
+<p>Visual:</p>
+<pre><code class="language-text">Hex:      2      F
+          |      |
+Binary:  0010   1111
+</code></pre>
+<p>Drop leading zeros only when they are not needed for a fixed-width representation.</p>
+<h2 id="uses" tabindex="-1"><a class="header-anchor" href="#uses">Uses</a></h2>
+<p>Binary is used because digital circuits naturally represent two stable states:</p>
+<ul>
+<li>off/on</li>
+<li>low/high voltage</li>
+<li>false/true</li>
+</ul>
+<p>Hexadecimal is used because it is a shorter way to write binary:</p>
+<ul>
+<li>memory addresses</li>
+<li>machine code</li>
+<li>colour codes, for example <code>#FF0000</code></li>
+<li>byte values, for example <code>0x7F</code></li>
+</ul>
+<p>Why hex is shorter:</p>
+<pre><code class="language-text">Binary byte:  1111 0110
+Hex byte:       F    6
+
+8 binary digits become 2 hex digits.
+</code></pre>
+<h2 id="coding-base-conversions" tabindex="-1"><a class="header-anchor" href="#coding-base-conversions">Coding Base Conversions</a></h2>
+<p>For manual conversion questions, avoid <code>bin()</code>, <code>hex()</code>, and <code>int(value, base)</code> unless the question explicitly allows them.</p>
+<p>Code pattern map:</p>
+<table>
+<thead>
+<tr>
+<th>Conversion</th>
+<th>Code idea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary/hex to decimal</td>
+<td>loop over digits and add <code>digit * base ** power</code></td>
+</tr>
+<tr>
+<td>decimal to binary/hex</td>
+<td>repeatedly divide and prepend the remainder</td>
+</tr>
+</tbody>
+</table>
+<p>Binary to decimal:</p>
+<pre><code class="language-python">def binary_to_decimal(bits):
+    total = 0
+
+    for i in range(len(bits)):
+        power = len(bits) - 1 - i
+        total += int(bits[i]) * 2 ** power
+
+    return total
+</code></pre>
+<p>Decimal to binary:</p>
+<pre><code class="language-python">def decimal_to_binary(num):
+    if num == 0:
+        return &quot;0&quot;
+
+    bits = &quot;&quot;
+
+    while num &gt; 0:
+        bits = str(num % 2) + bits
+        num = num // 2
+
+    return bits
+</code></pre>
+<p>Hexadecimal to decimal:</p>
+<pre><code class="language-python">def hex_to_decimal(hex_string):
+    digits = &quot;0123456789ABCDEF&quot;
+    total = 0
+
+    hex_string = hex_string.upper()
+
+    for i in range(len(hex_string)):
+        power = len(hex_string) - 1 - i
+        total += digits.index(hex_string[i]) * 16 ** power
+
+    return total
+</code></pre>
+<p>Decimal to hexadecimal:</p>
+<pre><code class="language-python">def decimal_to_hex(num):
+    digits = &quot;0123456789ABCDEF&quot;
+
+    if num == 0:
+        return &quot;0&quot;
+
+    result = &quot;&quot;
+
+    while num &gt; 0:
+        result = digits[num % 16] + result
+        num = num // 16
+
+    return result
+</code></pre>
+<p>Quick checks:</p>
+<pre><code class="language-python">print(binary_to_decimal(&quot;11110110&quot;))  # 246
+print(decimal_to_binary(246))         # 11110110
+print(hex_to_decimal(&quot;CAFE&quot;))         # 51966
+print(decimal_to_hex(51966))          # CAFE
+</code></pre>
+<h2 id="ascii" tabindex="-1"><a class="header-anchor" href="#ascii">ASCII</a></h2>
+<p>ASCII maps characters to integer codes.</p>
+<ul>
+<li>ASCII is a 7-bit character set.</li>
+<li><code>2 ** 7 = 128</code> possible codes.</li>
+<li>It is enough for basic English letters, digits, punctuation, and control codes.</li>
+<li>It is not enough for characters from many other languages.</li>
+</ul>
+<p>Character to code picture:</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>ASCII decimal</th>
+<th>Binary pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td><code>65</code></td>
+<td><code>01000001</code></td>
+</tr>
+</tbody>
+</table>
+<p>Common examples:</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Decimal code</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&quot;A&quot;</code></td>
+<td><code>65</code></td>
+<td><code>41</code></td>
+</tr>
+<tr>
+<td><code>&quot;a&quot;</code></td>
+<td><code>97</code></td>
+<td><code>61</code></td>
+</tr>
+<tr>
+<td><code>&quot;0&quot;</code></td>
+<td><code>48</code></td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>&quot;4&quot;</code></td>
+<td><code>52</code></td>
+<td><code>34</code></td>
+</tr>
+<tr>
+<td><code>&quot;$&quot;</code></td>
+<td><code>36</code></td>
+<td><code>24</code></td>
+</tr>
+</tbody>
+</table>
+<p>Python:</p>
+<pre><code class="language-python">ord(&quot;A&quot;)  # 65
+chr(65)   # &quot;A&quot;
+</code></pre>
+<p>Useful pattern:</p>
+<pre><code class="language-python">digit = &quot;7&quot;
+value = ord(digit) - ord(&quot;0&quot;)
+print(value)  # 7
+</code></pre>
+<h2 id="unicode" tabindex="-1"><a class="header-anchor" href="#unicode">Unicode</a></h2>
+<p>Unicode gives code points to characters from many languages and symbol sets.</p>
+<p>Why Unicode is needed:</p>
+<ul>
+<li>ASCII only has 128 codes.</li>
+<li>Different languages need far more characters.</li>
+<li>A shared standard avoids different systems using different numbers for the same character.</li>
+</ul>
+<p>ASCII vs Unicode picture:</p>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASCII</td>
+<td>128 codes: basic English letters, digits, punctuation, control codes</td>
+</tr>
+<tr>
+<td>Unicode</td>
+<td>many more code points: many languages, symbols, emoji</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Unicode escape</th>
+<th>Character / word</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arabic</td>
+<td><code>\u062d\u0628</code></td>
+<td>حب</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td><code>\u7231</code></td>
+<td>爱</td>
+</tr>
+<tr>
+<td>Greek</td>
+<td><code>\u03b1\u03b3\u03ac\u03c0\u03b7</code></td>
+<td>αγάπη</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td><code>\uc0ac\ub791</code></td>
+<td>사랑</td>
+</tr>
+<tr>
+<td>Russian</td>
+<td><code>\u043b\u044e\u0431\u043b\u044e</code></td>
+<td>люблю</td>
+</tr>
+</tbody>
+</table>
+<p>Python strings support Unicode:</p>
+<pre><code class="language-python">print(&quot;\uc0ac\ub791&quot;)  # 사랑
+</code></pre>
+<h2 id="common-mistakes" tabindex="-1"><a class="header-anchor" href="#common-mistakes">Common Mistakes</a></h2>
+<ul>
+<li>Reading division remainders from top to bottom instead of bottom to top.</li>
+<li>Forgetting that hex <code>A</code> to <code>F</code> represent decimal <code>10</code> to <code>15</code>.</li>
+<li>Dropping leading zeros when the question asks for a fixed number of bits.</li>
+<li>Using <code>int(value, base)</code> in a question that asks you to implement the conversion manually.</li>
+<li>Confusing ASCII with Unicode. ASCII is small; Unicode covers many languages.</li>
+</ul>
+<h2 id="exam-checklist" tabindex="-1"><a class="header-anchor" href="#exam-checklist">Exam Checklist</a></h2>
+<ul>
+<li>Can convert binary to decimal using place values.</li>
+<li>Can convert hexadecimal to decimal using place values.</li>
+<li>Can convert decimal to binary using repeated division.</li>
+<li>Can convert decimal to hexadecimal using repeated division.</li>
+<li>Can group binary into 4-bit chunks for hex conversion.</li>
+<li>Can explain why binary is used by computers.</li>
+<li>Can explain why hexadecimal is used as a compact form of binary.</li>
+<li>Can use <code>ord()</code> and <code>chr()</code> for ASCII character codes.</li>
+<li>Can explain why Unicode is needed and give examples from different languages.</li>
+</ul>
+<h2 id="optional-context" tabindex="-1"><a class="header-anchor" href="#optional-context">Optional Context</a></h2>
+<p>UTF-8 is a common way to store or transmit Unicode as bytes. It is useful background, but the 2027 H2 Computing data representation outcome names Unicode examples, not UTF-8 byte decoding.</p>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="basic%20python.html">basic python</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursion</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link active" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Recursion</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Recursion = solve a problem by solving a smaller version of the same problem.</div>
+</aside>
+<h2 id="must-have" tabindex="-1"><a class="header-anchor" href="#must-have">Must Have</a></h2>
+<ul>
+<li>base case</li>
+<li>recursive call</li>
+<li>movement toward the base case</li>
+<li>remember to <code>return</code></li>
+</ul>
+<h2 id="factorial-shape" tabindex="-1"><a class="header-anchor" href="#factorial-shape">Factorial Shape</a></h2>
+<pre><code class="language-python">def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+</code></pre>
+<h2 id="tracing" tabindex="-1"><a class="header-anchor" href="#tracing">Tracing</a></h2>
+<ul>
+<li>frame expansion</li>
+<li>trace tree diagram</li>
+<li>arrows down go first</li>
+<li>arrows up are returns</li>
+</ul>
+<img class="obsidian-embed-image" src="pictures/recursion.png" alt="pictures/recursion.png">
+<h2 id="debugging" tabindex="-1"><a class="header-anchor" href="#debugging">Debugging</a></h2>
+<p>If it never reaches the base case, it keeps recursing until maximum recursion depth.</p>
+<p>Add <code>print(n)</code> at the start to see whether the input is moving toward the base case.</p>
+<h2 id="checkpoint-practice-patterns" tabindex="-1"><a class="header-anchor" href="#checkpoint-practice-patterns">Checkpoint Practice Patterns</a></h2>
+<p>Power:</p>
+<pre><code class="language-python">def power(base, exp):
+    if exp == 0:
+        return 1
+    return base * power(base, exp - 1)
+</code></pre>
+<p>Reverse a string:</p>
+<pre><code class="language-python">def reverse_string(s):
+    if len(s) == 0:
+        return &quot;&quot;
+    return s[-1] + reverse_string(s[:-1])
+</code></pre>
+<p>Sum a list:</p>
+<pre><code class="language-python">def list_sum(arr):
+    if len(arr) == 0:
+        return 0
+    return arr[0] + list_sum(arr[1:])
+</code></pre>
+<p>Find maximum:</p>
+<pre><code class="language-python">def find_max(arr):
+    if len(arr) == 1:
+        return arr[0]
+
+    rest_max = find_max(arr[1:])
+    if arr[0] &gt; rest_max:
+        return arr[0]
+    return rest_max
+</code></pre>
+<p>Count students who passed:</p>
+<pre><code class="language-python">def count_passes(students, index):
+    if index == len(students):
+        return 0
+
+    if students[index][1] &gt;= 50:
+        return 1 + count_passes(students, index + 1)
+    return count_passes(students, index + 1)
+</code></pre>
+<p>Palindrome:</p>
+<pre><code class="language-python">def is_palindrome(s):
+    if len(s) &lt;= 1:
+        return True
+    if s[0] != s[-1]:
+        return False
+    return is_palindrome(s[1:-1])
+</code></pre>
+<p>Pattern:</p>
+<ul>
+<li>Base case handles the smallest input.</li>
+<li>Recursive call uses a smaller input.</li>
+<li>Combine the current item with the recursive answer.</li>
+</ul>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Functions%20(functional%20abstraction).html">Functions (functional abstraction)</a></li>
+<li><a class="internal-link" href="Iteration.html">Iteration</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

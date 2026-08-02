@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Generator</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link active" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Random Generator</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Python's <code>random</code> module generates pseudo-random values for simulations, games, and sampling.</div>
+</aside>
+<h2 id="pseudo-random-numbers" tabindex="-1"><a class="header-anchor" href="#pseudo-random-numbers">Pseudo-Random Numbers</a></h2>
+<p>Python random numbers are not truly random.</p>
+<ul>
+<li>They are generated using a deterministic formula.</li>
+<li>If the same seed is used, the same sequence is generated.</li>
+<li>If no seed is given, Python usually uses the current system time.</li>
+</ul>
+<pre><code class="language-python">from random import *
+
+seed(30)
+</code></pre>
+<h2 id="random-float" tabindex="-1"><a class="header-anchor" href="#random-float">Random Float</a></h2>
+<pre><code class="language-python">from random import *
+
+lst = []
+
+for i in range(10):
+    x = random()
+    lst.append(x)
+
+print(lst)
+</code></pre>
+<p><code>random()</code> gives a float from <code>0.0</code> up to but not including <code>1.0</code>.</p>
+<p>To generate a float from <code>0</code> to <code>5</code> rounded to 2 decimal places:</p>
+<pre><code class="language-python">x = round(random() * 5, 2)
+</code></pre>
+<h2 id="random-integer" tabindex="-1"><a class="header-anchor" href="#random-integer">Random Integer</a></h2>
+<pre><code class="language-python">from random import *
+
+x = randint(a, b)
+</code></pre>
+<p><code>randint(a, b)</code> includes both <code>a</code> and <code>b</code>.</p>
+<pre><code class="language-python">lst = []
+
+for i in range(10):
+    x = randint(1, 6)
+    lst.append(x)
+</code></pre>
+<h2 id="random-selection-from-a-list" tabindex="-1"><a class="header-anchor" href="#random-selection-from-a-list">Random Selection From a List</a></h2>
+<pre><code class="language-python">from random import *
+
+lst = [&quot;Adam&quot;, &quot;Bob&quot;, &quot;Charles&quot;, &quot;Daniel&quot;]
+
+single = choice(lst)
+pair = sample(lst, 2)
+
+print(single)
+print(pair)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>choice(lst)</code></td>
+<td>chooses one item</td>
+</tr>
+<tr>
+<td><code>sample(lst, k)</code></td>
+<td>chooses <code>k</code> unique items</td>
+</tr>
+<tr>
+<td><code>choices(lst, k=k)</code></td>
+<td>chooses <code>k</code> items and may repeat values</td>
+</tr>
+</tbody>
+</table>
+<h2 id="normal-distribution" tabindex="-1"><a class="header-anchor" href="#normal-distribution">Normal Distribution</a></h2>
+<pre><code class="language-python">from random import *
+
+lst = []
+
+for i in range(1000):
+    x = normalvariate(50, 7)
+    lst.append(x)
+</code></pre>
+<p><code>normalvariate(mean, standard_deviation)</code> generates numbers using a normal distribution.</p>
+<h2 id="mean-and-standard-deviation" tabindex="-1"><a class="header-anchor" href="#mean-and-standard-deviation">Mean and Standard Deviation</a></h2>
+<pre><code class="language-python">from statistics import mean, stdev
+
+print(mean(lst))
+print(stdev(lst))
+</code></pre>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Lists.html">Lists</a></li>
+<li><a class="internal-link" href="Iteration.html">Iteration</a></li>
+<li><a class="internal-link" href="basic%20python.html">basic python</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

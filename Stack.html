@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stack</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link active" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Stack</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Stack = LIFO: Last In, First Out. Add/remove only from the top.</div>
+</aside>
+<h2 id="stack-trace" tabindex="-1"><a class="header-anchor" href="#stack-trace">Stack Trace</a></h2>
+<details>
+<summary>Push and pop example</summary>
+<table>
+  <thead>
+    <tr><th>Step</th><th>Operation</th><th>Stack after step</th><th>Return</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><code>start</code></td><td><code>[]</code></td><td>-</td></tr>
+    <tr><td>2</td><td><code>push("A")</code></td><td><code>["A"]</code></td><td>-</td></tr>
+    <tr><td>3</td><td><code>push("B")</code></td><td><code>["A", "B"]</code></td><td>-</td></tr>
+    <tr><td>4</td><td><code>peek()</code></td><td><code>["A", "B"]</code></td><td><code>"B"</code></td></tr>
+    <tr><td>5</td><td><code>pop()</code></td><td><code>["A"]</code></td><td><code>"B"</code></td></tr>
+  </tbody>
+</table>
+</details>
+<h2 id="core-operations" tabindex="-1"><a class="header-anchor" href="#core-operations">Core Operations</a></h2>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Meaning</th>
+<th>Python list</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>push(s, x)</code></td>
+<td>add to top</td>
+<td><code>s.append(x)</code></td>
+</tr>
+<tr>
+<td><code>pop(s)</code></td>
+<td>remove top</td>
+<td><code>s.pop()</code></td>
+</tr>
+<tr>
+<td><code>peek(s)</code></td>
+<td>look at top</td>
+<td><code>s[-1]</code></td>
+</tr>
+<tr>
+<td><code>is_empty(s)</code></td>
+<td>check empty</td>
+<td><code>s == []</code></td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout-important">
+<div class="callout-title"><span class="callout-icon">!</span><span>important</span></div>
+<div class="callout-content">Top of stack = end of Python list.</div>
+</aside>
+<h2 id="minimal-template" tabindex="-1"><a class="header-anchor" href="#minimal-template">Minimal Template</a></h2>
+<pre><code class="language-python">def push(s, item):
+    s.append(item)
+
+def pop(s):
+    if s == []:
+        return None
+    return s.pop()
+
+def peek(s):
+    if s == []:
+        return None
+    return s[-1]
+</code></pre>
+<p>Trace:</p>
+<pre><code class="language-text">[] -&gt; push A -&gt; [A]
+[A] -&gt; push B -&gt; [A, B]
+[A, B] -&gt; pop -&gt; [A] and returns B
+</code></pre>
+<h2 id="pattern-reverse" tabindex="-1"><a class="header-anchor" href="#pattern-reverse">Pattern: Reverse</a></h2>
+<p>Push everything in, then pop everything out.</p>
+<pre><code class="language-text">input: a b c d
+stack after pushes: [a, b, c, d]
+pop order: d c b a
+</code></pre>
+<h2 id="pattern-denary-to-binary" tabindex="-1"><a class="header-anchor" href="#pattern-denary-to-binary">Pattern: Denary to Binary</a></h2>
+<p>Remainders appear backwards, so stack reverses them.</p>
+<pre><code class="language-python">while n &gt; 0:
+    push(s, n % 2)
+    n = n // 2
+
+while s != []:
+    bits += str(pop(s))
+</code></pre>
+<h2 id="pattern-balanced-brackets" tabindex="-1"><a class="header-anchor" href="#pattern-balanced-brackets">Pattern: Balanced Brackets</a></h2>
+<p>Rule:</p>
+<ul>
+<li>opening bracket -&gt; push</li>
+<li>closing bracket -&gt; pop and compare</li>
+<li>valid only if stack is empty at the end</li>
+</ul>
+<pre><code class="language-python">pairs = {&quot;)&quot;: &quot;(&quot;, &quot;]&quot;: &quot;[&quot;, &quot;}&quot;: &quot;{&quot;}
+</code></pre>
+<h2 id="pattern-postfix" tabindex="-1"><a class="header-anchor" href="#pattern-postfix">Pattern: Postfix</a></h2>
+<p>For <code>3 4 * 5 +</code>:</p>
+<pre><code class="language-text">push 3
+push 4
+* -&gt; pop 4, pop 3, push 12
+push 5
++ -&gt; pop 5, pop 12, push 17
+answer = 17
+</code></pre>
+<aside class="callout callout-warning">
+<div class="callout-title"><span class="callout-icon">!</span><span>warning</span></div>
+<div class="callout-content">For <code>-</code> and <code>/</code>, order matters. <code>A B -</code> means <code>A - B</code>.</div>
+</aside>
+<h2 id="common-mistakes" tabindex="-1"><a class="header-anchor" href="#common-mistakes">Common Mistakes</a></h2>
+<ul>
+<li>Stack uses <code>pop()</code>, not <code>pop(0)</code>.</li>
+<li><code>peek()</code> does not remove.</li>
+<li><code>pop()</code> on empty stack should return <code>None</code>.</li>
+<li>If stack reverses something, do not reverse it again.</li>
+</ul>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Data%20Abstraction.html">Data Abstraction</a></li>
+<li><a class="internal-link" href="Queue.html">Queue</a></li>
+<li><a class="internal-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

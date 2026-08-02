@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Print Formatting</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link active" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Print Formatting</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Print formatting = making output line up: separators, newlines, column width, alignment, and decimal places.</div>
+</aside>
+<h2 id="formatting-trace" tabindex="-1"><a class="header-anchor" href="#formatting-trace">Formatting Trace</a></h2>
+<details>
+<summary>How fixed-width columns line up</summary>
+<pre><code>print("{0:&lt;8}{1:&lt;10}{2:&gt;8.2f}".format(1, "cake", 4.56789))</code></pre>
+<p>Output shape:</p>
+<pre><code>1       cake          4.57</code></pre>
+<table>
+  <thead>
+    <tr><th>Part</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>{0:&lt;8}</code></td><td>value 0, left aligned, width 8</td></tr>
+    <tr><td><code>{1:&lt;10}</code></td><td>value 1, left aligned, width 10</td></tr>
+    <tr><td><code>{2:&gt;8.2f}</code></td><td>value 2, right aligned, width 8, 2 decimals</td></tr>
+  </tbody>
+</table>
+</details>
+<h2 id="print-options" tabindex="-1"><a class="header-anchor" href="#print-options"><code>print()</code> Options</a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Controls</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sep</code></td>
+<td>gap between printed values</td>
+<td><code>print(192, 168, 1, 1, sep=&quot;.&quot;)</code></td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>what comes after this print</td>
+<td><code>print(i, end=&quot; &quot;)</code></td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td>where output goes</td>
+<td><code>print(&quot;hi&quot;, file=f)</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">print(&quot;a&quot;, &quot;b&quot;)                 # a b
+print(&quot;a&quot;, &quot;b&quot;, sep=&quot;&quot;)         # ab
+print(192, 168, 178, 42, sep=&quot;.&quot;)  # 192.168.178.42
+</code></pre>
+<pre><code class="language-python">for i in range(4):
+    print(i, end=&quot; &quot;)
+
+# 0 1 2 3
+</code></pre>
+<p>File output:</p>
+<pre><code class="language-python">with open(&quot;data.txt&quot;, &quot;w&quot;) as file:
+    print(&quot;Print output to file.&quot;, file=file)
+</code></pre>
+<h2 id="format-shape" tabindex="-1"><a class="header-anchor" href="#format-shape"><code>format()</code> Shape</a></h2>
+<p>Pattern:</p>
+<pre><code class="language-text">&quot;{0:width}{1:width}&quot;.format(value0, value1)
+</code></pre>
+<p>Useful forms:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{0:8}</code></td>
+<td>value 0 uses width 8</td>
+</tr>
+<tr>
+<td><code>{0:&lt;8}</code></td>
+<td>left align in width 8</td>
+</tr>
+<tr>
+<td><code>{0:&gt;8}</code></td>
+<td>right align in width 8</td>
+</tr>
+<tr>
+<td><code>{0:^8}</code></td>
+<td>centre align in width 8</td>
+</tr>
+<tr>
+<td><code>{0:6.2f}</code></td>
+<td>float, width 6, 2 decimal places</td>
+</tr>
+</tbody>
+</table>
+<p>Breakdown:</p>
+<pre><code class="language-text">{0:6.2f}
+ 0    value index
+ 6    total width
+.2    decimal places
+ f    float
+</code></pre>
+<h2 id="table-pattern" tabindex="-1"><a class="header-anchor" href="#table-pattern">Table Pattern</a></h2>
+<p>Use fixed widths for columns.</p>
+<pre><code class="language-python">prices = [(&quot;shirt&quot;, 12), (&quot;pen&quot;, 1.5), (&quot;cake&quot;, 4.56789)]
+
+print(&quot;{0:&lt;8}{1:&lt;10}{2:&gt;8}&quot;.format(&quot;Index&quot;, &quot;Item&quot;, &quot;Price&quot;))
+
+for i, item in enumerate(prices, 1):
+    name = item[0]
+    price = item[1]
+    print(&quot;{0:&lt;8}{1:&lt;10}{2:&gt;8.2f}&quot;.format(i, name, price))
+</code></pre>
+<p>Output shape:</p>
+<pre><code class="language-text">Index   Item         Price
+1       shirt        12.00
+2       pen           1.50
+3       cake          4.57
+</code></pre>
+<h2 id="csv-table-pattern" tabindex="-1"><a class="header-anchor" href="#csv-table-pattern">CSV Table Pattern</a></h2>
+<p>Same idea after reading values from a file:</p>
+<pre><code class="language-python">height = float(student[2])
+weight = float(student[3])
+bmi = weight / (height ** 2)
+
+print(&quot;{0:&lt;8}{1:&lt;12}{2:&gt;10.2f}&quot;.format(i, name, bmi))
+</code></pre>
+<h2 id="common-mistakes" tabindex="-1"><a class="header-anchor" href="#common-mistakes">Common Mistakes</a></h2>
+<ul>
+<li><code>end</code> replaces the newline.</li>
+<li><code>sep</code> only works between separate print arguments.</li>
+<li><code>{0:6.2f}</code> means width <code>6</code>, not <code>6</code> decimal places.</li>
+<li>Convert file/input strings to <code>float</code> before using <code>.2f</code>.</li>
+</ul>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="basic%20python.html">basic python</a></li>
+<li><a class="internal-link" href="File%20Handling.html">File Handling</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

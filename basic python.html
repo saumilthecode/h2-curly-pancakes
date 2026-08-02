@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Python</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link active" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Basic Python</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Core ideas for types, operators, comparisons, booleans, and slicing.</div>
+</aside>
+<h2 id="types" tabindex="-1"><a class="header-anchor" href="#types">Types</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>whole number</td>
+</tr>
+<tr>
+<td>float</td>
+<td>decimal number</td>
+</tr>
+<tr>
+<td>bool</td>
+<td><code>True</code> / <code>False</code></td>
+</tr>
+<tr>
+<td>str</td>
+<td>string / text</td>
+</tr>
+<tr>
+<td>None</td>
+<td>no value / null-like</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions-and-methods" tabindex="-1"><a class="header-anchor" href="#functions-and-methods">Functions and Methods</a></h2>
+<table>
+<thead>
+<tr>
+<th>Function / method</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type(x)</code></td>
+<td>finds the type of <code>x</code></td>
+</tr>
+<tr>
+<td><code>s.upper()</code></td>
+<td>makes a string uppercase</td>
+</tr>
+<tr>
+<td><code>s.lower()</code></td>
+<td>makes a string lowercase</td>
+</tr>
+<tr>
+<td><code>s.index(value)</code></td>
+<td>finds the index of <code>value</code> inside a string</td>
+</tr>
+<tr>
+<td><code>ord(char)</code></td>
+<td>gives the Unicode number of a character</td>
+</tr>
+<tr>
+<td><code>s.isdigit()</code></td>
+<td>checks if a string contains only digits</td>
+</tr>
+</tbody>
+</table>
+<h2 id="type-conversion" tabindex="-1"><a class="header-anchor" href="#type-conversion">Type Conversion</a></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str(x)</code></td>
+<td>turns <code>x</code> into a string</td>
+</tr>
+<tr>
+<td><code>float(x)</code></td>
+<td>turns <code>x</code> into a float</td>
+</tr>
+<tr>
+<td><code>int(x)</code></td>
+<td>turns <code>x</code> into an integer, removing decimals</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assignment" tabindex="-1"><a class="header-anchor" href="#assignment">Assignment</a></h2>
+<pre><code class="language-python">a = 10
+</code></pre>
+<p>The value <code>10</code> is assigned to the variable <code>a</code>.</p>
+<h2 id="arithmetic-operators" tabindex="-1"><a class="header-anchor" href="#arithmetic-operators">Arithmetic Operators</a></h2>
+<p><code>*</code> on a string repeats it a number of times.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>plus</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>minus</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>multiply</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>to the power of</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>divide and return a float</td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>floor divide / round down</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>remainder only</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comparison-operators" tabindex="-1"><a class="header-anchor" href="#comparison-operators">Comparison Operators</a></h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;</code></td>
+<td>left is greater than right</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>left is less than right</td>
+</tr>
+<tr>
+<td><code>==</code></td>
+<td>equal to</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>not equal to</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>greater than or equal to</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>less than or equal to</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<pre><code class="language-python">42 == 42      # True
+42 == 42.0    # True, same numeric value
+42 == &quot;42&quot;    # False, number vs string
+</code></pre>
+<h2 id="logical-and-membership-operators" tabindex="-1"><a class="header-anchor" href="#logical-and-membership-operators">Logical and Membership Operators</a></h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>and</code></td>
+<td><code>True</code> if both sides are <code>True</code></td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td><code>True</code> if either side is <code>True</code></td>
+</tr>
+<tr>
+<td><code>not</code></td>
+<td>flips <code>True</code> to <code>False</code>, or <code>False</code> to <code>True</code></td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>checks if a value exists inside something</td>
+</tr>
+<tr>
+<td><code>not in</code></td>
+<td>checks if a value does not exist inside it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="booleans" tabindex="-1"><a class="header-anchor" href="#booleans">Booleans</a></h2>
+<table>
+<thead>
+<tr>
+<th>Boolean</th>
+<th>Numeric value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>True</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>False</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="slicing" tabindex="-1"><a class="header-anchor" href="#slicing">Slicing</a></h2>
+<pre><code class="language-python">text = &quot;HelloWorld&quot;
+
+text[start:end:step]
+text[2:5:1]  # &quot;llo&quot;
+</code></pre>
+<ul>
+<li><code>start</code> is where the slice begins.</li>
+<li><code>end</code> is where the slice stops, but it is not included.</li>
+<li><code>step</code> is the interval between characters.</li>
+</ul>
+<p>Negative indexing counts from the back of the string.</p>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Conditionals.html">Conditionals</a></li>
+<li><a class="internal-link" href="Functions%20(functional%20abstraction).html">Functions (functional abstraction)</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hashing</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link active" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>Hashing</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">Hashing turns data into a hash value. Hash tables use <code>hash(item) % table_size</code> to choose an index.</div>
+</aside>
+<h2 id="collision-trace" tabindex="-1"><a class="header-anchor" href="#collision-trace">Collision Trace</a></h2>
+<details>
+<summary>`dbac` and `badc` both hash to index `3` when table size is `5`</summary>
+<table>
+  <thead>
+    <tr><th>Item</th><th>Hash value</th><th>Index calculation</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>dbac</code></td><td><code>988</code></td><td><code>988 % 5 = 3</code></td></tr>
+    <tr><td><code>badc</code></td><td><code>988</code></td><td><code>988 % 5 = 3</code></td></tr>
+  </tbody>
+</table>
+<p>Both want the same slot, so use separate chaining or linear probing.</p>
+</details>
+<h2 id="hashing-idea" tabindex="-1"><a class="header-anchor" href="#hashing-idea">Hashing Idea</a></h2>
+<p>Hashing creates a fixed-ish numeric fingerprint from data.</p>
+<ul>
+<li>Used for quick lookup/checking/comparison.</li>
+<li>Not the same as encryption.</li>
+<li>Collisions can happen.</li>
+</ul>
+<h2 id="lesson-hash-function" tabindex="-1"><a class="header-anchor" href="#lesson-hash-function">Lesson Hash Function</a></h2>
+<p>The notebook hash uses ASCII values and position weights.</p>
+<pre><code class="language-python">def hash_value(string):
+    total = 0
+    for i in range(len(string)):
+        total += ord(string[i]) * (i + 1)
+    return total
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">&quot;abcde&quot; -&gt; 97*1 + 98*2 + 99*3 + 100*4 + 101*5 = 1495
+1495 % 10 = 5
+</code></pre>
+<aside class="callout callout-warning">
+<div class="callout-title"><span class="callout-icon">!</span><span>warning</span></div>
+<div class="callout-content">Python already has built-in <code>hash()</code>. In exam code, use the name given by the question.</div>
+</aside>
+<h2 id="checksum-pattern" tabindex="-1"><a class="header-anchor" href="#checksum-pattern">Checksum Pattern</a></h2>
+<p>Checksum = append a check value to detect mistakes.</p>
+<pre><code class="language-python">def transmit(data):
+    total = 0
+    for i in range(len(data)):
+        total += int(data[i]) * ((2 * i) + 1)
+    return data + str(total % 10)
+</code></pre>
+<pre><code class="language-python">transmit(&quot;12345&quot;)  # &quot;123455&quot;
+</code></pre>
+<p>Uses: NRIC check letter, vehicle plate check character, ISBN, credit card validation.</p>
+<h2 id="hash-table" tabindex="-1"><a class="header-anchor" href="#hash-table">Hash Table</a></h2>
+<p>Index formula:</p>
+<pre><code class="language-python">index = hash_value(item) % len(table)
+</code></pre>
+<p>No collision search:</p>
+<pre><code class="language-python">def search(table, item):
+    index = hash_value(item) % len(table)
+    return table[index] == item
+</code></pre>
+<h2 id="collision" tabindex="-1"><a class="header-anchor" href="#collision">Collision</a></h2>
+<p>Collision = two items want the same index.</p>
+<pre><code class="language-text">hash_value(&quot;dbac&quot;) % 5 = 3
+hash_value(&quot;badc&quot;) % 5 = 3
+</code></pre>
+<h2 id="collision-fixes" tabindex="-1"><a class="header-anchor" href="#collision-fixes">Collision Fixes</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Idea</th>
+<th>Search consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>separate chaining</td>
+<td>store a list at the slot</td>
+<td>check inside the list</td>
+</tr>
+<tr>
+<td>linear probing</td>
+<td>scan to next empty slot</td>
+<td>follow same scan path</td>
+</tr>
+</tbody>
+</table>
+<p>Separate chaining insert idea:</p>
+<pre><code class="language-python">if table[index] == &quot;&quot;:
+    table[index] = item
+elif isinstance(table[index], list):
+    table[index].append(item)
+else:
+    table[index] = [table[index], item]
+</code></pre>
+<p>Linear probing step:</p>
+<pre><code class="language-python">index = (index + 1) % len(table)
+</code></pre>
+<p>Stop after checking at most <code>len(table)</code> slots, otherwise a full table can loop forever.</p>
+<h2 id="common-mistakes" tabindex="-1"><a class="header-anchor" href="#common-mistakes">Common Mistakes</a></h2>
+<ul>
+<li>Forgetting <code>% len(table)</code>.</li>
+<li>Thinking hashing means encryption.</li>
+<li>Assuming collisions never happen.</li>
+<li>Searching linear probing without following the probe path.</li>
+<li>Forgetting a chained slot can hold either a string or a list.</li>
+</ul>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Data%20Abstraction.html">Data Abstraction</a></li>
+<li><a class="internal-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Stack LIFO diagram</title>
+  <desc id="desc">A vertical stack showing push and pop both happening at the top. The top is the end of the Python list.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2937; }
+      .muted { fill: #64748b; font-size: 22px; }
+      .label { font-weight: 700; font-size: 26px; }
+      .small { font-size: 20px; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .box { fill: #dbeafe; stroke: #2563eb; stroke-width: 3; }
+      .topbox { fill: #fee2e2; stroke: #dc2626; stroke-width: 3; }
+      .base { stroke: #334155; stroke-width: 6; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect x="20" y="20" width="920" height="480" rx="22" fill="#f8fafc" stroke="#d8dee9" stroke-width="2"/>
+  <text x="54" y="70" class="label">Stack: LIFO</text>
+  <text x="54" y="102" class="muted">Last item pushed in is the first item popped out.</text>
+
+  <rect x="330" y="142" width="260" height="286" rx="18" class="card"/>
+  <line x1="360" y1="395" x2="560" y2="395" class="base"/>
+  <rect x="390" y="310" width="140" height="58" rx="10" class="box"/>
+  <text x="452" y="348" class="label">7</text>
+  <rect x="390" y="244" width="140" height="58" rx="10" class="box"/>
+  <text x="452" y="282" class="label">5</text>
+  <rect x="390" y="178" width="140" height="58" rx="10" class="topbox"/>
+  <text x="452" y="216" class="label">3</text>
+  <text x="540" y="172" class="small" fill="#dc2626">top</text>
+  <text x="535" y="419" class="small">bottom</text>
+
+  <path d="M 205 138 C 245 138, 286 161, 322 190" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+  <text x="74" y="133" class="label" fill="#2563eb">push(9)</text>
+  <text x="74" y="163" class="small">adds only here</text>
+
+  <path d="M 600 205 C 655 205, 697 175, 746 145" fill="none" stroke="#dc2626" stroke-width="5" marker-end="url(#arrow-red)"/>
+  <text x="760" y="135" class="label" fill="#dc2626">pop()</text>
+  <text x="760" y="165" class="small">removes 3 first</text>
+
+  <rect x="260" y="445" width="440" height="38" rx="10" fill="#eef2ff" stroke="#c7d2fe"/>
+  <text x="286" y="471" class="small">Python list view: [7, 5, 3]</text>
+  <text x="552" y="471" class="small" fill="#dc2626">top = list[-1]</text>
+</svg>

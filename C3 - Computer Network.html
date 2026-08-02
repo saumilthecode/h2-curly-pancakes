@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C3 - Computer Network</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link active" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>C3 - Computer Network</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">A computer network connects devices so data can move through local hardware, routers, servers, and global links.</div>
+</aside>
+<h2 id="hosts-nodes-and-media" tabindex="-1"><a class="header-anchor" href="#hosts-nodes-and-media">Hosts, Nodes, and Media</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Host</td>
+<td>client or server on a network</td>
+</tr>
+<tr>
+<td>Node</td>
+<td>network interface used by a device, such as NIC, Wi-Fi, Bluetooth, or infrared</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>physical or wireless path carrying the signal</td>
+</tr>
+</tbody>
+</table>
+<p>Network media:</p>
+<ul>
+<li>copper cable carries electrical signals</li>
+<li>fibre optic cable carries light pulses</li>
+<li>wireless carries electromagnetic waves</li>
+</ul>
+<h2 id="network-types" tabindex="-1"><a class="header-anchor" href="#network-types">Network Types</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Scale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PAN</td>
+<td>personal area, a few metres</td>
+</tr>
+<tr>
+<td>LAN</td>
+<td>local area, usually a room/building</td>
+</tr>
+<tr>
+<td>WLAN</td>
+<td>wireless LAN</td>
+</tr>
+<tr>
+<td>CAN</td>
+<td>campus area, multiple nearby LANs</td>
+</tr>
+<tr>
+<td>MAN</td>
+<td>metropolitan area, city scale</td>
+</tr>
+<tr>
+<td>WAN</td>
+<td>wide area, country/global scale; the internet is a WAN</td>
+</tr>
+<tr>
+<td>SAN</td>
+<td>storage area network for high-speed data storage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="topologies" tabindex="-1"><a class="header-anchor" href="#topologies">Topologies</a></h2>
+<table>
+<thead>
+<tr>
+<th>Topology</th>
+<th>Idea</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bus</td>
+<td>all devices share one cable</td>
+<td>cable break can collapse network</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>devices form a closed loop</td>
+<td>single failure can disrupt traffic</td>
+</tr>
+<tr>
+<td>Star</td>
+<td>all devices connect to a central switch</td>
+<td>switch is single point of failure</td>
+</tr>
+<tr>
+<td>Mesh</td>
+<td>devices connect to many or all others</td>
+<td>high cost and complexity</td>
+</tr>
+</tbody>
+</table>
+<p>For a fully meshed network:</p>
+<pre><code class="language-text">connections = n * (n - 1) / 2
+</code></pre>
+<h2 id="switches-and-routers" tabindex="-1"><a class="header-anchor" href="#switches-and-routers">Switches and Routers</a></h2>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Layer</th>
+<th>Uses</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hub</td>
+<td>Layer 1</td>
+<td>no addressing</td>
+<td>broadcasts to all ports</td>
+</tr>
+<tr>
+<td>Switch</td>
+<td>Layer 2</td>
+<td>MAC addresses</td>
+<td>connects devices inside one LAN</td>
+</tr>
+<tr>
+<td>Router</td>
+<td>Layer 3</td>
+<td>IP addresses</td>
+<td>connects different networks</td>
+</tr>
+</tbody>
+</table>
+<p>A switch builds a Source Address Table (SAT):</p>
+<ul>
+<li>it starts empty</li>
+<li>it records source MAC addresses and ports from incoming frames</li>
+<li>if destination is unknown, it broadcasts to other ports</li>
+<li>after replies, future traffic can be sent directly to the correct port</li>
+</ul>
+<h2 id="mac-and-ip-addresses" tabindex="-1"><a class="header-anchor" href="#mac-and-ip-addresses">MAC and IP Addresses</a></h2>
+<table>
+<thead>
+<tr>
+<th>Address</th>
+<th>Meaning</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAC address</td>
+<td>physical device identity</td>
+<td>local delivery inside LAN</td>
+</tr>
+<tr>
+<td>IP address</td>
+<td>logical network location</td>
+<td>routing between networks</td>
+</tr>
+</tbody>
+</table>
+<p>MAC address:</p>
+<ul>
+<li>48-bit hexadecimal</li>
+<li>example: <code>00-16-EA-06-6C-3E</code></li>
+<li>usually built into the network interface</li>
+</ul>
+<p>IPv4 address:</p>
+<ul>
+<li>32-bit address</li>
+<li>often written as four decimal numbers</li>
+<li>example: <code>192.168.0.1</code></li>
+</ul>
+<p>The IP address gets data to the correct network. The MAC address gets data to the correct device inside that local network.</p>
+<h2 id="subnet-mask-and-gateway" tabindex="-1"><a class="header-anchor" href="#subnet-mask-and-gateway">Subnet Mask and Gateway</a></h2>
+<p>A subnet mask decides whether two IP addresses are in the same local network.</p>
+<p>Example:</p>
+<pre><code class="language-text">IP:          192.168.0.10
+Subnet mask: 255.255.255.0
+Network:     192.168.0
+</code></pre>
+<p>If a destination is outside the local network, the device sends the packet to its default gateway, usually the router.</p>
+<h2 id="packet-switching" tabindex="-1"><a class="header-anchor" href="#packet-switching">Packet Switching</a></h2>
+<p>The internet uses packet switching.</p>
+<ul>
+<li>Data is split into packets.</li>
+<li>Each packet can travel independently.</li>
+<li>Packets may take different routes.</li>
+<li>The destination reassembles them in order.</li>
+</ul>
+<p>Packet parts:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>source IP, destination IP, protocol, sequence number</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>actual data</td>
+</tr>
+<tr>
+<td>Trailer</td>
+<td>error checking such as CRC</td>
+</tr>
+</tbody>
+</table>
+<p>Circuit switching reserves one fixed path for the whole communication. Packet switching is more flexible and resilient for internet traffic.</p>
+<h2 id="servers" tabindex="-1"><a class="header-anchor" href="#servers">Servers</a></h2>
+<p>A server provides services to clients.</p>
+<p>Examples:</p>
+<ul>
+<li>web server</li>
+<li>DNS server</li>
+<li>DHCP server</li>
+<li>mail server</li>
+<li>file server</li>
+</ul>
+<p>Enterprise servers are designed for reliability:</p>
+<ul>
+<li>run 24/7</li>
+<li>handle many concurrent connections</li>
+<li>may use ECC RAM</li>
+<li>may use RAID storage</li>
+<li>may use redundant power supplies</li>
+<li>may support hot-swappable drives</li>
+</ul>
+<h2 id="dns" tabindex="-1"><a class="header-anchor" href="#dns">DNS</a></h2>
+<p>DNS means Domain Name System.</p>
+<p>It translates names into IP addresses.</p>
+<pre><code class="language-text">www.yijc.edu.sg -&gt; 192.168.0.12
+</code></pre>
+<p>Basic lookup path:</p>
+<ol>
+<li>browser asks resolver</li>
+<li>resolver may ask root server</li>
+<li>root server points to TLD server such as <code>.com</code> or <code>.sg</code></li>
+<li>TLD points to authoritative name server</li>
+<li>authoritative server returns the IP address</li>
+</ol>
+<p>DNS avoids memorising numerical IP addresses.</p>
+<h2 id="dhcp" tabindex="-1"><a class="header-anchor" href="#dhcp">DHCP</a></h2>
+<p>DHCP means Dynamic Host Configuration Protocol.</p>
+<p>It automatically gives devices network settings:</p>
+<ul>
+<li>IP address</li>
+<li>subnet mask</li>
+<li>default gateway</li>
+<li>DNS server</li>
+</ul>
+<p>DHCP uses leases. When a device leaves and the lease expires, the IP address returns to the pool.</p>
+<h2 id="email-protocols" tabindex="-1"><a class="header-anchor" href="#email-protocols">Email Protocols</a></h2>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMTP</td>
+<td>sends email from client to server and between mail servers</td>
+</tr>
+<tr>
+<td>POP3</td>
+<td>downloads mail to one device, often removing it from the server</td>
+</tr>
+<tr>
+<td>IMAP</td>
+<td>keeps mail on the server and synchronises across devices</td>
+</tr>
+</tbody>
+</table>
+<p>SMTP uses TCP to help ensure mail delivery.</p>
+<h2 id="filius-hands-on-settings" tabindex="-1"><a class="header-anchor" href="#filius-hands-on-settings">Filius Hands-On Settings</a></h2>
+<p>Peer-to-peer example:</p>
+<pre><code class="language-text">Notebook 1: 192.168.0.10
+Notebook 2: 192.168.0.11
+Subnet:    255.255.255.0
+</code></pre>
+<p>LANs connected by router:</p>
+<pre><code class="language-text">LAN1 network: 192.168.0
+Router NIC1: 192.168.0.1
+
+LAN2 network: 192.168.1
+Router NIC2: 192.168.1.1
+</code></pre>
+<p>Devices in LAN1 use gateway <code>192.168.0.1</code>. Devices in LAN2 use gateway <code>192.168.1.1</code>.</p>
+<p>DNS server example:</p>
+<pre><code class="language-text">DNS server: 192.168.2.10
+Router NIC: 192.168.2.1
+Domain:     www.yijc.edu.sg
+Web server: 192.168.0.12
+</code></pre>
+<p>Useful tests:</p>
+<pre><code class="language-text">ping 192.168.0.11
+ipconfig
+http://192.168.0.12
+http://www.yijc.edu.sg
+</code></pre>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a></li>
+<li><a class="internal-link" href="File%20Handling.html">File Handling</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>

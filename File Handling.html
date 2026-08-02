@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>File Handling</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="site-sidebar">
+      <a class="site-title" href="index.html">H2 Computing Notes</a>
+      <nav><a class="nav-link" href="basic%20python.html">Basic Python</a>
+<a class="nav-link" href="Conditionals.html">Conditionals</a>
+<a class="nav-link" href="Functions%20(functional%20abstraction).html">Functions</a>
+<a class="nav-link" href="Data%20validation%20and%20verification.html">Data validation and verification</a>
+<a class="nav-link" href="Types%20of%20Errors%20and%20Test%20Cases.html">Types of Errors and Test Cases</a>
+<a class="nav-link" href="Iteration.html">Iteration</a>
+<a class="nav-link" href="Tuple.html">Tuple</a>
+<a class="nav-link" href="Lists.html">Lists</a>
+<a class="nav-link" href="Dictionary.html">Dictionary</a>
+<a class="nav-link" href="Recursion.html">Recursion</a>
+<a class="nav-link" href="Data%20Abstraction.html">Data Abstraction</a>
+<a class="nav-link" href="Stack.html">Stack</a>
+<a class="nav-link" href="Queue.html">Queue</a>
+<a class="nav-link" href="Hashing.html">Hashing</a>
+<a class="nav-link" href="C2%20-%20Data%20representation.html">C2 - Data representation</a>
+<a class="nav-link" href="C3%20-%20Computer%20Network.html">C3 - Computer Network</a>
+<a class="nav-link active" href="File%20Handling.html">File Handling</a>
+<a class="nav-link" href="Print%20Formatting.html">Print Formatting</a>
+<a class="nav-link" href="Random%20Generator.html">Random Generator</a></nav>
+    </aside>
+    <main class="markdown-preview-view">
+      <h1>File Handling</h1>
+      <aside class="callout callout-summary">
+<div class="callout-title"><span class="callout-icon">≡</span><span>Quick View</span></div>
+<div class="callout-content">File handling lets Python read from and write to external text and CSV files.</div>
+</aside>
+<h2 id="opening-files" tabindex="-1"><a class="header-anchor" href="#opening-files">Opening Files</a></h2>
+<pre><code class="language-python">f = open(&quot;textfile.txt&quot;)      # read mode by default
+f = open(&quot;textfile.txt&quot;, &quot;r&quot;) # read mode explicitly
+f.close()
+</code></pre>
+<p>Prefer <code>with open(...)</code> because it closes the file automatically.</p>
+<pre><code class="language-python">with open(&quot;textfile.txt&quot;, &quot;r&quot;) as f:
+    data = f.read()
+</code></pre>
+<h2 id="exception-handling" tabindex="-1"><a class="header-anchor" href="#exception-handling">Exception Handling</a></h2>
+<pre><code class="language-python">try:
+    with open(&quot;textfile.txt&quot;, &quot;r&quot;) as f:
+        data = f.read()
+        print(data)
+except Exception as e:
+    print(e)
+</code></pre>
+<p>If the file does not exist, Python raises a file-not-found error.</p>
+<h2 id="reading-text-files" tabindex="-1"><a class="header-anchor" href="#reading-text-files">Reading Text Files</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>read(size)</code></td>
+<td>reads into one string; <code>size</code> is optional</td>
+</tr>
+<tr>
+<td><code>readline()</code></td>
+<td>reads one line</td>
+</tr>
+<tr>
+<td><code>readlines()</code></td>
+<td>reads all lines into a list</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">with open(&quot;textfile.txt&quot;, &quot;r&quot;) as f:
+    content = f.read()
+</code></pre>
+<p><code>content</code> is a string.</p>
+<pre><code class="language-python">with open(&quot;textfile.txt&quot;, &quot;r&quot;) as f:
+    lines = f.readlines()
+
+for line in lines:
+    print(line.rstrip(&quot;\n&quot;))
+</code></pre>
+<p><code>lines</code> is a list. Each line may still contain the newline character <code>\n</code>.</p>
+<p>You can also loop over the file object directly:</p>
+<pre><code class="language-python">with open(&quot;welcome.txt&quot;) as f:
+    for line in f:
+        print(line)
+</code></pre>
+<h2 id="writing-text-files" tabindex="-1"><a class="header-anchor" href="#writing-text-files">Writing Text Files</a></h2>
+<pre><code class="language-python">with open(&quot;writefile.txt&quot;, &quot;w&quot;) as f:
+    for i in range(10):
+        f.write(&quot;This is line &quot; + str(i) + &quot;\n&quot;)
+</code></pre>
+<p>Mode <code>&quot;w&quot;</code>:</p>
+<ul>
+<li>creates the file if it does not exist</li>
+<li>overwrites the file if it already exists</li>
+</ul>
+<h2 id="appending-text-files" tabindex="-1"><a class="header-anchor" href="#appending-text-files">Appending Text Files</a></h2>
+<pre><code class="language-python">with open(&quot;writefile.txt&quot;, &quot;a&quot;) as f:
+    for i in range(10):
+        f.write(&quot;This is line &quot; + str(i + 10) + &quot;\n&quot;)
+</code></pre>
+<p>Mode <code>&quot;a&quot;</code> adds new content to the end of the existing file.</p>
+<h2 id="csv-files" tabindex="-1"><a class="header-anchor" href="#csv-files">CSV Files</a></h2>
+<p>CSV means comma-separated values.</p>
+<ul>
+<li>It is a plain text format.</li>
+<li>It is commonly used by spreadsheets and databases.</li>
+<li>Each row is stored as a line.</li>
+<li>Fields in a row are separated by commas.</li>
+</ul>
+<p>TXT files may also store tabulated data using another separator, such as tabs.</p>
+<pre><code class="language-python">def openfile(filename):
+    f = open(filename)
+    result = ()
+
+    for line in f:
+        data = line.strip().split(&quot;\t&quot;)
+        name = data[0]
+        gender = data[1]
+        height = float(data[2])
+        weight = float(data[3])
+        result += ((name, gender, height, weight),)
+
+    f.close()
+    return result
+</code></pre>
+<p>This creates a tuple of records from a tab-separated text file.</p>
+<h2 id="reading-csv-files" tabindex="-1"><a class="header-anchor" href="#reading-csv-files">Reading CSV Files</a></h2>
+<pre><code class="language-python">from csv import reader
+
+with open(&quot;datafile.csv&quot;, &quot;r&quot;) as f:
+    content = reader(f)
+    for row in content:
+        print(row)
+</code></pre>
+<p>Each <code>row</code> is a list.</p>
+<p>To skip the header:</p>
+<pre><code class="language-python">from csv import reader
+
+with open(&quot;datafile.csv&quot;, &quot;r&quot;) as f:
+    content = reader(f)
+    next(content)
+
+    for row in content:
+        print(row)
+</code></pre>
+<p>To unpack fields:</p>
+<pre><code class="language-python">from csv import reader
+
+with open(&quot;datafile.csv&quot;, &quot;r&quot;) as f:
+    content = reader(f)
+    next(content)
+
+    for name, gender, ht, wt in content:
+        print(name, gender, ht, wt)
+</code></pre>
+<p>Manual CSV reading pattern:</p>
+<pre><code class="language-python">def read_csv(filename):
+    file = open(filename)
+    lines = file.readlines()
+    data = ()
+
+    for line in lines[1:]:
+        line = line.strip()
+        row = line.split(&quot;,&quot;)
+        data = data + (tuple(row),)
+
+    file.close()
+    return data
+</code></pre>
+<ul>
+<li><code>lines[1:]</code> skips the header.</li>
+<li><code>tuple(row)</code> stores each row as an immutable record.</li>
+</ul>
+<h2 id="writing-csv-files" tabindex="-1"><a class="header-anchor" href="#writing-csv-files">Writing CSV Files</a></h2>
+<pre><code class="language-python">from csv import writer
+
+fields = [&quot;Name&quot;, &quot;Class&quot;, &quot;Level&quot;, &quot;Score&quot;]
+data = [
+    [&quot;Nick&quot;, &quot;S15&quot;, &quot;15&quot;, &quot;5460&quot;],
+    [&quot;Mary&quot;, &quot;S16&quot;, &quot;12&quot;, &quot;6105&quot;],
+    [&quot;Peter&quot;, &quot;S15&quot;, &quot;10&quot;, &quot;3700&quot;],
+]
+
+with open(&quot;records.csv&quot;, &quot;w&quot;, newline=&quot;&quot;) as f:
+    content = writer(f)
+    content.writerow(fields)
+    content.writerows(data)
+</code></pre>
+<p>Use <code>newline=&quot;&quot;</code> to avoid extra blank lines in the CSV file.</p>
+<p>Manual CSV export pattern:</p>
+<pre><code class="language-python">def export(tup):
+    f = open(&quot;data.csv&quot;, &quot;w&quot;)
+    f.write(&quot;Name,Gender,Height,Weight\n&quot;)
+
+    for student in tup:
+        f.write(str(student[0]) + &quot;,&quot; + str(student[1]) + &quot;,&quot; +
+                str(student[2]) + &quot;,&quot; + str(student[3]) + &quot;\n&quot;)
+
+    f.close()
+</code></pre>
+<h2 id="related" tabindex="-1"><a class="header-anchor" href="#related">Related</a></h2>
+<ul>
+<li><a class="internal-link" href="Lists.html">Lists</a></li>
+<li><a class="internal-link" href="Data%20Abstraction.html">Data Abstraction</a></li>
+<li><a class="internal-link" href="basic%20python.html">basic python</a></li>
+</ul>
+
+    </main>
+  </div>
+</body>
+</html>
