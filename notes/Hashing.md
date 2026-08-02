@@ -3,9 +3,10 @@
 
 ## Hash Table Playground
 
-<iframe class="note-widget-frame hash-playground" src="./pictures/hash-playground.html" title="Interactive hash table playground" style="width:100%;height:620px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+> [!example] Practice
+> [Open hash table playground](./pictures/hash-playground.html)
 
-[Open standalone hash table playground](./pictures/hash-playground.html)
+<!-- widget:hash-playground -->
 
 ## Hashing Idea
 

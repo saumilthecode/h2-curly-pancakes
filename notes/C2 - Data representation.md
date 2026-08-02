@@ -24,9 +24,10 @@ Place value:   128   64   32   16    8    4    2    1
 Contribution:  128 + 64 + 32 + 16 + 0  + 4  + 2  + 0 = 246
 ```
 
-<iframe class="note-widget-frame base-converter" src="./pictures/base-converter.html" title="Interactive base converter" style="width:100%;height:820px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+> [!example] Practice
+> [Open base converter](./pictures/base-converter.html)
 
-[Open standalone base converter](./pictures/base-converter.html)
+<!-- widget:base-converter -->
 
 ## Number Bases
 

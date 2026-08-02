@@ -3,9 +3,10 @@
 
 ## Stack Playground
 
-<iframe class="note-widget-frame stack-simulator" src="./pictures/stack-simulator.html" title="Interactive stack playground" style="width:100%;height:520px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+> [!example] Practice
+> [Open stack playground](./pictures/stack-simulator.html)
 
-[Open standalone stack playground](./pictures/stack-simulator.html)
+<!-- widget:stack-simulator -->
 
 ## Core Operations
 

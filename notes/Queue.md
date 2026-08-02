@@ -3,9 +3,10 @@
 
 ## Queue Playground
 
-<iframe class="note-widget-frame queue-simulator" src="./pictures/queue-simulator.html" title="Interactive queue playground" style="width:100%;height:520px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+> [!example] Practice
+> [Open queue playground](./pictures/queue-simulator.html)
 
-[Open standalone queue playground](./pictures/queue-simulator.html)
+<!-- widget:queue-simulator -->
 
 ## Core Operations
 

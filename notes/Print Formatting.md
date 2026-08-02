@@ -3,9 +3,10 @@
 
 ## Print Playground
 
-<iframe class="note-widget-frame print-format" src="./pictures/print-format.html" title="Interactive print formatting playground" style="width:100%;height:600px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>
+> [!example] Practice
+> [Open print formatting playground](./pictures/print-format.html)
 
-[Open standalone print formatting playground](./pictures/print-format.html)
+<!-- widget:print-format -->
 
 ## `print()` Options
 

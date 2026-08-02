@@ -204,9 +204,51 @@ ${body ? `<div class="callout-content">${body}</div>` : ""}
   });
 }
 
+const widgets = {
+  "base-converter": {
+    className: "base-converter",
+    src: "pictures/base-converter.html",
+    title: "Interactive base converter",
+    height: 820,
+  },
+  "stack-simulator": {
+    className: "stack-simulator",
+    src: "pictures/stack-simulator.html",
+    title: "Interactive stack playground",
+    height: 520,
+  },
+  "queue-simulator": {
+    className: "queue-simulator",
+    src: "pictures/queue-simulator.html",
+    title: "Interactive queue playground",
+    height: 520,
+  },
+  "hash-playground": {
+    className: "hash-playground",
+    src: "pictures/hash-playground.html",
+    title: "Interactive hash table playground",
+    height: 620,
+  },
+  "print-format": {
+    className: "print-format",
+    src: "pictures/print-format.html",
+    title: "Interactive print formatting playground",
+    height: 600,
+  },
+};
+
+function transformWidgets(html) {
+  return html.replace(/<!--\s*widget:([\w-]+)\s*-->/g, (all, id) => {
+    const widget = widgets[id];
+    if (!widget) return all;
+
+    return `<iframe class="note-widget-frame ${widget.className}" src="${encodeHref(widget.src)}" title="${escapeHtml(widget.title)}" style="width:100%;height:${widget.height}px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>`;
+  });
+}
+
 function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
   const transformed = transformObsidianSyntax(source, knownNotes);
-  const body = transformCallouts(transformMermaid(md.render(transformed)));
+  const body = transformWidgets(transformCallouts(transformMermaid(md.render(transformed))));
   const pageTitle = file === "index.md" ? "H2 Computing Notes" : displayTitles.get(file) || titleFromFile(file);
   const needsMermaid = source.includes("```mermaid");
 
