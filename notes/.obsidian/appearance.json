@@ -1,3 +1,5 @@
 {
-  "textFontFamily": "Papyrus"
+  "textFontFamily": "Papyrus",
+  "accentColor": "#9fcbf9",
+  "translucency": true
 }
