@@ -46,6 +46,7 @@ It does not define:
 | --- | --------- | ---------- | --------------- |
 | [[Stack]] | add/remove from the top | LIFO | `push`, `pop`, `peek` |
 | [[Queue]] | add at tail, remove from head | FIFO | `enqueue`, `dequeue`, `front` |
+| [[Hashing]] | map data to an index/value | direct lookup | `hash`, `search` |
 
 ## Student Record ADT
 
@@ -322,5 +323,6 @@ file.close()
 - [[Tuple]]
 - [[Stack]]
 - [[Queue]]
+- [[Hashing]]
 - [[Functions (functional abstraction)]]
 - [[File Handling]]

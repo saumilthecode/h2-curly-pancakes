@@ -13,6 +13,7 @@
 - [[Data Abstraction]]
 - [[Stack]]
 - [[Queue]]
+- [[Hashing]]
 - [[C2 - Data representation]]
 - [[C3 - Computer Network]]
 - [[File Handling]]
