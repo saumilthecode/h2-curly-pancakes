@@ -4,10 +4,917 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Queue playground</title>
-  <link rel="stylesheet" href="widget.css">
+  <style>
+:root {
+  --text: #1f2937;
+  --muted: #64748b;
+  --line: #cbd5e1;
+  --panel: #ffffff;
+  --soft: #f8fafc;
+  --blue: #2563eb;
+  --blue-soft: #dbeafe;
+  --green: #16a34a;
+  --green-soft: #dcfce7;
+  --red: #dc2626;
+  --red-soft: #fee2e2;
+  --amber: #b7791f;
+  --amber-soft: #fef3c7;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  background: var(--panel);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.45;
+}
+
+body {
+  padding: 16px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.widget {
+  display: grid;
+  gap: 14px;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.widget-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.widget-subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.widget-output {
+  min-width: 120px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+  padding: 8px 10px;
+  font-family: var(--mono);
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: end;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.field input,
+.field select {
+  min-height: 36px;
+  min-width: 120px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  padding: 6px 8px;
+}
+
+.field input[type="range"] {
+  width: min(460px, 78vw);
+  padding: 0;
+}
+
+.button {
+  min-height: 36px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--text);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.button.primary {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: white;
+}
+
+.button.danger {
+  border-color: var(--red);
+  color: #8a1f1f;
+}
+
+.value-badges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.value-badge {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+  padding: 8px;
+}
+
+.value-badge span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.value-badge strong {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--mono);
+  font-size: 16px;
+}
+
+.bit-strip {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(64px, 1fr));
+  gap: 8px;
+}
+
+.bit-cell {
+  min-height: 78px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+  padding: 8px 6px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bit-cell.active {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.bit-value {
+  display: block;
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.bit-weight,
+.bit-contribution {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mini-panel {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.mini-panel h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 5px 6px;
+  text-align: left;
+}
+
+th {
+  background: var(--soft);
+}
+
+.stack-visual,
+.queue-visual,
+.hash-table {
+  margin-top: 2px;
+}
+
+.stack-visual {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.stack-base {
+  width: 150px;
+  height: 8px;
+  border-radius: 3px;
+  background: #334155;
+}
+
+.stack-cell,
+.queue-cell,
+.hash-entry {
+  min-width: 70px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  background: var(--soft);
+  padding: 9px 10px;
+  text-align: center;
+  font-family: var(--mono);
+  font-weight: 800;
+}
+
+.stack-cell.top,
+.queue-cell.head,
+.hash-entry.focus {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.queue-visual {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: end;
+}
+
+.queue-cell {
+  min-width: 78px;
+}
+
+.caption {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.hash-table {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hash-slot {
+  min-height: 112px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+  padding: 8px;
+}
+
+.hash-slot-index {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hash-slot-items {
+  display: grid;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.hash-entry {
+  min-width: 0;
+  padding: 7px 8px;
+  overflow-wrap: anywhere;
+}
+
+.log {
+  min-height: 48px;
+  border: 1px solid #d8d3ca;
+  border-radius: 6px;
+  background: #fbfaf7;
+  color: #4f4940;
+  padding: 9px;
+  font-family: var(--mono);
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.preview {
+  min-height: 150px;
+  overflow-x: auto;
+  border: 1px solid #d8d3ca;
+  border-radius: 6px;
+  background: #fbfaf7;
+  color: #1f2937;
+  padding: 10px;
+  font-family: var(--mono);
+  font-size: 13px;
+  white-space: pre;
+}
+
+@media (max-width: 680px) {
+  body { padding: 12px; }
+  .widget-header,
+  .columns { grid-template-columns: 1fr; display: grid; }
+  .bit-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .value-badges,
+  .hash-table { grid-template-columns: 1fr; }
+}
+
+  </style>
 </head>
 <body data-widget="queue-simulator">
-  <main id="widget-root"></main>
-  <script src="widget.js"></script>
+  <main id="widget-root" class="widget">
+    <section class="log">Loading Queue playground...</section>
+  </main>
+  <script>
+(function () {
+  var DIGITS = "0123456789ABCDEF";
+
+  function makeEl(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function clamp(value, min, max) {
+    var parsed = Number.parseInt(value, 10);
+    if (Number.isNaN(parsed)) parsed = min;
+    return Math.max(min, Math.min(max, parsed));
+  }
+
+  function label(value) {
+    return String(value).replace(/\s+/g, " ").trim().slice(0, 12) || "item";
+  }
+
+  function hashValue(value) {
+    var total = 0;
+    for (var i = 0; i < value.length; i += 1) {
+      total += value.charCodeAt(i) * (i + 1);
+    }
+    return total;
+  }
+
+  function widgetHeader(title, subtitle) {
+    var header = makeEl("div", "widget-header");
+    var copy = makeEl("div");
+    copy.appendChild(makeEl("h1", "widget-title", title));
+    copy.appendChild(makeEl("p", "widget-subtitle", subtitle));
+    header.appendChild(copy);
+    return header;
+  }
+
+  function button(text, variant) {
+    var node = makeEl("button", "button" + (variant ? " " + variant : ""), text);
+    node.type = "button";
+    return node;
+  }
+
+  function tableFromRows(headers, rows) {
+    var table = makeEl("table");
+    var thead = makeEl("thead");
+    var headRow = makeEl("tr");
+    headers.forEach(function (header) {
+      headRow.appendChild(makeEl("th", "", header));
+    });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = makeEl("tbody");
+    rows.forEach(function (row) {
+      var tr = makeEl("tr");
+      row.forEach(function (cell) {
+        tr.appendChild(makeEl("td", "", cell));
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    return table;
+  }
+
+  function divisionRows(value, base) {
+    if (value === 0) return [["0 / " + base, "0", "0"]];
+
+    var rows = [];
+    var current = value;
+    while (current > 0) {
+      var quotient = Math.floor(current / base);
+      var remainder = current % base;
+      rows.push([current + " / " + base, String(quotient), DIGITS[remainder]]);
+      current = quotient;
+    }
+    return rows;
+  }
+
+  function initBaseConverter(root) {
+    var value = 246;
+    var weights = [128, 64, 32, 16, 8, 4, 2, 1];
+
+    root.appendChild(widgetHeader(
+      "Base converter",
+      "Change the denary value or click bits. The same value updates in binary and hex."
+    ));
+
+    var output = makeEl("output", "widget-output");
+    root.querySelector(".widget-header").appendChild(output);
+
+    var controls = makeEl("div", "controls");
+    var numberLabel = makeEl("label", "field", "Denary");
+    var numberInput = makeEl("input");
+    numberInput.type = "number";
+    numberInput.min = "0";
+    numberInput.max = "255";
+    numberLabel.appendChild(numberInput);
+
+    var rangeLabel = makeEl("label", "field", "0 to 255");
+    var rangeInput = makeEl("input");
+    rangeInput.type = "range";
+    rangeInput.min = "0";
+    rangeInput.max = "255";
+    rangeLabel.appendChild(rangeInput);
+
+    controls.appendChild(numberLabel);
+    controls.appendChild(rangeLabel);
+
+    var badges = makeEl("div", "value-badges");
+    var bitStrip = makeEl("div", "bit-strip");
+    var note = makeEl("p", "note");
+    var columns = makeEl("div", "columns");
+
+    root.appendChild(controls);
+    root.appendChild(badges);
+    root.appendChild(bitStrip);
+    root.appendChild(note);
+    root.appendChild(columns);
+
+    function badge(labelText, text) {
+      var item = makeEl("div", "value-badge");
+      item.appendChild(makeEl("span", "", labelText));
+      item.appendChild(makeEl("strong", "", text));
+      return item;
+    }
+
+    function setValue(next) {
+      value = clamp(next, 0, 255);
+      render();
+    }
+
+    function render() {
+      var binary = value.toString(2).padStart(8, "0");
+      var hex = value.toString(16).toUpperCase().padStart(2, "0");
+      var used = [];
+
+      numberInput.value = String(value);
+      rangeInput.value = String(value);
+      output.textContent = value + " = " + binary + " = " + hex;
+
+      badges.innerHTML = "";
+      badges.appendChild(badge("denary / decimal", String(value)));
+      badges.appendChild(badge("8-bit binary", binary));
+      badges.appendChild(badge("hex byte", hex));
+
+      bitStrip.innerHTML = "";
+      weights.forEach(function (weight, index) {
+        var bit = binary[index];
+        var cell = makeEl("button", "bit-cell" + (bit === "1" ? " active" : ""));
+        cell.type = "button";
+        cell.appendChild(makeEl("span", "bit-value", bit));
+        cell.appendChild(makeEl("span", "bit-weight", "place " + weight));
+        cell.appendChild(makeEl("span", "bit-contribution", bit === "1" ? "+" + weight : "+0"));
+        cell.addEventListener("click", function () {
+          setValue(bit === "1" ? value - weight : value + weight);
+        });
+        bitStrip.appendChild(cell);
+        if (bit === "1") used.push(String(weight));
+      });
+
+      note.textContent = (used.length ? used.join(" + ") : "0") + " = " + value;
+
+      columns.innerHTML = "";
+      var binaryPanel = makeEl("section", "mini-panel");
+      binaryPanel.appendChild(makeEl("h2", "", "Repeated division by 2"));
+      binaryPanel.appendChild(tableFromRows(["division", "quotient", "remainder"], divisionRows(value, 2)));
+      var hexPanel = makeEl("section", "mini-panel");
+      hexPanel.appendChild(makeEl("h2", "", "Repeated division by 16"));
+      hexPanel.appendChild(tableFromRows(["division", "quotient", "remainder"], divisionRows(value, 16)));
+      columns.appendChild(binaryPanel);
+      columns.appendChild(hexPanel);
+    }
+
+    numberInput.addEventListener("input", function () {
+      setValue(numberInput.value);
+    });
+    rangeInput.addEventListener("input", function () {
+      setValue(rangeInput.value);
+    });
+    render();
+  }
+
+  function initStackSimulator(root) {
+    var stack = ["A", "B", "C"];
+    root.appendChild(widgetHeader("Stack playground", "Push adds to the top. Pop removes the top item."));
+
+    var controls = makeEl("div", "controls");
+    var inputLabel = makeEl("label", "field", "Item");
+    var input = makeEl("input");
+    input.value = "D";
+    inputLabel.appendChild(input);
+
+    var pushButton = button("Push", "primary");
+    var popButton = button("Pop");
+    var peekButton = button("Peek");
+    var clearButton = button("Clear", "danger");
+
+    controls.appendChild(inputLabel);
+    controls.appendChild(pushButton);
+    controls.appendChild(popButton);
+    controls.appendChild(peekButton);
+    controls.appendChild(clearButton);
+
+    var visual = makeEl("div", "stack-visual");
+    var log = makeEl("div", "log");
+    root.appendChild(controls);
+    root.appendChild(visual);
+    root.appendChild(log);
+
+    function render(message) {
+      visual.innerHTML = "";
+      visual.appendChild(makeEl("span", "caption", "top"));
+      for (var i = stack.length - 1; i >= 0; i -= 1) {
+        visual.appendChild(makeEl("div", "stack-cell" + (i === stack.length - 1 ? " top" : ""), stack[i]));
+      }
+      if (stack.length === 0) visual.appendChild(makeEl("div", "stack-cell", "empty"));
+      visual.appendChild(makeEl("div", "stack-base"));
+      log.textContent = (message || "top = " + (stack[stack.length - 1] || "None")) +
+        "\nPython list: [" + stack.join(", ") + "]";
+    }
+
+    pushButton.addEventListener("click", function () {
+      var item = label(input.value);
+      stack.push(item);
+      render("push(" + item + ")");
+    });
+    popButton.addEventListener("click", function () {
+      var item = stack.length ? stack.pop() : "None";
+      render("pop() -> " + item);
+    });
+    peekButton.addEventListener("click", function () {
+      render("peek() -> " + (stack[stack.length - 1] || "None"));
+    });
+    clearButton.addEventListener("click", function () {
+      stack = [];
+      render("clear()");
+    });
+    render();
+  }
+
+  function initQueueSimulator(root) {
+    var queue = ["A", "B", "C"];
+    root.appendChild(widgetHeader("Queue playground", "Enqueue adds at the tail. Dequeue removes from the head."));
+
+    var controls = makeEl("div", "controls");
+    var inputLabel = makeEl("label", "field", "Item");
+    var input = makeEl("input");
+    input.value = "D";
+    inputLabel.appendChild(input);
+
+    var enqueueButton = button("Enqueue", "primary");
+    var dequeueButton = button("Dequeue");
+    var frontButton = button("Front");
+    var rotateButton = button("Rotate");
+    var clearButton = button("Clear", "danger");
+
+    controls.appendChild(inputLabel);
+    controls.appendChild(enqueueButton);
+    controls.appendChild(dequeueButton);
+    controls.appendChild(frontButton);
+    controls.appendChild(rotateButton);
+    controls.appendChild(clearButton);
+
+    var visual = makeEl("div", "queue-visual");
+    var log = makeEl("div", "log");
+    root.appendChild(controls);
+    root.appendChild(visual);
+    root.appendChild(log);
+
+    function render(message) {
+      visual.innerHTML = "";
+      if (queue.length === 0) {
+        visual.appendChild(makeEl("div", "queue-cell", "empty"));
+      } else {
+        queue.forEach(function (item, index) {
+          var cell = makeEl("div", "queue-cell" + (index === 0 ? " head" : ""), item);
+          var captions = [];
+          if (index === 0) captions.push("head");
+          if (index === queue.length - 1) captions.push("tail");
+          cell.appendChild(makeEl("span", "caption", captions.join(" / ") || "index " + index));
+          visual.appendChild(cell);
+        });
+      }
+      log.textContent = (message || "front = " + (queue[0] || "None")) +
+        "\nPython list: [" + queue.join(", ") + "]";
+    }
+
+    enqueueButton.addEventListener("click", function () {
+      var item = label(input.value);
+      queue.push(item);
+      render("enqueue(" + item + ")");
+    });
+    dequeueButton.addEventListener("click", function () {
+      var item = queue.length ? queue.shift() : "None";
+      render("dequeue() -> " + item);
+    });
+    frontButton.addEventListener("click", function () {
+      render("front() -> " + (queue[0] || "None"));
+    });
+    rotateButton.addEventListener("click", function () {
+      if (queue.length) queue.push(queue.shift());
+      render("rotate once: dequeue head, enqueue at tail");
+    });
+    clearButton.addEventListener("click", function () {
+      queue = [];
+      render("clear()");
+    });
+    render();
+  }
+
+  function initHashPlayground(root) {
+    var items = ["dbac", "badc"];
+    root.appendChild(widgetHeader("Hash table playground", "Use the lesson hash, then choose chaining or linear probing for collisions."));
+
+    var controls = makeEl("div", "controls");
+    var itemLabel = makeEl("label", "field", "Item");
+    var itemInput = makeEl("input");
+    itemInput.value = "cdab";
+    itemLabel.appendChild(itemInput);
+
+    var methodLabel = makeEl("label", "field", "Collision method");
+    var methodSelect = makeEl("select");
+    [["chain", "separate chaining"], ["probe", "linear probing"]].forEach(function (option) {
+      var node = makeEl("option", "", option[1]);
+      node.value = option[0];
+      methodSelect.appendChild(node);
+    });
+    methodLabel.appendChild(methodSelect);
+
+    var insertButton = button("Insert", "primary");
+    var resetButton = button("Reset");
+    controls.appendChild(itemLabel);
+    controls.appendChild(methodLabel);
+    controls.appendChild(insertButton);
+    controls.appendChild(resetButton);
+
+    var table = makeEl("div", "hash-table");
+    var log = makeEl("div", "log");
+    root.appendChild(controls);
+    root.appendChild(table);
+    root.appendChild(log);
+
+    function build(method) {
+      var slots = [[], [], [], [], []];
+      var traces = [];
+
+      items.forEach(function (item) {
+        var h = hashValue(item);
+        var home = h % slots.length;
+
+        if (method === "chain") {
+          if (slots[home].length) {
+            traces.push(item + ": " + h + " % 5 = " + home + ", collision, append to slot " + home);
+          } else {
+            traces.push(item + ": " + h + " % 5 = " + home);
+          }
+          slots[home].push(item);
+          return;
+        }
+
+        var index = home;
+        var checked = 0;
+        var path = [String(index)];
+        while (slots[index].length && checked < slots.length) {
+          index = (index + 1) % slots.length;
+          checked += 1;
+          path.push(String(index));
+        }
+        if (checked < slots.length) {
+          slots[index].push(item);
+          traces.push(item + ": " + h + " % 5 = " + home + ", probe " + path.join(" -> "));
+        } else {
+          traces.push(item + ": table full");
+        }
+      });
+
+      return { slots: slots, traces: traces };
+    }
+
+    function render(extra) {
+      var method = methodSelect.value;
+      var result = build(method);
+      table.innerHTML = "";
+
+      result.slots.forEach(function (slot, index) {
+        var box = makeEl("div", "hash-slot");
+        box.appendChild(makeEl("div", "hash-slot-index", "index " + index));
+        var list = makeEl("div", "hash-slot-items");
+        if (slot.length === 0) {
+          list.appendChild(makeEl("div", "hash-entry", "empty"));
+        } else {
+          slot.forEach(function (item, itemIndex) {
+            list.appendChild(makeEl("div", "hash-entry" + (itemIndex > 0 ? " focus" : ""), item));
+          });
+        }
+        box.appendChild(list);
+        table.appendChild(box);
+      });
+
+      var current = label(itemInput.value);
+      var currentHash = hashValue(current);
+      var lines = result.traces.slice(-4);
+      lines.push("current input: " + current + " -> " + currentHash + " % 5 = " + (currentHash % 5));
+      if (extra) lines.push(extra);
+      log.textContent = lines.join("\n");
+    }
+
+    insertButton.addEventListener("click", function () {
+      var item = label(itemInput.value);
+      if (methodSelect.value === "probe" && items.length >= 5) {
+        render("linear probing table is full");
+        return;
+      }
+      items.push(item);
+      itemInput.value = "";
+      render("inserted " + item);
+    });
+    resetButton.addEventListener("click", function () {
+      items = ["dbac", "badc"];
+      itemInput.value = "cdab";
+      render("reset");
+    });
+    methodSelect.addEventListener("change", function () { render(); });
+    itemInput.addEventListener("input", function () { render(); });
+    render();
+  }
+
+  function initPrintFormat(root) {
+    var widthName = 12;
+    var widthPrice = 8;
+    var precision = 2;
+    var align = "<";
+    var rows = [
+      ["shirt", 12],
+      ["pen", 1.5],
+      ["cake", 4.56789]
+    ];
+
+    root.appendChild(widgetHeader(
+      "Print formatting playground",
+      "Change the field width, alignment, and decimal places. Watch the table spacing update."
+    ));
+
+    var controls = makeEl("div", "controls");
+    var nameWidthLabel = makeEl("label", "field", "Name width");
+    var nameWidthInput = makeEl("input");
+    nameWidthInput.type = "number";
+    nameWidthInput.min = "6";
+    nameWidthInput.max = "20";
+    nameWidthInput.value = String(widthName);
+    nameWidthLabel.appendChild(nameWidthInput);
+
+    var priceWidthLabel = makeEl("label", "field", "Price width");
+    var priceWidthInput = makeEl("input");
+    priceWidthInput.type = "number";
+    priceWidthInput.min = "6";
+    priceWidthInput.max = "20";
+    priceWidthInput.value = String(widthPrice);
+    priceWidthLabel.appendChild(priceWidthInput);
+
+    var precisionLabel = makeEl("label", "field", "Decimal places");
+    var precisionInput = makeEl("input");
+    precisionInput.type = "number";
+    precisionInput.min = "0";
+    precisionInput.max = "4";
+    precisionInput.value = String(precision);
+    precisionLabel.appendChild(precisionInput);
+
+    var alignLabel = makeEl("label", "field", "Name alignment");
+    var alignSelect = makeEl("select");
+    [["<", "left"], [">", "right"], ["^", "center"]].forEach(function (option) {
+      var node = makeEl("option", "", option[1]);
+      node.value = option[0];
+      alignSelect.appendChild(node);
+    });
+    alignLabel.appendChild(alignSelect);
+
+    controls.appendChild(nameWidthLabel);
+    controls.appendChild(priceWidthLabel);
+    controls.appendChild(precisionLabel);
+    controls.appendChild(alignLabel);
+
+    var formatLine = makeEl("div", "log");
+    var preview = makeEl("pre", "preview");
+    root.appendChild(controls);
+    root.appendChild(formatLine);
+    root.appendChild(preview);
+
+    function padText(value, width, mode) {
+      var text = String(value);
+      if (text.length >= width) return text;
+      var spaces = width - text.length;
+      if (mode === ">") return " ".repeat(spaces) + text;
+      if (mode === "^") {
+        var left = Math.floor(spaces / 2);
+        return " ".repeat(left) + text + " ".repeat(spaces - left);
+      }
+      return text + " ".repeat(spaces);
+    }
+
+    function formatFloat(value, width, places) {
+      return padText(Number(value).toFixed(places), width, ">");
+    }
+
+    function render() {
+      widthName = clamp(nameWidthInput.value, 6, 20);
+      widthPrice = clamp(priceWidthInput.value, 6, 20);
+      precision = clamp(precisionInput.value, 0, 4);
+      align = alignSelect.value;
+
+      nameWidthInput.value = String(widthName);
+      priceWidthInput.value = String(widthPrice);
+      precisionInput.value = String(precision);
+
+      var formatString = "{0:<8}{1:" + align + widthName + "}{2:>" + widthPrice + "." + precision + "f}";
+      formatLine.textContent = "format string: '" + formatString + "'.format(index, item, price)";
+
+      var output = "";
+      output += padText("Index", 8, "<") + padText("Item", widthName, align) + padText("Price", widthPrice, ">") + "\n";
+      rows.forEach(function (row, index) {
+        output += padText(index + 1, 8, "<") + padText(row[0], widthName, align) + formatFloat(row[1], widthPrice, precision) + "\n";
+      });
+      preview.textContent = output;
+    }
+
+    [nameWidthInput, priceWidthInput, precisionInput, alignSelect].forEach(function (control) {
+      control.addEventListener("input", render);
+      control.addEventListener("change", render);
+    });
+    render();
+  }
+
+  var root = document.getElementById("widget-root");
+  var widget = document.body.getAttribute("data-widget");
+  var initializers = {
+    "base-converter": initBaseConverter,
+    "stack-simulator": initStackSimulator,
+    "queue-simulator": initQueueSimulator,
+    "hash-playground": initHashPlayground,
+    "print-format": initPrintFormat
+  };
+
+  if (root && initializers[widget]) {
+    root.className = "widget";
+    root.innerHTML = "";
+    initializers[widget](root);
+  }
+})();
+
+  </script>
 </body>
 </html>

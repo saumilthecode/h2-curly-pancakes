@@ -543,6 +543,7 @@
 
   if (root && initializers[widget]) {
     root.className = "widget";
+    root.innerHTML = "";
     initializers[widget](root);
   }
 })();

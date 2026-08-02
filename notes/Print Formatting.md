@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> Print formatting = controlling separators, newlines, alignment, width, and decimal places so output is readable.
+> Print formatting = making output line up: separators, newlines, column width, alignment, and decimal places.
 
 ## Print Playground
 
@@ -7,220 +7,104 @@
 
 [Open standalone print formatting playground](./pictures/print-format.html)
 
-## `print()` Basics
+## `print()` Options
 
-`print()` can output several values.
-
-```python
-value = 3.564
-print("a = ", value)
-print("b = ", value + 10)
-```
-
-By default:
-
-- values are separated by a space
-- each `print()` ends with a newline
-- output goes to the screen
-
-## `sep`
-
-`sep` controls what goes between values.
+| Option | Controls | Example |
+| ------ | -------- | ------- |
+| `sep` | gap between printed values | `print(192, 168, 1, 1, sep=".")` |
+| `end` | what comes after this print | `print(i, end=" ")` |
+| `file` | where output goes | `print("hi", file=f)` |
 
 ```python
 print("a", "b")                 # a b
 print("a", "b", sep="")         # ab
 print(192, 168, 178, 42, sep=".")  # 192.168.178.42
-print("a", "b", sep=":-)")      # a:-)b
 ```
-
-Use `sep` when the values are already separate arguments.
-
-## `end`
-
-`end` controls what comes after a `print()`.
-
-```python
-for i in range(4):
-    print(i)
-```
-
-Output:
-
-```text
-0
-1
-2
-3
-```
-
-Same loop, one line:
 
 ```python
 for i in range(4):
     print(i, end=" ")
+
+# 0 1 2 3
 ```
 
-Output:
-
-```text
-0 1 2 3
-```
-
-With arrows:
-
-```python
-for i in range(4):
-    print(i, end=" -> ")
-```
-
-Output:
-
-```text
-0 -> 1 -> 2 -> 3 ->
-```
-
-## `file`
-
-`file` sends printed output somewhere else, like a text file.
-
-```python
-f = open("data.txt", "w")
-print("Print output to file.", file=f)
-f.close()
-```
-
-Safer pattern:
+File output:
 
 ```python
 with open("data.txt", "w") as file:
     print("Print output to file.", file=file)
 ```
 
-## `format()` Placeholders
+## `format()` Shape
 
-`format()` puts values into `{}` placeholders.
+Pattern:
 
-```python
-name = "Bob"
-score = 17
-
-print("{} scored {}".format(name, score))
+```text
+"{0:width}{1:width}".format(value0, value1)
 ```
 
-Numbered placeholders:
-
-```python
-print("{0} scored {1}".format(name, score))
-```
-
-## Width
-
-Width reserves a fixed number of spaces.
-
-```python
-print("{0:8}{1:15}".format("Index", "Name"))
-```
-
-Meaning:
-
-- `{0:8}` means first value uses width `8`
-- `{1:15}` means second value uses width `15`
-- fixed width helps columns line up
-
-Example:
-
-```python
-names = ["Albert", "Bob", "Chloe", "Desmond", "Eve"]
-
-print("{0:8}{1:15}".format("Index", "Name"))
-i = 1
-
-for name in names:
-    print("{0:8}{1:15}".format(str(i), name))
-    i += 1
-```
-
-## Alignment
-
-Alignment goes before the width.
+Useful forms:
 
 | Format | Meaning |
 | ------ | ------- |
+| `{0:8}` | value 0 uses width 8 |
 | `{0:<8}` | left align in width 8 |
 | `{0:>8}` | right align in width 8 |
 | `{0:^8}` | centre align in width 8 |
-
-Strings are usually left aligned by default. Numbers are usually right aligned by default.
-
-## Decimal Places
-
-Use `.2f` for two decimal places.
-
-```python
-price = 4.56789
-print("{0:6.2f}".format(price))  #  4.57
-```
+| `{0:6.2f}` | float, width 6, 2 decimal places |
 
 Breakdown:
 
 ```text
 {0:6.2f}
-  0   value index
-  6   total width
- .2   two decimal places
-  f   float
+ 0    value index
+ 6    total width
+.2    decimal places
+ f    float
 ```
 
 ## Table Pattern
 
+Use fixed widths for columns.
+
 ```python
 prices = [("shirt", 12), ("pen", 1.5), ("cake", 4.56789)]
 
-print("{0:8}{1:10}{2:>6}".format("Index", "Item", "Price"))
-i = 1
+print("{0:<8}{1:<10}{2:>8}".format("Index", "Item", "Price"))
 
-for item, price in prices:
-    print("{0:8}{1:10}{2:6.2f}".format(str(i), item, price))
-    i += 1
+for i, item in enumerate(prices, 1):
+    name = item[0]
+    price = item[1]
+    print("{0:<8}{1:<10}{2:>8.2f}".format(i, name, price))
+```
+
+Output shape:
+
+```text
+Index   Item         Price
+1       shirt        12.00
+2       pen           1.50
+3       cake          4.57
 ```
 
 ## CSV Table Pattern
 
+Same idea after reading values from a file:
+
 ```python
-import csv
+height = float(student[2])
+weight = float(student[3])
+bmi = weight / (height ** 2)
 
-print("{0:<8}{1:<12}{2:<10}{3:>10}{4:>10}{5:>10}".format(
-    "Index", "Name", "Gender", "Height", "Weight", "BMI"
-))
-
-with open("data.csv", "r", newline="") as file:
-    reader = csv.reader(file)
-    next(reader)
-
-    i = 1
-
-    for student in reader:
-        name = student[0]
-        gender = student[1]
-        height = float(student[2])
-        weight = float(student[3])
-        bmi = weight / (height ** 2)
-
-        print("{0:<8}{1:<12}{2:<10}{3:>10.2f}{4:>10.2f}{5:>10.2f}".format(
-            i, name, gender, height, weight, bmi
-        ))
-
-        i += 1
+print("{0:<8}{1:<12}{2:>10.2f}".format(i, name, bmi))
 ```
 
 ## Common Mistakes
 
-- Forgetting that `end` replaces the newline.
-- Using `sep` after joining everything into one string.
-- Forgetting the colon in `{0:8}`.
-- Mixing up width and decimal places in `{0:6.2f}`.
-- Not converting input/file values to `float` before numeric formatting.
+- `end` replaces the newline.
+- `sep` only works between separate print arguments.
+- `{0:6.2f}` means width `6`, not `6` decimal places.
+- Convert file/input strings to `float` before using `.2f`.
 
 ## Related
 
