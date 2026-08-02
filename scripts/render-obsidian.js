@@ -178,13 +178,6 @@ function transformObsidianSyntax(source, knownNotes) {
     .join("");
 }
 
-function transformMermaid(html) {
-  return html.replace(
-    /<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/g,
-    (_all, code) => `<div class="mermaid">${code}</div>`,
-  );
-}
-
 function transformCallouts(html) {
   return html.replace(/<blockquote>\n([\s\S]*?)<\/blockquote>/g, (all, inner) => {
     const callout = inner.match(/^<p>\[!(\w+)\]([^\n<]*)\n?([\s\S]*?)<\/p>\n?([\s\S]*)$/);
@@ -204,53 +197,10 @@ ${body ? `<div class="callout-content">${body}</div>` : ""}
   });
 }
 
-const widgets = {
-  "base-converter": {
-    className: "base-converter",
-    src: "pictures/base-converter.html",
-    title: "Interactive base converter",
-    height: 820,
-  },
-  "stack-simulator": {
-    className: "stack-simulator",
-    src: "pictures/stack-simulator.html",
-    title: "Interactive stack playground",
-    height: 520,
-  },
-  "queue-simulator": {
-    className: "queue-simulator",
-    src: "pictures/queue-simulator.html",
-    title: "Interactive queue playground",
-    height: 520,
-  },
-  "hash-playground": {
-    className: "hash-playground",
-    src: "pictures/hash-playground.html",
-    title: "Interactive hash table playground",
-    height: 620,
-  },
-  "print-format": {
-    className: "print-format",
-    src: "pictures/print-format.html",
-    title: "Interactive print formatting playground",
-    height: 600,
-  },
-};
-
-function transformWidgets(html) {
-  return html.replace(/<!--\s*widget:([\w-]+)\s*-->/g, (all, id) => {
-    const widget = widgets[id];
-    if (!widget) return all;
-
-    return `<iframe class="note-widget-frame ${widget.className}" src="${encodeHref(widget.src)}" title="${escapeHtml(widget.title)}" style="width:100%;height:${widget.height}px;border:1px solid #d8d3ca;border-radius:8px;background:#fff;"></iframe>`;
-  });
-}
-
 function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
   const transformed = transformObsidianSyntax(source, knownNotes);
-  const body = transformWidgets(transformCallouts(transformMermaid(md.render(transformed))));
+  const body = transformCallouts(md.render(transformed));
   const pageTitle = file === "index.md" ? "H2 Computing Notes" : displayTitles.get(file) || titleFromFile(file);
-  const needsMermaid = source.includes("```mermaid");
 
   return `<!doctype html>
 <html lang="en">
@@ -271,7 +221,6 @@ function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
       ${body}
     </main>
   </div>
-  ${needsMermaid ? '<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"; mermaid.initialize({ startOnLoad: true, theme: "default" });</script>' : ""}
 </body>
 </html>`;
 }
@@ -502,26 +451,6 @@ pre code {
   max-width: 100%;
   margin: 1rem 0;
   border-radius: 8px;
-}
-
-.note-widget-frame {
-  display: block;
-  width: 100%;
-  margin: 1rem 0;
-  border: 1px solid var(--background-modifier-border);
-  border-radius: 8px;
-  background: #ffffff;
-}
-
-.note-widget-frame.base-converter { height: 820px; }
-.note-widget-frame.stack-simulator { height: 520px; }
-.note-widget-frame.queue-simulator { height: 520px; }
-.note-widget-frame.hash-playground { height: 620px; }
-.note-widget-frame.print-format { height: 600px; }
-
-.mermaid {
-  margin: 1rem 0;
-  overflow-x: auto;
 }
 
 @media (max-width: 820px) {

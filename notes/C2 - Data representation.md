@@ -24,10 +24,17 @@ Place value:   128   64   32   16    8    4    2    1
 Contribution:  128 + 64 + 32 + 16 + 0  + 4  + 2  + 0 = 246
 ```
 
-> [!example] Practice
-> [Open base converter](./pictures/base-converter.html)
+<details open>
+<summary>Worked bit view: `246` as one byte</summary>
 
-<!-- widget:base-converter -->
+| Bit | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 0 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Place value | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+| Contribution | 128 | 64 | 32 | 16 | 0 | 4 | 2 | 0 |
+
+`128 + 64 + 32 + 16 + 4 + 2 = 246`
+
+</details>
 
 ## Number Bases
 
@@ -59,10 +66,8 @@ Every number base follows the same place-value rule. The rightmost place is wort
 
 Carry means: when a column runs out of allowed digits, reset that column to `0` and add `1` to the column on the left.
 
-```mermaid
-flowchart LR
-  Full["current place is full"] --> Reset["write 0 in this place"]
-  Reset --> Carry["carry 1 to the next place left"]
+```text
+current place is full -> write 0 in this place -> carry 1 to the next place left
 ```
 
 | Base | Digits allowed in one place | Biggest single digit | Next value after that | What written `10` means |
@@ -287,21 +292,20 @@ base 2:   ...    8     4     2    1
 base 16:  ... 4096   256    16    1
 ```
 
-```mermaid
-flowchart TD
-  Value["same value: 246"] --> Denary["denary: 246<br/>2*100 + 4*10 + 6"]
-  Value --> Binary["binary: 11110110<br/>128 + 64 + 32 + 16 + 4 + 2"]
-  Value --> Hex["hex: F6<br/>15*16 + 6"]
-```
+| Same value: `246` | Meaning |
+| ----------------- | ------- |
+| denary `246` | `2*100 + 4*10 + 6` |
+| binary `11110110` | `128 + 64 + 32 + 16 + 4 + 2` |
+| hex `F6` | `15*16 + 6` |
 
 Conversion direction map:
 
-```mermaid
-flowchart LR
-  Binary["binary<br/>base 2"] <-->|"place values<br/>or repeated division"| Decimal["decimal / denary<br/>base 10"]
-  Decimal <-->|"place values<br/>or repeated division"| Hex["hexadecimal<br/>base 16"]
-  Binary <-->|"group into 4 bits"| Hex
-```
+| From | To | Method |
+| ---- | -- | ------ |
+| binary/hex | decimal | place values |
+| decimal | binary/hex | repeated division |
+| binary | hex | group bits into 4s |
+| hex | binary | expand each hex digit to 4 bits |
 
 ## Base to Decimal
 
@@ -343,14 +347,10 @@ Repeated division method:
 
 Process picture:
 
-```mermaid
-flowchart TD
-  Start["start with decimal number"] --> Divide["divide by target base"]
-  Divide --> Remainder["write down the remainder"]
-  Remainder --> Check{"is quotient 0?"}
-  Check -- "no" --> Next["use quotient as new number"]
-  Next --> Divide
-  Check -- "yes" --> Read["read remainders from bottom to top"]
+```text
+start number -> divide by target base -> record remainder
+use quotient as next number -> repeat until quotient is 0
+answer = remainders read from bottom to top
 ```
 
 Example: convert decimal `246` to binary.
@@ -473,11 +473,10 @@ For manual conversion questions, avoid `bin()`, `hex()`, and `int(value, base)` 
 
 Code pattern map:
 
-```mermaid
-flowchart LR
-  ToDecimal["binary/hex to decimal"] --> Place["loop over digits<br/>digit * base ** power"]
-  FromDecimal["decimal to binary/hex"] --> Divide["while number > 0<br/>prepend remainder"]
-```
+| Conversion | Code idea |
+| ---------- | --------- |
+| binary/hex to decimal | loop over digits and add `digit * base ** power` |
+| decimal to binary/hex | repeatedly divide and prepend the remainder |
 
 Binary to decimal:
 
@@ -562,11 +561,9 @@ ASCII maps characters to integer codes.
 
 Character to code picture:
 
-```mermaid
-flowchart LR
-  Char["character<br/>A"] --> Code["ASCII decimal code<br/>65"]
-  Code --> Bits["binary pattern<br/>01000001"]
-```
+| Character | ASCII decimal | Binary pattern |
+| --------- | ------------- | -------------- |
+| `A` | `65` | `01000001` |
 
 Common examples:
 
@@ -605,11 +602,10 @@ Why Unicode is needed:
 
 ASCII vs Unicode picture:
 
-```mermaid
-flowchart LR
-  ASCII["ASCII<br/>128 codes"] --> English["basic English letters<br/>digits<br/>punctuation"]
-  Unicode["Unicode<br/>many more code points"] --> Many["many languages<br/>symbols<br/>emoji"]
-```
+| Standard | Covers |
+| -------- | ------ |
+| ASCII | 128 codes: basic English letters, digits, punctuation, control codes |
+| Unicode | many more code points: many languages, symbols, emoji |
 
 Examples:
 

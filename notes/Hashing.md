@@ -1,12 +1,19 @@
 > [!summary] Quick View
 > Hashing turns data into a hash value. Hash tables use `hash(item) % table_size` to choose an index.
 
-## Hash Table Playground
+## Collision Trace
 
-> [!example] Practice
-> [Open hash table playground](./pictures/hash-playground.html)
+<details open>
+<summary>`dbac` and `badc` both hash to index `3` when table size is `5`</summary>
 
-<!-- widget:hash-playground -->
+| Item | Hash value | Index calculation |
+| ---- | ---------- | ----------------- |
+| `dbac` | `988` | `988 % 5 = 3` |
+| `badc` | `988` | `988 % 5 = 3` |
+
+Both want the same slot, so use separate chaining or linear probing.
+
+</details>
 
 ## Hashing Idea
 

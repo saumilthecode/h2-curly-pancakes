@@ -1,12 +1,28 @@
 > [!summary] Quick View
 > Print formatting = making output line up: separators, newlines, column width, alignment, and decimal places.
 
-## Print Playground
+## Formatting Trace
 
-> [!example] Practice
-> [Open print formatting playground](./pictures/print-format.html)
+<details open>
+<summary>How fixed-width columns line up</summary>
 
-<!-- widget:print-format -->
+```python
+print("{0:<8}{1:<10}{2:>8.2f}".format(1, "cake", 4.56789))
+```
+
+Output shape:
+
+```text
+1       cake          4.57
+```
+
+| Part | Meaning |
+| ---- | ------- |
+| `{0:<8}` | value 0, left aligned, width 8 |
+| `{1:<10}` | value 1, left aligned, width 10 |
+| `{2:>8.2f}` | value 2, right aligned, width 8, 2 decimals |
+
+</details>
 
 ## `print()` Options
 

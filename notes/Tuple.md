@@ -20,14 +20,13 @@ y = (3, 4)
 z = (x, y)
 ```
 
-```mermaid
-flowchart LR
-    xvar["x"] --> xtup["(1, 2)"]
-    yvar["y"] --> ytup["(3, 4)"]
-    zvar["z"] --> ztup["((1, 2), (3, 4))"]
-    ztup -->|item 0| xtup
-    ztup -->|item 1| ytup
-```
+| Name | Value |
+| ---- | ----- |
+| `x` | `(1, 2)` |
+| `y` | `(3, 4)` |
+| `z` | `((1, 2), (3, 4))` |
+| `z[0]` | same tuple value as `x` |
+| `z[1]` | same tuple value as `y` |
 
 - `z` evaluates to `((1, 2), (3, 4))`
 - `z[0]` is `(1, 2)` and `z[1]` is `(3, 4)`

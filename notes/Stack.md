@@ -1,12 +1,20 @@
 > [!summary] Quick View
 > Stack = LIFO: Last In, First Out. Add/remove only from the top.
 
-## Stack Playground
+## Stack Trace
 
-> [!example] Practice
-> [Open stack playground](./pictures/stack-simulator.html)
+<details open>
+<summary>Push and pop example</summary>
 
-<!-- widget:stack-simulator -->
+| Step | Operation | Stack after step | Return |
+| ---- | --------- | ---------------- | ------ |
+| 1 | start | `[]` | - |
+| 2 | `push("A")` | `["A"]` | - |
+| 3 | `push("B")` | `["A", "B"]` | - |
+| 4 | `peek()` | `["A", "B"]` | `"B"` |
+| 5 | `pop()` | `["A"]` | `"B"` |
+
+</details>
 
 ## Core Operations
 

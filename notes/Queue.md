@@ -1,12 +1,20 @@
 > [!summary] Quick View
 > Queue = FIFO: First In, First Out. Add at tail, remove from head.
 
-## Queue Playground
+## Queue Trace
 
-> [!example] Practice
-> [Open queue playground](./pictures/queue-simulator.html)
+<details open>
+<summary>Enqueue and dequeue example</summary>
 
-<!-- widget:queue-simulator -->
+| Step | Operation | Queue after step | Return |
+| ---- | --------- | ---------------- | ------ |
+| 1 | start | `[]` | - |
+| 2 | `enqueue("A")` | `["A"]` | - |
+| 3 | `enqueue("B")` | `["A", "B"]` | - |
+| 4 | `front()` | `["A", "B"]` | `"A"` |
+| 5 | `dequeue()` | `["B"]` | `"A"` |
+
+</details>
 
 ## Core Operations
 
