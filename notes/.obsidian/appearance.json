@@ -1,5 +1,8 @@
 {
   "textFontFamily": "Papyrus",
   "accentColor": "#9fcbf9",
-  "translucency": true
+  "translucency": true,
+  "cssTheme": "Cupertino",
+  "interfaceFontFamily": "Papyrus",
+  "monospaceFontFamily": "SF Pro Text"
 }

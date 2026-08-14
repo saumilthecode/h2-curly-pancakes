@@ -1,0 +1,13 @@
+Name,Age,House,Points
+Draco Malfoy,11,Slytherin,400
+Pansy Parkinson,11,Slytherin,390
+Padma Patil,12,Ravenclaw,380
+Ginny Weasley,10,Gryffindor,370
+Harry Potter,11,Gryffindor,430
+Hannah Abbott,11,Hufflepuff,380
+Cho Chang,12,Ravenclaw,360
+Susan Bones,11,Hufflepuff,360
+Blaise Zabini,12,Slytherin,390
+Cedric Diggory,13,Hufflepuff,410
+Luna Lovegood,10,Ravenclaw,390
+Hermione Granger,12,Gryffindor,420

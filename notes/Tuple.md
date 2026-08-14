@@ -1,96 +1,131 @@
 > [!summary] Quick View
-> A tuple is an ordered, immutable collection.
+> A tuple is an **ordered, immutable** collection. Once made, it cannot be changed.
 
 ## Basics
 
-- Tuples are immutable, so their contents cannot be changed after creation.
-- Tuples usually use round brackets: `()`
-- A single-item tuple needs a trailing comma: `(a,)`
-
 ```python
 tup = (1, 2, 3)
-single = (5,)
+empty = ()
+single = (5,)      # trailing comma is required
 ```
 
-## Box-and-Pointer View
+> [!warning]
+> `(5)` is just the number `5` in brackets. `(5,)` is a tuple.
+
+**Why use a tuple instead of a list?**
+
+- The data is not meant to be modified.
+- Faster to work with than a list.
+
+## What You Cannot Do
 
 ```python
-x = (1, 2)
-y = (3, 4)
-z = (x, y)
+tup[2] = 'h'       # cannot update by assignment
+tup.append('h')    # cannot add
+tup.remove('g')    # cannot remove
+del tup[6]         # cannot delete an element
+
+del tup            # but you CAN delete the whole tuple
 ```
-
-| Name | Value |
-| ---- | ----- |
-| `x` | `(1, 2)` |
-| `y` | `(3, 4)` |
-| `z` | `((1, 2), (3, 4))` |
-| `z[0]` | same tuple value as `x` |
-| `z[1]` | same tuple value as `y` |
-
-- `z` evaluates to `((1, 2), (3, 4))`
-- `z[0]` is `(1, 2)` and `z[1]` is `(3, 4)`
-- `z` stores references to the two tuple objects, not the variable names `x` and `y`
-
-## Reassigning and Deleting
-
-```python
-tup = tup + (1, 2)
-
-# a new tuple is created
-```
-
-```python
-del tup
-```
-
-This deletes the whole tuple variable.
 
 ## Operations
 
 ```python
-tup * 3
-# repeats it three times
+tup + (1, 2)   # concatenation — creates a NEW tuple
+tup * 3        # repetition
+"b" in tup     # membership → True / False
+tup[2:5]       # slicing → a new tuple
+len(tup)
+max(tup)  min(tup)
+sorted(tup)    # returns a LIST, not a tuple
+tuple("abc")   # ('a', 'b', 'c')
 ```
 
-## Membership
-
-```python
-tup = ("a", "b", "c")
-
-"b" in tup  # True
-"z" in tup  # False
-```
+> [!important]
+> `tup = tup + (4,)` does not modify the tuple — it builds a new one and points the name at it.
 
 ## Iteration
 
 ```python
 for ele in tup:
     print(ele)
-```
 
-```python
 for i in range(len(tup)):
     print(tup[i])
 ```
 
-## Conversion and Useful Functions
+## Returning Several Values
+
+A function returns one value — make that value a tuple to hand back several.
 
 ```python
-tuple("abc")  # ('a', 'b', 'c')
-sorted(tup)   # returns a list
-max(tup)
-min(tup)
+def score(tup):
+    return max(tup), min(tup)     # brackets optional
+
+high, low = score((1, 2, 3, 4, 5))
 ```
+
+## Box-and-Pointer
+
+The values are **not** stored inside the tuple. The tuple stores references to them.
+
+```text
+x = (1, 2)
+y = (3, 4)
+z = (x, y)
+
+        z
+    ┌───┴────┐
+    ▼        ▼
+    x        y
+ ┌──┬──┐  ┌──┬──┐
+ └┬─┴─┬┘  └┬─┴─┬┘
+  ▼   ▼    ▼   ▼
+  1   2    3   4
+
+z        -> ((1, 2), (3, 4))
+z[0]     -> (1, 2)
+z[1][1]  -> 4
+```
+
+`z` holds references to the two tuple objects — not to the *names* `x` and `y`.
 
 ## Identity vs Equality
 
-1. Identity: `is`  
-   Checks whether two variables refer to the same object.
-2. Equality: `==`  
-   Checks whether two values are the same.
+| Operator | Asks | Example |
+| -------- | ---- | ------- |
+| `is` | same object in memory? | identity |
+| `==` | same value? | equivalence |
+
+```python
+a, b = 5, 5
+x = (a, b)
+y = (a, b)
+z = x
+
+x == y    # True  — same value
+x is y    # False — two separate tuples
+z is x    # True  — same object
+```
+
+> [!warning]
+> Use `==` to compare values. `is` is unreliable for numbers: `3.000 is 3` is `False`.
+
+## Mutable vs Immutable
+
+```python
+lst = [1, 2, 3];  lst2 = lst
+lst += [4, 5, 6]
+lst2              # [1, 2, 3, 4, 5, 6]  — the list was mutated
+
+tup = (1, 2, 3);  tup2 = tup
+tup += (4, 5, 6)
+tup2              # (1, 2, 3)  — a new tuple was created
+```
 
 ## Related
 
 - [[Lists]]
+- [[Dictionary]]
+- [[Data Abstraction]]
 - [[Iteration]]

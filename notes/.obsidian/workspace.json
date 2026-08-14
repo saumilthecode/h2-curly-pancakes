@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Random Generator.md",
-                "mode": "source",
+                "file": "Hashing.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Random Generator"
+              "title": "Hashing"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -174,6 +176,18 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "006f43d1335afd7e",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "Print Formatting.md"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
           }
         ],
         "currentTab": 5
@@ -193,30 +207,45 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "markdown-importer:Open format converter": false,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "3e14a9d61c346303",
+  "active": "5a7d495f8cd7d8ce",
   "lastOpenFiles": [
-    "* index.md",
+    "Tuple.md",
+    "Stack.md.tmp.7308.ff25a699f37e",
+    "Hashing.md",
     "File Handling.md",
+    "Queue.md",
     "Lists.md",
+    "Functions (functional abstraction).md",
+    "index.md",
+    "Print Formatting.md",
+    "Random Generator.md",
+    "Stack.md",
+    "Types of Errors and Test Cases.md",
+    "pictures/print-format.html",
+    "Recursion.md",
+    "pictures/hash-playground.html",
+    "pictures/queue-simulator.html",
+    "pictures/stack-simulator.html",
+    "pictures/base-converter.html",
+    "pictures/widget.js",
+    "basic python.md",
+    "pictures/widget.css",
+    "* index.md",
     "queue-fifo.svg",
     "queue-pass-bomb.svg",
     "C2 - Data representation.md",
-    "Recursion.md",
     "_config.yml",
-    "index.md",
-    "Random Generator.md",
     "recursion.png",
     "Dictionary.md",
-    "Functions (functional abstraction).md",
-    "basic python.md",
     "Conditionals.md",
-    "Types of Errors and Test Cases.md",
     "Data validation and verification.md",
     "Iteration.md",
-    "Tuple.md",
     "Untitled.canvas",
     "2026-04-15.md",
     "Untitled.base",

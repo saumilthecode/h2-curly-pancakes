@@ -1,44 +1,82 @@
 > [!important] Key Distinction
-> - Validation checks whether data is sensible and reasonable.
-> - Verification checks whether data matches the original source.
+> **Validation** — is the data *sensible and reasonable*?
+> **Verification** — does the data *match the original source*?
 
-## Comparison
+Validation does **not** check whether data is accurate. `age = 35` is valid even if you are 17.
 
-| Term           | What it means                                   | Example                                |
-| -------------- | ----------------------------------------------- | -------------------------------------- |
-| Verification   | checks that entered data matches the source     | double entry for password changes      |
-| Validation     | checks that entered data is sensible            | age is between `0` and `99`            |
+| Term | Checks | Example |
+| ---- | ------ | ------- |
+| Verification | entered data matches the source | typing a new password twice |
+| Validation | entered data is sensible | age is between `0` and `99` |
+
+**Two methods of verification:**
+
+- **Double entry** — the data is typed twice and the two copies compared.
+- **Visual check / proofreading** — the operator reads the entered data back against the source document.
 
 ## Validation Techniques
 
-| Technique                     | What it checks                               | Example                               |
-| ---------------------------- | -------------------------------------------- | ------------------------------------- |
-| Check digit                  | uses extra digits to verify the rest         | NRIC, ISBN, credit card               |
-| Format check                 | checks the correct pattern / format          | date format, email format             |
-| Length check                 | checks a fixed number of characters          | phone number, password length         |
-| Lookup table / drop-down     | checks against a list of allowed values      | school name, day of the week          |
-| Type check                   | checks the correct data type                 | digits only, letters only             |
-| Spell check / autocorrect    | checks against a dictionary                  | product names, common words           |
-| Presence check               | checks that a required field is not empty    | username must be filled in            |
-| Range check                  | checks that data falls within limits         | age `0` to `99`, height `0.5` to `2.5` |
+The seven named in the syllabus:
 
-## Python Examples
+| Technique | What it checks | Example |
+| --------- | -------------- | ------- |
+| Existence check | the data is already in the system | username already registered |
+| Format check | data follows the correct pattern | `ddmmyyyy`, email address |
+| Length check | data has the required length | 8-digit phone number |
+| Presence check | a required field is not left empty | username must be filled in |
+| Range check | data falls within limits | `0 < age < 99` |
+| Type check | data is the right type | digits only, letters only |
+| Check digit | extra digit verifies the other digits | NRIC, ISBN, credit card |
 
-| Check          | Example                                      |
-| -------------- | -------------------------------------------- |
-| Presence Check | `string != ""`                               |
-| Range Check    | `79999999 < n < 100000000`                   |
-| Length Check   | `len(string) < 6`                            |
-| Type Check     | `string.isnumeric()` or `string.isalpha()`   |
-| Format Check   | `email.endswith("@students.edu.sg")`         |
+Also taught in lecture:
 
+| Technique | What it checks | Example |
+| --------- | -------------- | ------- |
+| Lookup table / drop-down | value is in a list of allowed values | school name, day of the week |
+| Spell check / autocorrect | value matches a dictionary | product names |
 
-```python
-a, b = b, a
-```
+## In Python
 
-This is an easier way to swap two variables.
+| Check | Code |
+| ----- | ---- |
+| Presence | `string != ""` |
+| Range | `0 < age < 99` |
+| Length | `len(string) == 8` |
+| Type | `string.isnumeric()`, `string.isalpha()` |
+| Format | `email.endswith("@students.edu.sg")` |
+| Existence | `username in registered_users` |
+
+## Check Digits
+
+An extra digit calculated from the others and appended to the number, so an error can be spotted on entry.
+
+**Two types of error a check digit detects:**
+
+- **Transcription error** — a single digit typed wrongly (`02757` → `02157`)
+- **Transposition error** — two adjacent digits swapped (`02757` → `02575`)
+
+> [!example]- Worked example — Modulus 11 check digit for `02757`
+> Weights, starting from the first digit: `6, 5, 4, 3, 2`.
+>
+> ```text
+> digit    0    2    7    5    7
+> weight   6    5    4    3    2
+>          ─    ─    ─    ─    ─
+>          0 + 10 + 28 + 15 + 14  = 67
+>
+> 67 mod 11 = 1
+> check digit = 11 - 1 = 10  ->  written as 'X'
+> ```
+>
+> So the full number is `02757X`.
+>
+> This is why such a field is stored as a **string, not an integer**: the check digit can be `X`, which is not a digit, and a leading zero would be lost from an integer.
+
+> [!tip]
+> A check digit is a **checksum** applied to identification numbers — same idea as [[Hashing]].
 
 ## Related
 
+- [[Types of Errors and Test Cases]]
+- [[Hashing]]
 - [[basic python]]

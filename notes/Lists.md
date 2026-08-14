@@ -1,125 +1,128 @@
 > [!summary] Quick View
-> A list is an ordered, mutable collection that allows duplicate values.
+> A list is an **ordered, mutable** collection that allows duplicates.
 
-## Basics
+## Collection Types
 
-- Lists use square brackets: `[]`
-- Lists are mutable, so you can change their contents.
-- Lists allow duplicate values.
-- Empty lists are allowed: `[]`
+| Type | Ordered | Mutable | Duplicates |
+| ---- | ------- | ------- | ---------- |
+| Tuple `()` | yes | no | allowed |
+| List `[]` | yes | yes | allowed |
+| Dictionary `{k: v}` | by insertion | yes | keys must be unique |
+| Set `{}` | no | yes | not allowed |
 
-## Creating Lists
+## Creating
 
 ```python
 numbers = [1, 2, 3]
 empty = []
-```
 
-```python
-list(tup)      # converts a tuple to a list
-list("abc")    # ['a', 'b', 'c']
-list(range(5)) # [0, 1, 2, 3, 4]
+list((1, 2, 3))   # [1, 2, 3]   from a tuple
+list("abc")       # ['a', 'b', 'c']
+list(range(5))    # [0, 1, 2, 3, 4]
 ```
 
 ## Access and Update
 
 ```python
-lst = list(range(5))
-lst[4] = 5
+lst = list(range(5))    # [0, 1, 2, 3, 4]
+lst[4]                  # 4
+lst[2:]                 # [2, 3, 4]
+lst[1:4:2]              # [1, 3]
+lst[4] = 5              # lists are mutable
 ```
-
-This changes the item at index `4` to `5`.
 
 ## Common Operations
 
-- `in` checks whether an item is in the list.
-- `not in` checks whether an item is not in the list.
-- `len(lst)` gives the number of elements.
-- `sum(lst)` adds the numerical elements in the list.
-- `max(lst)` gives the largest element.
-- `min(lst)` gives the smallest element.
+| Operation | Result |
+| --------- | ------ |
+| `len(lst)` | number of elements |
+| `sum(lst)` | total — numbers only |
+| `max(lst)` / `min(lst)` | largest / smallest |
+| `x in lst` | membership |
+| `lst1 + lst2` | concatenation, new list |
+| `lst * 3` | repetition |
 
 > [!note]
-> `max()` and `min()` work when the elements can be compared with each other. A mixed list of numbers and strings will cause an error.
+> `max()` and `min()` need comparable elements. `sum(['a','b'])` and a mixed list of numbers and strings both raise errors.
 
-## Useful Methods
+## Methods
 
 ```python
 lst = [3, 1, 4, 7, 3]
 ```
 
-- `lst.index(3)` gives the first position of `3`, which is `0`.
-- `lst.index(5)` gives an error because `5` is not in the list.
-- `lst.count(3)` gives the number of times `3` appears, which is `2`.
-- `lst.reverse()` reverses the list in place.
-- `lst.copy()` makes a copy of the list.
+| Method | Does | Returns the item? |
+| ------ | ---- | ----------------- |
+| `lst.index(3)` | first position of `3` → `0`; error if absent | — |
+| `lst.count(3)` | how many times `3` appears → `2` | — |
+| `lst.append(x)` | add **one** item to the end | no |
+| `lst.extend(seq)` | add **each** item of `seq` to the end | no |
+| `lst.insert(i, x)` | insert `x` at index `i` | no |
+| `lst.remove(x)` | remove the first `x`; error if absent | **no** |
+| `lst.pop()` | remove and return the last item | **yes** |
+| `lst.pop(i)` | remove and return item at index `i` | **yes** |
+| `lst.reverse()` | reverse in place | no |
+| `lst.copy()` | a new list with the same items | — |
 
-## Copying Lists
+### `append` vs `extend`
 
 ```python
-copied = lst.copy()
+[1, 2].append("hi")    # [1, 2, 'hi']       one item
+[1, 2].extend("hi")    # [1, 2, 'h', 'i']   iterates
+[1, 2].append([3, 4])  # [1, 2, [3, 4]]
+[1, 2].extend([3, 4])  # [1, 2, 3, 4]
 ```
 
-Use `.copy()` when you want a new list instead of another variable pointing to the same list.
+### `remove` vs `pop`
+
+`remove` takes the **value**, `pop` takes the **index** — and only `pop` gives the item back.
+
+## Deleting
+
+```python
+del lst[1:9:2]   # delete a slice
+del lst[-1]      # delete one item
+del lst[:]       # clear — same as lst.clear()
+del lst          # delete the variable itself
+```
+
+## Sorting
+
+- `sorted(lst)` returns a **new** sorted list, leaving `lst` alone.
+- `lst.sort()` sorts **in place** and returns `None`.
+
+## Copying vs Assigning
+
+```python
+lst2 = lst          # same list, two names — changing one changes both
+lst2 = lst.copy()   # a genuinely separate list
+```
 
 ## Iteration
 
 ```python
-for i in range(len(lst)):
-    print(lst[i])
-```
-
-```python
-for ele in lst:
+for ele in lst:            # when you only need the values
     print(ele)
-```
 
-```python
-while lst:
+for i in range(len(lst)):  # when you need the index
+    print(lst[i])
+
+while lst:                 # while lst is not empty
     lst.pop()
 ```
 
-- `while lst:` runs while the list is not empty.
-- This can be used as a self-destructing loop if you keep removing items.
+`while lst:` and `while len(lst) > 0:` mean the same thing.
 
-## Adding Items
+## Common Mistakes
 
-- `lst.append(value)` adds one item to the end and mutates the list.
-- `lst.extend(values)` adds each item from another iterable to the end.
-- `lst = lst + [value]` also adds an item, but creates a new list.
+- Using `lst.remove(2)` when you meant index `2` — it removes the *value* `2`.
+- Expecting `lst.sort()` to return the sorted list; it returns `None`.
+- Assigning instead of copying, then wondering why both lists changed.
+- Calling `.index()` or `.remove()` on a value that isn't there — both raise errors.
 
-```python
-lst.append("hi")     # adds "hi" as one item
-lst.extend("hi")     # adds "h", "i"
-```
-
-- `.append()` adds the whole thing as one item.
-- `.extend()` goes through the item in its brackets.
-
-## Removing Items
-
-- `lst.pop()` removes and returns the last item by default.
-- `lst.pop(index)` removes and returns the item at that index.
-
-```python
-del lst[start:stop:step]
-```
-
-- `del lst[:]` clears the whole list.
-- `lst.clear()` also clears the whole list.
-- `del lst` deletes the variable itself.
-
-## Sorting
-
-- `sorted(lst)` returns a new sorted list.
-- `lst.sort()` sorts the same list in place.
-
-
-while lst:
-and 
-while len(lst) > 0: 
-are the same, both keeps the loop running when the lst is not empty
 ## Related
 
 - [[Tuple]]
+- [[Dictionary]]
 - [[Iteration]]
+- [[File Handling]]

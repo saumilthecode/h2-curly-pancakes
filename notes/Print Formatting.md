@@ -1,84 +1,60 @@
 > [!summary] Quick View
-> Print formatting = making output line up: separators, newlines, column width, alignment, and decimal places.
-
-## Formatting Trace
-
-<details>
-<summary>How fixed-width columns line up</summary>
-<pre><code>print("{0:&lt;8}{1:&lt;10}{2:&gt;8.2f}".format(1, "cake", 4.56789))</code></pre>
-<p>Output shape:</p>
-<pre><code>1       cake          4.57</code></pre>
-<table>
-  <thead>
-    <tr><th>Part</th><th>Meaning</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>{0:&lt;8}</code></td><td>value 0, left aligned, width 8</td></tr>
-    <tr><td><code>{1:&lt;10}</code></td><td>value 1, left aligned, width 10</td></tr>
-    <tr><td><code>{2:&gt;8.2f}</code></td><td>value 2, right aligned, width 8, 2 decimals</td></tr>
-  </tbody>
-</table>
-</details>
+> Making output line up: separators, line endings, column width, alignment and decimal places.
 
 ## `print()` Options
 
 | Option | Controls | Example |
 | ------ | -------- | ------- |
-| `sep` | gap between printed values | `print(192, 168, 1, 1, sep=".")` |
-| `end` | what comes after this print | `print(i, end=" ")` |
-| `file` | where output goes | `print("hi", file=f)` |
+| `sep` | what goes **between** the values | `print(192, 168, 1, 1, sep=".")` |
+| `end` | what goes **after** the line | `print(i, end=" ")` |
+| `file` | where the output goes | `print("hi", file=f)` |
 
 ```python
-print("a", "b")                 # a b
-print("a", "b", sep="")         # ab
-print(192, 168, 178, 42, sep=".")  # 192.168.178.42
-```
+print("a", "b")                     # a b     — space is the default sep
+print("a", "b", sep="")             # ab
+print(192, 168, 178, 42, sep=".")   # 192.168.178.42
 
-```python
 for i in range(4):
-    print(i, end=" ")
-
-# 0 1 2 3
+    print(i, end=" ")               # 0 1 2 3   — no line breaks
 ```
 
-File output:
+Sending output to a file:
 
 ```python
 with open("data.txt", "w") as file:
     print("Print output to file.", file=file)
 ```
 
-## `format()` Shape
-
-Pattern:
+## `format()`
 
 ```text
-"{0:width}{1:width}".format(value0, value1)
+"{0:<8}".format(value)
+   │ │└─ width 8
+   │ └── align left
+   └──── which value (index 0)
 ```
-
-Useful forms:
 
 | Format | Meaning |
 | ------ | ------- |
-| `{0:8}` | value 0 uses width 8 |
-| `{0:<8}` | left align in width 8 |
-| `{0:>8}` | right align in width 8 |
-| `{0:^8}` | centre align in width 8 |
-| `{0:6.2f}` | float, width 6, 2 decimal places |
+| `{0:8}` | width 8, default alignment |
+| `{0:<8}` | left aligned in width 8 |
+| `{0:>8}` | right aligned in width 8 |
+| `{0:^8}` | centred in width 8 |
+| `{0:6.2f}` | float, width 6, **2 decimal places** |
 
-Breakdown:
+By default strings align left and numbers align right.
 
 ```text
 {0:6.2f}
- 0    value index
- 6    total width
-.2    decimal places
- f    float
+ │  │ │└─ f = float
+ │  │ └── 2 decimal places
+ │  └──── total width 6
+ └─────── value index 0
 ```
 
 ## Table Pattern
 
-Use fixed widths for columns.
+Fixed widths make the columns line up.
 
 ```python
 prices = [("shirt", 12), ("pen", 1.5), ("cake", 4.56789)]
@@ -86,12 +62,8 @@ prices = [("shirt", 12), ("pen", 1.5), ("cake", 4.56789)]
 print("{0:<8}{1:<10}{2:>8}".format("Index", "Item", "Price"))
 
 for i, item in enumerate(prices, 1):
-    name = item[0]
-    price = item[1]
-    print("{0:<8}{1:<10}{2:>8.2f}".format(i, name, price))
+    print("{0:<8}{1:<10}{2:>8.2f}".format(i, item[0], item[1]))
 ```
-
-Output shape:
 
 ```text
 Index   Item         Price
@@ -100,9 +72,23 @@ Index   Item         Price
 3       cake          4.57
 ```
 
-## CSV Table Pattern
+> [!example]- How the widths line up
+> ```text
+> print("{0:<8}{1:<10}{2:>8.2f}".format(1, "cake", 4.56789))
+>
+> 1       cake          4.57
+> └──8───┘└───10───┘└──8───┘
+> ```
+>
+> | Part | Meaning |
+> | ---- | ------- |
+> | `{0:<8}` | value 0, left aligned, width 8 |
+> | `{1:<10}` | value 1, left aligned, width 10 |
+> | `{2:>8.2f}` | value 2, right aligned, width 8, 2 decimals |
+>
+> The value overflows its column rather than being cut off if it is too wide.
 
-Same idea after reading values from a file:
+Same idea for values read from a file — just convert them first:
 
 ```python
 height = float(student[2])
@@ -114,10 +100,10 @@ print("{0:<8}{1:<12}{2:>10.2f}".format(i, name, bmi))
 
 ## Common Mistakes
 
-- `end` replaces the newline.
-- `sep` only works between separate print arguments.
-- `{0:6.2f}` means width `6`, not `6` decimal places.
-- Convert file/input strings to `float` before using `.2f`.
+- `{0:6.2f}` means width `6`, **not** 6 decimal places.
+- Using `.2f` on a string read from a file or `input()` — convert with `float()` first.
+- Expecting `sep` to work inside a single string; it only goes between separate arguments.
+- Forgetting `end` **replaces** the newline, so the next print continues on the same line.
 
 ## Related
 

@@ -1,130 +1,192 @@
 > [!summary] Quick View
-> Hashing turns data into a hash value. Hash tables use `hash(item) % table_size` to choose an index.
+> A hash function turns data into a number. A hash table stores an item at `hash(item) % table_size` so it can be found without searching.
 
-## Collision Trace
+## What Hashing Is
 
-<details>
-<summary>`dbac` and `badc` both hash to index `3` when table size is `5`</summary>
-<table>
-  <thead>
-    <tr><th>Item</th><th>Hash value</th><th>Index calculation</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>dbac</code></td><td><code>988</code></td><td><code>988 % 5 = 3</code></td></tr>
-    <tr><td><code>badc</code></td><td><code>988</code></td><td><code>988 % 5 = 3</code></td></tr>
-  </tbody>
-</table>
-<p>Both want the same slot, so use separate chaining or linear probing.</p>
-</details>
+A hash function produces a digital fingerprint of the data — the **hash value**, **digest** or **checksum**.
 
-## Hashing Idea
+| Characteristic | Meaning |
+| -------------- | ------- |
+| Secure | non-reversible — you cannot get the data back from the hash |
+| Fixed size | long or short input produces a fixed-size digest |
+| Unique\* | ideally no two inputs share a digest |
 
-Hashing creates a fixed-ish numeric fingerprint from data.
+> [!warning]
+> \*Not true in reality — **collisions do occur**. Hashing is for comparison, **not encryption**.
 
-- Used for quick lookup/checking/comparison.
-- Not the same as encryption.
-- Collisions can happen.
+## Features of a Good Hash Function
 
-## Lesson Hash Function
+> [!important] Asked in 2021 and 2022, both times as *"state three features"* for 3 marks.
 
-The notebook hash uses ASCII values and position weights.
+1. **Deterministic** — the same key always produces the same hash value, or the item could never be found again.
+2. **Uniform distribution** — spreads keys evenly across the table, so every index is equally likely.
+3. **Minimises clustering** — avoids many different keys mapping to the same index, which causes collisions and slows searching.
+
+Also desirable: fast to compute, and uses the whole key.
+
+## Why Use a Hash Table
+
+Searching is a **single calculation plus one lookup** — no scanning.
+
+| Search method | Time complexity | Needs sorted data? |
+| ------------- | --------------- | ------------------ |
+| Hash table | `O(1)` | no |
+| Linear search | `O(n)` | no |
+| Binary search | `O(log n)` | **yes** |
+
+- **vs linear search** — linear may check every record, so it gets slower as the data grows. A hash lookup stays constant no matter how large the table is.
+- **vs binary search** — binary search is fast, but the data must be kept **sorted**. Maintaining that order on every insertion and deletion is expensive for large, frequently-changing datasets.
+
+## The Lesson Hash Function
+
+Uses the ASCII value of each character, weighted by its position.
 
 ```python
-def hash_value(string):
+def hash(string):
     total = 0
     for i in range(len(string)):
         total += ord(string[i]) * (i + 1)
     return total
 ```
 
-Example:
-
 ```text
 "abcde" -> 97*1 + 98*2 + 99*3 + 100*4 + 101*5 = 1495
 1495 % 10 = 5
 ```
 
-> [!warning]
-> Python already has built-in `hash()`. In exam code, use the name given by the question.
+The `% n` is kept **outside** the hash function, because `n` depends on the size of the table.
 
-## Checksum Pattern
+## Checksum
 
-Checksum = append a check value to detect mistakes.
+Append a check value so the receiver can detect transmission errors.
+
+```text
+message =  abcde  5
+           └─┬─┘  └─ checksum
+             │
+            data
+```
+
+The receiver re-hashes the data and compares it against the checksum.
+
+For 5-digit data the lesson scheme weights the digits `3, 5, 7, 9, 11`:
 
 ```python
 def transmit(data):
     total = 0
     for i in range(len(data)):
-        total += int(data[i]) * ((2 * i) + 1)
+        total += int(data[i]) * ((2 * i) + 3)
     return data + str(total % 10)
 ```
 
-```python
-transmit("12345")  # "123455"
+```text
+"12345" -> 1*3 + 2*5 + 3*7 + 4*9 + 5*11 = 125
+125 % 10 = 5
+transmitted: 123455
 ```
 
-Uses: NRIC check letter, vehicle plate check character, ISBN, credit card validation.
+Real uses: NRIC, vehicle plate numbers, ISBN, credit card (Luhn).
 
 ## Hash Table
 
-Index formula:
-
 ```python
-index = hash_value(item) % len(table)
+def init_table(n):
+    return [''] * n
+
+index = hash(item) % len(table)
 ```
 
-No collision search:
+Storing `['cdab', 'dbac', 'dabc', 'bdac', 'badc']` in a table of size 5:
+
+| Item | Hash value | `% 5` |
+| ---- | ---------- | ----- |
+| `cdab` | `982` | `2` |
+| `dbac` | `983` | `3` |
+| `dabc` | `984` | `4` |
+| `bdac` | `985` | `0` |
+| `badc` | `988` | `3` ← collision |
+
+Searching without collisions is a single lookup — no linear search needed:
 
 ```python
 def search(table, item):
-    index = hash_value(item) % len(table)
-    return table[index] == item
+    i = hash(item) % len(table)
+    return table[i] == item
 ```
 
 ## Collision
 
-Collision = two items want the same index.
+Two items hash to the **same index**. Note they need not have the same hash value:
 
 ```text
-hash_value("dbac") % 5 = 3
-hash_value("badc") % 5 = 3
+hash("dbac") = 983  ->  983 % 5 = 3
+hash("badc") = 988  ->  988 % 5 = 3
 ```
 
-## Collision Fixes
+## Collision Resolution
 
-| Method | Idea | Search consequence |
-| ------ | ---- | ------------------ |
-| separate chaining | store a list at the slot | check inside the list |
-| linear probing | scan to next empty slot | follow same scan path |
+| Method | Also called | Idea |
+| ------ | ----------- | ---- |
+| Separate chaining | open hashing | store a list at that slot |
+| Linear probing | closed hashing | move to the next empty slot |
 
-Separate chaining insert idea:
+### Separate Chaining
+
+```text
+ 0  'bdac'
+ 1  ''
+ 2  'cdab'
+ 3  ['dbac', 'badc']   ← both live here
+ 4  'dabc'
+```
 
 ```python
-if table[index] == "":
-    table[index] = item
-elif isinstance(table[index], list):
-    table[index].append(item)
+if tbl[i] == '':
+    tbl[i] = ele
+elif type(tbl[i]) != list:
+    tbl[i] = [tbl[i], ele]      # promote to a list
 else:
-    table[index] = [table[index], item]
+    tbl[i] = tbl[i] + [ele]
 ```
 
-Linear probing step:
+Searching: if the slot holds a list, do a linear search inside it (`item in tbl[i]`).
+
+### Linear Probing
+
+From the assigned slot, look for the next empty one, wrapping around at the end.
+
+```text
+ badc -> index 3 taken
+       -> 4 taken
+       -> 0 taken
+       -> 1 empty ✓
+
+ 0  'bdac'
+ 1  'badc'   ← ended up here
+ 2  'cdab'
+ 3  'dbac'
+ 4  'dabc'
+```
 
 ```python
-index = (index + 1) % len(table)
+i = (i + 1) % len(table)
 ```
 
-Stop after checking at most `len(table)` slots, otherwise a full table can loop forever.
+> [!important]
+> Loop at most `len(table)` times. A full table would otherwise probe forever.
+
+Searching must follow the **same probe path** — check the assigned slot, then step forward the same way until you find the item or an empty slot.
 
 ## Common Mistakes
 
 - Forgetting `% len(table)`.
-- Thinking hashing means encryption.
+- Thinking hashing is encryption — it is one-way and used for comparison.
 - Assuming collisions never happen.
-- Searching linear probing without following the probe path.
-- Forgetting a chained slot can hold either a string or a list.
+- Searching a linear-probed table without following the probe path.
+- Forgetting a chained slot may hold either a plain value **or** a list.
 
 ## Related
 
 - [[Data Abstraction]]
-- [[C2 - Data representation]]
+- [[Dictionary]]
+- [[Data validation and verification]]

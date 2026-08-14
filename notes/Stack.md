@@ -1,37 +1,30 @@
 > [!summary] Quick View
-> Stack = LIFO: Last In, First Out. Add/remove only from the top.
+> Stack = **LIFO**, Last In First Out. Everything happens at the top.
 
-## Stack Trace
-
-<details>
-<summary>Push and pop example</summary>
-<table>
-  <thead>
-    <tr><th>Step</th><th>Operation</th><th>Stack after step</th><th>Return</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td><code>start</code></td><td><code>[]</code></td><td>-</td></tr>
-    <tr><td>2</td><td><code>push("A")</code></td><td><code>["A"]</code></td><td>-</td></tr>
-    <tr><td>3</td><td><code>push("B")</code></td><td><code>["A", "B"]</code></td><td>-</td></tr>
-    <tr><td>4</td><td><code>peek()</code></td><td><code>["A", "B"]</code></td><td><code>"B"</code></td></tr>
-    <tr><td>5</td><td><code>pop()</code></td><td><code>["A"]</code></td><td><code>"B"</code></td></tr>
-  </tbody>
-</table>
-</details>
+```text
+      push ▼    ▲ pop         both act on the TOP
+         ┌───────┐
+  top →  │   C   │  ← s[-1]   last in, first out
+         ├───────┤
+         │   B   │
+         ├───────┤
+bottom → │   A   │  ← s[0]    first in, last out
+         └───────┘
+```
 
 ## Core Operations
 
 | Operation | Meaning | Python list |
 | --------- | ------- | ----------- |
 | `push(s, x)` | add to top | `s.append(x)` |
-| `pop(s)` | remove top | `s.pop()` |
-| `peek(s)` | look at top | `s[-1]` |
-| `is_empty(s)` | check empty | `s == []` |
+| `pop(s)` | remove and return top | `s.pop()` |
+| `peek(s)` | look at top, don't remove | `s[-1]` |
+| `is_empty(s)` | is it empty? | `s == []` |
 
 > [!important]
-> Top of stack = end of Python list.
+> Top of stack = **end** of the Python list. You cannot pop an empty stack.
 
-## Minimal Template
+## Template
 
 ```python
 def push(s, item):
@@ -48,74 +41,96 @@ def peek(s):
     return s[-1]
 ```
 
-Trace:
+> [!example]- Trace: push and pop
+> | Step | Operation | Stack after | Returns |
+> | ---- | --------- | ----------- | ------- |
+> | 1 | `make_empty_stack()` | `[]` | — |
+> | 2 | `pop(s)` | `[]` | `None` — nothing to pop |
+> | 3 | `push(s, 7)` | `[7]` | — |
+> | 4 | `push(s, 5)` | `[7, 5]` | — |
+> | 5 | `push(s, 3)` | `[7, 5, 3]` | — |
+> | 6 | `pop(s)` | `[7, 5]` | `3` |
+> | 7 | `peek(s)` | `[7, 5]` | `5` |
+> | 8 | `is_empty(s)` | `[7, 5]` | `False` |
 
-```text
-[] -> push A -> [A]
-[A] -> push B -> [A, B]
-[A, B] -> pop -> [A] and returns B
-```
-
-## Pattern: Reverse
+## Application: Reverse a Sequence
 
 Push everything in, then pop everything out.
 
 ```text
-input: a b c d
-stack after pushes: [a, b, c, d]
-pop order: d c b a
+input:  a b c d
+stack:  [a, b, c, d]
+pop:    d c b a
 ```
 
-## Pattern: Denary to Binary
+## Application: Denary to Binary
 
-Remainders appear backwards, so stack reverses them.
+Repeated division gives the remainders backwards, so a stack flips them.
 
 ```python
 while n > 0:
     push(s, n % 2)
     n = n // 2
 
+bits = ""
 while s != []:
     bits += str(pop(s))
 ```
 
-## Pattern: Balanced Brackets
+## Application: Balanced Brackets
 
-Rule:
-
-- opening bracket -> push
-- closing bracket -> pop and compare
-- valid only if stack is empty at the end
+- Opening bracket → **push** it.
+- Closing bracket → **pop** and check it matches.
+- Valid only if the stack is **empty at the end**.
 
 ```python
 pairs = {")": "(", "]": "[", "}": "{"}
 ```
 
-## Pattern: Postfix
+```text
+( [ ] ( { ( ) } ) )   balanced
+( ( { } [ ) ] )       not balanced
+```
 
-For `3 4 * 5 +`:
+Counting brackets is not enough — order matters, which is why you need a stack.
+
+## Application: Postfix Notation
+
+| Notation | Operator sits | `A + B` written as |
+| -------- | ------------- | ------------------ |
+| Infix | between operands | `A + B` |
+| Prefix | before operands | `+ A B` |
+| Postfix | after operands | `A B +` |
+
+Evaluate postfix left to right: push operands, and on an operator pop two, combine, push the result.
 
 ```text
-push 3
-push 4
-* -> pop 4, pop 3, push 12
-push 5
-+ -> pop 5, pop 12, push 17
+3 4 * 5 +          (infix: 3 * 4 + 5)
+
+push 3                    [3]
+push 4                    [3, 4]
+*  -> pop 4, pop 3, push 12   [12]
+push 5                    [12, 5]
++  -> pop 5, pop 12, push 17  [17]
+
 answer = 17
 ```
 
 > [!warning]
-> For `-` and `/`, order matters. `A B -` means `A - B`.
+> For `-` and `/` the order matters. `A B -` means `A - B` — the **first** value popped is the right-hand operand.
 
 ## Common Mistakes
 
-- Stack uses `pop()`, not `pop(0)`.
-- `peek()` does not remove.
-- `pop()` on empty stack should return `None`.
-- If stack reverses something, do not reverse it again.
+- Using `pop(0)` — that's a [[Queue]], not a stack.
+- Writing `return s.append(x)` in `push`. `.append()` returns `None`, so the function hands back `None`. A `push` should not return anything.
+- Reading the underlying list directly (`for item in s:`) instead of calling `pop()`. In an *application of stack* question that throws away the marks for using the ADT — and iterating a list does **not** reverse it the way popping does.
+- Treating `peek()` as if it removes the item.
+- Popping an empty stack instead of returning `None`.
+- Reversing an already-reversed result a second time.
 
 ## Related
 
 - [[Data Abstraction]]
 - [[Queue]]
+- [[Recursion]]
 - [[C2 - Data representation]]

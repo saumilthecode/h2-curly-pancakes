@@ -1,221 +1,217 @@
 > [!summary] Quick View
-> A computer network connects devices so data can move through local hardware, routers, servers, and global links.
-
-## Hosts, Nodes, and Media
-
-| Term | Meaning |
-| ---- | ------- |
-| Host | client or server on a network |
-| Node | network interface used by a device, such as NIC, Wi-Fi, Bluetooth, or infrared |
-| Medium | physical or wireless path carrying the signal |
-
-Network media:
-
-- copper cable carries electrical signals
-- fibre optic cable carries light pulses
-- wireless carries electromagnetic waves
+> A network connects devices so data can move between them. IP gets data to the right **network**; MAC gets it to the right **device**.
 
 ## Network Types
 
 | Type | Scale |
 | ---- | ----- |
-| PAN | personal area, a few metres |
-| LAN | local area, usually a room/building |
+| PAN | personal, a few metres |
+| LAN | one room or building |
 | WLAN | wireless LAN |
-| CAN | campus area, multiple nearby LANs |
-| MAN | metropolitan area, city scale |
-| WAN | wide area, country/global scale; the internet is a WAN |
-| SAN | storage area network for high-speed data storage |
+| CAN | campus — several nearby LANs |
+| MAN | city scale |
+| WAN | country or global; the internet is a WAN |
+| SAN | storage area network |
 
-## Topologies
+**Intranet** — a private network that uses internet technologies (web pages, email) but is restricted to one organisation. Reachable from outside only through controlled access.
 
-| Topology | Idea | Risk |
-| -------- | ---- | ---- |
-| Bus | all devices share one cable | cable break can collapse network |
-| Ring | devices form a closed loop | single failure can disrupt traffic |
-| Star | all devices connect to a central switch | switch is single point of failure |
-| Mesh | devices connect to many or all others | high cost and complexity |
+## Client–Server vs Peer-to-Peer
 
-For a fully meshed network:
+| | Client–server | Peer-to-peer |
+| --- | ------------- | ------------ |
+| Roles | server provides, clients request | every device does both |
+| Data | centralised on the server | spread across devices |
+| Backup / admin | done centrally | done on each device |
+| Cost | needs dedicated server hardware | no dedicated hardware |
+| Failure | server is a single point of failure | no single point of failure |
+| Suits | large networks | small networks |
 
-```text
-connections = n * (n - 1) / 2
-```
+## Why Protocols Are Needed
 
-## Switches and Routers
+A protocol is an agreed set of rules for communication. Without one:
 
-| Device | Layer | Uses | Purpose |
-| ------ | ----- | ---- | ------- |
-| Hub | Layer 1 | no addressing | broadcasts to all ports |
-| Switch | Layer 2 | MAC addresses | connects devices inside one LAN |
-| Router | Layer 3 | IP addresses | connects different networks |
+- devices from different manufacturers, running different software, cannot interpret each other's data
+- there is no agreement on message **format**, **order**, **speed** or **error checking**
+- the receiver has no way to tell where one message ends and the next begins
 
-A switch builds a Source Address Table (SAT):
+## Hosts, Nodes and Media
 
-- it starts empty
-- it records source MAC addresses and ports from incoming frames
-- if destination is unknown, it broadcasts to other ports
-- after replies, future traffic can be sent directly to the correct port
+| Term | Meaning |
+| ---- | ------- |
+| Host | a client or server on the network |
+| Node | the network interface a device uses — NIC, Wi-Fi, Bluetooth |
+| Medium | the physical or wireless path the signal travels |
 
-## MAC and IP Addresses
+Media: copper cable carries electrical signals, fibre optic carries light pulses, wireless carries electromagnetic waves.
 
-| Address | Meaning | Scope |
-| ------- | ------- | ----- |
-| MAC address | physical device identity | local delivery inside LAN |
-| IP address | logical network location | routing between networks |
+## Addressing
 
-MAC address:
+| Address | Identifies | Scope |
+| ------- | ---------- | ----- |
+| MAC | the physical device | delivery **within** a LAN |
+| IP | the device's network location | routing **between** networks |
 
-- 48-bit hexadecimal
-- example: `00-16-EA-06-6C-3E`
-- usually built into the network interface
+- **MAC** — 48-bit, hexadecimal, e.g. `00-16-EA-06-6C-3E`, built into the NIC
+- **IPv4** — 32-bit, four decimal numbers `0`–`255` separated by dots, e.g. `192.168.0.1`
 
-IPv4 address:
+So the **two ways a device can be identified on a LAN** are its MAC address and its IP address.
 
-- 32-bit address
-- often written as four decimal numbers
-- example: `192.168.0.1`
+A host can be allocated an IP address in **two ways**:
 
-The IP address gets data to the correct network. The MAC address gets data to the correct device inside that local network.
+- **Statically** — configured manually on the device, and it never changes
+- **Dynamically** — assigned automatically from a pool by a **DHCP** server, on a lease
 
-## Subnet Mask and Gateway
+> [!important]
+> IP gets the data to the correct **network**. MAC gets it to the correct **device** inside that network. ARP is what finds a device's MAC address from its IP address within a LAN.
 
-A subnet mask decides whether two IP addresses are in the same local network.
+### Private vs Public IP
 
-Example:
+| | Private | Public |
+| --- | ------- | ------ |
+| Used | inside a LAN | on the internet |
+| Routable on the internet | no | yes |
+| Assigned by | the local router / DHCP | the ISP |
+| Example | `192.168.0.3` | `192.166.122.7` |
+
+The router swaps the private source address for its public one on the way out, and back again on the way in.
+
+### Subnet Mask and Gateway
+
+The subnet mask decides whether two IP addresses are on the same local network.
 
 ```text
 IP:          192.168.0.10
 Subnet mask: 255.255.255.0
-Network:     192.168.0
+Network:     192.168.0        ← the part the mask keeps
 ```
 
-If a destination is outside the local network, the device sends the packet to its default gateway, usually the router.
+If the destination is outside the local network, the device sends the packet to its **default gateway** — usually the router.
 
 ## Packet Switching
 
 The internet uses packet switching.
 
-- Data is split into packets.
-- Each packet can travel independently.
-- Packets may take different routes.
-- The destination reassembles them in order.
+- data is split into packets
+- each packet travels independently and may take a different route
+- the destination reassembles them in order using the sequence numbers
 
-Packet parts:
-
-| Part | Contains |
-| ---- | -------- |
+| Packet part | Contains |
+| ----------- | -------- |
 | Header | source IP, destination IP, protocol, sequence number |
-| Payload | actual data |
-| Trailer | error checking such as CRC |
+| Payload | the actual data |
+| Trailer | error checking, e.g. CRC |
 
-Circuit switching reserves one fixed path for the whole communication. Packet switching is more flexible and resilient for internet traffic.
+Circuit switching instead reserves one fixed path for the whole communication. Packet switching is more flexible and more resilient — if one route fails, packets take another.
+
+**Why data is divided into packets** — small packets share the links fairly rather than one large transfer blocking them, and a corrupted packet only needs that packet resent, not the whole file.
+
+**Why packets are sequentially numbered** — they can arrive out of order after taking different routes, so the numbers let the destination **reassemble them correctly** and spot any that are missing.
+
+**Disadvantage, and how it is handled** — packets may arrive out of order, be delayed, or be lost entirely. Sequence numbers reorder them at the destination, and any packet that fails its error check or never arrives is **requested again and retransmitted**.
+
+**Role of a router** — it inspects each packet's destination **IP address** and forwards it along the best available route towards that network, hop by hop. Each packet is routed independently, so different packets from the same message may take different paths.
+
+## Switches and Routers
+
+| Device | Layer | Uses | Purpose |
+| ------ | ----- | ---- | ------- |
+| Hub | 1 | no addressing | broadcasts to every port |
+| Switch | 2 | MAC addresses | connects devices **inside** one LAN |
+| Router | 3 | IP addresses | connects **different** networks |
+
+A switch builds a **Source Address Table (SAT)**:
+
+1. starts empty
+2. records the source MAC address and port of each incoming frame
+3. broadcasts to all other ports when the destination is unknown
+4. once a reply arrives, sends future traffic straight to the correct port
+
+## Topologies
+
+| Topology | Idea | Risk |
+| -------- | ---- | ---- |
+| Bus | all devices share one cable | a cable break collapses the network |
+| Ring | devices form a closed loop | one failure can disrupt traffic |
+| Star | all devices connect to a central switch | the switch is a single point of failure |
+| Mesh | devices connect to many or all others | high cost and complexity |
+
+Star is the most common in a LAN. For a fully meshed network:
+
+```text
+connections = n * (n - 1) / 2
+```
 
 ## Servers
 
-A server provides services to clients.
+A server provides services to clients: web, DNS, DHCP, mail, file.
 
-Examples:
-
-- web server
-- DNS server
-- DHCP server
-- mail server
-- file server
-
-Enterprise servers are designed for reliability:
-
-- run 24/7
-- handle many concurrent connections
-- may use ECC RAM
-- may use RAID storage
-- may use redundant power supplies
-- may support hot-swappable drives
+Enterprise servers are built for reliability — run 24/7, handle many concurrent connections, and may use ECC RAM, RAID storage, redundant power supplies and hot-swappable drives.
 
 ## DNS
 
-DNS means Domain Name System.
-
-It translates names into IP addresses.
+Translates domain names into IP addresses, so nobody has to memorise numbers.
 
 ```text
-www.yijc.edu.sg -> 192.168.0.12
+www.yijc.edu.sg  ->  192.168.0.12
 ```
 
-Basic lookup path:
-
-1. browser asks resolver
-2. resolver may ask root server
-3. root server points to TLD server such as `.com` or `.sg`
-4. TLD points to authoritative name server
+1. browser asks the resolver
+2. resolver asks a root server
+3. root points to the TLD server (`.com`, `.sg`)
+4. TLD points to the authoritative name server
 5. authoritative server returns the IP address
-
-DNS avoids memorising numerical IP addresses.
 
 ## DHCP
 
-DHCP means Dynamic Host Configuration Protocol.
+Dynamic Host Configuration Protocol — automatically gives a device its IP address, subnet mask, default gateway and DNS server.
 
-It automatically gives devices network settings:
-
-- IP address
-- subnet mask
-- default gateway
-- DNS server
-
-DHCP uses leases. When a device leaves and the lease expires, the IP address returns to the pool.
+Addresses are handed out on a **lease**. When the lease expires the address returns to the pool for reuse.
 
 ## Email Protocols
 
 | Protocol | Purpose |
 | -------- | ------- |
-| SMTP | sends email from client to server and between mail servers |
-| POP3 | downloads mail to one device, often removing it from the server |
-| IMAP | keeps mail on the server and synchronises across devices |
+| SMTP | sends mail from client to server, and between mail servers |
+| POP3 | downloads mail to one device, usually removing it from the server |
+| IMAP | keeps mail on the server and syncs it across devices |
 
-SMTP uses TCP to help ensure mail delivery.
+SMTP runs over TCP to help ensure delivery.
 
-## Filius Hands-On Settings
-
-Peer-to-peer example:
-
-```text
-Notebook 1: 192.168.0.10
-Notebook 2: 192.168.0.11
-Subnet:    255.255.255.0
-```
-
-LANs connected by router:
-
-```text
-LAN1 network: 192.168.0
-Router NIC1: 192.168.0.1
-
-LAN2 network: 192.168.1
-Router NIC2: 192.168.1.1
-```
-
-Devices in LAN1 use gateway `192.168.0.1`. Devices in LAN2 use gateway `192.168.1.1`.
-
-DNS server example:
-
-```text
-DNS server: 192.168.2.10
-Router NIC: 192.168.2.1
-Domain:     www.yijc.edu.sg
-Web server: 192.168.0.12
-```
-
-Useful tests:
-
-```text
-ping 192.168.0.11
-ipconfig
-http://192.168.0.12
-http://www.yijc.edu.sg
-```
+> [!example]- Filius hands-on settings
+> Peer-to-peer:
+>
+> ```text
+> Notebook 1: 192.168.0.10
+> Notebook 2: 192.168.0.11
+> Subnet:     255.255.255.0
+> ```
+>
+> Two LANs joined by a router:
+>
+> ```text
+> LAN1 network: 192.168.0      Router NIC1: 192.168.0.1
+> LAN2 network: 192.168.1      Router NIC2: 192.168.1.1
+> ```
+>
+> Devices in LAN1 use gateway `192.168.0.1`; devices in LAN2 use `192.168.1.1`.
+>
+> DNS server:
+>
+> ```text
+> DNS server: 192.168.2.10     Domain:     www.yijc.edu.sg
+> Router NIC: 192.168.2.1      Web server: 192.168.0.12
+> ```
+>
+> Tests:
+>
+> ```text
+> ping 192.168.0.11
+> ipconfig
+> http://192.168.0.12
+> http://www.yijc.edu.sg
+> ```
 
 ## Related
 
 - [[C2 - Data representation]]
-- [[File Handling]]
+- [[Hashing]]

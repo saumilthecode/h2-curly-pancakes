@@ -1,109 +1,176 @@
 > [!summary] Quick View
-> Core ideas for types, operators, comparisons, booleans, and slicing.
+> Types, operators, booleans, strings and slicing — the building blocks everything else sits on.
 
 ## Types
 
-| Type  | Meaning                  |
-| ----- | ------------------------ |
-| int   | whole number             |
-| float | decimal number           |
-| bool  | `True` / `False`         |
-| str   | string / text            |
-| None  | no value / null-like     |
+| Type | Meaning | Example |
+| ---- | ------- | ------- |
+| `int` | whole number | `-3`, `45` |
+| `float` | real number | `3.14` |
+| `bool` | `True` / `False` | `True` |
+| `str` | text, immutable | `"yijc"` |
+| `None` | absence of a value | `None` |
 
-##  Functions and Methods
-
-| Function / method | What it does                                      |
-| ----------------- | ------------------------------------------------- |
-| `type(x)`         | finds the type of `x`                             |
-| `s.upper()`       | makes a string uppercase                          |
-| `s.lower()`       | makes a string lowercase                          |
-| `s.index(value)`  | finds the index of `value` inside a string        |
-| `ord(char)`       | gives the Unicode number of a character           |
-| `s.isdigit()`     | checks if a string contains only digits           |
+`type(x)` returns the type of `x`.
 
 ## Type Conversion
 
-| Function   | What it does                                  |
-| ---------- | --------------------------------------------- |
-| `str(x)`   | turns `x` into a string                       |
-| `float(x)` | turns `x` into a float                        |
-| `int(x)`   | turns `x` into an integer, removing decimals  |
+| Call | Result |
+| ---- | ------ |
+| `str(123)` | `"123"` |
+| `float("45.2")` | `45.2` |
+| `int(23.8)` | `23` — truncates, does not round |
+| `int("42")` | `42` |
+| `int("42.5")` | **error** — string must look like an `int` |
+| `int("yijc")` | **error** |
 
-## Assignment
-
-```python
-a = 10
-```
-
-The value `10` is assigned to the variable `a`.
+> [!warning]
+> `int()` truncates towards zero: `int(1.99)` is `1`, not `2`. Use `round()` to round.
 
 ## Arithmetic Operators
 
-`*` on a string repeats it a number of times.
-
-| Operator | Meaning                                 |
-| -------- | --------------------------------------- |
-| `+`      | plus                                    |
-| `-`      | minus                                   |
-| `*`      | multiply                                |
-| `**`     | to the power of                         |
-| `/`      | divide and return a float               |
-| `//`     | floor divide / round down               |
-| `%`      | remainder only                          |
+| Operator | Meaning | Example |
+| -------- | ------- | ------- |
+| `+` `-` | add, subtract | |
+| `*` `/` | multiply, divide (`/` always gives a float) | `11 / 3` → `3.666...` |
+| `//` | floor divide | `11 // 3` → `3` |
+| `%` | remainder / modulo | `11 % 3` → `2` |
+| `**` | to the power of | `2 ** 3` → `8` |
 
 ## Comparison Operators
 
-| Operator | Meaning                         |
-| -------- | ------------------------------- |
-| `>`      | left is greater than right      |
-| `<`      | left is less than right         |
-| `==`     | equal to                        |
-| `!=`     | not equal to                    |
-| `>=`     | greater than or equal to        |
-| `<=`     | less than or equal to           |
+`==`  `!=`  `>`  `<`  `>=`  `<=` — all return a `bool`.
 
-Examples:
+> [!important] `==` vs `=`
+> `==` asks whether two values are the same. `=` assigns the value on the right to the name on the left.
 
 ```python
 42 == 42      # True
-42 == 42.0    # True, same numeric value
-42 == "42"    # False, number vs string
+42 == 42.0    # True  — same numeric value
+42 == "42"    # False — number vs string
+```
+
+Strings compare by character code, so comparisons are alphabetical-ish, not by length:
+
+```python
+"Ten" > "One"    # True  — 'T' (84) > 'O' (79)
+"FIVE" == 5      # False — str vs int
 ```
 
 ## Logical and Membership Operators
 
-| Operator | Meaning                                      |
-| -------- | -------------------------------------------- |
-| `and`    | `True` if both sides are `True`              |
-| `or`     | `True` if either side is `True`              |
-| `not`    | flips `True` to `False`, or `False` to `True` |
-| `in`     | checks if a value exists inside something    |
-| `not in` | checks if a value does not exist inside it   |
+| Operator | `True` when |
+| -------- | ----------- |
+| `and` | both sides are `True` |
+| `or` | either side is `True` |
+| `not` | flips the value |
+| `in` | value exists inside a sequence |
+| `not in` | value does not exist inside it |
 
-## Booleans
+> [!example]- Truth tables
+> | `a` | `b` | `a and b` | `a or b` |
+> | --- | --- | --------- | -------- |
+> | `True` | `True` | `True` | `True` |
+> | `True` | `False` | `False` | `True` |
+> | `False` | `True` | `False` | `True` |
+> | `False` | `False` | `False` | `False` |
+>
+> `not True` → `False`, `not False` → `True`.
 
-| Boolean | Numeric value |
-| ------- | ------------- |
-| `True`  | `1`           |
-| `False` | `0`           |
+## Booleans and Truthiness
+
+- `True` equals `1`, `False` equals `0`.
+- Anything **not `0` and not empty** counts as `True` in a condition.
+- So `while lst:` means "while `lst` is not empty".
+
+> [!warning]
+> Write `True` and `False` — not `true`, `false`, `"True"` or `"False"`.
+
+## Strings
+
+Single or double quotes both work. Pick the one that avoids clashing with the text:
+
+```python
+spam = "That is Alice's cat."   # fine
+spam = 'That is Alice\'s cat.'  # also fine, escaped
+```
+
+### Escape Characters
+
+| Escape | Prints as |
+| ------ | --------- |
+| `\'` | single quote |
+| `\"` | double quote |
+| `\t` | tab |
+| `\n` | newline |
+| `\\` | backslash |
+
+### String Operations
+
+```python
+"Hello " + "World"   # 'Hello World'  — concatenation
+"HELLO " * 3         # 'HELLO HELLO HELLO ' — repetition
+"Hello" in "Hello World"   # True (case sensitive)
+len("Hello World")   # 11
+```
+
+### Useful Methods
+
+| Method | Does |
+| ------ | ---- |
+| `s.upper()` / `s.lower()` | change case |
+| `s.index(value)` | position of `value`, error if absent |
+| `s.isdigit()` / `s.isalpha()` | check contents |
+| `ord(c)` / `chr(n)` | character ↔ code number |
 
 ## Slicing
 
 ```python
-text = "HelloWorld"
-
-text[start:end:step]
-text[2:5:1]  # "llo"
+text = "abcdefgh"
+text[start:stop:step]
 ```
 
-- `start` is where the slice begins.
-- `end` is where the slice stops, but it is not included.
-- `step` is the interval between characters.
+- `start` is included, `stop` is **not**, `step` is the interval.
+- Slicing always returns a **new** string.
 
-Negative indexing counts from the back of the string.
+Think of the index as a cursor sitting to the *left* of each character:
+
+```text
+ a  b  c  d  e  f  g  h
+ |  |  |  |  |  |  |  |  |
+ 0  1  2  3  4  5  6  7  8
+-8 -7 -6 -5 -4 -3 -2 -1
+
+text[1:6]  -> "bcdef"     cut at 1, cut at 6
+text[:2]   -> "ab"        start defaults to 0
+text[::2]  -> "aceg"      every 2nd character
+text[::-1] -> "hgfedcba"  negative step reverses
+```
+
+Negative indices count from the back: `text[-1]` is the last character.
+
+## Comments
+
+```python
+# a single-line comment
+
+"""
+a documentation string
+over multiple lines
+"""
+```
+
+In Jupyter, `Ctrl` + `/` toggles comments on the selected lines.
+
+## Common Mistakes
+
+- Using `=` where `==` is meant.
+- Forgetting `stop` is excluded from a slice.
+- Expecting `int("3.5")` to work — it raises an error.
+- Comparing a number to its string form: `42 == "42"` is `False`.
 
 ## Related
 
 - [[Conditionals]]
 - [[Functions (functional abstraction)]]
+- [[Print Formatting]]

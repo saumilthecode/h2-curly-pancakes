@@ -1,95 +1,59 @@
 > [!summary] Quick View
-> Python's `random` module generates pseudo-random values for simulations, games, and sampling.
+> `random` generates **pseudo-random** values for simulations, games and sampling.
 
-## Pseudo-Random Numbers
+## Pseudo-Random
 
-Python random numbers are not truly random.
+Python's random numbers are not truly random — they come from a deterministic formula.
 
-- They are generated using a deterministic formula.
-- If the same seed is used, the same sequence is generated.
-- If no seed is given, Python usually uses the current system time.
-
-```python
-from random import *
-
-seed(30)
-```
-
-## Random Float
+- The same **seed** always produces the same sequence.
+- With no seed, Python uses the current system time.
 
 ```python
 from random import *
 
-lst = []
-
-for i in range(10):
-    x = random()
-    lst.append(x)
-
-print(lst)
+seed(30)     # optional — makes results repeatable for testing
 ```
 
-`random()` gives a float from `0.0` up to but not including `1.0`.
+## Numbers
 
-To generate a float from `0` to `5` rounded to 2 decimal places:
+| Function | Gives |
+| -------- | ----- |
+| `random()` | float from `0.0` up to but **not including** `1.0` |
+| `randint(a, b)` | integer from `a` to `b`, **both included** |
+| `randrange(start, stop, step)` | integer from a range, `stop` excluded |
 
 ```python
-x = round(random() * 5, 2)
+x = randint(1, 6)              # a dice roll
+x = round(random() * 5, 2)     # float from 0 to 5, 2 decimal places
 ```
 
-## Random Integer
+## Choosing From a List
 
-```python
-from random import *
-
-x = randint(a, b)
-```
-
-`randint(a, b)` includes both `a` and `b`.
-
-```python
-lst = []
-
-for i in range(10):
-    x = randint(1, 6)
-    lst.append(x)
-```
-
-## Random Selection From a List
+| Function | Gives |
+| -------- | ----- |
+| `choice(lst)` | one item |
+| `sample(lst, k)` | `k` items, no repeats |
+| `choices(lst, k=k)` | `k` items, repeats allowed |
+| `shuffle(lst)` | reorders the list **in place** |
 
 ```python
 from random import *
 
 lst = ["Adam", "Bob", "Charles", "Daniel"]
 
-single = choice(lst)
-pair = sample(lst, 2)
-
-print(single)
-print(pair)
+print(choice(lst))       # 'Bob'
+print(sample(lst, 2))    # ['Daniel', 'Adam']
 ```
-
-| Function | Meaning |
-| -------- | ------- |
-| `choice(lst)` | chooses one item |
-| `sample(lst, k)` | chooses `k` unique items |
-| `choices(lst, k=k)` | chooses `k` items and may repeat values |
 
 ## Normal Distribution
 
 ```python
-from random import *
-
 lst = []
-
 for i in range(1000):
-    x = normalvariate(50, 7)
-    lst.append(x)
+    lst.append(normalvariate(50, 7))    # mean 50, standard deviation 7
 ```
 
-`normalvariate(mean, standard_deviation)` generates numbers using a normal distribution.
-
-## Mean and Standard Deviation
+Check the result:
 
 ```python
 from statistics import mean, stdev
@@ -97,6 +61,13 @@ from statistics import mean, stdev
 print(mean(lst))
 print(stdev(lst))
 ```
+
+## Common Mistakes
+
+- Expecting `randint(1, 6)` to exclude `6` — it doesn't, unlike `range`.
+- Expecting `shuffle()` to return the list; it returns `None` and shuffles in place.
+- Calling `sample(lst, k)` with `k` larger than the list — that's an error.
+- Setting a seed and then wondering why the "random" values never change.
 
 ## Related
 

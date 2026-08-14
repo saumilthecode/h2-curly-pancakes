@@ -180,19 +180,30 @@ function transformObsidianSyntax(source, knownNotes) {
 
 function transformCallouts(html) {
   return html.replace(/<blockquote>\n([\s\S]*?)<\/blockquote>/g, (all, inner) => {
-    const callout = inner.match(/^<p>\[!(\w+)\]([^\n<]*)\n?([\s\S]*?)<\/p>\n?([\s\S]*)$/);
+    const callout = inner.match(/^<p>\[!(\w+)\]([-+]?)([^\n<]*)\n?([\s\S]*?)<\/p>\n?([\s\S]*)$/);
     if (!callout) return all;
 
     const type = callout[1].toLowerCase();
-    const title = callout[2].trim() || type;
-    const firstBody = callout[3].trim();
-    const rest = callout[4].trim();
+    const fold = callout[2];
+    const title = callout[3].trim() || type;
+    const firstBody = callout[4].trim();
+    const rest = callout[5].trim();
     const icon = calloutIcons[type] || "!";
     const body = [firstBody, rest].filter(Boolean).join("\n");
+    const titleMarkup = `<span class="callout-icon">${icon}</span><span>${escapeHtml(title)}</span>`;
+    const content = body ? `<div class="callout-content">${body}</div>` : "";
+
+    // Obsidian fold markers: "-" starts collapsed, "+" starts expanded.
+    if (fold) {
+      return `<details class="callout callout-${type} callout-foldable"${fold === "+" ? " open" : ""}>
+<summary class="callout-title">${titleMarkup}</summary>
+${content}
+</details>`;
+    }
 
     return `<aside class="callout callout-${type}">
-<div class="callout-title"><span class="callout-icon">${icon}</span><span>${escapeHtml(title)}</span></div>
-${body ? `<div class="callout-content">${body}</div>` : ""}
+<div class="callout-title">${titleMarkup}</div>
+${content}
 </aside>`;
   });
 }
@@ -442,6 +453,23 @@ pre code {
 
 .callout-content > :first-child { margin-top: 0.5rem; }
 .callout-content > :last-child { margin-bottom: 0; }
+
+.callout-foldable > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.callout-foldable > summary::-webkit-details-marker { display: none; }
+
+.callout-foldable > summary::after {
+  content: "\\203A";
+  margin-left: auto;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+}
+
+.callout-foldable[open] > summary::after { transform: rotate(90deg); }
+
 .callout-important, .callout-warning, .callout-caution { border-color: #c28a31; background: rgba(194, 138, 49, 0.14); }
 .callout-error, .callout-danger, .callout-failure { border-color: #b85d5d; background: rgba(184, 93, 93, 0.14); }
 .callout-summary, .callout-info, .callout-note { border-color: #5c7cba; }

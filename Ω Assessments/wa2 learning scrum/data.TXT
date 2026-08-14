@@ -1,0 +1,14 @@
+Name,Health,Attack,Defence
+Pikachu,120,15,0.15
+Gengar,180,20,0.18
+Charizard,200,25,0.20
+Bulbasaur,100,12,0.10
+Squirtle,110,14,0.12
+Mewtwo,250,30,0.25
+Lucario,160,18,0.16
+Jigglypuff,90,10,0.08
+Snorlax,300,22,0.30
+Eevee,95,11,0.09
+Dragonite,220,28,0.22
+Machamp,170,24,0.18
+Psyduck,105,13,0.05
