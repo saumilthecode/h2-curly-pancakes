@@ -60,7 +60,7 @@ print("done")           # always runs
 `pass` does nothing. Use it as a placeholder when a block is required but you have no code yet.
 
 > [!note]
-> `break` and `continue` control **loops**, not conditionals — see [[Iteration]].
+> `break` and `continue` control **loops**, not conditionals — see [[LT5 Iteration|Iteration]].
 
 ## Common Mistakes
 
@@ -81,6 +81,6 @@ elif 30000 < volume <= 70000:   # dead
 
 ## Related
 
-- [[basic python]]
-- [[Iteration]]
-- [[Functions (functional abstraction)]]
+- [[LT1 basic python|basic python]]
+- [[LT5 Iteration|Iteration]]
+- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]

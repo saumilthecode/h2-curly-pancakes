@@ -13,7 +13,7 @@
 | Values | any type, including lists, tuples and other dictionaries |
 | Lookup | by key |
 
-Also called an *associative array*. Python implements it with a [[Hashing|hash table]], which is why keys must be hashable and lookup is fast.
+Also called an *associative array*. Python implements it with a [[LT10d Hashing|hash table]], which is why keys must be hashable and lookup is fast.
 
 ## Creating
 
@@ -65,7 +65,7 @@ for key, value in d.items():   # both at once
 
 ## Related
 
-- [[Lists]]
-- [[Tuple]]
-- [[Hashing]]
-- [[Data Abstraction]]
+- [[LT7 Lists|Lists]]
+- [[LT6 Tuple|Tuple]]
+- [[LT10d Hashing|Hashing]]
+- [[LT10a Data Abstraction|Data Abstraction]]

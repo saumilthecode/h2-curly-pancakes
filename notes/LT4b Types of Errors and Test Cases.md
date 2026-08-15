@@ -123,6 +123,6 @@ def percentage(score, total):
 
 ## Related
 
-- [[Data validation and verification]]
-- [[Iteration]]
-- [[Recursion]]
+- [[LT4a Data validation and verification|Data validation and verification]]
+- [[LT5 Iteration|Iteration]]
+- [[LT9a Recursion|Recursion]]

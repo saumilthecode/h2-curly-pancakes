@@ -71,6 +71,6 @@ print(stdev(lst))
 
 ## Related
 
-- [[Lists]]
-- [[Iteration]]
-- [[basic python]]
+- [[LT7 Lists|Lists]]
+- [[LT5 Iteration|Iteration]]
+- [[LT1 basic python|basic python]]

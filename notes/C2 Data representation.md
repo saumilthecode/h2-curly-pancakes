@@ -255,7 +255,7 @@ print("사랑")    # 사랑
 | Advantage of Unicode over ASCII? | It encodes far more characters, so text in **any language** plus symbols can be represented, not just English. One shared standard also means different systems agree on the same number for the same character. |
 
 > [!example]- UTF-8 encoding
-> Not named in the learning outcomes — but 2023 asked *"explain one advantage of using UTF-8 encoding rather than ASCII"* for 2 marks, and it was covered in the C2b lecture. Worth knowing.
+> Not named in the learning outcomes — but 2023 asked *"explain one advantage of using UTF-8 encoding rather than ASCII"* for 2 marks, and it was covered in the C2b lecture.
 >
 > **Advantage over ASCII:** UTF-8 can represent **every Unicode character**, so it handles any language, while remaining **backwards compatible** — the 128 ASCII characters still take a single byte, so no space is wasted on English text.
 >
@@ -297,6 +297,6 @@ print("사랑")    # 사랑
 
 ## Related
 
-- [[basic python]]
-- [[Stack]]
-- [[Hashing]]
+- [[LT1 basic python|basic python]]
+- [[LT10b Stack|Stack]]
+- [[LT10d Hashing|Hashing]]

@@ -35,7 +35,7 @@ age  = int(input("How old are you? "))
 ```
 
 > [!warning]
-> `input()` **always returns a string**, whatever the user types. Convert with `int()` or `float()` before doing arithmetic — `input() + 1` is a `TypeError`, and going the other way you need `str()` to concatenate a number into a message.
+> `input()` **always returns a string**, whatever the user types. `input() + 1` is a `TypeError` — convert with `int()` or `float()` first.
 
 ## Arithmetic Operators
 
@@ -143,7 +143,7 @@ text[start:stop:step]
 - `start` is included, `stop` is **not**, `step` is the interval.
 - Slicing always returns a **new** string.
 
-Think of the index as a cursor sitting to the *left* of each character:
+The index is a cursor sitting to the *left* of each character:
 
 ```text
  a  b  c  d  e  f  g  h
@@ -181,6 +181,6 @@ In Jupyter, `Ctrl` + `/` toggles comments on the selected lines.
 
 ## Related
 
-- [[Conditionals]]
-- [[Functions (functional abstraction)]]
-- [[Print Formatting]]
+- [[LT2 Conditionals|Conditionals]]
+- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]
+- [[BTB3 Print Formatting|Print Formatting]]

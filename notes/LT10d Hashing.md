@@ -190,7 +190,7 @@ Searching must follow the **same probe path** — check the assigned slot, then 
 
 ## Related
 
-- [[Data Abstraction]]
-- [[Dictionary]]
-- [[Search]]
-- [[Data validation and verification]]
+- [[LT10a Data Abstraction|Data Abstraction]]
+- [[LT8 Dictionary|Dictionary]]
+- [[LT11a Search|Search]]
+- [[LT4a Data validation and verification|Data validation and verification]]

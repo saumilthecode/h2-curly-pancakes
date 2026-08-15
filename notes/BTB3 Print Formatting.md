@@ -107,5 +107,5 @@ print("{0:<8}{1:<12}{2:>10.2f}".format(i, name, bmi))
 
 ## Related
 
-- [[basic python]]
-- [[File Handling]]
+- [[LT1 basic python|basic python]]
+- [[BTB2 File Handling|File Handling]]

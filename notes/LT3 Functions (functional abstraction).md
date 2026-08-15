@@ -86,7 +86,7 @@ A good abstraction:
 6. Separates specification from implementation
 7. Makes debugging easier
 
-Compare — the bug is far easier to find on the right:
+The bug is easier to spot on the right:
 
 ```python
 # one dense line                    # decomposed
@@ -134,7 +134,7 @@ elif distance <= 10000:              BLOCK = 400
 
 ## Related
 
-- [[basic python]]
-- [[Conditionals]]
-- [[Recursion]]
-- [[Data Abstraction]]
+- [[LT1 basic python|basic python]]
+- [[LT2 Conditionals|Conditionals]]
+- [[LT9a Recursion|Recursion]]
+- [[LT10a Data Abstraction|Data Abstraction]]

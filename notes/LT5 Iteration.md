@@ -114,7 +114,7 @@ Use `while value > 0:` instead. In Jupyter an infinite loop kills the kernel —
 
 ## Related
 
-- [[Conditionals]]
-- [[Recursion]]
-- [[Lists]]
-- [[Types of Errors and Test Cases]]
+- [[LT2 Conditionals|Conditionals]]
+- [[LT9a Recursion|Recursion]]
+- [[LT7 Lists|Lists]]
+- [[LT4b Types of Errors and Test Cases|Types of Errors and Test Cases]]

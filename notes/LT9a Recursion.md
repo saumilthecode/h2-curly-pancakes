@@ -17,6 +17,9 @@ def factorial(n):
         return n * factorial(n - 1)   # 2. calls itself  3. smaller
 ```
 
+> [!tip]
+> Applying this to actual problems — the shrinking patterns, choosing base cases, worked examples — is in [[LT9b Recursion (Application)|LT9b]].
+
 ## Writing One: Wishful Thinking
 
 Don't try to trace the whole thing in your head. Assume the smaller call already works, and only write the step that turns its answer into yours.
@@ -29,7 +32,7 @@ Two ways to shrink the problem:
 | Reduction | Size `n` becomes | Example |
 | --------- | ---------------- | ------- |
 | By one | `n - 1` | `factorial`, list traversal |
-| Divide and conquer | `n / 2` | [[Search]] — binary search |
+| Divide and conquer | `n / 2` | [[LT11a Search|Search]] — binary search |
 
 ## Recursion Tree
 
@@ -199,6 +202,6 @@ factorial(2.1)   # 2.1, 1.1, 0.1 ... never equals 1
 
 ## Related
 
-- [[Functions (functional abstraction)]]
-- [[Iteration]]
-- [[Stack]]
+- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]
+- [[LT5 Iteration|Iteration]]
+- [[LT10b Stack|Stack]]

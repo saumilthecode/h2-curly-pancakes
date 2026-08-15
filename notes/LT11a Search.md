@@ -11,7 +11,7 @@
 | `x in seq` | `True` / `False` |
 
 > [!note]
-> `index()` stops at the first match — `'mississippi'.index('i')` is `1`, not the later ones. It also **raises an error** if the item is absent, which is why we write our own version that returns `None`.
+> `index()` stops at the first match — `'mississippi'.index('i')` is `1`, not the later ones. It also **raises an error** if the item is absent; our own version returns `None` instead.
 
 ## Linear Search
 
@@ -167,7 +167,7 @@ def BinarySearch(seq, item):
 | Worst case on 1000 items | 1000 checks | 10 checks |
 | Good for | small or unsorted data | large sorted data |
 
-Compare with [[Hashing]], which reaches an item in `O(1)` — but only if you have the key, and it cannot answer range questions.
+Compare with [[LT10d Hashing|Hashing]], which reaches an item in `O(1)` — but only if you have the key, and it cannot answer range questions.
 
 ## Common Mistakes
 
@@ -180,7 +180,7 @@ Compare with [[Hashing]], which reaches an item in `O(1)` — but only if you ha
 
 ## Related
 
-- [[Recursion]]
-- [[Iteration]]
-- [[Lists]]
-- [[Hashing]]
+- [[LT9a Recursion|Recursion]]
+- [[LT5 Iteration|Iteration]]
+- [[LT7 Lists|Lists]]
+- [[LT10d Hashing|Hashing]]

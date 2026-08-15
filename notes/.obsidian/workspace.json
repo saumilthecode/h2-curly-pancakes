@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "73eaddffbf3c651e",
+        "id": "6da3c6c8e1afa71c",
         "type": "tabs",
         "children": [
           {
-            "id": "3e14a9d61c346303",
+            "id": "161aaac8db8062b1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hashing.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Hashing"
+              "title": "New tab"
             }
           }
         ]
@@ -213,43 +209,47 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "5a7d495f8cd7d8ce",
+  "active": "161aaac8db8062b1",
   "lastOpenFiles": [
+    "LT11a Search.md",
+    "LT9b Recursion (Application).md",
+    "LT10d Hashing.md",
+    "LT10c Queue.md",
+    "LT10b Stack.md",
+    "LT10a Data Abstraction.md",
+    "LT9a Recursion.md",
+    "C2 Data representation.md",
+    "Hashing.md",
+    "LT2 Conditionals.md",
+    "BTB4 Random Generator.md",
+    "BTB3 Print Formatting.md",
+    "BTB2 File Handling.md",
+    "C3 Computer Network.md",
+    "LT11 Search.md",
+    "LT9 Recursion.md",
+    "LT8 Dictionary.md",
+    "LT7 Lists.md",
+    "LT6 Tuple.md",
+    "LT5 Iteration.md",
+    "LT4b Types of Errors and Test Cases.md",
+    "LT4a Data validation and verification.md",
+    "LT3 Functions (functional abstraction).md",
+    "LT1 basic python.md",
     "Tuple.md",
     "Stack.md.tmp.7308.ff25a699f37e",
-    "Hashing.md",
     "File Handling.md",
-    "Queue.md",
-    "Lists.md",
-    "Functions (functional abstraction).md",
-    "index.md",
-    "Print Formatting.md",
-    "Random Generator.md",
-    "Stack.md",
-    "Types of Errors and Test Cases.md",
     "pictures/print-format.html",
-    "Recursion.md",
     "pictures/hash-playground.html",
     "pictures/queue-simulator.html",
     "pictures/stack-simulator.html",
     "pictures/base-converter.html",
     "pictures/widget.js",
-    "basic python.md",
     "pictures/widget.css",
-    "* index.md",
     "queue-fifo.svg",
     "queue-pass-bomb.svg",
-    "C2 - Data representation.md",
     "_config.yml",
     "recursion.png",
-    "Dictionary.md",
-    "Conditionals.md",
-    "Data validation and verification.md",
-    "Iteration.md",
     "Untitled.canvas",
-    "2026-04-15.md",
-    "Untitled.base",
-    "2026-03-07.md",
-    "Welcome.md"
+    "Untitled.base"
   ]
 }

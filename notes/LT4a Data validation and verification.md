@@ -73,10 +73,10 @@ An extra digit calculated from the others and appended to the number, so an erro
 > This is why such a field is stored as a **string, not an integer**: the check digit can be `X`, which is not a digit, and a leading zero would be lost from an integer.
 
 > [!tip]
-> A check digit is a **checksum** applied to identification numbers — same idea as [[Hashing]].
+> A check digit is a **checksum** applied to identification numbers — same idea as [[LT10d Hashing|Hashing]].
 
 ## Related
 
-- [[Types of Errors and Test Cases]]
-- [[Hashing]]
-- [[basic python]]
+- [[LT4b Types of Errors and Test Cases|Types of Errors and Test Cases]]
+- [[LT10d Hashing|Hashing]]
+- [[LT1 basic python|basic python]]

@@ -14,9 +14,15 @@
 | SAN | storage area network |
 
 > [!important] Internet ≠ Web
-> The **internet** is the physical infrastructure — cables, routers, connected machines. The **World Wide Web** is one service running on it: the pages, links and media you access over HTTP. Email, DNS and file transfer also run on the internet but are not part of the web.
+> | | Is |
+> | --- | -- |
+> | Internet | the infrastructure — cables, routers, connected machines |
+> | Web | one service on it — pages and links, over HTTP |
+>
+> Email, DNS and file transfer also run on the internet but are not the web.
 
-The backbone is mostly **fibre optic cable**, much of it undersea. Satellite is avoided for general traffic because the round trip adds too much **latency**.
+- Backbone: **fibre optic cable**, much of it undersea.
+- Satellite is avoided for general traffic — the round trip adds too much **latency**.
 
 **Intranet** — a private network that uses internet technologies (web pages, email) but is restricted to one organisation. Reachable from outside only through controlled access.
 
@@ -118,7 +124,7 @@ The internet uses packet switching.
 | Payload | the actual data |
 | Trailer | error checking, e.g. CRC |
 
-Circuit switching instead reserves one fixed path for the whole communication. Packet switching is more flexible and more resilient — if one route fails, packets take another.
+Circuit switching instead reserves one fixed path for the whole communication. Packet switching is more resilient — if one route fails, packets take another.
 
 **Why data is divided into packets** — small packets share the links fairly rather than one large transfer blocking them, and a corrupted packet only needs that packet resent, not the whole file.
 
@@ -255,5 +261,5 @@ SMTP runs over TCP to help ensure delivery.
 
 ## Related
 
-- [[C2 - Data representation]]
-- [[Hashing]]
+- [[C2 Data representation]]
+- [[LT10d Hashing|Hashing]]

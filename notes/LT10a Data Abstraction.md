@@ -49,9 +49,9 @@ Code that calls `get_name(student)` works with both. Swapping the internal repre
 
 | ADT | Idea | Order | Main operations |
 | --- | ---- | ----- | --------------- |
-| [[Stack]] | add/remove at the top | LIFO | `push`, `pop`, `peek` |
-| [[Queue]] | add at tail, remove at head | FIFO | `enqueue`, `dequeue`, `front` |
-| [[Hashing]] | map data to an index | direct lookup | `hash`, `search` |
+| [[LT10b Stack|Stack]] | add/remove at the top | LIFO | `push`, `pop`, `peek` |
+| [[LT10c Queue|Queue]] | add at tail, remove at head | FIFO | `enqueue`, `dequeue`, `front` |
+| [[LT10d Hashing|Hashing]] | map data to an index | direct lookup | `hash`, `search` |
 
 ## Worked Example: Rational Number
 
@@ -80,7 +80,7 @@ def is_whole(rat):
 ```
 
 > [!note]
-> The utilities call `get_numer` / `get_denom` rather than `rat[0]` / `rat[1]`. That is the whole point — change the representation and only the constructor and accessors need editing.
+> The utilities call `get_numer` / `get_denom` rather than `rat[0]` / `rat[1]`, so changing the representation means editing only the constructor and accessors.
 
 Arithmetic:
 
@@ -168,9 +168,9 @@ def make_rat(n, d):
 
 ## Related
 
-- [[Functions (functional abstraction)]]
-- [[Tuple]]
-- [[Stack]]
-- [[Queue]]
-- [[Hashing]]
-- [[File Handling]]
+- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]
+- [[LT6 Tuple|Tuple]]
+- [[LT10b Stack|Stack]]
+- [[LT10c Queue|Queue]]
+- [[LT10d Hashing|Hashing]]
+- [[BTB2 File Handling|File Handling]]

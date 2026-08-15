@@ -42,10 +42,10 @@ tuple("abc")   # ('a', 'b', 'c')
 ```
 
 > [!important]
-> `tup = tup + (4,)` does not modify the tuple — it builds a new one and points the name at it. `id(tup)` before and after shows a **different** memory address, which is the proof.
+> `tup = tup + (4,)` does not modify the tuple — it builds a new one and points the name at it. `id(tup)` before and after shows a **different** memory address.
 
 > [!note]
-> `max` / `min` on characters compare **ASCII values**, and capitals come before lowercase — `max("aZ")` is `'a'` (97), not `'Z'` (90). See [[C2 - Data representation]].
+> `max` / `min` on characters compare **ASCII values**, and capitals come before lowercase — `max("aZ")` is `'a'` (97), not `'Z'` (90). See [[C2 Data representation]].
 
 ## Iteration
 
@@ -128,7 +128,7 @@ tup2              # (1, 2, 3)  — a new tuple was created
 
 ## Related
 
-- [[Lists]]
-- [[Dictionary]]
-- [[Data Abstraction]]
-- [[Iteration]]
+- [[LT7 Lists|Lists]]
+- [[LT8 Dictionary|Dictionary]]
+- [[LT10a Data Abstraction|Data Abstraction]]
+- [[LT5 Iteration|Iteration]]

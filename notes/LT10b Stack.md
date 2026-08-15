@@ -119,11 +119,11 @@ answer = 17
 > [!warning]
 > For `-` and `/` the order matters. `A B -` means `A - B` — the **first** value popped is the right-hand operand.
 
-Why bother: postfix needs **no brackets and no precedence rules**. The order of the symbols already fixes the order of evaluation, so `3 4 5 + *` and `3 4 * 5 +` are unambiguous without `( )`.
+Postfix needs **no brackets and no precedence rules** — the order of the symbols already fixes the order of evaluation. `3 4 5 + *` and `3 4 * 5 +` differ without needing `( )`.
 
 ## Common Mistakes
 
-- Using `pop(0)` — that's a [[Queue]], not a stack.
+- Using `pop(0)` — that's a [[LT10c Queue|Queue]], not a stack.
 - Writing `return s.append(x)` in `push`. `.append()` returns `None`, so the function hands back `None`. A `push` should not return anything.
 - Reading the underlying list directly (`for item in s:`) instead of calling `pop()`. In an *application of stack* question that throws away the marks for using the ADT — and iterating a list does **not** reverse it the way popping does.
 - Treating `peek()` as if it removes the item.
@@ -132,7 +132,7 @@ Why bother: postfix needs **no brackets and no precedence rules**. The order of 
 
 ## Related
 
-- [[Data Abstraction]]
-- [[Queue]]
-- [[Recursion]]
-- [[C2 - Data representation]]
+- [[LT10a Data Abstraction|Data Abstraction]]
+- [[LT10c Queue|Queue]]
+- [[LT9a Recursion|Recursion]]
+- [[C2 Data representation]]

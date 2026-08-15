@@ -137,7 +137,7 @@ def export(records, filename):
 
 ## Related
 
-- [[Lists]]
-- [[Tuple]]
-- [[Data Abstraction]]
-- [[Print Formatting]]
+- [[LT7 Lists|Lists]]
+- [[LT6 Tuple|Tuple]]
+- [[LT10a Data Abstraction|Data Abstraction]]
+- [[BTB3 Print Formatting|Print Formatting]]

@@ -71,7 +71,7 @@ Same FIFO idea — only the call style changes: `q.enqueue(x)` instead of `enque
 
 ## Stack vs Queue
 
-| | [[Stack]] | Queue |
+| | [[LT10b Stack|Stack]] | Queue |
 | --- | ----- | ----- |
 | Order | LIFO | FIFO |
 | Add | `push` | `enqueue` |
@@ -124,5 +124,5 @@ Pass-the-parcel pattern: rotate `n` times, then dequeue one player, and repeat u
 
 ## Related
 
-- [[Data Abstraction]]
-- [[Stack]]
+- [[LT10a Data Abstraction|Data Abstraction]]
+- [[LT10b Stack|Stack]]
