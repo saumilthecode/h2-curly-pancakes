@@ -1,0 +1,77 @@
+Title: POP3 vs IMAP - What's the difference?
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=SBaARws0hy4
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Hallo ouens, in hierdie video gaan ons oor 'n paar e-posprotokolle praat, en
+[00:05 - 00:13] dit is POP3 en IMAP. Hierdie protokolle word nou gebruik om e-pos van 'n e-posbediener op te haal.
+[00:13 - 00:20] As u byvoorbeeld 'n e-poskliënt soos Microsoft Outlook gebruik, sou u
+[00:20 - 00:26] Outlook met POP3 of IMAP konfigureer om u e-pos op 'n rekenaar te kry. En u kan ook
+[00:26 - 00:33] hierdie protokolle op u tablet of slimfoon gebruik om u e-pos op te spoor. U kan dus een gebruik,
+[00:33 - 00:40] die keuse is u eie. Maar die vraag is, watter protokol wil u gebruik? Is die een beter as
+[00:40 - 00:46] die ander? So dit is waaroor ons gaan praat. Laat ons dus eers oor POP3 praat. Nou staan
+[00:46 - 00:53] POP3 vir poskantoorprotokol 3. Nou is POP3 die eenvoudigste van die twee protokolle, want die
+[00:53 - 01:01] enigste ding wat POP3 doen, is om die e-pos vanaf 'n e-posbediener na u toestel af te laai. En dit
+[01:01 - 01:07] laai net af wat in u inbox-gids is, dit is waar u e-pos is, en dit is amper.
+[01:07 - 01:13] Dit laai geen ander vouers of die inhoud daarvan af nie. Dit laai dus nie u gestuurde items,
+[01:13 - 01:19] u konsepte, u verwyderde e-posse, ensovoorts nie. Omdat dit slegs in u inkassie
+[01:19 - 01:26] afgelaai word en dit nie enige sinchronisasie doen nie. Hier het ons byvoorbeeld
+[01:26 - 01:32] twee rekenaars wat ingestel is om dieselfde e-posrekening op te haal. En soos u kan sien, is
+[01:32 - 01:39] die struktuur van die vouers op hierdie twee rekenaars verskillend omdat POP3 nie die vouers
+[01:39 - 01:46] sinkroniseer nie . As u POP3 gebruik, word die e-pos nou standaard by die e-posbediener uitgevee sodra
+[01:46 - 01:53] dit op 'n toestel afgelaai is. Geen kopie van die e-pos word dus op die bediener bewaar nie. Wat dus gebeur,
+[01:53 - 01:58] is dat wanneer 'n nuwe e-pos na die e-posbediener kom, die rekenaar eers die e-
+[01:58 - 02:05] posbediener na hierdie rekenaar hier onder gaan, hierdie rekenaar sal die e-pos ontvang, maar hierdie
+[02:05 - 02:11] ander rekenaar nie. Omdat die e-pos reeds afgelaai is. Geen kopie van
+[02:11 - 02:17] die e-pos word dus op die bediener bewaar nie. Die meeste e-poskliënte het egter die instelling waarop u kan
+[02:17 - 02:23] kyk om 'n kopie op die bediener te laat, sodat al u toestelle die e-pos kan ophaal.
+[02:26 - 02:33] Nee, kom ons praat oor IMAP. En IMAP is 'n protokol vir toegang tot internetboodskappe. IMAP word nou ook
+[02:33 - 02:39] gebruik om e-pos op te spoor, maar IMAP is 'n bietjie anders. Met IMAP kan u u e-pos
+[02:39 - 02:47] wat op die bediener is vanaf verskeie toestelle bekyk . Die e-pos word op die bediener bewaar en dit kopieer
+[02:47 - 02:54] plaaslike kopieë van die e-pos op al u toestelle. En dit sinkroniseer al u vouers en
+[02:54 - 03:01] alles wat daarin is. Dit sinkroniseer dus u inkassie, gestuurde items, verwyderde items, konsepte en
+[03:01 - 03:08] enige aangepaste vouers wat u geskep het. As u u e-pos dus op u rekenaar, tablet
+[03:08 - 03:14] of slimfoon sien, sal u e-pos presies dieselfde wees, want alles is gesinchroniseer.
+[03:16 - 03:22] So byvoorbeeld in hierdie demonstrasie sien ons dat al die e-pos en vouers presies
+[03:22 - 03:28] dieselfde is tussen hierdie twee rekenaars. As ons dus 'n e-pos op hierdie rekenaar hier uitvee, sal die
+[03:28 - 03:34] e-pos op die e-posbediener verwyder word en dan ook op hierdie rekenaar verwyder word.
+[03:36 - 03:41] As ons dus na die ander rekenaar gaan, en laat ons byvoorbeeld al die
+[03:41 - 03:47] e-posse verwyder. En as dit gebeur, sal al die e-posse op die bediener en die ander rekenaar
+[03:47 - 03:55] ook verwyder word. En as daar nuwe e-posse inkom, gaan die e-pos eers na die e-posbediener, en
+[03:55 - 04:01] as hierdie rekenaars met die e-posbediener sinkroniseer, sal die nuwe e-pos op hierdie rekenaars verskyn.
+[04:04 - 04:11] Laat ons dus in 'n ander voorbeeld 'n persoonlike gids maak. Dus maak ons ​​'n aangepaste vouer
+[04:11 - 04:17] en gee dit dan 'n naam. En omdat ons IMAP gebruik, sal die vouer en al die inhoud daarvan
+[04:17 - 04:24] bygevoeg word en ook op die ander rekenaar gesinkroniseer word. Elke rekenaar, tablet en slimfoon wat u
+[04:24 - 04:31] het, sal dus presies dieselfde e-pos- en vouerstruktuur hê as die ander. So dit is hoe IMAP werk.
+[04:33 - 04:40] Dus as 'n vergelyking tussen POP3 en IMAP. Aan die linkerkant het ons POP3, en soos u kan sien,
+[04:40 - 04:47] verskil die vouerstruktuur tussen hierdie twee e-poskliënte, want POP3 laai slegs die inhoud
+[04:47 - 04:53] van u posbus-lêergids af. Dit doen geen e-pos- of vouersinkronisering nie, daarom is die e-pos en
+[04:53 - 05:00] die vouerstruktuur anders. Maar in IMAP is alles dieselfde. Die e-pos- en
+[05:00 - 05:05] vouerstruktuur is identies omdat IMAP alles met al u toestelle sinkroniseer.
+[05:07 - 05:15] Nou word beide POP3 en IMAP in u e-poskliënt in die instellings vir inkomende bedieners ingestel. So
+[05:15 - 05:22] byvoorbeeld as jy Gmail gebruik en jy wil POP3 gebruik, jy sal pop.gamil.com tik in jou
+[05:22 - 05:28] inkomende instellings bediener. Of as u IMAP wil gebruik, tik u imap.gmail.com
+[05:33 - 05:38] . Die vraag is dus, watter protokol wil u eintlik gebruik? En dit hang regtig
+[05:38 - 05:44] van u situasie af. Nou is POP3 goed as u net u e-pos op een toestel gaan haal
+[05:44 - 05:50] . Die voordeel van die gebruik van POP3 is dat, aangesien die e-pos na u toestel afgelaai word,
+[05:50 - 05:56] u u afgelaaide e-pos kan sien, selfs as u nie 'n internetverbinding het nie. Die
+[05:56 - 06:01] enigste keer dat u 'n internetverbinding en POP3 benodig, is wanneer u nuwe e-pos ontvang of
+[06:01 - 06:09] e-pos stuur. Nog 'n voordeel van POP3 is dat dit stoorplek op die e-posbediener bespaar omdat
+[06:09 - 06:16] die e-posse verwyder word wanneer dit na 'n toestel afgelaai word. 'N Nadeel van POP3 is dat,
+[06:16 - 06:22] aangesien die e-posse van die bediener verwyder word en na u toestel afgelaai word, u 'n plan nodig het
+[06:22 - 06:29] om u e-posse te rugsteun indien u toestel ineenstort of verlore gaan. En 'n ander nadeel is dat u
+[06:29 - 06:36] toestel 'n groter kans het om met virusse besmet te word, aangesien die e-posse volledig afgelaai is.
+[06:37 - 06:43] Nou is IMAP goed as u u e-pos op verskillende toestelle gaan haal. 'N Voordeel
+[06:43 - 06:49] van die gebruik van IMAP is dat al die e-pos op die e-posbediener gestoor word. Of u dus toegang tot u
+[06:49 - 06:56] e-pos het met 'n e-poskliënt of webpos, u sal al u e-pos kan sien, insluitend u
+[06:56 - 07:03] gestuurde items, konsepte, verwyderde items en enige persoonlike vouers. En al die e-pos en al die
+[07:03 - 07:08] dopgehou is almal gesinkroniseer. Dus sal elke toestel wat u het presies dieselfde sien.
+[07:08 - 07:15] 'N Nadeel van IMAP is nou dat u nie u e-pos sonder
+[07:15 - 07:21] internetverbinding kan sien nie. En dit is omdat IMAP slegs plaaslike kopieë van die e-pos op u
+[07:21 - 07:27] toestel opslaan en dit nie aflaai nie. Sommige e-poskliënte sal u egter die opsie bied om
+[07:27 - 07:33] na te gaan of IMAP die e-posse na u toestel aflaai, in plaas daarvan om dit net in die kas te laai.

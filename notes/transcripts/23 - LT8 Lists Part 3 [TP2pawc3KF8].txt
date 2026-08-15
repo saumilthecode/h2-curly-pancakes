@@ -1,0 +1,57 @@
+Title: LT8 Lists   Part 3
+LT: LT 7 - Lists
+Linked label: Part 3 : Iterating through a list
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=TP2pawc3KF8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:08] okay uh like in the past when we do typo
+[00:05 - 00:10] or string we sometimes we want to
+[00:08 - 00:13] iterate through the elements uh and down
+[00:10 - 00:17] here i have a few method
+[00:13 - 00:17] of iterating through the list
+[00:18 - 00:22] if we are just concerned about the
+[00:20 - 00:24] element within the list then we can just
+[00:22 - 00:27] say for element in list and then when we
+[00:24 - 00:29] print out all the elements
+[00:27 - 00:30] so this is a case where we are only
+[00:29 - 00:33] concerned
+[00:30 - 00:35] about the element
+[00:33 - 00:37] uh next if we are concerned about the
+[00:35 - 00:40] index position
+[00:37 - 00:42] uh we can say for i in range of the
+[00:40 - 00:45] length of the list so you go to the full
+[00:42 - 00:47] length of the knees and then i can print
+[00:45 - 00:49] the individual element at that
+[00:47 - 00:52] particular index so you are printing the
+[00:49 - 00:54] element you will have to say this at the
+[00:52 - 00:55] particular index and then you will bring
+[00:54 - 00:58] this up
+[00:55 - 01:01] so that is the second level
+[00:58 - 01:04] method is that
+[01:01 - 01:06] uh we make use of a while loop okay
+[01:04 - 01:08] while list
+[01:06 - 01:10] now what do you mean by one list while
+[01:08 - 01:12] the list is not empty
+[01:10 - 01:12] well the
+[01:15 - 01:19] after you print the first element you
+[01:17 - 01:21] sort of truncate the element that means
+[01:19 - 01:24] you drop away the first element you take
+[01:21 - 01:25] the second onwards so one to the end
+[01:24 - 01:27] so you actually
+[01:25 - 01:30] hit your element
+[01:27 - 01:32] right and then your level c will get
+[01:30 - 01:34] shorter and shorter lesser and less
+[01:32 - 01:38] element because you keep dropping away
+[01:34 - 01:40] the first element eventually the release
+[01:38 - 01:41] will become empty and you get out of the
+[01:40 - 01:43] loop
+[01:41 - 01:45] okay and then you can print it out so
+[01:43 - 01:48] this is using a wow method but the
+[01:45 - 01:51] danger of it is that you located the
+[01:48 - 01:53] base okay so be very careful about this
+[01:51 - 01:57] whether you are allowed to mutate the
+[01:53 - 01:57] least or not allowed to mutate the least

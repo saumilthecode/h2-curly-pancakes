@@ -1,0 +1,71 @@
+Title: 1  How do we use the index operator
+LT: LT 7 - Lists
+Linked label: How do we use the index operator - List & String
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=p6o9X5_JWG8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] how do we use the index operator
+[00:04 - 00:08] lists and strings are two types of
+[00:06 - 00:10] variables in python that can store
+[00:08 - 00:12] multiple items
+[00:10 - 00:17] what do we do if we want to get a
+[00:12 - 00:17] particular item from a list or string
+[00:17 - 00:22] each item in a list or string has its
+[00:20 - 00:25] position represented by a number called
+[00:22 - 00:28] its index the index of the first item is
+[00:25 - 00:30] always zero
+[00:28 - 00:33] we can think of lists and strings as
+[00:30 - 00:35] rows of boxes with each box containing
+[00:33 - 00:37] one item
+[00:35 - 00:40] if we number these boxes starting from
+[00:37 - 00:44] zero we can see that
+[00:40 - 00:47] the list digits has eight boxes numbered
+[00:44 - 00:48] 0 to 7 with each box containing an
+[00:47 - 00:49] integer
+[00:48 - 00:52] and
+[00:49 - 00:55] the string subject has 9 boxes numbered
+[00:52 - 00:58] 0 to 8 with each box containing a
+[00:55 - 00:58] character
+[00:58 - 01:04] to get a single item from a list or
+[01:01 - 01:06] string we need to use the index operator
+[01:04 - 01:08] this is what the index operator looks
+[01:06 - 01:08] like
+[01:09 - 01:14] to get an item from a list or string we
+[01:12 - 01:16] use the index operator together with the
+[01:14 - 01:18] index of the required item
+[01:16 - 01:21] [Music]
+[01:18 - 01:24] remember the first item in a list or
+[01:21 - 01:29] string has an index of 0.
+[01:24 - 01:32] so digits 0 will give us the value of 1
+[01:29 - 01:32] and subject 5 will give us the character
+[01:32 - 01:34] t
+[01:32 - 01:37] [Music]
+[01:34 - 01:40] we can also use a list or string value
+[01:37 - 01:41] directly with the index operator as
+[01:40 - 01:47] shown here
+[01:41 - 01:48] [Music]
+[01:47 - 01:51] as a shortcut
+[01:48 - 01:54] negative indices can be used to count
+[01:51 - 01:55] from the end of a list or string for
+[01:54 - 01:58] example
+[01:55 - 02:00] digits negative 1 will give us the last
+[01:58 - 02:03] item in digits
+[02:00 - 02:05] similarly subject negative 1 will give
+[02:03 - 02:07] us the last character in subject
+[02:05 - 02:10] [Music]
+[02:07 - 02:12] we can get preceding items or characters
+[02:10 - 02:15] by decreasing the index used
+[02:12 - 02:16] this means that the index becomes more
+[02:15 - 02:25] negative
+[02:16 - 02:28] [Music]
+[02:25 - 02:30] however if we try to get an item or a
+[02:28 - 02:32] character that does not exist
+[02:30 - 02:35] an index error will occur
+[02:32 - 02:37] this can occur with an index that is out
+[02:35 - 02:37] of range
+[02:38 - 02:51] [Music]
+[02:58 - 03:00] you

@@ -1,0 +1,257 @@
+Title: 2021 LT 3a Functional Abstraction Pt 1
+LT: LT 3a - Functional Abstraction (for 2026)
+Linked label: Functional Abstraction Part 1
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=3HB7kL4MREE
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] okay hi i'm mr kwang today we'll start
+[00:02 - 00:07] on lecture three a functional
+[00:05 - 00:08] abstraction all right so today we're
+[00:07 - 00:11] gonna learn about how we will use
+[00:08 - 00:13] functions how do we define functions and
+[00:11 - 00:13] all
+[00:13 - 00:16] okay so understand the idea of a
+[00:15 - 00:18] function in programming
+[00:16 - 00:20] all right what exactly is a function uh
+[00:18 - 00:22] before we talk about what the function
+[00:20 - 00:24] does let's just quickly define the form
+[00:22 - 00:25] of a function first
+[00:24 - 00:27] a function always when you start to
+[00:25 - 00:29] define a function you will start off
+[00:27 - 00:32] with a defined def then followed by the
+[00:29 - 00:34] name of the function this name can be
+[00:32 - 00:37] set by you it can be arbitrary but
+[00:34 - 00:39] usually we choose a meaningful name okay
+[00:37 - 00:42] then we open the bracket and then we
+[00:39 - 00:46] insert the parameters that we use for
+[00:42 - 00:48] the function so this this this is also
+[00:46 - 00:49] known as the arguments the
+[00:48 - 00:52] the values that we input into the
+[00:49 - 00:54] function so that the function can run
+[00:52 - 00:56] okay sometimes there's no arguments but
+[00:54 - 00:58] let's not talk about this now
+[00:56 - 01:01] after that it's always followed by a
+[00:58 - 01:02] close bracket and a colon at the end and
+[01:01 - 01:04] once you press enter you start to enter
+[01:02 - 01:06] the body of the function
+[01:04 - 01:09] so this us what you want the function to
+[01:06 - 01:10] do uh what kind of evaluation you want
+[01:09 - 01:12] it to be done
+[01:10 - 01:13] uh what kind of values you want to be
+[01:12 - 01:15] written
+[01:13 - 01:18] so but to make it clearer let's look at
+[01:15 - 01:21] how actual function looks like
+[01:18 - 01:23] okay so for example we have a function
+[01:21 - 01:25] called square okay so
+[01:23 - 01:27] this is the defined term and then this
+[01:25 - 01:29] is the name of the function
+[01:27 - 01:31] all right and this function square takes
+[01:29 - 01:32] in a single
+[01:31 - 01:35] argument of x
+[01:32 - 01:37] okay there could be more than one
+[01:35 - 01:38] argument given all right the next thing
+[01:37 - 01:41] to note that this is the body of the
+[01:38 - 01:44] function note that there's a four space
+[01:41 - 01:46] indentation from the first line okay so
+[01:44 - 01:47] once you press enter after the colon you
+[01:46 - 01:49] will
+[01:47 - 01:53] in jupiter it will automatically give
+[01:49 - 01:54] you uh four spacing all right and let's
+[01:53 - 01:56] say if you press enter it doesn't give
+[01:54 - 01:58] you false facing right the most common
+[01:56 - 01:59] error is that you probably have missed
+[01:58 - 02:01] out the colon
+[01:59 - 02:01] okay
+[02:02 - 02:05] all right so this is how a typical
+[02:04 - 02:08] function will look like
+[02:05 - 02:10] right here we take the we define a new
+[02:08 - 02:12] variable within the function result and
+[02:10 - 02:14] then we let it be equals to
+[02:12 - 02:16] x times x and then after that we return
+[02:14 - 02:17] the result
+[02:16 - 02:20] all right
+[02:17 - 02:23] okay so this is this expression yep
+[02:20 - 02:25] sometimes they may the result may not uh
+[02:23 - 02:27] include the the
+[02:25 - 02:29] the parameter as well but this is
+[02:27 - 02:31] uh usually quite rare
+[02:29 - 02:34] like but when we return we okay as if we
+[02:31 - 02:35] don't usually return the the the
+[02:34 - 02:37] parameter itself you return sub
+[02:35 - 02:40] something else but again this is
+[02:37 - 02:41] flexible and depends on your needs
+[02:40 - 02:44] right so let's look at this function
+[02:41 - 02:47] square two okay so we we take square
+[02:44 - 02:49] then we put in the argument of two and
+[02:47 - 02:51] we run this we of course we get four
+[02:49 - 02:54] because basically this function takes
+[02:51 - 02:55] the argument just squares squares the
+[02:54 - 02:57] value and
+[02:55 - 02:58] return the
+[02:57 - 03:01] the square value to you
+[02:58 - 03:03] okay then you have square two plus five
+[03:01 - 03:06] so two two plus five is seven seven
+[03:03 - 03:09] square will give you 49 and next how
+[03:06 - 03:11] about this square squared 3 okay so
+[03:09 - 03:13] basically how this works is that
+[03:11 - 03:15] this first function this first call the
+[03:13 - 03:18] function will act on this 3
+[03:15 - 03:19] then after that the second call of the
+[03:18 - 03:21] function will act on the result of
+[03:19 - 03:24] square three so square three will give
+[03:21 - 03:26] you nine squared nine will give you 81
+[03:24 - 03:27] okay
+[03:26 - 03:29] all right so essentially right when you
+[03:27 - 03:31] use a function you don't really need to
+[03:29 - 03:33] care when you are using the function you
+[03:31 - 03:35] don't need to need to care what's
+[03:33 - 03:37] inside the function you can just use it
+[03:35 - 03:39] directly okay
+[03:37 - 03:42] that's the most important thing to
+[03:39 - 03:44] remember about uh functional abstraction
+[03:42 - 03:46] all right so you don't need to know how
+[03:44 - 03:49] it does the job you just need to know
+[03:46 - 03:50] what it does right
+[03:49 - 03:53] okay so
+[03:50 - 03:55] for example i have a function called
+[03:53 - 03:58] square x again
+[03:55 - 04:00] okay then in this result here this this
+[03:58 - 04:02] result i can sub in a suitable
+[04:00 - 04:04] expression that will still give me
+[04:02 - 04:06] the right outcome okay remember the
+[04:04 - 04:07] whole point of a function is that this
+[04:06 - 04:09] this one this square function will just
+[04:07 - 04:11] return me the square of the value so
+[04:09 - 04:13] there are many ways of getting to that
+[04:11 - 04:14] squared value okay of course
+[04:13 - 04:17] these are some of the possible ways
+[04:14 - 04:20] there's just x times x there is this
+[04:17 - 04:23] uh this double series which remember is
+[04:20 - 04:24] basically means power so x power two and
+[04:23 - 04:26] of course if you want to be a very extra
+[04:24 - 04:28] you want to go a very complicated route
+[04:26 - 04:31] you also can do that as well this will
+[04:28 - 04:31] still give you x square
+[04:31 - 04:35] okay so function let's say it's a black
+[04:33 - 04:38] box and in this case here we give you a
+[04:35 - 04:39] function that takes in two variables
+[04:38 - 04:42] okay if you look at this
+[04:39 - 04:44] two variables right x and y when
+[04:42 - 04:46] different values are assigned you get
+[04:44 - 04:48] the different outputs and i think from
+[04:46 - 04:50] the first three rows you can tell what
+[04:48 - 04:52] exactly the function is doing okay you
+[04:50 - 04:54] can make a good guess but i think it's
+[04:52 - 04:58] quite clear that it's basically
+[04:54 - 05:00] returning the sum of one and two x and y
+[04:58 - 05:01] together so that's one plus two give you
+[05:00 - 05:03] three two plus will give you five three
+[05:01 - 05:06] plus will give you seven five plus six
+[05:03 - 05:08] should give you eleven
+[05:06 - 05:10] okay again this is another function
+[05:08 - 05:11] uh you will learn to write this very
+[05:10 - 05:13] very soon okay so this function
+[05:11 - 05:16] basically checks
+[05:13 - 05:17] for whether a year is a leap year or not
+[05:16 - 05:20] okay so i input
+[05:17 - 05:22] my i input the year it goes through this
+[05:20 - 05:25] function there return me a true or false
+[05:22 - 05:28] value okay so if you look at the year
+[05:25 - 05:30] there's that is uh in that's used as an
+[05:28 - 05:32] input this is two thousand and this will
+[05:30 - 05:34] give me true two thousand one hundred
+[05:32 - 05:37] give me force two one zero four give me
+[05:34 - 05:39] true twenty eighteen should give us
+[05:37 - 05:41] false if i remember correctly you can
+[05:39 - 05:41] check
+[05:41 - 05:43] okay
+[05:42 - 05:45] so
+[05:43 - 05:47] sometimes uh
+[05:45 - 05:49] if we okay if we want to get the value
+[05:47 - 05:51] of the function right if we want to get
+[05:49 - 05:53] a read the output right we need to use a
+[05:51 - 05:56] return all right if there's no return
+[05:53 - 05:57] right that it is treated as an as a
+[05:56 - 05:59] non-output
+[05:57 - 06:02] okay so it depends on what you want
+[05:59 - 06:04] again all right so let's look at this
+[06:02 - 06:05] case here we have learned to use print
+[06:04 - 06:08] statements
+[06:05 - 06:09] earlier in the class all right so this
+[06:08 - 06:11] these two functions look
+[06:09 - 06:14] kind of similar there's a square x
+[06:11 - 06:15] result equals to x times x but
+[06:14 - 06:17] uh the difference in the lines is one is
+[06:15 - 06:20] printing result and one is returning the
+[06:17 - 06:22] result all right so on if you just run
+[06:20 - 06:24] this right you should get the same
+[06:22 - 06:26] output on jupiter but there's going to
+[06:24 - 06:28] be some differences that will come up
+[06:26 - 06:30] very soon
+[06:28 - 06:32] okay so if you you can try this on the
+[06:30 - 06:34] next page all right
+[06:32 - 06:37] so if you do it this way right if you
+[06:34 - 06:39] use a print result okay actually what
+[06:37 - 06:41] python assumes is that
+[06:39 - 06:43] when there's when there's no return in
+[06:41 - 06:45] the function it will you assume that you
+[06:43 - 06:47] are returning none all right so
+[06:45 - 06:49] whatever results are printing that's
+[06:47 - 06:51] fine but if you don't have a clear
+[06:49 - 06:54] return statement there right a python
+[06:51 - 06:57] will just assume that you do not want to
+[06:54 - 06:59] keep the value of the result okay you do
+[06:57 - 07:01] not want to keep the the outputs of the
+[06:59 - 07:02] function at all
+[07:01 - 07:05] right
+[07:02 - 07:06] so let's go on let's look at this
+[07:05 - 07:08] okay when we
+[07:06 - 07:10] put in the parameter the function right
+[07:08 - 07:12] if we use a print statement
+[07:10 - 07:14] we are basically getting a display okay
+[07:12 - 07:14] we are getting something printed on the
+[07:14 - 07:16] screen
+[07:14 - 07:18] and once you're printed out right you
+[07:16 - 07:20] yes is there but then you cannot reuse
+[07:18 - 07:22] it and anymore you cannot you cannot say
+[07:20 - 07:24] for example you print the result of
+[07:22 - 07:27] square x right yeah let's say you you
+[07:24 - 07:28] put square square two you'll get printed
+[07:27 - 07:30] four
+[07:28 - 07:32] but you cannot make use of that folder
+[07:30 - 07:34] id all right but if you return let's say
+[07:32 - 07:36] you return the result right you can
+[07:34 - 07:38] assign this
+[07:36 - 07:40] uh return result right into let's say
+[07:38 - 07:42] another variable and then you can use
+[07:40 - 07:44] that value
+[07:42 - 07:46] okay
+[07:44 - 07:49] okay and also there's some something
+[07:46 - 07:50] about this uh if you don't assign the
+[07:49 - 07:52] result to
+[07:50 - 07:54] to a variable
+[07:52 - 07:56] or you don't use it immediately
+[07:54 - 07:58] python will forget the result after the
+[07:56 - 08:00] function returns so for example in the
+[07:58 - 08:02] first cell here right i'm running square
+[08:00 - 08:03] x then i can return result there i base
+[08:02 - 08:06] then i
+[08:03 - 08:07] run square two i'll get four okay by the
+[08:06 - 08:09] next cell i try to print the result
+[08:07 - 08:12] thinking that oh i'm just using the
+[08:09 - 08:14] result from the previous one right it
+[08:12 - 08:17] doesn't work your result is not defined
+[08:14 - 08:18] anymore okay because once you once you
+[08:17 - 08:20] use the function
+[08:18 - 08:22] uh you use the function on one
+[08:20 - 08:24] on the arguments
+[08:22 - 08:26] if you don't use the result straight
+[08:24 - 08:30] away or you don't store it into a rate
+[08:26 - 08:33] into a new variable the result is not
+[08:30 - 08:33] remembered it's just cleared off
+[08:33 - 08:39] okay we'll stop here then we will
+[08:35 - 08:39] continue the next session

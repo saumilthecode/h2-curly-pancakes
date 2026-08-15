@@ -1,0 +1,563 @@
+Title: BTB2 File Handling Part 1   Read Write Text File
+Assessment(s): BTB 2 - File Handling
+Linked label(s): Handling
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=jc32nQLNKiM
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] okay uh in this uh back to basic
+[00:03 - 00:07] we will be uh
+[00:05 - 00:08] dealing with our file handling of our
+[00:07 - 00:11] text file
+[00:08 - 00:13] now i'm not providing you this jupyter
+[00:11 - 00:16] file but instead as you
+[00:13 - 00:18] watch this video i want you to walk
+[00:16 - 00:22] through the code with me
+[00:18 - 00:24] and then you can actually type all these
+[00:22 - 00:26] uh
+[00:24 - 00:29] quota in your own jupiter and save it
+[00:26 - 00:32] for yourself for reference
+[00:29 - 00:33] uh let's talk about uh opening a text
+[00:32 - 00:36] file
+[00:33 - 00:39] okay i'm doing so without exception
+[00:36 - 00:41] uh well you soon understand why now
+[00:39 - 00:42] there are two methods to open the text
+[00:41 - 00:44] file
+[00:42 - 00:47] so in this case i'm dealing with method
+[00:44 - 00:49] one you can just say uh assign a handler
+[00:47 - 00:51] uh f equal to open
+[00:49 - 00:55] well uh i'm gonna name this file as uh
+[00:51 - 00:57] file.exist dot txt it's a text file
+[00:55 - 01:00] now uh if i were to try to open this
+[00:57 - 01:02] file it will run into an error
+[01:00 - 01:04] okay
+[01:02 - 01:07] because the file don't exist
+[01:04 - 01:08] so this is one way of opening a file
+[01:07 - 01:10] by using just
+[01:08 - 01:15] file f equal to
+[01:10 - 01:17] file open okay just f equal to open
+[01:15 - 01:19] all right
+[01:17 - 01:21] now uh the second method is to use uh
+[01:19 - 01:23] with open
+[01:21 - 01:27] the file name as f
+[01:23 - 01:27] so this is a more uh
+[01:28 - 01:31] proper way of opening a
+[01:31 - 01:34] a
+[01:31 - 01:37] file now the reason being
+[01:34 - 01:39] if you do use f equal
+[01:37 - 01:41] you must always remember to close the
+[01:39 - 01:42] file
+[01:41 - 01:44] okay
+[01:42 - 01:47] now that will free up the
+[01:44 - 01:49] system resources are the memory that has
+[01:47 - 01:52] been allocated when you open the file
+[01:49 - 01:53] okay so whenever you use the f equal to
+[01:52 - 01:55] open
+[01:53 - 01:57] the file name you must always remember
+[01:55 - 01:59] to close it
+[01:57 - 02:01] whereas in the case where you are using
+[01:59 - 02:03] with open
+[02:01 - 02:05] it will automatically
+[02:03 - 02:08] close the file
+[02:05 - 02:11] once you have finished using the file
+[02:08 - 02:14] okay so this will be automatically uh
+[02:11 - 02:15] closed so there's no need to there's no
+[02:14 - 02:16] need to
+[02:15 - 02:17] close the file
+[02:16 - 02:19] okay
+[02:17 - 02:23] now uh second thing is that uh when you
+[02:19 - 02:26] open a file it will also by default
+[02:23 - 02:30] go into open in the uh read mode
+[02:26 - 02:32] okay open the remote okay so you you
+[02:30 - 02:35] realize that for a file that doesn't
+[02:32 - 02:39] exist uh running this file open will get
+[02:35 - 02:41] into an error so how do we overcome this
+[02:39 - 02:42] problem we use the
+[02:41 - 02:44] exception
+[02:42 - 02:45] uh method to
+[02:44 - 02:47] prevent
+[02:45 - 02:49] from the
+[02:47 - 02:51] file not file uh
+[02:49 - 02:52] okay so let's
+[02:51 - 02:54] do this again
+[02:52 - 02:57] i'm going to try the first method and
+[02:54 - 02:59] i'm going to open this in the read mode
+[02:57 - 03:01] okay try
+[02:59 - 03:04] try this and then
+[03:01 - 03:04] accept
+[03:05 - 03:09] okay so this will be accept abstraction
+[03:07 - 03:12] so uh
+[03:09 - 03:12] s e
+[03:12 - 03:16] okay and then we print out the error
+[03:15 - 03:18] message
+[03:16 - 03:21] if it runs into error
+[03:18 - 03:23] else if it doesn't run into error what
+[03:21 - 03:26] do we want to do okay else what do you
+[03:23 - 03:28] want to do okay if it doesn't run into
+[03:26 - 03:30] error i want to uh
+[03:28 - 03:32] assign my data
+[03:30 - 03:35] uh to uh
+[03:32 - 03:36] let's say read okay i'll talk about
+[03:35 - 03:38] more about read
+[03:36 - 03:40] and then uh
+[03:38 - 03:43] and if i read the data successfully i
+[03:40 - 03:47] want to print the data
+[03:43 - 03:48] and then at the end i must remember to
+[03:47 - 03:49] close it
+[03:48 - 03:52] okay
+[03:49 - 03:55] now although in python if you don't
+[03:52 - 03:57] close the file it will not throw you any
+[03:55 - 04:00] error okay but be sure that during
+[03:57 - 04:02] cambridge exam uh marks will be deducted
+[04:00 - 04:03] if you don't close your file
+[04:02 - 04:06] okay
+[04:03 - 04:09] so uh let's try to run this code
+[04:06 - 04:12] okay you you will your python will
+[04:09 - 04:12] terminate decently with this exception
+[04:12 - 04:14] uh
+[04:12 - 04:17] stating that the uh
+[04:14 - 04:20] uh uh no such file or directory of file
+[04:17 - 04:21] dot song this file not exist it's not
+[04:20 - 04:22] found
+[04:21 - 04:25] okay
+[04:22 - 04:27] now uh
+[04:25 - 04:29] for method two if you are going to use
+[04:27 - 04:32] with open
+[04:29 - 04:34] okay
+[04:32 - 04:36] then um uh the writing of this uh
+[04:34 - 04:38] exception will be method will be
+[04:36 - 04:42] slightly different
+[04:38 - 04:45] uh you try and then let's say with
+[04:42 - 04:48] this open now you go ahead and try to
+[04:45 - 04:51] read the data now uh assuming that you
+[04:48 - 04:53] are able to open the file
+[04:51 - 04:57] okay what what we want to do okay you
+[04:53 - 04:58] want to read the data so data equal to
+[04:57 - 05:00] the file
+[04:58 - 05:02] read
+[05:00 - 05:04] and after reading the data you want to
+[05:02 - 05:06] print the data
+[05:04 - 05:07] okay
+[05:06 - 05:09] so that's all you want to do but there's
+[05:07 - 05:10] no need to close the
+[05:09 - 05:13] the file
+[05:10 - 05:16] okay now if it runs into error which is
+[05:13 - 05:16] accept
+[05:17 - 05:19] exception
+[05:20 - 05:25] as e so all the error message you want
+[05:23 - 05:26] to print
+[05:25 - 05:30] the error message
+[05:26 - 05:31] okay so this is how you uh
+[05:30 - 05:32] write the exception
+[05:31 - 05:35] uh
+[05:32 - 05:36] with the second method method two
+[05:35 - 05:39] okay
+[05:36 - 05:39] so let's run this
+[05:42 - 05:46] okay
+[05:43 - 05:48] it again gives you the error message
+[05:46 - 05:50] okay
+[05:48 - 05:54] so do take note these are the two
+[05:50 - 05:56] methods that you use with exception
+[05:54 - 05:59] now uh beyond here
+[05:56 - 06:01] uh i will not be uh
+[05:59 - 06:03] writing codes are involving exception
+[06:01 - 06:05] because then there will be too many
+[06:03 - 06:08] lines of code i just want to concentrate
+[06:05 - 06:10] on the opening of the file and then
+[06:08 - 06:11] manipulating the data that's being
+[06:10 - 06:14] extracted
+[06:11 - 06:16] uh assuming that the file already exists
+[06:14 - 06:16] okay
+[06:19 - 06:22] i will use method one for uh
+[06:22 - 06:25] uh
+[06:22 - 06:27] to to talk about the three different
+[06:25 - 06:28] ways to read
+[06:27 - 06:31] a text file
+[06:28 - 06:34] okay so as you have already said uh
+[06:31 - 06:37] uh that you can just assign
+[06:34 - 06:39] this uh handler file
+[06:37 - 06:42] dot read use the method to read the file
+[06:39 - 06:45] and then assign it to data
+[06:42 - 06:47] okay now i have already uh
+[06:45 - 06:50] provided you with the
+[06:47 - 06:53] welcome.txt
+[06:50 - 06:56] so you can safely read this file
+[06:53 - 06:57] and see what are the content
+[06:56 - 07:00] in the
+[06:57 - 07:03] welcome.txt let's run
+[07:00 - 07:04] okay now basically in the text file it
+[07:03 - 07:07] contained uh
+[07:04 - 07:08] nine lines of our text
+[07:07 - 07:11] okay
+[07:08 - 07:12] now uh this uh read method
+[07:11 - 07:15] uh
+[07:12 - 07:19] actually allows you to put in some size
+[07:15 - 07:21] but if you don't put in any size
+[07:19 - 07:24] by default you will read everything from
+[07:21 - 07:27] the text file so let's say i put 25 what
+[07:24 - 07:29] does 25 means i'm not sure so run it
+[07:27 - 07:32] okay
+[07:29 - 07:33] so 25 seems to give me 2 4
+[07:32 - 07:34] 6
+[07:33 - 07:35] 8
+[07:34 - 07:36] 10
+[07:35 - 07:43] 12
+[07:36 - 07:46] 14 16 18 20 34 25 characters probably
+[07:43 - 07:49] okay so it's not 25 by 25 megabyte but
+[07:46 - 07:51] it is probably 25 character
+[07:49 - 07:53] okay so this is uh one way of reading a
+[07:51 - 07:55] text file
+[07:53 - 07:58] now another way to read the text file is
+[07:55 - 08:01] to use read line
+[07:58 - 08:04] i want to take note uh the first one is
+[08:01 - 08:06] read line the second one is read lines
+[08:04 - 08:07] i'll talk about the singular first read
+[08:06 - 08:11] line
+[08:07 - 08:11] okay and let's try to print the data
+[08:11 - 08:14] okay
+[08:12 - 08:17] so basically what does it do it
+[08:14 - 08:18] basically uh read the first line
+[08:17 - 08:20] okay
+[08:18 - 08:21] uh so it read
+[08:20 - 08:24] only
+[08:21 - 08:24] the first slide
+[08:25 - 08:30] okay you only read the first line and
+[08:27 - 08:32] you remember you observed that i will
+[08:30 - 08:34] close my file after reading the after
+[08:32 - 08:37] opening a text file
+[08:34 - 08:40] okay so read line will read only
+[08:37 - 08:43] the first line so then now you can guess
+[08:40 - 08:44] that okay if i were to read lines
+[08:43 - 08:48] uh i'll probably read
+[08:44 - 08:50] all the lines okay so you're right so
+[08:48 - 08:53] this will read all the lines okay
+[08:50 - 08:55] but more than that okay after you read
+[08:53 - 08:57] all the lines and then put it into data
+[08:55 - 08:59] so how does it look like
+[08:57 - 09:01] well you can observe that it is actually
+[08:59 - 09:03] a list
+[09:01 - 09:04] it's actually a list
+[09:03 - 09:06] right
+[09:04 - 09:09] and then um
+[09:06 - 09:10] it's actually at least
+[09:09 - 09:12] and then each line
+[09:10 - 09:15] there is a
+[09:12 - 09:18] uh backslash end
+[09:15 - 09:20] okay so this is a
+[09:18 - 09:24] a new line okay so it's
+[09:20 - 09:24] so uh what does it do
+[09:27 - 09:30] uh eve
+[09:28 - 09:33] and store
+[09:30 - 09:33] uh
+[09:38 - 09:46] okay the contents are into at least
+[09:43 - 09:46] okay with the
+[09:47 - 09:51] code for new life
+[09:49 - 09:55] okay so that that's what i do
+[09:51 - 09:56] okay so now uh if you are going to uh
+[09:55 - 09:58] um
+[09:56 - 10:02] manipulate the data that's being
+[09:58 - 10:06] extracted you must be able to handle the
+[10:02 - 10:06] slash n okay
+[10:07 - 10:11] so now what we are trying to do
+[10:09 - 10:12] is that knowing that uh it reads into a
+[10:11 - 10:14] list
+[10:12 - 10:16] uh i'm going to iterate through
+[10:14 - 10:19] the list okay so that's what we're going
+[10:16 - 10:20] to attempt to do we're going to iterate
+[10:19 - 10:23] through the list
+[10:20 - 10:24] uh you uh you know when using this read
+[10:23 - 10:26] lines
+[10:24 - 10:29] okay
+[10:26 - 10:31] so i have uh
+[10:29 - 10:33] i know there are many lines
+[10:31 - 10:38] okay so lines
+[10:33 - 10:38] are equal to file dot read lines
+[10:39 - 10:44] and then um
+[10:41 - 10:46] for every line
+[10:44 - 10:48] in lies
+[10:46 - 10:51] okay what do i want to do
+[10:48 - 10:53] i want to print
+[10:51 - 10:53] the line
+[10:53 - 10:57] okay
+[10:55 - 10:58] i'll print the line so let's take a look
+[10:57 - 11:02] and see what is the
+[10:58 - 11:04] output okay control
+[11:02 - 11:04] enter
+[11:07 - 11:13] okay straight away you observe that the
+[11:10 - 11:15] uh well we have successfully iterate
+[11:13 - 11:17] through the list
+[11:15 - 11:20] but surprisingly we have some empty
+[11:17 - 11:23] spaces between the line
+[11:20 - 11:26] okay this is caused by the backslash n
+[11:23 - 11:28] so what you can do is that you can dot
+[11:26 - 11:31] strip
+[11:28 - 11:33] and that would remove the slash end
+[11:31 - 11:33] okay
+[11:34 - 11:40] there it goes
+[11:36 - 11:40] so that's how you can
+[11:40 - 11:45] manipulate now once you're able to get
+[11:43 - 11:48] the data out now then that is up to you
+[11:45 - 11:49] to uh use your uh
+[11:48 - 11:52] uh
+[11:49 - 11:54] data abstractions or whatever to pull
+[11:52 - 11:56] out all the info
+[11:54 - 11:59] from the uh text line okay
+[11:56 - 11:59] now um
+[11:59 - 12:06] next portion i'll be talking about the
+[12:03 - 12:08] uh creating and writing into a text file
+[12:06 - 12:11] now that you know how to read
+[12:08 - 12:13] uh i also want you to learn how to write
+[12:11 - 12:15] into a text file
+[12:13 - 12:15] okay
+[12:17 - 12:22] now um there are a few things that i
+[12:19 - 12:22] need to caution you
+[12:22 - 12:27] first thing is this
+[12:24 - 12:29] never open an existing file
+[12:27 - 12:30] with uh
+[12:29 - 12:33] this um
+[12:30 - 12:35] right mode okay w stand for right mode
+[12:33 - 12:37] or
+[12:35 - 12:40] w plus mode
+[12:37 - 12:43] okay uh i i i've checked that uh
+[12:40 - 12:44] w with just w alone is actually right
+[12:43 - 12:47] only
+[12:44 - 12:50] whereas a w plus it is a right and read
+[12:47 - 12:53] but i haven't been successful in able to
+[12:50 - 12:55] i i can write on it but i'm not able to
+[12:53 - 12:56] read using w plus
+[12:55 - 12:58] so uh
+[12:56 - 13:00] so
+[12:58 - 13:03] i i'm not encouraging you to use w plus
+[13:00 - 13:06] until we manage to figure out what w
+[13:03 - 13:09] plus is doing so for this uh video clip
+[13:06 - 13:12] itself we will stick to just a w
+[13:09 - 13:15] okay the right mode
+[13:12 - 13:17] okay now uh in the case where the file
+[13:15 - 13:20] don't exist
+[13:17 - 13:21] then it will create a new file
+[13:20 - 13:23] okay
+[13:21 - 13:26] so
+[13:23 - 13:28] remember just now we have the welcome
+[13:26 - 13:29] dot text
+[13:28 - 13:32] okay
+[13:29 - 13:32] uh
+[13:41 - 13:48] okay now i did uh cautious you that uh
+[13:49 - 13:53] do not
+[13:50 - 13:57] write a attempt to write a file that is
+[13:53 - 14:00] already existing now inside my text file
+[13:57 - 14:03] uh i have the nine lives
+[14:00 - 14:05] okay now i'm gonna
+[14:03 - 14:06] be careful i'm gonna copy and i'm gonna
+[14:05 - 14:09] paste
+[14:06 - 14:10] so i keep a copy first okay
+[14:09 - 14:14] so i kept a copy
+[14:10 - 14:17] now let's go back to our
+[14:14 - 14:17] jupyter
+[14:18 - 14:23] okay
+[14:19 - 14:26] i am going to uh let's try this okay let
+[14:23 - 14:26] me add
+[14:42 - 14:47] never open an existing file with the
+[14:45 - 14:48] right mode
+[14:47 - 14:50] i'm gonna
+[14:48 - 14:52] open my
+[14:50 - 14:54] welcome this is an existing file
+[14:52 - 14:57] with the right mode
+[14:54 - 15:00] and then close
+[14:57 - 15:02] okay i will run this
+[15:00 - 15:05] nothing happen
+[15:02 - 15:07] fine let's take a look
+[15:05 - 15:10] welcome
+[15:07 - 15:10] all the datas are gone
+[15:11 - 15:16] so it's essentially what have you done
+[15:13 - 15:17] uh you have opened the file and you
+[15:16 - 15:20] close it
+[15:17 - 15:23] and all the data disappear
+[15:20 - 15:24] so never never attempt
+[15:23 - 15:27] to open
+[15:24 - 15:29] an existing file
+[15:27 - 15:32] okay i'm going to delete this
+[15:29 - 15:32] recover back
+[15:36 - 15:40] and i'm going to rename it back
+[15:41 - 15:44] the welcome
+[15:43 - 15:47] okay
+[15:44 - 15:49] and then i started still there
+[15:47 - 15:49] good
+[15:51 - 15:53] so
+[15:53 - 15:56] a word of caution
+[15:59 - 16:02] never
+[16:00 - 16:04] level
+[16:02 - 16:07] open
+[16:04 - 16:09] an existing
+[16:07 - 16:09] text file
+[16:10 - 16:12] with
+[16:13 - 16:16] right mode
+[16:15 - 16:18] okay
+[16:16 - 16:19] all your data will be gone
+[16:18 - 16:21] okay
+[16:19 - 16:23] now uh so i'm not gonna open an existing
+[16:21 - 16:25] file i'm gonna open a
+[16:23 - 16:28] non-existing file okay so this this file
+[16:25 - 16:30] doesn't exist you've seen my folder just
+[16:28 - 16:33] now it doesn't exist
+[16:30 - 16:33] so um
+[16:34 - 16:37] i'm gonna run this
+[16:35 - 16:42] code
+[16:37 - 16:42] and then take a look at my folder
+[16:44 - 16:49] there it goes
+[16:46 - 16:52] right file.txt and it is empty okay at
+[16:49 - 16:53] the moment it is empty
+[16:52 - 16:55] good
+[16:53 - 16:56] okay i'm going to attempt to write some
+[16:55 - 16:59] lines
+[16:56 - 17:00] into this text file
+[16:59 - 17:03] i'm going to write some line into this
+[17:00 - 17:05] text file okay i have open so the file
+[17:03 - 17:07] exists
+[17:05 - 17:09] uh so
+[17:07 - 17:13] let's say i run the iterations
+[17:09 - 17:13] for i in range
+[17:13 - 17:19] let's say i'm going to write 10 likes so
+[17:17 - 17:19] 10
+[17:20 - 17:24] okay
+[17:21 - 17:25] and how do you write into the file
+[17:24 - 17:26] so
+[17:25 - 17:29] the file
+[17:26 - 17:31] you write using the method right
+[17:29 - 17:35] and if you are going to say that
+[17:31 - 17:35] this is line
+[17:36 - 17:40] let's say line the
+[17:38 - 17:41] i
+[17:40 - 17:44] okay
+[17:41 - 17:46] and i try to run this
+[17:44 - 17:48] it will throw me an error
+[17:46 - 17:50] now look take a look at the error
+[17:48 - 17:54] message here
+[17:50 - 17:56] it says that right takes only one
+[17:54 - 18:00] argument
+[17:56 - 18:03] and i have given two arguments a string
+[18:00 - 18:04] and an integer i
+[18:03 - 18:06] so this is incorrect
+[18:04 - 18:08] i can only
+[18:06 - 18:09] give it a string i have to write a
+[18:08 - 18:12] string
+[18:09 - 18:14] so how do i include that into
+[18:12 - 18:15] uh how do i include that i into the
+[18:14 - 18:18] string
+[18:15 - 18:20] okay so we can assign it to a variable
+[18:18 - 18:22] this is very much like your
+[18:20 - 18:22] uh
+[18:23 - 18:25] sql
+[18:24 - 18:27] uh
+[18:25 - 18:29] injections
+[18:27 - 18:33] handling okay
+[18:29 - 18:35] so uh you assigned to a d
+[18:33 - 18:38] okay and then i'm gonna give it a new
+[18:35 - 18:40] line let's say backslash
+[18:38 - 18:43] uh and then uh
+[18:40 - 18:46] uh what is the variable that's uh i
+[18:43 - 18:47] put it as a percentage d this d
+[18:46 - 18:49] uh
+[18:47 - 18:50] is actually the
+[18:49 - 18:54] i value
+[18:50 - 18:57] okay so all in all this i put it inside
+[18:54 - 18:58] the string so this is the string
+[18:57 - 19:01] okay
+[18:58 - 19:04] so there is only one argument this whole
+[19:01 - 19:06] thing is a one single argument
+[19:04 - 19:07] for the right method
+[19:06 - 19:10] okay
+[19:07 - 19:12] i'm writing in the string
+[19:10 - 19:14] and this particular
+[19:12 - 19:16] d variable
+[19:14 - 19:20] i'm actually taking from the
+[19:16 - 19:21] i which is for i in range
+[19:20 - 19:22] 10
+[19:21 - 19:26] okay
+[19:22 - 19:26] and then when i run this
+[19:29 - 19:32] okay
+[19:30 - 19:33] now uh if you successfully run this
+[19:32 - 19:35] write code
+[19:33 - 19:39] of course you can open up the text file
+[19:35 - 19:42] and see what has been written inside
+[19:39 - 19:44] okay so uh
+[19:42 - 19:45] you have learned how to read the file so
+[19:44 - 19:49] i'm going to open
+[19:45 - 19:50] the text file the write file dot text
+[19:49 - 19:52] dot txt
+[19:50 - 19:53] and then the lines realize and then
+[19:52 - 19:55] print the lines okay let's take a look
+[19:53 - 19:58] and see what's inside there
+[19:55 - 20:01] okay you get the uh list
+[19:58 - 20:04] okay so let's recall
+[20:01 - 20:07] uh what are we going to do
+[20:04 - 20:07] for lying
+[20:07 - 20:11] it lies
+[20:10 - 20:13] okay
+[20:11 - 20:14] and i'm going to
+[20:13 - 20:17] print
+[20:14 - 20:19] the line dot strip
+[20:17 - 20:22] okay this strip will
+[20:19 - 20:23] remove the backslash end okay let's run
+[20:22 - 20:27] this
+[20:23 - 20:30] okay so i've generated 10 lines okay
+[20:27 - 20:32] so let's recall this is how you write
+[20:30 - 20:34] into the file
+[20:32 - 20:36] okay this is how you write into a text
+[20:34 - 20:37] file
+[20:36 - 20:39] okay
+[20:37 - 20:42] now um
+[20:39 - 20:44] earlier on i say the never open exact an
+[20:42 - 20:48] existing text file
+[20:44 - 20:50] so what happened if i want to append
+[20:48 - 20:51] into an existing text file
+[20:50 - 20:54] using
+[20:51 - 20:55] the right mode
+[20:54 - 20:56] w
+[20:55 - 20:59] it will
+[20:56 - 21:00] overwrite the whole text file and the
+[20:59 - 21:03] text file will disappear
+[21:00 - 21:06] so we have to use a pen okay i will copy
+[21:03 - 21:06] this code
+[21:08 - 21:13] so if you want to uh append into an
+[21:11 - 21:16] existing file
+[21:13 - 21:19] okay the code is very much the same
+[21:16 - 21:21] except that instead of a w mode you go
+[21:19 - 21:23] for a mode
+[21:21 - 21:26] okay that will append
+[21:23 - 21:27] and then how do we know it appends to it
+[21:26 - 21:31] let's say i will continue to write this
+[21:27 - 21:32] another 10 more lines and uh instead of
+[21:31 - 21:35] i
+[21:32 - 21:37] i can put it as i plus
+[21:35 - 21:40] 10
+[21:37 - 21:43] okay i plus 10 and let me close the
+[21:40 - 21:46] bracket for the right method
+[21:43 - 21:49] okay and uh
+[21:46 - 21:51] after writing into the file
+[21:49 - 21:53] uh i'm going to do the same i'm going to
+[21:51 - 21:56] check
+[21:53 - 21:59] okay that uh it has been successfully
+[21:56 - 22:01] written inside will read a file okay so
+[21:59 - 22:04] if you recall earlier on i have already
+[22:01 - 22:06] written 10 lines so i will write another
+[22:04 - 22:08] 10 more lines altogether if i've
+[22:06 - 22:11] appended successfully there'll be 20
+[22:08 - 22:13] lines in the text file let's run this
+[22:11 - 22:14] and let's run this
+[22:13 - 22:16] okay
+[22:14 - 22:19] indeed i have 20 lines written in the
+[22:16 - 22:19] text file
+[22:19 - 22:23] okay i hope that you have been following
+[22:21 - 22:26] the video closely
+[22:23 - 22:29] and then learn how to uh and produce
+[22:26 - 22:31] this jupiter file and learn how to read
+[22:29 - 22:33] and write
+[22:31 - 22:36] into a text file
+[22:33 - 22:39] for cosmology i will require you to
+[22:36 - 22:41] submit this jupyter file as an evidence
+[22:39 - 22:44] that you have
+[22:41 - 22:47] a walkthrough with me in this video
+[22:44 - 22:47] okay that's all

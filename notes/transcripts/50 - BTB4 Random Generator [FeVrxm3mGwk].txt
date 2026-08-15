@@ -1,0 +1,172 @@
+Title: BTB4 Random Generator
+Assessment(s): BTB 4 - Random Generator
+Linked label(s): Random Generator
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=FeVrxm3mGwk
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] hi for this part of the back to basics
+[00:04 - 00:09] series we will be dealing with the
+[00:06 - 00:09] random number generator
+[00:11 - 00:14] now
+[00:12 - 00:17] the random number that we generate
+[00:14 - 00:20] or they are not actually random
+[00:17 - 00:22] because we in python it uses some kind
+[00:20 - 00:23] of formula
+[00:22 - 00:26] to
+[00:23 - 00:28] generate the random
+[00:26 - 00:32] numbers so in some way it is
+[00:28 - 00:35] deterministic or at best we can say that
+[00:32 - 00:37] this is just pseudo random
+[00:35 - 00:39] um and when we generate random number
+[00:37 - 00:42] each time as we generate
+[00:39 - 00:46] it will come out a different number
+[00:42 - 00:47] but in python sometimes we want to be
+[00:46 - 00:50] predictable
+[00:47 - 00:52] uh we plant a seed
+[00:50 - 00:56] value so that whatever random number
+[00:52 - 00:58] that we generate can uh
+[00:56 - 01:00] it will be repetitive the same set of
+[00:58 - 01:02] random number will be generated
+[01:00 - 01:04] repeatedly
+[01:02 - 01:04] i'll demonstrate
+[01:04 - 01:06] that
+[01:04 - 01:08] later on
+[01:06 - 01:10] now in the event where we don't specify
+[01:08 - 01:11] the seed value
+[01:10 - 01:14] then
+[01:11 - 01:16] python will use the system
+[01:14 - 01:20] uh time
+[01:16 - 01:20] to generate the random number
+[01:22 - 01:26] let's start with the generating of a
+[01:24 - 01:28] random number
+[01:26 - 01:29] and these are floats
+[01:28 - 01:31] okay
+[01:29 - 01:36] i will generate some random number let's
+[01:31 - 01:36] say 10 random numbers without using seed
+[01:39 - 01:43] now you realize that it generates number
+[01:41 - 01:44] between zero
+[01:43 - 01:48] to one
+[01:44 - 01:52] uh in decimal float and if i want to
+[01:48 - 01:52] round off to two decimal place
+[01:52 - 01:55] i can do this
+[01:56 - 02:02] okay so that would be easier to uh
+[01:59 - 02:05] recognize or observe the numbers
+[02:02 - 02:08] okay so after generating this set of 10
+[02:05 - 02:10] numbers if i were to run it again you
+[02:08 - 02:12] realize a different set of 10 numbers
+[02:10 - 02:15] will be generated
+[02:12 - 02:19] each time as i run it it's different
+[02:15 - 02:19] but let's say if now i run it with seed
+[02:21 - 02:27] after running one time i get i start
+[02:23 - 02:27] with 0.54 0.29 followed by 0.23 and so
+[02:27 - 02:30] on
+[02:27 - 02:33] now let's run it again
+[02:30 - 02:35] the same set of number comes up
+[02:33 - 02:37] let's try using a different seed
+[02:35 - 02:39] three
+[02:37 - 02:42] and runs it it's a different set of
+[02:39 - 02:43] number but each time as i run it the
+[02:42 - 02:46] same set comes up
+[02:43 - 02:48] now let's go back to 30.
+[02:46 - 02:50] if you remember the first number was
+[02:48 - 02:54] 0.54
+[02:50 - 02:57] okay so using the seed will help us
+[02:54 - 02:58] predict be predictable of
+[02:57 - 03:01] what are the random number that will be
+[02:58 - 03:03] coming up but in general when we
+[03:01 - 03:05] generate a random number we do not want
+[03:03 - 03:08] to predict we don't want to
+[03:05 - 03:10] we wanted the python code to generate uh
+[03:08 - 03:13] some random number for us so we need not
+[03:10 - 03:13] use the seed
+[03:15 - 03:19] now what happens if i want to generate
+[03:17 - 03:21] floating point numbers
+[03:19 - 03:23] between 0 to 5 and correct two decimal
+[03:21 - 03:25] places so what i can do is i can copy
+[03:23 - 03:28] this code
+[03:25 - 03:31] and since the random helps me to
+[03:28 - 03:33] generate between 0 to 1
+[03:31 - 03:35] all i need to do is to
+[03:33 - 03:38] multiply it by 5
+[03:35 - 03:42] and then that will generate
+[03:38 - 03:45] numbers that is from 0 to 5.
+[03:42 - 03:45] let's see
+[03:48 - 03:53] now let's go on to talk about generating
+[03:50 - 03:55] integers
+[03:53 - 03:57] i'll do it without seed
+[03:55 - 04:01] and i'm going to generate numbers
+[03:57 - 04:03] between 0 to 9 and they are inclusive
+[04:01 - 04:06] they're inclusive
+[04:03 - 04:10] and i'm using this a random integer to
+[04:06 - 04:12] generate the integers number
+[04:10 - 04:14] okay and if i run it a couple of times
+[04:12 - 04:17] the different sets of time numbers will
+[04:14 - 04:17] be generated
+[04:22 - 04:27] next let's say we have a list of our
+[04:26 - 04:28] names
+[04:27 - 04:30] uh in a list
+[04:28 - 04:34] and we want to choose
+[04:30 - 04:36] uh one name one person from this list we
+[04:34 - 04:38] can use choice
+[04:36 - 04:41] and choice will actually pick a random
+[04:38 - 04:44] so each one will have a 25 chance
+[04:41 - 04:47] if we want to select two percent at this
+[04:44 - 04:50] at one goal then we have to use sample
+[04:47 - 04:54] do not use choices because choices
+[04:50 - 04:56] although you can also select two person
+[04:54 - 04:58] but there may be duplicates that means
+[04:56 - 05:00] atom can be picked twice
+[04:58 - 05:03] whereas if you use sample
+[05:00 - 05:06] indicating that you want two person then
+[05:03 - 05:08] uh these two person will be distinct
+[05:06 - 05:11] so let's try
+[05:08 - 05:12] okay so for single danny was being
+[05:11 - 05:15] picked for the
+[05:12 - 05:18] pair daniel and charles
+[05:15 - 05:21] let's try again single uh adam is being
+[05:18 - 05:24] picked and then for the pair charles and
+[05:21 - 05:24] bob
+[05:25 - 05:30] now sometimes we are required to
+[05:27 - 05:32] generate normally distributed number
+[05:30 - 05:34] given a particular
+[05:32 - 05:37] mean and standard deviation
+[05:34 - 05:39] okay so let's say we want to generate a
+[05:37 - 05:42] thousand numbers
+[05:39 - 05:44] uh with means of 50 and a standard
+[05:42 - 05:47] deviation of seven
+[05:44 - 05:48] okay and append that into a list let's
+[05:47 - 05:50] run this
+[05:48 - 05:52] now you realize that there's a whole lot
+[05:50 - 05:54] of number one thousand number
+[05:52 - 05:57] um
+[05:54 - 06:00] and and these are normally distributed
+[05:57 - 06:02] these are normally distributed of course
+[06:00 - 06:03] i can round it off to two decimal places
+[06:02 - 06:06] for easy uh
+[06:03 - 06:09] usage now how do i
+[06:06 - 06:12] know exactly what is the mean over here
+[06:09 - 06:15] and what is the standard deviation now
+[06:12 - 06:17] in python we have this statistics module
+[06:15 - 06:19] which we can import and then from there
+[06:17 - 06:21] we can calculate the mean and the
+[06:19 - 06:24] standard deviation
+[06:21 - 06:27] okay so this uh random uh
+[06:24 - 06:31] generations of the 1000 number uh the
+[06:27 - 06:31] mean comes out to be 49.8687
+[06:31 - 06:35] so it's quite close to 50 that what we
+[06:33 - 06:38] want and then the standard deviation of
+[06:35 - 06:40] 7.175 which is quite close okay let's
+[06:38 - 06:41] try again and generate another set of
+[06:40 - 06:44] number
+[06:41 - 06:46] okay and this time around the mean may
+[06:44 - 06:48] most likely will be different
+[06:46 - 06:52] okay 49.9 and then the standard
+[06:48 - 06:54] deviation 6.87 okay so that's how you
+[06:52 - 06:56] generate a set of 1000 normally
+[06:54 - 06:58] distributed number
+[06:56 - 07:02] that's all for this uh section on back
+[06:58 - 07:02] to pacing

@@ -22,6 +22,10 @@ Singapore–Cambridge **H2 Computing 9569**, first examination 2027.
 - `10c` [[Queue]] — FIFO
 - `10d` [[Hashing]] — hash tables, collisions
 
+## Algorithms
+
+- `11a` [[Search]] — linear and binary search
+
 ## Data and Information
 
 - `C2` [[C2 - Data representation]] — number bases, ASCII, Unicode

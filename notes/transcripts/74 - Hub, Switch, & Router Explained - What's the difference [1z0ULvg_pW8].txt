@@ -1,0 +1,85 @@
+Title: Hub, Switch, & Router Explained - What's the difference?
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=1z0ULvg_pW8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] Hallo, almal in hierdie video. Ons gaan praat oor die verskil tussen 'n hub, 'n skakelaar en 'n router.
+[00:08 - 00:14] Nou is al drie hierdie toestelle soortgelyk, maar daar is 'n verskil in die manier waarop hulle data hanteer.
+[00:15 - 00:17] Ons sal dus eers oor 'n spilpunt praat.
+[00:20 - 00:26] Die doel van 'n hub is om al u netwerktoestelle aan mekaar te koppel aan 'n interne netwerk.
+[00:27 - 00:33] Dit is 'n toestel met veelvuldige poorte wat Ethernet-verbindings vanaf netwerktoestelle kan aanvaar.
+[00:33 - 00:36] Nou word 'n hub as nie intelligent
+[00:36 - 11:06] beskou nie,
+[00:36 - 00:44] omdat dit geen data filter of inligting het waarheen die data gestuur moet word nie. En dit is omdat
+[00:44 - 00:50] die enigste ding wat 'n hub weet, is wanneer 'n toestel aan een van die poorte gekoppel is.
+[00:51 - 00:57] Wanneer 'n datapakket by een van die poorte aankom, word dit dus na al die ander poorte gekopieër.
+[00:57 - 01:02] Dus sien al die toestelle op daardie hub dat datapakkies.
+[01:02 - 01:06] Dus, weer kom 'n datapakket in een poort, dan sal die hub daardie data
+[01:07 - 01:11] net weer uitsaai na elke poort waarop 'n toestel gekoppel is.
+[01:13 - 01:15] Al sou hierdie rekenaar hier slegs
+[01:15 - 01:21] met hierdie rekenaar wil kommunikeer, sou hierdie ander rekenaars steeds die data ontvang,
+[01:22 - 01:25] alhoewel die data nie vir hulle bedoel was nie.
+[01:25 - 01:31] As dit gebeur, skep dit nie net veiligheidsprobleme nie, maar skep dit ook onnodige
+[01:32 - 01:35] verkeer op die netwerk, wat bandwydte vermors.
+[01:39 - 01:41] Nou is 'n skakelaar baie soortgelyk aan 'n hub.
+[01:41 - 01:48] Dit is ook 'n toestel met verskeie poorte wat Ethernet-verbindings vanaf netwerktoestelle aanvaar.
+[01:48 - 01:55] Maar in teenstelling met 'n hub, is 'n skakelaar intelligent. 'N Skakelaar kan eintlik die fisiese
+[01:55 - 02:01] adresse van die toestelle wat daaraan gekoppel is, leer en dit stoor hierdie fisiese
+[02:01 - 02:04] adresse, genaamd MAC-adresse, in die tabel.
+[02:05 - 02:12] As 'n datapakket na 'n skakelaar gestuur word, word dit dus net na die beoogde bestemmingspoort gestuur, in
+[02:12 - 02:17] teenstelling met 'n hub waar 'n hub die data weer na elke poort sal uitsaai.
+[02:20 - 02:26] As 'n voorbeeld, as hierdie rekenaar hier met hierdie rekenaar wil kommunikeer, kom
+[02:26 - 02:29] die datapakket by die skakelaar
+[02:29 - 02:34] en dan sal die skakelaar na sy tabel met MAC-adresse en ooreenstemmende poorte kyk en
+[02:35 - 02:41] die data in die regte poort aflewer. En dan gaan die datapakket net na daardie rekenaar.
+[02:41 - 02:46] Dit is dus die grootste verskil tussen 'n hub en 'n skakelaar. Daarom
+[02:47 - 02:51] word daar veel meer voorkeur gegee aan skakelaars bo hubs, omdat dit
+[02:52 - 02:54] onnodige verkeer op die netwerk verminder.
+[02:56 - 03:02] Dus, as 'n oorsig, ontdek 'n hub slegs dat 'n toestel fisies daaraan gekoppel is. En '
+[03:03 - 03:05] n skakelaar kan spesifieke toestelle
+[03:05 - 03:11] wat daaraan gekoppel is, opspoor , want dit hou rekord van die MAC-adresse van daardie toestelle.
+[03:15 - 03:20] Nou word hubs en skakelaars gebruik om data in 'n plaaslike netwerk uit te ruil.
+[03:21 - 03:24] Byvoorbeeld, soos in u huisnetwerk of in 'n besigheid.
+[03:25 - 03:31] Dit word nie gebruik om data buite hul eie netwerk uit te ruil soos op die internet nie.
+[03:31 - 03:39] Omdat u data buite hul eie netwerk na 'n ander netwerk, soos op die internet, kan uitruil of stuur, moet '
+[03:39 - 03:42] n toestel IP- adresse kan lees
+[03:42 - 03:50] . En hubs en skakelaars lees nie IP-adresse nie. Dit is dus waar die router binnekom.
+[03:51 - 03:58] Nou doen 'n router presies wat sy naam aandui. 'N Router is 'n toestel wat data van een netwerk na 'n ander
+[03:58 - 04:00] stuur of aanstuur op
+[04:00 - 04:07] grond van hul IP-adres. Wanneer 'n datapakket van die router ontvang word, ondersoek die router
+[04:07 - 04:10] die IP-adres van die data en
+[04:10 - 04:17] bepaal of die pakket bedoel is vir sy eie netwerk of vir 'n ander netwerk. As die router
+[04:17 - 04:22] bepaal dat die datapakket bedoel is vir sy eie netwerk, ontvang dit dit.
+[04:23 - 04:28] Maar as dit nie vir sy eie netwerk bedoel is nie, stuur dit na 'n ander netwerk.
+[04:28 - 04:32] Dus is 'n router in wese die poort van 'n netwerk.
+[04:36 - 04:42] Hier het ons dus 'n privaat netwerk met sy router en ons sal dit 'die rooi netwerk' noem,
+[04:42 - 04:49] aangedui deur die rooi kleurskerms op die rekenaars. Hier gaan u verskillende datapakkies hê,
+[04:49 - 04:53] aangedui deur hul verskillende kleure wat verskillende IP-
+[04:53 - 04:59] adresse voorstel. En hulle gaan die rooi netwerk se router vanaf die internet betree.
+[04:59 - 05:03] Nou gaan die router slegs die rooi datapakkies aanvaar,
+[05:04 - 05:08] want dit is die enigste wat vir hierdie netwerk bedoel is. Dus sal
+[05:08 - 05:16] al die ander datapakkies, die geel, blues, setperke, ensovoorts, deur hierdie router verwerp word
+[05:16 - 05:23] omdat hulle nie vir hierdie netwerk bedoel was nie, omdat hul IP-adresse nie vir hierdie netwerk bedoel was nie.
+[05:28 - 05:34] Hier is nou 'n uitgebreide siening van routers op die internet. Hier is vier netwerke,
+[05:35 - 05:39] aangedui deur verskillende kleure, en elke netwerk het hul eie router,
+[05:39 - 05:46] tesame met hul hubs of skakelaars en hul rekenaars. Dus, soos u kan sien, ruil elke netwerk net
+[05:46 - 05:53] inligting binne hul eie netwerk uit. Hul data gaan nie op die internet uit nie.
+[05:53 - 05:56] Hulle kommunikeer dus nie met ander netwerke nie.
+[05:56 - 06:01] Hulle ruil net data in hul eie netwerk uit met hul hub of skakelaar.
+[06:02 - 06:06] Laat ons nou voortgaan en data uitruil tussen verskillende netwerke.
+[06:06 - 06:10] Laat ons byvoorbeeld sê dat hierdie rekenaar hier op die rooi netwerk
+[06:11 - 06:14] met 'n rekenaar hier op die blou netwerk wil kommunikeer.
+[06:15 - 06:21] Om dit te laat gebeur, moet die datapakket hul eie netwerk verlaat en op die internet gaan.
+[06:22 - 06:24] Die rekenaar stuur dus hul data
+[06:24 - 06:29] en dit gaan na die router van die netwerk en sodra die datapakket die router bereik, sal
+[06:30 - 06:32] die router na die IP-
+[06:32 - 06:38] adres van die datapakket kyk en dan die data op die internet deurstuur na die volgende router en
+[06:38 - 06:41] gaan dan na die router van die blou netwerk en
+[06:42 - 06:45] dan na die beoogde bestemmingsrekenaar.
+[06:46 - 06:49] So, in 'n neutedop, is dit hoe routers werk.
+[06:51 - 06:59] Ten slotte word hubs en skakelaars gebruik om netwerke te skep terwyl routers gebruik word om netwerke te verbind

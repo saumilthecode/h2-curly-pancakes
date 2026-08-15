@@ -1,0 +1,103 @@
+Title: LT10a Data Abstraction 1 - Part 1
+LT: LT 10a Data Abstraction (1) - Abstract Data Type ADT
+Linked label: Part 1: Introduction Data Abstraction
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=5JZZ3HmqjC0
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:07] Hi, today's lesson is on data
+[00:04 - 00:07] abstraction.
+[00:07 - 00:12] First, let's talk about the data types
+[00:10 - 00:15] that you already know.
+[00:12 - 00:19] You have been using integers, float,
+[00:15 - 00:21] strings, and boolean.
+[00:19 - 00:25] You have also been introduced to data
+[00:21 - 00:28] structures like tpple, list, and
+[00:25 - 00:28] dictionary.
+[00:29 - 00:35] What is the idea of abstractions?
+[00:33 - 00:38] You have learned about functions. So
+[00:35 - 00:41] let's talk about functional abstraction.
+[00:38 - 00:45] Functional abstraction means defining a
+[00:41 - 00:47] function by what it does, its behavior
+[00:45 - 00:50] or outputs while hiding the
+[00:47 - 00:51] implementation details and how it does
+[00:50 - 00:54] it.
+[00:51 - 00:57] If I may simply put it, I don't care how
+[00:54 - 01:02] the function works. I just need to know
+[00:57 - 01:02] what it does and how to use it.
+[01:02 - 01:08] Do you remember the blackbox idea that
+[01:05 - 01:11] we use to describe our functions? You
+[01:08 - 01:13] just need to put in the input parameters
+[01:11 - 01:16] and then it will deliver the output.
+[01:13 - 01:19] There's no need to know how it does it.
+[01:16 - 01:21] You just need to know what it does. So
+[01:19 - 01:24] that's the idea of functional
+[01:21 - 01:27] abstraction.
+[01:24 - 01:29] Let's talk about data abstraction.
+[01:27 - 01:31] Data abstraction is a process of hiding
+[01:29 - 01:34] the internal structure and
+[01:31 - 01:36] representation of the data and only
+[01:34 - 01:40] shows the operations or methods to
+[01:36 - 01:43] interact with the data. Simply put it, I
+[01:40 - 01:45] only need to know what is the data that
+[01:43 - 01:48] I'm dealing with and don't need to know
+[01:45 - 01:50] how it is being stored.
+[01:48 - 01:52] So putting these two thing together
+[01:50 - 01:57] functional abstraction and data
+[01:52 - 02:00] abstraction we have abstract data type.
+[01:57 - 02:04] So what is abstract data type? ADT. The
+[02:00 - 02:06] definition of ADT only mentions the data
+[02:04 - 02:10] without specifying how it is being
+[02:06 - 02:12] stored and all the operation or we can
+[02:10 - 02:15] say all the methods that can be
+[02:12 - 02:19] performed on the data but without
+[02:15 - 02:19] specifying how they are implemented.
+[02:19 - 02:25] I will be giving you three examples uh
+[02:22 - 02:28] of an ADT and to show you how each of
+[02:25 - 02:31] these example the operation works with
+[02:28 - 02:31] the data.
+[02:33 - 02:37] Our first example is a student record
+[02:36 - 02:40] ADT.
+[02:37 - 02:43] A student record ADT contains data like
+[02:40 - 02:45] name, NIC, class and address of a
+[02:43 - 02:48] student.
+[02:45 - 02:52] The method to create the students record
+[02:48 - 02:55] ADT is known as a constructor.
+[02:52 - 02:59] So the functions is called make record.
+[02:55 - 03:02] The input parameters are name, id, class
+[02:59 - 03:04] and address.
+[03:02 - 03:07] Next there are methods that we can use
+[03:04 - 03:10] to retrieve data from the ADT and these
+[03:07 - 03:13] are known as assessor or getters.
+[03:10 - 03:16] In this case we can get name of the
+[03:13 - 03:18] student. We can get class of the
+[03:16 - 03:21] student. We can use the method get
+[03:18 - 03:24] address for the students. But there is
+[03:21 - 03:27] no get nic for the students simply
+[03:24 - 03:30] because we do not want the NIC to be
+[03:27 - 03:30] retrieved.
+[03:31 - 03:36] There are also other methods used to
+[03:33 - 03:39] change the data in the ADT which are
+[03:36 - 03:43] known as modifier or setter.
+[03:39 - 03:46] For example, set class for the student
+[03:43 - 03:48] or set the address for the student.
+[03:46 - 03:50] There is no set name for the student
+[03:48 - 03:52] because the the name of the student
+[03:50 - 03:56] cannot be changed or the IC number of
+[03:52 - 03:56] the student cannot be changed
+[03:57 - 04:04] in the demo. Later on, I will use the
+[04:00 - 04:06] set class and set address to modify uh
+[04:04 - 04:09] the details for the student. But before
+[04:06 - 04:13] I can modify the details, they will
+[04:09 - 04:16] first verify uh the NIC number. When the
+[04:13 - 04:18] correct NIC number is provided, then the
+[04:16 - 04:21] details for class and address will be
+[04:18 - 04:21] changed.
+[04:21 - 04:26] There are also two utility methods
+[04:23 - 04:30] provided. One is to print the info of
+[04:26 - 04:33] the students. Two is to print the data
+[04:30 - 04:37] type for the students.
+[04:33 - 04:37] Let me show you the demo one and two.

@@ -1,0 +1,209 @@
+Title: LT10c Queue - FFF
+LT: LT 10c - Queue ADT (for 2026)
+Linked label: Queue ADT
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=GMQ7hIsxpG0
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] hi students today we are going to take a
+[00:02 - 00:06] look at the queue data structure
+[00:05 - 00:08] previously you have already learned
+[00:06 - 00:10] about this data structure and you
+[00:08 - 00:11] managed to implement this stack using
+[00:10 - 00:12] list
+[00:11 - 00:17] now for today you are going to implement
+[00:12 - 00:17] the queue data structure using list
+[00:18 - 00:21] what is a queue
+[00:20 - 00:24] a queue is basically an ordered
+[00:21 - 00:24] collection of items
+[00:25 - 00:29] and in computer science this is what we
+[00:27 - 00:32] call a first in first out data structure
+[00:29 - 00:34] in short a fifo data structure
+[00:32 - 00:36] so a queue basically is just like you
+[00:34 - 00:37] know the queue
+[00:36 - 00:40] you see at the canteen when you try to
+[00:37 - 00:40] order your food
+[00:41 - 00:44] so what happens here is that first
+[00:42 - 00:46] person in the queue will be served first
+[00:44 - 00:48] you'll be out of the queue and then
+[00:46 - 00:51] you know the second word will be served
+[00:48 - 00:51] so on and so forth
+[00:51 - 00:55] elements are removed in the same order
+[00:53 - 00:58] at which they are added
+[00:55 - 01:01] and for a queue we insert
+[00:58 - 01:03] or add element to the tail okay or the
+[01:01 - 01:05] back of the queue
+[01:03 - 01:07] and then we remove elements
+[01:05 - 01:11] from the front or what we call the head
+[01:07 - 01:11] of the queue
+[01:12 - 01:16] so in our implementation
+[01:14 - 01:18] of this before queue
+[01:16 - 01:19] we need to have a mechanism to add in
+[01:18 - 01:22] elements
+[01:19 - 01:24] and this is what we call enqueuing
+[01:22 - 01:25] so i can enqueue an integer 1 into this
+[01:24 - 01:28] q
+[01:25 - 01:29] followed by the second element 2
+[01:28 - 01:32] and 3.
+[01:29 - 01:33] so to remove elements i remove from the
+[01:32 - 01:37] head
+[01:33 - 01:37] in a process that we call dequeuing
+[01:37 - 01:40] okay so i can dequeue these three
+[01:39 - 01:42] numbers
+[01:40 - 01:44] so this enqueue and dq actually works
+[01:42 - 01:46] very similar to the push and pop that
+[01:44 - 01:48] you have done earlier on for stacks you
+[01:46 - 01:50] add items we say we and q which is
+[01:48 - 01:53] similar to push something inside this
+[01:50 - 01:55] queue but when we dq we use pop and here
+[01:53 - 01:57] instead of popping from
+[01:55 - 01:59] you know the same end as where elements
+[01:57 - 02:02] are added you pop from the other end
+[01:59 - 02:03] okay
+[02:02 - 02:06] so the difference is this right there is
+[02:03 - 02:08] only one entrance and one exit entrance
+[02:06 - 02:11] that exit at the same place right you
+[02:08 - 02:13] pushed and you pop at the same place
+[02:11 - 02:15] so the last element to go in will be the
+[02:13 - 02:18] first to be popped out this is your
+[02:15 - 02:20] lethal structure but for a q this is a
+[02:18 - 02:21] fifo okay where the first element at the
+[02:20 - 02:24] head will be
+[02:21 - 02:24] dequeued first
+[02:26 - 02:29] you'll be implementing this q adt in
+[02:27 - 02:31] your lecture training 9b
+[02:29 - 02:33] so these are some of the functions that
+[02:31 - 02:35] you will be writing okay similar to what
+[02:33 - 02:37] you've done already for stack so first
+[02:35 - 02:39] you must have your constructor by making
+[02:37 - 02:40] a queue right make q gives you an empty
+[02:39 - 02:42] queue
+[02:40 - 02:45] when you want to add items you enqueue
+[02:42 - 02:47] it by taking in the queue and the item
+[02:45 - 02:49] that you're interested to at so enqueue
+[02:47 - 02:50] will add item to the tail end of the
+[02:49 - 02:53] queue
+[02:50 - 02:54] and when you want to remove item okay to
+[02:53 - 02:57] pop it out from the queue you've got to
+[02:54 - 02:59] remove it from the start of the queue
+[02:57 - 03:01] which is the front end right the head of
+[02:59 - 03:02] the queue so you can write a function a
+[03:01 - 03:05] dq
+[03:02 - 03:07] and then of course instead of pick
+[03:05 - 03:09] into the stack which gives you the top
+[03:07 - 03:11] most element here okay for q we are
+[03:09 - 03:13] interested to look at the front of the
+[03:11 - 03:14] queue who is at the front of the queue
+[03:13 - 03:17] so this will actually return you the
+[03:14 - 03:18] very first object okay that is at the
+[03:17 - 03:19] head of the queue
+[03:18 - 03:21] and uh
+[03:19 - 03:23] this is only an accessor so it does not
+[03:21 - 03:25] remove it from the queue unlike your nq
+[03:23 - 03:27] and dq which will directly modify the
+[03:25 - 03:29] queue these are modifiers okay front is
+[03:27 - 03:31] just an accessor you also have another
+[03:29 - 03:34] accessor is empty to check whether your
+[03:31 - 03:36] queue is empty or not
+[03:34 - 03:37] so mapping to what you have really done
+[03:36 - 03:40] for list okay some of the useful list
+[03:37 - 03:41] operations that potentially can be used
+[03:40 - 03:43] for your nq and decoding process would
+[03:41 - 03:45] be the append
+[03:43 - 03:48] okay and the pop so take note here
+[03:45 - 03:49] instead of just pop
+[03:48 - 03:51] you have to pop from the beginning of
+[03:49 - 03:53] the queue right so
+[03:51 - 03:56] this i is for you to think about what to
+[03:53 - 03:56] write in for the eye
+[03:56 - 04:00] as an illustration let's implement a
+[03:58 - 04:02] fifo queue using a list so if i have a
+[04:00 - 04:05] variable q and i use my make list
+[04:02 - 04:07] constructor this is going to give me an
+[04:05 - 04:10] empty list so i have a queue
+[04:07 - 04:13] there is nothing inside my queue
+[04:10 - 04:14] now if i want to dq and mtq since
+[04:13 - 04:16] there's nothing inside
+[04:14 - 04:17] it should
+[04:16 - 04:19] not give me anything right so it should
+[04:17 - 04:22] return me a none
+[04:19 - 04:24] since there's nothing to dequeue
+[04:22 - 04:26] okay so now let us just put something
+[04:24 - 04:29] inside okay we will and q5 into the
+[04:26 - 04:32] queue so now my queue
+[04:29 - 04:35] there will be a 5 sitting inside
+[04:32 - 04:39] okay if i add one more item 3 then this
+[04:35 - 04:39] will be added to the back of the queue
+[04:39 - 04:45] so 3 will not be appended to my list
+[04:43 - 04:47] if i don't dq i dequeue from this the
+[04:45 - 04:49] start right of the queue which is the
+[04:47 - 04:52] hit so this is going to give me 5 5 will
+[04:49 - 04:53] be removed from the queue so now my q is
+[04:52 - 04:56] only left with
+[04:53 - 04:58] 3 because 5 will be removed from the
+[04:56 - 05:01] queue
+[04:58 - 05:03] next if i'll do dq again
+[05:01 - 05:05] dq again
+[05:03 - 05:07] then i will just remove the remaining
+[05:05 - 05:11] item inside this queue
+[05:07 - 05:14] okay directly modifying my list
+[05:11 - 05:14] so this will return me an empty list
+[05:16 - 05:19] some applications of the queue that you
+[05:17 - 05:22] will be you know learning in your
+[05:19 - 05:23] tutorial exercises
+[05:22 - 05:25] a standard one will be your network
+[05:23 - 05:27] printer queue
+[05:25 - 05:29] and of course in your cpu there's
+[05:27 - 05:31] scheduling of processors right so
+[05:29 - 05:33] how does your cpu decide which process
+[05:31 - 05:35] to execute it depends on the queue the
+[05:33 - 05:36] order at which these processes are being
+[05:35 - 05:39] called
+[05:36 - 05:41] upon and of course a keyboard buffer
+[05:39 - 05:44] when you type your password you type
+[05:41 - 05:45] your word document your wr and stuff
+[05:44 - 05:47] okay how does
+[05:45 - 05:49] your word doc know which letter to pop
+[05:47 - 05:51] up first depends on the order at which
+[05:49 - 05:53] you press your keyboard right so again
+[05:51 - 05:56] this works based on the concept of
+[05:53 - 05:56] queueing
+[05:56 - 06:00] so in summary your queue is an ordered
+[05:57 - 06:02] collection of items okay uh and this adt
+[06:00 - 06:04] is very useful when you want to preserve
+[06:02 - 06:07] the order of your items for instance
+[06:04 - 06:07] like your cpu processors
+[06:09 - 06:12] and this is actually what you call a
+[06:10 - 06:14] fifo data structure
+[06:12 - 06:16] your standard operations involves adding
+[06:14 - 06:18] elements to it and queuing to the tail
+[06:16 - 06:21] of the queue and dequeuing removing
+[06:18 - 06:22] items from the front of the cube
+[06:21 - 06:26] so the difference between the stack and
+[06:22 - 06:29] the queue are as follows
+[06:26 - 06:31] stack is a last in first out order but q
+[06:29 - 06:32] is a first in first out
+[06:31 - 06:34] for stack we
+[06:32 - 06:36] when we want to add or remove elements
+[06:34 - 06:40] we say we push and we pop elements but
+[06:36 - 06:42] for q we use terms like nq and dq
+[06:40 - 06:44] for stack there's only one opening so if
+[06:42 - 06:45] you were to remove an item or add you
+[06:44 - 06:47] actually
+[06:45 - 06:50] only are looking at the top of the stack
+[06:47 - 06:51] but for a queue it is open at both ends
+[06:50 - 06:54] so you
+[06:51 - 06:57] basically enqueue items at the tail and
+[06:54 - 06:59] remove items from the head
+[06:57 - 07:01] we make use of assessors like pick and
+[06:59 - 07:03] front to look at
+[07:01 - 07:05] your stack and queue without modifying
+[07:03 - 07:07] them directly
+[07:05 - 07:08] and a stack can be visualized as a
+[07:07 - 07:10] vertical collection of items whereas for
+[07:08 - 07:12] a queue it is a like a horizontal
+[07:10 - 07:16] collection of items like the queue that
+[07:12 - 07:16] you see in the real world

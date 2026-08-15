@@ -77,6 +77,7 @@ Same FIFO idea — only the call style changes: `q.enqueue(x)` instead of `enque
 | Add | `push` | `enqueue` |
 | Remove | `pop` — from the top | `dequeue` — from the head |
 | Look | `peek` — top | `front` — head |
+| Openings | **one** — in and out at the top | **two** — in at the tail, out at the head |
 | Shape | vertical | horizontal |
 
 ```text

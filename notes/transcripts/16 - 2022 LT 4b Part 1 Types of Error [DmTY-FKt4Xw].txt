@@ -1,0 +1,159 @@
+Title: 2022 LT 4b Part 1   Types of Error
+LT: LT 4b - Types of Error and Test Cases
+Linked label: of Error
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=DmTY-FKt4Xw
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] hi welcome back in this lt uh we'll be
+[00:04 - 00:09] discussing types of error in our first
+[00:07 - 00:09] part
+[00:10 - 00:15] now human big mistakes
+[00:13 - 00:18] you and i are only human therefore you
+[00:15 - 00:21] and i will make mistake
+[00:18 - 00:23] right so when we write our code
+[00:21 - 00:26] there are cases where we have a bugs
+[00:23 - 00:28] so debugging is a mean for us to remove
+[00:26 - 00:30] this bug from the program
+[00:28 - 00:32] now after debugging it doesn't mean that
+[00:30 - 00:34] the program is error-free
+[00:32 - 00:35] it simply just means that there are some
+[00:34 - 00:38] bugs
+[00:35 - 00:39] or some errors are remains or and they
+[00:38 - 00:41] are harder to find
+[00:39 - 00:44] okay so this is especially true for
+[00:41 - 00:46] large program
+[00:44 - 00:48] okay i'm going to go through some of the
+[00:46 - 00:50] common types of error
+[00:48 - 00:54] for example when you write a function
+[00:50 - 00:56] you may omit the return statement
+[00:54 - 00:59] or if there's an incompatible type
+[00:56 - 01:02] there's nothing wrong with the function
+[00:59 - 01:05] but when you try to print the answer
+[01:02 - 01:07] you uh we are concatenate the string and
+[01:05 - 01:10] integer and that is a
+[01:07 - 01:12] type mismatch
+[01:10 - 01:15] or incorrect numbers of arguments now
+[01:12 - 01:17] for our functions uh square only takes
+[01:15 - 01:19] in one argument but down here when we
+[01:17 - 01:21] try to execute the function we actually
+[01:19 - 01:24] provided two arguments so there is an
+[01:21 - 01:26] incorrect number of arguments
+[01:24 - 01:29] syntax error right where we try to do a
+[01:26 - 01:32] double uh what we intended is actually 2
+[01:29 - 01:35] multiplied by x but instead we wrote it
+[01:32 - 01:38] as 2x so this is wrong
+[01:35 - 01:40] and respected error we assign 3 to x 0
+[01:38 - 01:43] to y and i will try to do a division of
+[01:40 - 01:45] x over y which essentially is x divided
+[01:43 - 01:47] by zero
+[01:45 - 01:49] mathematically you cannot divide
+[01:47 - 01:51] anything by zero
+[01:49 - 01:55] uh undeclared variable so this is
+[01:51 - 01:57] another common types of error x is
+[01:55 - 02:00] 2 is assigned to x and then when we try
+[01:57 - 02:03] to use x to plus a k but yet we have not
+[02:00 - 02:07] informed or we have not written about k
+[02:03 - 02:09] so k is undeclared variable
+[02:07 - 02:11] the other type of a very common uh error
+[02:09 - 02:15] is an infinite loop which we will cover
+[02:11 - 02:15] after lt five and six
+[02:15 - 02:20] okay uh in computer we use binary to
+[02:18 - 02:22] represents uh
+[02:20 - 02:24] numbers
+[02:22 - 02:25] and if we try to
+[02:24 - 02:26] do
+[02:25 - 02:29] [Music]
+[02:26 - 02:31] 10 square root of 10 and then square it
+[02:29 - 02:34] back essentially we should
+[02:31 - 02:36] should get 10 but because of the way we
+[02:34 - 02:39] represent the number in computer
+[02:36 - 02:41] they are not represented exactly
+[02:39 - 02:44] so uh when we try to compute that we end
+[02:41 - 02:46] up getting 10.000
+[02:44 - 02:48] with a 2. so this is what we call the
+[02:46 - 02:51] floating point error
+[02:48 - 02:53] and this is a perfectly normal okay so
+[02:51 - 02:55] we have to watch out for such a
+[02:53 - 02:57] area
+[02:55 - 03:00] uh logical error
+[02:57 - 03:03] uh when we when we you know check on
+[03:00 - 03:05] this uh x if x is bigger than 100 or
+[03:03 - 03:07] return back
+[03:05 - 03:10] and else if x bigger than two thousand
+[03:07 - 03:11] but uh since the any number that's
+[03:10 - 03:13] bigger than let's say we put in the
+[03:11 - 03:16] number three thousand three thousand is
+[03:13 - 03:18] bigger than hundred if we return big you
+[03:16 - 03:20] never have a chance to come to this
+[03:18 - 03:23] portion where it checks for x bigger
+[03:20 - 03:25] than 2 000 so there's a logical error so
+[03:23 - 03:27] on your own you may want to uh you know
+[03:25 - 03:30] rewrite this function and see whether
+[03:27 - 03:33] you can overcome this problem or not
+[03:30 - 03:35] uh so how to debug so think like a
+[03:33 - 03:36] detective you look for crews you look at
+[03:35 - 03:40] the error messages you look at the
+[03:36 - 03:41] variable values or you try to eliminate
+[03:40 - 03:43] the impossibles
+[03:41 - 03:45] run the program again with different
+[03:43 - 03:46] types of input and see whether the same
+[03:45 - 03:48] type of error
+[03:46 - 03:50] occurs again or not look for some
+[03:48 - 03:52] patterns
+[03:50 - 03:55] okay now if you look at this function
+[03:52 - 03:58] it's very complicated so one of the
+[03:55 - 03:59] technique is to plant a print statement
+[03:58 - 04:01] so i can
+[03:59 - 04:03] plan a print statement here
+[04:01 - 04:05] and then within the g function that
+[04:03 - 04:07] plants another print statement and i
+[04:05 - 04:10] call it two
+[04:07 - 04:12] and uh three okay so so when the print
+[04:10 - 04:15] statement appear i know exactly which uh
+[04:12 - 04:16] print statement actually and what are
+[04:15 - 04:18] the xyz value
+[04:16 - 04:22] so if i were to run this particular
+[04:18 - 04:25] function with f6 i will get the first
+[04:22 - 04:27] line giving me uh 6 10 15 for the xyz
+[04:25 - 04:29] value 6 6
+[04:27 - 04:33] six six now it is good for you to go
+[04:29 - 04:35] through this uh uh to understand why are
+[04:33 - 04:39] the variables having these values and
+[04:35 - 04:42] why the output is 18. so i leave that uh
+[04:39 - 04:44] for you to to uh take a closer look so
+[04:42 - 04:47] this is uh using
+[04:44 - 04:50] planting of print statement to help us
+[04:47 - 04:53] identify the values at each stage so
+[04:50 - 04:55] this is very good for debugging
+[04:53 - 04:59] because in summary debugging always take
+[04:55 - 05:02] up more times than coding so uh if you
+[04:59 - 05:04] find yourself frustrated with debugging
+[05:02 - 05:04] then
+[05:04 - 05:09] the the good news is for you is that you
+[05:07 - 05:11] are doing the correct thing because
+[05:09 - 05:12] in fact debugging will spend most of
+[05:11 - 05:12] your time
+[05:12 - 05:15] uh
+[05:12 - 05:16] seldom we we write our code once and
+[05:15 - 05:19] it's correct
+[05:16 - 05:21] okay so it's more of us than the size
+[05:19 - 05:23] play detective so you must enjoy playing
+[05:21 - 05:26] detectives trying to catch the thieves
+[05:23 - 05:29] uh debugging is a systematic process it
+[05:26 - 05:31] is not a try error try your luck you
+[05:29 - 05:33] know guessing that is not debugging
+[05:31 - 05:36] debugging is done
+[05:33 - 05:38] systematically okay but if you have good
+[05:36 - 05:40] practice in your programming
+[05:38 - 05:43] you have some good habits in the way you
+[05:40 - 05:44] write out your code then you avoid a lot
+[05:43 - 05:48] of
+[05:44 - 05:51] possible possibility of making error so
+[05:48 - 05:53] to do to minimize the error or to
+[05:51 - 05:56] minimize a debugging time
+[05:53 - 06:01] exercise a good programming practice
+[05:56 - 06:01] okay i'll stop here for this video

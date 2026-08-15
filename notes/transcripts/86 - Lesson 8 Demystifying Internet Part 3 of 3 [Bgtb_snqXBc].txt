@@ -1,0 +1,358 @@
+Title: Lesson 8   Demystifying Internet Part 3 of 3
+Assessment(s): C3c Additional Resources
+Linked label(s): (Lesson 8) Demystifying Internet Part 3 of 3
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=Bgtb_snqXBc
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] welcome to this course introduction to
+[00:03 - 00:08] cyber security literacy this is lesson 8
+[00:06 - 00:11] demystifying the internet part three of
+[00:08 - 00:13] three in this lecture we will examine a
+[00:11 - 00:14] few illustrations that help us to see
+[00:13 - 00:17] how information travels through the many
+[00:14 - 00:19] twists and turns of the internet when
+[00:17 - 00:20] you use the internet what you're doing
+[00:19 - 00:22] is using your computer to send
+[00:20 - 00:25] information or requests for information
+[00:22 - 00:27] to other computers these computers that
+[00:25 - 00:29] store and deliver information are
+[00:27 - 00:31] examples of networking computers called
+[00:29 - 00:34] servers here's an image of a technician
+[00:31 - 00:36] who's examining a large Network server
+[00:34 - 00:37] when you send an email you are telling
+[00:36 - 00:39] your computer to send a message to be
+[00:37 - 00:41] stored on a mail server when you read
+[00:39 - 00:43] your own email you're asking your
+[00:41 - 00:45] computer to access messages that have
+[00:43 - 00:47] been stored for you on a server when you
+[00:45 - 00:49] view a web page you're using your
+[00:47 - 00:51] computer to display a web document that
+[00:49 - 00:54] somebody else uploaded to a web server
+[00:51 - 00:56] when you download media files from
+[00:54 - 00:59] internet stores like iTunes Amazon or
+[00:56 - 01:02] Google Play information is copied from a
+[00:59 - 01:04] server to your computer not quite all
+[01:02 - 01:06] internet content is on servers though
+[01:04 - 01:08] peer-to-peer sharing software allows
+[01:06 - 01:10] users to download files directly from
+[01:08 - 01:12] each other's Internet connected personal
+[01:10 - 01:15] computers rather than from a large
+[01:12 - 01:17] Central server in either case internet
+[01:15 - 01:18] activity is the activity of machines
+[01:17 - 01:21] sending information and information
+[01:18 - 01:23] requests to each other as we learned in
+[01:21 - 01:25] previous lessons every machine connected
+[01:23 - 01:28] to the internet is affiliated with a
+[01:25 - 01:30] unique IP address when machines send
+[01:28 - 01:32] information and information requests to
+[01:30 - 01:35] each other they send them to these IP
+[01:32 - 01:37] addresses and as we've seen in previous
+[01:35 - 01:40] lessons IP addresses are long strings of
+[01:37 - 01:42] numbers computers have no trouble
+[01:40 - 01:44] working with long apparently random
+[01:42 - 01:45] strings of numbers but as you can
+[01:44 - 01:47] imagine we humans have trouble reading
+[01:45 - 01:49] and remembering long strings of numbers
+[01:47 - 01:52] like that think about it how many IP
+[01:49 - 01:54] addresses can you name from memory I
+[01:52 - 01:55] would guess that the answer is zero and
+[01:54 - 01:58] yet you probably request information
+[01:55 - 02:00] from servers at various IP addresses
+[01:58 - 02:02] every single day so how do we use the
+[02:00 - 02:05] internet with out knowing the IP
+[02:02 - 02:07] addresses of various servers the answer
+[02:05 - 02:10] is that we assign natural human language
+[02:07 - 02:12] names to places on the internet these
+[02:10 - 02:15] natural names are called domain names
+[02:12 - 02:19] both email addresses and web addresses
+[02:15 - 02:21] are common examples of domain names when
+[02:19 - 02:22] you submit either an email address or a
+[02:21 - 02:24] web address your computer has to
+[02:22 - 02:27] translate those domain names into
+[02:24 - 02:29] numerical IP addresses
+[02:27 - 02:31] so when you punch in a web address an
+[02:29 - 02:33] email address or any other domain name
+[02:31 - 02:36] how does your computer figure out what
+[02:33 - 02:38] numerical IP address it should look for
+[02:36 - 02:41] the answer is that your computer must
+[02:38 - 02:43] access a domain name service server or
+[02:41 - 02:45] DNS server for short I'm going to show
+[02:43 - 02:47] you what that looks like I'm going to
+[02:45 - 02:49] use a couple illustrations from this
+[02:47 - 02:51] textbook some of you may be taking a
+[02:49 - 02:52] formal course that uses this textbook
+[02:51 - 02:54] but if you're not that's okay just
+[02:52 - 02:56] follow along with the video
+[02:54 - 02:59] this illustration helps us to see how
+[02:56 - 03:02] domain name Services work in this
+[02:59 - 03:02] illustration Bob wants to visit
+[03:02 - 03:10] www.dogj.net when Bob submits the URL
+[03:07 - 03:12] www.dogj.net into the address bar on his
+[03:10 - 03:15] browser his computer accesses a system
+[03:12 - 03:17] called the domain name service or DNS
+[03:15 - 03:19] internet capable computers have an
+[03:17 - 03:22] application on board that allows them to
+[03:19 - 03:24] access this domain name service Bob's
+[03:22 - 03:26] computer will send a request to the DNS
+[03:24 - 03:29] server at his local internet provider
+[03:26 - 03:32] this request asks the DNS server hey
+[03:29 - 03:34] what's the IP address for dougj.net
+[03:32 - 03:36] sometimes the local server already knows
+[03:34 - 03:38] the answer and so it can simply answer
+[03:36 - 03:40] the question right away however the
+[03:38 - 03:42] local DNS server may not know the answer
+[03:40 - 03:45] and in that case the request gets sent
+[03:42 - 03:46] further up the server tree to a higher
+[03:45 - 03:49] level DNS server and the question gets
+[03:46 - 03:50] repeated if the question isn't answered
+[03:49 - 03:53] it gets sent even further up the tree to
+[03:50 - 03:55] a root server a root server is
+[03:53 - 03:57] responsible for a tremendous number of
+[03:55 - 03:59] domain names for example a root server
+[03:57 - 04:01] might be responsible for all domain
+[03:59 - 04:04] names that end in.com or all domain
+[04:01 - 04:06] names that end in.net the root server
+[04:04 - 04:08] must either know the IP address for all
+[04:06 - 04:11] of these domains or at least it must
+[04:08 - 04:13] know where to find these IP addresses if
+[04:11 - 04:15] the root Server doesn't know the IP
+[04:13 - 04:17] address for dougj.net it knows how to
+[04:15 - 04:19] route the request so that it makes it to
+[04:17 - 04:21] a server that does know the root server
+[04:19 - 04:23] might send the request back down the
+[04:21 - 04:25] tree to a different lower level DNS
+[04:23 - 04:27] server which might eventually send the
+[04:25 - 04:30] request to the local DNS server for
+[04:27 - 04:31] dougj.net if this domain name exists
+[04:30 - 04:34] then the local DNS server will
+[04:31 - 04:37] definitely know its IP address in this
+[04:34 - 04:40] case the requested IP address is
+[04:37 - 04:43] 129.186
+[04:40 - 04:47] 0.105.24 the IP address gets sent back
+[04:43 - 04:47] through the network of DNS servers
+[04:47 - 04:52] and eventually it makes it back to Bob's
+[04:50 - 04:55] computer once Bob's computer knows the
+[04:52 - 04:56] proper numerical IP address it can make
+[04:55 - 04:59] an information request from the machine
+[04:56 - 05:01] storing the web page data Bob's computer
+[04:59 - 05:03] might now store the IP address for later
+[05:01 - 05:05] use although it takes a while to explain
+[05:03 - 05:08] the process of accessing an IP address
+[05:05 - 05:10] from a DNS server the computers involved
+[05:08 - 05:12] carry out this operation so rapidly that
+[05:10 - 05:14] we normally don't even realize that
+[05:12 - 05:16] anything has happened okay that's how
+[05:14 - 05:18] DNS servers help coordinate IP addresses
+[05:16 - 05:21] now let's look at another common
+[05:18 - 05:22] networking device routers
+[05:21 - 05:24] throughout this introduction to the
+[05:22 - 05:25] internet I have mentioned machines
+[05:24 - 05:28] called routers and I have referred to
+[05:25 - 05:30] some information being routed across the
+[05:28 - 05:32] web but with all the millions of devices
+[05:30 - 05:35] connected to the internet how exactly do
+[05:32 - 05:38] routers direct traffic to the right IP
+[05:35 - 05:39] addresses well let me show you this next
+[05:38 - 05:41] illustration helps us to see how
+[05:39 - 05:42] information is routed in this
+[05:41 - 05:46] illustration we have two networks
+[05:42 - 05:48] Network one and network two you might
+[05:46 - 05:50] notice that router 1 is connected to
+[05:48 - 05:52] both networks and so it has two
+[05:50 - 05:53] different IP addresses when you're
+[05:52 - 05:58] looking at router 1 as a member of
+[05:53 - 05:58] network one then its IP address is
+[05:59 - 06:04] 192.168.1.1 but when you're looking at
+[06:02 - 06:08] router 1 as a member of network 2 then
+[06:04 - 06:08] its IP address is
+[06:09 - 06:14] 207.20.15.1 so those two IP addresses
+[06:12 - 06:15] don't refer to different devices they
+[06:14 - 06:17] just refer to the same device from
+[06:15 - 06:18] different perspectives on different
+[06:17 - 06:21] Networks
+[06:18 - 06:24] Network 1 consists of three devices
+[06:21 - 06:27] Alice's computer Bob's computer and
+[06:24 - 06:30] router 1. Network 2 also consists of
+[06:27 - 06:33] three devices Carol's computer router 1
+[06:30 - 06:34] and router 2. notice that Network 1 has
+[06:33 - 06:36] no direct connection to the internet
+[06:34 - 06:39] Network 1 can only connect to the
+[06:36 - 06:40] internet through Network 2. every device
+[06:39 - 06:43] on a computer network has something
+[06:40 - 06:45] called a route table a route table
+[06:43 - 06:47] contains instructions for routing
+[06:45 - 06:49] information to a given IP address
+[06:47 - 06:51] to keep the Clutter down we have only
+[06:49 - 06:53] included three of these route tables in
+[06:51 - 06:55] the picture the one for Alice's computer
+[06:53 - 06:58] the one for router 1 and the one for
+[06:55 - 06:59] Carol's computer but the other computers
+[06:58 - 07:01] and routers would also have their own
+[06:59 - 07:04] route tables too
+[07:01 - 07:06] let's look at Alice's route table first
+[07:04 - 07:08] Alice's route table has two columns the
+[07:06 - 07:11] destination column and the next hop
+[07:08 - 07:13] column when Alice's computer wants to
+[07:11 - 07:15] send information to an IP address in the
+[07:13 - 07:18] destination column it follows the
+[07:15 - 07:20] directions in the next top column
+[07:18 - 07:22] the first row on her route table tells
+[07:20 - 07:24] us the information going to any IP
+[07:22 - 07:26] address on network 1 will be sent
+[07:24 - 07:29] directly to that IP address for example
+[07:26 - 07:31] Alice's computer can send information
+[07:29 - 07:32] directly to Bob's computer these
+[07:31 - 07:34] computers are networked together
+[07:32 - 07:37] directly so there's no need to relay the
+[07:34 - 07:39] information through another network but
+[07:37 - 07:41] what happens if Al's computer tries to
+[07:39 - 07:43] send information to any other IP address
+[07:41 - 07:46] one that's not listed on the route table
+[07:43 - 07:48] for IP addresses not listed on the route
+[07:46 - 07:49] table Alice's computer will send
+[07:48 - 07:51] information to the default next hop
+[07:49 - 07:55] which in this case turns out to be
+[07:51 - 07:57] router 1. once router 1 receives the
+[07:55 - 07:59] information it will run the destination
+[07:57 - 08:01] IP address through its own route table
+[07:59 - 08:03] so let's take a look at the route table
+[08:01 - 08:06] for router 1. if information is destined
+[08:03 - 08:08] for any IP address on network 1 or
+[08:06 - 08:10] network 2 then router 1 will send this
+[08:08 - 08:13] information directly to that IP address
+[08:10 - 08:16] it can do that because it's connected
+[08:13 - 08:18] directly to both of those networks if
+[08:16 - 08:20] the information is destined for any IP
+[08:18 - 08:22] address outside of these two networks
+[08:20 - 08:25] then router 1 will default to sending
+[08:22 - 08:28] the information to router 2. from router
+[08:25 - 08:29] 2 this information would continue on
+[08:28 - 08:31] through the internet most likely to be
+[08:29 - 08:34] directed by several more route tables
+[08:31 - 08:36] before reaching its final destination so
+[08:34 - 08:38] if Alice wanted to send information to
+[08:36 - 08:39] Bob's IP address then Alice's route
+[08:38 - 08:42] table would direct that information
+[08:39 - 08:45] directly to Bob's computer
+[08:42 - 08:47] if Alice wanted to send information to
+[08:45 - 08:48] Carol's computer then the route table on
+[08:47 - 08:51] her computer would direct that
+[08:48 - 08:53] information to router 1 and then the
+[08:51 - 08:55] route table on router 1 would direct
+[08:53 - 08:57] that information to Carol's computer
+[08:55 - 08:59] if Alice wanted to access a web page
+[08:57 - 09:01] somewhere else on the internet then the
+[08:59 - 09:03] route table on her computer would direct
+[09:01 - 09:05] that information to router 1 the route
+[09:03 - 09:08] table for router 1 would direct that
+[09:05 - 09:10] information to router 2 and then so on
+[09:08 - 09:12] throughout the internet until Alice's
+[09:10 - 09:15] web page request reached the appropriate
+[09:12 - 09:17] server somewhere on the internet
+[09:15 - 09:19] now let's trace a couple of routes from
+[09:17 - 09:21] Carol's computer if Carol wanted to send
+[09:19 - 09:22] information from her computer to Bob's
+[09:21 - 09:25] computer then her route table would
+[09:22 - 09:26] direct that information to router 1 and
+[09:25 - 09:28] then the route table at router 1 would
+[09:26 - 09:30] direct that information to Bob's
+[09:28 - 09:31] computer
+[09:30 - 09:33] if Carol wanted to send information to
+[09:31 - 09:35] an IP address that is on neither Network
+[09:33 - 09:37] 1 or network 2 then her route table
+[09:35 - 09:39] would default to sending that
+[09:37 - 09:41] information to router 2. which would
+[09:39 - 09:42] then run through its route table to
+[09:41 - 09:44] direct that information to the next
+[09:42 - 09:46] address in line
+[09:44 - 09:48] in this illustration we've simplified
+[09:46 - 09:50] the route tables so that they're easier
+[09:48 - 09:52] to understand real route tables have
+[09:50 - 09:54] more lines of instructions than the
+[09:52 - 09:56] route tables in this illustration I hope
+[09:54 - 09:58] that you can see how complex networks
+[09:56 - 10:00] can run on relatively short route tables
+[09:58 - 10:03] indeed the route table on your computer
+[10:00 - 10:05] is probably much less than a page long
+[10:03 - 10:09] and yet it allows you to connect to
+[10:05 - 10:11] potentially billions of IP addresses
+[10:09 - 10:14] now so far we've examined how computers
+[10:11 - 10:16] use domain name service or DNS servers
+[10:14 - 10:18] to translate domain names that are easy
+[10:16 - 10:21] for people to read into IP addresses
+[10:18 - 10:23] that are easy for computers to read
+[10:21 - 10:25] we've also examined how computers and
+[10:23 - 10:27] routers use route tables to Route
+[10:25 - 10:29] information through Networks
+[10:27 - 10:31] now we're going to examine one last
+[10:29 - 10:34] illustration that will help you to see
+[10:31 - 10:36] how computers access web pages web pages
+[10:34 - 10:38] are special documents that are stored on
+[10:36 - 10:41] high capacity computers called Web
+[10:38 - 10:42] servers when you access a web page on
+[10:41 - 10:45] your computer you send an information
+[10:42 - 10:46] request to the IP address of a server
+[10:45 - 10:49] and the server sends that information
+[10:46 - 10:51] back to the IP address of your computer
+[10:49 - 10:54] your computer's web browser allows your
+[10:51 - 10:56] computer to display the web page web
+[10:54 - 11:00] pages are highly flexible documents they
+[10:56 - 11:02] can display text images audio video and
+[11:00 - 11:04] interactive programs like games but what
+[11:02 - 11:06] makes web pages really special is their
+[11:04 - 11:08] ability to link to other web pages
+[11:06 - 11:11] that's why we call them web pages
+[11:08 - 11:13] they're connected together like a web as
+[11:11 - 11:15] you can see in the illustration when Bob
+[11:13 - 11:17] accesses
+[11:15 - 11:21] www.dugj.net his computer accesses the
+[11:17 - 11:23] web server that hosts that website the
+[11:21 - 11:25] website dougj.net consists of a cluster
+[11:23 - 11:28] of files that are stored on that
+[11:25 - 11:30] computer each file contains all all or
+[11:28 - 11:33] part of a web page which Bob can view in
+[11:30 - 11:36] his web browser the first page that
+[11:33 - 11:38] comes up when Bob navigates to dougj.net
+[11:36 - 11:40] will be the home page because of the
+[11:38 - 11:42] interconnected nature of the web this
+[11:40 - 11:44] homepage can link to several other web
+[11:42 - 11:44] pages
+[11:44 - 11:49] furthermore any of these web pages could
+[11:46 - 11:52] link to any other page on the web so a
+[11:49 - 11:56] link at dougj.net could make Bob's
+[11:52 - 11:56] computer request the home page for
+[11:56 - 12:00] www.anothersite.net and then Bob might
+[11:58 - 12:04] begin exploring the various web pages
+[12:00 - 12:06] associated with another site.net in all
+[12:04 - 12:08] probability the web document files for
+[12:06 - 12:10] another site.net would be located on a
+[12:08 - 12:13] completely different server than the
+[12:10 - 12:15] files associated with dougj.net indeed
+[12:13 - 12:18] these servers could be on opposite sides
+[12:15 - 12:19] of the globe but if Bob has a good
+[12:18 - 12:21] internet connection he can browse
+[12:19 - 12:24] through those web documents stored on
+[12:21 - 12:25] servers thousands of miles apart more
+[12:24 - 12:26] quickly than he could browse through a
+[12:25 - 12:28] book on the other side of his office
+[12:26 - 12:30] this is all thanks to the lightning
+[12:28 - 12:32] quickness of electric signals and the
+[12:30 - 12:34] shrewd networking techniques that we've
+[12:32 - 12:36] been describing in these lessons
+[12:34 - 12:38] okay that's all for now on the internet
+[12:36 - 12:41] I hope that it's a little less
+[12:38 - 12:43] mysterious now than it was before now
+[12:41 - 12:45] this course isn't intended to make you a
+[12:43 - 12:47] networking wizard but we hope that if
+[12:45 - 12:49] you have a clearer mental picture of
+[12:47 - 12:50] what the internet is and how it works
+[12:49 - 12:52] then you'll be better prepared to
+[12:50 - 12:55] understand how the internet plays into
+[12:52 - 12:56] different security issues in the next
+[12:55 - 12:58] lesson we're going to begin learning
+[12:56 - 13:01] about passwords which are very important
+[12:58 - 13:01] for cyber security

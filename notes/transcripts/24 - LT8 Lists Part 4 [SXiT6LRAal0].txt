@@ -1,0 +1,207 @@
+Title: LT8 Lists   Part 4
+LT: LT 7 - Lists
+Linked label: Part 4 : Adding element into a list
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=SXiT6LRAal0
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:04 - 00:08] now what happens if we want to add some
+[00:06 - 00:11] elements into a list okay we can use
+[00:08 - 00:13] concatenation right so we can make
+[00:11 - 00:16] concatenation using a class
+[00:13 - 00:17] so i have a x a list called x and a list
+[00:16 - 00:20] called y
+[00:17 - 00:22] uh they both contain a few elements and
+[00:20 - 00:23] then i can continue and we add these two
+[00:22 - 00:26] lists together
+[00:23 - 00:30] then when we look at exactly contain
+[00:26 - 00:30] elements from both these
+[00:31 - 00:33] uh
+[00:32 - 00:36] similar to double we also have this
+[00:33 - 00:38] thing called repetition
+[00:36 - 00:41] you take the least x and then you
+[00:38 - 00:42] multiply by three what will happen is
+[00:41 - 00:44] that
+[00:42 - 00:44] y
+[00:47 - 00:52] three times again repeated three times
+[00:49 - 00:52] within the list
+[00:54 - 00:59] you can also use that advanced method
+[00:56 - 01:02] to add it to a list now if you remember
+[00:59 - 01:04] whenever we mention this in our tuple we
+[01:02 - 01:06] can't append into a double because that
+[01:04 - 01:09] ball is immutable but in the case of an
+[01:06 - 01:11] ease since it's mutable we can append an
+[01:09 - 01:13] element
+[01:11 - 01:15] okay
+[01:13 - 01:18] so let's say we have a list of one two
+[01:15 - 01:21] three electronic hence four so the the
+[01:18 - 01:24] the number four will be appended after
+[01:21 - 01:26] three yeah okay but each time as we have
+[01:24 - 01:29] planned we can only append one element
+[01:26 - 01:33] okay so our list is being mutated and
+[01:29 - 01:34] then we have an extra element within the
+[01:33 - 01:36] list itself
+[01:34 - 01:39] please note that purple cannot be a
+[01:36 - 01:43] pendant you cannot do this to a tuple
+[01:39 - 01:45] okay now whenever you add okay you add a
+[01:43 - 01:48] new element okay
+[01:45 - 01:49] uh then you actually get a new couple
+[01:48 - 01:51] actually
+[01:49 - 01:52] yeah you don't will take the part
+[01:51 - 01:55] obviously
+[01:52 - 01:55] you cannot
+[01:59 - 02:03] initially when you create couple one two
+[02:01 - 02:05] three you look at the id of the couple
+[02:03 - 02:08] it ends with two five six
+[02:05 - 02:11] but the moment you add an extra element
+[02:08 - 02:13] into it you check again the id the id
+[02:11 - 02:15] has changed to another number so which
+[02:13 - 02:18] means this pop although it takes out the
+[02:15 - 02:20] same day it's actually a different
+[02:18 - 02:20] coupon
+[02:20 - 02:24] okay a new number is created
+[02:25 - 02:31] now we can also use extend
+[02:28 - 02:33] uh expand uh to add elements into a
+[02:31 - 02:36] release now let's go through this
+[02:33 - 02:38] example now for example i have a list
+[02:36 - 02:40] called containing one and two and i use
+[02:38 - 02:44] extend hoping to
+[02:40 - 02:48] append or add this three and four into
+[02:44 - 02:51] the list itself yeah so extend does that
+[02:48 - 02:53] okay and again if i extend with another
+[02:51 - 02:55] uh this time around it's a tuple that
+[02:53 - 02:56] extends with the top one five and six
+[02:55 - 02:59] well it will get
+[02:56 - 03:01] added into the list itself so what
+[02:59 - 03:03] happened is that when you use extend you
+[03:01 - 03:06] can extend with a sequence whether it's
+[03:03 - 03:09] at least a tuple or even a string
+[03:06 - 03:12] okay and but the thing is that when you
+[03:09 - 03:13] extend a string the h and the i will be
+[03:12 - 03:14] broken up into
+[03:13 - 03:16] two
+[03:14 - 03:20] separate elements
+[03:16 - 03:21] okay so remember when you use extend you
+[03:20 - 03:22] have to uh
+[03:21 - 03:25] uh
+[03:22 - 03:28] you're trying to add a sequence of
+[03:25 - 03:32] elements into the original list
+[03:28 - 03:32] and of course this lst is
+[03:32 - 03:36] okay
+[03:34 - 03:39] now you try to extend a particular
+[03:36 - 03:42] number now six is just an integer it is
+[03:39 - 03:44] not a sequence a python will throw you
+[03:42 - 03:47] an error okay so be careful with your
+[03:44 - 03:47] syntax
+[03:48 - 03:52] so if we compare or some of you may
+[03:50 - 03:54] think that extend and concatenation they
+[03:52 - 03:56] are similar right you have a list that
+[03:54 - 03:57] contain one and two you want to add
+[03:56 - 03:58] another
+[03:57 - 04:01] three and four
+[03:58 - 04:01] you
+[04:04 - 04:07] this is a similarity part
+[04:06 - 04:09] okay
+[04:07 - 04:10] the part where concatenation extend is
+[04:09 - 04:12] different
+[04:10 - 04:15] now if let's say you were to
+[04:12 - 04:17] extend a string h i
+[04:15 - 04:20] uh h and i will be separating the
+[04:17 - 04:22] individual element but when you try to
+[04:20 - 04:24] use concatenation
+[04:22 - 04:25] uh it will throw you into an error why
+[04:24 - 04:30] is that so
+[04:25 - 04:33] lst2 is actually a
+[04:30 - 04:35] release but h5 is a string you cannot
+[04:33 - 04:38] add at least to a string
+[04:35 - 04:40] so there is a top error here so you are
+[04:38 - 04:43] not able to do so so that is the main
+[04:40 - 04:45] difference between concatenation and
+[04:43 - 04:45] accent
+[04:46 - 04:49] okay
+[04:47 - 04:51] now we talked about a plant just now and
+[04:49 - 04:54] also extent it looks similar now let's
+[04:51 - 04:56] take a closer look if i were to append
+[04:54 - 05:00] very that when you append you can only
+[04:56 - 05:03] obtain a single element so the string h
+[05:00 - 05:05] i is taken as a single element
+[05:03 - 05:08] so h i a single element is being
+[05:05 - 05:08] appended into the list
+[05:09 - 05:14] now let's consider another list and if
+[05:11 - 05:16] this time around you try to extend okay
+[05:14 - 05:19] you're trying to extend this h prime now
+[05:16 - 05:21] uh x10 will go through it will go
+[05:19 - 05:23] through the individual element within
+[05:21 - 05:26] this sequence this hr is taken as a
+[05:23 - 05:29] sequence so what happened is what you
+[05:26 - 05:31] will add up as a one two h and i h and i
+[05:29 - 05:34] switch into the individual element so
+[05:31 - 05:37] that's how x ten and the tens are
+[05:34 - 05:37] different
+[05:41 - 05:46] let me give you another example if i
+[05:43 - 05:47] will try to append another list
+[05:46 - 05:49] one and three
+[05:47 - 05:51] now this one uh this three and four
+[05:49 - 05:56] sorry these things will be taken as a
+[05:51 - 05:59] single element which will be appended
+[05:56 - 05:59] into the list one two
+[06:00 - 06:04] but if you want to extend then extend
+[06:03 - 06:06] will actually lock through the
+[06:04 - 06:08] individual element three and four so
+[06:06 - 06:10] three and four are treated as two
+[06:08 - 06:13] separate elements which will be added
+[06:10 - 06:18] into the list so you see the difference
+[06:13 - 06:18] between a pen and extent
+[06:21 - 06:26] now let's go on to other list operation
+[06:24 - 06:28] well you can add element into a list
+[06:26 - 06:31] using insert
+[06:28 - 06:34] now uh the difference between insert and
+[06:31 - 06:37] the append effect now in our apparent
+[06:34 - 06:39] extent we are concerned about the value
+[06:37 - 06:41] or the element itself that we want to
+[06:39 - 06:43] add into the list
+[06:41 - 06:47] but in the case of insert
+[06:43 - 06:50] we are concerned about the position
+[06:47 - 06:52] at which position do you want to insert
+[06:50 - 06:53] the new item
+[06:52 - 06:55] okay
+[06:53 - 06:58] so take for example i have a list 0 and
+[06:55 - 06:59] 1 and this resulting in position 0 and
+[06:58 - 07:02] 1.
+[06:59 - 07:04] if i try to insert the alphabet a at
+[07:02 - 07:06] position zero
+[07:04 - 07:09] then position zero original is taken up
+[07:06 - 07:12] by zero so it would be pushed away and
+[07:09 - 07:16] then a will be now residing at the index
+[07:12 - 07:18] zero okay zero will now check the index
+[07:16 - 07:21] position 1 and so on the one in the next
+[07:18 - 07:23] position 2.
+[07:21 - 07:25] let's try to insert another element b
+[07:23 - 07:27] and we try to insert it 1 the index
+[07:25 - 07:29] position 1
+[07:27 - 07:30] so this is 0
+[07:29 - 07:32] 1 so
+[07:30 - 07:37] a b will have to come in here so 0 will
+[07:32 - 07:37] be pushed away so we have a and b
+[07:38 - 07:43] now let's say i want to insert a c at
+[07:40 - 07:44] index position 4 whereas index position
+[07:43 - 07:48] four
+[07:44 - 07:50] zero one two three four will come after
+[07:48 - 07:52] one right so that will be the index
+[07:50 - 07:55] position four
+[07:52 - 07:56] now what happen if you try to uh uh
+[07:55 - 07:59] insert something at the index position
+[07:56 - 08:02] that is not existing for example you
+[07:59 - 08:04] want to insert a d e at position nine
+[08:02 - 08:06] but there is no position type position
+[08:04 - 08:09] like somewhere down the line but this
+[08:06 - 08:11] the release doesn't contain that many
+[08:09 - 08:14] elements so what will you do well you
+[08:11 - 08:18] will just insert to the last position
+[08:14 - 08:19] okay so when you try to insert something
+[08:18 - 08:23] further down the line you will just
+[08:19 - 08:23] insert right at the end release
+[08:25 - 08:27] okay

@@ -1,0 +1,211 @@
+Title: LT10d About Hashing (Part 3) - Linear Probing
+LT: LT10d About Hashing (Part 3)
+Linked label: Part 3: Closed Hashing - Linear Probing
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=iNt9vZlmMdg
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] Next we want to talk about the uh second
+[00:03 - 00:09] method for the collision resolution.
+[00:06 - 00:11] This is what we call close hashing.
+[00:09 - 00:15] >> Now basically what happened is that uh
+[00:11 - 00:18] in our earlier example uh when we try to
+[00:15 - 00:21] uh fill in the next data uh next data
+[00:18 - 00:23] and the hash value happen to be three
+[00:21 - 00:24] and you look at index position three it
+[00:23 - 00:27] is occupied.
+[00:24 - 00:30] Okay. So what you do is that from the
+[00:27 - 00:33] index position three you look at the uh
+[00:30 - 00:35] next position starting from index
+[00:33 - 00:37] position three you look for the next
+[00:35 - 00:40] position to see whether is it empty or
+[00:37 - 00:43] not. Sorry index position four is not
+[00:40 - 00:45] empty. Then you reach the end of the
+[00:43 - 00:46] index uh the hash table. You have
+[00:45 - 00:48] already reached the end of the hash
+[00:46 - 00:52] table. So what do you do? You start from
+[00:48 - 00:54] beginning of the hash table and take a
+[00:52 - 00:56] look now from the beginning of the hash
+[00:54 - 00:59] table. It is not empty. So what do you
+[00:56 - 01:02] do? You look for the next position and
+[00:59 - 01:05] the next position happen to be empty. So
+[01:02 - 01:09] what do you do? You populate it with
+[01:05 - 01:12] your data. So this method is called the
+[01:09 - 01:15] open hashing. Basically starting from
+[01:12 - 01:18] your assigned location. In this case our
+[01:15 - 01:21] assigned location is at index position
+[01:18 - 01:23] three. Look for index position four.
+[01:21 - 01:27] Hits the end. go from index position
+[01:23 - 01:29] zero go to one two so on so forth. Okay.
+[01:27 - 01:31] Now
+[01:29 - 01:34] uh the algorithm goes this way. Starting
+[01:31 - 01:37] from index position three check that
+[01:34 - 01:39] table at index four. When it reaches the
+[01:37 - 01:43] end start from index position zero one
+[01:39 - 01:45] and two. After checking two stop because
+[01:43 - 01:48] basically you start from three. And if
+[01:45 - 01:50] you return back to checking up to two,
+[01:48 - 01:54] you have gone through the whole table
+[01:50 - 01:56] once. Okay. And if there is no empty
+[01:54 - 02:00] location, then there is no empty
+[01:56 - 02:03] location. No need to search further.
+[02:00 - 02:06] Okay. But because we have created the uh
+[02:03 - 02:09] hash table according to the number of
+[02:06 - 02:12] data. You have five data. You have a
+[02:09 - 02:16] hash table of size five. Sure there must
+[02:12 - 02:18] be a empty location. Okay.
+[02:16 - 02:21] So all you need to do is search through
+[02:18 - 02:24] the hash table once you will find an
+[02:21 - 02:26] empty location.
+[02:24 - 02:28] So what is the core skill required? The
+[02:26 - 02:32] core skill required is to iterate
+[02:28 - 02:37] through every single element in the list
+[02:32 - 02:40] once. Okay. Uh when we specify a
+[02:37 - 02:42] starting position. Okay. So if you are
+[02:40 - 02:46] able to write a code that starts from
+[02:42 - 02:48] any uh index position goes all the way
+[02:46 - 02:50] to the end
+[02:48 - 02:54] when you hit to the end of the list go
+[02:50 - 02:57] back to the front and then iterate
+[02:54 - 03:00] through. Okay. So this is the call
+[02:57 - 03:03] scale. Uh I'm going to require you to
+[03:00 - 03:05] write the function called browse. Browse
+[03:03 - 03:08] through a particular sequence uh
+[03:05 - 03:11] starting from a position. Okay. uh and
+[03:08 - 03:13] basically this uh this uh uh function
+[03:11 - 03:17] doesn't give any output so it just
+[03:13 - 03:20] return none. So uh let's say you have a
+[03:17 - 03:22] list and uh the list contain a e i o u
+[03:20 - 03:25] the vowel.
+[03:22 - 03:28] If I were to browse the list starting
+[03:25 - 03:31] from index position two. So what will
+[03:28 - 03:34] happen? A is the index position zero.
+[03:31 - 03:37] What e is a position one and two
+[03:34 - 03:43] starting from i. Starting from i. Okay.
+[03:37 - 03:46] So it will go from I O U. It hits the
+[03:43 - 03:48] last position
+[03:46 - 03:52] and then it must go back to the front.
+[03:48 - 03:54] Okay, the first element which is A and E
+[03:52 - 03:57] and stop.
+[03:54 - 03:59] So you are supposed to write the code
+[03:57 - 04:02] for this function that is able to allow
+[03:59 - 04:05] you to start from the position two go to
+[04:02 - 04:10] three go to four when you hit the end
+[04:05 - 04:12] start from zero one stop
+[04:10 - 04:15] that is the cost.
+[04:12 - 04:19] Okay. So you must uh be able to write
+[04:15 - 04:22] this code uh so that uh you can use this
+[04:19 - 04:24] for your open hashing.
+[04:22 - 04:26] Okay.
+[04:24 - 04:28] Now assume that you are able to write
+[04:26 - 04:31] this. I I think you are capable of doing
+[04:28 - 04:33] that. Uh submit that to uh uh the
+[04:31 - 04:36] cosmology questions. Okay. One of the
+[04:33 - 04:39] question requires you to write the uh
+[04:36 - 04:39] browse function.
+[04:43 - 04:53] Okay. Let's recap
+[04:47 - 04:55] now. um to populate a a hash table
+[04:53 - 04:58] >> using the closed hashing.
+[04:55 - 05:01] >> Okay, you go through every element in a
+[04:58 - 05:04] given list, work out the hash value,
+[05:01 - 05:06] fill in the uh uh the value into the
+[05:04 - 05:10] hash table at a position x uh position
+[05:06 - 05:14] i. if it is empty.
+[05:10 - 05:18] If it is not empty, iterate through the
+[05:14 - 05:21] hash table to find the next nearest
+[05:18 - 05:24] empty position. When it reaches the end
+[05:21 - 05:27] of the table, start finding from the
+[05:24 - 05:31] beginning of the table. Okay, so this is
+[05:27 - 05:35] the algorithm that you can use to write
+[05:31 - 05:40] your code for the uh uh hash table.
+[05:35 - 05:40] Okay. To populate the hash table.
+[05:47 - 05:54] I have a question for you. Will there be
+[05:49 - 05:56] a situation where you know you uh start
+[05:54 - 05:58] from your assigned location, go to the
+[05:56 - 05:59] next, it's not empty, go to the next
+[05:58 - 06:01] one, it's not empty, go to the next one,
+[05:59 - 06:03] not empty, hit to the end, go to the
+[06:01 - 06:06] front and search the next and and you
+[06:03 - 06:09] just go on and on and on uh and result
+[06:06 - 06:11] in an infinite loop and still can't find
+[06:09 - 06:13] an empty position. So I leave this
+[06:11 - 06:17] question for you to answer. Would there
+[06:13 - 06:17] be such a situation?
+[06:19 - 06:26] Okay. So what is required of you? Um uh
+[06:22 - 06:28] you are required to write the hasht
+[06:26 - 06:31] functions. Now this is very much the
+[06:28 - 06:36] same as uh what we have uh used in our
+[06:31 - 06:38] part two. Uh you basically uh go through
+[06:36 - 06:41] every single element in the sequence
+[06:38 - 06:43] itself. Work out the hash value. Uh look
+[06:41 - 06:47] at the table at the index position. If
+[06:43 - 06:49] it is empty, fill in the value. else
+[06:47 - 06:51] if it's not empty. Okay, what are you
+[06:49 - 06:54] going to do? So, you're going to apply
+[06:51 - 06:57] this uh collision resolution number two
+[06:54 - 07:00] uh h open hashing. So, you are required
+[06:57 - 07:03] to write the code over here uh to fill
+[07:00 - 07:06] in the elements. So that is basically uh
+[07:03 - 07:09] searching for a next nearest uh next uh
+[07:06 - 07:12] free empty uh locations to fill in the
+[07:09 - 07:15] data and after you have done that return
+[07:12 - 07:19] the table that will be the field uh uh
+[07:15 - 07:24] uh hash table. Okay. So that is what
+[07:19 - 07:26] task uh left for you to do. Um okay.
+[07:24 - 07:31] Next we'll be talking about uh searching
+[07:26 - 07:37] a hash table that is uh populated with
+[07:31 - 07:40] uh using this open hash uh uh method.
+[07:37 - 07:43] Now say you are required to write the uh
+[07:40 - 07:46] function for search searching the table
+[07:43 - 07:49] for a particular item. Okay. Now uh the
+[07:46 - 07:52] table is actually your data table which
+[07:49 - 07:55] has been populated with the data. Now
+[07:52 - 07:58] first you work out the hash value of the
+[07:55 - 08:01] item right? Then you check uh at the
+[07:58 - 08:04] table at this particular index position.
+[08:01 - 08:06] If it is empty
+[08:04 - 08:10] then of course the element that you want
+[08:06 - 08:12] to find is not in the table. Uh if the
+[08:10 - 08:14] table at the index position is the
+[08:12 - 08:18] element the item that you want to find
+[08:14 - 08:20] then you return true. Else
+[08:18 - 08:23] okay else? What do you do? Now what
+[08:20 - 08:28] happened is that if you are looking for
+[08:23 - 08:31] C A D C sorry B A D C you will
+[08:28 - 08:34] automatically come to index position
+[08:31 - 08:37] three and you look for it
+[08:34 - 08:40] right now when you look for it it is not
+[08:37 - 08:45] there now when it is not there it
+[08:40 - 08:48] doesn't mean that B A doesn't exist
+[08:45 - 08:50] it may exist but it's being stored at
+[08:48 - 08:52] another position
+[08:50 - 08:56] So what do you need to do? You need to
+[08:52 - 08:59] go to the next element. Check whether is
+[08:56 - 09:02] that what you want to find. If it's not,
+[08:59 - 09:05] go to the front, check again. If it's
+[09:02 - 09:08] not, check the next one. If you found
+[09:05 - 09:12] it, good. You have found it. Okay? But
+[09:08 - 09:14] if it's not again, then you will go to
+[09:12 - 09:16] the next element.
+[09:14 - 09:19] But you will understand now that if you
+[09:16 - 09:22] go on and on and on it will end up as a
+[09:19 - 09:24] infinite loop. So all you need to do is
+[09:22 - 09:30] that if you start from position three
+[09:24 - 09:34] all you need to do is to go to four 0 1
+[09:30 - 09:36] 2. If you have completed one row of the
+[09:34 - 09:38] data table
+[09:36 - 09:43] stop searching and declare that this
+[09:38 - 09:44] item is not found in the data table.
+[09:43 - 09:46] Okay. Okay, I hope you understand that.
+[09:44 - 09:49] So you need to implement that inside
+[09:46 - 09:51] your this search function.
+[09:49 - 09:54] Okay,
+[09:51 - 09:56] so if you want to search the data table
+[09:54 - 09:58] for this uh particular element, so these
+[09:56 - 10:02] are some of the test cases that you can
+[09:58 - 10:05] use to uh check that your search
+[10:02 - 10:08] function is written uh correctly. Okay,
+[10:05 - 10:08] that's all for

@@ -119,6 +119,8 @@ answer = 17
 > [!warning]
 > For `-` and `/` the order matters. `A B -` means `A - B` — the **first** value popped is the right-hand operand.
 
+Why bother: postfix needs **no brackets and no precedence rules**. The order of the symbols already fixes the order of evaluation, so `3 4 5 + *` and `3 4 * 5 +` are unambiguous without `( )`.
+
 ## Common Mistakes
 
 - Using `pop(0)` — that's a [[Queue]], not a stack.

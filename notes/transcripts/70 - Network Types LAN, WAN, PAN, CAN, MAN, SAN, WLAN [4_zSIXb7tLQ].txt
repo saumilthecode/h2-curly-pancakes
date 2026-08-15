@@ -1,0 +1,50 @@
+Title: Network Types:  LAN, WAN, PAN, CAN, MAN, SAN, WLAN
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=4_zSIXb7tLQ
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Hallo almal, in hierdie video gaan ons oor die verskillende soorte netwerke praat. En hierdie
+[00:05 - 00:11] netwerktipes hang af van hoe groot dit is en hoeveel gebied dit geografies beslaan.
+[00:11 - 00:17] Nou is die meeste mense wat basiese kennis van netwerk het, bekend met terme soos LAN
+[00:17 - 00:24] en WAN. Maar daarbenewens is daar nog 'n paar netwerktipes wat baie mense nie ken nie
+[00:24 - 00:31] . So dit is waaroor ons in hierdie video gaan gesels. Laat ons dus eers oor 'n PAN
+[00:31 - 00:37] praat . PAN staan ​​vir persoonlike area netwerk. Dit is nou 'n tipe netwerk wat
+[00:37 - 00:43] op persoonlike vlak gebruik word. Dit is 'n klein netwerk wat gebruik word vir die koppeling van toestelle soos slimfone,
+[00:43 - 00:49] tablette en skootrekenaars. En hulle skakel met mekaar deur draadlose tegnologieë
+[00:49 - 00:55] soos bluetooth, infrarooi en nabyveldkommunikasie of NFC te gebruik. Maar hulle
+[00:55 - 01:03] kan ook verbind met behulp van 'n bedrade verbinding soos 'n USB-kabel. PAN's word gewoonlik gebruik
+[01:03 - 01:09] vir die oordrag van klein lêers soos musiek, foto's, kalenderafsprake, ensovoorts.
+[01:12 - 01:18] En die volgende tipe netwerk is 'n LAN. Nou staan ​​LAN vir plaaslike netwerk. 'N Lokale
+[01:18 - 01:25] netwerk is 'n groep toestelle soos rekenaars, bedieners, skakelaars en drukkers wat
+[01:25 - 01:32] in dieselfde gebou geleë is, soos in 'n kantoor of in 'n huis. Met ander woorde, in die nabyheid van mekaar
+[01:32 - 01:39] . Die algemeenste soort LAN is 'n Ethernet LAN, waar twee of meer rekenaars
+[01:39 - 01:48] met 'n skakelaar aan Ethernet-kabels gekoppel is. Nou is 'n WLAN of draadlose plaaslike netwerk 'n plaaslike
+[01:48 - 01:56] netwerk wat draadlose kommunikasie gebruik in plaas van bedrade kommunikasie. 'N Draadlose LAN word gedefinieer
+[01:56 - 02:03] as ten minste twee toestelle wat draadlose kommunikasie gebruik om 'n plaaslike netwerk te vorm. 'N
+[02:03 - 02:10] Draadlose LAN het gewoonlik 'n Wi-Fi-router of 'n draadlose toegangspunt vir draadlose toestelle
+[02:10 - 02:17] soos skootrekenaars, tablette, draadlose lessenaars en slimfone om te kommunikeer. Dus, in eenvoudige terme, is '
+[02:17 - 02:25] n draadlose LAN 'n LAN, maar sonder kabels. En die volgende tipe netwerk is 'n CAN.
+[02:25 - 02:33] Nou staan ​​CAN vir kampusarea-netwerk. 'N CAN is 'n netwerk wat twee of meer LAN's
+[02:33 - 02:41] binne 'n beperkte area verbind. So kan 'n CAN byvoorbeeld 'n universiteit wees wat verskeie geboue in
+[02:41 - 02:48] dieselfde algemene area het wat met mekaar verbind is om 'n groter netwerk te vorm. Hierdie geboue
+[02:48 - 02:54] kan dus verskillende departemente op 'n universiteit se eiendom wees, en elke gebou het hul eie LAN
+[02:54 - 03:00] in hul departement. En dan word die geboue verbind om 'n kampusnetwerk te vorm.
+[03:02 - 03:09] En die volgende tipe netwerk is 'n MAN. MAN staan ​​vir 'n metropolitaanse netwerk. Dit is nou 'n
+[03:09 - 03:16] groter netwerk as 'n CAN. Dit is 'n netwerk wat oor verskeie geboue in 'n stad of stad
+[03:16 - 03:23] strek . MAN's word gewoonlik verbind met 'n hoëspoedverbinding, soos optiese veselkabel. Dit is '
+[03:23 - 03:29] n hoëspoednetwerk wat die vermoë bied om data en hulpbronne binne 'n stad te deel.
+[03:30 - 03:37] En die volgende een is 'n SAN- of bergingsnetwerk. Nou is 'n SAN 'n spesiale hoëspoednetwerk
+[03:37 - 03:44] wat groot hoeveelhede data stoor en toegang bied. Wat 'n SAN eintlik is,
+[03:44 - 03:50] is dat dit 'n toegewyde netwerk is wat gebruik word vir die stoor van data. Hierdie netwerk bestaan ​​uit verskeie
+[03:50 - 03:57] skyfopstellings, skakelaars en bedieners. Een van die hoofredes vir die gebruik van 'n SAN is omdat
+[03:57 - 04:02] SAN's nie geraak word deur netwerkverkeer soos knelpunte wat in '
+[04:02 - 04:08] n plaaslike netwerk kan voorkom nie. En dit is omdat SAN's nie regtig deel uitmaak van 'n plaaslike netwerk nie,
+[04:08 - 04:16] dit is afgeskei. Dit is 'n netwerk op sigself. En dan is daar uiteindelik die wye
+[04:16 - 04:24] area netwerk of WAN. 'N WAN is die grootste tipe netwerk. 'N WAN bevat veelvuldige LAN's, CAN
+[04:24 - 04:31] 's en MAN's. Dit is 'n netwerk wat strek oor 'n groot geografiese gebied soos 'n kontinent
+[04:31 - 04:38] of selfs die hele wêreld. 'N Goeie voorbeeld van 'n wye netwerk is die internet.

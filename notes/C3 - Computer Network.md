@@ -13,6 +13,11 @@
 | WAN | country or global; the internet is a WAN |
 | SAN | storage area network |
 
+> [!important] Internet ≠ Web
+> The **internet** is the physical infrastructure — cables, routers, connected machines. The **World Wide Web** is one service running on it: the pages, links and media you access over HTTP. Email, DNS and file transfer also run on the internet but are not part of the web.
+
+The backbone is mostly **fibre optic cable**, much of it undersea. Satellite is avoided for general traffic because the round trip adds too much **latency**.
+
 **Intranet** — a private network that uses internet technologies (web pages, email) but is restricted to one organisation. Reachable from outside only through controlled access.
 
 ## Client–Server vs Peer-to-Peer
@@ -64,6 +69,18 @@ A host can be allocated an IP address in **two ways**:
 > [!important]
 > IP gets the data to the correct **network**. MAC gets it to the correct **device** inside that network. ARP is what finds a device's MAC address from its IP address within a LAN.
 
+> [!important] Along the route
+> The destination **IP address stays the same** from source to final destination. The **MAC address changes at every hop** — it only ever identifies the next device on the current link.
+>
+> ```text
+> PC ──▶ router A ──▶ router B ──▶ server
+>  │        │            │           │
+>  └── MAC changes at each hop ──────┘
+>  └── IP unchanged, end to end ─────┘
+> ```
+
+Analogy: MAC is your **name** (fixed, burned into the NIC); IP is your **current mailing address** (changes when you move network).
+
 ### Private vs Public IP
 
 | | Private | Public |
@@ -110,6 +127,31 @@ Circuit switching instead reserves one fixed path for the whole communication. P
 **Disadvantage, and how it is handled** — packets may arrive out of order, be delayed, or be lost entirely. Sequence numbers reorder them at the destination, and any packet that fails its error check or never arrives is **requested again and retransmitted**.
 
 **Role of a router** — it inspects each packet's destination **IP address** and forwards it along the best available route towards that network, hop by hop. Each packet is routed independently, so different packets from the same message may take different paths.
+
+## TCP
+
+Transmission Control Protocol — **connection-oriented** and **reliable**. A session has three stages: set up, transfer, close.
+
+### Three-Way Handshake
+
+```text
+client                          server
+  │ ──────── SYN ───────────────▶ │   "can we talk?"
+  │ ◀─────── SYN + ACK ────────── │   "yes — and can we talk?"
+  │ ──────── ACK ───────────────▶ │   "yes"
+  │                               │
+  └───── connection established ──┘
+```
+
+Closing takes **four** steps: `FIN`, `ACK`, `FIN`, `ACK` — each side must close its own direction.
+
+During transfer TCP guarantees packets are **delivered** and **reassembled in the correct order**, requesting retransmission of anything missing.
+
+| State | Meaning |
+| ----- | ------- |
+| LISTEN | server waiting for a connection request |
+| ESTABLISHED | handshake done, data flowing |
+| CLOSED | no connection |
 
 ## Switches and Routers
 

@@ -1,0 +1,190 @@
+Title: Filius   Part 3b
+Assessment(s): C3a Hands-on with Filius Network Simulator
+Linked label(s): Part 3b : About Servers (con't) - DNS, DHCP and Mail Servers
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=MKrz2kQLE7o
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:08] okay welcome back uh this is part three
+[00:05 - 00:10] b about servers
+[00:08 - 00:11] in this portion we'll be talking about
+[00:10 - 00:18] dns server
+[00:11 - 00:20] uh dhcp server and also the mail server
+[00:18 - 00:23] now in hands on five you'll be
+[00:20 - 00:27] installing a dns server
+[00:23 - 00:27] what is a dns server
+[00:32 - 00:41] now for us it is easier to remember a
+[00:35 - 00:41] url for example www.yijc.edu.sg
+[00:42 - 00:47] but in the computer network they can
+[00:44 - 00:50] only identify with the ip address
+[00:47 - 00:52] so what is the corresponding
+[00:50 - 00:54] ip address of this
+[00:52 - 00:57] url
+[00:54 - 00:58] you need a dns server to keep a record
+[00:57 - 00:59] of that
+[00:58 - 01:02] so
+[00:59 - 01:02] in your hands on five
+[01:04 - 01:10] you will be installing a dns server now
+[01:08 - 01:11] you need to add a need card you need to
+[01:10 - 01:14] add a server
+[01:11 - 01:16] configure your dns server
+[01:14 - 01:17] so that all the servers and all the
+[01:16 - 01:21] notebooks
+[01:17 - 01:23] are can recognize uh this particular dns
+[01:21 - 01:25] server and then uh in your hands-on you
+[01:23 - 01:29] will need to test that your dns server
+[01:25 - 01:29] is indeed working
+[01:30 - 01:35] to better understand about the functions
+[01:33 - 01:39] and the working of a dns server
+[01:35 - 01:40] it is important for you to watch this
+[01:39 - 01:43] youtube video
+[01:40 - 01:43] in this link
+[01:53 - 01:56] next i want to talk about the dhcp
+[01:55 - 01:59] server
+[01:56 - 02:02] again to understand the working of this
+[01:59 - 02:04] dynamic host configurations protocol it
+[02:02 - 02:06] is important for you to watch this
+[02:04 - 02:08] youtube video
+[02:06 - 02:12] now throughout this exercise we have
+[02:08 - 02:14] been configuring every single device in
+[02:12 - 02:18] the network with its ip address and
+[02:14 - 02:20] those are the static ip address now it
+[02:18 - 02:23] is very troublesome when you try to
+[02:20 - 02:27] maintain a huge network
+[02:23 - 02:29] now you can use a dhcp server to help
+[02:27 - 02:32] you automatically assign
+[02:29 - 02:35] the ip addresses whenever a device is
+[02:32 - 02:37] hooked onto the network
+[02:35 - 02:40] go through the slides and configure your
+[02:37 - 02:42] dhcp server and see how it automatically
+[02:40 - 02:43] configure
+[02:42 - 02:48] all the laptops
+[02:43 - 02:48] that is installed in the network
+[02:55 - 02:59] in hands on seven you'll be installing a
+[02:58 - 03:01] mail server
+[02:59 - 03:04] now if you are interested
+[03:01 - 03:06] this will be for the curious mind if you
+[03:04 - 03:09] are interested you can refer to this
+[03:06 - 03:12] youtube video to talk about this smtp
+[03:09 - 03:14] simple mail transfer protocol so that
+[03:12 - 03:17] you have a better understanding of how
+[03:14 - 03:20] mails are being transferred between
+[03:17 - 03:20] servers and in the network
+[03:21 - 03:26] i will describe briefly here
+[03:23 - 03:28] how an email is sent
+[03:26 - 03:31] within a network
+[03:28 - 03:33] assuming that alan and bob are both
+[03:31 - 03:37] residing in land one
+[03:33 - 03:40] and they both uses the same mail server
+[03:37 - 03:40] yijc.edu.sg
+[03:40 - 03:46] ellens wants to send an email to bob
+[03:44 - 03:47] will the email go to the switch and go
+[03:46 - 03:49] to bob directly
+[03:47 - 03:52] the answer is no
+[03:49 - 03:54] you need to have a mail server to handle
+[03:52 - 03:55] all emails
+[03:54 - 03:58] so
+[03:55 - 03:59] step number one the emails will go from
+[03:58 - 04:01] ellen's laptop
+[03:59 - 04:03] to the switch
+[04:01 - 04:06] to the mail server
+[04:03 - 04:07] the email will recite in the mail server
+[04:06 - 04:09] until
+[04:07 - 04:12] bob retrieves it
+[04:09 - 04:14] if bob's go on holiday for a week then
+[04:12 - 04:15] the mail will reside in the mail server
+[04:14 - 04:17] for a week
+[04:15 - 04:20] until bob's returns to office and
+[04:17 - 04:22] retrieve his email
+[04:20 - 04:23] when bob uses his laptop to retrieve his
+[04:22 - 04:25] email
+[04:23 - 04:28] all his mail will go to the switch
+[04:25 - 04:30] number one and then be downloaded into
+[04:28 - 04:32] bob's laptop
+[04:30 - 04:35] now bob have two choices he can either
+[04:32 - 04:38] configure the mail server to delete or
+[04:35 - 04:40] weigh away all the bills after
+[04:38 - 04:44] downloading so that no one can retrieve
+[04:40 - 04:47] it or he can configure the mail server
+[04:44 - 04:49] in such a way that it will keep all the
+[04:47 - 04:50] downloaded email
+[04:49 - 04:52] so that he can
+[04:50 - 04:56] assess another
+[04:52 - 04:59] another laptop in the network another
+[04:56 - 05:00] client to retrieve the same mail
+[04:59 - 05:01] if he needed to
+[05:00 - 05:06] so there are two ways that he can
+[05:01 - 05:06] configure his mail server
+[05:08 - 05:13] now the following few slides
+[05:10 - 05:16] will guide you through how to install
+[05:13 - 05:16] and configure a mail server
+[05:16 - 05:22] follow them closely
+[05:19 - 05:25] and lastly you will test that the build
+[05:22 - 05:25] server is working well
+[05:29 - 05:33] this portion of the hands-on 7 will be
+[05:31 - 05:35] for you to try
+[05:33 - 05:37] try on
+[05:35 - 05:39] you are required to install another mail
+[05:37 - 05:41] server
+[05:39 - 05:42] why would you want to have another mail
+[05:41 - 05:44] server
+[05:42 - 05:45] imagine
+[05:44 - 05:49] alan and bob
+[05:45 - 05:52] are residing in the yijc network
+[05:49 - 05:55] whereas david and charles are residing
+[05:52 - 05:57] in the moe network
+[05:55 - 06:00] and in the moe network there is another
+[05:57 - 06:04] moe mail server
+[06:00 - 06:06] so when alan wants to send an email to
+[06:04 - 06:09] david
+[06:06 - 06:11] allen will have to send his email
+[06:09 - 06:13] to the switch
+[06:11 - 06:16] to the yjc mail server
+[06:13 - 06:19] and when i y jcbl server realized that
+[06:16 - 06:20] it is an email for someone over at the
+[06:19 - 06:23] moe server
+[06:20 - 06:26] the email will go to the switch router
+[06:23 - 06:29] switch and go to the
+[06:26 - 06:32] moe mail server and resize there
+[06:29 - 06:35] now then again if david is away for
+[06:32 - 06:38] holiday and returns only one week later
+[06:35 - 06:40] when david retrieve
+[06:38 - 06:43] his email all the email will be
+[06:40 - 06:45] downloaded from the moe server to the
+[06:43 - 06:46] switch number two
+[06:45 - 06:49] and then be downloaded into david's
+[06:46 - 06:49] laptop
+[06:50 - 06:54] again if david wants to reply the email
+[06:52 - 06:56] to alan
+[06:54 - 07:00] then the path will be
+[06:56 - 07:01] from david's laptop switch to the moe
+[07:00 - 07:05] server
+[07:01 - 07:06] moe server was sent to the y ijc server
+[07:05 - 07:08] and stays there
+[07:06 - 07:10] when ellen is back to office and
+[07:08 - 07:12] retrieve his email
+[07:10 - 07:15] the email will be downloaded to the
+[07:12 - 07:17] switch and then go to ls laptop that
+[07:15 - 07:20] will be the reverse path
+[07:17 - 07:22] go on and try to configure install
+[07:20 - 07:25] the mail server
+[07:22 - 07:28] the ammo email server and test that it
+[07:25 - 07:28] is working
+[07:30 - 07:34] the following slides will guide you
+[07:31 - 07:36] through how to configure
+[07:34 - 07:36] this
+[07:37 - 07:42] that's all for you
+[07:39 - 07:43] for this hands-on package
+[07:42 - 07:47] using filius
+[07:43 - 07:49] a network simulator to learn some of the
+[07:47 - 07:50] networking concept
+[07:49 - 07:52] i hope
+[07:50 - 07:54] all the youtube's videos and the notes
+[07:52 - 07:57] are beneficial for you
+[07:54 - 07:59] if you have any questions don't hesitate
+[07:57 - 08:02] to approach
+[07:59 - 08:05] clarify your doubts from the teachers
+[08:02 - 08:05] bye

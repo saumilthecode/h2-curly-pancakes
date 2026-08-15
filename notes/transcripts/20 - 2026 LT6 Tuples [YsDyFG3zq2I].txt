@@ -1,0 +1,267 @@
+Title: 2026 LT6 Tuples
+LT: LT 6 - Tuples
+Linked label: LT6 Tuples
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=YsDyFG3zq2I
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:10 - 00:18] Hi, in this lecture we will be looking
+[00:14 - 00:18] at the data type couples.
+[00:21 - 00:26] The previous data type you have come
+[00:23 - 00:30] across was string.
+[00:26 - 00:33] String is a sequence and tpple is also a
+[00:30 - 00:35] sequence. Today we are looking at the
+[00:33 - 00:39] tpple and you must remember that tpple
+[00:35 - 00:42] is just like string. They are immutable.
+[00:39 - 00:45] First we define a tpple by using this
+[00:42 - 00:48] kind of bracket to represent an empty
+[00:45 - 00:48] tpple.
+[00:48 - 00:54] Do take note that if you want to
+[00:50 - 00:58] represent a tpple that contains only one
+[00:54 - 01:00] element, you must add a comma after the
+[00:58 - 01:03] element in the bracket.
+[01:00 - 01:05] If you don't, then it will look like
+[01:03 - 01:09] something like this. A bracket with just
+[01:05 - 01:09] one element.
+[01:12 - 01:17] You can try typing this in your Jupyter
+[01:14 - 01:21] notebook using the Python built-in type
+[01:17 - 01:25] methods to check the one with a comma is
+[01:21 - 01:28] a tapole and the one without the comma
+[01:25 - 01:28] is an integer.
+[01:29 - 01:34] So you must be very careful when you
+[01:31 - 01:37] want to define a tapole with just one
+[01:34 - 01:41] element. You must remember to put in the
+[01:37 - 01:41] comma after the element.
+[01:43 - 01:50] Now why do we use a tpple instead of a
+[01:45 - 01:53] list? One reason is because
+[01:50 - 01:56] running program with tpple is actually
+[01:53 - 01:58] faster than using a list.
+[01:56 - 02:00] The other reason is because tpple is
+[01:58 - 02:04] immutable.
+[02:00 - 02:07] It is very good to be used to store data
+[02:04 - 02:09] so that the data would not be modified
+[02:07 - 02:12] accidentally.
+[02:09 - 02:14] Unlike a list which is mutable, the data
+[02:12 - 02:18] can be modified accidentally if the user
+[02:14 - 02:18] is not careful.
+[02:19 - 02:28] Next couple is very much like a string.
+[02:24 - 02:31] We can use indexing and slicing.
+[02:28 - 02:39] So over here for the tapper at index
+[02:31 - 02:39] position two it will print the letter C.
+[02:39 - 02:44] We will look at the tapper from index 2
+[02:42 - 02:46] to 5.
+[02:44 - 02:49] It will only take elements from the
+[02:46 - 02:53] index two to four. The element takens
+[02:49 - 02:55] are index two three and four excluding
+[02:53 - 03:00] the index five.
+[02:55 - 03:03] So the the charact the letters are C D
+[03:00 - 03:03] and E
+[03:05 - 03:10] tpples are immutable.
+[03:08 - 03:14] This is something to remember. If you
+[03:10 - 03:19] try to replace the element at index two
+[03:14 - 03:22] which is the element C to a letter H
+[03:19 - 03:24] using an assignment, Python will throw
+[03:22 - 03:27] you an error message.
+[03:24 - 03:29] This is because tapo is immutable and
+[03:27 - 03:33] you cannot just change any element
+[03:29 - 03:33] within a tapo.
+[03:34 - 03:41] We cannot add any element into a taper.
+[03:37 - 03:45] If we try to use the method append to
+[03:41 - 03:48] add the letter h, python will throw an
+[03:45 - 03:48] error message.
+[03:54 - 03:59] We cannot also remove any element from a
+[03:57 - 04:01] tpple. Let's say we want to remove the
+[03:59 - 04:04] letter G
+[04:01 - 04:08] and try to remove the element at index
+[04:04 - 04:11] six or use the remove method to remove
+[04:08 - 04:15] the element. It does not work. Python
+[04:11 - 04:15] will throw you an error message.
+[04:18 - 04:23] We can delete the whole tpple using the
+[04:20 - 04:26] deel. the whole double will be removed
+[04:23 - 04:26] from the memory.
+[04:30 - 04:36] What are the operations we can perform
+[04:33 - 04:39] for tpples? We can concatenate two
+[04:36 - 04:42] tpples using the plus operator. For
+[04:39 - 04:45] example, if a tuple contains two element
+[04:42 - 04:49] A and B,
+[04:45 - 04:49] the ID method
+[04:53 - 04:58] will show us the memory address of the
+[04:56 - 05:01] tpple.
+[04:58 - 05:05] We can try to adding another tpple which
+[05:01 - 05:10] contain one and two to t one
+[05:05 - 05:12] and then assigning it back to tpple one.
+[05:10 - 05:18] Double one will now contain four
+[05:12 - 05:18] elements a b one and two.
+[05:18 - 05:26] Again we use the uh ID uh to check the
+[05:22 - 05:29] memory address of tpple one.
+[05:26 - 05:32] We'll find that it shows a different
+[05:29 - 05:32] address.
+[05:33 - 05:40] So what does that tells us? We can't
+[05:36 - 05:42] actually add elements into a tpple. We
+[05:40 - 05:46] can only create a new one. When we
+[05:42 - 05:46] perform concatenation,
+[05:52 - 05:58] we can use the multiplication sign
+[05:54 - 06:02] asteric to repetitively add elements
+[05:58 - 06:02] into a tapole.
+[06:04 - 06:10] The new tpple will contain three sets of
+[06:07 - 06:14] the element ABC
+[06:10 - 06:14] and ABC and ABC.
+[06:17 - 06:24] We can also use the in operations to
+[06:21 - 06:27] check for membership.
+[06:24 - 06:31] where we evaluate B in top we are
+[06:27 - 06:32] checking if the letter B exists in the
+[06:31 - 06:36] tpple.
+[06:32 - 06:40] Hence it returns true since B exists.
+[06:36 - 06:46] Likewise it will return false because Z
+[06:40 - 06:46] does not exist in the tpple.
+[06:49 - 06:54] We iterate through the elements in the
+[06:51 - 06:59] tpple. We can either use the iterative
+[06:54 - 07:02] for loops for element in tpple or for i
+[06:59 - 07:05] in range of length tpple.
+[07:02 - 07:09] Both will print all the elements in the
+[07:05 - 07:12] tpple. But the second method is used if
+[07:09 - 07:15] we are interested to know the index
+[07:12 - 07:19] position of the element.
+[07:15 - 07:22] Python's builtin function for tpples.
+[07:19 - 07:26] First we have the tpple function that
+[07:22 - 07:28] can convert a string into a tpple. The
+[07:26 - 07:33] letters in the string are now the
+[07:28 - 07:33] element in the tpple.
+[07:33 - 07:39] Next we have the length functions that
+[07:36 - 07:42] returns the number of elements in the
+[07:39 - 07:42] tpple.
+[07:43 - 07:50] When we look at the alphabets,
+[07:47 - 07:54] we compare the ASKI values of the small
+[07:50 - 07:57] letters and the capital letters.
+[07:54 - 08:01] The capital letters have smaller ASKI
+[07:57 - 08:04] value than the small letters.
+[08:01 - 08:08] For example, the ASKI value for capital
+[08:04 - 08:12] letter A is 65 whereas the ASKI value
+[08:08 - 08:16] for the small letter A is 97.
+[08:12 - 08:20] So when we use the maximum functions,
+[08:16 - 08:23] it will return the
+[08:20 - 08:27] character that has the largest ASKI
+[08:23 - 08:32] value. And in this case the ASKI value
+[08:27 - 08:34] for small letter Z is 122 is the
+[08:32 - 08:37] largest.
+[08:34 - 08:41] The minimum functions will return the
+[08:37 - 08:47] smallest ASKI value. In this case it is
+[08:41 - 08:47] the capital letter A which is 65.
+[08:53 - 09:01] Let's now consider a tapo with three
+[08:56 - 09:03] elements a two sorry a five a two and a
+[09:01 - 09:06] three.
+[09:03 - 09:09] They are not ordered in any way. The
+[09:06 - 09:12] memory address of this tpple can also be
+[09:09 - 09:12] found.
+[09:13 - 09:18] We can use Python's built-in sorted
+[09:16 - 09:22] function to sort the element in the
+[09:18 - 09:25] tppo. This sorted function will convert
+[09:22 - 09:28] the tapole into a list and arrange the
+[09:25 - 09:31] element in ascending order. Do take note
+[09:28 - 09:34] that the list uses the square bracket
+[09:31 - 09:38] and it is mutable.
+[09:34 - 09:41] Now the object tpple is actually a list
+[09:38 - 09:45] and it is using the same original memory
+[09:41 - 09:45] address of the tpple.
+[09:47 - 09:54] Let's consider a function. In this
+[09:50 - 09:57] function one is assigned to a and two is
+[09:54 - 10:00] assigned to b.
+[09:57 - 10:02] We can return both value as a tpple
+[10:00 - 10:05] regardless of whether we write the
+[10:02 - 10:08] bracket or not. The output will be a
+[10:05 - 10:08] tpple.
+[10:10 - 10:15] This is another example where the
+[10:12 - 10:18] function finds the maximum and minimum
+[10:15 - 10:22] value of the elements in the tpple
+[10:18 - 10:25] then return the high and low values as a
+[10:22 - 10:25] tpple.
+[10:28 - 10:35] This is a case of a function using the
+[10:31 - 10:38] radius to calculate the circumference
+[10:35 - 10:41] and area of a circle then return them as
+[10:38 - 10:41] a tuple.
+[10:44 - 10:49] The next few slides will show how to
+[10:47 - 10:53] correctly visualize the element in a
+[10:49 - 10:56] tapo. It is wrong to think that the
+[10:53 - 11:00] elements are stored directly
+[10:56 - 11:00] in the tapo.
+[11:00 - 11:06] The value one and two are not stored
+[11:03 - 11:10] inside the tapo. They are stored outside
+[11:06 - 11:10] at some memory address.
+[11:16 - 11:22] Here in these slides we can see that the
+[11:18 - 11:24] variable x points to a tpple
+[11:22 - 11:29] and the correct way to visualize is that
+[11:24 - 11:31] the left pointer x index zero points to
+[11:29 - 11:37] a memory space that stores the number
+[11:31 - 11:40] one and the right pointer x index one is
+[11:37 - 11:44] pointing at another memory space that
+[11:40 - 11:44] stores the number two.
+[11:45 - 11:54] In this example, Z is a tpple of tpples.
+[11:50 - 11:57] The variable Z points to a TPLE. The
+[11:54 - 12:01] left pointer Z index zero points to a
+[11:57 - 12:05] tpple X whereas the right pointer Z
+[12:01 - 12:08] index one points to another tpple Y.
+[12:05 - 12:11] The left and right pointers of these
+[12:08 - 12:14] tpples points to their respective
+[12:11 - 12:14] values.
+[12:16 - 12:22] This is another example of a tpple of
+[12:19 - 12:22] tpples.
+[12:23 - 12:29] We can see that the B tpple contains two
+[12:27 - 12:32] element.
+[12:29 - 12:34] The first element is a a which is a
+[12:32 - 12:37] tpple and the second element is a five
+[12:34 - 12:37] integer.
+[12:38 - 12:49] So when we look at the left pointer
+[12:42 - 12:52] uh B 0 B index Z it points to the tapo A
+[12:49 - 12:57] whereas the
+[12:52 - 13:00] right pointer B index one points to the
+[12:57 - 13:04] number five.
+[13:00 - 13:10] And looking at the tapper A, the left
+[13:04 - 13:14] pointer A 0 points to the number three.
+[13:10 - 13:19] And then the right pointer of A index
+[13:14 - 13:19] one points to the number seven.
+[13:23 - 13:28] In this segment we want to consider
+[13:25 - 13:32] about equality.
+[13:28 - 13:32] What does equality means?
+[13:32 - 13:37] Well, there could be two meaning. One,
+[13:35 - 13:39] it means that the two objects are
+[13:37 - 13:42] exactly the same.
+[13:39 - 13:45] They are identical.
+[13:42 - 13:47] In Python, we use is to check for
+[13:45 - 13:51] identity.
+[13:47 - 13:55] Take for example, if we assign five to A
+[13:51 - 14:00] and then assign A to B, then A and B are
+[13:55 - 14:04] identical. So a is b will return the
+[14:00 - 14:04] boolean true.
+[14:05 - 14:10] The other meaning is that the two
+[14:07 - 14:14] objects have the same values even though
+[14:10 - 14:16] they are not the same object but they
+[14:14 - 14:20] can have the same value.
+[14:16 - 14:24] In Python we use the double equal
+[14:20 - 14:27] to check for equivalence.
+[14:24 - 14:30] Like for example, if we assign five to
+[14:27 - 14:36] both a and b since they have the same
+[14:30 - 14:38] value, a equal equal b will be the true
+[14:36 - 14:45] but since a and b are of different
+[14:38 - 14:45] objects hence a is b will be false.
+[14:46 - 14:54] In this example you can see that both x
+[14:49 - 14:59] and y have the same couple values. So x=
+[14:54 - 15:03] equal to y is true.
+[14:59 - 15:07] If we assign x to z
+[15:03 - 15:12] then x and z are identical.
+[15:07 - 15:15] Hence z is x is true.
+[15:12 - 15:19] Since zed is identical to x and they
+[15:15 - 15:25] both have the same value as y.
+[15:19 - 15:25] So z= equal to y is true
+[15:31 - 15:39] in python is cannot be used to compare
+[15:37 - 15:42] numbers reliably
+[15:39 - 15:46] using is it will return false when we
+[15:42 - 15:49] check if the number 3.0000 00 0 is
+[15:46 - 15:54] identical to the number three.
+[15:49 - 15:57] Hence, we should use the double equal to
+[15:54 - 15:57] check for equivalence.
+[16:01 - 16:09] In summary, we use the double equal when
+[16:06 - 16:13] we are comparing two values.
+[16:09 - 16:13] That's all for today's lesson.

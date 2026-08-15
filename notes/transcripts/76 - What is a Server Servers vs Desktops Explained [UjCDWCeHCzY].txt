@@ -1,0 +1,74 @@
+Title: What is a Server?  Servers vs Desktops Explained
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=UjCDWCeHCzY
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] Wat is 'n bediener? Dit is dus 'n onderwerp van hierdie video. Nou is 'n bediener basies 'n toegewyde
+[00:07 - 00:13] rekenaar wat dienste namens kliënte lewer, soos gewone tafelrekenaars
+[00:13 - 00:20] of werkstasies. Dit is dus 'n gesentraliseerde masjien waar verskeie kliënte via
+[00:20 - 00:26] die internet of in 'n plaaslike netwerk verbinding maak, en hulle verbind met 'n bediener vir 'n spesifieke diens. Die
+[00:26 - 00:33] diens kan byvoorbeeld wees om 'n webwerf op te soek, toegang tot data of e-pos, ensovoorts. Nou kan '
+[00:33 - 00:39] n bediener toegewyd wees om slegs een van hierdie dienste te hanteer, waar u een bediener
+[00:39 - 00:45] vir 'n webwerf, een bediener vir data-stoor en 'n bediener vir e-pos sal hê. En hierdie model is
+[00:45 - 00:52] wat groter organisasies gebruik. Of u kan ook 'n bediener instel om elkeen van hierdie dienste op
+[00:52 - 00:58] dieselfde masjien te hanteer, wat gewoonlik in kleiner organisasies gebeur. Dit hang dus
+[00:58 - 01:05] af van die organisasie se behoeftes, afhangende van die opstelling wat gebruik word. As mense oor 'n bediener
+[01:05 - 01:11] oor die algemeen praat, verwys hulle na 'n kragtige, gesentraliseerde rekenaar waarmee kliënte via '
+[01:11 - 01:18] n netwerk koppel, en dit is korrek. 'N Bediener is egter nie net 'n fisiese rekenaar nie.
+[01:18 - 01:25] 'N Bediener is eintlik 'n rol wat 'n rekenaar inneem. Omdat enige gewone tafelrekenaar as 'n bediener
+[01:25 - 01:32] ingestel kan word en dit nie noodwendig 'n kragtige rekenaar hoef te wees nie. So kan u
+[01:32 - 01:38] byvoorbeeld 'n netwerk in u huis opstel waar u 'n gewone tafelrekenaar as lêerbediener kan laat dien.
+[01:38 - 01:44] Die rekenaar het die lêers in 'n gedeelde vouer en dan kan ander rekenaars nie daaraan koppel
+[01:44 - 01:51] om toegang tot die lêers te kry nie. Of u kan ook 'n rekenaar gebruik om as 'n webbediener te dien,
+[01:51 - 01:57] waar u die webwerf-data op die rekenaar sou installeer, en dan sou die ander rekenaars daaraan kan koppel
+[01:57 - 02:04] en die webblad kan ophaal. Desktop-rekenaars het egter hul beperkings omdat hulle
+[02:04 - 02:10] nie ontwerp is om 'n groot werklading te hanteer nie en dat hulle nie veel inkomende verbindings
+[02:10 - 02:16] van gebruikers kan hanteer nie. En dit is nie net vanweë hul minderwaardige hardeware nie, maar ook as gevolg van sagteware.
+[02:16 - 02:22] Omdat desktop-bestuurstelsels slegs 'n beperkte hoeveelheid gelyktydige verbindings kan hanteer.
+[02:22 - 02:31] Bedieners moet nou 24/7 aan die gang wees, want dit is noodsaaklik vir 'n organisasie. En as 'n bediener
+[02:31 - 02:38] ondergaan, kan dit 'n onderneming of organisasie in gevaar stel. Daarom moet bedieners
+[02:38 - 02:45] betroubaarder wees. Hulle moet gebou word met robuuste hardeware wat onophoudelik kan werk met min
+[02:45 - 02:53] of geen stilstand. Byvoorbeeld, 'n lessenaar gebruik 'n verwerker wat natuurlik ontwerp is vir
+[02:53 - 03:00] desktops, soos die Intel-kernreeksverwerkers. En 'n bediener gebruik 'n verwerker wat ontwerp is vir
+[03:00 - 03:07] bedieners soos die Intel Xeon-verwerker. 'N Bedienerverwerker moet vinnig wees en die vermoë hê
+[03:07 - 03:14] om baie take gelyktydig uit te voer. Nou is albei hierdie verwerkers kragtig, maar daar is '
+[03:14 - 03:21] n paar verskille. So byvoorbeeld ondersteun Xeon-verwerkers 'n multiverwerkingsomgewing. Hulle
+[03:21 - 03:28] is dus ontwerp om saam met ander verwerkers te werk. Dit beteken dat u twee of meer Xeon-verwerkers op '
+[03:28 - 03:34] n moederbord kan sit wat ontwerp is vir bedieners, wat baie bedieners nodig het om 'n groot werklas te hanteer.
+[03:34 - 03:41] Maar lessenaarverwerkers ondersteun dit nie, hulle is slegs ontwerp om alleen te werk en nie
+[03:41 - 03:49] met ander verwerkers nie. En 'n ander verskil is dat Xeon-verwerkers ECC RAM ondersteun, wat die geheue van die
+[03:49 - 03:55] foutkode regstel. En hierdie tipe geheue is wat hoofsaaklik in bedieners gebruik word. Nou
+[03:55 - 04:01] bedieners moet aan die gang te alle tye en geheue foute wees kon af te bring 'n bediener en
+[04:01 - 04:08] wat ECC doen, is dat dit ontdek as die data korrek is verwerk deur die RAM module en dit maak
+[04:08 - 04:15] 'n regstelling indien dit nodig om te geheue foute te voorkom . Die gebruik van ECC-geheue op bedieners is dus net '
+[04:15 - 04:22] n ekstra voorsorgmaatreël om te voorkom dat enige foute bedien word en dat Intel Core-
+[04:22 - 04:31] verwerkers nie ECC Ram ondersteun nie, maar AMD-verwerkers ondersteun dit wel. Xeon-verwerkers kan ook
+[04:31 - 04:37] 'n groter hoeveelheid RAM ondersteun. Hulle sal 'n groter geheue hê. En hulle het ook '
+[04:37 - 04:44] n hoër kerntelling as lessenaarverwerkers. En 'n bediener moet ook hardewisselbare hardeskywe hê
+[04:44 - 04:51] in 'n RAID-konfigurasie, want as 'n hardeskyf sou misluk, sou daar geen verlies van data wees nie, wat gebeur het, en
+[04:51 - 04:57] die bediener sou steeds aan die gang wees weens RAID. RAID kopieer die data op verskeie
+[04:57 - 05:03] skywe en as 'n hardeskyf sou misluk, kan dit verwyder word en vervang word sonder om die bediener af
+[05:03 - 05:08] te skakel . En dan sou RAID die data op die nuwe hardeskyf outomaties herbou.
+[05:10 - 05:14] En 'n bediener moet ook oorbodige kragbronne hê
+[05:14 - 05:18] om die bediener aan die gang te hou in geval van 'n kragbron.
+[05:21 - 05:30] En 'n bediener moet ook 'n bedienerstelsel gebruik, soos Linux, Windows Server, Mac OS-bediener
+[05:30 - 05:38] en so meer. Bediener-bedryfstelsels is robuust en stabiel en is ontwerp om ononderbroke te werk en
+[05:38 - 05:44] kan duisende gelyktydige verbindings hanteer. Nou is daar baie verskillende
+[05:44 - 05:49] soorte bedieners, en as ek soorte bedoel, praat ek oor die tipe diens wat die
+[05:49 - 05:56] bediener lewer. So byvoorbeeld 'n webbediener. 'N Webbediener is die gasheer van 'n webwerf. Dus, op enige
+[05:56 - 06:02] webwerf wat u met u webblaaier besoek, u verbind via die internet met die
+[06:02 - 06:07] webbediener om die gewenste webwerf op te trek. Die webbediener bevat al die data
+[06:07 - 06:13] van die webwerf , insluitend die HTML-kode en grafika, en die webbedienersagteware word ook gebruik.
+[06:13 - 06:20] 'n ander tipe bediener is 'n e-posbediener, 'n e-posbediener is die versending
+[06:20 - 06:26] en ontvangs van e-pos, en u sal toegang tot die e-pos kry met u webblaaier, of u kan 'n
+[06:26 - 06:33] e-posklient soos Outlook of Thunderbird gebruik deur e-posprotokolle soos IMAP te gebruik. POP en
+[06:33 - 06:40] SMTP. En 'n databasisbediener is 'n ander tipe bediener. Hierdie tipe bediener stoor data
+[06:40 - 06:45] aan die agterkant en word dan van rekenaars op die voorkant opgespoor, byvoorbeeld met behulp van
+[06:45 - 06:53] navrae soos SQL. Dit is dus net 'n paar voorbeelde van wat bedieners doen, maar daar is baie
+[06:53 - 06:58] meer. Dus dankie almal vir die kyk na hierdie video op bedieners en die verskil tussen
+[06:58 - 07:05] bedieners en rekenaars. Teken in, volg my op Twitter en dankie dat u gekyk het.

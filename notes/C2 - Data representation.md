@@ -69,6 +69,18 @@ value       128    64    32    16     8     4     2     1
 | `14` | `1110` | `E` |
 | `15` | `1111` | `F` |
 
+## MSB and LSB
+
+```text
+     1 1 1 1 0 1 1 0
+     ▲             ▲
+    MSB           LSB
+   (2^7)         (2^0)
+```
+
+**MSB** = most significant bit, the leftmost, largest place value.
+**LSB** = least significant bit, the rightmost, worth `1`.
+
 ## Any Base → Denary
 
 Multiply each digit by its place value and add.
@@ -107,7 +119,26 @@ Same method for hex, converting remainders `10`–`15` to `A`–`F`:
 ```
 
 > [!warning]
-> The single most common mistake is reading the remainders **downwards**. The last remainder is the **first** digit of the answer.
+> Two standard slips:
+> - Reading the remainders **downwards**. The last remainder is the **first** digit of the answer.
+> - **Stopping at 1.** Keep going until the quotient is `0` — `1 / 2 = 0 r 1` supplies the leading bit.
+
+### Alternative: Sum of Weights
+
+For denary → binary, subtract the largest place value that fits, repeatedly.
+
+```text
+47 : 32 fits  -> 1, left 15
+     16 no    -> 0
+      8 fits  -> 1, left 7
+      4 fits  -> 1, left 3
+      2 fits  -> 1, left 1
+      1 fits  -> 1, left 0
+
+47 = 00101111 base 2
+```
+
+Faster than division for small numbers, and it self-checks — the chosen weights must add back to the original.
 
 ## Binary ↔ Hex Shortcut
 

@@ -1,0 +1,287 @@
+Title: LT1a Intro to Python   Part 3
+LT: LT 1a - Introduction to Python
+Linked label: Introduction to Python - Part 3
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=c_aoGWNsYyA
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] okay now we are going to uh
+[00:04 - 00:10] use our this uh
+[00:06 - 00:15] jupiter to uh create our first uh
+[00:10 - 00:15] programmer first program okay
+[00:18 - 00:23] now let's go to your cosmology
+[00:32 - 00:36] now in a cosmology now you are watching
+[00:34 - 00:39] the video
+[00:36 - 00:41] now uh besides the video itself uh you
+[00:39 - 00:43] have the uh
+[00:41 - 00:45] uh powerpoint slides in the pdf form
+[00:43 - 00:46] okay download and keep a copy for
+[00:45 - 00:49] yourself
+[00:46 - 00:52] and then there is also a
+[00:49 - 00:54] jupyter notebook file uh the quotes
+[00:52 - 00:56] given to you and the other one is the
+[00:54 - 00:59] python idle file so for now we will
+[00:56 - 01:01] focus on using the jupiter file download
+[00:59 - 01:04] the copy of this and then uh
+[01:01 - 01:06] save it into a folder properly name it
+[01:04 - 01:09] for the uh lecture training 1a
+[01:06 - 01:12] introduction to python and keep this
+[01:09 - 01:13] program in the uh this quota into that
+[01:12 - 01:16] folder
+[01:13 - 01:18] okay i will use my downloaded copy uh
+[01:16 - 01:21] your first program the
+[01:18 - 01:23] jupiter notebook now if your laptop has
+[01:21 - 01:26] been properly uh configured for use on
+[01:23 - 01:31] jupyter notebook by double clicking on
+[01:26 - 01:31] this it will run your jupyter notebook
+[01:34 - 01:37] [Music]
+[01:40 - 01:47] now this quarter you may choose to uh uh
+[01:43 - 01:48] key in yourself okay or you can make use
+[01:47 - 01:51] of the uh
+[01:48 - 01:54] code that we have provided to you
+[01:51 - 01:55] now uh let's uh scrutinize the code
+[01:54 - 01:58] itself
+[01:55 - 02:00] okay now when you have a hex sign it's a
+[01:58 - 02:01] command a command
+[02:00 - 02:03] okay and then you have some print
+[02:01 - 02:05] statement and then you have some uh
+[02:03 - 02:09] variables well i will go through the
+[02:05 - 02:09] details of it in my powerpoint
+[02:10 - 02:16] okay so this is basically the program
+[02:13 - 02:16] code
+[02:24 - 02:28] now before we go into the technical
+[02:26 - 02:30] details of vietnam let's try to run this
+[02:28 - 02:35] code
+[02:30 - 02:37] okay let me run the first one control
+[02:35 - 02:40] nothing happens okay
+[02:37 - 02:43] the second line of code control enter
+[02:40 - 02:45] okay it prints a hello world
+[02:43 - 02:47] okay
+[02:45 - 02:49] and when i take the third line
+[02:47 - 02:51] run it
+[02:49 - 02:52] you print out a statement saying what is
+[02:51 - 02:55] your name
+[02:52 - 02:58] so my name is david
+[02:55 - 03:00] okay and i hit enter
+[02:58 - 03:01] okay that's all he knows that uh i'm
+[03:00 - 03:04] david han
+[03:01 - 03:06] and now let's run an office and quote
+[03:04 - 03:08] okay previous statement says it is good
+[03:06 - 03:10] to meet you
+[03:08 - 03:13] david time how do you know that my name
+[03:10 - 03:15] is david tan oh because i've came by
+[03:13 - 03:16] name as david
+[03:15 - 03:20] fine
+[03:16 - 03:22] freed the length of my name is
+[03:20 - 03:26] 90 so basically it's counting the number
+[03:22 - 03:26] of character in my link
+[03:30 - 03:35] what is your age oh that is a secret
+[03:39 - 03:44] i'm not going to say what's my age
+[03:41 - 03:47] okay what happened so it says that it is
+[03:44 - 03:48] a secret point and then when i try to do
+[03:47 - 03:49] that
+[03:48 - 03:53] you will be uh
+[03:49 - 03:56] lost in this in a year's time oops
+[03:53 - 03:58] it runs into error
+[03:56 - 04:00] okay what's the problem
+[03:58 - 04:02] okay i've not been truthful okay he's
+[04:00 - 04:03] actually asking for what's my age i
+[04:02 - 04:04] should have been honest enough to tell
+[04:03 - 04:07] him that
+[04:04 - 04:08] um 18 years old
+[04:07 - 04:10] okay
+[04:08 - 04:14] and then when he tried to run the nixon
+[04:10 - 04:16] court okay you will be 19 years uh 90
+[04:14 - 04:18] years old 19 years old in the year which
+[04:16 - 04:19] is okay which is correct i'll be latinx
+[04:18 - 04:22] here
+[04:19 - 04:25] okay so this is how the uh these few
+[04:22 - 04:29] lines are called uh our first program uh
+[04:25 - 04:29] is designed to work
+[04:33 - 04:36] okay so uh
+[04:35 - 04:39] it has a command
+[04:36 - 04:42] there's a print function it's this thing
+[04:39 - 04:44] called input the length and then yeah
+[04:42 - 04:46] you start seeing things like string
+[04:44 - 04:47] integer float function
+[04:46 - 04:49] okay
+[04:47 - 04:51] now let's take a look at about the
+[04:49 - 04:53] comment okay we have a few comments uh
+[04:51 - 04:55] this program says hello ask for your
+[04:53 - 04:56] name and then i have another comment
+[04:55 - 04:59] says ask follow
+[04:56 - 05:02] their name and ask for their age
+[04:59 - 05:04] okay now all these you are putting a hex
+[05:02 - 05:06] sign they would not be executed that's
+[05:04 - 05:08] why when you try to run the first line
+[05:06 - 05:11] of code nothing happened okay it's not
+[05:08 - 05:15] executed okay it's just uh to make your
+[05:11 - 05:17] code more readable so that uh after a
+[05:15 - 05:18] long time uh you come back to the same
+[05:17 - 05:21] code you understand what you're trying
+[05:18 - 05:22] to do okay so you can leave some remarks
+[05:21 - 05:24] as i don't know exactly what this
+[05:22 - 05:26] portion displays for
+[05:24 - 05:28] okay then you have the print statement
+[05:26 - 05:31] print hello print what is your name
+[05:28 - 05:34] print the length is print this printer
+[05:31 - 05:36] except for the last line here you have
+[05:34 - 05:39] print it is good to meet you
+[05:36 - 05:41] plus a variable okay so this one depends
+[05:39 - 05:43] on what is my name
+[05:41 - 05:45] my name is a variable and then you will
+[05:43 - 05:48] print this string
+[05:45 - 05:50] together with my my my name
+[05:48 - 05:52] how about this print with nothing what
+[05:50 - 05:54] will happen now i'll leave it to you to
+[05:52 - 05:57] when try it out on the jupiter when you
+[05:54 - 05:59] type a print with no argument inside of
+[05:57 - 06:02] just a blank black bracket so i'll see
+[05:59 - 06:02] what will happen okay
+[06:02 - 06:07] oh then we have the input statement now
+[06:04 - 06:09] input statement basically waits for the
+[06:07 - 06:12] user to key in the input so like for
+[06:09 - 06:16] example you uh whatever the in the user
+[06:12 - 06:18] key in uh it will be taken as my name
+[06:16 - 06:22] uh whatever the user key in
+[06:18 - 06:25] it will be taken as my h so by h and by
+[06:22 - 06:29] name these are the variables okay the
+[06:25 - 06:29] user input these are the values
+[06:31 - 06:33] then we have this thing called the
+[06:32 - 06:36] length
+[06:33 - 06:38] okay basically when you say length of my
+[06:36 - 06:41] name my name is a string right i keep it
+[06:38 - 06:44] a string and then you will just count
+[06:41 - 06:46] the number of character in this string
+[06:44 - 06:50] okay so uh we we
+[06:46 - 06:52] typed it is good to meet you by dave and
+[06:50 - 06:54] then it works but the time what happens
+[06:52 - 06:58] if we try to say the
+[06:54 - 06:59] the uh the length of your name is and
+[06:58 - 07:01] then we put in
+[06:59 - 07:04] the length
+[07:01 - 07:04] okay what will happen
+[07:05 - 07:08] let's go back to our program
+[07:09 - 07:14] okay over here
+[07:11 - 07:18] uh instead of saying that the length of
+[07:14 - 07:22] your name is let's try to combine this
+[07:18 - 07:22] together and put a plus
+[07:23 - 07:28] okay
+[07:25 - 07:31] right this is exactly the same as the
+[07:28 - 07:34] way we pray it is due to meet you by the
+[07:31 - 07:38] name and another less of your name is
+[07:34 - 07:38] this okay let's try to run this
+[07:39 - 07:43] but you realize that the first line it
+[07:41 - 07:46] is good to meet you david it works but
+[07:43 - 07:48] the second line it doesn't work
+[07:46 - 07:51] right take a look at the type error it
+[07:48 - 07:54] must be a string not an integer
+[07:51 - 07:57] all we know because length of my name is
+[07:54 - 07:59] an integer you cannot combine a string
+[07:57 - 08:00] and an integer and then expect it to
+[07:59 - 08:02] print
+[08:00 - 08:04] okay so because of that
+[08:02 - 08:08] we have to separate this
+[08:04 - 08:08] and just print
+[08:08 - 08:12] the integer
+[08:09 - 08:15] we can print the integer as it is
+[08:12 - 08:17] without having to convert it to a string
+[08:15 - 08:19] okay but when you try to put an integer
+[08:17 - 08:21] and a string together
+[08:19 - 08:23] the integer must be converted to a
+[08:21 - 08:25] string first before they can be
+[08:23 - 08:26] triggered together
+[08:25 - 08:28] okay
+[08:26 - 08:30] so you can understand from this line of
+[08:28 - 08:32] code
+[08:30 - 08:35] we have the
+[08:32 - 08:39] myh which is the user input
+[08:35 - 08:42] it is being converted into an integer
+[08:39 - 08:44] and then plus one
+[08:42 - 08:47] and then convert to a string
+[08:44 - 08:48] and print it out together
+[08:47 - 08:52] so you have a string that is
+[08:48 - 08:52] concatenated together
+[09:00 - 09:06] okay so this is the last line that we uh
+[09:03 - 09:08] uh of our code that we want to try to uh
+[09:06 - 09:09] understand a little bit more
+[09:08 - 09:12] okay
+[09:09 - 09:14] now um
+[09:12 - 09:16] please try on your own to convert
+[09:14 - 09:20] numbers to string and then convert
+[09:16 - 09:22] string to individual convert
+[09:20 - 09:23] string to integers uh float to
+[09:22 - 09:27] individuals
+[09:23 - 09:29] uh you know some string some floats okay
+[09:27 - 09:30] try to play around with some of these
+[09:29 - 09:32] functions
+[09:30 - 09:32] okay
+[09:33 - 09:36] now let's try to understand this last
+[09:34 - 09:39] line of the quote
+[09:36 - 09:42] okay uh imagine i key in by h the user
+[09:39 - 09:44] key in the hs4
+[09:42 - 09:47] um
+[09:44 - 09:49] when the user key in the h
+[09:47 - 09:50] okay the input statement will take it as
+[09:49 - 09:53] a string
+[09:50 - 09:55] so my h is actually a string
+[09:53 - 09:56] okay now
+[09:55 - 09:59] you cannot
+[09:56 - 10:03] take a string and plus one so before you
+[09:59 - 10:06] do that you must convert the string
+[10:03 - 10:10] which is 4 into an integer
+[10:06 - 10:12] then it will be an integer plus another
+[10:10 - 10:14] integer which is plus 1.
+[10:12 - 10:16] so as a whole
+[10:14 - 10:19] this will become 5
+[10:16 - 10:22] but you cannot print a string with a
+[10:19 - 10:22] numeric five in digit five and another
+[10:22 - 10:25] string
+[10:22 - 10:26] so you need to convert these five into a
+[10:25 - 10:29] string
+[10:26 - 10:34] before it will be printed out
+[10:29 - 10:38] as a string together okay so the key
+[10:34 - 10:42] thing to remember here the user input
+[10:38 - 10:44] the user input for by h is always a
+[10:42 - 10:48] string regardless of whether he keep the
+[10:44 - 10:51] newbery key in some name c key in
+[10:48 - 10:55] a float a decimal point now it will
+[10:51 - 10:57] always be accepted as a string so you
+[10:55 - 11:00] need to remember to convert it to the
+[10:57 - 11:04] integer or float before you can do any
+[11:00 - 11:04] mathematical operation on it
+[11:06 - 11:10] okay this last bit um
+[11:10 - 11:16] although string and the
+[11:13 - 11:21] numbers are completely different so you
+[11:16 - 11:24] cannot compare a string and a number but
+[11:21 - 11:27] in the case of individual and float
+[11:24 - 11:29] python will take them as the same
+[11:27 - 11:30] now for example if we are trying to
+[11:29 - 11:32] compare uh
+[11:30 - 11:35] what i mean here we are trying to
+[11:32 - 11:37] compare uh integer 42 we want to check
+[11:35 - 11:41] whether is it equal to a string 42 the
+[11:37 - 11:42] answer is 4 is not true now this equal
+[11:41 - 11:44] equal
+[11:42 - 11:47] is actually doing an equivalence to see
+[11:44 - 11:48] whether are they equal and the output of
+[11:47 - 11:50] it will be a boolean whether is it true
+[11:48 - 11:52] or false
+[11:50 - 11:57] is it they are equal now next we try to
+[11:52 - 12:00] compare an integer 42 with the float 42
+[11:57 - 12:02] point sorry compare the individual 42
+[12:00 - 12:06] with the float 42.0
+[12:02 - 12:08] now python will return it as a true
+[12:06 - 12:10] so what we're saying is that uh integer
+[12:08 - 12:12] and float
+[12:10 - 12:14] can be compared and they are equivalent
+[12:12 - 12:16] if the values are the same
+[12:14 - 12:20] uh so in this case of 42.0 is the same
+[12:16 - 12:25] as zero zero four two point zero zero so
+[12:20 - 12:28] uh basically in titan uh the
+[12:25 - 12:30] integers are and floats are both taken
+[12:28 - 12:34] as just numerical value and they are
+[12:30 - 12:34] compared okay

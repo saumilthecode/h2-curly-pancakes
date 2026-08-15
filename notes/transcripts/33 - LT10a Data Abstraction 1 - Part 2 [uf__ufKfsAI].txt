@@ -1,0 +1,136 @@
+Title: LT10a Data Abstraction 1 - Part 2
+LT: LT 10a Data Abstraction (1) - Abstract Data Type ADT
+Linked label: Part 2: Demo 1 & 2 with Student Record ADT
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=uf__ufKfsAI
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:09] First let me show you demo one.
+[00:05 - 00:12] Demo one is using the student record ADT
+[00:09 - 00:15] and I'll be using the methods provided
+[00:12 - 00:18] in the demo one module.
+[00:15 - 00:22] You don't really need to know what are
+[00:18 - 00:26] the methods provided in demo one module.
+[00:22 - 00:28] You just need to know what it will do.
+[00:26 - 00:30] First, I'm going to use the constructor
+[00:28 - 00:33] make record.
+[00:30 - 00:38] Let's say I have a student named John.
+[00:33 - 00:41] His NIC number is S12 3 4 5 6 7A. He's
+[00:38 - 00:44] from the class 20 S13. And I do not have
+[00:41 - 00:49] his address. So, it's an empty string. I
+[00:44 - 00:52] will now use the make record constructor
+[00:49 - 00:54] provided in demo one module to create
+[00:52 - 00:58] student A.
+[00:54 - 01:01] So once I do that I have already created
+[00:58 - 01:03] student A.
+[01:01 - 01:06] All I need to know that is student A has
+[01:03 - 01:10] a name. Student A has a IC number and
+[01:06 - 01:14] then it has a class and address.
+[01:10 - 01:15] In demo one module there are some
+[01:14 - 01:18] ghettos
+[01:15 - 01:21] which can help me to retrieve the name,
+[01:18 - 01:24] the class and the address. So let's try
+[01:21 - 01:28] to use these ghettos.
+[01:24 - 01:32] I can use get name for student A and it
+[01:28 - 01:34] will show me John John Tan. I can try to
+[01:32 - 01:37] get the class for student A. It shows
+[01:34 - 01:41] that it's 20 S13. Likewise for the
+[01:37 - 01:43] address is a no address info.
+[01:41 - 01:46] When I want to try to get the NIC, I
+[01:43 - 01:52] will run into error because there is no
+[01:46 - 01:52] such method for me to retrieve the NIC.
+[01:52 - 01:57] There are also modifiers provided for me
+[01:54 - 01:59] to change the class and the address.
+[01:57 - 02:02] Notes that the setter will will need to
+[01:59 - 02:05] verify the NIC before updating the new
+[02:02 - 02:09] class and the address. Let's recall for
+[02:05 - 02:12] ourself the NIC number is S1 2 3 4 5 6
+[02:09 - 02:14] 7A.
+[02:12 - 02:22] Now let's say I want to change the class
+[02:14 - 02:22] from 20 S13 to 21 S13.
+[02:22 - 02:29] Let's try to set the class.
+[02:25 - 02:32] See it's asking for the NIC number. I
+[02:29 - 02:34] have to provide a correct NIC number.
+[02:32 - 02:37] Let's say if I provide a wrong NIC
+[02:34 - 02:37] number
+[02:38 - 02:44] and you say invalid NIC. So it doesn't
+[02:41 - 02:47] allows me to change the class. Let's try
+[02:44 - 02:53] again. This time we key in the correct
+[02:47 - 02:59] NIC number. 1 2 3 4 5 6 7 A.
+[02:53 - 02:59] And the new class is 21 S13.
+[02:59 - 03:03] Let's see whether the class has been
+[03:01 - 03:08] changed for student A.
+[03:03 - 03:12] Yes, he is now in at 21 S13.
+[03:08 - 03:12] Likewise, I can also change the address.
+[03:13 - 03:19] I must enter the correct NIC number so
+[03:16 - 03:24] that I can change the address. Let's say
+[03:19 - 03:25] this student A has just shifted to is
+[03:24 - 03:28] that will be the new address. Let's try
+[03:25 - 03:31] to get the address for the student. It
+[03:28 - 03:33] shows issue. Now
+[03:31 - 03:36] there are two utility methods provided
+[03:33 - 03:39] in demo one module namely the print
+[03:36 - 03:40] info. Let's see what we get from print
+[03:39 - 03:44] info.
+[03:40 - 03:46] We get the name, the class and the
+[03:44 - 03:49] updated address.
+[03:46 - 03:52] Now you must be wondering how this data
+[03:49 - 03:54] are being stored. So I'm just going to
+[03:52 - 03:59] give you a hint. Let's use a print data
+[03:54 - 04:01] type to to see for ourself.
+[03:59 - 04:04] we are using a list to store all the
+[04:01 - 04:04] data.
+[04:08 - 04:13] So in demo one you can see for yourself
+[04:11 - 04:16] that you don't really need to know how
+[04:13 - 04:18] the data is being stored and what are
+[04:16 - 04:20] the implementation for all these methods
+[04:18 - 04:24] but you just need to know that this
+[04:20 - 04:24] method will get you the outputs.
+[04:25 - 04:32] Let's go on to demo two.
+[04:28 - 04:34] Demo two uses the demo 2 module. So same
+[04:32 - 04:38] thing there is a constructor that
+[04:34 - 04:39] creates the students record add.
+[04:38 - 04:44] Let's say now I'm trying to create a
+[04:39 - 04:48] student B by the name of Mario with NIC
+[04:44 - 04:52] number S 7654321A
+[04:48 - 04:55] from 20 S14 and she stays in Thompson.
+[04:52 - 04:57] Let's create student B.
+[04:55 - 05:01] Same thing. I can get her name, the
+[04:57 - 05:01] class, and the address.
+[05:07 - 05:13] I can also change the class and change
+[05:10 - 05:13] the address.
+[05:14 - 05:18] Let's try to print out the info for
+[05:15 - 05:20] student B.
+[05:18 - 05:22] You get the name, the class, and the
+[05:20 - 05:24] address.
+[05:22 - 05:27] But what is the data type that we are
+[05:24 - 05:29] using to store this uh info for the
+[05:27 - 05:33] student?
+[05:29 - 05:37] We see that it is actually a dictionary.
+[05:33 - 05:40] So what do you observe in this two demo?
+[05:37 - 05:42] Regardless of what is the data type that
+[05:40 - 05:44] you use to store the data, it simply
+[05:42 - 05:47] doesn't matter.
+[05:44 - 05:51] And obviously if you use a dictionary
+[05:47 - 05:53] the way to retrieve the address class
+[05:51 - 05:57] and name will be different from the way
+[05:53 - 05:59] if you use a list.
+[05:57 - 06:01] The way you do it with dictionary and
+[05:59 - 06:03] the way you do it list it will be
+[06:01 - 06:06] different. So definitely the program
+[06:03 - 06:09] codes that you use to write the getters
+[06:06 - 06:12] and the setters will be different but it
+[06:09 - 06:16] doesn't matter from demo one and demo
+[06:12 - 06:18] two. We are only concerned about the
+[06:16 - 06:20] data itself not how it's being stored.
+[06:18 - 06:23] What are the methods that we can use to
+[06:20 - 06:26] get the data out and not how it is being
+[06:23 - 06:29] implemented. So as a user we do not need
+[06:26 - 06:31] to know how the data is being stored. We
+[06:29 - 06:34] just need to know what are the methods
+[06:31 - 06:37] we can use to operate on the data.
+[06:34 - 06:40] I hope you understand this concept from
+[06:37 - 06:40] the two demonstration that I've shown

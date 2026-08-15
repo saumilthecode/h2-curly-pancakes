@@ -41,6 +41,9 @@ Searching is a **single calculation plus one lookup** — no scanning.
 
 Uses the ASCII value of each character, weighted by its position.
 
+> [!warning] Why the weight is needed
+> Just summing the ASCII values ignores **order** — `abc`, `bca` and `cab` all total `294`, so anagrams collide every time. Multiplying each character by `i + 1` makes position count.
+
 ```python
 def hash(string):
     total = 0
@@ -189,4 +192,5 @@ Searching must follow the **same probe path** — check the assigned slot, then 
 
 - [[Data Abstraction]]
 - [[Dictionary]]
+- [[Search]]
 - [[Data validation and verification]]

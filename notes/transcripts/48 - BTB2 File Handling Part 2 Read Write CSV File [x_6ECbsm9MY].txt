@@ -1,0 +1,370 @@
+Title: BTB2 File Handling Part 2   Read Write CSV File
+Assessment(s): BTB 2 - File Handling
+Linked label(s): Part 2 - File Handling : CSV File
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=x_6ECbsm9MY
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:08] okay uh in this are back to basic uh on
+[00:05 - 00:12] file handling we will be dealing with a
+[00:08 - 00:15] csv file what does a csv stand for csv
+[00:12 - 00:17] stands for comma separated values there
+[00:15 - 00:19] are some people who call it a common
+[00:17 - 00:22] delimited format or something like that
+[00:19 - 00:25] okay now this csv format is a most uh
+[00:22 - 00:28] commonly used to import export or
+[00:25 - 00:32] spreadsheet and database data
+[00:28 - 00:35] it's simply just a plain text file that
+[00:32 - 00:38] contains a list of data informations or
+[00:35 - 00:41] their fields separated by combos
+[00:38 - 00:44] okay so actually you can just use any
+[00:41 - 00:47] text editor for example the notepad to
+[00:44 - 00:51] open a csv file and then you can see the
+[00:47 - 00:52] contents of this csv file
+[00:51 - 00:57] okay
+[00:52 - 01:00] let's talk about opening a csv file
+[00:57 - 01:00] without exceptions
+[01:00 - 01:06] right so for example i want to
+[01:03 - 01:09] open a
+[01:06 - 01:10] data file.csv
+[01:09 - 01:13] okay
+[01:10 - 01:16] now uh
+[01:13 - 01:18] we we we assume that the data file dot
+[01:16 - 01:20] csv access
+[01:18 - 01:24] so it has been already provided to you
+[01:20 - 01:25] in the cosmology so this file exists
+[01:24 - 01:28] um
+[01:25 - 01:32] there are two methods to open a csv file
+[01:28 - 01:35] uh you can just assign uh the handler f
+[01:32 - 01:36] equal to open
+[01:35 - 01:39] and then the file name
+[01:36 - 01:40] the other method is using with
+[01:39 - 01:44] open
+[01:40 - 01:47] data the data file dot csv sf
+[01:44 - 01:50] now uh between the two the method number
+[01:47 - 01:51] one will require you to close the file
+[01:50 - 01:53] after
+[01:51 - 01:56] finishing the
+[01:53 - 01:59] whatever right or read operations
+[01:56 - 02:01] so that to free up the system resources
+[01:59 - 02:05] uh mainly the memory
+[02:01 - 02:07] whereas using with open uh at the end of
+[02:05 - 02:08] the whole process it will automatically
+[02:07 - 02:11] close
+[02:08 - 02:17] the file so there's no need to write
+[02:11 - 02:17] f dot close okay to close the file okay
+[02:31 - 02:38] now let's take a look at the data itself
+[02:35 - 02:40] using the method one
+[02:38 - 02:40] okay
+[02:43 - 02:48] after study f open uh we want to read
+[02:47 - 02:52] the contents
+[02:48 - 02:55] so we can use the method the csv method
+[02:52 - 02:56] uh and assign it to a contents
+[02:55 - 03:00] and uh
+[02:56 - 03:01] using the reader to read f
+[03:00 - 03:02] okay
+[03:01 - 03:04] and then uh
+[03:02 - 03:07] well there are probably many rows of
+[03:04 - 03:09] data so i say for row
+[03:07 - 03:11] in contents
+[03:09 - 03:14] then let's take a look and see what are
+[03:11 - 03:17] these contents okay let's try to run
+[03:14 - 03:17] this
+[03:18 - 03:24] you observe that it is uh the datas are
+[03:21 - 03:24] kept in a list
+[03:25 - 03:30] with the fuse
+[03:27 - 03:31] okay the first
+[03:30 - 03:34] row
+[03:31 - 03:37] uh contains the field name which is the
+[03:34 - 03:40] name general height weights
+[03:37 - 03:41] followed by the data
+[03:40 - 03:42] now uh
+[03:41 - 03:44] usually
+[03:42 - 03:48] usually we would want to keep the field
+[03:44 - 03:50] name because after a while uh we will
+[03:48 - 03:52] forget uh
+[03:50 - 03:54] the first uh i mean there's no problem
+[03:52 - 03:55] with the name and gender we can always
+[03:54 - 03:58] guess that
+[03:55 - 03:59] but what is this data one point six
+[03:58 - 04:03] seven eight six seven
+[03:59 - 04:07] zero eight uh what is this 51.29 we
+[04:03 - 04:09] start to forget what are these data are
+[04:07 - 04:13] referring to so it's always a good
+[04:09 - 04:14] practice to keep uh the first row
+[04:13 - 04:15] as the
+[04:14 - 04:18] header
+[04:15 - 04:19] right but when we read the data for
+[04:18 - 04:22] processing
+[04:19 - 04:25] we normally would want to ignore the
+[04:22 - 04:28] first row okay so what how how can we do
+[04:25 - 04:31] that we can use another method which is
+[04:28 - 04:33] available in the csv module
+[04:31 - 04:37] uh is to use next
+[04:33 - 04:40] so uh using next on contents this will
+[04:37 - 04:43] basically means that uh skip
+[04:40 - 04:45] the first row uh
+[04:43 - 04:48] header
+[04:45 - 04:50] okay so i'm going to run this
+[04:48 - 04:53] now you realize that you will go to the
+[04:50 - 04:57] second row and then you just
+[04:53 - 05:00] extract all the uh data portion
+[04:57 - 05:01] ignoring the first row header
+[05:00 - 05:04] okay
+[05:01 - 05:06] so this is how you use the first method
+[05:04 - 05:08] to read
+[05:06 - 05:08] the
+[05:08 - 05:14] csv file now using the second method
+[05:14 - 05:19] okay what you can do is that same thing
+[05:18 - 05:21] okay
+[05:19 - 05:22] man by there is an indentation
+[05:21 - 05:25] okay
+[05:22 - 05:25] here there's an indentation
+[05:26 - 05:32] content equal to the reader same that we
+[05:29 - 05:32] are using the reader
+[05:33 - 05:37] and then uh
+[05:35 - 05:38] as you already know we're going to skip
+[05:37 - 05:40] the
+[05:38 - 05:42] first
+[05:40 - 05:45] first row
+[05:42 - 05:45] of the contents
+[05:45 - 05:49] okay
+[05:45 - 05:50] and then uh for row
+[05:49 - 05:53] in
+[05:50 - 05:53] in contents
+[05:56 - 05:58] i'm going to print
+[06:00 - 06:02] the row
+[06:05 - 06:08] okay
+[06:07 - 06:11] and run
+[06:08 - 06:12] so uh both method works method one and
+[06:11 - 06:13] method two
+[06:12 - 06:15] uh
+[06:13 - 06:17] in method one
+[06:15 - 06:19] you have to remember to
+[06:17 - 06:22] close the file
+[06:19 - 06:25] okay at the end of your code whereas in
+[06:22 - 06:29] method two there is no need to close the
+[06:25 - 06:29] file it will automatically be closed
+[06:32 - 06:37] okay um
+[06:35 - 06:42] sometime for in this case uh we know
+[06:37 - 06:44] that the first field is actually the uh
+[06:42 - 06:47] uh the name
+[06:44 - 06:49] second field is the gender
+[06:47 - 06:53] and then we have the height and the
+[06:49 - 06:55] weight so instead of looking at the row
+[06:53 - 06:58] we may want to look at the individual
+[06:55 - 07:02] field so how do we go about doing that
+[06:58 - 07:02] let me copy the code over here
+[07:26 - 07:30] now we can look at the individual field
+[07:28 - 07:31] so we know that the first field is a
+[07:30 - 07:35] name
+[07:31 - 07:38] second field is the gender
+[07:35 - 07:38] followed by the height
+[07:38 - 07:40] and weight
+[07:42 - 07:48] and when we print we can just print
+[07:46 - 07:50] some other few
+[07:48 - 07:52] you want to print all the few you may do
+[07:50 - 07:54] so but let's say i just want all the
+[07:52 - 07:57] height
+[07:54 - 07:57] okay
+[08:01 - 08:06] and let's run
+[08:03 - 08:08] so you get the name and the height only
+[08:06 - 08:12] so you can actually uh
+[08:08 - 08:14] assign a variable to each of the field
+[08:12 - 08:17] that is in the contents
+[08:14 - 08:20] okay so that's how you read
+[08:17 - 08:20] from a csv file
+[08:21 - 08:27] now how about writing to a csv file
+[08:24 - 08:31] again there are two methods you can use
+[08:27 - 08:33] the f equal to open or we've opened
+[08:31 - 08:34] the file name
+[08:33 - 08:36] sf
+[08:34 - 08:41] now because you are writing to a csv
+[08:36 - 08:43] file you have to be in the right mode
+[08:41 - 08:46] with this w stands for
+[08:43 - 08:48] right node so i'm not going to run this
+[08:46 - 08:52] uh two code because if the file don't
+[08:48 - 08:54] exist it will run into an error okay it
+[08:52 - 08:56] will run into an error
+[08:54 - 08:59] okay um
+[08:56 - 09:00] i want to uh talk about
+[08:59 - 09:04] method
+[09:00 - 09:09] one okay let's try to run method one
+[09:04 - 09:11] okay if the file does not exist and i or
+[09:09 - 09:14] try to open it and try to you know open
+[09:11 - 09:16] it in the right mode what will happen
+[09:14 - 09:16] okay
+[09:18 - 09:23] if i look into my folder
+[09:20 - 09:27] file does not exist it's been created
+[09:23 - 09:29] so originally it's not there
+[09:27 - 09:33] let's run the code again originally it's
+[09:29 - 09:35] not there let's run it
+[09:33 - 09:36] and the file has been created
+[09:35 - 09:39] okay
+[09:36 - 09:39] whereas
+[09:39 - 09:44] if you try to use the second method
+[09:48 - 09:55] it will run into an error because
+[09:51 - 09:57] with open as the file name with sf this
+[09:55 - 10:00] seems to be incomplete it's waiting for
+[09:57 - 10:02] you to write some more code
+[10:00 - 10:03] okay after opening the file what do you
+[10:02 - 10:04] want to do
+[10:03 - 10:05] okay
+[10:04 - 10:08] so
+[10:05 - 10:11] this uh code is incomplete so when you
+[10:08 - 10:12] try to run this code it will go into an
+[10:11 - 10:14] arrow
+[10:12 - 10:17] okay so uh
+[10:14 - 10:20] uh never use uh you have to use the try
+[10:17 - 10:22] exception uh exception method for uh to
+[10:20 - 10:25] take care of these
+[10:22 - 10:28] instances where the file does not exist
+[10:25 - 10:30] okay whereas for method one
+[10:28 - 10:32] uh it will just create
+[10:30 - 10:33] an empty file for you
+[10:32 - 10:36] okay
+[10:33 - 10:36] now um
+[10:36 - 10:43] i've been using uh method one uh uh
+[10:40 - 10:45] for the earlier example so now i will
+[10:43 - 10:46] use method two to
+[10:45 - 10:49] write
+[10:46 - 10:51] to the file okay assuming that i'm going
+[10:49 - 10:53] to store uh
+[10:51 - 10:56] some data
+[10:53 - 10:58] into a csv file and i have name class
+[10:56 - 11:01] level and the score
+[10:58 - 11:02] and my data's are kept in the list of a
+[11:01 - 11:04] list
+[11:02 - 11:05] so inside this list there are three
+[11:04 - 11:08] students
+[11:05 - 11:09] uh nick mary and
+[11:08 - 11:12] big peter
+[11:09 - 11:15] okay and they are their classes uh the
+[11:12 - 11:18] level and the scores are all there
+[11:15 - 11:20] okay so i'm going to use method 2
+[11:18 - 11:22] and i'm going to uh store the data i'm
+[11:20 - 11:24] going to write use the right mode store
+[11:22 - 11:27] the data into a new file called
+[11:24 - 11:29] records.csv
+[11:27 - 11:31] now let's check there's no such file
+[11:29 - 11:34] called records.csv
+[11:31 - 11:38] okay so i i will be able to create this
+[11:34 - 11:41] okay so how do i store the data into it
+[11:38 - 11:42] i need to use the csv method called the
+[11:41 - 11:45] writer
+[11:42 - 11:49] so my contents are
+[11:45 - 11:49] equal to the writer
+[11:50 - 11:54] for f okay so i will write into the
+[11:53 - 11:57] uh
+[11:54 - 11:57] the file
+[11:57 - 12:03] now i need to tell the
+[12:00 - 12:06] uh that my
+[12:03 - 12:08] my fields okay so i'm going to write one
+[12:06 - 12:10] row so i will write row
+[12:08 - 12:11] okay right row
+[12:10 - 12:14] singular
+[12:11 - 12:14] uh by field
+[12:14 - 12:17] okay because i only have one rows of
+[12:16 - 12:22] fuse
+[12:17 - 12:22] okay one row of four fields
+[12:22 - 12:27] and then i can write many rows and that
+[12:25 - 12:29] is right
+[12:27 - 12:33] rows with s
+[12:29 - 12:34] plural and then that's my data
+[12:33 - 12:36] okay
+[12:34 - 12:39] there is no need to close the file
+[12:36 - 12:42] because it's automatically closed
+[12:39 - 12:42] uh
+[12:42 - 12:44] run
+[12:43 - 12:47] nothing happened
+[12:44 - 12:49] okay actually in the back end the file
+[12:47 - 12:53] has been created the data has been
+[12:49 - 12:53] written into it
+[12:58 - 13:04] earlier on you know how to open a file
+[13:01 - 13:06] so i'm going to just use the read read a
+[13:04 - 13:09] csv file and i'm going to read with the
+[13:06 - 13:11] header let's take a look
+[13:09 - 13:13] yes
+[13:11 - 13:17] there's one rule of uh there's one row
+[13:13 - 13:20] of header and three rows of data
+[13:17 - 13:23] except for one thing
+[13:20 - 13:24] there are empty
+[13:23 - 13:27] lists
+[13:24 - 13:27] created in between
+[13:28 - 13:32] so this is not what we want
+[13:30 - 13:35] okay
+[13:32 - 13:37] we expect the csv file to contain all
+[13:35 - 13:38] together four rows
+[13:37 - 13:42] one row of header
+[13:38 - 13:43] three rows of data without all the empty
+[13:42 - 13:44] rows
+[13:43 - 13:47] okay
+[13:44 - 13:49] so what we need to do here
+[13:47 - 13:51] this has something to do with the new
+[13:49 - 13:53] line that is being uh
+[13:51 - 13:57] uh added into it
+[13:53 - 14:00] so you have to assign a new line into
+[13:57 - 14:02] something that is empty okay new line
+[14:00 - 14:04] empty so i'm going to assign it to an
+[14:02 - 14:08] empty string
+[14:04 - 14:08] okay and let's try to run this again
+[14:08 - 14:13] and let's take a look at the file that's
+[14:11 - 14:16] been written
+[14:13 - 14:18] there it goes so you must remember to
+[14:16 - 14:20] remove the new line
+[14:18 - 14:21] using this argument
+[14:20 - 14:23] okay
+[14:21 - 14:23] so
+[14:24 - 14:30] remove
+[14:27 - 14:31] a new line
+[14:30 - 14:35] okay
+[14:31 - 14:35] this is to remove the new line okay
+[14:39 - 14:45] now what happened uh instead of writing
+[14:42 - 14:48] data into a
+[14:45 - 14:50] csv file now i have some more data that
+[14:48 - 14:51] i want to append
+[14:50 - 14:54] okay i have some more data like for
+[14:51 - 14:56] example i have more data
+[14:54 - 14:58] okay and this more data i don't have to
+[14:56 - 15:01] specify the view because i'll just use
+[14:58 - 15:03] the existing field so what do i do
+[15:01 - 15:06] okay
+[15:03 - 15:10] it will be similar to how to write into
+[15:06 - 15:10] empty csv file
+[15:13 - 15:18] except that you don't use writes but you
+[15:16 - 15:21] use a stand for append
+[15:18 - 15:22] okay a stand for append
+[15:21 - 15:25] and this time around when you're
+[15:22 - 15:28] appending you don't have to
+[15:25 - 15:31] you don't have to add any rules of
+[15:28 - 15:34] the field so let's remove this
+[15:31 - 15:36] and you are going to write many rows
+[15:34 - 15:39] right we have steve tom and jerry and
+[15:36 - 15:43] there are three more rows of data and
+[15:39 - 15:44] these are up by more data
+[15:43 - 15:46] okay
+[15:44 - 15:46] and
+[15:50 - 15:54] let's remember to uh
+[16:01 - 16:05] from csv
+[16:03 - 16:06] import
+[16:05 - 16:10] estery
+[16:06 - 16:10] everything okay spacing
+[16:11 - 16:16] okay so
+[16:13 - 16:18] this will append the data into it ctrl
+[16:16 - 16:19] enter
+[16:18 - 16:23] nothing happens
+[16:19 - 16:24] let's try to read the file again
+[16:23 - 16:27] yes
+[16:24 - 16:29] so you have three more data three more
+[16:27 - 16:30] rows of data's being added into the csv
+[16:29 - 16:33] file
+[16:30 - 16:34] okay so i hope you have created for
+[16:33 - 16:36] yourself
+[16:34 - 16:39] this jupiter file
+[16:36 - 16:41] please submit this in the cosmology as
+[16:39 - 16:42] an evident that you have walked through
+[16:41 - 16:47] with me
+[16:42 - 16:47] in this video that's all for now

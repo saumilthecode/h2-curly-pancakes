@@ -17,6 +17,20 @@ def factorial(n):
         return n * factorial(n - 1)   # 2. calls itself  3. smaller
 ```
 
+## Writing One: Wishful Thinking
+
+Don't try to trace the whole thing in your head. Assume the smaller call already works, and only write the step that turns its answer into yours.
+
+1. What is the **smallest** input, and what's its obvious answer? → base case.
+2. Assume `f(n-1)` is correct. What single operation turns it into `f(n)`?
+
+Two ways to shrink the problem:
+
+| Reduction | Size `n` becomes | Example |
+| --------- | ---------------- | ------- |
+| By one | `n - 1` | `factorial`, list traversal |
+| Divide and conquer | `n / 2` | [[Search]] — binary search |
+
 ## Recursion Tree
 
 Trace by expanding downwards, then returning back up.

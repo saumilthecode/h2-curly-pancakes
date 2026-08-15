@@ -1,0 +1,124 @@
+Title: LT8 Lists   Part 2
+LT: LT 7 - Lists
+Linked label: Part 2 : List Operations
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=1JXkn_st9n8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:08] now uh so release operation
+[00:05 - 00:10] uh just like a string and table we can
+[00:08 - 00:13] do indexing and slicing
+[00:10 - 00:15] okay we can create a list using range so
+[00:13 - 00:18] for range five you create elements from
+[00:15 - 00:20] zero to one what zero to four
+[00:18 - 00:22] and uh using the index you can actually
+[00:20 - 00:25] point to individual element
+[00:22 - 00:27] uh you can even say two to the end so
+[00:25 - 00:30] two to all the way to the end or you can
+[00:27 - 00:31] even with the start
+[00:30 - 00:33] stop and the
+[00:31 - 00:35] stack okay
+[00:33 - 00:37] you can pick up a particular elements
+[00:35 - 00:37] okay
+[00:39 - 00:44] so this kind of operation is pretty
+[00:42 - 00:47] common in any other sequence like string
+[00:44 - 00:49] and tuple which you have already done
+[00:47 - 00:52] now we want to if we want to change a
+[00:49 - 00:56] particular element or some item value or
+[00:52 - 01:00] we can do it by assignment so
+[00:56 - 01:03] index 4 so zero one two three four so
+[01:00 - 01:06] the fourth uh index element which is a
+[01:03 - 01:08] four i can change it to five
+[01:06 - 01:13] now so by assignment we can change the
+[01:08 - 01:15] value because list is mutable
+[01:13 - 01:17] we can also check for membership what we
+[01:15 - 01:19] mean by membership we can check whether
+[01:17 - 01:21] a particular element exists in the list
+[01:19 - 01:24] or not so let's say we create a list a
+[01:21 - 01:27] range from zero to one and then we check
+[01:24 - 01:28] on the three in this it's true
+[01:27 - 01:30] five
+[01:28 - 01:34] five is not inside the list so five not
+[01:30 - 01:34] in this also delivers us true
+[01:34 - 01:39] okay uh the other operations are like
+[01:36 - 01:40] length we can use length list we can
+[01:39 - 01:43] check the number of elements within the
+[01:40 - 01:46] list now you will note over here that
+[01:43 - 01:47] are 3 and 3 is actually duplicated now
+[01:46 - 01:49] uh
+[01:47 - 01:50] both list and tuple will allow for
+[01:49 - 01:54] duplication
+[01:50 - 01:56] of elements we can also do the sum okay
+[01:54 - 01:58] so if we sum the list you will add up
+[01:56 - 02:01] the value three plus one plus four plus
+[01:58 - 02:04] seven plus three that gives you 18.
+[02:01 - 02:07] okay but if you try uh if you have a
+[02:04 - 02:10] lisa that is a a string
+[02:07 - 02:14] non-integer type then you try to do a
+[02:10 - 02:14] sum of course it will show you an error
+[02:14 - 02:18] we can also make use of maximum and
+[02:16 - 02:20] minimum now a bit
+[02:18 - 02:23] something to note off is that even for
+[02:20 - 02:24] alphabets even when you have a list
+[02:23 - 02:26] containing a
+[02:24 - 02:28] string you can actually look for the
+[02:26 - 02:31] maximum and minimum
+[02:28 - 02:35] right in our earlier uh
+[02:31 - 02:36] topic we actually did a boolean
+[02:35 - 02:39] comparison
+[02:36 - 02:41] we are bigger or smaller we can compare
+[02:39 - 02:44] small letters and a capital letter z a
+[02:41 - 02:46] smaller a and b and so on so forth so
+[02:44 - 02:49] this button number one
+[02:46 - 02:51] is treated as a string so if we compare
+[02:49 - 02:54] with other strings also so you can use
+[02:51 - 02:54] it for maximum and minimum
+[02:55 - 02:58] we can use this
+[02:59 - 03:03] operation to locate
+[03:01 - 03:05] the first index
+[03:03 - 03:07] of the element well why do i say the
+[03:05 - 03:08] first index for example if i want to
+[03:07 - 03:11] look for three
+[03:08 - 03:14] uh there are two trees here so whether
+[03:11 - 03:15] uh this operation will give me zero as
+[03:14 - 03:17] the index
+[03:15 - 03:20] or
+[03:17 - 03:22] four as the index okay so this
+[03:20 - 03:25] particular operation will give us the
+[03:22 - 03:27] first index which means the zero one
+[03:25 - 03:29] okay
+[03:27 - 03:31] right if we look for four then it will
+[03:29 - 03:33] zero one two so there's an index
+[03:31 - 03:36] position so you can actually locate the
+[03:33 - 03:38] index of a particular element
+[03:36 - 03:41] i usually look for five you can't find
+[03:38 - 03:43] you will show you an error
+[03:41 - 03:45] you can also do a count
+[03:43 - 03:48] how many times a particular element
+[03:45 - 03:49] appear within the list itself so three
+[03:48 - 03:51] appear twice
+[03:49 - 03:53] and then four appear once and then nine
+[03:51 - 03:55] doesn't appear so it's zero you will not
+[03:53 - 03:57] throw your error it's just how you get
+[03:55 - 03:57] people
+[03:58 - 04:03] okay there are other operations like
+[04:00 - 04:06] reverse and copy so when you reverse uh
+[04:03 - 04:09] now there is no output if you call
+[04:06 - 04:12] this a response what happened is that
+[04:09 - 04:16] the the least rc is actually being
+[04:12 - 04:17] mutated okay all the elements
+[04:16 - 04:20] position
+[04:17 - 04:21] uh and then when you call for create a
+[04:20 - 04:24] new list
+[04:21 - 04:27] with lc a copy
+[04:24 - 04:28] that actually should be there okay
+[04:27 - 04:31] now you cannot
+[04:28 - 04:34] copy a lisa by merely uh doing an
+[04:31 - 04:35] assignment or saying that t equal to lst
+[04:34 - 04:37] so t of course would show the same
+[04:35 - 04:39] release but they are both actually
+[04:37 - 04:44] pointing to the same list you didn't
+[04:39 - 04:44] really create any new list

@@ -1,0 +1,259 @@
+Title: Lecture Video: Recursion
+LT: LT 9a - Recursion
+Linked label: Recursion (9:55)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=p7iJKWT_g6w
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] hi students this chapter is on recursion
+[00:03 - 00:07] before we start let's look at the
+[00:04 - 00:09] picture these are russian dolls and they
+[00:07 - 00:11] are put together with the smallest one
+[00:09 - 00:15] inside the next bigger one until there
+[00:11 - 00:15] appears to be just one door
+[00:15 - 00:20] if each law can only talk to the doll
+[00:17 - 00:22] one size bigger or smaller than them
+[00:20 - 00:24] can each doll know the total number of
+[00:22 - 00:25] doors inside them
+[00:24 - 00:28] if you're the smallest door surely you
+[00:25 - 00:30] know your answer is zero since there is
+[00:28 - 00:33] no doll inside but how about the other
+[00:30 - 00:36] dogs how would you design an algorithm
+[00:33 - 00:36] for each dog
+[00:36 - 00:40] this is where recursion can come in
+[00:38 - 00:43] recursion is a method of solving a
+[00:40 - 00:45] computational problem where the solution
+[00:43 - 00:47] depends on the solution of smaller
+[00:45 - 00:49] instances of the same problem
+[00:47 - 00:51] let's ask the largest door how many
+[00:49 - 00:54] doors are there in you the door will
+[00:51 - 00:56] probably say i don't know but i know
+[00:54 - 00:58] there's a slightly smaller door inside
+[00:56 - 01:01] me let me ask him the same question then
+[00:58 - 01:02] i can add one to his answer to give you
+[01:01 - 01:04] my answer
+[01:02 - 01:07] each dog can call on the help of the
+[01:04 - 01:10] inner door to get an answer so that it
+[01:07 - 01:12] can get its own answer
+[01:10 - 01:15] in general the nth size doll will call
+[01:12 - 01:17] upon the help of the n minus one size
+[01:15 - 01:20] door for her answer and reply by adding
+[01:17 - 01:23] a one to it so count n equals to one
+[01:20 - 01:26] plus count n minus one this pattern will
+[01:23 - 01:28] repeat until the second last doll count
+[01:26 - 01:31] 2 asks the last doll count 1 for an
+[01:28 - 01:34] answer the smallest doll door number 1
+[01:31 - 01:38] which is count 1 will report 0 dogs
+[01:34 - 01:40] so this is how the algorithm can work
+[01:38 - 01:42] these are the rules for an unplugged
+[01:40 - 01:45] activity that we will do in a physical
+[01:42 - 01:48] classroom to demonstrate recursion
+[01:45 - 01:51] you may pause here at this slide or move
+[01:48 - 01:51] on to the next slide
+[01:51 - 01:56] recursion decomposes a problem into
+[01:54 - 01:58] smaller sub problems until it is small
+[01:56 - 01:59] enough where we know the trivial
+[01:58 - 02:01] solution
+[01:59 - 02:03] sometimes a size 10 problem can be
+[02:01 - 02:05] reduced into a size 9 problem sometimes
+[02:03 - 02:08] it can employ a divide and conquer
+[02:05 - 02:09] approach to reduce it by half a size
+[02:08 - 02:12] five problem
+[02:09 - 02:12] in chinese we can say
+[02:14 - 02:18] finally when we reach the base case we
+[02:16 - 02:20] put the solutions back together to solve
+[02:18 - 02:23] the bigger and bigger problems until we
+[02:20 - 02:25] solve the original big problem in
+[02:23 - 02:27] chinese wu cheng sen your means from
+[02:25 - 02:30] nothing you get something from no answer
+[02:27 - 02:32] you get an answer
+[02:30 - 02:34] recursion can only be done when the
+[02:32 - 02:36] smaller sub problems are smaller
+[02:34 - 02:39] instances of the same problem having the
+[02:36 - 02:41] same structure as the parent so that the
+[02:39 - 02:44] same function call can call on itself to
+[02:41 - 02:44] solve the smaller problem
+[02:44 - 02:50] so how do we do recursion in python
+[02:48 - 02:53] we return the answer for the simplest
+[02:50 - 02:58] problem for example if n is equal to 1
+[02:53 - 03:00] factorial 1 equals to 1 so we return 1.
+[02:58 - 03:03] we can use recursion to get a smaller
+[03:00 - 03:05] size problem so we call on 7 factorial
+[03:03 - 03:07] to get his answer and we trust that he
+[03:05 - 03:10] will get it correctly for me
+[03:07 - 03:12] so that i can use it to try to calculate
+[03:10 - 03:13] 8 factorial's answer
+[03:12 - 03:16] then
+[03:13 - 03:17] i try to solve the link and i will just
+[03:16 - 03:20] take the answer and do a simple
+[03:17 - 03:22] calculation multiplying it by 8 to
+[03:20 - 03:24] return my answer
+[03:22 - 03:26] does this make sense so far
+[03:24 - 03:28] you don't need to do all of the work you
+[03:26 - 03:30] can ask a friend to help you do most of
+[03:28 - 03:30] the work
+[03:30 - 03:35] do you recall the factorial calculation
+[03:32 - 03:37] it is a product of numbers from 1 to n
+[03:35 - 03:40] these are all the list of results for
+[03:37 - 03:41] factorial 1 to factorial 4. the size 4
+[03:40 - 03:44] problem
+[03:41 - 03:46] multiplies 4 with the result of the size
+[03:44 - 03:49] 3 problem the size 3 problem
+[03:46 - 03:51] multiplies 3 with the result of the size
+[03:49 - 03:53] 2 problem
+[03:51 - 03:54] do you notice that the computation for
+[03:53 - 03:57] the parent problem has the same
+[03:54 - 03:59] structure as a child problem
+[03:57 - 04:00] this fulfills the criteria for recursion
+[03:59 - 04:02] to be used
+[04:00 - 04:06] can you make an assumption and guess the
+[04:02 - 04:06] formula for the general case n
+[04:06 - 04:14] by observing the pattern n factorial
+[04:09 - 04:14] would be n times n minus 1 factorial
+[04:15 - 04:19] the moment we know the relationship
+[04:17 - 04:21] between the size n problem and a size n
+[04:19 - 04:22] minus 1 problem we can think of a
+[04:21 - 04:24] formula
+[04:22 - 04:26] we rewrite the factorial function for
+[04:24 - 04:29] different cases of n
+[04:26 - 04:32] when n is 1 factorial 1 is simply 1.
+[04:29 - 04:36] when n is greater than 1 n factorial is
+[04:32 - 04:38] equals to n times n minus 1 factorial
+[04:36 - 04:40] therefore factorial function can be
+[04:38 - 04:42] represented like this
+[04:40 - 04:44] if n is 1 the factorial function will
+[04:42 - 04:46] simply return 1.
+[04:44 - 04:48] this is the base case
+[04:46 - 04:51] otherwise use recursion to get the
+[04:48 - 04:54] answer of n minus 1 factorial
+[04:51 - 04:57] and use it to compute the solution to n
+[04:54 - 04:59] factorial when writing recursive code we
+[04:57 - 05:01] can apply wishful thinking we can assume
+[04:59 - 05:03] that we already have the solution of the
+[05:01 - 05:05] problem one size smaller which is n
+[05:03 - 05:10] minus 1 factorial
+[05:05 - 05:12] coding is easy when the formula is given
+[05:10 - 05:15] so does it really work if you try the
+[05:12 - 05:16] code here in jupiter it works
+[05:15 - 05:18] but how
+[05:16 - 05:20] an american university professor by the
+[05:18 - 05:23] name of ericsson has some funny notes
+[05:20 - 05:24] about recursion he writes
+[05:23 - 05:26] your only task is to simplify the
+[05:24 - 05:29] original problem or to solve it directly
+[05:26 - 05:31] when simplification is unnecessary the
+[05:29 - 05:34] recursion fairy will magically take care
+[05:31 - 05:36] of all the simpler sub-problems for you
+[05:34 - 05:37] using methods that are none of your
+[05:36 - 05:40] business
+[05:37 - 05:41] it sounds a bit rude but he means well
+[05:40 - 05:44] to convey the message that you don't
+[05:41 - 05:46] have to thoroughly understand it
+[05:44 - 05:48] for you to use it
+[05:46 - 05:51] anyway let's try to process what happens
+[05:48 - 05:52] when factorify uses recursion to solve
+[05:51 - 05:54] the problem
+[05:52 - 05:56] factorial 5 will calculate 5 times
+[05:54 - 05:58] factorial 4 but it has to wait for
+[05:56 - 06:00] factorial 4's result
+[05:58 - 06:02] factorial 4 will calculate 4 times
+[06:00 - 06:04] factorial 3 but it has to wait for
+[06:02 - 06:06] factorial 3's result
+[06:04 - 06:09] factorial 3 will calculate 3 times
+[06:06 - 06:10] factorial 2 but it has to wait
+[06:09 - 06:13] factorial 2
+[06:10 - 06:15] will calculate 2 times factorial 1 but
+[06:13 - 06:19] factorial 1 is a base case
+[06:15 - 06:21] and it can return the result 1.
+[06:19 - 06:25] factorial 2 can now complete this
+[06:21 - 06:27] calculation 2 times 1 and returns 2 to
+[06:25 - 06:29] factorial 3.
+[06:27 - 06:32] now factorial 3 can complete this
+[06:29 - 06:34] calculation 3 times 2 and returns a 6 to
+[06:32 - 06:36] factorial 4
+[06:34 - 06:40] factorial 4 can then complete this
+[06:36 - 06:41] calculation 4 times 6 and returns 24 to
+[06:40 - 06:43] factorial 5.
+[06:41 - 06:49] finally factorial 5 can complete this
+[06:43 - 06:51] calculation 5 times 24 to return 1 2 0.
+[06:49 - 06:53] note the chain of deferred operations or
+[06:51 - 06:55] operations that were put on hole in this
+[06:53 - 06:57] process the read function was waiting
+[06:55 - 07:00] for the longest time
+[06:57 - 07:03] followed by the yellow function green
+[07:00 - 07:03] then blue
+[07:03 - 07:06] there are three elements to a recursive
+[07:05 - 07:07] function
+[07:06 - 07:10] it must have
+[07:07 - 07:12] a base case also known as a terminating
+[07:10 - 07:15] condition usually the smallest or
+[07:12 - 07:16] simplest input with an easily verifiable
+[07:15 - 07:18] solution
+[07:16 - 07:20] this is also the mechanism that stops
+[07:18 - 07:23] the function from calling itself forever
+[07:20 - 07:26] number two a recursive function is a
+[07:23 - 07:29] function that calls on itself
+[07:26 - 07:31] number three the recursive call must
+[07:29 - 07:34] call on a smaller problem so that it
+[07:31 - 07:37] eventually approaches the base case and
+[07:34 - 07:37] eventually terminate
+[07:37 - 07:40] sometimes you may face problems when
+[07:39 - 07:42] coding recursion
+[07:40 - 07:43] you may see the kernel being
+[07:42 - 07:45] unresponsive
+[07:43 - 07:48] it may give you errors like maximum
+[07:45 - 07:49] recursion depth error this is where you
+[07:48 - 07:52] may have went too deep into the
+[07:49 - 07:54] recursion storing too many variables and
+[07:52 - 07:55] operations while still not hitting your
+[07:54 - 07:57] base case
+[07:55 - 08:00] until you exceeded the limit and python
+[07:57 - 08:00] gives an error
+[08:00 - 08:04] when debugging we can add print
+[08:02 - 08:07] statements at the start of the function
+[08:04 - 08:10] you can see which factorial goes first
+[08:07 - 08:13] from the printout factorial 4 goes first
+[08:10 - 08:17] followed by factorial 3 2 1 and 0. only
+[08:13 - 08:21] then factorial 4 can finally return 24
+[08:17 - 08:23] but in the case of factorial 2.1 notice
+[08:21 - 08:26] that it didn't arrive at the base case
+[08:23 - 08:28] and it went past it so this tells us
+[08:26 - 08:31] that we need to use the correct inputs
+[08:28 - 08:33] non-negative integers for the factorial
+[08:31 - 08:33] function
+[08:33 - 08:38] here is an interesting example we have
+[08:36 - 08:40] ping and pong
+[08:38 - 08:42] can you trace this code to obtain the
+[08:40 - 08:44] output of ping 7
+[08:42 - 08:48] you can now pause the video to trace the
+[08:44 - 08:48] code and predict the output
+[08:50 - 08:55] let me explain the output
+[08:52 - 08:58] when n is 7
+[08:55 - 09:00] ping 7 will print will go to this part
+[08:58 - 09:03] of the else statement and print ping
+[09:00 - 09:05] and call on pong6
+[09:03 - 09:07] pong6
+[09:05 - 09:11] will go to this part of the if statement
+[09:07 - 09:14] and print prong and call on ping 5.
+[09:11 - 09:15] this process will repeat until ping 1 is
+[09:14 - 09:18] called
+[09:15 - 09:23] okay ping 1 will call on pong 0
+[09:18 - 09:25] and this eventually stops here
+[09:23 - 09:27] this is mutual recursion another type of
+[09:25 - 09:30] recursion where we alternate executing
+[09:27 - 09:32] ping and port
+[09:30 - 09:33] to summarize these are the three
+[09:32 - 09:35] important points you must know about
+[09:33 - 09:37] recursion
+[09:35 - 09:40] a recursive function has a terminating
+[09:37 - 09:42] base case number two
+[09:40 - 09:45] a recursive function calls on itself
+[09:42 - 09:46] number three recursive calls reduce the
+[09:45 - 09:48] problem into sub-problems that
+[09:46 - 09:51] eventually approach the base
+[09:48 - 09:53] case this ends the lecture video you
+[09:51 - 09:56] cannot attempt the lecture training on
+[09:53 - 09:56] cosmology

@@ -1,0 +1,215 @@
+Title: C2 Data Representation for Numbers Part 3
+Assessment(s): C2a Data Representation of Numbers (Theory Questions)
+Linked label(s): C2a Data Representation of Numbers (Part 2)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=Jdr8hOz7fIA
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:07] okay how about if we want to convert a
+[00:04 - 00:09] binary base 10 to a binary
+[00:07 - 00:13] how do we do that there are two methods
+[00:09 - 00:15] here one is repeatedly divided by two
+[00:13 - 00:18] another method is to use the sum of
+[00:15 - 00:20] weight method can go through one by one
+[00:18 - 00:25] for the repeated division method let's
+[00:20 - 00:27] say we want to convert 47 in binary
+[00:25 - 00:30] for the 70 base 10 and we want to
+[00:27 - 00:33] convert it to a binary in base 2
+[00:30 - 00:35] what do we do is that we take 47 and we
+[00:33 - 00:37] divide by 2
+[00:35 - 00:40] so you realize that 37 cannot be divided
+[00:37 - 00:41] by 2 you will have a 23 and a remainder
+[00:40 - 00:44] 1.
+[00:41 - 00:45] okay 47 divided by 2 is 23 with a
+[00:44 - 00:48] remainder one
+[00:45 - 00:50] then again we take 23 and divide by 2
+[00:48 - 00:52] realize that that will be 11 with a
+[00:50 - 00:54] repeated one and then carry on with the
+[00:52 - 00:54] division
+[00:55 - 00:59] and 5 divided by 2 you have two
+[00:57 - 01:03] remainder one two divided by two you get
+[00:59 - 01:05] one and then zero a lot of students make
+[01:03 - 01:06] mistake and stop here
+[01:05 - 01:08] uh
+[01:06 - 01:10] uh you shouldn't stop whether it is one
+[01:08 - 01:14] you got to carry on and do one more
+[01:10 - 01:17] division 1 divided by 2
+[01:14 - 01:20] is a 0 with remainder 1
+[01:17 - 01:25] then that completes the whole division
+[01:20 - 01:27] okay so the answer in binary lies in the
+[01:25 - 01:28] remainder okay how do you read the
+[01:27 - 01:30] remainder
+[01:28 - 01:35] you read it from bottom up so that would
+[01:30 - 01:36] be one zero one one one one
+[01:35 - 01:37] eight
+[01:36 - 01:41] binary
+[01:37 - 01:44] subscript two
+[01:41 - 01:47] now the first the first digit on the
+[01:44 - 01:50] right this is known as the
+[01:47 - 01:52] least significant bit okay it is a
+[01:50 - 01:56] smallest value which is two to the power
+[01:52 - 01:59] of zero and then the first digit on the
+[01:56 - 02:03] left this is the most significant bit
+[01:59 - 02:06] which is actually 2 to the power of 5 or
+[02:03 - 02:09] this particular one represents a value
+[02:06 - 02:10] of 2 to the power 5 which is 32
+[02:09 - 02:12] okay so
+[02:10 - 02:16] you must remember to read from bottoms
+[02:12 - 02:18] up because the most significant bit is
+[02:16 - 02:20] right at the bottom the least
+[02:18 - 02:24] significant bits is right at the top so
+[02:20 - 02:27] that's how you convert a binary
+[02:24 - 02:31] from base 10 to binary by repeating
+[02:27 - 02:32] divide by two and then cut down all the
+[02:31 - 02:34] remainder
+[02:32 - 02:37] and then put them together to convert it
+[02:34 - 02:40] to a binary number now if let's say you
+[02:37 - 02:42] need to present the answer as an eight
+[02:40 - 02:45] bit value then uh because there are only
+[02:42 - 02:48] six digits here so you can add two more
+[02:45 - 02:49] zero in front to make it as eight bit so
+[02:48 - 02:52] you group up by four
+[02:49 - 02:56] four okay zero zero one zero and then
+[02:52 - 02:58] one one on one body side base two so
+[02:56 - 03:00] this will be our eight bit answer the
+[02:58 - 03:03] second method that we we can use to
+[03:00 - 03:06] convert for example for the seven base
+[03:03 - 03:09] direct binary to binary is by using this
+[03:06 - 03:12] what we call the sum of weight method
+[03:09 - 03:12] okay so as you already know that from
+[03:12 - 03:15] the
+[03:12 - 03:16] least significant bit to the most
+[03:15 - 03:18] significant bit let's say we're talking
+[03:16 - 03:20] about our 8-bit system the first one is
+[03:18 - 03:22] 2 to the power 0 to the power 1 to the
+[03:20 - 03:24] power 2 to the power 3 and so on up to 2
+[03:22 - 03:27] to the power 7
+[03:24 - 03:30] in the values wise to the power 0 is 1
+[03:27 - 03:35] to the power 1 is 2 and so on from 4 8
+[03:30 - 03:39] 16 32 64 and one two eight
+[03:35 - 03:43] so you take a look at 47 in base 10 okay
+[03:39 - 03:47] in 47 base 10 there is a 32 and there is
+[03:43 - 03:50] a remainder of 50. okay and now 15 you
+[03:47 - 03:52] take a look and compare well in 15
+[03:50 - 03:55] there's an eight
+[03:52 - 03:57] and then we have a balance of seven
+[03:55 - 04:00] then we look at the seven okay uh in
+[03:57 - 04:02] seven we can take out four again we have
+[04:00 - 04:04] a remainder three
+[04:02 - 04:06] and now you know that to get the three
+[04:04 - 04:08] we can have a two and a one and that
+[04:06 - 04:10] will sum up to 47.
+[04:08 - 04:13] so what does this mean it means that we
+[04:10 - 04:18] need us 132
+[04:13 - 04:19] we need 1 8 we need 1 4 we need 1 2 and
+[04:18 - 04:22] we need 1 1
+[04:19 - 04:24] to make up the value of 47 we don't need
+[04:22 - 04:27] the the 1 to 8 we don't need the 64 we
+[04:24 - 04:30] don't need the 16.
+[04:27 - 04:34] so in that sense we have our binary zero
+[04:30 - 04:37] zero one zero one one one one in binary
+[04:34 - 04:42] so this is the sum of weight method how
+[04:37 - 04:46] do we convert a number in base k to
+[04:42 - 04:48] another number in the base j
+[04:46 - 04:52] so let's take for example we want to
+[04:48 - 04:54] convert a number in a hexa decimal to a
+[04:52 - 04:56] number in octa
+[04:54 - 04:58] one idea is to use the
+[04:56 - 05:00] decimal system
+[04:58 - 05:04] as a bridge
+[05:00 - 05:06] okay so let's try to convert our 2f in
+[05:04 - 05:08] base 16
+[05:06 - 05:12] to octa
+[05:08 - 05:15] but first we convert it to base 10 first
+[05:12 - 05:17] now our two f a base 16 there are two
+[05:15 - 05:18] digits here
+[05:17 - 05:20] the first digit is a two the second
+[05:18 - 05:23] digit is an f
+[05:20 - 05:25] now the first digit two is actually 2
+[05:23 - 05:28] times 16 to the power of 1
+[05:25 - 05:32] so that makes up a value of 32
+[05:28 - 05:34] whereas the f or if you remember
+[05:32 - 05:38] hexadecimal uses a
+[05:34 - 05:42] b c d e f f representing 15
+[05:38 - 05:44] so this is 15 times of uh 16 to the
+[05:42 - 05:48] power of zero which is one so you have
+[05:44 - 05:50] 32 and 15 that will gives you
+[05:48 - 05:52] 47.
+[05:50 - 05:57] so that would be the value in the
+[05:52 - 06:00] decimal system the dynamic 47.
+[05:57 - 06:04] how do we convert this uh 47 in binary
+[06:00 - 06:05] to uh octal base 8 okay one of the
+[06:04 - 06:08] method that i've gone through if you
+[06:05 - 06:10] just now the method one is repeatedly
+[06:08 - 06:13] divide by the base which is eight so we
+[06:10 - 06:16] take 47 then we divide by eight can only
+[06:13 - 06:19] have it as five because five times eight
+[06:16 - 06:22] is forty so we have a remainder of seven
+[06:19 - 06:24] and then we don't stop there divide five
+[06:22 - 06:26] by eight and you realize that there is
+[06:24 - 06:29] no quotient and the remainder is five
+[06:26 - 06:33] and remember to read it upward so it's
+[06:29 - 06:34] 57 so that will gives us 57 in the octal
+[06:33 - 06:37] system
+[06:34 - 06:40] now this method will be very tedious if
+[06:37 - 06:42] you are trying to convert a big number
+[06:40 - 06:45] okay from one base to another so i have
+[06:42 - 06:48] another better method to suggest to you
+[06:45 - 06:51] is that instead of converting to base 10
+[06:48 - 06:55] we convert it to a binary system base 2
+[06:51 - 06:56] so from base 16 to base 2 for base 2 to
+[06:55 - 06:58] base 8.
+[06:56 - 07:01] how do we go about doing that
+[06:58 - 07:02] now let's start with our 2f kit or in
+[07:01 - 07:04] base 16
+[07:02 - 07:07] the first digit
+[07:04 - 07:09] and the second digit the first digit is
+[07:07 - 07:12] actually 0 0 1 0
+[07:09 - 07:14] in the binary system
+[07:12 - 07:15] okay i'll leave it to you to go and work
+[07:14 - 07:18] this out
+[07:15 - 07:21] for f f is a value of 15 so that would
+[07:18 - 07:24] be 1 1 1 1 in the binary
+[07:21 - 07:28] putting them together you have 0 0 1 0
+[07:24 - 07:31] and 1 1 1 each being grouped by 4 bits
+[07:28 - 07:34] now this is actually the hexa decimal
+[07:31 - 07:36] now in order to convert it to the octal
+[07:34 - 07:40] which is a three bits so let's group the
+[07:36 - 07:40] number in three b's
+[07:42 - 07:46] now we can introduce a zero right in
+[07:44 - 07:46] front
+[07:46 - 07:49] okay
+[07:47 - 07:51] after grouping the dj signal in the
+[07:49 - 07:55] groups of three b's
+[07:51 - 07:59] one one in binary is actually
+[07:55 - 08:02] seven in the octal
+[07:59 - 08:03] one zero one in binary is actually five
+[08:02 - 08:05] in octal
+[08:03 - 08:07] of course the zero zero zero that would
+[08:05 - 08:10] be zero in octal
+[08:07 - 08:13] so all you know this will be represented
+[08:10 - 08:15] as 57 it base 8.
+[08:13 - 08:18] so you realize that if you go through
+[08:15 - 08:21] using the uh binary
+[08:18 - 08:23] uh to convert from base 16 to base 8 all
+[08:21 - 08:26] you need to do is just to group them
+[08:23 - 08:28] in groups of 4 bits and later on in
+[08:26 - 08:31] groups of three bits and you can do that
+[08:28 - 08:31] conversion easily
+[08:33 - 08:37] now there is an online number calculator
+[08:35 - 08:38] for you to convert one number to another
+[08:37 - 08:41] but if you are going to use this
+[08:38 - 08:43] calculator to do your assignment that it
+[08:41 - 08:46] defines the purpose now this calculator
+[08:43 - 08:48] is only useful for you to do to check
+[08:46 - 08:50] that you get the correct answer do not
+[08:48 - 08:52] use this to do your assignment you still
+[08:50 - 08:54] need to practice all the methods i have
+[08:52 - 08:57] suggested to you in this video clip so
+[08:54 - 09:00] that you really have a hands-on mastery
+[08:57 - 09:02] of how to convert a number from one base
+[09:00 - 09:05] to another base
+[09:02 - 09:05] that's all for this video

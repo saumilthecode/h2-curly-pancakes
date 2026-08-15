@@ -1,0 +1,149 @@
+Title: LT1b Intro to Python  About Strings Part 2
+LT: LT 1b - Basic Python - About Strings
+Linked label: Basic Python - About Strings (Part 2)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=g_D3F2K82T0
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] now there are altogether uh three videos
+[00:03 - 00:06] uh uh
+[00:04 - 00:10] that has been prepared on this uh to
+[00:06 - 00:12] explain about index operator on string
+[00:10 - 00:14] so please go ahead and watch the three
+[00:12 - 00:18] videos the first video that talks about
+[00:14 - 00:20] the index operator now at the end of the
+[00:18 - 00:21] video itself you will understand that uh
+[00:20 - 00:24] you know
+[00:21 - 00:27] you can actually uh
+[00:24 - 00:30] point to a particular index position
+[00:27 - 00:32] within a string itself uh bear in mind
+[00:30 - 00:35] that the string
+[00:32 - 00:38] the the indexing start from zero one
+[00:35 - 00:40] two and three okay if let's say they are
+[00:38 - 00:42] all together four left
+[00:40 - 00:44] then the index goes from zero to three
+[00:42 - 00:46] so if you're pointing at the zeroth
+[00:44 - 00:50] index position then namely you're
+[00:46 - 00:52] actually looking at the uh character a
+[00:50 - 00:55] so that would be a string but if you are
+[00:52 - 00:57] looking at the sec index equal to two
+[00:55 - 00:59] then you should be looking at c
+[00:57 - 01:01] okay so uh
+[00:59 - 01:05] please watch the video and then
+[01:01 - 01:05] understand how the index work
+[01:06 - 01:11] the second video will talk about the
+[01:08 - 01:14] string slicing and also the other last
+[01:11 - 01:16] video is a sweet slicing with steps
+[01:14 - 01:18] now at the end of the
+[01:16 - 01:21] vid watching this 2 video you will
+[01:18 - 01:22] understand how the start stop and step
+[01:21 - 01:24] works
+[01:22 - 01:27] please remember that the stop it will be
+[01:24 - 01:29] not inclusive so take for example when
+[01:27 - 01:32] we talk about the string s
+[01:29 - 01:34] uh the the variable s which is a string
+[01:32 - 01:35] from uh 0
+[01:34 - 01:36] 1
+[01:35 - 01:37] 2
+[01:36 - 01:38] 3
+[01:37 - 01:41] 4
+[01:38 - 01:42] 5 they're all together six letters
+[01:41 - 01:46] within the string itself
+[01:42 - 01:49] so when you point to uh you talk about
+[01:46 - 01:51] zero to two now it is not inclusive of
+[01:49 - 01:54] two so we are actually talking about
+[01:51 - 01:56] zero and one only so the string will be
+[01:54 - 01:58] a b
+[01:56 - 02:02] okay and then if you are talking about
+[01:58 - 02:04] one to two you start with one that is b
+[02:02 - 02:06] and then you go to two but you don't
+[02:04 - 02:09] include two so you don't include two you
+[02:06 - 02:11] talk up to stop at one so it's only just
+[02:09 - 02:12] character b
+[02:11 - 02:14] okay
+[02:12 - 02:16] now and then when you have a nothing in
+[02:14 - 02:18] front you don't have a start but then
+[02:16 - 02:21] you have an end then in that case you
+[02:18 - 02:23] will start from zero all the way to
+[02:21 - 02:25] two but not inclusive of two so it's
+[02:23 - 02:28] zero to one so zero one so that came as
+[02:25 - 02:31] ap now you should find china to really
+[02:28 - 02:34] use your jupiter play around with this
+[02:31 - 02:37] start stop and step so that you are very
+[02:34 - 02:39] familiar of how all these uh string
+[02:37 - 02:41] slicings work
+[02:39 - 02:44] now in terms of steps you will jump the
+[02:41 - 02:46] number of steps okay so uh when you
+[02:44 - 02:48] don't have a start don't have a stop and
+[02:46 - 02:51] then you jump two so it will basically
+[02:48 - 02:54] start from the first laptop and then you
+[02:51 - 02:56] will jump two steps so you will take on
+[02:54 - 02:58] when you jump two steps you will take c
+[02:56 - 03:00] and you jump two steps you will take e
+[02:58 - 03:02] and then jump and you come to the end of
+[03:00 - 03:06] the string and that's the off that's the
+[03:02 - 03:07] end so you will have the a c e
+[03:06 - 03:08] okay
+[03:07 - 03:10] now you must remember that uh whenever
+[03:08 - 03:13] you do string slicing or string
+[03:10 - 03:16] concatenation you will always generate a
+[03:13 - 03:16] new string
+[03:18 - 03:24] okay uh so this is our version of boggle
+[03:21 - 03:27] uh but we are using titan to play this
+[03:24 - 03:30] uh the idea is uh very simple for
+[03:27 - 03:33] example if let's say i assign
+[03:30 - 03:36] singaporean the string to this s and
+[03:33 - 03:38] then i can use string slicing and then i
+[03:36 - 03:41] can create words
+[03:38 - 03:45] okay using string slicing i can even use
+[03:41 - 03:48] negative uh index or negative steps okay
+[03:45 - 03:50] to to get it to move from the reverse
+[03:48 - 03:54] side okay or i can even use the sync
+[03:50 - 03:57] concatenations uh and some replications
+[03:54 - 03:59] and then i can make a a word out of it
+[03:57 - 04:01] now you should give this a try
+[03:59 - 04:01] okay
+[04:02 - 04:07] so the rule of the game is that you can
+[04:04 - 04:09] use a plus for for concatenation and
+[04:07 - 04:11] multiplication for replication okay and
+[04:09 - 04:13] the use of steps and so on so forth of
+[04:11 - 04:16] course if you can form longer words that
+[04:13 - 04:16] will give you more points
+[04:16 - 04:21] okay uh you may want to uh
+[04:19 - 04:23] take a look at this uh
+[04:21 - 04:25] special uh
+[04:23 - 04:26] long word and then read something about
+[04:25 - 04:29] it okay
+[04:26 - 04:29] uh
+[04:35 - 04:38] supercalifragilisticexpialidocious
+[04:39 - 04:45] okay that is a super long word
+[04:42 - 04:45] supercalifragilisticexpialidocious
+[04:47 - 04:50] okay i'll leave it to you too when i
+[04:48 - 04:52] figure how to pronounce this
+[04:50 - 04:54] i have difficulty trying to read it in
+[04:52 - 04:57] one breath
+[04:54 - 05:01] okay now basically there are all
+[04:57 - 05:03] together 34 letters within this word uh
+[05:01 - 05:05] so if i have uh i've actually done this
+[05:03 - 05:08] for you for the indexing after the die
+[05:05 - 05:10] is 10 and all the index position
+[05:08 - 05:12] so if let's say you were to choose from
+[05:10 - 05:15] zero to four not equals
+[05:12 - 05:17] zero to five not inclusive from five you
+[05:15 - 05:20] would have actually gotten the super the
+[05:17 - 05:21] words or support okay and you can try
+[05:20 - 05:25] the rest
+[05:21 - 05:28] okay uh if you will take from 14
+[05:25 - 05:31] to uh 18 but not inclusive 18 you will
+[05:28 - 05:34] get things like at least l i s t okay
+[05:31 - 05:36] another word so just to give you some
+[05:34 - 05:39] crew how do we go about string slicing
+[05:36 - 05:40] to get words within this such a long
+[05:39 - 05:41] word
+[05:40 - 05:43] okay uh
+[05:41 - 05:45] when there's opportunity we can probably
+[05:43 - 05:50] try to play this game but uh
+[05:45 - 05:50] that's all for this lecture

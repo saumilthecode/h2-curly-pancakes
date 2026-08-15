@@ -1,0 +1,119 @@
+Title: Filius   Part 3a
+Assessment(s): C3a Hands-on with Filius Network Simulator
+Linked label(s): Part 3a : About Servers - Web Server
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=FrJY_m0MKKg
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:03 - 00:10] hi welcome back in this part 3a where we
+[00:07 - 00:13] want to learn more about servers it is
+[00:10 - 00:15] important for you to watch these youtube
+[00:13 - 00:19] videos so that you can learn something
+[00:15 - 00:19] about the server that we're talking here
+[00:24 - 00:29] now the number and the types of server
+[00:26 - 00:30] required depends on the network size and
+[00:29 - 00:32] the workload
+[00:30 - 00:34] you can have dedicated servers to
+[00:32 - 00:36] perform specific functions
+[00:34 - 00:39] authentication server
+[00:36 - 00:41] helps to keep track of the login
+[00:39 - 00:42] user id and password and what are the
+[00:41 - 00:46] services
+[00:42 - 00:47] are available for this particular user
+[00:46 - 00:49] can be handed by the authentication
+[00:47 - 00:51] server
+[00:49 - 00:53] the file server stores and manages all
+[00:51 - 00:55] the files
+[00:53 - 00:57] we can also have communications server
+[00:55 - 00:58] that handles all the network
+[00:57 - 01:01] including the internet
+[00:58 - 01:05] often the only device on the network
+[01:01 - 01:05] directly connected to the internet
+[01:05 - 01:09] you can also have a web server that
+[01:07 - 01:12] holds a website
+[01:09 - 01:14] and is made available to the internet
+[01:12 - 01:17] print server which manages the client's
+[01:14 - 01:18] requested print job and create a print
+[01:17 - 01:20] queue
+[01:18 - 01:21] to send the
+[01:20 - 01:23] client's
+[01:21 - 01:25] job to the printer
+[01:23 - 01:28] you can also have application server
+[01:25 - 01:29] that access storage for the application
+[01:28 - 01:31] software
+[01:29 - 01:33] database server which provides the
+[01:31 - 01:35] clients with access to the database
+[01:33 - 01:37] information
+[01:35 - 01:41] email server that processes the incoming
+[01:37 - 01:41] and the outgoing of emails
+[01:41 - 01:45] in our hands-only 4 we'll be installing
+[01:44 - 01:47] a web server
+[01:45 - 01:50] it is important for you to watch these
+[01:47 - 01:51] youtube videos to understand how the
+[01:50 - 01:53] internet works
+[01:51 - 01:54] for those of you who are more curious
+[01:53 - 01:57] about the differences between the
+[01:54 - 02:00] internet and the web you can refer to
+[01:57 - 02:00] these youtube videos
+[02:01 - 02:06] now we will use the network that is set
+[02:04 - 02:09] up in hands-on tree
+[02:06 - 02:11] in the hands-on tree we have a server
+[02:09 - 02:12] configured
+[02:11 - 02:15] in a network
+[02:12 - 02:17] now we will use this server to act as
+[02:15 - 02:20] our worldwide web server
+[02:17 - 02:23] now you need to install the web server
+[02:20 - 02:27] software okay the file under the file
+[02:23 - 02:29] explorer and the text editor on this www
+[02:27 - 02:29] server
+[02:29 - 02:35] you will also install the web browser on
+[02:32 - 02:36] at least one of the notebooks they are
+[02:35 - 02:37] client 1
+[02:36 - 02:40] 2
+[02:37 - 02:40] 3 and 4.
+[02:42 - 02:48] after you have done the configuration
+[02:45 - 02:49] start the web server and access the
+[02:48 - 02:52] website
+[02:49 - 02:58] from the notebook web browser using the
+[02:52 - 02:58] url that points to 192.168.0.12
+[02:59 - 03:05] any of this client is capable of
+[03:02 - 03:05] connecting to the web server
+[03:08 - 03:13] it is important for you to watch this
+[03:10 - 03:15] youtube video to understand how does the
+[03:13 - 03:15] internet works
+[03:17 - 03:22] now since we have our web server
+[03:19 - 03:26] configured it would be nice for us to
+[03:22 - 03:26] customize our own home page
+[03:28 - 03:33] i have provided you the yijc logo
+[03:30 - 03:36] logo.jpg
+[03:33 - 03:37] you will use the file explorer
+[03:36 - 03:40] to upload it
+[03:37 - 03:43] and then use the text editor to modify
+[03:40 - 03:43] the html file
+[03:45 - 03:50] at this point you don't really need to
+[03:47 - 03:53] understand how the html work we will
+[03:50 - 03:55] cover that in our subsequent uh lesson
+[03:53 - 03:57] in j2
+[03:55 - 04:00] all you need to do is to modify
+[03:57 - 04:04] a few of this line error in red and then
+[04:00 - 04:06] put in the school name and then the
+[04:04 - 04:08] logo jpeg
+[04:06 - 04:08] file name
+[04:09 - 04:14] and then you have a modified index.html
+[04:13 - 04:17] this will be the
+[04:14 - 04:20] web page that we will be accessing
+[04:17 - 04:23] now at this moment you do not have a dns
+[04:20 - 04:24] server in the network so we are unable
+[04:23 - 04:25] to
+[04:24 - 04:29] access the web
+[04:25 - 04:29] site using www
+[04:30 - 04:36] we will have to use the ip address
+[04:32 - 04:36] specifically 192.168.0.12
+[04:37 - 04:40] so we have to type
+[04:39 - 04:41] the
+[04:40 - 04:42] url
+[04:41 - 04:48] okay
+[04:42 - 04:48] in our browser to retrieve the home page

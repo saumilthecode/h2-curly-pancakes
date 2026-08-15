@@ -27,6 +27,16 @@
 > [!warning]
 > `int()` truncates towards zero: `int(1.99)` is `1`, not `2`. Use `round()` to round.
 
+## Input
+
+```python
+name = input("What is your name? ")
+age  = int(input("How old are you? "))
+```
+
+> [!warning]
+> `input()` **always returns a string**, whatever the user types. Convert with `int()` or `float()` before doing arithmetic — `input() + 1` is a `TypeError`, and going the other way you need `str()` to concatenate a number into a message.
+
 ## Arithmetic Operators
 
 | Operator | Meaning | Example |

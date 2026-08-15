@@ -1,0 +1,331 @@
+Title: 2021 LT 3a Functional Abstraction Pt 2
+LT: LT 3a - Functional Abstraction (for 2026)
+Linked label: Functional Abstraction Part 2
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=u1NfcxbuSpI
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] all right this is the second part of
+[00:02 - 00:06] lecture training 3a we're going to talk
+[00:04 - 00:08] about local and global scope okay where
+[00:06 - 00:10] what exactly is this
+[00:08 - 00:10] right
+[00:10 - 00:14] okay suppose you want to write a
+[00:12 - 00:16] function to compute the hypotenuse all
+[00:14 - 00:18] right so remember the hypotenuse is the
+[00:16 - 00:21] longer side of the
+[00:18 - 00:23] of your right angle triangle okay uh why
+[00:21 - 00:26] do i say this is a lousy way to code
+[00:23 - 00:29] define hypotenuse a and then you
+[00:26 - 00:31] you have you have parameters a and b
+[00:29 - 00:34] they return a
+[00:31 - 00:35] s3 2 which is square a square plus b
+[00:34 - 00:38] square
+[00:35 - 00:40] then sum them up and then you just uh
+[00:38 - 00:42] power by 0.5 that's the exact function
+[00:40 - 00:45] of hypotenuse right it's essentially a
+[00:42 - 00:47] square plus b squared then take the
+[00:45 - 00:50] square root okay but we feel we say that
+[00:47 - 00:51] this is a lousy way of coding all right
+[00:50 - 00:53] what's the problem with it
+[00:51 - 00:55] okay one way of
+[00:53 - 00:58] one important idea thing about coding is
+[00:55 - 00:59] that you want to make good use of your
+[00:58 - 01:02] abstractions
+[00:59 - 01:04] make use of abstractions to to to break
+[01:02 - 01:07] down your problem into simpler
+[01:04 - 01:09] problems all right so in this case here
+[01:07 - 01:11] how we can improve this right is to use
+[01:09 - 01:13] wishful thinking okay what exactly is
+[01:11 - 01:15] wishful thinking right it's essentially
+[01:13 - 01:17] a top-down approach
+[01:15 - 01:19] yeah pretend you have whatever you need
+[01:17 - 01:20] all right you'll learn the next lecture
+[01:19 - 01:22] like for example if you want to build a
+[01:20 - 01:24] house you don't think about the breaks
+[01:22 - 01:26] first you think about how you want to
+[01:24 - 01:27] design the house you think about what
+[01:26 - 01:29] style you want after that you think
+[01:27 - 01:30] about what rooms you want in the house
+[01:29 - 01:32] then only after that you start to think
+[01:30 - 01:34] about the materials and the bricks you
+[01:32 - 01:36] have to bring in okay but when we are
+[01:34 - 01:37] thinking of designing a room right we
+[01:36 - 01:38] don't worry about the brakes we just
+[01:37 - 01:41] assume that we have the brakes first
+[01:38 - 01:44] okay so this is wishful thinking we just
+[01:41 - 01:46] assume that what we have what we need uh
+[01:44 - 01:49] so how do we uh use visual thinking for
+[01:46 - 01:52] this uh hypotenuse function here okay
+[01:49 - 01:55] what you can do is that i've put out the
+[01:52 - 01:58] equation to find hypotenuse so pixie c
+[01:55 - 02:00] is the longest side at a and b are the
+[01:58 - 02:02] the two the two sides that form the
+[02:00 - 02:04] right angle so this c equals the square
+[02:02 - 02:06] of a squared plus b square and if i
+[02:04 - 02:10] write my function this way you can see
+[02:06 - 02:13] that it looks much cleaner okay so
+[02:10 - 02:14] define hypotenuse a uh taking parameters
+[02:13 - 02:16] a and b
+[02:14 - 02:19] results equals to square root
+[02:16 - 02:20] okay then square root applied on square
+[02:19 - 02:22] a plus square b
+[02:20 - 02:24] and return result
+[02:22 - 02:26] what i want to note here is that
+[02:24 - 02:28] if you look at where the arrows are
+[02:26 - 02:31] pointing right each part of the each
+[02:28 - 02:33] part of the mathematical equation is
+[02:31 - 02:35] taken care by
+[02:33 - 02:37] one part of your function
+[02:35 - 02:39] okay so there's a square and there's
+[02:37 - 02:42] also a square square root function but
+[02:39 - 02:44] remember before this we have not even
+[02:42 - 02:47] defined our square root and square
+[02:44 - 02:50] functions okay basically we just pretend
+[02:47 - 02:52] that we know for now first all right so
+[02:50 - 02:55] once we form this then we have broken
+[02:52 - 02:57] down our prop problem by the first layer
+[02:55 - 02:59] and then this is uh this is how we apply
+[02:57 - 03:00] visual thinking we are just saying that
+[02:59 - 03:01] oh
+[03:00 - 03:03] let's just assume we know what square
+[03:01 - 03:04] root we know what square and what's
+[03:03 - 03:07] what's the l square
+[03:04 - 03:09] okay then we go on right we can go on to
+[03:07 - 03:11] think about what are the functions you
+[03:09 - 03:14] need to write as well so for square
+[03:11 - 03:17] basically just uh result equals to x
+[03:14 - 03:20] power 2 that return result square root y
+[03:17 - 03:22] is just apply power 0.5 and then return
+[03:20 - 03:23] the result so we already have now we
+[03:22 - 03:25] have these two
+[03:23 - 03:27] functions here that you can use it
+[03:25 - 03:29] directly later
+[03:27 - 03:31] okay so once you have that we can put
+[03:29 - 03:32] that nicely into three separate
+[03:31 - 03:34] functions
+[03:32 - 03:35] all right then we can have you can see
+[03:34 - 03:37] right now here you have the square
+[03:35 - 03:39] function of the square function and then
+[03:37 - 03:41] the hypotenuse function right makes use
+[03:39 - 03:43] of the square root and square so
+[03:41 - 03:45] basically when we look at this square
+[03:43 - 03:47] root square and square here right this
+[03:45 - 03:50] are using helper functions the helper
+[03:47 - 03:51] functions are defined outside here for
+[03:50 - 03:52] for you
+[03:51 - 03:54] okay so when
+[03:52 - 03:56] when you run the code for when you use
+[03:54 - 03:58] the hypotenuse right when you run the
+[03:56 - 04:00] code when it comes to this line you see
+[03:58 - 04:02] the oh
+[04:00 - 04:05] using square root so i need so
+[04:02 - 04:07] uh python will look somewhere to find
+[04:05 - 04:09] square root look up in the cell to find
+[04:07 - 04:11] square root okay look up in the code
+[04:09 - 04:13] that you have to find the square
+[04:11 - 04:15] function when it encounters a square it
+[04:13 - 04:17] looks up to find
+[04:15 - 04:21] the function for square okay so this
+[04:17 - 04:21] this is a cleaner way of coding
+[04:23 - 04:25] all right that's another way of writing
+[04:24 - 04:27] the
+[04:25 - 04:29] the helper functions here is to write
+[04:27 - 04:30] them as sub functions of the main
+[04:29 - 04:32] function
+[04:30 - 04:35] so again i've defined hypotenuse and
+[04:32 - 04:38] then when i enter this line you can see
+[04:35 - 04:40] that the block side this
+[04:38 - 04:41] one block here the defined square the
+[04:40 - 04:43] defined square root and the result
+[04:41 - 04:46] everything are all the same having the
+[04:43 - 04:49] same indentation okay so within the
+[04:46 - 04:51] hypotenuse function i have defined the
+[04:49 - 04:53] sub function of square and sub some sub
+[04:51 - 04:55] function of square root y okay then i
+[04:53 - 04:57] can use that directly square root square
+[04:55 - 05:00] root equals to a square root of square a
+[04:57 - 05:01] plus square b and return the result
+[05:00 - 05:02] okay so this is another way of writing
+[05:01 - 05:04] there's no um
+[05:02 - 05:05] [Music]
+[05:04 - 05:07] usually my preference is to write it
+[05:05 - 05:10] outside okay write everything outside
+[05:07 - 05:12] okay but again there's some flexibility
+[05:10 - 05:13] for it as well
+[05:12 - 05:14] okay
+[05:13 - 05:16] moving on
+[05:14 - 05:18] so let's look at now let's look at what
+[05:16 - 05:21] exactly is the
+[05:18 - 05:22] local scope and global scope okay when
+[05:21 - 05:24] we talk about scope right we are
+[05:22 - 05:26] essentially looking we are talking about
+[05:24 - 05:29] whether we are looking within a function
+[05:26 - 05:30] or not all right if we are if we
+[05:29 - 05:32] when
+[05:30 - 05:35] there's no okay there's no
+[05:32 - 05:37] big big global scope but in this case
+[05:35 - 05:39] right when i talk about my hypotenuse
+[05:37 - 05:41] function right the hypotenuse function
+[05:39 - 05:42] the whole thing here forms the global
+[05:41 - 05:45] scope okay
+[05:42 - 05:48] but then any sub functions uh defined
+[05:45 - 05:51] within your within your main function
+[05:48 - 05:52] they will form local scopes okay so in
+[05:51 - 05:54] this case here i have a sub function for
+[05:52 - 05:56] square i have uh
+[05:54 - 05:59] this square here will form local scope
+[05:56 - 06:01] one and then this square root function
+[05:59 - 06:03] will form local scope two the num the
+[06:01 - 06:05] numbering here is just arbitrary okay
+[06:03 - 06:07] it's not important so basically what i'm
+[06:05 - 06:08] saying that this uh square and square
+[06:07 - 06:11] root
+[06:08 - 06:13] are separate local scopes all right
+[06:11 - 06:15] okay so what exactly is a what what
+[06:13 - 06:18] exactly some of the concerns for local
+[06:15 - 06:19] and global scope right okay so to run
+[06:18 - 06:21] through them quickly but we'll talk
+[06:19 - 06:23] about them in the next few slides code
+[06:21 - 06:26] in a global scope cannot use any
+[06:23 - 06:28] local scope variables okay a local scope
+[06:26 - 06:30] can access global variables
+[06:28 - 06:32] code in the function's local scope
+[06:30 - 06:34] cannot use variables in any other local
+[06:32 - 06:35] scope you can use the same name for
+[06:34 - 06:38] different variables if there are
+[06:35 - 06:40] different scopes okay let's see it's
+[06:38 - 06:41] quite complex reading this but let's
+[06:40 - 06:43] show you a few examples to help you
+[06:41 - 06:45] understand a bit better
+[06:43 - 06:48] okay code the global scope cannot use
+[06:45 - 06:51] any local variable okay so for example
+[06:48 - 06:53] here i have defined some function which
+[06:51 - 06:55] takes in parameters a and b within this
+[06:53 - 06:57] function i define
+[06:55 - 06:59] i have a help a sub function or a helper
+[06:57 - 07:02] function called square x and their
+[06:59 - 07:03] result equals to x square then return
+[07:02 - 07:05] result
+[07:03 - 07:07] okay then what i'm trying to do now i
+[07:05 - 07:10] can see that this result here
+[07:07 - 07:11] this is part of the main function
+[07:10 - 07:13] the red color is a group over scope this
+[07:11 - 07:16] result here is in the global scope
+[07:13 - 07:18] really so result equals to x
+[07:16 - 07:21] plus a plus b
+[07:18 - 07:24] all right but because okay a and b is
+[07:21 - 07:27] part of the global scope but x here
+[07:24 - 07:30] is actually part of the local scope okay
+[07:27 - 07:32] so the global scope cannot use the local
+[07:30 - 07:35] scope variables okay so you cannot call
+[07:32 - 07:37] x directly what you have to do is to in
+[07:35 - 07:39] this case right i have to make use of
+[07:37 - 07:42] the if if i want to use this i have to
+[07:39 - 07:45] call the function first so i cannot call
+[07:42 - 07:47] any variables within the local scope e5
+[07:45 - 07:48] in the global scope all right so that's
+[07:47 - 07:51] one
+[07:48 - 07:53] next yeah a and b are global variables
+[07:51 - 07:55] and x is not you run this whole x is not
+[07:53 - 07:57] defined right so you can just check it
+[07:55 - 08:00] on as well
+[07:57 - 08:02] next a local scope can access global
+[08:00 - 08:04] variable variables okay so this case
+[08:02 - 08:06] here i have a function a b again but
+[08:04 - 08:09] within this
+[08:06 - 08:11] k i define k equals to five this k equal
+[08:09 - 08:14] to five is defined within the global
+[08:11 - 08:17] scope of this another function
+[08:14 - 08:20] okay this whole thing so k is a global
+[08:17 - 08:22] variable okay then i define my local
+[08:20 - 08:24] scope which is in this case i form the
+[08:22 - 08:27] local scope by defining a sub function
+[08:24 - 08:30] here all right this one
+[08:27 - 08:32] within the local scope i can access the
+[08:30 - 08:35] global scope
+[08:32 - 08:35] global scope variables all right so this
+[08:35 - 08:38] we
+[08:35 - 08:40] square x result equals to x plus k yeah
+[08:38 - 08:42] obviously the name of the foundation is
+[08:40 - 08:44] not uh following number but i think it's
+[08:42 - 08:45] okay just assume that this is some
+[08:44 - 08:48] function but essentially what i'm trying
+[08:45 - 08:51] to say here is that your local scope can
+[08:48 - 08:55] access a global variable okay a variable
+[08:51 - 08:57] that's defined within the global scope
+[08:55 - 08:59] itself right so this will not give you
+[08:57 - 09:00] any error here
+[08:59 - 09:02] okay
+[09:00 - 09:04] next code in the functions local scope
+[09:02 - 09:06] cannot use variables in any other local
+[09:04 - 09:09] scope okay so
+[09:06 - 09:10] basically let's say i have two i have
+[09:09 - 09:13] again i have a global scope called
+[09:10 - 09:15] define my function a b then within that
+[09:13 - 09:18] there are two local scopes square and
+[09:15 - 09:20] square root right so in this case i have
+[09:18 - 09:22] u square root uh i've used y for square
+[09:20 - 09:26] root function recycles of y square root
+[09:22 - 09:27] of 0.5 upon 0.5 but i cannot make use of
+[09:26 - 09:29] this
+[09:27 - 09:30] locus uh this y which comes from another
+[09:29 - 09:32] local scope
+[09:30 - 09:35] in the first local scope i cannot use it
+[09:32 - 09:37] directly okay this control and error it
+[09:35 - 09:40] will give you an error that says that uh
+[09:37 - 09:42] y is not defined okay
+[09:40 - 09:44] so just be careful
+[09:42 - 09:47] right so right now you can see basically
+[09:44 - 09:50] right your local scope can access
+[09:47 - 09:51] something in the in access a global
+[09:50 - 09:53] variable
+[09:51 - 09:55] your global scope cannot access a local
+[09:53 - 09:58] variable
+[09:55 - 10:00] a local scope cannot access another
+[09:58 - 10:02] local scope's variables okay so these
+[10:00 - 10:04] are the rules are
+[10:02 - 10:06] okay so y is not defined
+[10:04 - 10:07] next you can use the same name for
+[10:06 - 10:09] different variables if there are
+[10:07 - 10:12] different scopes okay
+[10:09 - 10:15] uh so this is a continuation from just
+[10:12 - 10:18] now right because your two local scopes
+[10:15 - 10:21] here cannot access uh variables that
+[10:18 - 10:24] have been defined in the other local
+[10:21 - 10:26] scope okay so in this case it's actually
+[10:24 - 10:28] possible for you to use
+[10:26 - 10:30] x in both cases define square x then
+[10:28 - 10:32] define square root x here okay you will
+[10:30 - 10:35] not give you an error so if you run it
+[10:32 - 10:37] this way right you will be fine square a
+[10:35 - 10:39] here you will just basically take uh
+[10:37 - 10:42] take the value of a to be the argument x
+[10:39 - 10:44] here square b basically the value of b
+[10:42 - 10:46] to be the value of x in the square x
+[10:44 - 10:48] local scope then you sum them sum it up
+[10:46 - 10:51] together then you take square root right
+[10:48 - 10:53] this then this x here for square root is
+[10:51 - 10:56] taken as this
+[10:53 - 10:58] uh value here square a plus square b all
+[10:56 - 11:01] right um typically for new students
+[10:58 - 11:03] right they find a bit uh
+[11:01 - 11:06] they find a bit scary to use the same
+[11:03 - 11:08] variable okay which is perfectly
+[11:06 - 11:11] understandable so they use define square
+[11:08 - 11:14] x result equals x times x bar two return
+[11:11 - 11:16] result next one they may feel fearful to
+[11:14 - 11:18] use square uh square root x they might
+[11:16 - 11:20] use square root y okay result equals to
+[11:18 - 11:23] y uh
+[11:20 - 11:26] power 0.5 that's also fine uh but after
+[11:23 - 11:28] a while you should get the hang of it
+[11:26 - 11:30] and it's actually okay
+[11:28 - 11:32] there's nothing to worry about
+[11:30 - 11:35] okay so that's end of lt 3
+[11:32 - 11:38] uh lt3a's lecture please go and proceed
+[11:35 - 11:41] to do your questions for lt3a as well
+[11:38 - 11:41] thank you

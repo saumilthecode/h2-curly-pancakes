@@ -1,0 +1,208 @@
+Title: C2b Data Transmission using UTF 8 2024
+Assessment(s): C2c About UTF-8 Encoding for Transmission
+Linked label(s): C2c About UTF-8 Encoding for Transmission
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=Phb-5Dkn7yQ
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:06 - 00:12] hi we'll be covering the uh data
+[00:09 - 00:17] representation part three uh we want to
+[00:12 - 00:17] talk about data transmission using the
+[00:21 - 00:27] utf8 now datas are transmitted between
+[00:23 - 00:29] devices using the binary zeros and one
+[00:27 - 00:30] uh so we want you to note uh the
+[00:29 - 00:33] following example
+[00:30 - 00:37] now the asky and the uni code value for
+[00:33 - 00:44] the dollar sign are the same uh it is 24
+[00:37 - 00:47] in hexa decimal uh which is uh 0 1 0 0 1
+[00:44 - 00:51] 0 0 in a 7even bit binary why I
+[00:47 - 00:53] represent is 7 bit because asky is 7 bit
+[00:51 - 00:56] okay so you realize that
+[00:53 - 00:59] 010 if you uh convert that to Binary
+[00:56 - 01:03] that is a two and then uh if you look at
+[00:59 - 01:06] the 0 1 1 0 1 0 0 now uh bear in mind
+[01:03 - 01:08] that the last uh extreme right digit is
+[01:06 - 01:12] 2 to the^ 0 2 to the power one which is
+[01:08 - 01:14] a two 2 the^ two that is a four okay and
+[01:12 - 01:19] two to the^ three that is a eight so you
+[01:14 - 01:24] have a 1 2 4 8 so in the case of a four
+[01:19 - 01:27] it is a one so that is four so 24 in
+[01:24 - 01:31] hexad decimal is represented by 0 1 0 0
+[01:27 - 01:33] 1 0 0 now under the uh utf8 transmission
+[01:31 - 01:37] the character have to be transmitted in
+[01:33 - 01:41] one bite which is 8 bit so uh additional
+[01:37 - 01:44] zero bit is added to the front so hence
+[01:41 - 01:49] the dollar sign is transmitted as a 1x8
+[01:44 - 01:50] bits 01 0 0 1 0 0 to represent the
+[01:49 - 01:55] dollar
+[01:50 - 01:58] sign second example I want to use the uh
+[01:55 - 02:01] uni code for the English pound sign so
+[01:58 - 02:05] that's a pound now the Unicode value for
+[02:01 - 02:09] the pound is A3 in hexad
+[02:05 - 02:12] decimal a stands for 10 right so then if
+[02:09 - 02:17] you look at the first four heximal value
+[02:12 - 02:22] one 1 0 so you have 18 and 1 two 8 and
+[02:17 - 02:26] Two Become 10 so 1 0 1 0 represent a 0 0
+[02:22 - 02:31] 1 1 uh so it's a 1 plus a two so that is
+[02:26 - 02:31] a three so in this way this is a 8 bit B
+[02:32 - 02:39] but in for for uh utf8
+[02:36 - 02:42] transmission uh to transmit the 8 bit
+[02:39 - 02:45] the first digit must be a zero to uh
+[02:42 - 02:48] represent that it is a asky character so
+[02:45 - 02:51] now our 8 bit the first character is a
+[02:48 - 02:54] one so we cannot use 8 bit we have to
+[02:51 - 02:56] use six uh we have sorry we have to use
+[02:54 - 02:59] 11 bit that means we have to use two
+[02:56 - 03:00] bite okay so under the udf8 this
+[02:59 - 03:03] character need to be transmitted using
+[03:00 - 03:08] two bite now the first bite will
+[03:03 - 03:12] comprise of 110 a header plus 5 bit the
+[03:08 - 03:15] second bite will be one Z plus 6
+[03:12 - 03:19] bit so you have five bit of data and six
+[03:15 - 03:22] bit of data so all in all it is 11 bit
+[03:19 - 03:23] so but then our data is only 8 bit so
+[03:22 - 03:27] what we need to do is that we need to
+[03:23 - 03:30] add three zeros in front so after adding
+[03:27 - 03:36] three zero our data will now become 11
+[03:30 - 03:39] bit triple 0 in front 1 0 1 0 0 01 1 so
+[03:36 - 03:42] this is our data to represent the
+[03:39 - 03:46] English pound
+[03:42 - 03:49] symbol so when this uh 11 bit is going
+[03:46 - 03:52] to sense using the utf8 you realize that
+[03:49 - 03:55] the first bite can only take five bit so
+[03:52 - 03:58] you will take the triple Z and one Z
+[03:55 - 04:00] that will form the first bite the second
+[03:58 - 04:05] bite will start with one Z followed by
+[04:00 - 04:07] six bit of data one z0 011 so these are
+[04:05 - 04:11] the two bytes that will be transmitted
+[04:07 - 04:13] under the utf8 to represent the English
+[04:11 - 04:13] P
+[04:16 - 04:23] character for the Euro uh sign character
+[04:21 - 04:25] uh the uni code value is
+[04:23 - 04:30] 202
+[04:25 - 04:35] AC in hexad decimal 20 AC I've written
+[04:30 - 04:38] out here two is 1 0 0 is 0 0
+[04:35 - 04:41] 0 a is 1
+[04:38 - 04:45] 010 C C
+[04:41 - 04:49] represent 12 so you have a eight and a
+[04:45 - 04:55] four so it's 1 1 0 0 so in this case we
+[04:49 - 04:58] have a 14 bit binary typo error 14bit
+[04:55 - 05:00] binary so under the UTF transmission
+[04:58 - 05:03] this character need to be trans using
+[05:00 - 05:05] three bite because it's 14
+[05:03 - 05:09] bit uh two bite can only take care of 11
+[05:05 - 05:11] bit so it's way be uh exceed the 11bit
+[05:09 - 05:13] uh requirement so it's 14 bit we need
+[05:11 - 05:16] three bite so how do we represent the
+[05:13 - 05:19] three bite the first bite will be 11
+[05:16 - 05:24] one0 now there triple one here to show
+[05:19 - 05:28] that in total there are three bikes okay
+[05:24 - 05:30] so the first bike will contain 11 one0
+[05:28 - 05:34] the second bike and the third bike will
+[05:30 - 05:39] contain one Z one0 to re to to to signal
+[05:34 - 05:41] that these are the two uh following
+[05:39 - 05:44] bikes now the first bite will have four
+[05:41 - 05:48] bits of data followed by six bit of data
+[05:44 - 05:56] six bit of data so 4 66 that
+[05:48 - 05:56] makes 16 bit now our data is only 14
+[05:57 - 06:02] bit so what we need to do is that we
+[06:00 - 06:04] need to add two zeros in front to make
+[06:02 - 06:08] it into a 16bit
+[06:04 - 06:10] data okay so now we have the 16 bit data
+[06:08 - 06:15] including the two zero in front to
+[06:10 - 06:19] represent the uh Euro sign okay so now
+[06:15 - 06:21] the three bite the first bite 11 one0
+[06:19 - 06:25] followed by four bit which is 0 011
+[06:21 - 06:28] sorry 0 1 0 the second bite one Z
+[06:25 - 06:32] followed by six bat and the third bite
+[06:28 - 06:35] one Follow by six bit in this way the
+[06:32 - 06:40] three bite all together will represent
+[06:35 - 06:44] the Euro uh sign
+[06:40 - 06:47] character so in the above three example
+[06:44 - 06:49] you can see that uh utf8 can transmit
+[06:47 - 06:51] data using one
+[06:49 - 06:55] bite two
+[06:51 - 06:59] bytes three bytes it can even transmit
+[06:55 - 07:01] four bytes and so on okay so what
+[06:59 - 07:03] happened is that uh the character uh
+[07:01 - 07:06] when it is transmitted together it will
+[07:03 - 07:09] look probably something like that with a
+[07:06 - 07:12] whole string of zeros and one are we
+[07:09 - 07:14] able to distinguish and identify the
+[07:12 - 07:18] transmitted character how many
+[07:14 - 07:18] characters are there how we going to
+[07:19 - 07:24] identify now first we group them as
+[07:21 - 07:26] eight bit because we use 8 bit to
+[07:24 - 07:30] represent one bite so we group there as
+[07:26 - 07:32] 8 bit so previous see you have this
+[07:30 - 07:33] whole strings of binary you group them
+[07:32 - 07:36] eight by
+[07:33 - 07:37] eight and you will get this you get all
+[07:36 - 07:40] together Six
+[07:37 - 07:43] B let's take a look at the first
+[07:40 - 07:47] bite since the first bite starts with a
+[07:43 - 07:50] zero so it is a asky character and it is
+[07:47 - 07:54] one character so when you remove the
+[07:50 - 07:58] zero what Left Behind is the data 0 1 0
+[07:54 - 08:01] 0 1 0 0 in binary and when we convert
+[07:58 - 08:03] that there is 25 4 24 represent a ask
+[08:01 - 08:06] key character so you have one character
+[08:03 - 08:09] here in the first
+[08:06 - 08:12] bite think a look at the second bite the
+[08:09 - 08:14] second bite start with one one0 it means
+[08:12 - 08:17] that this particular character needed
+[08:14 - 08:20] two bite to represent so the second and
+[08:17 - 08:22] the third bite will come together to
+[08:20 - 08:24] form one
+[08:22 - 08:27] character so when we remove the one one
+[08:24 - 08:31] Z and we remove the one Zer we will have
+[08:27 - 08:34] the data in in this manner this is a
+[08:31 - 08:37] 11bit data now this 11bit data the
+[08:34 - 08:41] triple 0 in front is quite useless so we
+[08:37 - 08:45] can drop it off so we start from one Z 1
+[08:41 - 08:49] 0 0 0 1 one in
+[08:45 - 08:52] binary and that will translate to A3 in
+[08:49 - 08:56] hexa decimal why is it A3 let's take a
+[08:52 - 08:59] look 1 Z One 0 so you have one eight and
+[08:56 - 09:04] then you have a two a eight and a two
+[08:59 - 09:06] will make 10 10 is a 0 0 1 1 so you have
+[09:04 - 09:09] a one and you have a two one and two you
+[09:06 - 09:13] become a three so that's A3 in hexad
+[09:09 - 09:15] decimal again A3 in hexadecimal
+[09:13 - 09:17] represent a certain character in our uni
+[09:15 - 09:19] Code
+[09:17 - 09:23] table let's take a look at the fourth
+[09:19 - 09:26] bite the fourth bite starts with one
+[09:23 - 09:27] one0 what it means is that there are all
+[09:26 - 09:30] together three
+[09:27 - 09:33] bytes to form a character
+[09:30 - 09:37] so the fourth fifth and sixth belongs to
+[09:33 - 09:40] a single character we remove the 11 one0
+[09:37 - 09:41] remove the one zero and then we will get
+[09:40 - 09:44] the data
+[09:41 - 09:48] portion so this data portion compris of
+[09:44 - 09:52] 14 bits after removing the first zero
+[09:48 - 09:56] okay so this will be translated to
+[09:52 - 10:01] 20 a in hexad decimal again this
+[09:56 - 10:01] represent a character in our uni code
+[10:02 - 10:10] table now uh currently utf8 can transmit
+[10:06 - 10:12] up to six B okay so the first bite will
+[10:10 - 10:17] contain 6
+[10:12 - 10:20] Z sorry 61 followed by a zero and a
+[10:17 - 10:23] data the second bite third fourth fifth
+[10:20 - 10:25] and sixth all start with one zero so if
+[10:23 - 10:28] you add up all the data portion the
+[10:25 - 10:30] first bite have one bit of data second
+[10:28 - 10:36] bite onward each have
+[10:30 - 10:38] six bits of data 6 * 5 that is 30 31 so
+[10:36 - 10:42] a maximum number of bits for a data is
+[10:38 - 10:45] 31 bit now which means that if we are
+[10:42 - 10:49] using up to six B we can represent more
+[10:45 - 10:49] than 200 million different
+[10:51 - 10:57] character that's all for the utf8 I hope
+[10:55 - 11:00] you have a better understanding of how
+[10:57 - 11:04] data is being transmitted uh to uh uh
+[11:00 - 11:04] udf8 uh encoding

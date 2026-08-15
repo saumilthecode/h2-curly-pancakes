@@ -1,0 +1,193 @@
+Title: Pre-Algebra 3 - Decimal, Binary, Octal & Hexadecimal
+Assessment(s): C2a Data Representation of Numbers (Theory Questions)
+Linked label(s): C2a Data Representation of Numbers (Part 3)
+Uploader: MyWhyU
+YouTube: https://www.youtube.com/watch?v=5sS7w-CMHkU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:03 - 00:08] Hello. I’m Professor Von Schmohawk and welcome to Why U.
+[00:08 - 00:14] In the previous lectures, we explored some examples of the earliest number systems
+[00:14 - 00:17] which were used primarily for counting objects.
+[00:17 - 00:22] These counting numbers are called “natural numbers”.
+[00:22 - 00:28] The natural numbers start at one and can count to arbitrarily large quantities.
+[00:30 - 00:37] As we have seen, Roman numerals are one of many possible ways to represent natural numbers.
+[00:37 - 00:42] The Roman system was eventually replaced with the modern decimal number system
+[00:42 - 00:48] which uses “positional notation” and only ten numeric symbols.
+[00:48 - 00:53] The decimal number system was found to be superior to the ancient Roman system
+[00:53 - 00:57] because of the simple rules it uses to create numbers.
+[00:58 - 01:05] In the decimal system there are ten numeric symbols, 0 through 9, called “digits”.
+[01:07 - 01:09] Depending on the column they occupy
+[01:09 - 01:12] these digits represent the quantity of ones
+[01:12 - 17:52] tens
+[01:13 - 01:14] hundreds
+[01:14 - 14:34] thousands
+[01:15 - 01:16] and so on
+[01:16 - 01:19] which make up the number.
+[01:19 - 01:23] In positional notation, the column occupied by a digit
+[01:23 - 01:27] determines the “multiplier” for that digit.
+[01:27 - 01:29] For example, in the decimal system
+[01:29 - 01:34] the value of the right-most digit is multiplied by 1.
+[01:34 - 01:39] The digit in the next column to the left is multiplied by 10.
+[01:39 - 01:44] The next digit is multiplied by 100 and so on.
+[01:44 - 01:50] The value of a number is the sum of all its digits times their multipliers.
+[01:50 - 01:56] For example, the value of the decimal number 1879
+[01:56 - 01:58] is 1 times 1000
+[01:58 - 02:00] plus 8 times 100
+[02:01 - 02:03] plus 7 times 10
+[02:03 - 02:06] plus 9 times 1.
+[02:07 - 02:12] In any positional notation, each column’s multiplier differs from the adjacent column
+[02:12 - 02:18] by a constant multiple called the “base” of the number system.
+[02:18 - 02:24] In the decimal system, each column multiplier is ten times the previous column.
+[02:24 - 02:30] Therefore the decimal system is called a “base-10” number system.
+[02:31 - 02:34] There are an infinite number of columns in the decimal number system
+[02:34 - 02:41] with each column multiplier being ten times bigger than the column to the right.
+[02:41 - 02:46] However, when writing a number, the zeros in front are normally not written.
+[02:53 - 02:55] We can count up to 9
+[02:55 - 02:58] using only the ones column.
+[02:58 - 03:00] Once we reach 9
+[03:00 - 03:02] the ones column starts over at 0
+[03:02 - 03:05] and the tens column increments.
+[03:05 - 03:07] As we continue counting
+[03:07 - 03:10] the tens column counts the number of times
+[03:10 - 03:14] that the ones column has passed from 9 to 0.
+[03:14 - 03:20] In other words, the tens column registers the number of tens which we have counted.
+[03:20 - 03:24] This continues until we reach 99.
+[03:24 - 03:29] At that point the ones and tens columns start over at 0
+[03:29 - 03:32] and the hundreds column increments.
+[03:34 - 03:38] The positional notation system is simple.
+[03:38 - 03:42] Every time a column passes from 9 to 0
+[03:42 - 03:44] the next column to the left increments.
+[03:47 - 03:53] How is it that we ended up with a number system based on multiples of ten?
+[03:53 - 03:57] There is not any good reason for choosing ten over some other number
+[03:57 - 04:01] other than the fact that people have ten fingers
+[04:01 - 04:06] and probably originally communicated quantities using their fingers.
+[04:08 - 04:13] But what if we were cartoon characters with four digits on each hand?
+[04:16 - 04:18] Is it possible that in cartoon land
+[04:18 - 04:25] everyone uses a number system based on multiples of eight instead of ten?
+[04:25 - 04:30] How would a base-8 or “octal” number system work?
+[04:30 - 04:37] In octal there are only eight numeric symbols instead of ten as in decimal.
+[04:37 - 04:43] Instead of 0 through 9 the symbols 0 through 7 are used.
+[04:43 - 04:46] The symbols 8 and 9 are not needed.
+[04:46 - 04:51] Counting in octal is very similar to counting in decimal.
+[04:51 - 04:54] Since there are no symbols for 8 or 9
+[04:54 - 05:00] the highest quantity which can be represented in the ones column is 7.
+[05:00 - 05:05] Counting an eighth item causes the ones column to start over at 0
+[05:05 - 05:08] and the next column to increment.
+[05:08 - 05:12] So the second column counts the number of eights.
+[05:12 - 05:18] Therefore in octal the number following 7 is 10
+[05:18 - 05:21] which looks just like the decimal number ten.
+[05:21 - 05:27] After octal "10" comes octal "11", "12", and so on
+[05:27 - 05:30] until we get to octal "17".
+[05:30 - 05:33] At that point, we go to octal "20".
+[05:33 - 05:39] The second column has now counted two “eights” or sixteen.
+[05:39 - 05:45] We continue like this until we get to the highest number we can represent with two digits
+[05:45 - 05:47] octal "77".
+[05:47 - 05:55] At that point, the ones and eights columns start over at 0 and the third column increments.
+[05:55 - 06:00] The 1 in the third column represents eight “eights” or sixty-four.
+[06:02 - 06:08] Each column multiplier is eight times the previous one.
+[06:10 - 06:15] Every number which can be written in decimal can also be written in octal
+[06:15 - 06:17] although after counting to 7
+[06:17 - 06:22] the way the quantities are represented is completely different.
+[06:25 - 06:29] It is easy to convert an octal number to decimal
+[06:29 - 06:32] when you consider how positional notation works.
+[06:32 - 06:38] Let’s take for example, the octal number "1750".
+[06:38 - 06:46] As in decimal, the value of the octal number is the sum of all its digits times their multipliers.
+[06:46 - 06:50] So the number "1750" represents
+[06:50 - 06:53] 1 times 512
+[06:53 - 06:55] plus 7 times 64
+[06:55 - 06:57] plus 5 times 8
+[06:58 - 07:00] plus 0 ones
+[07:00 - 07:06] which adds up to the quantity which in decimal is called one-thousand.
+[07:06 - 07:13] You may sometimes see a small subscript 8 or 10 after an octal or decimal number
+[07:13 - 07:18] in case there may be some confusion about which base is being used.
+[07:20 - 07:26] Digital computers use electronic circuits called “flip-flops” to represent numbers.
+[07:26 - 07:34] Each flip-flop can store a single bit which can represent either a 0 or a 1.
+[07:35 - 07:41] Multiple bits can be combined to represent a base-2 or “binary” number.
+[07:41 - 07:47] In the binary number system 0 and 1 are the only two numeric symbols.
+[07:47 - 07:50] Since binary is base-2
+[07:50 - 07:55] each column multiplier is two times the multiplier of the previous digit.
+[07:55 - 07:58] And just like decimal or octal numbers
+[07:58 - 08:05] the value of a binary number is sum of all its digits times their multipliers.
+[08:06 - 08:11] Since the digits are either 1 or 0 the calculation is simple.
+[08:11 - 08:16] We just add the multipliers of all the columns which contain ones.
+[08:16 - 08:21] For example, the binary number 11010
+[08:21 - 08:23] represents 1 sixteen
+[08:24 - 08:25] plus 1 eight
+[08:25 - 08:27] plus 1 two
+[08:27 - 08:31] which is equal to twenty-six.
+[08:32 - 08:36] Even though digital computers store numbers in binary
+[08:36 - 08:42] it can be quite tedious to write down or remember large binary numbers.
+[08:42 - 08:47] For instance, the number one-million in binary is
+[08:47 - 08:49] one one one one
+[08:49 - 08:51] zero one zero one
+[08:51 - 08:54] one zero zero one
+[08:54 - 08:56] one zero one one
+[08:56 - 08:59] zero zero zero zero.
+[08:59 - 09:03] Early in the history of digital computers
+[09:03 - 09:07] engineers found that it was easier to use octal notation
+[09:07 - 09:11] than to deal with long strings of ones and zeros.
+[09:11 - 09:17] Three binary digits can be represented by a single octal symbol.
+[09:17 - 09:24] It is easy to memorize the eight possible combinations of three binary bits.
+[09:25 - 09:29] To convert a multiple-digit octal number to binary
+[09:29 - 09:35] each octal digit in the number is converted to a 3-bit binary equivalent
+[09:35 - 09:41] and the binary digits are all combined into a single binary number.
+[09:41 - 09:45] Any leading zeros can be removed.
+[09:45 - 09:50] To convert a binary number to octal we do the same thing in reverse.
+[09:50 - 09:54] To convert this binary number back to octal
+[09:54 - 09:58] we split it into 3-bit groups starting from the right
+[09:58 - 10:04] and each 3-bit group is then converted to its equivalent octal symbol.
+[10:04 - 10:13] So the octal equivalent to this binary number is "3654660"
+[10:13 - 10:18] a lot easier to remember than all those ones and zeros.
+[10:19 - 10:26] Today, computer storage is normally organized into 8-bit groups called "bytes".
+[10:26 - 10:32] Because of this, many computer engineers prefer to use base-16
+[10:32 - 10:36] otherwise known as “hexadecimal” or “hex” instead of octal.
+[10:36 - 10:43] With hexadecimal, every group of four bits converts to a single hex symbol.
+[10:43 - 10:47] Two hex symbols represent exactly one byte.
+[10:47 - 10:52] Even fewer digits than octal are required to represent a given number
+[10:52 - 10:56] and it's just as easy to convert back and forth to binary.
+[10:56 - 11:00] Hexadecimal numbers use sixteen numeric symbols.
+[11:00 - 11:04] The symbols 0 through 9 are used just as in decimal
+[11:04 - 11:07] but six more symbols are needed.
+[11:07 - 11:12] Instead of making up new symbols, the letters A through F are used
+[11:12 - 11:17] to represent what we call ten through fifteen in decimal.
+[11:18 - 11:22] Counting in hexadecimal works the same way as in decimal or octal
+[11:22 - 11:27] except that hex uses sixteen symbols per digit.
+[11:27 - 11:32] Because each column multiplier is sixteen times larger than the previous column
+[11:32 - 11:34] hexadecimal can represent large numbers
+[11:34 - 11:37] with fewer digits than octal or decimal.
+[11:40 - 11:42] When counting in hexadecimal
+[11:42 - 11:46] after getting to F which is decimal 15
+[11:46 - 11:49] we go to "10" which is decimal 16
+[11:49 - 11:54] then "11", "12", and so on.
+[11:54 - 11:56] Once we reach 1F
+[11:56 - 12:01] we go to "20" which is decimal 32.
+[12:01 - 12:07] When we get to the largest number which we can represent with two hex digits, FF
+[12:07 - 12:13] we go to "100" which is decimal 256
+[12:13 - 12:15] and so on.
+[12:18 - 12:19] As we mentioned
+[12:19 - 12:27] using hex notation, four binary bits can be represented by a single hex symbol.
+[12:28 - 12:32] Each of the sixteen possible combinations of four bits
+[12:32 - 12:36] is equivalent to a single hex digit.
+[12:39 - 12:43] Let's convert the same binary number as before to hex.
+[12:43 - 12:48] Starting from the right, we group the digits into groups of four.
+[12:49 - 12:56] Each group of binary digits is then converted to its equivalent hex symbol.
+[12:58 - 13:01] So we have seen how the same natural number
+[13:01 - 13:06] can be represented in base-2 using two numeric symbols
+[13:06 - 13:09] base-8 using eight symbols
+[13:09 - 13:12] base-10 using ten symbols
+[13:13 - 13:17] and base-16 using sixteen symbols.
+[13:17 - 13:21] But no matter how we choose to write this natural number
+[13:21 - 13:25] it still represents the same quantity.
+[13:28 - 13:29] As you have seen
+[13:29 - 13:33] we use the same basic rules for counting in binary
+[13:33 - 28:33] octal
+[13:34 - 26:54] decimal
+[13:35 - 13:37] and hexadecimal.
+[13:37 - 13:44] The only difference is that each base has a different number of numeric symbols.
+[13:45 - 13:47] So using positional notation
+[13:47 - 13:51] we can create a number system using any natural base we like.
+[13:52 - 13:55] Try creating one of your own.
+[13:55 - 13:58] Who knows, it might catch on!

@@ -1,0 +1,193 @@
+Title: LT10d About Hashing (Part 3) - Separate Chain
+LT: LT10d About Hashing (Part 3)
+Linked label: Part 3: Open Hashing - Separate Chain
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=gWAhd-Ina9Q
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] Uh welcome back. Uh in this part three
+[00:04 - 00:09] uh we will be talking about collision
+[00:06 - 00:12] resolution. Uh we'll be going through
+[00:09 - 00:15] two methods of uh these collision
+[00:12 - 00:15] resolutions.
+[00:17 - 00:22] Okay. Um what is a collision? A
+[00:20 - 00:25] collision occurs when two or more
+[00:22 - 00:30] element are hashed to the same value.
+[00:25 - 00:33] Okay. Uh let's consider the uh data uh
+[00:30 - 00:37] we have uh five uh
+[00:33 - 00:37] strings as data
+[00:37 - 00:43] and same we have uh created a uh empty
+[00:40 - 00:45] uh hash table. We have created empty
+[00:43 - 00:48] hash table and these are all the uh
+[00:45 - 00:50] datas that we want to store into the
+[00:48 - 00:51] hash table.
+[00:50 - 00:56] We work out the hash value of each one
+[00:51 - 00:58] of them and then uh modulo 5 and we work
+[00:56 - 01:00] out the remainder. Now you take a look
+[00:58 - 01:04] here right immediately you realize that
+[01:00 - 01:07] there are two element having the same
+[01:04 - 01:11] remainder. Okay. So what will happen
+[01:07 - 01:14] when we try to populate the hash table?
+[01:11 - 01:18] Now taking the first data, the first
+[01:14 - 01:21] data we work out the uh remainder to be
+[01:18 - 01:25] two and we use this hash value two to be
+[01:21 - 01:28] the index position we put in the data.
+[01:25 - 01:31] Taking the second data
+[01:28 - 01:33] we work out the remainder three the hash
+[01:31 - 01:36] value three and we use that as an index
+[01:33 - 01:39] position. We populate three. Same thing
+[01:36 - 01:43] the third data we populate the index
+[01:39 - 01:46] position four and then the uh fourth
+[01:43 - 01:51] data we populate the index position
+[01:46 - 01:54] zero. Now here comes the last data.
+[01:51 - 01:57] Okay. Uh when you work out the hash
+[01:54 - 01:59] value it is three. You go to the index
+[01:57 - 02:03] position three you realize that it is
+[01:59 - 02:07] occupied. Therefore there is a collision
+[02:03 - 02:09] occurring here. So you cannot just put
+[02:07 - 02:12] in the data here because if you put in
+[02:09 - 02:16] the data it will replace the existing uh
+[02:12 - 02:19] the earlier data. So there must be a uh
+[02:16 - 02:25] uh a resolution here. You must use a
+[02:19 - 02:28] method away to resolve this issue. Okay.
+[02:25 - 02:30] So the uh first resolution method we
+[02:28 - 02:33] call this the separate chain. Now
+[02:30 - 02:36] basically what we do is that we create a
+[02:33 - 02:38] separate list at that particular index
+[02:36 - 02:41] position.
+[02:38 - 02:45] So for every element in a given list we
+[02:41 - 02:47] work out the uh uh hash value right we
+[02:45 - 02:49] fill in the uh into the hash table if it
+[02:47 - 02:55] is empty.
+[02:49 - 02:58] If it is not empty and there is a list
+[02:55 - 03:01] then add the element into the list.
+[02:58 - 03:03] Okay. If it's not empty and there is a
+[03:01 - 03:07] list already existing there, add the
+[03:03 - 03:11] element into the list.
+[03:07 - 03:14] The other possible scenario is it is not
+[03:11 - 03:16] empty and there is no list. So if
+[03:14 - 03:20] there's no list is not empty, what do
+[03:16 - 03:23] you have there? You have one single
+[03:20 - 03:26] element, a single data that stop in that
+[03:23 - 03:29] position. So what you do is that you
+[03:26 - 03:32] replace it with a list. Take the
+[03:29 - 03:35] existing data and put into the list. The
+[03:32 - 03:38] new data put into the list. So now you
+[03:35 - 03:40] have two element in that list at that
+[03:38 - 03:43] position. So in the table form this is
+[03:40 - 03:47] how it will look like
+[03:43 - 03:49] existing data which is the DBAC
+[03:47 - 03:52] right you find that there's a already
+[03:49 - 03:54] existing data there. You create a list,
+[03:52 - 03:57] put the existing data, put in the new
+[03:54 - 04:02] data. So now you have two element, two
+[03:57 - 04:05] data occupying the same index position.
+[04:02 - 04:08] Okay.
+[04:05 - 04:11] So uh this is the uh collision
+[04:08 - 04:15] resolution one using a separate chain.
+[04:11 - 04:19] Okay. Method. Okay. The algorithm uh is
+[04:15 - 04:19] uh outlined for you here.
+[04:23 - 04:30] Now this uh function the code for the
+[04:27 - 04:32] function hasht is uh what you have been
+[04:30 - 04:36] given to you in the uh previous part
+[04:32 - 04:38] part two. So you initialize the table uh
+[04:36 - 04:43] go through every single element in the
+[04:38 - 04:45] sequence uh work out the hash value. If
+[04:43 - 04:49] at the index position is empty you fill
+[04:45 - 04:51] in the value. Now if is not empty
+[04:49 - 04:55] which means that it is occupied. Now
+[04:51 - 04:58] you're supposed to execute the uh
+[04:55 - 05:00] separate chain uh method. Okay. As your
+[04:58 - 05:04] this uh collision resolutions. So you're
+[05:00 - 05:07] supposed to write down the code here. Uh
+[05:04 - 05:10] what happen if at that particular
+[05:07 - 05:13] position it is not empty. Okay. What you
+[05:10 - 05:17] going to do over here? Okay. So uh you
+[05:13 - 05:23] can uh write out the code
+[05:17 - 05:26] and then using the code uh test it okay
+[05:23 - 05:30] test it against uh the example that we
+[05:26 - 05:33] have and you see whether uh you have two
+[05:30 - 05:36] element that is stored as a list into
+[05:33 - 05:38] that index position tree. Okay, you may
+[05:36 - 05:41] create other test cases for yourself to
+[05:38 - 05:44] check that your this algorithm is uh is
+[05:41 - 05:47] correct.
+[05:44 - 05:50] Okay, next we want to talk about
+[05:47 - 05:52] searching an item in a hash table uh
+[05:50 - 05:56] which you have created using this
+[05:52 - 06:00] separate chain method. Okay. Now,
+[05:56 - 06:02] first uh you find the hash value of the
+[06:00 - 06:04] item that you want to search.
+[06:02 - 06:08] Okay.
+[06:04 - 06:11] and then uh you use that hash value as
+[06:08 - 06:14] your index position. Okay? And then you
+[06:11 - 06:18] go to that particular index position.
+[06:14 - 06:19] Now if it is empty then it simply tells
+[06:18 - 06:24] you that this particular item doesn't
+[06:19 - 06:26] exist in the table. Okay.
+[06:24 - 06:28] If it ex it exists if let's say that is
+[06:26 - 06:30] what you find. So you let's say you work
+[06:28 - 06:33] out the index position to be zero and
+[06:30 - 06:36] what you want to find is ABCD and it's
+[06:33 - 06:40] really ABCD then well you have found it
+[06:36 - 06:44] at the correct position. Okay, it exists
+[06:40 - 06:47] if the hash table uh at index I is not
+[06:44 - 06:50] empty and it is what you want to find.
+[06:47 - 06:54] Okay, now the problem is when you go to
+[06:50 - 06:56] that index position, all right, and it's
+[06:54 - 06:58] not empty and it's not what you find.
+[06:56 - 07:00] Let's say you want to find uh uh uh
+[06:58 - 07:03] something else. Okay. And then you
+[07:00 - 07:06] realize that C D A B or maybe you want
+[07:03 - 07:07] to find uh D CBA,
+[07:06 - 07:09] right? And then you look at it is not
+[07:07 - 07:13] exactly what you find. Then of course it
+[07:09 - 07:15] doesn't exist. Okay. Now uh for the uh
+[07:13 - 07:18] hash table that uh uses the separate
+[07:15 - 07:21] chain uh one concern is that what happen
+[07:18 - 07:24] if you try to look at index position
+[07:21 - 07:26] three and you found that it is a list.
+[07:24 - 07:28] Okay. Now you are not sure whether the
+[07:26 - 07:31] element that you want to find is it in
+[07:28 - 07:34] the list or not. So what do you do? You
+[07:31 - 07:36] can perform a linear search in the list.
+[07:34 - 07:38] Okay, do a linear search into a list.
+[07:36 - 07:41] That means you search through every
+[07:38 - 07:43] single element in the list. Okay, I'm
+[07:41 - 07:46] going to give you a hint here. Now you
+[07:43 - 07:51] can make use of this in operation,
+[07:46 - 07:54] right? Just check for this item in the
+[07:51 - 07:56] table at that position. Now this
+[07:54 - 08:00] operation will return you a boolean true
+[07:56 - 08:03] or false. Now this is actually a linear
+[08:00 - 08:06] search operation uh for Python to he
+[08:03 - 08:11] will compare
+[08:06 - 08:15] the uh the item uh uh to every single
+[08:11 - 08:17] element okay inside the list at this
+[08:15 - 08:19] index position. Okay so this a linear
+[08:17 - 08:22] search. So this is the algorithm that
+[08:19 - 08:27] you can write uh that you can use to
+[08:22 - 08:27] write the code for the search. Okay.
+[08:29 - 08:35] Right. So uh same thing you have the uh
+[08:32 - 08:38] define a function search then the table.
+[08:35 - 08:41] Now what is the table? The table is the
+[08:38 - 08:46] uh all the data that is being used to
+[08:41 - 08:47] populate your hash table. Okay. And then
+[08:46 - 08:49] you write the functions the search
+[08:47 - 08:52] function. After you have written the
+[08:49 - 08:56] search function, use it to check for the
+[08:52 - 08:59] following cases. Check whether CB CDAB
+[08:56 - 09:02] that is your index two. Okay. Uh to
+[08:59 - 09:06] check whether is it uh uh existing uh
+[09:02 - 09:11] ADCB you realize that that is for this
+[09:06 - 09:14] case. Okay. And then uh you have DBA A
+[09:11 - 09:16] that is within DBAC is within the list
+[09:14 - 09:20] itself. BCDA
+[09:16 - 09:26] again uh it is uh BD BCDA is does not
+[09:20 - 09:29] exist in the uh in the hash table. Okay.
+[09:26 - 09:31] So you write down the code using the uh
+[09:29 - 09:34] algorithm that I've outlined on the
+[09:31 - 09:34] previous slide.

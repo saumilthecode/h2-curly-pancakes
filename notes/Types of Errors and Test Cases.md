@@ -111,6 +111,16 @@ def percentage(score, total):
     return (score / total) * 100
 ```
 
+> [!tip] Write tests that answer themselves
+> Print the **comparison**, not the result — then every passing test reads `True` and you never have to recompute the expected answer by hand.
+>
+> ```python
+> print(percentage(20, 80) == 25.0)     # True
+> print(percentage(60, 60) == 100.0)    # True
+> ```
+>
+> Provided test cases are a floor, not a ceiling. Failing one usually means several others would fail too — write your own.
+
 ## Related
 
 - [[Data validation and verification]]

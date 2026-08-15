@@ -1,0 +1,35 @@
+Title: What is SMTP - Simple Mail Transfer Protocol
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=PJo5yOtu7o8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] Hallo almal, in hierdie video gaan ons oor SMTP praat. SMTP staan ​​vir 'n Simple Mail Transfer
+[00:07 - 00:15] Protocol. Nou het ek voorheen 'n video op POP en IMAP gemaak, wat die protokolle is wat gebruik
+[00:15 - 00:23] word om e-pos op te spoor, en nou maak ek 'n video op SMTP, wat 'n protokol is wat gebruik word om e-
+[00:23 - 00:31] pos te stuur . SMTP is basies 'n stel opdragte wat die oordrag van e-pos verifieer en rig.
+[00:31 - 00:41] 'N Goeie manier om te onthou wat SMTP doen, is om na die akroniem SMTP te kyk en dit te
+[00:41 - 00:49] koppel aan' Stuur pos aan mense '. Dus as voorbeeld as u 'n e-pos skryf met 'n e-poskliënt
+[00:49 - 00:56] soos Microsoft Outlook en dan as u op send druk, stuur die e-pos van u rekenaar na
+[00:56 - 01:04] u e-posbediener met behulp van die SMTP-protokol. Hierdie bediener staan ​​ook bekend as die SMTP-bediener
+[01:04 - 01:10] en dit is wat in u e-poskliënt ingestel is. As u byvoorbeeld Gmail gebruik, sal
+[01:10 - 01:20] die SMTP-bedieneradres smtp.gmail.com wees en dan stuur u SMTP-bediener die boodskap
+[01:20 - 01:28] na die e-posbediener van die ontvangers en gebruik ook SMTP. Dan sal die e-pos op die e- posbediener
+[01:28 - 01:36] van die ontvanger bly totdat die ontvanger by sy e-posrekening aanmeld en die e-pos aflaai met POP of IMAP,
+[01:36 - 01:45] of hulle kan die e-pos op die bediener sien deur webmail te gebruik. Nou gebruik SMTP die TCP-protokol,
+[01:45 - 01:52] en as u nie vertroud is met wat TCP doen nie, is TCP wel 'n verbindingsgerigte protokol
+[01:52 - 01:58] wat die aflewering van die e-pos waarborg. Dit is nou die veronderstelling dat die
+[01:58 - 02:04] e-posadres van die bestemming korrek is en steeds bestaan, maar as die e-pos wat u gestuur het
+[02:04 - 02:10] om een ​​of ander rede nie die bestemming bereik nie. So, miskien het u die e-posadres verkeerd gespel,
+[02:10 - 02:17] of bestaan ​​die e-posadres nie meer nie. As dit gebeur, kry u die bekende e-posafleweringsfout
+[02:17 - 02:25] in u posbus om u te laat weet dat die e-pos wat u gestuur het, misluk het. En net soos POP en IMAP, word
+[02:25 - 02:31] SMTP ook in u e-poskliënt soos Microsoft Outlook, Mozilla Thunderbird
+[02:31 - 02:40] of u mobiele toestel gekonfigureer . As u byvoorbeeld Gmail gebruik, gebruik u smtp.gmail.com in die
+[02:40 - 02:47] instellings vir uitgaande bedieners in u e-poskliënt, en dit staan ​​ook bekend as die instelling van die SMTP-bediener.
+[02:47 - 02:54] Hierdie instelling vertel u e-poskliënt waarheen dit die e-pos kan stuur. Dus, ten slotte,
+[02:54 - 03:01] SMTP is basies soortgelyk aan 'n posbode. Die posbode haal die e-pos uit u posbus
+[03:01 - 03:08] by u huis en vind dan die regte roete en lewer dit dan by die bestemmingsposbus af.

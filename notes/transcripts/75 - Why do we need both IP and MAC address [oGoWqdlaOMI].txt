@@ -1,0 +1,66 @@
+Title: Why do we need both IP and MAC address?
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: Sunny Classroom
+YouTube: https://www.youtube.com/watch?v=oGoWqdlaOMI
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:09] hello and this is sunny welcome back in
+[00:05 - 00:13] the tcp/ip world why do we use both IP
+[00:09 - 00:17] and MAC address in order to answer this
+[00:13 - 00:22] question we need to answer these two
+[00:17 - 00:26] questions first what what happens if we
+[00:22 - 00:31] just use MAC address alone and a2 what
+[00:26 - 00:35] happens if we just use IP address alone
+[00:31 - 00:40] MAC address or physical address is a
+[00:35 - 00:44] globally unique ID for your demise the
+[00:40 - 00:47] MAC address is useful and efficient more
+[00:44 - 00:51] efficient for communication on a small
+[00:47 - 00:54] network as each device can broadcast to
+[00:51 - 00:58] find Ana communicate with is physical
+[00:54 - 01:01] address while analogy is like you want
+[00:58 - 01:06] to talk to classmate Bob in the same
+[01:01 - 01:10] physical classroom you do not need to
+[01:06 - 01:14] know Bob's mailing address which is a
+[01:10 - 01:17] similar to IP address you just need to
+[01:14 - 01:21] know his name Bob which is similar to
+[01:17 - 01:26] Mac urges suppose everyone has a unique
+[01:21 - 01:30] name since IP address can change it only
+[01:26 - 01:35] indicates where you are but does not
+[01:30 - 01:38] know and who you are as more computers
+[01:35 - 01:42] join the internet communication would
+[01:38 - 01:47] become impossible as everyone broadcast
+[01:42 - 01:52] to find other computers second marriages
+[01:47 - 01:56] is affirmed with hardware NIC card if
+[01:52 - 02:00] something wrong happened to the hardware
+[01:56 - 02:01] NIC all the existing connection would be
+[02:00 - 02:05] lost
+[02:01 - 02:09] IP address on the other hand is a
+[02:05 - 02:13] flexible and IP addressing can group and
+[02:09 - 02:16] organize different networks
+[02:13 - 02:20] the IP address is very much like your
+[02:16 - 02:24] mailing address it tells where to find
+[02:20 - 02:29] you one great advantage of IP address is
+[02:24 - 02:31] that it can change which allows your
+[02:29 - 02:35] computer to be mobile
+[02:31 - 02:38] if you move your computer to different
+[02:35 - 02:40] network your IP address changed just
+[02:38 - 02:44] like your mailing address can change
+[02:40 - 02:48] whenever you move to a new place but
+[02:44 - 02:50] they only indicate where you are not who
+[02:48 - 02:50] you are
+[02:51 - 03:00] in summary MAC address tells us who you
+[02:55 - 03:04] are which will never change under the IP
+[03:00 - 03:09] address it tells us where you are which
+[03:04 - 03:12] can change both IP and MAC address makes
+[03:09 - 03:16] sure that message is delivered to the
+[03:12 - 03:19] right device on the right network they
+[03:16 - 03:23] work together perfectly in the tcp/ip
+[03:19 - 03:26] world I hope this video is helpful thank
+[03:23 - 03:29] you very much and see you next time
+[03:26 - 03:32] all don't forget to subscribe
+[03:29 - 03:34] [Music]
+[03:32 - 03:34] you

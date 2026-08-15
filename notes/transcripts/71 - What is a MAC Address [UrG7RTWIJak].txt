@@ -1,0 +1,155 @@
+Title: What is a MAC Address?
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: Techquickie
+YouTube: https://www.youtube.com/watch?v=UrG7RTWIJak
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:03] whenever you click on an enticing Link
+[00:01 - 00:05] in a web browser the website you're
+[00:03 - 00:08] looking at knows to send whatever the
+[00:05 - 00:10] link contains to your computer and not
+[00:08 - 00:13] your neighbors because your computer
+[00:10 - 00:15] sends its IP address kind of like a
+[00:13 - 00:18] return address on an envelope but as it
+[00:15 - 00:20] turns out IP addresses only get you as
+[00:18 - 00:23] far as the modem you have in your house
+[00:20 - 00:24] and these days most of us have tons of
+[00:23 - 00:27] things connected to our routers
+[00:24 - 00:31] especially wirelessly phones laptops
+[00:27 - 00:35] tablets computers other people's phones
+[00:31 - 00:39] consoles CH casts oh and they're all
+[00:35 - 00:40] connected nearly all the freaking time
+[00:39 - 00:42] you don't really want to be thinking
+[00:40 - 00:44] about it so how does your home
+[00:42 - 00:47] networking equipment know to send those
+[00:44 - 00:50] questionable videos to you and not your
+[00:47 - 00:52] parents sitting in the Next Room well
+[00:50 - 00:55] each device on your network has
+[00:52 - 00:57] something called a MAC address yes even
+[00:55 - 01:00] the PCS Mac in this case stands for
+[00:57 - 01:03] media access control it identifies which
+[01:00 - 01:05] device is which on your local network so
+[01:03 - 01:08] here's how they work when data arrives
+[01:05 - 01:10] at your home from the worldwide internet
+[01:08 - 01:12] your router needs to decide which device
+[01:10 - 01:15] to send that data to it does this by
+[01:12 - 01:17] keeping track of the Mac addresses of
+[01:15 - 01:20] all the devices connected to it then
+[01:17 - 01:22] assigning what's called a private IP
+[01:20 - 01:25] address usually starting with 1
+[01:22 - 01:27] 192.168 to every device this is also why
+[01:25 - 01:29] you usually punch in those numbers to
+[01:27 - 01:32] access your router's control panel
+[01:29 - 01:34] through your browser this is very
+[01:32 - 01:37] different from a public IP which is what
+[01:34 - 01:40] the rest of the internet sees as being
+[01:37 - 01:42] your IP address for your entire home
+[01:40 - 01:44] network and what comes up when you type
+[01:42 - 01:46] what's my IP address into Google your
+[01:44 - 01:49] router keeps track of outbound requests
+[01:46 - 01:51] such as when you click on a link so when
+[01:49 - 01:53] the data you want arrives at your router
+[01:51 - 01:56] it attaches the correct private IP
+[01:53 - 01:58] address to the data packets ensuring
+[01:56 - 02:00] that they got to your computer or device
+[01:58 - 02:03] since all those private IP correspond to
+[02:00 - 02:05] the correct Mac address now this might
+[02:03 - 02:07] understandably seem a little redundant
+[02:05 - 02:09] since your computer now has both a
+[02:07 - 02:11] private IP and a MAC address that can
+[02:09 - 02:14] both individually identify it but in
+[02:11 - 02:16] reality you need both since although
+[02:14 - 02:19] both the public and private IPS stay the
+[02:16 - 02:21] same throughout this process the Mac
+[02:19 - 02:23] addresses on the data packets are
+[02:21 - 02:26] constantly being changed they only tell
+[02:23 - 02:28] the data where to go for its next hop
+[02:26 - 02:30] when your data gets to the next device
+[02:28 - 02:33] the MAC address has changed in order to
+[02:30 - 02:34] tell it where to go well next since your
+[02:33 - 02:36] data might go through numerous servers
+[02:34 - 02:39] and routers before it finally gets to
+[02:36 - 02:41] your device Mac address information is
+[02:39 - 02:44] crucial even though you have a private
+[02:41 - 02:46] IP another upside of Mac addresses is
+[02:44 - 02:48] that normally they always stay the same
+[02:46 - 02:51] with many devices having their Mac
+[02:48 - 02:53] addresses hardcoded into the firmware at
+[02:51 - 02:55] the factory making it easy to spot a
+[02:53 - 02:57] malfunctioning device on the network if
+[02:55 - 02:59] you're trying to troubleshoot and if you
+[02:57 - 03:02] want to protect your network by making
+[02:59 - 03:05] it so that only devices that you approve
+[03:02 - 03:07] can connect many routers use Mac
+[03:05 - 03:10] addresses to restrict access to known
+[03:07 - 03:11] devices very useful if you're worried
+[03:10 - 03:14] someone might try to steal your Wi-Fi
+[03:11 - 03:16] password or even plug in physically isps
+[03:14 - 03:18] also use predefined Mac addresses to
+[03:16 - 03:20] make it easy to provide you with the
+[03:18 - 03:22] service you paid for so that your
+[03:20 - 03:23] neighbor isn't the one getting that
+[03:22 - 03:25] expensive gigabit connection that you're
+[03:23 - 03:28] shelling out money for every month of
+[03:25 - 03:30] course they also use these to block
+[03:28 - 03:33] access if you aren't paying your bills
+[03:30 - 03:36] however so type that as you will it is
+[03:33 - 03:37] possible to spoof a mac address however
+[03:36 - 03:39] and you might want to if you're
+[03:37 - 03:41] concerned about your privacy on a public
+[03:39 - 03:43] Wi-Fi connection or you connect a new
+[03:41 - 03:46] device to your network that your ISP
+[03:43 - 03:48] might not recognize but be for warned
+[03:46 - 03:51] that this might not make your ISP happy
+[03:48 - 03:53] depending on who they are actually who
+[03:51 - 03:55] am I kidding it probably doesn't depend
+[03:53 - 03:57] at all does it racing against the clock
+[03:55 - 03:59] as a freelancer challenging whatever
+[03:57 - 04:01] you're doing yes I'm sure but with the
+[03:59 - 04:02] growth of the internet there's never
+[04:01 - 04:05] been more opportunities for the
+[04:02 - 04:07] self-employed to meet this need
+[04:05 - 04:09] freshbooks is excited to announce the
+[04:07 - 04:11] new version of their allnew Cloud
+[04:09 - 04:13] accounting software do you want to solve
+[04:11 - 04:15] all the world's problems make your
+[04:13 - 04:17] entire life better and be better in bed
+[04:15 - 04:19] get fresh books the fresh books you guys
+[04:17 - 04:21] know and love if you're running your own
+[04:19 - 04:22] business and need to make transactions
+[04:21 - 04:25] and invoices and all that kind of stuff
+[04:22 - 04:27] on your own has been redesigned for the
+[04:25 - 04:30] way that you work with this new Cloud
+[04:27 - 04:31] accounting software it's now simpler and
+[04:30 - 04:33] easier than it was before and it was
+[04:31 - 04:36] already simple and easy to get the most
+[04:33 - 04:37] important things done quickly you can
+[04:36 - 04:40] still create and send professional
+[04:37 - 04:42] looking invoices in less than 30 seconds
+[04:40 - 04:45] and you can set up online payments with
+[04:42 - 04:47] just a couple of clicks to get paid they
+[04:45 - 04:49] say up to 4 days faster you can see when
+[04:47 - 04:52] your client has seen your invoice and
+[04:49 - 04:54] put the end to the guessing games
+[04:52 - 04:56] freshbooks is offering a 30-day
+[04:54 - 04:58] unrestricted free trial to our viewers
+[04:56 - 05:01] to claim it just go to freshbooks.com
+[04:58 - 05:02] tequi and enter Tech quickie in the how
+[05:01 - 05:04] did you hear about a section all right
+[05:02 - 05:05] guys thanks for watching like it if you
+[05:04 - 05:06] liked it dislike it if you disliked it
+[05:05 - 05:07] get subscribed let us know in the
+[05:06 - 05:08] comments down below if there's other
+[05:07 - 05:09] things you would like us to check out on
+[05:08 - 05:11] techwiki check out channel super fun I
+[05:09 - 05:13] haven't been on there in forever but
+[05:11 - 05:16] there is a new like battle couch video
+[05:13 - 05:18] coming at some point that I will be in
+[05:16 - 05:20] so that's pretty cool and I'll see you
+[05:18 - 05:22] next time I'm going to go play with
+[05:20 - 05:26] PlayStation VR for an LTT video which
+[05:22 - 05:26] you'll also see in the future

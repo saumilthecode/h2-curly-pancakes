@@ -1,0 +1,149 @@
+Title: 7 LAN  topologies - bus, ring, star, hybrid, mesh ...
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: Sunny Classroom
+YouTube: https://www.youtube.com/watch?v=T5xQJk-Aamk
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:08] hello and this is sunny welcome back
+[00:04 - 00:12] today my topic is about LAN topology
+[00:08 - 00:15] topology refers to how network devices
+[00:12 - 00:19] are connected it belongs to the layer
+[00:15 - 00:22] one or physical layer of the OSI model
+[00:19 - 00:27] topology can include three categories
+[00:22 - 00:30] physical logical and hybrid physical
+[00:27 - 00:34] topology refers to how Network Devices
+[00:30 - 00:38] are physically connected by physical it
+[00:34 - 00:43] means we can actually see the layout of
+[00:38 - 00:46] the network logical topology refers to
+[00:43 - 00:50] how devices are connected with the
+[00:46 - 00:53] regards to signal flow it is the way
+[00:50 - 00:56] that the signals travel on the network
+[00:53 - 00:58] media or the way the signal passes
+[00:56 - 01:02] through the network from one device to
+[00:58 - 01:07] the next without regard to the physical
+[01:02 - 01:10] connections in my class there are always
+[01:07 - 01:13] one or two students who are physically
+[01:10 - 01:17] sitting in my classroom but logically
+[01:13 - 01:23] they are far far away I call this
+[01:17 - 01:26] phenomenon spacing out if we combine
+[01:23 - 01:30] physical analogical we get hybrid
+[01:26 - 01:33] topology let me talk about eight
+[01:30 - 01:36] different topologies in next seven
+[01:33 - 01:41] minutes let me start with the simple one
+[01:36 - 01:44] point-to-point topology p2p topology is
+[01:41 - 01:48] where's one device is directly connected
+[01:44 - 01:50] with another device very simple but it
+[01:48 - 01:56] is the foundation for all other
+[01:50 - 01:59] topologies point to multi-point topology
+[01:56 - 02:03] consists of central base station that
+[01:59 - 02:06] supports other subscribe stations data
+[02:03 - 02:09] transmitted from the central base
+[02:06 - 02:13] station is broadcasting to all the
+[02:09 - 02:14] subscribers but a data coming from a
+[02:13 - 02:19] subscriber
+[02:14 - 02:23] is only received by the base station p2m
+[02:19 - 02:27] topology is a typically using wireless
+[02:23 - 02:27] LAN and a wireless one
+[02:27 - 02:35] bus topology is also called des aging
+[02:31 - 02:39] topology in bus topology there's no
+[02:35 - 02:44] central device every network node is
+[02:39 - 02:48] attached to Y shared bus cable in bus
+[02:44 - 02:52] topology when node a is sending a signal
+[02:48 - 02:55] to node B the signal goes to the bus an
+[02:52 - 02:59] airy node attached to the bus gets a
+[02:55 - 03:04] copy but only because the message and
+[02:59 - 03:08] all others simply ignite embossing
+[03:04 - 03:12] apology terminators are required at both
+[03:08 - 03:15] ends to prevent data reflection without
+[03:12 - 03:19] the terminators data signal would bounce
+[03:15 - 03:25] back and forth and Lesley and ultimately
+[03:19 - 03:29] the network will collapse rain topology
+[03:25 - 03:32] is similar to bus topology all nodes are
+[03:29 - 03:35] connected to a keyboard that forms a
+[03:32 - 03:39] closed loop thus there is no need for
+[03:35 - 03:43] termination data flows from one node to
+[03:39 - 03:47] next one in circle each node reads the
+[03:43 - 03:51] data anaphoras it to next one until it
+[03:47 - 03:53] reaches the destination both bus and
+[03:51 - 03:57] arraign topology are simple and
+[03:53 - 04:01] inexpensive but they are not afford
+[03:57 - 04:05] tolerant one single point breaks and the
+[04:01 - 04:07] whole system will be done
+[04:05 - 04:11] troubleshooting and maintenance are
+[04:07 - 04:14] difficult to security is a major problem
+[04:11 - 04:20] because every node can access to all
+[04:14 - 04:24] other traffic's star topology is where
+[04:20 - 04:28] all nodes are individually connected to
+[04:24 - 04:31] a central device like a hub or switch
+[04:28 - 04:35] star topology has benefits over both
+[04:31 - 04:38] paths and a ring for his fault tolerance
+[04:35 - 04:40] scalability troubleshooting and
+[04:38 - 04:43] maintenance however
+[04:40 - 04:48] central point of failure we all crash
+[04:43 - 04:51] the whole system now let's talk about
+[04:48 - 04:55] hybrid topology a combination of
+[04:51 - 05:00] physical topology and a logical topology
+[04:55 - 05:05] here we only focus two hybrid topologies
+[05:00 - 05:08] starving and estabas starving hybrid
+[05:05 - 05:11] topology is the combination of a
+[05:08 - 05:15] physical star and logical ring in this
+[05:11 - 05:17] example physically we can see a star
+[05:15 - 05:21] logical ring topology is where data
+[05:17 - 05:24] flows inside the central device when
+[05:21 - 05:27] computer age sends the data to be for
+[05:24 - 05:31] example data flows from a to the central
+[05:27 - 05:35] device if we can follow data inside the
+[05:31 - 05:37] box we can see the mowing allow a rain
+[05:35 - 05:42] electronically enjoy the finds the
+[05:37 - 05:45] connection to computer B stop our
+[05:42 - 05:49] topology is the combination of physical
+[05:45 - 05:53] star and logical bus in this example we
+[05:49 - 05:56] can see a physical star topology logical
+[05:53 - 06:00] bus topology is where data flows inside
+[05:56 - 06:04] the central box when computer a since
+[06:00 - 06:07] data to be for example data flows from a
+[06:04 - 06:10] to the central device if we can follow
+[06:07 - 06:15] data inside the box we can see the
+[06:10 - 06:18] mowing a la a bus electronically stop
+[06:15 - 06:22] our topology is the most common Ethernet
+[06:18 - 06:23] LAN topology by the way please do not
+[06:22 - 06:26] confuse
+[06:23 - 06:29] star bus with Starbucks why is the
+[06:26 - 06:33] topology and the other one is a coffee
+[06:29 - 06:33] they are not related
+[06:33 - 06:40] last but not least mesh topology there
+[06:37 - 06:43] are two types of mesh topology fully
+[06:40 - 06:46] meshed topology means every node
+[06:43 - 06:49] connects to every other node while
+[06:46 - 06:53] partially meshed topology is a similar
+[06:49 - 06:56] to fully meshed but only with fewer
+[06:53 - 07:01] connections for the same number of
+[06:56 - 07:04] devices partially mesh topology might be
+[07:01 - 07:07] practical for physical connections while
+[07:04 - 07:10] fully Magic topology is practical in
+[07:07 - 07:14] wireless network but for physical
+[07:10 - 07:18] connections fully meshed topology should
+[07:14 - 07:21] be considered carefully the formula to
+[07:18 - 07:25] calculate the number of connections in
+[07:21 - 07:28] fully meshed topology is a C equal n
+[07:25 - 07:32] times a minus 1/2
+[07:28 - 07:38] where C is the number of connections and
+[07:32 - 07:43] a is the number of devices for 6 devices
+[07:38 - 07:48] for example we need 15 connections not
+[07:43 - 07:52] too bad for 20 devices we need 190
+[07:48 - 08:00] connections well it is still manageable
+[07:52 - 08:03] but for 100 devices we need 4950
+[08:00 - 08:08] connections it would be too expensive
+[08:03 - 08:12] and extremely impractical in our real
+[08:08 - 08:16] world no one will do like this except
+[08:12 - 08:19] governments and stupid people with a lot
+[08:16 - 08:22] of money I hope this video is helpful
+[08:19 - 08:23] thank you very much and see you next
+[08:22 - 08:28] time
+[08:23 - 08:28] oh don't forget to subscribe
+[08:28 - 08:33] you
+[08:29 - 08:33] [Music]

@@ -1,0 +1,53 @@
+Title: LT10a Data Abstraction 1 - Part 3
+LT: LT 10a Data Abstraction (1) - Abstract Data Type ADT
+Linked label: Part 3: Example 2 - Position ADT
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=tlsYnoYlJ9A
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Our
+[00:01 - 00:09] next example is a position ADT.
+[00:05 - 00:13] A position ADT contains the X and Y
+[00:09 - 00:16] coordinates of a position of a point.
+[00:13 - 00:21] Constructor to create the position ADT
+[00:16 - 00:24] is make point using the X coordinate and
+[00:21 - 00:24] the Y coordinate.
+[00:24 - 00:30] There are only two accessessor or
+[00:27 - 00:34] getters method provided to retrieve the
+[00:30 - 00:37] coordinates namely get X and get Y of
+[00:34 - 00:37] the point
+[00:39 - 00:45] for this position ADT. There are quite a
+[00:42 - 00:48] number of utility and methods.
+[00:45 - 00:51] You can have a method to calculate the
+[00:48 - 00:53] midpoint between points one and points
+[00:51 - 00:57] two.
+[00:53 - 01:01] This method will return a position ad
+[00:57 - 01:02] for the midpoint.
+[01:01 - 01:04] You can also have a method called
+[01:02 - 01:07] gradient to calculate the gradient for
+[01:04 - 01:10] the line joining the points one and
+[01:07 - 01:13] points two. And the gradient methods
+[01:10 - 01:14] will return a float value. You can also
+[01:13 - 01:16] have a method called distance to
+[01:14 - 01:20] calculate the distance between two
+[01:16 - 01:23] points which will returns a float value.
+[01:20 - 01:25] The next utility method is equation to
+[01:23 - 01:27] calculate the equation of a straight
+[01:25 - 01:31] line passing through point one and point
+[01:27 - 01:34] 2. This will return a string for the
+[01:31 - 01:37] equation of the line in the format of y
+[01:34 - 01:39] = mx + c.
+[01:37 - 01:41] Display
+[01:39 - 01:44] display will display the point as a
+[01:41 - 01:47] string uh using the bracket for the x
+[01:44 - 01:49] and the y coordinates.
+[01:47 - 01:51] Here you are provided with the midpoint
+[01:49 - 01:53] formula,
+[01:51 - 01:56] gradient formula to calculate the
+[01:53 - 01:58] distance between two points, uh the
+[01:56 - 01:59] formulas to calculate the equation of a
+[01:58 - 02:02] straight line passing through the two
+[01:59 - 02:02] points.

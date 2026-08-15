@@ -1,0 +1,84 @@
+Title: DHCP Explained - Dynamic Host Configuration Protocol
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=e6-TaH5bkjo
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:09] Hallo almal, in hierdie video gaan ons praat oor DHCP of dinamiese gasheer-konfigurasieprotokol.
+[00:09 - 00:16] Nou moet elke rekenaar of toestel in 'n netwerk 'n IP-adres hê vir kommunikasiedoeleindes.
+[00:16 - 00:24] 'N IP-adres is 'n identifiseerder vir 'n rekenaar of toestel in 'n netwerk. En daar is twee maniere
+[00:24 - 00:32] waarop 'n IP-adres aan 'n rekenaar toegeken kan word. Dit kan gedoen word deur 'n statiese IP of 'n dinamiese IP te gebruik.
+[00:35 - 00:44] Nou is 'n statiese IP waar 'n gebruiker 'n rekenaar of toestel met 'n IP-adres met die hand toeken. Dit
+[00:44 - 00:50] was nou die oorspronklike metode wat aan die begin van die netwerk gedoen is. Dus, vir elke rekenaar
+[00:50 - 00:57] in 'n netwerk, moes u die netwerkkonfigurasie-bladsy van die rekenaar oopmaak en '
+[00:57 - 01:05] n IP-adres handmatig invoer . Maar benewens 'n IP-adres, moet u ook 'n subnetmasker, standaardgateway
+[01:05 - 01:13] en 'n DNS-bediener invoer . En elke keer as u nog 'n rekenaar of toestel by die
+[01:13 - 01:19] netwerk wil voeg, moet u dieselfde doen. Soos u miskien sou raai, kan dit baie werk wees,
+[01:19 - 01:26] veral as u te doen het met 'n groot netwerk met baie rekenaars. En u moet ook
+[01:26 - 01:33] seker maak dat al die IP-adresse uniek is, want as u twee keer dieselfde IP-adres toewys
+[01:33 - 01:40] , sal dit 'n IP-konflik veroorsaak en veroorsaak dat die rekenaars nie toegang tot die netwerk het nie,
+[01:42 - 01:48] maar daar is 'n beter en maklike manier om gee 'n IP-adres aan 'n rekenaar en dit
+[01:48 - 01:57] word 'n dinamiese IP genoem. 'N Dinamiese IP is waar 'n rekenaar outomaties 'n IP-adres van '
+[01:57 - 02:04] n DHCP-bediener kry. 'N DHCP-bediener ken 'n rekenaar outomaties 'n IP-adres toe. En
+[02:04 - 02:13] behalwe 'n IP-adres, kan dit ook 'n subnetmasker, standaardgateway en 'n DNS-bediener toewys.
+[02:15 - 02:20] As voorbeeld het ons 'n venster vir die netwerkverbindingseienskappe oop vir
+[02:20 - 02:26] die netwerk-koppelvlakkaart op 'n Microsoft Windows-rekenaar. En soos u hier kan sien, is
+[02:26 - 02:32] hierdie rekenaar ingestel om outomaties 'n IP-adres te kry. Dus, as u hierdie opsie kies, sal
+[02:32 - 02:40] die rekenaar 'n versoek vir 'n IP-adres op die netwerk uitsaai, dan sal die DHCP-
+[02:40 - 02:46] bediener 'n IP-adres toewys vanuit sy poel en dit op die rekenaar aflewer.
+[02:48 - 02:54] En sodra dit klaar is, kan u al die verskillende instellings wat die DHCP-bediener aan u rekenaar
+[02:54 - 03:01] gegee het, verifieer . En u kan dit doen deur 'n opdragprompt op 'n Windows-rekenaar te open en
+[03:01 - 03:11] tik dan ipconfig / all in en druk dan op "enter". Soos u hier kan sien, is DHCP
+[03:11 - 03:18] op hierdie rekenaar geaktiveer, wat beteken dat hy sy IP-adres van 'n DHCP-bediener kry, en
+[03:18 - 03:26] dan kan u die IP-adres hier sien, tesame met die subnetmasker, standaardgateway en DNS-bediener.
+[03:26 - 03:35] Al hierdie instellings is dus deur die DHCP-bediener gegee. Soos u kan sien, is dinamiese IP-adressering
+[03:35 - 03:41] die beste keuse omdat dit outomaties is en dit die bestuur van 'n netwerk vergemaklik.
+[03:44 - 03:51] Nou ken 'n DHCP-bediener IP-adresse toe aan rekenaars in 'n netwerk. En '
+[03:51 - 04:00] n omvang is 'n reeks IP-adresse wat 'n DHCP-bediener kan uitdeel. Dus as voorbeeld hier sien ons
+[04:00 - 04:07] 'n omvang van IP-adresse op hierdie bediener. Soos u kan sien, begin die reeks met hierdie IP-adres
+[04:07 - 04:15] en eindig met hierdie IP-adres. Rekenaars in hierdie netwerk kry dus 'n IP-adres uit hierdie
+[04:15 - 04:24] reeks IP-adresse. Hierdie omvang kan dus 100 IP-adresse gee. Hierdie waardes kan nou
+[04:24 - 04:30] aangepas word om die omvang te verhoog of te verminder. Dit hang alles af van wat die netwerkadministrateur
+[04:30 - 04:38] wil doen. Dit is dus aanpasbaar. As rekenaars nou 'n IP-adres van 'n
+[04:38 - 04:46] DHCP-bediener kry, ken die bediener die IP-adres as huurkontrak toe. Die rekenaar besit dus nie eintlik
+[04:46 - 04:54] die IP-adres nie, dit is eintlik 'n huurkontrak. En 'n huurkontrak is die hoeveelheid tyd wat 'n IP-adres
+[04:54 - 05:01] aan 'n rekenaar toegeken word. Die huurkontrak kan byvoorbeeld vir een dag duur. Die rede vir die
+[05:01 - 05:08] huurkontrak is om te verseker dat die DHCP-bediener nie sy IP-adresse opraak nie.
+[05:10 - 05:17] Laat ons dus net as 'n demonstrasie sê dat hierdie DHCP-omvang slegs 'n reeks van drie
+[05:17 - 05:24] IP-adresse het. Dit kan dus net drie IP-adresse gee. Dit is natuurlik nie baie
+[05:24 - 05:31] realisties nie, want geen netwerkadministrateur gaan 'n klein omvang skep nie.
+[05:31 - 05:39] Laat ons dit maar as voorbeeld gebruik vir hierdie demonstrasie. Laat ons dus drie rekenaars by hierdie
+[05:39 - 05:47] netwerk voeg. En soos dit bygevoeg word, sal die DHCP-bediener 'n IP-adres aan hulle toeken. Laat ons dus in hierdie
+[05:47 - 05:54] voorbeeld sê dat die IP-adresse eintlik aan die rekenaars gegee word en nie gehuur word nie.
+[05:54 - 06:02] Die DHCP het dus sy limiet bereik om IP-adresse uit te gee. Al sy IP-adresse word
+[06:02 - 06:10] tans gebruik. Maar wat gebeur as een van hierdie rekenaars uit die netwerk verwyder word? As '
+[06:10 - 06:18] n rekenaar verwyder word, neem dit die IP-adres wat dit ontvang het, saam. Laat ons dus sê dat '
+[06:18 - 06:24] n ander rekenaar by die netwerk gevoeg word, maar die probleem is dat die rekenaar nie toegang tot
+[06:24 - 06:32] die netwerk kan hê nie, omdat die IP-adresse van die DHCP-server op is. Alhoewel hierdie rekenaar hier
+[06:32 - 06:41] verwyder is, beslaan dit steeds 'n IP-adres wat vir 'n ander rekenaar gebruik kan word. Dit
+[06:41 - 06:49] is die rede waarom IP-adresse gehuur word en nie gegee word nie, want as die IP-adresse gehuur word,
+[06:49 - 06:57] sal dit die DHCP-bediener vertel watter IP-adresse steeds gebruik word en watter nie gebruik word nie.
+[06:59 - 07:08] In hierdie voorbeeld word die IP-adresse verhuur. Die rekenaars sal dus na 'n sekere tydperk tydens die huurkontrak
+[07:08 - 07:15] 'n sein aan die DHCP-bediener stuur en vra dat die bediener die huurkontrak van die IP-adres
+[07:15 - 07:24] moet hernu . Met ander woorde, dit stel die DHCP-bediener in kennis dat dit steeds op die
+[07:24 - 07:32] netwerk is en dat sy IP-adres steeds gebruik word. Dus as 'n rekenaar uit die netwerk verwyder word, kan die
+[07:32 - 07:39] rekenaar nie die DHCP-bediener om 'n verlenging kan vra nie en nie vir '
+[07:39 - 07:46] n verlenging nie. Dan sal die huurkontrak verval en dan gaan die IP-adres terug na die IP-
+[07:46 - 07:54] adrespoel. Die IP-adres kan dus nou vir 'n ander rekenaar gebruik word. En dit is die rede waarom IP-adresse gehuur word.
+[07:56 - 08:04] As u nou wil hê dat 'n rekenaar of toestel in u netwerk die hele tyd 'n spesifieke IP-adres
+[08:04 - 08:10] moet hê, met ander woorde, u wil nooit hê dat die IP-adres moet verander nie; u kan ook 'n
+[08:10 - 08:17] bespreking op die DHCP-bediener maak. 'N Bespreking verseker dat 'n spesifieke rekenaar of toestel,
+[08:17 - 08:26] geïdentifiseer deur sy MAC-adres, altyd dieselfde IP-adres sal kry wanneer daardie rekenaar
+[08:26 - 08:35] of toestel 'n IP-adres van die DHCP-bediener versoek. As ek byvoorbeeld op hierdie DHCP-bediener
+[08:35 - 08:43] 'n bespreking vir my rekenaar maak, sal die DHCP-bediener my MAC-adres herken en my
+[08:43 - 08:50] altyd hierdie spesifieke IP-adres gee. Besprekings word nou gewoonlik nie aan gewone
+[08:50 - 08:56] rekenaars gegee nie. Hulle word gewoonlik aan spesiale toestelle of rekenaars soos netwerkdrukkers,
+[08:56 - 09:05] bedieners, routers, ensovoorts gegee. Omdat toestelle soos hierdie voortdurend dieselfde IP-adres moet kry
+[09:08 - 09:17] . Een laaste ding om op te let oor DHCP is dat DHCP 'n diens is wat op bediener. Dit kan
+[09:17 - 09:22] byvoorbeeld 'n Microsoft-bediener of 'n Linux-bediener wees, maar dit is ook 'n diens wat
+[09:22 - 09:28] ook op baie routers gebruik word. Of die router 'n besigheidsrouter is of 'n klein
+[09:28 - 09:35] kantoor / tuiskantoorrouter. Hierdie routers het 'n DHCP-diens wat ingebou is.

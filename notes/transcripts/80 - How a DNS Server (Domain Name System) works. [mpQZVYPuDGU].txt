@@ -1,0 +1,74 @@
+Title: How a DNS Server (Domain Name System) works.
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=mpQZVYPuDGU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] In die wêreld van netwerke gaan rekenaars nie volgens name soos mense nie, maar
+[00:05 - 00:10] volgens getalle, want so praat en identifiseer rekenaars en ander soortgelyke toestelle
+[00:10 - 00:16] met mekaar oor 'n netwerk, dit wil sê deur getalle soos IP-
+[00:16 - 00:22] adresse te gebruik. Mense daarenteen is gewoond daaraan om name in plaas van
+[00:22 - 00:24] getalle te gebruik,
+[00:24 - 00:28] of mense direk met 'n ander persoon praat of 'n land,
+[00:28 - 00:35] plek of ding identifiseer, in plaas van getalle. Ten einde
+[00:35 - 00:39] die kommunikasiegaping tussen rekenaars en mense te oorbrug en die
+[00:39 - 00:41] kommunikasie van netwerkingenieurs
+[00:41 - 00:48] baie makliker te maak, het DNS ontwikkel, en DNS staan ​​vir 'n domeinnaamstelsel. En DNS
+[00:48 - 00:53] los name op getalle op, om meer spesifiek te wees
+[00:53 - 01:00] , word domeinname na IP-adresse opgelos. As u dus 'n webadres in u webblaaier intik
+[01:00 - 01:05] , sal DNS die naam na 'n nommer oplos, want die enigste ding wat
+[01:05 - 01:10] rekenaars weet is getalle. As u byvoorbeeld na 'n sekere
+[01:10 - 01:16] webwerf wil gaan, sal u u webblaaier oopmaak en die domeinnaam van die webwerf
+[01:16 - 01:22] intik , so laat ons byvoorbeeld yahoo.com gebruik. Tegnies hoef u regtig
+[01:22 - 01:27] nie yahoo.com in te tik om die Yahoo-webwerf op te laai nie; u kan net
+[01:27 - 01:34] die IP-adres intik as u al weet wat die IP-adres is, maar
+[01:34 - 01:38] aangesien ons nie gewoond is daaraan om te memoriseer en te handel nie met getalle,
+[01:38 - 01:43] veral as daar miljoene webwerwe op die internet is, kan ons net
+[01:43 - 01:49] die domeinnaam intik en DNS laat omskakel na 'n IP-adres vir ons.
+[01:49 - 01:54] As u yahoo.com u webblaaier tik, sal
+[01:55 - 02:00] die DNS-bediener met sy databasis soek om 'n ooreenstemmende IP-adres
+[02:00 - 02:05] vir die domeinnaam te vind , en as dit gevind word, sal dit die domeinnaam oplos na
+[02:05 - 02:11] die IP-adres van op die Yahoo-webwerf, en sodra dit gedoen is, kan u rekenaar
+[02:11 - 02:18] met 'n Yahoo-webbediener kommunikeer en die webblad ophaal. DNS werk dus
+[02:18 - 02:22] basies soos 'n telefoonboek. As u 'n nommer wil vind, soek u nie eers
+[02:22 - 02:27] die nommer nie, soek eers die naam op, dan gee dit u die nommer.
+[02:30 - 02:35] Laat ons dus die stappe wat DNS neem, ondersoek om dit in meer detail
+[02:35 - 02:36] op te deel.
+[02:36 - 02:41] As u dus yahoo.com in u webblaaier tik en as u webblaaier
+[02:41 - 02:47] of bedryfstelsel nie die IP-adres in sy eie geheue kan vind nie,
+[02:47 - 02:52] stuur dit die vraag na die volgende resolusiebediener na resolver-
+[02:52 - 02:58] bediener is basies u ISP- of internetdiensverskaffer. As die resolver
+[02:58 - 03:03] die navraag ontvang, sal dit sy eie geheue van die geheue nagaan om 'n IP-
+[03:03 - 03:09] adres vir yahoo.com te vind, en as hy dit nie kan vind nie, stuur dit die navraag na die
+[03:09 - 03:12] volgende vlak wat die wortelbediener is.
+[03:12 - 03:19] Die wortelbedieners is die boonste of wortel van 'n DNS-hiërargie. Daar is 13 stelle van
+[03:19 - 03:23] hierdie wortelbedieners, en hulle is strategies regoor die wêreld geplaas,
+[03:23 - 03:29] en dit word deur 12 verskillende organisasies bestuur en elke stel van hierdie wortelbedieners
+[03:29 - 03:35] het hul eie unieke IP-adres. Wanneer die wortelbediener dus die
+[03:35 - 03:40] vraag na die IP-adres vir yahoo.com ontvang, sal die wortelbediener nie weet
+[03:40 - 03:45] wat die IP-adres is nie, maar die wortelbediener weet wel waarheen die
+[03:45 - 03:50] resolver moet stuur om die IP-adres te vind. Die hoofbediener sal die
+[03:50 - 03:58] resolver dus na die TLD- of topvlak-domeinbediener vir die dot-com-domein lei. Die
+[03:58 - 04:03] resolver sal dus die TLD-bediener die IP-adres vir yahoo.com vra.
+[04:05 - 04:10] Die domeinbediener op die hoogste vlak stoor die
+[04:10 - 04:19] adresinligting vir domeine op die hoogste vlak , soos.com en.net dot org, ensovoorts. Hierdie spesifieke TLD-bediener bestuur
+[04:19 - 04:24] die dot-com-domein waarvan yahoo.com deel uitmaak.
+[04:25 - 04:30] As 'n TLD-bediener dus die vraag na die IP-adres vir yahoo.com ontvang, sal die
+[04:30 - 04:36] TLD-bediener nie weet wat die IP-adresse vir yahoo.com is nie. Dus sal
+[04:36 - 04:41] die TLD die resolver na die volgende en finale vlak lei, wat die
+[04:41 - 04:44] gesaghebbende naambedieners is.
+[04:46 - 04:51] Die resolver sal dus weer die gesaghebbende naambediener vir die IP-
+[04:51 - 04:54] adres vir yahoo.com vra.
+[04:54 - 04:59] Die gesaghebbende naambediener of bedieners is verantwoordelik om alles te wete te kom
+[04:59 - 05:06] oor die domein wat die IP-adres insluit. Hulle is die finale gesag. So
+[05:06 - 05:11] wanneer die gesaghebbende naam bediener ontvang die navraag van die resolver,
+[05:11 - 05:18] sal die naam bediener reageer met die IP-adres vir yahoo.com. En uiteindelik sal die
+[05:18 - 05:23] resolver vir u rekenaar die IP-adres vir yahoo.com vertel, en dan kan u
+[05:23 - 05:26] rekenaar die Yahoo-webwerf ophaal.
+[05:27 - 05:32] Dit is belangrik om daarop te let dat sodra die resolver die IP-adres ontvang het, dit
+[05:32 - 05:38] in sy geheue sal stoor vir die geval dat hy weer 'n navraag vir yahoo.com ontvang, sodat
+[05:38 - 05:41] dit nie weer deur al die stappe hoef te gaan nie.

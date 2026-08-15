@@ -1,0 +1,366 @@
+# H2 Computing transcript index
+
+Successful transcripts: 88
+Unavailable transcripts: 1
+
+## Transcript files
+
+- **LT 1a - Introduction to Python**: [LT1a Intro to Python   Part 1](https://www.youtube.com/watch?v=ebR6Emcam8s)
+  - Uploader: YIJC Computing
+  - File: `01 - LT1a Intro to Python Part 1 [ebR6Emcam8s].txt`
+  - Characters: 3,102
+- **LT 1a - Introduction to Python**: [LT1a Intro to Python   Part 2](https://www.youtube.com/watch?v=fbz7h5b6iRs)
+  - Uploader: YIJC Computing
+  - File: `02 - LT1a Intro to Python Part 2 [fbz7h5b6iRs].txt`
+  - Characters: 17,442
+- **LT 1a - Introduction to Python**: [LT1a Intro to Python   Part 3](https://www.youtube.com/watch?v=c_aoGWNsYyA)
+  - Uploader: YIJC Computing
+  - File: `03 - LT1a Intro to Python Part 3 [c_aoGWNsYyA].txt`
+  - Characters: 12,641
+- **LT 1b - Basic Python - About Strings**: [LT1b Intro to Python  About Strings Part 1](https://www.youtube.com/watch?v=hKy7HyUDEJE)
+  - Uploader: YIJC Computing
+  - File: `04 - LT1b Intro to Python About Strings Part 1 [hKy7HyUDEJE].txt`
+  - Characters: 13,793
+- **LT 1b - Basic Python - About Strings**: [LT1b Intro to Python  About Strings Part 2](https://www.youtube.com/watch?v=g_D3F2K82T0)
+  - Uploader: YIJC Computing
+  - File: `05 - LT1b Intro to Python About Strings Part 2 [g_D3F2K82T0].txt`
+  - Characters: 6,605
+- **LT 1b - Basic Python - About Strings**: [1b 1  How do we use the index operator   for String](https://www.youtube.com/watch?v=kZJiDB6BF9s)
+  - Uploader: YIJC Computing
+  - File: `06 - 1b 1 How do we use the index operator for String [kZJiDB6BF9s].txt`
+  - Characters: 2,566
+- **LT 1b - Basic Python - About Strings**: [1b 2  How do we use the slice operator   for String](https://www.youtube.com/watch?v=qgKjiRKDqvc)
+  - Uploader: YIJC Computing
+  - File: `07 - 1b 2 How do we use the slice operator for String [qgKjiRKDqvc].txt`
+  - Characters: 5,144
+- **LT 1b - Basic Python - About Strings**: [1b 3  How do we use the slice operator with Step   for String](https://www.youtube.com/watch?v=KHBHunYLVJk)
+  - Uploader: YIJC Computing
+  - File: `08 - 1b 3 How do we use the slice operator with Step for String [KHBHunYLVJk].txt`
+  - Characters: 2,926
+- **LT 1c - Basic Python - Boolean Truth Values**: [LT1c Intro to Python   Boolean](https://www.youtube.com/watch?v=iMgcWI00h6I)
+  - Uploader: YIJC Computing
+  - File: `09 - LT1c Intro to Python Boolean [iMgcWI00h6I].txt`
+  - Characters: 4,559
+- **LT 2 - Conditional**: [LT2b Conditional](https://www.youtube.com/watch?v=nX_-BXuIE2w)
+  - Uploader: YIJC Computing
+  - File: `10 - LT2b Conditional [nX_-BXuIE2w].txt`
+  - Characters: 11,500
+- **LT 3a - Functional Abstraction (for 2026)**: [2021 LT 3a Functional Abstraction Pt 1](https://www.youtube.com/watch?v=3HB7kL4MREE)
+  - Uploader: YIJC Computing
+  - File: `11 - 2021 LT 3a Functional Abstraction Pt 1 [3HB7kL4MREE].txt`
+  - Characters: 11,966
+- **LT 3a - Functional Abstraction (for 2026)**: [2021 LT 3a Functional Abstraction Pt 2](https://www.youtube.com/watch?v=u1NfcxbuSpI)
+  - Uploader: YIJC Computing
+  - File: `12 - 2021 LT 3a Functional Abstraction Pt 2 [u1NfcxbuSpI].txt`
+  - Characters: 15,802
+- **LT 3b - Good Abstraction**: [2021 LT3b Good Abstraction Pt 1](https://www.youtube.com/watch?v=UYy283H2cMU)
+  - Uploader: YIJC Computing
+  - File: `13 - 2021 LT3b Good Abstraction Pt 1 [UYy283H2cMU].txt`
+  - Characters: 15,980
+- **LT 3b - Good Abstraction**: [2021 LT3b Good Abstraction Pt 2](https://www.youtube.com/watch?v=X6Dabl16HeI)
+  - Uploader: YIJC Computing
+  - File: `14 - 2021 LT3b Good Abstraction Pt 2 [X6Dabl16HeI].txt`
+  - Characters: 16,397
+- **LT 4a - Data Verification and Validation**: [2022 LT 4a   Data Verification and Validation](https://www.youtube.com/watch?v=ZK3-rAQmaEg)
+  - Uploader: YIJC Computing
+  - File: `15 - 2022 LT 4a Data Verification and Validation [ZK3-rAQmaEg].txt`
+  - Characters: 6,665
+- **LT 4b - Types of Error and Test Cases**: [2022 LT 4b Part 1   Types of Error](https://www.youtube.com/watch?v=DmTY-FKt4Xw)
+  - Uploader: YIJC Computing
+  - File: `16 - 2022 LT 4b Part 1 Types of Error [DmTY-FKt4Xw].txt`
+  - Characters: 7,064
+- **LT 4b - Types of Error and Test Cases**: [2022 LT 4b Part 2   Test Cases](https://www.youtube.com/watch?v=FyGwz5OqMZU)
+  - Uploader: YIJC Computing
+  - File: `17 - 2022 LT 4b Part 2 Test Cases [FyGwz5OqMZU].txt`
+  - Characters: 6,644
+- **LT 5a - Iteration (for-loop) (2025)**: [2022 LT5a  Iteration - For loop](https://www.youtube.com/watch?v=5WYff26jmgg)
+  - Uploader: YIJC Computing
+  - File: `18 - 2022 LT5a Iteration - For loop [5WYff26jmgg].txt`
+  - Characters: 16,229
+- **LT 5b - Iteration (while-loop) (2025)**: [2022 LT5b Iteration - While loop](https://www.youtube.com/watch?v=tubTNWl5g8Y)
+  - Uploader: YIJC Computing
+  - File: `19 - 2022 LT5b Iteration - While loop [tubTNWl5g8Y].txt`
+  - Characters: 20,796
+- **LT 6 - Tuples**: [2026 LT6 Tuples](https://www.youtube.com/watch?v=YsDyFG3zq2I)
+  - Uploader: YIJC Computing
+  - File: `20 - 2026 LT6 Tuples [YsDyFG3zq2I].txt`
+  - Characters: 12,299
+- **LT 7 - Lists**: [LT8 Lists   Part 1](https://www.youtube.com/watch?v=8qB6aFi8fjM)
+  - Uploader: YIJC Computing
+  - File: `21 - LT8 Lists Part 1 [8qB6aFi8fjM].txt`
+  - Characters: 4,434
+- **LT 7 - Lists**: [LT8 Lists   Part 2](https://www.youtube.com/watch?v=1JXkn_st9n8)
+  - Uploader: YIJC Computing
+  - File: `22 - LT8 Lists Part 2 [1JXkn_st9n8].txt`
+  - Characters: 5,348
+- **LT 7 - Lists**: [LT8 Lists   Part 3](https://www.youtube.com/watch?v=TP2pawc3KF8)
+  - Uploader: YIJC Computing
+  - File: `23 - LT8 Lists Part 3 [TP2pawc3KF8].txt`
+  - Characters: 2,240
+- **LT 7 - Lists**: [LT8 Lists   Part 4](https://www.youtube.com/watch?v=SXiT6LRAal0)
+  - Uploader: YIJC Computing
+  - File: `24 - LT8 Lists Part 4 [SXiT6LRAal0].txt`
+  - Characters: 9,118
+- **LT 7 - Lists**: [LT8 Lists   Part 5](https://www.youtube.com/watch?v=WZvEw5n-zN0)
+  - Uploader: YIJC Computing
+  - File: `25 - LT8 Lists Part 5 [WZvEw5n-zN0].txt`
+  - Characters: 6,224
+- **LT 7 - Lists**: [LT8 Lists   Part 6](https://www.youtube.com/watch?v=oefv3E41IWE)
+  - Uploader: YIJC Computing
+  - File: `26 - LT8 Lists Part 6 [oefv3E41IWE].txt`
+  - Characters: 5,623
+- **LT 7 - Lists**: [1  How do we use the index operator](https://www.youtube.com/watch?v=p6o9X5_JWG8)
+  - Uploader: YIJC Computing
+  - File: `27 - 1 How do we use the index operator [p6o9X5_JWG8].txt`
+  - Characters: 2,611
+- **LT 7 - Lists**: [2  How do we use the slice operator](https://www.youtube.com/watch?v=zz-fhQnCSm4)
+  - Uploader: YIJC Computing
+  - File: `28 - 2 How do we use the slice operator [zz-fhQnCSm4].txt`
+  - Characters: 5,150
+- **LT 7 - Lists**: [3  How do we use the slice operator with a step](https://www.youtube.com/watch?v=VH6NNKkO_JM)
+  - Uploader: YIJC Computing
+  - File: `29 - 3 How do we use the slice operator with a step [VH6NNKkO_JM].txt`
+  - Characters: 2,954
+- **LT 8 - Dictionary**: [LT9 Dictionary](https://www.youtube.com/watch?v=chQTYhElZaM)
+  - Uploader: YIJC Computing
+  - File: `30 - LT9 Dictionary [chQTYhElZaM].txt`
+  - Characters: 7,892
+- **LT 9a - Recursion**: [Lecture Video: Recursion](https://www.youtube.com/watch?v=p7iJKWT_g6w)
+  - Uploader: YIJC Computing
+  - File: `31 - Lecture Video Recursion [p7iJKWT_g6w].txt`
+  - Characters: 12,024
+- **LT 10a Data Abstraction (1) - Abstract Data Type ADT**: [LT10a Data Abstraction 1 - Part 1](https://www.youtube.com/watch?v=5JZZ3HmqjC0)
+  - Uploader: YIJC Computing
+  - File: `32 - LT10a Data Abstraction 1 - Part 1 [5JZZ3HmqjC0].txt`
+  - Characters: 4,601
+- **LT 10a Data Abstraction (1) - Abstract Data Type ADT**: [LT10a Data Abstraction 1 - Part 2](https://www.youtube.com/watch?v=uf__ufKfsAI)
+  - Uploader: YIJC Computing
+  - File: `33 - LT10a Data Abstraction 1 - Part 2 [uf__ufKfsAI].txt`
+  - Characters: 6,251
+- **LT 10a Data Abstraction (1) - Abstract Data Type ADT**: [LT10a Data Abstraction 1 - Part 3](https://www.youtube.com/watch?v=tlsYnoYlJ9A)
+  - Uploader: YIJC Computing
+  - File: `34 - LT10a Data Abstraction 1 - Part 3 [tlsYnoYlJ9A].txt`
+  - Characters: 2,037
+- **LT 10a Data Abstraction (1) - Abstract Data Type ADT**: [LT10a Data Abstraction Part 4 - read from csv file](https://www.youtube.com/watch?v=neDx6Jn-5jU)
+  - Uploader: YIJC Computing
+  - File: `35 - LT10a Data Abstraction Part 4 - read from csv file [neDx6Jn-5jU].txt`
+  - Characters: 7,416
+- **LT 10a Data Abstraction (2) - Reading Data from Text File**: [LT10a Data Abstraction 2](https://www.youtube.com/watch?v=RLMzVuR9Hsk)
+  - Uploader: YIJC Computing
+  - File: `36 - LT10a Data Abstraction 2 [RLMzVuR9Hsk].txt`
+  - Characters: 4,397
+- **LT 10b - Stack ADT**: [LT10b Stack Part 1](https://www.youtube.com/watch?v=cCZNkocF-2k)
+  - Uploader: YIJC Computing
+  - File: `37 - LT10b Stack Part 1 [cCZNkocF-2k].txt`
+  - Characters: 17,064
+- **LT 10b - Stack ADT**: [LT10b Stack Part 2](https://www.youtube.com/watch?v=mpRR3zX2JLI)
+  - Uploader: YIJC Computing
+  - File: `38 - LT10b Stack Part 2 [mpRR3zX2JLI].txt`
+  - Characters: 9,671
+- **LT 10c - Queue ADT (for 2026)**: [LT10c Queue - FFF](https://www.youtube.com/watch?v=GMQ7hIsxpG0)
+  - Uploader: YIJC Computing
+  - File: `39 - LT10c Queue - FFF [GMQ7hIsxpG0].txt`
+  - Characters: 9,457
+- **LT10d About Hashing (Part 1)**: [LT10d About Hashing Part 1](https://www.youtube.com/watch?v=LR6vgzaSZko)
+  - Uploader: YIJC Computing
+  - File: `40 - LT10d About Hashing Part 1 [LR6vgzaSZko].txt`
+  - Characters: 13,526
+- **LT10d About Hashing (Part 2)**: [LT10d About Hashing Part 2](https://www.youtube.com/watch?v=yi7Zw25BjDk)
+  - Uploader: YIJC Computing
+  - File: `41 - LT10d About Hashing Part 2 [yi7Zw25BjDk].txt`
+  - Characters: 12,104
+- **LT10d About Hashing (Part 3)**: [LT10d About Hashing (Part 3) - Separate Chain](https://www.youtube.com/watch?v=gWAhd-Ina9Q)
+  - Uploader: YIJC Computing
+  - File: `42 - LT10d About Hashing (Part 3) - Separate Chain [gWAhd-Ina9Q].txt`
+  - Characters: 9,513
+- **LT10d About Hashing (Part 3)**: [LT10d About Hashing (Part 3) - Linear Probing](https://www.youtube.com/watch?v=iNt9vZlmMdg)
+  - Uploader: YIJC Computing
+  - File: `43 - LT10d About Hashing (Part 3) - Linear Probing [iNt9vZlmMdg].txt`
+  - Characters: 10,397
+- **LT 11a Linear and Binary Search**: [LT11a Part 1 Linear Search](https://www.youtube.com/watch?v=qwMthCimEP4)
+  - Uploader: YIJC Computing
+  - File: `44 - LT11a Part 1 Linear Search [qwMthCimEP4].txt`
+  - Characters: 3,569
+- **LT 11a Linear and Binary Search**: [LT11a Part 2 Binary Search](https://www.youtube.com/watch?v=aGGsDl0BXxE)
+  - Uploader: YIJC Computing
+  - File: `45 - LT11a Part 2 Binary Search [aGGsDl0BXxE].txt`
+  - Characters: 9,741
+- **LT 11a Linear and Binary Search**: [LT11a Unplugged Activity](https://www.youtube.com/watch?v=oa98tXuh6fU)
+  - Uploader: YIJC Computing
+  - File: `46 - LT11a Unplugged Activity [oa98tXuh6fU].txt`
+  - Characters: 3,001
+- **BTB 2 - File Handling**: [BTB2 File Handling Part 1   Read Write Text File](https://www.youtube.com/watch?v=jc32nQLNKiM)
+  - Uploader: YIJC Computing
+  - File: `47 - BTB2 File Handling Part 1 Read Write Text File [jc32nQLNKiM].txt`
+  - Characters: 21,611
+- **BTB 2 - File Handling**: [BTB2 File Handling Part 2   Read Write CSV File](https://www.youtube.com/watch?v=x_6ECbsm9MY)
+  - Uploader: YIJC Computing
+  - File: `48 - BTB2 File Handling Part 2 Read Write CSV File [x_6ECbsm9MY].txt`
+  - Characters: 14,729
+- **BTB 3 - Print Format**: [BTB3 Print Format](https://www.youtube.com/watch?v=oNUV9UN3im8)
+  - Uploader: YIJC Computing
+  - File: `49 - BTB3 Print Format [oNUV9UN3im8].txt`
+  - Characters: 7,696
+- **BTB 4 - Random Generator**: [BTB4 Random Generator](https://www.youtube.com/watch?v=FeVrxm3mGwk)
+  - Uploader: YIJC Computing
+  - File: `50 - BTB4 Random Generator [FeVrxm3mGwk].txt`
+  - Characters: 7,154
+- **C2a Data Representation of Numbers (Theory Questions)**: [C2 Data Representation for Numbers Part 1](https://www.youtube.com/watch?v=c9FarmHMUyA)
+  - Uploader: YIJC Computing
+  - File: `51 - C2 Data Representation for Numbers Part 1 [c9FarmHMUyA].txt`
+  - Characters: 9,643
+- **C2a Data Representation of Numbers (Theory Questions)**: [C2 Data Representation for Numbers Part 3](https://www.youtube.com/watch?v=Jdr8hOz7fIA)
+  - Uploader: YIJC Computing
+  - File: `52 - C2 Data Representation for Numbers Part 3 [Jdr8hOz7fIA].txt`
+  - Characters: 9,769
+- **C2a Data Representation of Numbers (Theory Questions)**: [Pre-Algebra 3 - Decimal, Binary, Octal & Hexadecimal](https://www.youtube.com/watch?v=5sS7w-CMHkU)
+  - Uploader: MyWhyU
+  - File: `53 - Pre-Algebra 3 - Decimal, Binary, Octal & Hexadecimal [5sS7w-CMHkU].txt`
+  - Characters: 11,895
+- **C2b Data Representation (Representing ASCII and Unicode)**: [C2b Data Representation for ASCII and Unicode 2024](https://www.youtube.com/watch?v=q7eLVeTwTaU)
+  - Uploader: YIJC Computing
+  - File: `54 - C2b Data Representation for ASCII and Unicode 2024 [q7eLVeTwTaU].txt`
+  - Characters: 8,403
+- **C2c About UTF-8 Encoding for Transmission**: [C2b Data Transmission using UTF 8 2024](https://www.youtube.com/watch?v=Phb-5Dkn7yQ)
+  - Uploader: YIJC Computing
+  - File: `55 - C2b Data Transmission using UTF 8 2024 [Phb-5Dkn7yQ].txt`
+  - Characters: 10,123
+- **C2c About UTF-8 Encoding for Transmission**: [Characters, Symbols and the Unicode Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)
+  - Uploader: Computerphile
+  - File: `56 - Characters, Symbols and the Unicode Miracle - Computerphile [MijmeoH9LT4].txt`
+  - Characters: 11,005
+- **C3a Hands-on with Filius Network Simulator**: [Filius   Part 1a](https://www.youtube.com/watch?v=B5JOJga_LzQ)
+  - Uploader: YIJC Computing
+  - File: `57 - Filius Part 1a [B5JOJga_LzQ].txt`
+  - Characters: 12,060
+- **C3a Hands-on with Filius Network Simulator**: [Filius   Part 1b](https://www.youtube.com/watch?v=dnvR3yUqmxQ)
+  - Uploader: YIJC Computing
+  - File: `58 - Filius Part 1b [dnvR3yUqmxQ].txt`
+  - Characters: 6,353
+- **C3a Hands-on with Filius Network Simulator**: [Filius   Part 2](https://www.youtube.com/watch?v=ALKATzna190)
+  - Uploader: YIJC Computing
+  - File: `59 - Filius Part 2 [ALKATzna190].txt`
+  - Characters: 4,098
+- **C3a Hands-on with Filius Network Simulator**: [Filius   Part 3a](https://www.youtube.com/watch?v=FrJY_m0MKKg)
+  - Uploader: YIJC Computing
+  - File: `60 - Filius Part 3a [FrJY_m0MKKg].txt`
+  - Characters: 4,769
+- **C3a Hands-on with Filius Network Simulator**: [Filius   Part 3b](https://www.youtube.com/watch?v=MKrz2kQLE7o)
+  - Uploader: YIJC Computing
+  - File: `61 - Filius Part 3b [MKrz2kQLE7o].txt`
+  - Characters: 7,779
+- **C2c About UTF-8 Encoding for Transmission**: [Walkthrough UTF 8 encoding example](https://www.youtube.com/watch?v=cBYYNTtnaXM)
+  - Uploader: YIJC Computing
+  - File: `62 - Walkthrough UTF 8 encoding example [cBYYNTtnaXM].txt`
+  - Characters: 6,320
+- **C3b Adopting AI tools and resources for learning**: [C3a - 1. Network Infrastructure](https://www.youtube.com/watch?v=xDPu0PDWrd8)
+  - Uploader: YIJC Computing
+  - File: `63 - C3a - 1. Network Infrastructure [xDPu0PDWrd8].txt`
+  - Characters: 16,323
+- **C3b Adopting AI tools and resources for learning**: [C3a - 2. Networking Data Journey](https://www.youtube.com/watch?v=3kwd1ELnbx8)
+  - Uploader: YIJC Computing
+  - File: `64 - C3a - 2. Networking Data Journey [3kwd1ELnbx8].txt`
+  - Characters: 14,841
+- **C3b Adopting AI tools and resources for learning**: [C3a - 3. Data Packets Perilous Path](https://www.youtube.com/watch?v=RGZzFT7TYbA)
+  - Uploader: YIJC Computing
+  - File: `65 - C3a - 3. Data Packets Perilous Path [RGZzFT7TYbA].txt`
+  - Characters: 9,776
+- **C3a: Using ChatGPT to Aid Learning**: [Introduction to Networking | Network Fundamentals Part 1](https://www.youtube.com/watch?v=cNwEVYkx2Kk)
+  - Uploader: Network Direction
+  - File: `66 - Introduction to Networking Network Fundamentals Part 1 [cNwEVYkx2Kk].txt`
+  - Characters: 10,314
+- **C3a Hands-on with Filius Network Simulator (embedded in slides); C3c Additional Resources**: [Circuit Switching vs. Packet Switching](https://www.youtube.com/watch?v=B1tElYnFqL8)
+  - Uploader: Sunny Classroom
+  - File: `67 - Circuit Switching vs. Packet Switching [B1tElYnFqL8].txt`
+  - Characters: 3,805
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [Secret of subnet mask](https://www.youtube.com/watch?v=yLeuGOOrUvo)
+  - Uploader: Sunny Classroom
+  - File: `68 - Secret of subnet mask [yLeuGOOrUvo].txt`
+  - Characters: 6,516
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [Undersea Cables Power The Internet](https://www.youtube.com/watch?v=IlAJJI-qG2k)
+  - Uploader: Insider Science
+  - File: `69 - Undersea Cables Power The Internet [IlAJJI-qG2k].txt`
+  - Characters: 321
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [Network Types:  LAN, WAN, PAN, CAN, MAN, SAN, WLAN](https://www.youtube.com/watch?v=4_zSIXb7tLQ)
+  - Uploader: PowerCert Animated Videos
+  - File: `70 - Network Types LAN, WAN, PAN, CAN, MAN, SAN, WLAN [4_zSIXb7tLQ].txt`
+  - Characters: 4,333
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [What is a MAC Address?](https://www.youtube.com/watch?v=UrG7RTWIJak)
+  - Uploader: Techquickie
+  - File: `71 - What is a MAC Address [UrG7RTWIJak].txt`
+  - Characters: 7,842
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [7 LAN  topologies - bus, ring, star, hybrid, mesh ...](https://www.youtube.com/watch?v=T5xQJk-Aamk)
+  - Uploader: Sunny Classroom
+  - File: `72 - 7 LAN topologies - bus, ring, star, hybrid, mesh ... [T5xQJk-Aamk].txt`
+  - Characters: 7,260
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [How a switch builds Source Address Table dynamically?](https://www.youtube.com/watch?v=DukuFSZH9Qw)
+  - Uploader: Sunny Classroom
+  - File: `73 - How a switch builds Source Address Table dynamically [DukuFSZH9Qw].txt`
+  - Characters: 5,195
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [Hub, Switch, & Router Explained - What's the difference?](https://www.youtube.com/watch?v=1z0ULvg_pW8)
+  - Uploader: PowerCert Animated Videos
+  - File: `74 - Hub, Switch, & Router Explained - What's the difference [1z0ULvg_pW8].txt`
+  - Characters: 6,626
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [Why do we need both IP and MAC address?](https://www.youtube.com/watch?v=oGoWqdlaOMI)
+  - Uploader: Sunny Classroom
+  - File: `75 - Why do we need both IP and MAC address [oGoWqdlaOMI].txt`
+  - Characters: 2,909
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [What is a Server?  Servers vs Desktops Explained](https://www.youtube.com/watch?v=UjCDWCeHCzY)
+  - Uploader: PowerCert Animated Videos
+  - File: `76 - What is a Server Servers vs Desktops Explained [UjCDWCeHCzY].txt`
+  - Characters: 7,048
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [How the Internet Works in 5 Minutes](https://www.youtube.com/watch?v=7_LPdttKXPc)
+  - Uploader: Aaron
+  - File: `77 - How the Internet Works in 5 Minutes [7_LPdttKXPc].txt`
+  - Characters: 6,468
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [The difference between the Internet and the Web](https://www.youtube.com/watch?v=UVkT59PmRdo)
+  - Uploader: MIT Museum
+  - File: `78 - The difference between the Internet and the Web [UVkT59PmRdo].txt`
+  - Characters: 1,680
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [How does the INTERNET work? | ICT #2](https://www.youtube.com/watch?v=x3c1ih2NJEg)
+  - Uploader: Sabin Civil Engineering
+  - File: `79 - How does the INTERNET work ICT #2 [x3c1ih2NJEg].txt`
+  - Characters: 10,070
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [How a DNS Server (Domain Name System) works.](https://www.youtube.com/watch?v=mpQZVYPuDGU)
+  - Uploader: PowerCert Animated Videos
+  - File: `80 - How a DNS Server (Domain Name System) works. [mpQZVYPuDGU].txt`
+  - Characters: 5,340
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [DHCP Explained - Dynamic Host Configuration Protocol](https://www.youtube.com/watch?v=e6-TaH5bkjo)
+  - Uploader: PowerCert Animated Videos
+  - File: `81 - DHCP Explained - Dynamic Host Configuration Protocol [e6-TaH5bkjo].txt`
+  - Characters: 8,085
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [POP3 vs IMAP - What's the difference?](https://www.youtube.com/watch?v=SBaARws0hy4)
+  - Uploader: PowerCert Animated Videos
+  - File: `82 - POP3 vs IMAP - What's the difference [SBaARws0hy4].txt`
+  - Characters: 7,135
+- **C3a Hands-on with Filius Network Simulator (embedded in slides)**: [What is SMTP - Simple Mail Transfer Protocol](https://www.youtube.com/watch?v=PJo5yOtu7o8)
+  - Uploader: PowerCert Animated Videos
+  - File: `83 - What is SMTP - Simple Mail Transfer Protocol [PJo5yOtu7o8].txt`
+  - Characters: 2,751
+- **C3c Additional Resources**: [Lesson 6   Demystifying Internet Part 1 of 3](https://www.youtube.com/watch?v=ld_QUUfe-nk)
+  - Uploader: YIJC Computing
+  - File: `84 - Lesson 6 Demystifying Internet Part 1 of 3 [ld_QUUfe-nk].txt`
+  - Characters: 9,496
+- **C3c Additional Resources**: [Lesson 7: Demystifying the Internet (Part 2)](https://www.youtube.com/watch?v=DeKA47QA1R8)
+  - Uploader: Center for Cybersecurity Innovation & Outreach
+  - File: `85 - Lesson 7 Demystifying the Internet (Part 2) [DeKA47QA1R8].txt`
+  - Characters: 17,785
+- **C3c Additional Resources**: [Lesson 8   Demystifying Internet Part 3 of 3](https://www.youtube.com/watch?v=Bgtb_snqXBc)
+  - Uploader: YIJC Computing
+  - File: `86 - Lesson 8 Demystifying Internet Part 3 of 3 [Bgtb_snqXBc].txt`
+  - Characters: 18,475
+- **C3c Additional Resources**: [The Internet: Packets, Routing & Reliability](https://www.youtube.com/watch?v=AYdF7b3nMto)
+  - Uploader: CodeAI
+  - File: `87 - The Internet Packets, Routing & Reliability [AYdF7b3nMto].txt`
+  - Characters: 6,085
+- **C3c Additional Resources**: [How TCP starts and close session?](https://www.youtube.com/watch?v=zlIHLnOigmA)
+  - Uploader: Sunny Classroom
+  - File: `88 - How TCP starts and close session [zlIHLnOigmA].txt`
+  - Characters: 4,248
+
+## Videos without transcripts
+
+- [How ARP Works step by step with example | Address Resolution Protocol in Cisco Switch & Router](https://www.youtube.com/watch?v=-bXsCweU1DA)
+  - Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+  - Uploader: NETWORKING PLUS
+  - Reason: Error: [YoutubeTranscript] 🚨 Transcript is disabled on this video (-bXsCweU1DA)

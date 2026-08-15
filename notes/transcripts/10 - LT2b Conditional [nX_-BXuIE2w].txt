@@ -1,0 +1,281 @@
+Title: LT2b Conditional
+LT: LT 2 - Conditional
+Linked label: IF-ELSE Conditional
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=nX_-BXuIE2w
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] hi
+[00:02 - 00:06] this is a lecture on conditional
+[00:07 - 00:11] conditional now there are a few forms so
+[00:09 - 00:12] let's start with form the first one form
+[00:11 - 00:15] one
+[00:12 - 00:17] now so it has a structure of if a
+[00:15 - 00:19] certain expression
+[00:17 - 00:22] if we fulfill this expression then
+[00:19 - 00:24] followed by a statement
+[00:22 - 00:27] now take a different example
+[00:24 - 00:28] if a bigger than 0
+[00:27 - 00:31] print
+[00:28 - 00:34] a is positive
+[00:31 - 00:36] so you have an if expression
+[00:34 - 00:37] this expression will be either a true or
+[00:36 - 00:39] a false
+[00:37 - 00:42] if it is true
+[00:39 - 00:47] print a is
+[00:42 - 00:48] positive so we test this
+[00:47 - 00:51] code
+[00:48 - 00:53] using a equal to 3
+[00:51 - 00:54] if a bigger than
+[00:53 - 00:56] 0
+[00:54 - 01:00] yes so it is true
+[00:56 - 01:02] print the output will be a is positive
+[01:00 - 01:04] so you have the first formula of this
+[01:02 - 01:07] conditional if
+[01:04 - 01:07] the statement
+[01:08 - 01:15] now a is positive this is an output
+[01:12 - 01:18] now you also want to be careful with the
+[01:15 - 01:18] indentation
+[01:19 - 01:24] now indentation does really matter now
+[01:22 - 01:26] this is a python thing so when you are
+[01:24 - 01:30] doing programming you have to be very
+[01:26 - 01:30] careful with the indentation
+[01:32 - 01:38] let's go on to the second form
+[01:34 - 01:39] if a particular expression is true
+[01:38 - 01:40] or
+[01:39 - 01:44] do these statements
+[01:40 - 01:46] else else means that it is not true if
+[01:44 - 01:47] else means that the expression is not
+[01:46 - 01:49] true
+[01:47 - 01:51] then do the second statement
+[01:49 - 01:55] so take for example
+[01:51 - 01:56] if a is bigger than zero print a is
+[01:55 - 01:58] positive
+[01:56 - 02:00] else
+[01:58 - 02:02] else means that a is not bigger than
+[02:00 - 02:05] zero
+[02:02 - 02:07] print a is not positive now saying that
+[02:05 - 02:10] a is not positive is not saying that a
+[02:07 - 02:13] is negative right you do understand that
+[02:10 - 02:15] if a is not bigger than zero it can't be
+[02:13 - 02:18] zero right
+[02:15 - 02:22] so we'll test the code using the
+[02:18 - 02:24] case where a equal to minus three
+[02:22 - 02:26] if a bigger than
+[02:24 - 02:27] 0
+[02:26 - 02:29] the answer is no
+[02:27 - 02:30] so it's else
+[02:29 - 02:34] the output will be
+[02:30 - 02:34] a is not positive
+[02:37 - 02:45] again watch out on the indentation this
+[02:40 - 02:45] is very important in python programming
+[02:46 - 02:50] if you remember in our flow chart we
+[02:48 - 02:52] have our samples
+[02:50 - 02:54] we have a decision nodes we have the
+[02:52 - 02:57] input outputs nodes
+[02:54 - 02:59] okay and then we have the terminals
+[02:57 - 02:59] okay
+[03:00 - 03:04] so i'm going to use a flow chart
+[03:03 - 03:08] to show
+[03:04 - 03:08] the algorithm here
+[03:08 - 03:13] we start
+[03:10 - 03:15] by checking whether is a bigger than 0
+[03:13 - 03:16] if yes
+[03:15 - 03:19] print a is
+[03:16 - 03:20] positive else
+[03:19 - 03:22] print a
+[03:20 - 03:23] is not positive
+[03:22 - 03:25] and then
+[03:23 - 03:28] end
+[03:25 - 03:32] okay so now you understand how the
+[03:28 - 03:33] flowchart can be translated to the chord
+[03:32 - 03:36] or how the chord can be translated to
+[03:33 - 03:39] the flowchart either way
+[03:36 - 03:41] but of course we conceive the idea first
+[03:39 - 03:44] okay with the flowchart then write that
+[03:41 - 03:47] into a code and then test out in our
+[03:44 - 03:47] jupyter
+[03:47 - 03:52] let's go on to form three
+[03:49 - 03:55] if the first expression is true print
+[03:52 - 03:56] the statement
+[03:55 - 03:58] else
+[03:56 - 04:01] else if there's a second expression
+[03:58 - 04:04] then print the second x statement
+[04:01 - 04:07] else that means both expression 1 and 2
+[04:04 - 04:10] are not true
+[04:07 - 04:10] print the third statement
+[04:10 - 04:17] take for example
+[04:13 - 04:19] if a equal to zero
+[04:17 - 04:21] the double equal sign in python is to
+[04:19 - 04:25] check whether they are equivalent that
+[04:21 - 04:27] means if a is the same as zero then this
+[04:25 - 04:29] will deliver a true
+[04:27 - 04:31] if a is not zero then this will deliver
+[04:29 - 04:32] as a force
+[04:31 - 04:36] if it's true
+[04:32 - 04:36] print a is zero
+[04:36 - 04:46] else if a is bigger than zero if it's
+[04:40 - 04:46] true prints that a is positive
+[04:46 - 04:51] else
+[04:48 - 04:53] in this case for these else it is
+[04:51 - 04:55] a is neither zero
+[04:53 - 04:59] a is not bigger than zero
+[04:55 - 05:01] we prints that a is negative
+[04:59 - 05:03] so you have the if
+[05:01 - 05:06] else if
+[05:03 - 05:06] else structure
+[05:06 - 05:10] now we can test this code using a equal
+[05:08 - 05:13] to -3
+[05:10 - 05:15] if a equal to zero the answer is no so
+[05:13 - 05:17] it's false
+[05:15 - 05:18] else if a bigger than zero again it is
+[05:17 - 05:24] false
+[05:18 - 05:26] else print that a is negative
+[05:24 - 05:29] now for number three we can also show it
+[05:26 - 05:29] in a flowchart
+[05:29 - 05:33] if a bigger than zero that's our first
+[05:32 - 05:34] decision
+[05:33 - 05:38] yes
+[05:34 - 05:39] printer a is positive
+[05:38 - 05:40] else if
+[05:39 - 05:42] if it's no
+[05:40 - 05:43] then you check whether is it equal to
+[05:42 - 05:47] zero
+[05:43 - 05:50] if yes printer a is a zero
+[05:47 - 05:55] and then else if it's no
+[05:50 - 05:55] printer a is negative and then you end
+[05:58 - 06:02] we have a form 4 where there is a
+[06:00 - 06:05] multiple else if
+[06:02 - 06:07] so if expression 1 else if expression
+[06:05 - 06:09] two else if expression three
+[06:07 - 06:11] else now the last else means that it is
+[06:09 - 06:13] expression one is false expression two
+[06:11 - 06:15] is false expression all the three
+[06:13 - 06:18] expressions are false
+[06:15 - 06:22] else you print the last
+[06:18 - 06:25] so for example if a equal to 4 we print
+[06:22 - 06:25] out
+[06:25 - 06:30] else
+[06:26 - 06:34] else if it's not equal to 4 else if it
+[06:30 - 06:37] is equal to 0 printed a is 0.
+[06:34 - 06:38] else if a is bigger than zero printed is
+[06:37 - 06:42] positive
+[06:38 - 06:43] else so none of this is true it's not
+[06:42 - 06:46] equal to four it's not equal to zero
+[06:43 - 06:49] it's not bigger than zero so it must be
+[06:46 - 06:52] smaller than zero so it must print
+[06:49 - 06:56] a is negative
+[06:52 - 06:58] so we test out with a equal to four
+[06:56 - 07:01] it will fulfill the first expression
+[06:58 - 07:05] that a is equal to four
+[07:01 - 07:05] and the output will be ouch
+[07:08 - 07:13] okay similarly we can illustrate this
+[07:11 - 07:15] code using a flowchart
+[07:13 - 07:17] check that
+[07:15 - 07:21] whether a particular number is equal to
+[07:17 - 07:22] zero if yes print out no and check
+[07:21 - 07:25] whether it's equal to zero
+[07:22 - 07:28] check whether it's bigger than zero if
+[07:25 - 07:32] all things are no then it will be print
+[07:28 - 07:32] that a is a negative number
+[07:34 - 07:39] okay we want to further illustrate this
+[07:36 - 07:41] uh if and if else statement so let's
+[07:39 - 07:44] take for the example of
+[07:41 - 07:47] try to compare whether their name is
+[07:44 - 07:50] alice or not so we start by asking
+[07:47 - 07:56] or checking whether it's the name equal
+[07:50 - 07:57] to alice if it's true then print alice
+[07:56 - 08:00] false
+[07:57 - 08:01] end so you don't don't do anything if
+[08:00 - 08:05] it's false
+[08:01 - 08:05] okay so this is just an if statement
+[08:09 - 08:15] this is a case of an if else
+[08:12 - 08:18] if it's true if name is equal to alice
+[08:15 - 08:21] they say print at least hi alice and if
+[08:18 - 08:23] it's false then you want to say hello
+[08:21 - 08:25] stranger because this person is not
+[08:23 - 08:29] alice
+[08:25 - 08:29] so that is a if else statement
+[08:31 - 08:35] how about the case of if and else if
+[08:36 - 08:42] it is true it is at least then we say hi
+[08:39 - 08:44] alice if it's false you go on to check
+[08:42 - 08:48] for the h
+[08:44 - 08:52] are you older or younger than 12
+[08:48 - 08:54] if your age is less than 12 true
+[08:52 - 08:58] then you will say that you are not alice
+[08:54 - 08:59] kiddo because this is a child under 12.
+[08:58 - 09:01] if is
+[08:59 - 09:03] if the h is not
+[09:01 - 09:05] less than 12
+[09:03 - 09:07] then basically there's nothing to be
+[09:05 - 09:10] done and then you end the code and the
+[09:07 - 09:10] program
+[09:11 - 09:16] so we have and the other one if else if
+[09:14 - 09:18] and else
+[09:16 - 09:21] now after checking whether the h is less
+[09:18 - 09:23] than 12 if it's true you say that you
+[09:21 - 09:27] are not at least kiddo
+[09:23 - 09:29] but if h less than 12 is false means
+[09:27 - 09:31] that the person is older than 12
+[09:29 - 09:34] you want to print the statement saying
+[09:31 - 09:39] you are neither alice nor a kid
+[09:34 - 09:39] because this person is more than 12.
+[09:40 - 09:45] now we want to look into situations
+[09:42 - 09:48] where there are multiple else either
+[09:45 - 09:50] so after checking whether the person is
+[09:48 - 09:53] more or less than 12 if the person
+[09:50 - 09:55] claimed that he is uh it's not true he's
+[09:53 - 09:57] not less than 12
+[09:55 - 09:59] you go on to check whether he sees more
+[09:57 - 10:00] than 2000 years
+[09:59 - 10:03] old
+[10:00 - 10:04] it's like age more than 2000 years old
+[10:03 - 10:06] you want to print out a statement
+[10:04 - 10:09] something like unlike you
+[10:06 - 10:11] at least it's not an update immortal
+[10:09 - 10:11] vampire
+[10:12 - 10:16] we can add another else if or to the
+[10:15 - 10:19] code
+[10:16 - 10:21] or after checking whether is the person
+[10:19 - 10:24] age bigger than 2000
+[10:21 - 10:26] true then he must be a vampire
+[10:24 - 10:27] uh if it is a force
+[10:26 - 10:30] then you want to know whether is your
+[10:27 - 10:31] age bigger than 100
+[10:30 - 10:33] okay
+[10:31 - 10:36] so if it's true
+[10:33 - 10:38] then this is a granny right so you print
+[10:36 - 10:40] the statement says you are not alice
+[10:38 - 10:43] ready
+[10:40 - 10:48] now if the person is not more than 100
+[10:43 - 10:48] you do nothing again you end the code
+[10:49 - 10:53] what happens if you
+[10:51 - 10:56] swap these two
+[10:53 - 10:56] conditions
+[10:57 - 10:59] okay
+[10:59 - 11:05] if the h is not less than 12 you goes on
+[11:03 - 11:07] to check whether is the h bigger than
+[11:05 - 11:10] 100
+[11:07 - 11:15] if the h is bigger than 100 true
+[11:10 - 11:17] you say that you are not at least granny
+[11:15 - 11:21] now what happened if h bigger than 100
+[11:17 - 11:24] is false means that the person is
+[11:21 - 11:24] less than 100
+[11:24 - 11:29] do you want to check whether the age is
+[11:26 - 11:29] more than two thousand
+[11:30 - 11:36] if the h more than hundred is false
+[11:34 - 11:38] means that the h is less than hundred
+[11:36 - 11:40] would you go on to check whether the h
+[11:38 - 11:42] is more than two thousand
+[11:40 - 11:44] now i say is no
+[11:42 - 11:46] so this part of the condition is
+[11:44 - 11:48] actually redundant
+[11:46 - 11:51] okay it will never be executed
+[11:48 - 11:54] okay so there's no need to
+[11:51 - 11:57] have the check over here whether the age
+[11:54 - 12:00] is more than 2000 or not
+[11:57 - 12:04] okay so that's the end of this video
+[12:00 - 12:04] clip on the lecture condition
