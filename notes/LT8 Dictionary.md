@@ -28,7 +28,7 @@ dict([('boys', 11), ('girls', 13)])   # from key-value pairs
 ## Access, Check, Update
 
 ```python
-d[key]           # get value — KeyError if the key is missing
+d[key]           # get value - KeyError if the key is missing
 key in d         # checks KEYS only, never values
 d[key] = value   # add if new, update if it exists
 del d[key]       # delete one entry

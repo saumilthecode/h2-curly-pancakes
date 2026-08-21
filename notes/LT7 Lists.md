@@ -82,7 +82,7 @@ lst = [3, 1, 4, 7, 3]
 ```python
 del lst[1:9:2]   # delete a slice
 del lst[-1]      # delete one item
-del lst[:]       # clear — same as lst.clear()
+del lst[:]       # clear - same as lst.clear()
 del lst          # delete the variable itself
 ```
 
@@ -94,7 +94,7 @@ del lst          # delete the variable itself
 ## Copying vs Assigning
 
 ```python
-lst2 = lst          # same list, two names — changing one changes both
+lst2 = lst          # same list, two names - changing one changes both
 lst2 = lst.copy()   # a genuinely separate list
 ```
 

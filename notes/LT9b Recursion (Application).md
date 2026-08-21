@@ -73,7 +73,7 @@ shift_right("12345", 2)  ->  "45123"
 def fib(n):
     if n == 0:
         return 0
-    elif n == 1:            # two base cases — the recurrence reaches back two steps
+    elif n == 1:            # two base cases - the recurrence reaches back two steps
         return 1
     return fib(n - 1) + fib(n - 2)
 ```
@@ -83,14 +83,14 @@ def fib(n):
 >
 > ```text
 > fib(5)
-> ├── fib(4)
-> │   ├── fib(3)
-> │   │   ├── fib(2)   ← recomputed
-> │   │   └── fib(1)
-> │   └── fib(2)       ← recomputed
-> └── fib(3)
->     ├── fib(2)       ← recomputed
->     └── fib(1)
+> +-- fib(4)
+> |   +-- fib(3)
+> |   |   +-- fib(2)   < recomputed
+> |   |   +-- fib(1)
+> |   +-- fib(2)       < recomputed
+> +-- fib(3)
+>     +-- fib(2)       < recomputed
+>     +-- fib(1)
 > ```
 >
 > The iterative version is `O(n)`.

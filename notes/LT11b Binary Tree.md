@@ -14,12 +14,12 @@
 ## Vocabulary
 
 ```text
-         A          root — the only node with no parent
-     ┌───┴────┐     edges
-     B        C     siblings — same parent
-  ┌──┴──┐   ┌─┴─┐
+         A          root - the only node with no parent
+     +---+----+     edges
+     B        C     siblings - same parent
+  +--+--+   +-+-+
   D     E   F   G   E, F, G are leaves (no children)
-┌─┴─┐
++-+-+
 H   I               H, I are leaves too
 ```
 
@@ -50,17 +50,13 @@ H   I               H, I are leaves too
 full, not complete        complete, not full
 
    A                           A
-┌──┴──┐                      ┌─┴─┐
++--+--+                      +-+-+
 B     C                      B   C
-    ┌─┴─┐                 ┌──┘
+    +-+-+                 +--+
     D   E                 D
-
-every non-leaf has 2     every level filled and
-children, but the last   packed left, but B has
-level isn't packed left  only one child
 ```
 
-The vocabulary tree at the top is both — every non-leaf has two children, and the bottom level sits as far left as it can.
+The vocabulary tree at the top is both.
 
 ## Binary Search Tree
 
@@ -74,11 +70,11 @@ The rules apply at **every** node, not just the root.
 
 ```text
          6
-     ┌───┴────┐
+     +---+----+
      4        8
-  ┌──┴──┐   ┌─┴─┐
+  +--+--+   +-+-+
   2     5   7   9
-┌─┴─┐
++-+-+
 1   3
 ```
 
@@ -87,97 +83,58 @@ The rules apply at **every** node, not just the root.
 
 ### In-Order Traversal Gives Sorted Order
 
-Read the tree above **left, node, right** and you get `1 2 3 4 5 6 7 8 9`. That is what 2.1.4 means by *"the application of in-order tree traversal for binary search trees"* — it's how you get sorted output back out of a BST.
-
-## Traversals
-
-Visiting every node exactly once. Used for printing all values, testing whether any node has some property, or copying the tree.
-
-```text
-         A
-     ┌───┴────┐
-     B        C
-  ┌──┴──┐   ┌─┴─┐
-  D     E   F   G
-┌─┴─┐
-H   I
-```
-
-| Traversal | Order | Output |
-| --------- | ----- | ------ |
-| **Pre-order** (DFS) | **node**, left, right | `A B D H I E C F G` |
-| **In-order** (DFS) | left, **node**, right | `H D I B E A F C G` |
-| **Post-order** (DFS) | left, right, **node** | `H I D E B F G C A` |
-| **Breadth-first** | level by level, left to right | `A B C D E F G H I` |
-
-> [!tip] Where the node lands in the name tells you the order
-> **Pre**-order visits the node *before* its subtrees, **in**-order *between* them, **post**-order *after* both. The left subtree always comes before the right.
-
-### DFS vs BFS
-
-| | Goes | Made of |
-| --- | ---- | ------- |
-| **Depth-first (DFS)** | down one branch fully, then backtracks | pre-order, in-order, post-order |
-| **Breadth-first (BFS)** | every node at depth `d` before any at depth `d + 1` | level order |
+Read the tree above **left, node, right** and you get `1 2 3 4 5 6 7 8 9`. That is 2.1.4's *"application of in-order tree traversal for binary search trees"*.
 
 ## The Binary Tree ADT
 
 Your ADT stores a tree as a **3-element list**: `[entry, left, right]`. An empty tree is `[]`.
 
 ```python
-# Constructors
-def make_empty_tree():
-    return []
-
-def make_tree(entry, left, right):
-    return [entry, left, right]
-
-# Accessors
-def entry(tree):
-    return tree[0]
-
-def left_branch(tree):
-    return tree[1]
-
-def right_branch(tree):
-    return tree[2]
-
-# Predicate
-def is_empty(tree):
-    return (tree == [])
+def make_empty_tree():                return []                    # constructors
+def make_tree(entry, left, right):    return [entry, left, right]
+def entry(tree):                      return tree[0]               # accessors
+def left_branch(tree):                return tree[1]
+def right_branch(tree):               return tree[2]
+def is_empty(tree):                   return (tree == [])          # predicate
 ```
 
-A leaf is a node with **both** branches empty. Build bottom-up — children first, because `make_tree` takes them as arguments:
+A leaf has **both** branches empty. Build bottom-up — children first, since `make_tree` takes them as arguments:
 
 ```python
-three        = make_tree(3, make_empty_tree(), make_empty_tree())
-four         = make_tree(4, three, make_empty_tree())        # left child only
-
-eight        = make_tree(8, make_empty_tree(), make_empty_tree())
-twenty_seven = make_tree(27, make_empty_tree(), make_empty_tree())
-twenty_four  = make_tree(24, make_empty_tree(), twenty_seven)  # right child only
-fifteen      = make_tree(15, eight, twenty_four)
-five         = make_tree(5, four, fifteen)
+three = make_tree(3, make_empty_tree(), make_empty_tree())
+four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 ```
 
-```text
-      5
-   ┌──┴───┐
-   4     15
-┌──┘   ┌──┴──┐
-3      8    24
-             └──┐
-               27
-```
+> [!warning]
+> Always build the empty branches with `make_empty_tree()`, never a bare `[]`. The `[]` is the *representation* — the whole point of an [[LT10a Data Abstraction|ADT]] is that only the constructors and accessors touch it.
 
-Underneath, the whole tree is just nested lists:
-
-```python
-[5, [4, [3, [], []], []], [15, [8, [], []], [24, [], [27, [], []]]]]
-```
+> [!example]- The lecture's `five` tree
+> ```python
+> eight        = make_tree(8, make_empty_tree(), make_empty_tree())
+> twenty_seven = make_tree(27, make_empty_tree(), make_empty_tree())
+> twenty_four  = make_tree(24, make_empty_tree(), twenty_seven)
+> fifteen      = make_tree(15, eight, twenty_four)
+> five         = make_tree(5, four, fifteen)
+> ```
+>
+> ```text
+>       5
+>    +--+---+
+>    4     15
+> +--+   +--+--+
+> 3      8    24
+>              +--+
+>                27
+> ```
+>
+> It is all just nested lists:
+>
+> ```python
+> [5, [4, [3, [], []], []], [15, [8, [], []], [24, [], [27, [], []]]]]
+> ```
 
 > [!note]
-> `print_tree()` comes from `LT11b_module`, so any cell that uses it needs `from LT11b_module import *`. That module also exports its own `make_tree`, `entry`, `left_branch`, `right_branch`, `make_empty_tree` and `is_empty`, so the `import *` **overwrites** the ones you defined. Same behaviour here, but put the import above your definitions if you want yours to win.
+> `print_tree()` needs `from LT11b_module import *`. That module exports its own `make_tree`, `entry`, `left_branch`, `right_branch`, `make_empty_tree` and `is_empty` too, so `import *` **overwrites** yours. Put the import above your definitions if you want yours to win.
 
 ## Searching a BST — `contains`
 
@@ -186,9 +143,9 @@ The recursion is the same shape as [[LT11a Search|binary search]]: compare, then
 ```python
 def contains(x, tree):
     if is_empty(tree):
-        return False            # base case — ran off the bottom
+        return False            # base case - ran off the bottom
     elif x == entry(tree):
-        return True             # base case — found it
+        return True             # base case - found it
     elif x < entry(tree):
         return contains(x, left_branch(tree))     # go left
     else:
@@ -210,14 +167,24 @@ def insert_tree(x, tree):
         return make_tree(x, make_empty_tree(), make_empty_tree())
     elif x < entry(tree):
         return make_tree(entry(tree), insert_tree(x, left_branch(tree)), right_branch(tree))
-    else:
+    elif x > entry(tree):
         return make_tree(entry(tree), left_branch(tree), insert_tree(x, right_branch(tree)))
+    else:
+        return tree                 # x is already here — keys stay distinct
 ```
+
+> [!important] Why the fourth branch matters
+> A plain `else` on the last case puts a **duplicate** in the right subtree, breaking rule 1. Inserting `3` into `[1, 2, 3, 5]`:
+>
+> | Version | Result |
+> | ------- | ------ |
+> | `elif x > entry(tree)` … `else: return tree` | `[1, 2, 3, 5]` — unchanged |
+> | plain `else` | `[1, 2, 3, 3, 5]` — duplicate |
 
 Each call rebuilds its node with **one** branch replaced, so the return value is the new tree — use it:
 
 ```python
-insert_tree(5, t1)           # wrong — the new tree is thrown away
+insert_tree(5, t1)           # wrong - the new tree is thrown away
 t1 = insert_tree(5, t1)      # right
 ```
 
@@ -230,31 +197,51 @@ t1 = insert_tree(5, t1)      # right
 > 5. Create the node there, set the parent's left/right pointer to it, and set the new node's own pointers to null.
 
 > [!warning] Deleting is out of scope
-> 2.1.3 says *"Exclude: editing and deleting nodes from binary search trees"*, and the lecture leaves `remove` as extra practice — *"this is not fully required inside of syllabus"*. Deletion is awkward because removing an internal node means promoting something from below it.
+> 2.1.3 says *"Exclude: editing and deleting nodes from binary search trees"*, and the lecture leaves `remove` as extra practice — *"this is not fully required inside of syllabus"*.
 
-## Traversal and Search Code
+## Traversals
+
+Visiting every node exactly once. Used for printing all values, testing whether any node has some property, or copying the tree.
+
+```text
+         A
+     +---+----+
+     B        C
+  +--+--+   +-+-+
+  D     E   F   G
++-+-+
+H   I
+```
+
+| Traversal | Order | Output |
+| --------- | ----- | ------ |
+| **Pre-order** (DFS) | **node**, left, right | `A B D H I E C F G` |
+| **In-order** (DFS) | left, **node**, right | `H D I B E A F C G` |
+| **Post-order** (DFS) | left, right, **node** | `H I D E B F G C A` |
+| **Breadth-first** | level by level, left to right | `A B C D E F G H I` |
+
+> [!tip] The name says where the node goes
+> **Pre**-order visits the node *before* its subtrees, **in**-order *between* them, **post**-order *after* both. Left always precedes right.
+
+**DFS** is the first three — down one branch fully, then backtrack. **BFS** is the fourth — every node at depth `d` before any at depth `d + 1`.
 
 > [!note]
-> The lecture explains the four orders but doesn't code them. 2.1.4 and 2.1.5 both say *"implement"*, so here they are, written on your own ADT.
+> The lecture explains the four orders but doesn't code them, and 2.1.4/2.1.5 both say *"implement"*. Written on your own ADT:
 
 ```python
-def pre_order(tree):
-    if is_empty(tree):
-        return []
-    return [entry(tree)] + pre_order(left_branch(tree)) + pre_order(right_branch(tree))
-
 def in_order(tree):
     if is_empty(tree):
         return []
     return in_order(left_branch(tree)) + [entry(tree)] + in_order(right_branch(tree))
-
-def post_order(tree):
-    if is_empty(tree):
-        return []
-    return post_order(left_branch(tree)) + post_order(right_branch(tree)) + [entry(tree)]
 ```
 
-Only the position of `[entry(tree)]` changes.
+All three are that function with `[entry(tree)]` moved. Writing `L` and `R` for the two recursive calls:
+
+| | Return line |
+| --- | ----------- |
+| `pre_order` | `[entry(tree)] + L + R` |
+| `in_order` | `L + [entry(tree)] + R` |
+| `post_order` | `L + R + [entry(tree)]` |
 
 BFS can't be written that way — it needs a [[LT10c Queue|queue]] to remember the nodes waiting at the next level:
 
@@ -286,8 +273,6 @@ n = 1 + 2 + 4 + ... + 2^h = 2^(h+1) - 1      [sum of a GP]
 making h the subject:   h = log2(n + 1) - 1
 ```
 
-So a balanced tree costs `O(log n)`.
-
 | Shape | Height | Search |
 | ----- | ------ | ------ |
 | Balanced | `≈ log2 n` | `O(log n)` |
@@ -301,39 +286,29 @@ The same six values, inserted in different orders:
 inserted 7,3,9,1,5,11        inserted 5,3,9,1,7,11
 
      7                             5
-  ┌──┴───┐                      ┌──┴──┐
+  +--+---+                      +--+--+
   3      9                      3     9
-┌─┴─┐    └──┐                ┌──┘   ┌─┴──┐
++-+-+    +--+                +--+   +-+--+
 1   5      11                1      7   11
 
-height 2 — balanced          height 2 — balanced
+height 2 - balanced          height 2 - balanced
 ```
 
 ```text
-inserted 1,3,5,7,9,11 — already sorted
+inserted 1,3,5,7,9,11 - already sorted
 
-1
-└──┐
-   3
-   └──┐
-      5
-      └──┐
-         7
-         └──┐
-            9
-            └──┐
-              11
+1 -> 3 -> 5 -> 7 -> 9 -> 11      every node is a right child
 
-height 5 — a chain
+height 5 - a chain
 ```
 
-Sorted input is the worst case: every value goes right, and the tree degenerates into a linked list.
+Sorted input is the worst case — the tree degenerates into a linked list.
 
 > [!important] 2023 Q4(c) — "State how two BSTs can store the same data but have a different shape" `[1]`
 > The shape depends on the **order the values are inserted**.
 
 > [!example]- Rebalancing
-> A tree can become unbalanced after several insertions. The fix is a function that rebuilds it as evenly as possible, called from time to time. The lecture sets writing `balance_tree` as its Question of the Day — not an assessed outcome.
+> A tree drifts out of balance as you insert. The fix is a function that rebuilds it evenly, called from time to time — the lecture sets `balance_tree` as its Question of the Day. Not an assessed outcome.
 
 ## BST vs Binary Search
 
@@ -352,7 +327,7 @@ Other uses named in the lecture: storing the keys of a hash table so that a [[LT
 
 ## The Array Form Used in Paper 1
 
-Your tutorials build trees with the Python ADT above. **Paper 1 draws the tree as an array of nodes** instead — each element holds a left pointer, the data and a right pointer, with a separate `Root` variable holding the index of the root. `Null` (or `-1`) means "no node this way". Used in 2020, 2021 and 2024.
+**Paper 1 draws the tree as an array of nodes**, not as the Python ADT above. Each element holds a left pointer, the data and a right pointer; a separate `Root` variable holds the index of the root; `Null` (or `-1`) means "no node this way". Used in 2020, 2021 and 2024.
 
 2021 Q7 — array `Names`, `Root = 1`:
 
@@ -370,9 +345,9 @@ Follow the pointers from `Root` and the tree falls out — the array order means
 
 ```text
              Leona
-        ┌──────┴───────┐
+        +------+-------+
      Bobbie         Simone
-    ┌───┴───┐       ┌──┴───┐
+    +---+---+       +--+---+
   Alice   David   Peter   Tom
 ```
 
@@ -388,11 +363,11 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 >
 > ```text
 >                  Leona
->           ┌────────┴─────────┐
+>           +--------+---------+
 >        Bobbie             Simone
->     ┌─────┴─────┐         ┌──┴───┐
+>     +-----+-----+         +--+---+
 >   Alice       David     Peter   Tom
->                 └──┐
+>                 +--+
 >                  Eric
 > ```
 
@@ -410,52 +385,47 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 > ```
 > Left, then right, then output → **post-order**. The `<> -1` tests on lines 02 and 05 are the **base case** — they stop the recursion at a null pointer.
 >
-> The same question also asked what recursion is, which lines make `P` recursive, and how the [[LT10b Stack|stack]] is used while it runs — see [[LT9a Recursion]].
+> The rest of Q3 was recursion and the call [[LT10b Stack|stack]] — see [[LT9a Recursion]].
 
 > [!example]- 2024 Q5(c) — **reverse** in-order `[6]`
 > Defined in the paper as: follow the **right** pointer and repeat → output the node → follow the **left** pointer and repeat. Mirror of in-order, so on a BST it outputs the keys in **descending** order.
 
 ## Worked Example: Specimen Paper 1 Q2
 
-Countries in a BST, `[2] + [5] + [2] + [2] + [2] = 13 marks` across the whole question.
+Countries in a BST — 13 marks. The queue half is in [[LT10c Queue|Queue]].
 
 ```text
             Belgium
-      ┌────────┴─────────┐
+      +--------+---------+
   Australia           Kuwait
-   ┌──┘             ┌────┴────┐
+   +--+             +----+----+
 Andorra           Egypt   Singapore
-                 ┌──┘
+                 +--+
               Bolivia
 ```
 
-Part (c) dequeues `China` then `Oman` from a circular queue and inserts both:
-
-- **China** — right of Belgium, left of Kuwait, left of Egypt, right of Bolivia → **Bolivia's right child**
-- **Oman** — right of Belgium, right of Kuwait, left of Singapore → **Singapore's left child**
-
-```text
-               Belgium
-      ┌───────────┴───────────┐
-  Australia                Kuwait
-   ┌──┘                  ┌────┴─────┐
-Andorra                Egypt    Singapore
-                      ┌──┘       ┌──┘
-                   Bolivia     Oman
-                      └──┐
-                       China
-```
-
-The queue half of that question is in [[LT10c Queue|Queue]].
+> [!example]- Q2(c)(iii) — insert the dequeued `China` and `Oman` `[2]`
+> - **China** — right of Belgium, left of Kuwait, left of Egypt, right of Bolivia → **Bolivia's right child**
+> - **Oman** — right of Belgium, right of Kuwait, left of Singapore → **Singapore's left child**
+>
+> ```text
+>                Belgium
+>       +-----------+-----------+
+>   Australia                Kuwait
+>    +--+                  +----+-----+
+> Andorra                Egypt    Singapore
+>                       +--+       +--+
+>                    Bolivia     Oman
+>                       +--+
+>                        China
+> ```
 
 ## Common Mistakes
 
-- Comparing against the **root only** — the ordering rule has to hold at every node.
-- Forgetting `return` on a recursive call, so the function returns `None`.
-- Ignoring what `insert_tree` gives back — it returns the new tree, it doesn't modify in place.
+- Comparing against the **root only** — the ordering rule holds at every node.
 - Counting height in **nodes** instead of edges.
-- Inserting a value somewhere in the middle. A new value is always a **new leaf**.
-- Mixing up in-order and pre-order — only in-order gives a BST back in sorted order.
+- Inserting a value into the middle. A new value is always a **new leaf**.
+- Mixing up in-order and pre-order — only in-order gives a BST back sorted.
 - Assuming `O(log n)`. That holds only while the tree is balanced.
 
 ## Related

@@ -40,7 +40,7 @@ def get_name(student):
     return student[0]
 
 
-# stored as a dictionary — same names, same calls
+# stored as a dictionary - same names, same calls
 def make_record(name, nric, cls, addr):
     return {"name": name, "nric": nric, "class": cls, "address": addr}
 

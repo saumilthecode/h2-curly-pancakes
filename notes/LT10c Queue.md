@@ -2,11 +2,12 @@
 > Queue = **FIFO**, First In First Out. Add at the tail, remove from the head.
 
 ```text
-  dequeue ◀──┌───┬───┬───┬───┐◀── enqueue
-             │ A │ B │ C │ D │
-             └───┴───┴───┴───┘
-             head          tail
-             q[0]          q[-1]
+              +---+---+---+---+
+  dequeue <-- | A | B | C | D | <-- enqueue
+              +---+---+---+---+
+                ^           ^
+              head         tail
+              q[0]         q[-1]
 ```
 
 ## Core Operations
@@ -79,14 +80,16 @@ Same FIFO idea — only the call style changes: `q.enqueue(x)` instead of `enque
 In a **fixed-size array**, every `dequeue` moves the head forward and leaves a dead slot behind it. The queue eventually reports "full" while the front of the array sits empty.
 
 ```text
-size 5 — three enqueued, two dequeued
+size 5 - three enqueued, two dequeued
 
 index   0     1     2     3     4
-      ┌─────┬─────┬─────┬─────┬─────┐
-      │  ·  │  ·  │  C  │     │     │
-      └─────┴─────┴─────┴─────┴─────┘
-         ↑     ↑     ▲     ▲
-       dead space  head  tail
+      +-----+-----+-----+-----+-----+
+      |  .  |  .  |  C  |     |     |
+      +-----+-----+-----+-----+-----+
+         ^     ^     ^     ^
+         |     |     |     +- tail (next free slot)
+         |     |     +------- head
+         +-----+------------- dead space
 ```
 
 A **circular queue** wraps the pointers back to `0`, so the vacated slots are reused.

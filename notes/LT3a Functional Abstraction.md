@@ -28,13 +28,14 @@ def add(x: int, y: int) -> int:
 
 ## Black Box
 
-```text
-   arguments         ┌───────────────┐         returned value
-   ───────────────▶  │   square(x)   │  ──────────────────▶
-                     └───────────────┘
-                  specification = WHAT it does   (you need this)
-                  implementation = HOW it does it (hidden)
+```mermaid
+flowchart LR
+    A([arguments]) -->|"x"| B["square(x)"]
+    B -->|"x squared"| C([returned value])
 ```
+
+- **Specification** — WHAT it does. You need this to call it.
+- **Implementation** — HOW it does it. Hidden inside the box.
 
 The same specification can have different implementations — both are a valid `square`:
 
@@ -55,7 +56,7 @@ result = x ** 2
 def square(x):
     print(x * x)     # displays, but returns None
 
-square(square(2))    # TypeError — inner call gave back None
+square(square(2))    # TypeError - inner call gave back None
 ```
 
 > [!warning]

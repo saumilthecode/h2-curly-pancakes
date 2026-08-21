@@ -11,7 +11,7 @@ Python's random numbers are not truly random — they come from a deterministic 
 ```python
 from random import *
 
-seed(30)     # optional — makes results repeatable for testing
+seed(30)     # optional - makes results repeatable for testing
 ```
 
 ## Numbers

@@ -38,7 +38,7 @@ base 16:  ... 4096  256   16    1
 binary        1     1     1     1     0     1     1     0
 place       2^7   2^6   2^5   2^4   2^3   2^2   2^1   2^0
 value       128    64    32    16     8     4     2     1
-            ───   ───   ───   ───   ───   ───   ───   ───
+            ---   ---   ---   ---   ---   ---   ---   ---
             128 +  64 +  32 +  16 +   0 +   4 +   2 +   0  = 246
 ```
 
@@ -73,7 +73,7 @@ value       128    64    32    16     8     4     2     1
 
 ```text
      1 1 1 1 0 1 1 0
-     ▲             ▲
+     ^             ^
     MSB           LSB
    (2^7)         (2^0)
 ```
@@ -95,14 +95,14 @@ Multiply each digit by its place value and add.
 Divide repeatedly, keep the remainders, then **read them upwards**.
 
 ```text
-246 / 2 = 123  r 0   ┐
-123 / 2 =  61  r 1   │
- 61 / 2 =  30  r 1   │
- 30 / 2 =  15  r 0   │  read
- 15 / 2 =   7  r 1   │  UPWARDS
-  7 / 2 =   3  r 1   │
-  3 / 2 =   1  r 1   │
-  1 / 2 =   0  r 1   ┘
+246 / 2 = 123  r 0   +
+123 / 2 =  61  r 1   |
+ 61 / 2 =  30  r 1   |
+ 30 / 2 =  15  r 0   |  read
+ 15 / 2 =   7  r 1   |  UPWARDS
+  7 / 2 =   3  r 1   |
+  3 / 2 =   1  r 1   |
+  1 / 2 =   0  r 1   +
 
 246 = 11110110 base 2
 ```
@@ -110,10 +110,10 @@ Divide repeatedly, keep the remainders, then **read them upwards**.
 Same method for hex, converting remainders `10`–`15` to `A`–`F`:
 
 ```text
-51966 / 16 = 3247  r 14  -> E   ┐
- 3247 / 16 =  202  r 15  -> F   │  read
-  202 / 16 =   12  r 10  -> A   │  UPWARDS
-   12 / 16 =    0  r 12  -> C   ┘
+51966 / 16 = 3247  r 14  -> E   +
+ 3247 / 16 =  202  r 15  -> F   |  read
+  202 / 16 =   12  r 10  -> A   |  UPWARDS
+   12 / 16 =    0  r 12  -> C   +
 
 51966 = CAFE base 16
 ```
@@ -146,7 +146,7 @@ One hex digit is exactly 4 bits, so group from the right.
 
 ```text
 Binary:   1111   0110          Hex:      2      F
-            │      │                     │      │
+            |      |                     |      |
 Hex:        F      6           Binary:  0010   1111
 ```
 
@@ -219,7 +219,7 @@ ord("A")   # 65
 chr(65)    # "A"
 
 digit = "7"
-ord(digit) - ord("0")    # 7 — character digit to its number
+ord(digit) - ord("0")    # 7 - character digit to its number
 ```
 
 > [!important] "Explain one limitation of ASCII" — 2 marks, asked 2024

@@ -60,8 +60,8 @@ Append a check value so the receiver can detect transmission errors.
 
 ```text
 message =  abcde  5
-           └─┬─┘  └─ checksum
-             │
+           +-+-+  +- checksum
+             |
             data
 ```
 
@@ -134,7 +134,7 @@ hash("badc") = 988  ->  988 % 5 = 3
  0  'bdac'
  1  ''
  2  'cdab'
- 3  ['dbac', 'badc']   ← both live here
+ 3  ['dbac', 'badc']   < both live here
  4  'dabc'
 ```
 
@@ -157,10 +157,10 @@ From the assigned slot, look for the next empty one, wrapping around at the end.
  badc -> index 3 taken
        -> 4 taken
        -> 0 taken
-       -> 1 empty ✓
+       -> 1 empty *
 
  0  'bdac'
- 1  'badc'   ← ended up here
+ 1  'badc'   < ended up here
  2  'cdab'
  3  'dbac'
  4  'dabc'

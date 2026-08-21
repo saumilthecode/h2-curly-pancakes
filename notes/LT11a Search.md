@@ -90,7 +90,7 @@ Divide and conquer: compare the middle element to the **key**, then throw away t
 ```text
 seq   5   9  12  18  25  34  85 100 123 345
 idx   0   1   2   3   4   5   6   7   8   9
-      ▲               ▲                   ▲
+      ^               ^                   ^
      lo              mid                 hi
 ```
 

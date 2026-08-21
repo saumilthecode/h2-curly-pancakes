@@ -83,10 +83,10 @@ except Exception as e:
 | Volume | large data, tests efficiency and response time |
 
 ```text
-        erroneous  │  normal range  │  erroneous
-       ◀───────────┼────────────────┼───────────▶
+        erroneous  |  normal range  |  erroneous
+       <-----------+----------------+----------->
                    0               100
-                   ▲                ▲
+                   ^                ^
                 boundary        boundary
 ```
 

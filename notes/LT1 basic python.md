@@ -56,15 +56,15 @@ age  = int(input("How old are you? "))
 
 ```python
 42 == 42      # True
-42 == 42.0    # True  — same numeric value
-42 == "42"    # False — number vs string
+42 == 42.0    # True  - same numeric value
+42 == "42"    # False - number vs string
 ```
 
 Strings compare by character code, so comparisons are alphabetical-ish, not by length:
 
 ```python
-"Ten" > "One"    # True  — 'T' (84) > 'O' (79)
-"FIVE" == 5      # False — str vs int
+"Ten" > "One"    # True  - 'T' (84) > 'O' (79)
+"FIVE" == 5      # False - str vs int
 ```
 
 ## Logical and Membership Operators
@@ -118,8 +118,8 @@ spam = 'That is Alice\'s cat.'  # also fine, escaped
 ### String Operations
 
 ```python
-"Hello " + "World"   # 'Hello World'  — concatenation
-"HELLO " * 3         # 'HELLO HELLO HELLO ' — repetition
+"Hello " + "World"   # 'Hello World'  - concatenation
+"HELLO " * 3         # 'HELLO HELLO HELLO ' - repetition
 "Hello" in "Hello World"   # True (case sensitive)
 len("Hello World")   # 11
 ```

@@ -10,12 +10,12 @@
 | `file` | where the output goes | `print("hi", file=f)` |
 
 ```python
-print("a", "b")                     # a b     — space is the default sep
+print("a", "b")                     # a b     - space is the default sep
 print("a", "b", sep="")             # ab
 print(192, 168, 178, 42, sep=".")   # 192.168.178.42
 
 for i in range(4):
-    print(i, end=" ")               # 0 1 2 3   — no line breaks
+    print(i, end=" ")               # 0 1 2 3   - no line breaks
 ```
 
 Sending output to a file:
@@ -30,9 +30,9 @@ f.close()
 
 ```text
 "{0:<8}".format(value)
-   │ │└─ width 8
-   │ └── align left
-   └──── which value (index 0)
+   | |+- width 8
+   | +-- align left
+   +---- which value (index 0)
 ```
 
 | Format | Meaning |
@@ -47,10 +47,10 @@ By default strings align left and numbers align right.
 
 ```text
 {0:6.2f}
- │  │ │└─ f = float
- │  │ └── 2 decimal places
- │  └──── total width 6
- └─────── value index 0
+ |  | |+- f = float
+ |  | +-- 2 decimal places
+ |  +---- total width 6
+ +------- value index 0
 ```
 
 ## Table Pattern
@@ -78,7 +78,7 @@ Index   Item         Price
 > print("{0:<8}{1:<10}{2:>8.2f}".format(1, "cake", 4.56789))
 >
 > 1       cake          4.57
-> └──8───┘└───10───┘└──8───┘
+> +--8---++---10---++--8---+
 > ```
 >
 > | Part | Meaning |

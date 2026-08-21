@@ -91,12 +91,15 @@ A host can be allocated an IP address in **two ways**:
 > [!important] Along the route
 > The destination **IP address stays the same** from source to final destination. The **MAC address changes at every hop** — it only ever identifies the next device on the current link.
 >
-> ```text
-> PC ──▶ router A ──▶ router B ──▶ server
->  │        │            │           │
->  └── MAC changes at each hop ──────┘
->  └── IP unchanged, end to end ─────┘
+>
+> ```mermaid
+> flowchart LR
+>     PC([PC]) -->|"MAC: PC to A"| RA[router A]
+>     RA -->|"MAC: A to B"| RB[router B]
+>     RB -->|"MAC: B to server"| S([server])
 > ```
+>
+> A new MAC pair on every link. The destination IP is identical on all three.
 
 Analogy: MAC is your **name** (fixed, burned into the NIC); IP is your **current mailing address** (changes when you move network).
 
@@ -118,7 +121,7 @@ The subnet mask decides whether two IP addresses are on the same local network.
 ```text
 IP:          192.168.0.10
 Subnet mask: 255.255.255.0
-Network:     192.168.0        ← the part the mask keeps
+Network:     192.168.0        < the part the mask keeps
 ```
 
 If the destination is outside the local network, the device sends the packet to its **default gateway** — usually the router.
@@ -153,14 +156,21 @@ Transmission Control Protocol — **connection-oriented** and **reliable**. A se
 
 ### Three-Way Handshake
 
-```text
-client                          server
-  │ ──────── SYN ───────────────▶ │   "can we talk?"
-  │ ◀─────── SYN + ACK ────────── │   "yes — and can we talk?"
-  │ ──────── ACK ───────────────▶ │   "yes"
-  │                               │
-  └───── connection established ──┘
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    C->>S: SYN
+    S->>C: SYN + ACK
+    C->>S: ACK
+    Note over C,S: connection established
 ```
+
+| Step | Meaning |
+| ---- | ------- |
+| `SYN` | "can we talk?" |
+| `SYN + ACK` | "yes — and can we talk?" |
+| `ACK` | "yes" |
 
 Closing takes **four** steps: `FIN`, `ACK`, `FIN`, `ACK` — each side must close its own direction.
 

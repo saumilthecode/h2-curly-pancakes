@@ -23,12 +23,12 @@ A good abstraction:
 The same bug, written two ways:
 
 ```python
-# dense — buried in one expression
+# dense - buried in one expression
 def hypotenuse(a, b):
     return sqrt((a + a) + (b + b))
 
 
-# decomposed — the bug is visibly in square()
+# decomposed - the bug is visibly in square()
 def square(x):
     return x + x                      # should be x * x
 
@@ -70,14 +70,14 @@ Same technique drives [[LT9b Recursion (Application)|recursive]] solutions.
 Hardcoded constants are hard to change and hide their meaning. Name them instead.
 
 ```python
-# magic numbers — what is 1000? what is 0.22?
+# magic numbers - what is 1000? what is 0.22?
 def fare(distance):
     if distance <= 1000:
         return 3.0
     return 3.0 + 0.22 * ((distance - 1000) // 400)
 
 
-# named constants — the rule reads itself, and a fare rise is one edit
+# named constants - the rule reads itself, and a fare rise is one edit
 STAGE1_METRES = 1000
 START_FARE    = 3.0
 BLOCK_METRES  = 400

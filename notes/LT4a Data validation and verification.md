@@ -61,7 +61,7 @@ An extra digit calculated from the others and appended to the number, so an erro
 > ```text
 > digit    0    2    7    5    7
 > weight   6    5    4    3    2
->          ─    ─    ─    ─    ─
+>          -    -    -    -    -
 >          0 + 10 + 28 + 15 + 14  = 67
 >
 > 67 mod 11 = 1

@@ -17,6 +17,17 @@ const md = new MarkdownIt({
     slugify: slugify,
   });
 
+// A ```mermaid fence is a diagram, not source to display. Obsidian renders these
+// natively; on the site mermaid.js finds them by the .mermaid class.
+const defaultFence = md.renderer.rules.fence;
+md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+  const info = (tokens[idx].info || "").trim().split(/\s+/)[0];
+  if (info === "mermaid") {
+    return `<pre class="mermaid">${escapeHtml(tokens[idx].content)}</pre>\n`;
+  }
+  return defaultFence(tokens, idx, options, env, self);
+};
+
 const calloutIcons = {
   note: "✎",
   info: "i",
@@ -221,6 +232,7 @@ function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
   const transformed = transformObsidianSyntax(source, knownNotes);
   const body = transformCallouts(md.render(transformed));
   const pageTitle = file === "index.md" ? "H2 Computing Notes" : displayTitles.get(file) || titleFromFile(file);
+  const mermaidScript = body.includes('class="mermaid"') ? MERMAID_SCRIPT : "";
 
   return `<!doctype html>
 <html lang="en">
@@ -241,9 +253,15 @@ function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
       ${body}
     </main>
   </div>
+  ${mermaidScript}
 </body>
 </html>`;
 }
+
+const MERMAID_SCRIPT = `<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true, theme: "neutral", securityLevel: "strict" });
+  </script>`;
 
 function renderNav(knownNotes, currentFile, displayTitles, navEntries) {
   const indexFiles = new Set(navEntries.map((entry) => entry.file));
@@ -425,6 +443,15 @@ pre {
   border: 1px solid var(--background-modifier-border);
   border-radius: 8px;
   padding: 1rem;
+}
+
+/* A mermaid block is a rendered diagram, not code: no code chrome, and centred. */
+pre.mermaid {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  text-align: center;
+  line-height: normal;
 }
 
 pre code {

@@ -31,10 +31,10 @@ del tup            # but you CAN delete the whole tuple
 ## Operations
 
 ```python
-tup + (1, 2)   # concatenation — creates a NEW tuple
+tup + (1, 2)   # concatenation - creates a NEW tuple
 tup * 3        # repetition
-"b" in tup     # membership → True / False
-tup[2:5]       # slicing → a new tuple
+"b" in tup     # membership > True / False
+tup[2:5]       # slicing > a new tuple
 len(tup)
 max(tup)  min(tup)
 sorted(tup)    # returns a LIST, not a tuple
@@ -78,13 +78,14 @@ y = (3, 4)
 z = (x, y)
 
         z
-    ┌───┴────┐
-    ▼        ▼
-    x        y
- ┌──┬──┐  ┌──┬──┐
- └┬─┴─┬┘  └┬─┴─┬┘
-  ▼   ▼    ▼   ▼
-  1   2    3   4
+    +---+---+
+    |       |
+    v       v
+    x       y
+  +-+-+   +-+-+
+  |   |   |   |
+  v   v   v   v
+  1   2   3   4
 
 z        -> ((1, 2), (3, 4))
 z[0]     -> (1, 2)
@@ -106,9 +107,9 @@ x = (a, b)
 y = (a, b)
 z = x
 
-x == y    # True  — same value
-x is y    # False — two separate tuples
-z is x    # True  — same object
+x == y    # True  - same value
+x is y    # False - two separate tuples
+z is x    # True  - same object
 ```
 
 > [!warning]
@@ -119,11 +120,11 @@ z is x    # True  — same object
 ```python
 lst = [1, 2, 3];  lst2 = lst
 lst += [4, 5, 6]
-lst2              # [1, 2, 3, 4, 5, 6]  — the list was mutated
+lst2              # [1, 2, 3, 4, 5, 6]  - the list was mutated
 
 tup = (1, 2, 3);  tup2 = tup
 tup += (4, 5, 6)
-tup2              # (1, 2, 3)  — a new tuple was created
+tup2              # (1, 2, 3)  - a new tuple was created
 ```
 
 ## Related

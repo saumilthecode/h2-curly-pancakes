@@ -44,7 +44,7 @@ factorial(5)
       = 4 * factorial(3)
             = 3 * factorial(2)
                   = 2 * factorial(1)
-                        = 1              ◀ base case
+                        = 1              < base case
                   = 2 * 1   = 2
             = 3 * 2   = 6
       = 4 * 6   = 24
@@ -67,12 +67,20 @@ Each call is **pushed onto the call stack** before the previous one finishes.
 3. When the **base case** returns, no new frame is pushed.
 4. Frames are then **popped** in reverse order (LIFO), each using the returned value to finish its own calculation.
 
-```text
-                  stack grows ▼                     stack unwinds ▲
-factorial(3)   │ f(3) waiting     │                │ f(3) = 3*2 = 6 │  ◀ answer
-factorial(2)   │ f(3), f(2)       │                │ f(2) = 2*1 = 2 │
-factorial(1)   │ f(3), f(2), f(1) │  base case ──▶ │ f(1) = 1       │
+```mermaid
+sequenceDiagram
+    participant A as f(3)
+    participant B as f(2)
+    participant C as f(1)
+    A->>B: needs 3 * f(2)
+    B->>C: needs 2 * f(1)
+    Note over C: base case, no new call
+    C-->>B: returns 1
+    B-->>A: returns 2 * 1 = 2
+    Note over A: returns 3 * 2 = 6
 ```
+
+Solid arrows are calls going **down** — each caller is suspended, its frame still on the stack. Dashed arrows are returns coming back **up**, popping frames in reverse order.
 
 If the base case is never reached, frames keep being pushed until memory runs out — Python raises a **maximum recursion depth** error and the program stops.
 

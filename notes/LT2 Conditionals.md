@@ -20,25 +20,35 @@ else:
 > [!important] The one rule
 > Conditions are tested **top to bottom**. The first one that is `True` runs its block, and every remaining condition is skipped. If none are `True`, `else` runs.
 
-```text
-        ┌─ if cond1  ── True ──▶ block 1 ──┐
-input ──┼─ elif cond2 ─ True ──▶ block 2 ──┼──▶ continue after
-        ├─ elif cond3 ─ True ──▶ block 3 ──┤
-        └─ else ───────────────▶ block 4 ──┘
+```mermaid
+flowchart TD
+    IN([input]) --> C1{cond1}
+    C1 -- True --> B1["block 1"]
+    C1 -- False --> C2{cond2}
+    C2 -- True --> B2["block 2"]
+    C2 -- False --> C3{cond3}
+    C3 -- True --> B3["block 3"]
+    C3 -- False --> B4["else: block 4"]
+    B1 --> OUT([continue after])
+    B2 --> OUT
+    B3 --> OUT
+    B4 --> OUT
 ```
+
+Every `False` falls through to the next test. Every `True` runs its block and jumps straight to the end — the remaining conditions are never evaluated.
 
 ## Order Matters
 
 Once a gate is taken, the rest are never tested. Overlapping conditions must go **narrowest first**.
 
 ```python
-# WRONG — a mark of 95 prints "Pass", never "Distinction"
+# WRONG - a mark of 95 prints "Pass", never "Distinction"
 if mark >= 50:
     print("Pass")
 elif mark >= 75:
     print("Distinction")
 
-# RIGHT — the stricter test goes first
+# RIGHT - the stricter test goes first
 if mark >= 75:
     print("Distinction")
 elif mark >= 50:
@@ -67,9 +77,9 @@ print("done")           # always runs
 One mistyped bound silently kills every branch below it.
 
 ```python
-if 0 < volume <= 140000:            # typo — should be 14000
+if 0 < volume <= 140000:            # typo - should be 14000
     return round(weight * 15)
-elif 14000 < volume <= 30000:       # dead — already caught above
+elif 14000 < volume <= 30000:       # dead - already caught above
     return round(weight * 10)
 elif 30000 < volume <= 70000:       # dead
     return round(weight * 8)

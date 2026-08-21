@@ -2,14 +2,14 @@
 > Stack = **LIFO**, Last In First Out. Everything happens at the top.
 
 ```text
-      push ▼    ▲ pop         both act on the TOP
-         ┌───────┐
-  top →  │   C   │  ← s[-1]   last in, first out
-         ├───────┤
-         │   B   │
-         ├───────┤
-bottom → │   A   │  ← s[0]    first in, last out
-         └───────┘
+      push v    ^ pop         both act on the TOP
+         +-------+
+  top >  |   C   |  < s[-1]   last in, first out
+         +-------+
+         |   B   |
+         +-------+
+bottom > |   A   |  < s[0]    first in, last out
+         +-------+
 ```
 
 ## Core Operations
