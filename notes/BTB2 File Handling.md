@@ -1,12 +1,27 @@
 > [!summary] Quick View
-> Read from and write to external text and CSV files. Prefer `with open(...)` — it closes the file for you.
+> Read from and write to external text and CSV files. In assessments, write the **explicit `open()` … `close()`** pair — that's how the mark is worded.
 
 ## Opening
 
 ```python
-with open("textfile.txt", "r") as f:
-    data = f.read()
+f = open("textfile.txt", "r")
+data = f.read()
+f.close()
 ```
+
+> [!important] Always write the `close()`
+> Closing is a **separately itemised mark point**, not a formality:
+>
+> | Source | Wording |
+> | ------ | ------- |
+> | Your LS2 mark scheme | `1m: both open and close` |
+> | Cambridge 9618/42 Nov 2022 | *"closing the text file (in appropriate place)"* |
+> | Cambridge 9618/42 Nov 2023 | *"Opening text file to read and closing the file in an appropriate place"* |
+> | Cambridge 9618/43 Jun 2023 | *"Opening StackData.txt to read and closing file"* |
+>
+> Across seven published Cambridge Paper 4 mark schemes (2022–2024), **`with open(...)` does not appear once** — every Python model answer uses `X = open(...)` … `X.close()`.
+>
+> `with` is valid Python and the syllabus reference guide does show it. But the mark is written around an examiner seeing an open **and** a close, so write the explicit pair whenever it is being marked.
 
 | Mode | Does |
 | ---- | ---- |
@@ -14,20 +29,20 @@ with open("textfile.txt", "r") as f:
 | `"w"` | write — creates the file, **overwrites** if it exists |
 | `"a"` | append — adds to the end of an existing file |
 
-Without `with`, you must close it yourself:
+The `with` form, for reference — no `close()` is needed or expected inside it:
 
 ```python
-f = open("textfile.txt")
-...
-f.close()
+with open("output.txt", "w") as f:
+    f.write("Output Line\n")
 ```
 
 ## Handling a Missing File
 
 ```python
 try:
-    with open("textfile.txt", "r") as f:
-        print(f.read())
+    f = open("textfile.txt", "r")
+    print(f.read())
+    f.close()
 except Exception as e:
     print(e)
 ```
@@ -42,9 +57,10 @@ except Exception as e:
 | `f.readlines()` | every line, as a **list** |
 
 ```python
-with open("welcome.txt") as f:
-    for line in f:              # loop the file directly
-        print(line.rstrip("\n"))
+f = open("welcome.txt")
+for line in f:                  # loop the file directly
+    print(line.rstrip("\n"))
+f.close()
 ```
 
 > [!warning]
@@ -53,9 +69,10 @@ with open("welcome.txt") as f:
 ## Writing and Appending
 
 ```python
-with open("writefile.txt", "w") as f:
-    for i in range(10):
-        f.write("This is line " + str(i) + "\n")
+f = open("writefile.txt", "w")
+for i in range(10):
+    f.write("This is line " + str(i) + "\n")
+f.close()
 ```
 
 `write()` takes a **string** — convert numbers with `str()`, and add `\n` yourself.
@@ -71,12 +88,13 @@ Comma-separated values — plain text, one row per line, fields separated by com
 ```python
 from csv import reader
 
-with open("datafile.csv", "r") as f:
-    content = reader(f)
-    next(content)                     # skip the header row
+f = open("datafile.csv", "r")
+content = reader(f)
+next(content)                         # skip the header row
 
-    for name, gender, ht, wt in content:
-        print(name, gender, ht, wt)
+for name, gender, ht, wt in content:
+    print(name, gender, ht, wt)
+f.close()
 ```
 
 Each row comes back as a **list**. Drop the `next(content)` line if there is no header, and use `for row in content:` if you don't want to unpack.
@@ -88,10 +106,11 @@ fields = ["Name", "Class", "Level", "Score"]
 data = [["Nick", "S15", "15", "5460"],
         ["Mary", "S16", "12", "6105"]]
 
-with open("records.csv", "w", newline="") as f:
-    content = writer(f)
-    content.writerow(fields)      # one row
-    content.writerows(data)       # many rows
+f = open("records.csv", "w", newline="")
+content = writer(f)
+content.writerow(fields)          # one row
+content.writerows(data)           # many rows
+f.close()
 ```
 
 > [!important]
@@ -103,8 +122,9 @@ Same job without the module — split each line yourself.
 
 ```python
 def read_csv(filename):
-    with open(filename) as f:
-        lines = f.readlines()
+    f = open(filename)
+    lines = f.readlines()
+    f.close()
 
     data = ()
     for line in lines[1:]:            # [1:] skips the header
@@ -121,10 +141,11 @@ def read_csv(filename):
 
 ```python
 def export(records, filename):
-    with open(filename, "w") as f:
-        f.write("Name,Gender,Height,Weight\n")
-        for r in records:
-            f.write(",".join(str(field) for field in r) + "\n")
+    f = open(filename, "w")
+    f.write("Name,Gender,Height,Weight\n")
+    for r in records:
+        f.write(",".join(str(field) for field in r) + "\n")
+    f.close()
 ```
 
 ## Common Mistakes
@@ -137,7 +158,7 @@ def export(records, filename):
 
 ## Related
 
-- [[LT7 Lists|Lists]]
-- [[LT6 Tuple|Tuple]]
-- [[LT10a Data Abstraction|Data Abstraction]]
-- [[BTB3 Print Formatting|Print Formatting]]
+- [[LT7 Lists]]
+- [[LT6 Tuple]]
+- [[LT10a Data Abstraction]]
+- [[BTB3 Print Formatting]]

@@ -1,6 +1,19 @@
 > [!summary] Quick View
 > A network connects devices so data can move between them. IP gets data to the right **network**; MAC gets it to the right **device**.
 
+> [!important] What Module 4 actually examines
+> Five outcomes, and every network question in 2020–2024 sat inside them:
+>
+> | Outcome | Where |
+> | ------- | ----- |
+> | 4.1.1 LAN, WAN, intranet, structure of the internet | Network Types, Internet ≠ Web |
+> | 4.1.2 IP addressing and DNS | Addressing, DNS |
+> | 4.1.3 need for communication protocols | Why Protocols Are Needed |
+> | 4.1.4 how data is transmitted in a packet-switching network | Packet Switching |
+> | 4.1.5 client–server architecture | Client–Server vs Peer-to-Peer |
+>
+> Everything else here — topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID — came from the C3a lecture and videos. Useful background; **not** named in y27 and not asked once in five years of papers. Read it, don't drill it.
+
 ## Network Types
 
 | Type | Scale |
@@ -262,4 +275,4 @@ SMTP runs over TCP to help ensure delivery.
 ## Related
 
 - [[C2 Data representation]]
-- [[LT10d Hashing|Hashing]]
+- [[LT10d Hashing]]

@@ -11,10 +11,14 @@
             "id": "161aaac8db8062b1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "LT11b Binary Tree.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "LT11b Binary Tree"
             }
           }
         ]
@@ -212,6 +216,7 @@
   "active": "161aaac8db8062b1",
   "lastOpenFiles": [
     "LT11a Search.md",
+    "LT11b Binary Tree.md",
     "LT9b Recursion (Application).md",
     "LT10d Hashing.md",
     "LT10c Queue.md",
@@ -237,7 +242,6 @@
     "LT1 basic python.md",
     "Tuple.md",
     "Stack.md.tmp.7308.ff25a699f37e",
-    "File Handling.md",
     "pictures/print-format.html",
     "pictures/hash-playground.html",
     "pictures/queue-simulator.html",

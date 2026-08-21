@@ -65,7 +65,7 @@ for key, value in d.items():   # both at once
 
 ## Related
 
-- [[LT7 Lists|Lists]]
-- [[LT6 Tuple|Tuple]]
-- [[LT10d Hashing|Hashing]]
-- [[LT10a Data Abstraction|Data Abstraction]]
+- [[LT7 Lists]]
+- [[LT6 Tuple]]
+- [[LT10d Hashing]]
+- [[LT10a Data Abstraction]]

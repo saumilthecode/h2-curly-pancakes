@@ -32,12 +32,20 @@ It does **not** define how the data is stored, or how each operation is implemen
 The same ADT can be stored completely differently, and code using it never changes.
 
 ```python
-# as a list                              # as a dictionary
-def make_record(name, nric, cls, addr):  def make_record(name, nric, cls, addr):
-    return [name, nric, cls, addr]           return {"name": name, "nric": nric,
-                                                     "class": cls, "address": addr}
-def get_name(student):                   def get_name(student):
-    return student[0]                        return student["name"]
+# stored as a list
+def make_record(name, nric, cls, addr):
+    return [name, nric, cls, addr]
+
+def get_name(student):
+    return student[0]
+
+
+# stored as a dictionary — same names, same calls
+def make_record(name, nric, cls, addr):
+    return {"name": name, "nric": nric, "class": cls, "address": addr}
+
+def get_name(student):
+    return student["name"]
 ```
 
 Code that calls `get_name(student)` works with both. Swapping the internal representation breaks nothing.
@@ -49,9 +57,9 @@ Code that calls `get_name(student)` works with both. Swapping the internal repre
 
 | ADT | Idea | Order | Main operations |
 | --- | ---- | ----- | --------------- |
-| [[LT10b Stack|Stack]] | add/remove at the top | LIFO | `push`, `pop`, `peek` |
-| [[LT10c Queue|Queue]] | add at tail, remove at head | FIFO | `enqueue`, `dequeue`, `front` |
-| [[LT10d Hashing|Hashing]] | map data to an index | direct lookup | `hash`, `search` |
+| [[LT10b Stack\|Stack]] | add/remove at the top | LIFO | `push`, `pop`, `peek` |
+| [[LT10c Queue\|Queue]] | add at tail, remove at head | FIFO | `enqueue`, `dequeue`, `front` |
+| [[LT10d Hashing\|Hashing]] | map data to an index | direct lookup | `hash`, `search` |
 
 ## Worked Example: Rational Number
 
@@ -168,9 +176,10 @@ def make_rat(n, d):
 
 ## Related
 
-- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]
-- [[LT6 Tuple|Tuple]]
-- [[LT10b Stack|Stack]]
-- [[LT10c Queue|Queue]]
-- [[LT10d Hashing|Hashing]]
-- [[BTB2 File Handling|File Handling]]
+- [[LT3a Functional Abstraction]]
+- [[LT3b Good Abstraction]]
+- [[LT6 Tuple]]
+- [[LT10b Stack]]
+- [[LT10c Queue]]
+- [[LT10d Hashing]]
+- [[BTB2 File Handling]]

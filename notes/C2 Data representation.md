@@ -227,21 +227,23 @@ ord(digit) - ord("0")    # 7 — character digit to its number
 
 ## Unicode
 
-A single standard giving a code point to characters from many languages and symbol sets.
+A single standard giving a unique code to characters from many languages and symbol sets.
 
 **Why it's needed**
 
 - ASCII has only 128 codes; even the spare 128 in a byte are nowhere near enough
 - different systems otherwise use different numbers for the same character
-- version 15 (2023) covers 304,115 characters from 161 languages
+- it is no longer capped at 16 bits, so it can cover every living language plus historical scripts and emoji
 
-| Language | Escape | Character |
-| -------- | ------ | --------- |
-| Arabic | `حب` | حب |
-| Chinese | `爱` | 爱 |
-| Greek | `αγάπη` | αγάπη |
-| Korean | `사랑` | 사랑 |
-| Russian | `люблю` | люблю |
+| Language | Text | Unicode value |
+| -------- | ---- | ----------- |
+| Arabic | حب | `U+062D U+0628` |
+| Chinese | 爱 | `U+7231` |
+| Greek | αγάπη | `U+03B1 U+03B3 U+03AC U+03C0 U+03B7` |
+| Korean | 사랑 | `U+C0AC U+B791` |
+| Russian | люблю | `U+043B U+044E U+0431 U+043B U+044E` |
+
+One Chinese character needs 16 bits (`7231` hex); the two-character Korean word needs 16 bits each.
 
 ```python
 print("사랑")    # 사랑
@@ -249,9 +251,11 @@ print("사랑")    # 사랑
 
 ### ASCII vs Unicode
 
+Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
+
 | Question | Answer |
 | -------- | ------ |
-| Values common to both? | The **first 128 code points are identical** — Unicode was designed to stay backwards compatible with ASCII. |
+| Values common to both? | The **first 128 values (0–127) are identical** — Unicode was designed to stay backwards compatible with ASCII. |
 | Advantage of Unicode over ASCII? | It encodes far more characters, so text in **any language** plus symbols can be represented, not just English. One shared standard also means different systems agree on the same number for the same character. |
 
 > [!example]- UTF-8 encoding
@@ -259,7 +263,7 @@ print("사랑")    # 사랑
 >
 > **Advantage over ASCII:** UTF-8 can represent **every Unicode character**, so it handles any language, while remaining **backwards compatible** — the 128 ASCII characters still take a single byte, so no space is wasted on English text.
 >
-> UTF-8 stores a Unicode code point in 1–4 bytes. The **first** byte says how many bytes the character uses; every continuation byte starts `10`.
+> UTF-8 stores a Unicode value in 1–4 bytes. The **first** byte says how many bytes the character uses; every continuation byte starts `10`.
 >
 > | Bytes | First byte | Continuation bytes |
 > | ----- | ---------- | ------------------ |
@@ -271,7 +275,7 @@ print("사랑")    # 사랑
 > Encoding `£` (Unicode `A3`, `1010 0011`) — needs 11 bits padded across 2 bytes:
 >
 > ```text
-> code point:  000 1010 0011
+> value:       000 1010 0011
 > byte 1: 110 00010
 > byte 2: 10  100011   ->  1100 0010  1010 0011
 > ```
@@ -297,6 +301,6 @@ print("사랑")    # 사랑
 
 ## Related
 
-- [[LT1 basic python|basic python]]
-- [[LT10b Stack|Stack]]
-- [[LT10d Hashing|Hashing]]
+- [[LT1 basic python]]
+- [[LT10b Stack]]
+- [[LT10d Hashing]]

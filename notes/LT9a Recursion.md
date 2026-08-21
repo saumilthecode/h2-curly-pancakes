@@ -32,7 +32,7 @@ Two ways to shrink the problem:
 | Reduction | Size `n` becomes | Example |
 | --------- | ---------------- | ------- |
 | By one | `n - 1` | `factorial`, list traversal |
-| Divide and conquer | `n / 2` | [[LT11a Search|Search]] — binary search |
+| Divide and conquer | `n / 2` | [[LT11a Search\|Search]] — binary search |
 
 ## Recursion Tree
 
@@ -103,11 +103,17 @@ Papers ask you to convert **both ways**. The mapping is direct:
 | combining on the way back up | the accumulator variable |
 
 ```python
-def factorial(n):              def factorial(n):
-    if n == 1:                     result = 1
-        return 1                   for i in range(1, n + 1):
-    return n * factorial(n - 1)        result = result * i
-                                   return result
+def factorial(n):                  # recursive
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+
+def factorial(n):                  # iterative
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
 ```
 
 ## The Pattern
@@ -202,6 +208,7 @@ factorial(2.1)   # 2.1, 1.1, 0.1 ... never equals 1
 
 ## Related
 
-- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]
-- [[LT5 Iteration|Iteration]]
-- [[LT10b Stack|Stack]]
+- [[LT9b Recursion (Application)]]
+- [[LT3a Functional Abstraction]]
+- [[LT5 Iteration]]
+- [[LT10b Stack]]

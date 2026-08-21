@@ -122,7 +122,7 @@ while lst:                 # while lst is not empty
 
 ## Related
 
-- [[LT6 Tuple|Tuple]]
-- [[LT8 Dictionary|Dictionary]]
-- [[LT5 Iteration|Iteration]]
-- [[BTB2 File Handling|File Handling]]
+- [[LT6 Tuple]]
+- [[LT8 Dictionary]]
+- [[LT5 Iteration]]
+- [[BTB2 File Handling]]

@@ -66,8 +66,9 @@ Catch errors instead of letting the program crash.
 
 ```python
 try:
-    with open("data.txt") as f:
-        print(f.read())
+    f = open("data.txt")
+    print(f.read())
+    f.close()
 except Exception as e:
     print("Could not read file:", e)
 ```
@@ -123,6 +124,6 @@ def percentage(score, total):
 
 ## Related
 
-- [[LT4a Data validation and verification|Data validation and verification]]
-- [[LT5 Iteration|Iteration]]
-- [[LT9a Recursion|Recursion]]
+- [[LT4a Data validation and verification]]
+- [[LT5 Iteration]]
+- [[LT9a Recursion]]

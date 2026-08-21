@@ -5,6 +5,9 @@
 
 A hash function produces a digital fingerprint of the data — the **hash value**, **digest** or **checksum**.
 
+> [!important] "State three features of a good hashing algorithm" — `[3]`, asked 2021 and 2022
+> The three characteristics from the LT10d lecture are the answer.
+
 | Characteristic | Meaning |
 | -------------- | ------- |
 | Secure | non-reversible — you cannot get the data back from the hash |
@@ -14,17 +17,9 @@ A hash function produces a digital fingerprint of the data — the **hash value*
 > [!warning]
 > \*Not true in reality — **collisions do occur**. Hashing is for comparison, **not encryption**.
 
-## Features of a Good Hash Function
-
-> [!important] Asked in 2021 and 2022, both times as *"state three features"* for 3 marks.
-
-1. **Deterministic** — the same key always produces the same hash value, or the item could never be found again.
-2. **Uniform distribution** — spreads keys evenly across the table, so every index is equally likely.
-3. **Minimises clustering** — avoids many different keys mapping to the same index, which causes collisions and slows searching.
-
-Also desirable: fast to compute, and uses the whole key.
-
 ## Why Use a Hash Table
+
+> [!important] 2021 Q5 asked both halves — hash table vs linear search `[2]`, and the disadvantage of binary search here `[2]`.
 
 Searching is a **single calculation plus one lookup** — no scanning.
 
@@ -190,7 +185,7 @@ Searching must follow the **same probe path** — check the assigned slot, then 
 
 ## Related
 
-- [[LT10a Data Abstraction|Data Abstraction]]
-- [[LT8 Dictionary|Dictionary]]
-- [[LT11a Search|Search]]
-- [[LT4a Data validation and verification|Data validation and verification]]
+- [[LT10a Data Abstraction]]
+- [[LT8 Dictionary]]
+- [[LT11a Search]]
+- [[LT4a Data validation and verification]]

@@ -128,7 +128,7 @@ tup2              # (1, 2, 3)  — a new tuple was created
 
 ## Related
 
-- [[LT7 Lists|Lists]]
-- [[LT8 Dictionary|Dictionary]]
-- [[LT10a Data Abstraction|Data Abstraction]]
-- [[LT5 Iteration|Iteration]]
+- [[LT7 Lists]]
+- [[LT8 Dictionary]]
+- [[LT10a Data Abstraction]]
+- [[LT5 Iteration]]

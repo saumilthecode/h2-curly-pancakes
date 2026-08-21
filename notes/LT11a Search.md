@@ -65,7 +65,20 @@ def count(seq, item):
     elif seq[0] == item:
         return 1 + count(seq[1:], item)
     return count(seq[1:], item)
+
+def index(seq, item):
+    if len(seq) == 0:
+        print("Item not found.")
+        return 0
+    elif seq[0] == item:
+        return 0
+    return 1 + index(seq[1:], item)
 ```
+
+`count` and `index` both build their answer **on the way back up** — each level adds `1` to whatever the level below returned.
+
+> [!warning]
+> Recursive `index` can't return `None` when the item is missing: the caller would try `1 + None`. Returning `0` instead is ambiguous — it also means "found at position 0" — hence the `print`. The iterative version has no such problem.
 
 ## Binary Search
 
@@ -108,15 +121,16 @@ Searching `[5, 9, 12, 18, 25, 34, 85, 100, 123, 345]` for **key = 85**:
 | 5 | 6 | True | 5 | 34 | False | False |
 | 6 | 6 | True | 6 | 85 | **True** | — |
 
-> [!example]- Same list, key = 11 (not present)
+> [!example]- Same list, key = 86 (not present)
 > | Low | High | Low <= High | Mid | Seq[Mid] | Key == Seq[Mid] | Key < Seq[Mid] |
 > | --- | ---- | ----------- | --- | -------- | --------------- | -------------- |
-> | 0 | 9 | True | 4 | 25 | False | True |
-> | 0 | 3 | True | 1 | 9 | False | False |
-> | 2 | 3 | True | 2 | 12 | False | True |
-> | 2 | 1 | **False** | — | — | — | — |
+> | 0 | 9 | True | 4 | 25 | False | False |
+> | 5 | 9 | True | 7 | 100 | False | True |
+> | 5 | 6 | True | 5 | 34 | False | False |
+> | 6 | 6 | True | 6 | 85 | False | False |
+> | 7 | 6 | **False** | — | — | — | — |
 >
-> The search stops the moment `Low > High`. Only then can you say the key is **not** in the sequence.
+> The search stops the moment `Low > High`. Only then can you say the key is **not** in the sequence. Note the last row still has to be written out — `Low > High` is the finding.
 
 ### Iterative Code
 
@@ -158,6 +172,34 @@ def BinarySearch(seq, item):
 > [!tip]
 > Slicing (`seq[:mid]`) also works but loses the original indices, so you can't report *where* the item was. Passing `lo`/`hi` keeps them.
 
+## Searching Records, Not Numbers
+
+Real data is a sequence of records. You search on **one field** and return **another**.
+
+```python
+def binary_search(tup, student):
+    low = 0
+    high = len(tup) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        name = tup[mid][1]              # compare on the name field only
+        if name == student:
+            return tup[mid][0]          # return the class, not True
+        elif name > student:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return None
+```
+
+Three things change from the plain version:
+
+- the comparison reads **one field** of the record, `tup[mid][1]`
+- the data must be sorted **by that same field**
+- it returns the useful value (or `None`), not `True`/`False`
+
+`<` and `>` compare strings alphabetically, so the algorithm is unchanged — but the sort must be alphabetical too, or binary search will miss.
+
 ## Comparison
 
 | | Linear | Binary |
@@ -167,7 +209,7 @@ def BinarySearch(seq, item):
 | Worst case on 1000 items | 1000 checks | 10 checks |
 | Good for | small or unsorted data | large sorted data |
 
-Compare with [[LT10d Hashing|Hashing]], which reaches an item in `O(1)` — but only if you have the key, and it cannot answer range questions.
+Compare with [[LT10d Hashing|Hashing]], which reaches an item in `O(1)` — but only if you have the key, and it cannot answer range questions. A [[LT11b Binary Tree|binary search tree]] gets the same `O(log n)` without needing the data sorted into an array first.
 
 ## Common Mistakes
 
@@ -180,7 +222,8 @@ Compare with [[LT10d Hashing|Hashing]], which reaches an item in `O(1)` — but 
 
 ## Related
 
-- [[LT9a Recursion|Recursion]]
-- [[LT5 Iteration|Iteration]]
-- [[LT7 Lists|Lists]]
-- [[LT10d Hashing|Hashing]]
+- [[LT9a Recursion]]
+- [[LT5 Iteration]]
+- [[LT7 Lists]]
+- [[LT10d Hashing]]
+- [[LT11b Binary Tree]]

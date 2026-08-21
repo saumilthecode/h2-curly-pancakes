@@ -1,6 +1,6 @@
 # H2 Computing transcript index
 
-Successful transcripts: 88
+Successful transcripts: 90
 Unavailable transcripts: 1
 
 ## Transcript files
@@ -357,6 +357,16 @@ Unavailable transcripts: 1
   - Uploader: Sunny Classroom
   - File: `88 - How TCP starts and close session [zlIHLnOigmA].txt`
   - Characters: 4,248
+
+- **LT 11b Binary Tree (Part 1)**: [LT11b Binary Tree Part 1](https://www.youtube.com/watch?v=Va3IM1PQ2sM)
+  - Uploader: YIJC Computing
+  - File: `89 - LT11b Binary Tree Part 1 [Va3IM1PQ2sM].txt`
+  - Characters: 11,354
+
+- **LT 11b Binary Tree (Part 2)**: [LT11b Binary Tree Part 2](https://www.youtube.com/watch?v=OgQr2uK39MM)
+  - Uploader: YIJC Computing
+  - File: `90 - LT11b Binary Tree Part 2 [OgQr2uK39MM].txt`
+  - Characters: 7,119
 
 ## Videos without transcripts
 

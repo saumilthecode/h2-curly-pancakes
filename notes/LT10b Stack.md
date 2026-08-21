@@ -41,6 +41,11 @@ def peek(s):
     return s[-1]
 ```
 
+> [!important] The empty check is a mark, not a nicety
+> Your LS2 mark scheme writes **`0m if not checking empty stack`** against the `else` branch — omit the guard and the whole part scores zero.
+>
+> If a question gives the structure a **maximum size**, the mirror guard on `push` is marked too: the y27 specimen Paper 2 requires its queue `enqueue()` to return `False` when full. Assume any bounded structure needs both guards.
+
 > [!example]- Trace: push and pop
 > | Step | Operation | Stack after | Returns |
 > | ---- | --------- | ----------- | ------- |
@@ -132,7 +137,7 @@ Postfix needs **no brackets and no precedence rules** — the order of the symbo
 
 ## Related
 
-- [[LT10a Data Abstraction|Data Abstraction]]
-- [[LT10c Queue|Queue]]
-- [[LT9a Recursion|Recursion]]
+- [[LT10a Data Abstraction]]
+- [[LT10c Queue]]
+- [[LT9a Recursion]]
 - [[C2 Data representation]]

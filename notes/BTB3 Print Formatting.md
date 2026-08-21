@@ -21,8 +21,9 @@ for i in range(4):
 Sending output to a file:
 
 ```python
-with open("data.txt", "w") as file:
-    print("Print output to file.", file=file)
+f = open("data.txt", "w")
+print("Print output to file.", file=f)
+f.close()
 ```
 
 ## `format()`
@@ -107,5 +108,5 @@ print("{0:<8}{1:<12}{2:>10.2f}".format(i, name, bmi))
 
 ## Related
 
-- [[LT1 basic python|basic python]]
-- [[BTB2 File Handling|File Handling]]
+- [[LT1 basic python]]
+- [[BTB2 File Handling]]

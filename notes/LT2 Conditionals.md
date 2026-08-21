@@ -62,25 +62,37 @@ print("done")           # always runs
 > [!note]
 > `break` and `continue` control **loops**, not conditionals — see [[LT5 Iteration|Iteration]].
 
-## Common Mistakes
+## Unreachable Branches
 
-- Missing the colon after the condition.
-- Putting the broader condition before the narrower one.
-- **Check every branch is reachable.** One mistyped bound silently kills every branch below it:
+One mistyped bound silently kills every branch below it.
 
 ```python
-if 0 < volume <= 140000:        # typo — should be 14000
-elif 14000 < volume <= 30000:   # dead: already caught above
-elif 30000 < volume <= 70000:   # dead
+if 0 < volume <= 140000:            # typo — should be 14000
+    return round(weight * 15)
+elif 14000 < volume <= 30000:       # dead — already caught above
+    return round(weight * 10)
+elif 30000 < volume <= 70000:       # dead
+    return round(weight * 8)
 ```
+
+Every parcel now gets the highest rate. Volume `18000` should charge `weight * 10` but charges `weight * 15` — `30` becomes `45`, with no error raised.
+
+> [!warning]
+> Check each bound against the one above it. Nothing in Python warns you that a branch can never run.
+
+## Common Mistakes
+
+- Putting the broader condition before the narrower one.
 - Using `=` instead of `==` in the condition.
 - Expecting more than one branch to run — only the first match does.
 
-> [!tip]
-> Flowcharts are **not in the 9569 syllabus**, so don't spend revision time drawing them.
+> [!tip] Flowcharts
+> Dropped in the **y27** syllabus (your one) — the old y26 outcomes 1.1.1–1.1.2 required them, y27 has no mention. Coursemology lists the lecture as **"[old syllabus] LT 2a - Flow Charts"**.
+>
+> Past papers still ask for them: 2024 Q1(a) was *"Draw a flowchart to represent the operation"* for **4 marks**. Expect to meet one while practising; don't drill drawing them for your own paper.
 
 ## Related
 
-- [[LT1 basic python|basic python]]
-- [[LT5 Iteration|Iteration]]
-- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]
+- [[LT1 basic python]]
+- [[LT5 Iteration]]
+- [[LT3a Functional Abstraction]]

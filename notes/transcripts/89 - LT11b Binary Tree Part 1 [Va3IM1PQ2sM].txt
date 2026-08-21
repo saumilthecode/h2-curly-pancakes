@@ -1,0 +1,224 @@
+Title: LT11b Binary Tree Part 1
+Assessment(s): LT 11b Binary Tree (Part 1)
+Linked label(s): LT11b Binary Tree (Part 1)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=Va3IM1PQ2sM
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] okay we're going to start a new chapter
+[00:02 - 00:08] 11b binary 3 and binary search three so
+[00:06 - 00:09] this is a new data structure that you
+[00:08 - 00:12] will be using from time time to time
+[00:09 - 00:13] right so let's just get into it and see
+[00:12 - 00:17] what's going on so first question to ask
+[00:13 - 00:19] is why is it 3 right so we might have
+[00:17 - 00:21] seen this before all right but basically
+[00:19 - 00:23] the three has if you look at this tree
+[00:21 - 00:25] right it has uh branches and then he has
+[00:23 - 00:28] a he has a root right okay so let's look
+[00:25 - 00:31] at this okay so it's a non-linear data
+[00:28 - 00:34] structure whose entries follow a
+[00:31 - 00:37] hierarchical or organization right so it
+[00:34 - 00:39] doesn't go in linearly no item by item
+[00:37 - 00:42] you'll see how it's arranged later
+[00:39 - 00:43] okay so this is the organization so you
+[00:42 - 00:46] can see that there's there's this three
+[00:43 - 00:47] structure right so you basically I see
+[00:46 - 00:49] that there are branches going out so
+[00:47 - 00:50] we'll talk more about these branches in
+[00:49 - 00:53] the next slide
+[00:50 - 00:55] all right so you have a set of notes all
+[00:53 - 00:58] these circles basically uh notes nodes
+[00:55 - 01:00] contain your data okay then the edges
+[00:58 - 01:01] are the lines that connect two two nodes
+[01:00 - 01:05] right
+[01:01 - 01:08] okay notes and ages all right so then we
+[01:05 - 01:10] can go on to a bit more
+[01:08 - 01:12] right
+[01:10 - 01:14] then let's talk about this structure
+[01:12 - 01:16] each node has one parent except for the
+[01:14 - 01:18] root all right so the root has no this
+[01:16 - 01:20] is the root there's no parent here
+[01:18 - 01:23] because there's nothing above it so this
+[01:20 - 01:25] is this parent is over here then this
+[01:23 - 01:28] parent has two two children the left
+[01:25 - 01:32] child and the right tribe all right so
+[01:28 - 01:35] again each uh node can have zero one or
+[01:32 - 01:37] almost two children all right so if if
+[01:35 - 01:39] you are uh if let's say look at this
+[01:37 - 01:42] blue color pattern and then this left
+[01:39 - 01:43] child right you're gonna have your it's
+[01:42 - 01:46] uh so Apparent at the same time and a
+[01:43 - 01:49] left child and right child okay
+[01:46 - 01:50] okay so this is your root all right then
+[01:49 - 01:53] moving on
+[01:50 - 01:55] okay then children from the same parents
+[01:53 - 01:57] are called siblings notes you know
+[01:55 - 01:59] children are called leaves all right so
+[01:57 - 02:01] let's check okay so these are siblings
+[01:59 - 02:03] so this is apparent and then this this
+[02:01 - 02:04] is the left child of this parent right
+[02:03 - 02:06] child is parents so these two are
+[02:04 - 02:10] siblings okay notes you know children
+[02:06 - 02:11] are called leaves okay so this these two
+[02:10 - 02:13] are siblings here right and the leaves
+[02:11 - 02:15] are like okay you actually have more
+[02:13 - 02:18] more than these two leaves here so this
+[02:15 - 02:20] is a leaf this is a leaf this is a leaf
+[02:18 - 02:22] as well these two are leaves as well all
+[02:20 - 02:25] right
+[02:22 - 02:27] okay so each node contains two sub trees
+[02:25 - 02:29] which are also binary trees okay so we
+[02:27 - 02:30] look at this one over here right you
+[02:29 - 02:33] have a left sub three in the right sub
+[02:30 - 02:35] tree all coming from this uh note over
+[02:33 - 02:36] here okay so but once it comes down we
+[02:35 - 02:38] look at just this level here again you
+[02:36 - 02:40] can break it down to the left sub three
+[02:38 - 02:41] on the right sub tree right and so on so
+[02:40 - 02:42] forth
+[02:41 - 02:46] okay
+[02:42 - 02:48] then some other terms are okay number
+[02:46 - 02:50] ages the longest path from the root to
+[02:48 - 02:52] the leaf is called the height of the
+[02:50 - 02:55] tree so basically this height here I'm
+[02:52 - 02:57] going I want to go down from the root to
+[02:55 - 03:00] the lowest possible Leaf I can go right
+[02:57 - 03:02] then uh number of edges from the root to
+[03:00 - 03:04] a node is called the depth of the node
+[03:02 - 03:06] okay so in this case here at the longest
+[03:04 - 03:08] path I can take is all the way down to
+[03:06 - 03:10] here so one level two level three levels
+[03:08 - 03:13] okay so this is the height of three is
+[03:10 - 03:15] three maximum height okay there's no
+[03:13 - 03:18] other height that is larger than uh
+[03:15 - 03:19] three here okay but if you talk about
+[03:18 - 03:21] that right you need to look at which
+[03:19 - 03:22] node you are referring to so in this
+[03:21 - 03:25] case this node here this is just one
+[03:22 - 03:27] level down you go down to this note here
+[03:25 - 03:29] this second yellow color node here right
+[03:27 - 03:31] the depth is two because you need to
+[03:29 - 03:32] jump down by two levels
+[03:31 - 03:35] okay
+[03:32 - 03:36] and then we talk about the size size is
+[03:35 - 03:38] basically the number of nodes so in this
+[03:36 - 03:40] case I can just do a quick count one two
+[03:38 - 03:43] three four five six seven eight nine
+[03:40 - 03:44] right so that nine notes here this is a
+[03:43 - 03:48] size or three
+[03:44 - 03:50] okay some other terms okay there's so I
+[03:48 - 03:52] call a full tree a full tree which every
+[03:50 - 03:54] node except the leaves has two children
+[03:52 - 03:56] right so let's look at this example here
+[03:54 - 04:00] this is a full three let's just check
+[03:56 - 04:03] okay every node X has two children so
+[04:00 - 04:04] what I say that if one if a node has a
+[04:03 - 04:06] child it must have two child two
+[04:04 - 04:08] children color to be a full three so
+[04:06 - 04:10] this one this is a leaf it doesn't
+[04:08 - 04:11] matter because it doesn't have it
+[04:10 - 04:13] doesn't have a left or right one so it's
+[04:11 - 04:15] okay so this note here will have over
+[04:13 - 04:17] left and right child and this note here
+[04:15 - 04:20] will also have a left and right chart
+[04:17 - 04:22] this one two three four they are leave
+[04:20 - 04:25] so they don't have to be considered okay
+[04:22 - 04:27] next we talk about complete three a tree
+[04:25 - 04:29] in which every level except possibly the
+[04:27 - 04:31] last is completely filled notes are as
+[04:29 - 04:34] far left as possible right let's check
+[04:31 - 04:36] this okay every level is completely
+[04:34 - 04:38] filled okay so let's check so basically
+[04:36 - 04:40] I'll say that at each node right I
+[04:38 - 04:43] should Branch out to both the left and
+[04:40 - 04:45] right child right so in this case this
+[04:43 - 04:47] is from the first level the second level
+[04:45 - 04:49] yes okay second level the third level
+[04:47 - 04:52] two child and then third to Fourth two
+[04:49 - 04:54] child so two children as well same for
+[04:52 - 04:56] the right uh sub note here there's a
+[04:54 - 05:00] left right child okay as far left as
+[04:56 - 05:04] possible all right so uh this one so you
+[05:00 - 05:06] can track this one now and then you can
+[05:04 - 05:09] see that this the first one here is not
+[05:06 - 05:12] a full three because although every uh
+[05:09 - 05:14] every child okay every note is filled
+[05:12 - 05:17] right we won't left it right child right
+[05:14 - 05:19] but then this one over here this one is
+[05:17 - 05:22] not as far left as possible this tool
+[05:19 - 05:24] could be attached right here all right
+[05:22 - 05:26] yep so this is a difference between
+[05:24 - 05:28] complete and full three okay so these
+[05:26 - 05:31] are some of the technical definitions
+[05:28 - 05:32] that you should know all right
+[05:31 - 05:36] okay next we're going to move on to a
+[05:32 - 05:38] binary search tree so what exactly is a
+[05:36 - 05:40] binary search tree okay so it is uh
+[05:38 - 05:42] there's some ordering in how the nodes
+[05:40 - 05:45] are all organized okay your numbers will
+[05:42 - 05:46] not be just randomly placed in right so
+[05:45 - 05:49] there's a structure let's go to the
+[05:46 - 05:53] structure each nodecon stores a distinct
+[05:49 - 05:55] key so each node basically has a has I
+[05:53 - 05:56] has a number that's unique to the rest
+[05:55 - 05:58] in this case we are talking about
+[05:56 - 06:01] numbers right so there should not be any
+[05:58 - 06:03] repeat numbers in this case okay
+[06:01 - 06:05] then all the notes the left of a node
+[06:03 - 06:07] has have keys less than the key of the
+[06:05 - 06:10] note okay so let's check what this means
+[06:07 - 06:13] if I take this note of 6 here I look to
+[06:10 - 06:16] the left hand side right every single
+[06:13 - 06:20] every single note right their key here
+[06:16 - 06:23] is less than six right next one all the
+[06:20 - 06:24] notes the right of the node have keys
+[06:23 - 06:26] greater than key of the node so again
+[06:24 - 06:28] this is six everything to the right hand
+[06:26 - 06:31] side will be larger than
+[06:28 - 06:33] larger than six okay I can do this at
+[06:31 - 06:35] any level so let's say if I do for four
+[06:33 - 06:36] and I think the left is smaller than
+[06:35 - 06:39] four which is true one two three
+[06:36 - 06:42] anything to the right of four is larger
+[06:39 - 06:43] than four and so on so forth right
+[06:42 - 06:46] then
+[06:43 - 06:48] you have what what what can we use this
+[06:46 - 06:51] for right okay one way is that we can
+[06:48 - 06:53] use this to search for search uh things
+[06:51 - 06:57] quickly this is similar to what you have
+[06:53 - 06:59] done for for by for your binary search
+[06:57 - 07:02] okay but similar idea but not exactly
+[06:59 - 07:05] the same all right so let's say we have
+[07:02 - 07:07] a set separate training that we learned
+[07:05 - 07:11] in the hash the hash table right we can
+[07:07 - 07:13] use this method to search through our uh
+[07:11 - 07:15] separation quite quickly as well now for
+[07:13 - 07:17] this this is also the Divide Concord
+[07:15 - 07:20] approach to programming as well
+[07:17 - 07:23] okay okay so what we need to do for this
+[07:20 - 07:27] binary search tree ADT we need to write
+[07:23 - 07:28] a few uh few functions for this okay so
+[07:27 - 07:30] this is the basic structure of a tree
+[07:28 - 07:32] that's an entry that's the left and the
+[07:30 - 07:34] right so this is a node that's a left
+[07:32 - 07:36] sub three in the right sub tree okay so
+[07:34 - 07:38] the first one we need to write is quite
+[07:36 - 07:41] simple we just need to do a Constructor
+[07:38 - 07:43] okay how to construct a tree so let's
+[07:41 - 07:45] have this function called Define make
+[07:43 - 07:48] three okay Define Matrix will take uh
+[07:45 - 07:49] three arguments and three left and right
+[07:48 - 07:53] and then just return them as a list
+[07:49 - 07:55] entry left and right okay then of course
+[07:53 - 07:56] once I have these three items I can talk
+[07:55 - 07:59] about accessing them I need to access
+[07:56 - 08:00] the left of the entry the left and the
+[07:59 - 08:02] right so assessors are quite
+[08:00 - 08:04] straightforward defined entry three
+[08:02 - 08:06] return three zero that Branch return
+[08:04 - 08:10] three one left right right return three
+[08:06 - 08:10] two okay so not too difficult for that

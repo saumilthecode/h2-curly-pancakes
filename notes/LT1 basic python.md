@@ -159,6 +159,24 @@ text[::-1] -> "hgfedcba"  negative step reverses
 
 Negative indices count from the back: `text[-1]` is the last character.
 
+## Names and Assignment
+
+Identifier rules from the syllabus reference guide:
+
+- start with `a`–`z`, `A`–`Z` or `_`, then letters, digits or `_`
+- reserved words (`if`, `class`, `return` …) cannot be used
+- **case sensitive** — `Total` and `total` are different names
+
+Outcome 1.3.2 asks for **meaningful** names, so `total_score` earns marks where `x` does not.
+
+| Statement | Does |
+| --------- | ---- |
+| `a = 1` | assign |
+| `b += c` | augmented assignment — same as `b = b + c` |
+| `x[y] = z` | set list index `y`, or dictionary key `y` |
+| `del a` | delete the variable |
+| `del x[y]` | delete a list item or dictionary key |
+
 ## Comments
 
 ```python
@@ -169,6 +187,9 @@ a documentation string
 over multiple lines
 """
 ```
+
+> [!important] Outcome 1.3.3
+> A commented program is expected to carry the **programmer's name**, the **date written**, a **description of the program**, and **inline explanations** of non-obvious lines. Cheap marks in the lab paper.
 
 In Jupyter, `Ctrl` + `/` toggles comments on the selected lines.
 
@@ -181,6 +202,6 @@ In Jupyter, `Ctrl` + `/` toggles comments on the selected lines.
 
 ## Related
 
-- [[LT2 Conditionals|Conditionals]]
-- [[LT3 Functions (functional abstraction)|Functions (functional abstraction)]]
-- [[BTB3 Print Formatting|Print Formatting]]
+- [[LT2 Conditionals]]
+- [[LT3a Functional Abstraction]]
+- [[BTB3 Print Formatting]]

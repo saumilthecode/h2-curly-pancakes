@@ -6,7 +6,8 @@ Singapore–Cambridge **H2 Computing 9569**, first examination 2027.
 
 - [[LT1 basic python|LT1 Basic Python]] — types, operators, strings, slicing
 - [[LT2 Conditionals]] — `if` / `elif` / `else`
-- [[LT3 Functions (functional abstraction)|LT3 Functions]] — abstraction, scope, good design
+- [[LT3a Functional Abstraction|LT3a Functional Abstraction]] — black box, `return` vs `print`, scope
+- [[LT3b Good Abstraction|LT3b Good Abstraction]] — decomposition, reuse, magic numbers
 - [[LT4a Data validation and verification|LT4a Data Validation and Verification]] — validation techniques
 - [[LT4b Types of Errors and Test Cases]] — error types, debugging, test data
 - [[LT5 Iteration]] — `for` and `while`
@@ -22,6 +23,7 @@ Singapore–Cambridge **H2 Computing 9569**, first examination 2027.
 - [[LT10b Stack]] — LIFO
 - [[LT10c Queue]] — FIFO
 - [[LT10d Hashing]] — hash tables, collisions
+- [[LT11b Binary Tree]] — BSTs, traversals, DFS/BFS
 
 ## Algorithms
 

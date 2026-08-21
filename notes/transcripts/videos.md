@@ -92,6 +92,12 @@
 - [LT11a Part 2 Binary Search](https://www.youtube.com/watch?v=aGGsDl0BXxE) | YIJC Computing | transcript available
 - [LT11a Unplugged Activity](https://www.youtube.com/watch?v=oa98tXuh6fU) | YIJC Computing | transcript available
 
+### LT 11b Binary Tree (Part 1)
+- [LT11b Binary Tree Part 1](https://www.youtube.com/watch?v=Va3IM1PQ2sM) | YIJC Computing | transcript available
+
+### LT 11b Binary Tree (Part 2)
+- [LT11b Binary Tree Part 2](https://www.youtube.com/watch?v=OgQr2uK39MM) | YIJC Computing | transcript available
+
 ## Back to Basics and Content Topics
 
 ### BTB 2 - File Handling

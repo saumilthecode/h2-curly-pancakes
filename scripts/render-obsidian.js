@@ -69,11 +69,11 @@ function readIndexEntries(knownNotes) {
 
   const source = fs.readFileSync(indexPath, "utf8");
   const entries = [];
-  const wikiLink = /\[\[([^|\]]+)(?:\|([^\]]+))?\]\]/g;
+  const wikiLink = /\[\[((?:[^|\]\\]|\\.)+)(?:\|([^\]]+))?\]\]/g;
   let match;
 
   while ((match = wikiLink.exec(source)) !== null) {
-    const target = match[1].trim();
+    const target = match[1].replace(/\\\|/g, "|").replace(/\\$/, "").trim();
     const file = knownNotes.get(target.toLowerCase());
     if (!file || file === "index.md") continue;
 
@@ -125,6 +125,15 @@ function splitMarkdownSegments(source) {
   return parts;
 }
 
+// Inside a markdown table a wikilink alias pipe must be escaped as \| so the
+// cell isn't split. Normalise that back before resolving the target.
+function splitWikiTarget(rawTarget) {
+  return rawTarget
+    .replace(/\\\|/g, "|")
+    .split("|")
+    .map((s) => s.trim());
+}
+
 function resolveNoteTarget(target, knownNotes) {
   const [notePart, anchorPart] = target.split("#");
   const label = notePart.trim();
@@ -157,7 +166,7 @@ function transformObsidianSyntax(source, knownNotes) {
 
       return part.text
         .replace(/!\[\[([^\]]+)\]\]/g, (_all, rawTarget) => {
-          const [target, altText] = rawTarget.split("|").map((s) => s.trim());
+          const [target, altText] = splitWikiTarget(rawTarget);
           const ext = path.extname(target).toLowerCase();
 
           if ([".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"].includes(ext)) {
@@ -168,7 +177,7 @@ function transformObsidianSyntax(source, knownNotes) {
           return `[${altText || resolved.label}](${resolved.href})`;
         })
         .replace(/\[\[([^\]]+)\]\]/g, (_all, rawTarget) => {
-          const [targetPart, aliasPart] = rawTarget.split("|").map((s) => s.trim());
+          const [targetPart, aliasPart] = splitWikiTarget(rawTarget);
           const resolved = resolveNoteTarget(targetPart, knownNotes);
           const label = aliasPart || resolved.label;
           const cls = resolved.missing ? ' class="internal-link missing"' : ' class="internal-link"';

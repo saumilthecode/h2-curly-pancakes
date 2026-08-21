@@ -50,12 +50,12 @@ Also taught in lecture:
 
 An extra digit calculated from the others and appended to the number, so an error can be spotted on entry.
 
-**Two types of error a check digit detects:**
+**Two types of error a check digit detects** — 2020 Q5(b)(iii), *"Name two types of error that check digits usually detect"* `[2]`:
 
 - **Transcription error** — a single digit typed wrongly (`02757` → `02157`)
 - **Transposition error** — two adjacent digits swapped (`02757` → `02575`)
 
-> [!example]- Worked example — Modulus 11 check digit for `02757`
+> [!example]- Worked example — Modulus 11 check digit for `02757` (2020 Q5(c), `[3]`)
 > Weights, starting from the first digit: `6, 5, 4, 3, 2`.
 >
 > ```text
@@ -70,13 +70,13 @@ An extra digit calculated from the others and appended to the number, so an erro
 >
 > So the full number is `02757X`.
 >
-> This is why such a field is stored as a **string, not an integer**: the check digit can be `X`, which is not a digit, and a leading zero would be lost from an integer.
+> 2020 Q5(d) then asks for **two reasons** the field is stored as a **string, not an integer** `[2]`: the check digit can be `X`, which is not a digit; and a leading zero would be lost from an integer.
 
 > [!tip]
 > A check digit is a **checksum** applied to identification numbers — same idea as [[LT10d Hashing|Hashing]].
 
 ## Related
 
-- [[LT4b Types of Errors and Test Cases|Types of Errors and Test Cases]]
-- [[LT10d Hashing|Hashing]]
-- [[LT1 basic python|basic python]]
+- [[LT4b Types of Errors and Test Cases]]
+- [[LT10d Hashing]]
+- [[LT1 basic python]]

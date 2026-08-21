@@ -16,11 +16,11 @@ seed(30)     # optional — makes results repeatable for testing
 
 ## Numbers
 
-| Function | Gives |
-| -------- | ----- |
-| `random()` | float from `0.0` up to but **not including** `1.0` |
-| `randint(a, b)` | integer from `a` to `b`, **both included** |
-| `randrange(start, stop, step)` | integer from a range, `stop` excluded |
+| Function | Gives | In BTB4? |
+| -------- | ----- | -------- |
+| `random()` | float from `0.0` up to but **not including** `1.0` | yes |
+| `randint(a, b)` | integer from `a` to `b`, **both included** | yes |
+| `randrange(start, stop, step)` | integer from a range, `stop` excluded | no |
 
 ```python
 x = randint(1, 6)              # a dice roll
@@ -29,12 +29,15 @@ x = round(random() * 5, 2)     # float from 0 to 5, 2 decimal places
 
 ## Choosing From a List
 
-| Function | Gives |
-| -------- | ----- |
-| `choice(lst)` | one item |
-| `sample(lst, k)` | `k` items, no repeats |
-| `choices(lst, k=k)` | `k` items, repeats allowed |
-| `shuffle(lst)` | reorders the list **in place** |
+| Function | Gives | In BTB4? |
+| -------- | ----- | -------- |
+| `choice(lst)` | one item | yes |
+| `sample(lst, k)` | `k` items, no repeats | yes |
+| `choices(lst, k=k)` | `k` items, repeats allowed | yes |
+| `shuffle(lst)` | reorders the list **in place** | no |
+
+> [!note]
+> `randrange` and `shuffle` are **not** in the BTB4 lecture — they're here because the Paper 2 Reference Guide lists them. Conversely `seed`, `choice`, `choices`, `sample` and `normalvariate` are taught but aren't on that handout. The Reference Guide is a quick-reference sheet, not a list of what's allowed — it also leaves out `.strip()`, which your own mark scheme gives a mark for.
 
 ```python
 from random import *
@@ -71,6 +74,6 @@ print(stdev(lst))
 
 ## Related
 
-- [[LT7 Lists|Lists]]
-- [[LT5 Iteration|Iteration]]
-- [[LT1 basic python|basic python]]
+- [[LT7 Lists]]
+- [[LT5 Iteration]]
+- [[LT1 basic python]]

@@ -190,12 +190,10 @@ The base case is the **edge** of the triangle, not a single value — both `r ==
 
 ## Common Mistakes
 
-- Base case the input can step **past** — use `<=` / `<` rather than `==` where the step size may skip.
 - Missing a base case when the recurrence reaches back more than one step.
 - `/` instead of `//`, quietly turning integers into floats.
 - Returning `[n] + f(...)` from one branch but `n + f(...)` from another — the types must match.
 - Leaving a debugging `print()` in the submitted function.
-- Forgetting `return` on the recursive call, so the answer is discarded.
 
 ## Related
 

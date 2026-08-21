@@ -106,7 +106,6 @@ Use `while value > 0:` instead. In Jupyter an infinite loop kills the kernel —
 
 ## Common Mistakes
 
-- Missing the colon after `for` / `while`.
 - Hardcoding a value where the parameter should be used (`range(10)` instead of `range(n)`).
 - Off-by-one: forgetting `stop` is excluded, so `range(1, n)` misses `n`.
 - Putting `return` **inside** the loop body, so it exits on the first iteration.
@@ -114,7 +113,7 @@ Use `while value > 0:` instead. In Jupyter an infinite loop kills the kernel —
 
 ## Related
 
-- [[LT2 Conditionals|Conditionals]]
-- [[LT9a Recursion|Recursion]]
-- [[LT7 Lists|Lists]]
-- [[LT4b Types of Errors and Test Cases|Types of Errors and Test Cases]]
+- [[LT2 Conditionals]]
+- [[LT9a Recursion]]
+- [[LT7 Lists]]
+- [[LT4b Types of Errors and Test Cases]]
