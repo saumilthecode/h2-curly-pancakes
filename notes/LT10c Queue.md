@@ -23,7 +23,7 @@
 > [!important]
 > Head = index `0`. Tail = end of the list. A queue removes from the **front**, so it uses `pop(0)`.
 
-An **array-based fixed-size queue** normally needs two pointers: a **head pointer** marking the next item to leave and a **tail pointer** marking the last item added. The simple Python-list implementation below does not need explicit pointers because `append()` and `pop(0)` manage the positions.
+An **array-based fixed-size queue** needs two pointers: a **head pointer** marking the next item to leave, and a **tail pointer** marking the last item added. Papers ask for these by name. The Python-list version below doesn't need them — `append()` and `pop(0)` handle the positions.
 
 ## Template
 
@@ -59,7 +59,7 @@ def front(q):
 
 ## When the Queue Is Given as a Class
 
-Assessments often hand you a ready-made `Queue` in a module. You **use** its methods rather than writing your own functions:
+Assessments hand you a ready-made `Queue` in a module. You **use** its methods instead of writing your own:
 
 ```python
 from queue_module import *
@@ -111,7 +111,7 @@ head = (head + 1) % size      # dequeue
 **Advantage (2023 answer):** memory is used efficiently — freed positions are reclaimed, so a fixed array does not fill up prematurely and elements never need shifting.
 
 > [!warning]
-> Pointer equality alone does not identify the state reliably: depending on the convention it can mean one item, empty or full. Keep a separate count, or use a carefully defined one-unused-slot convention.
+> `head == tail` doesn't tell you the state on its own — it can mean one item, empty, or full. Keep a separate count, or leave one slot permanently unused.
 
 > [!example]- Specimen Paper 1 Q2(c) — the same queue on the theory paper
 > A circular queue holding at most 5 items, `China` at index 2 (HeadPointer) and `Oman` at index 3 (TailPointer).
@@ -186,7 +186,7 @@ def dequeue():
 ```
 
 > [!warning]
-> Some textbooks define the tail as the **next free slot** instead. Either convention works, but its initial values, full/empty tests and update order differ. Never mix the two conventions in one implementation.
+> Other books put the tail at the **next free slot** instead. Both work, but the initial values and the full/empty tests differ. Pick one and stick to it.
 
 ## Stack vs Queue
 
@@ -217,7 +217,7 @@ Used whenever arrival order must be preserved:
 | send a job | `enqueue(printq, job)` |
 | print the next job | `dequeue(printq)` |
 | see what's next | `front(printq)` |
-| cancel a job | not a core queue operation — rotate/filter using only the supplied operations |
+| cancel a job | not a queue operation — rotate it out using the ones you're given |
 
 ## Rotating a Queue
 

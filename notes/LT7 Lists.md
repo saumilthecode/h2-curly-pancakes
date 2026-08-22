@@ -69,19 +69,18 @@ lst = [3, 1, 4, 7, 3]
 
 ### `append` vs `extend`
 
+`append` adds **one** item. `extend` iterates the argument and adds each element.
+
 ```python
-a = [1, 2]
-a.append("hi")         # a is now [1, 2, 'hi']; append returns None
-
-b = [1, 2]
-b.extend("hi")         # b is now [1, 2, 'h', 'i']; extend returns None
-
-c = [1, 2]
-c.append([3, 4])       # c is now [1, 2, [3, 4]]
-
-d = [1, 2]
-d.extend([3, 4])       # d is now [1, 2, 3, 4]
+lst = [1, 2]
+lst.append("hi")       # [1, 2, 'hi']
+lst.extend("hi")       # [1, 2, 'h', 'i']
+lst.append([3, 4])     # [1, 2, [3, 4]]
+lst.extend([3, 4])     # [1, 2, 3, 4]
 ```
+
+> [!warning]
+> Both change the list in place and return `None`. `lst = lst.append(x)` wipes your list.
 
 ### `remove` vs `pop`
 

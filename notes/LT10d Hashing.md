@@ -38,7 +38,7 @@ Without a collision, searching is a **single calculation plus one lookup**. Coll
 | Linear search | `O(n)` | `O(n)` | no |
 | Binary search | `O(log n)` | `O(log n)` | **yes** |
 
-- **vs linear search** — linear may check every record. A well-sized hash table with a good distribution normally checks only one bucket or a short probe chain.
+- **vs linear search** — linear may check every record. A hash lookup checks one slot, or a short probe chain after a collision.
 - **vs binary search** — binary search is fast, but the data must be kept **sorted**. Maintaining that order on every insertion and deletion is expensive for large, frequently-changing datasets.
 
 ## The Lesson Hash Function
@@ -158,7 +158,7 @@ else:
 
 Searching: if the slot holds a list, do a linear search inside it (`item in tbl[i]`).
 
-A complete implementation is easier if every slot is consistently a bucket list:
+Make every slot a list from the start and there's no special case:
 
 ```python
 def make_chained_table(size):
@@ -173,7 +173,7 @@ def search_chained(table, item):
     return item in table[index]
 ```
 
-If the question specifies `''`, `-1`, a plain record or a class at each slot, follow that representation instead of silently changing it.
+If the question says each slot holds `''`, `-1`, a record or a class, use that — don't swap in your own.
 
 ### Linear Probing
 

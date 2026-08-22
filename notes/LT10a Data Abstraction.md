@@ -29,8 +29,7 @@ It does **not** define how the data is stored, or how each operation is implemen
 
 ## Why It Matters
 
-The same ADT can be stored completely differently, and code using it need not change
-as long as the ADT's public interface stays the same.
+The same ADT can be stored completely differently. Code using it doesn't change, as long as the constructors and accessors keep their names.
 
 ```python
 # stored as a list

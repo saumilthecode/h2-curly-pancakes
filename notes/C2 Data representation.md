@@ -243,7 +243,7 @@ A single standard giving a unique code to characters from many languages and sym
 | Korean | 사랑 | `U+C0AC U+B791` |
 | Russian | люблю | `U+043B U+044E U+0431 U+043B U+044E` |
 
-These are **code points**, not fixed storage sizes. `U+7231` fits in four hexadecimal digits, but its encoded size depends on the encoding; for example, UTF-8 stores `U+7231` in three bytes.
+These are **code points**, not sizes. `U+7231` is four hex digits, but how many bytes it takes depends on the encoding — UTF-8 stores it in three.
 
 ```python
 print("사랑")    # 사랑

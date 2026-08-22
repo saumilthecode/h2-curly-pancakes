@@ -1,8 +1,8 @@
 > [!summary] Quick View
 > A network connects devices so data can move between them. IP gets data to the right **network**; MAC gets it to the right **device**.
 
-> [!important] What C3 / syllabus section 4.1 examines
-> C3 covers the five **computer-network fundamentals** outcomes below. Module 4 also contains section 4.2 Web Applications, which is taught separately later in the course.
+> [!important] What 4.1 examines
+> Five outcomes. (4.2 Web Applications is the other half of Module 4 — taught later.)
 >
 > | Outcome | Where |
 > | ------- | ----- |
@@ -12,7 +12,7 @@
 > | 4.1.4 how data is transmitted in a packet-switching network | Packet Switching |
 > | 4.1.5 client–server architecture | Client–Server vs Peer-to-Peer |
 >
-> Everything else here — topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID — came from the C3a lecture and videos. It is useful practical context but is **not named** in the 2027 learning outcomes. Questions from 2020–2024 belong to the legacy syllabus, so use them for overlapping concepts rather than to predict 2027 frequency.
+> Everything else here — topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID — came from the C3a lecture and videos. **Not named** in y27. Read it, don't drill it. The 2020–2024 papers are the old syllabus, so use them for the concepts, not to guess what's coming.
 
 ## Network Types
 
@@ -35,7 +35,7 @@
 > Email, DNS and file transfer also run on the internet but are not the web.
 
 - Backbone: **fibre optic cable**, much of it undersea.
-- Satellite links are useful where cables are impractical, but long propagation distances—especially for geostationary satellites—add **latency**.
+- Satellite reaches where cables can't, but the round trip adds **latency**.
 
 **Intranet** — a private network that uses internet technologies (web pages, email) but is restricted to one organisation. Reachable from outside only through controlled access.
 
@@ -62,8 +62,8 @@ A protocol is an agreed set of rules for communication. Without one:
 
 | Term | Meaning |
 | ---- | ------- |
-| Host | an end device that sends or receives data, such as a client or server |
-| Node | any device or connection point participating in the network, such as a host, switch or router |
+| Host | a client or server on the network |
+| Node | anything on the network — host, switch or router |
 | Medium | the physical or wireless path the signal travels |
 
 Media: copper cable carries electrical signals, fibre optic carries light pulses, wireless carries electromagnetic waves.
@@ -82,14 +82,14 @@ So the **two ways a device can be identified on a LAN** are its MAC address and 
 
 A host can be allocated an IP address in **two ways**:
 
-- **Statically** — configured manually and stays the same until an administrator changes it
+- **Statically** — set by hand, and it stays put
 - **Dynamically** — assigned automatically from a pool by a **DHCP** server, on a lease
 
 > [!important]
 > IP gets the data to the correct **network**. MAC gets it to the correct **device** inside that network. ARP is what finds a device's MAC address from its IP address within a LAN.
 
 > [!important] Along the route
-> In ordinary routing **without NAT**, the destination IP address stays the same from source to final destination. The source and destination **MAC addresses change on every local link** because a frame only identifies the sender and next hop on that link.
+> The destination **IP address stays the same** from source to final destination. The **MAC address changes at every hop** — it only ever identifies the next device on this link.
 >
 >
 > ```mermaid
@@ -99,9 +99,9 @@ A host can be allocated an IP address in **two ways**:
 >     RB -->|"MAC: B to server"| S([server])
 > ```
 >
-> A new MAC pair is used on every link. The destination IP is identical on all three links only because this example has no address translation.
+> A new MAC pair on every link. The destination IP is identical on all three.
 
-Analogy: an IP address is the end-to-end mailing address used for routing; a MAC address is the local delivery label for the next link. A network interface is normally assigned a hardware MAC address, although software can override it.
+MAC is your **name** — fixed, burned into the NIC. IP is your **current address** — it changes when you move network.
 
 ### Private vs Public IP
 
@@ -124,7 +124,7 @@ Subnet mask: 255.255.255.0
 Network:     192.168.0        < the part the mask keeps
 ```
 
-If the destination is outside the local network, the device sends the packet to its **default gateway** — usually the router.
+Destination outside the local network? Send it to the **default gateway** — the router.
 
 ## Packet Switching
 
@@ -134,21 +134,19 @@ The internet uses packet switching.
 - each packet travels independently and may take a different route
 - the destination reassembles them in order using the sequence numbers
 
-Do not mix up the layers:
-
-| Unit | Important fields |
-| ---- | ---------------- |
-| IP packet | IP header with source/destination IP and protocol; payload carrying the transport data |
-| TCP segment | port numbers, sequence/acknowledgement numbers and application data |
-| Data-link frame | source/destination MAC, the packet as payload and usually an error-checking trailer such as an FCS/CRC |
+| Packet part | Contains |
+| ----------- | -------- |
+| Header | source IP, destination IP, protocol, sequence number |
+| Payload | the data |
+| Trailer | error check, e.g. CRC |
 
 Circuit switching instead reserves one fixed path for the whole communication. Packet switching is more resilient — if one route fails, packets take another.
 
 **Why data is divided into packets** — small packets share the links fairly rather than one large transfer blocking them, and a corrupted packet only needs that packet resent, not the whole file.
 
-**Why data units are sequentially numbered** — they can arrive out of order after taking different routes, so a reliable transport protocol such as TCP can **reassemble them correctly** and spot missing data.
+**Why packets are sequentially numbered** — they arrive out of order after taking different routes, so the numbers let the destination **reassemble them correctly** and spot any that are missing.
 
-**Disadvantage, and how it is handled** — packets may arrive out of order, be delayed, or be lost entirely. IP itself is best effort; when reliability is required, TCP uses sequence numbers, acknowledgements and retransmission.
+**Disadvantage, and how it is handled** — packets may arrive out of order, be delayed, or be lost. Sequence numbers reorder them; anything that fails its error check or never arrives is **requested again and retransmitted**.
 
 **Role of a router** — it inspects each packet's destination **IP address** and forwards it along the best available route towards that network, hop by hop. Each packet is routed independently, so different packets from the same message may take different paths.
 
@@ -176,7 +174,7 @@ sequenceDiagram
 
 Closing takes **four** steps: `FIN`, `ACK`, `FIN`, `ACK` — each side must close its own direction.
 
-During transfer TCP provides a reliable, ordered byte stream: it detects missing data and requests retransmission. If recovery becomes impossible, the connection fails rather than silently claiming successful delivery.
+During transfer TCP guarantees packets are **delivered** and **reassembled in order**, requesting retransmission of anything missing.
 
 | State | Meaning |
 | ----- | ------- |

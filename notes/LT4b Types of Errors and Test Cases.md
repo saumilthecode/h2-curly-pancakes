@@ -65,7 +65,7 @@ Also: a missing `return` (function silently gives `None`), off-by-one loop bound
 Syllabus **1.5.6** — *"use appropriate error and exception handling techniques"*.
 
 > [!warning] Not in the Reference Guide — memorise it
-> The Reference Guide they hand you in Paper 2 has no `try` / `except` section. `with open(...)` **is** printed there; this is not. Two shapes cover almost everything:
+> The Reference Guide they hand you in Paper 2 has no `try` / `except` section. `with open(...)` **is** printed there; this isn't. Two shapes:
 
 ```python
 try:                                    # bad input
@@ -82,8 +82,8 @@ except FileNotFoundError:
 
 Catch the **specific** exception. A bare `except Exception` swallows your own bugs too.
 
-> [!tip] You often don't need it
-> Validating input is taught with `isnumeric()` in a `while` loop ([[LT4a Data validation and verification|LT4a]]), and full/empty guards are plain `if`s. Reach for `try` when a **conversion** or a **file** can fail — not for every check.
+> [!tip] You don't need it everywhere
+> Input validation is `isnumeric()` in a `while` loop ([[LT4a Data validation and verification|LT4a]]); full/empty guards are plain `if`s. Use `try` when a **conversion** or a **file** can fail.
 
 ## Test Case Categories
 

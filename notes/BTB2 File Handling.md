@@ -19,7 +19,7 @@ f.close()
 > | Cambridge 9618/42 Nov 2023 | *"Opening text file to read and closing the file in an appropriate place"* |
 > | Cambridge 9618/43 Jun 2023 | *"Opening StackData.txt to read and closing file"* |
 >
-> Those Cambridge 9618 examples are useful practice, but they are not the revised Singapore 9569 paper. The 2027 Reference Guide shows **both** styles. A `with` statement closes the file automatically, including when an exception occurs.
+> Those were Cambridge **9618** papers — a different syllabus. The y27 Reference Guide prints **both** styles, so either is fine. `with` closes the file for you, even if something goes wrong inside.
 
 | Mode | Does |
 | ---- | ---- |
@@ -44,7 +44,7 @@ except FileNotFoundError:
     print("The file does not exist.")
 ```
 
-Catch the most specific exception you can handle. `except Exception` hides unrelated programming errors and makes debugging harder.
+Catch the **specific** exception. A bare `except Exception` swallows your own bugs too.
 
 ## Reading
 

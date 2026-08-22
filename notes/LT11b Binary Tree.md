@@ -399,7 +399,7 @@ Sorted input is the worst case: every node becomes a right child, so the tree de
 Other uses named in the lecture: storing the keys of a hash table so that a [[LT10d Hashing|separate chain]] can be searched in `O(log n)` instead of `O(n)`, and divide-and-conquer generally.
 
 > [!important] Specimen Paper 1 Q2(a) — "advantage of a BST over a **linked list**" `[2]`
-> A linked list can only be searched from the head, one node at a time — `O(n)`. In a reasonably balanced BST, each comparison discards one subtree, so a value is found in `O(log n)` comparisons. An unbalanced BST can still take `O(n)`.
+> A linked list can only be searched from the head, one node at a time — `O(n)`. In a BST each comparison throws away a whole subtree, roughly halving what's left, so you find a value in `O(log n)`. Only while it stays balanced.
 
 ## The Array Form Used in Paper 1
 
