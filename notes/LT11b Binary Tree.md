@@ -13,14 +13,16 @@
 
 ## Vocabulary
 
-```text
-         A          root - the only node with no parent
-     +---+----+     edges
-     B        C     siblings - same parent
-  +--+--+   +-+-+
-  D     E   F   G   E, F, G are leaves (no children)
-+-+-+
-H   I               H, I are leaves too
+```mermaid
+flowchart TD
+  A --> B
+  A --> C
+  B --> D
+  B --> E
+  C --> F
+  C --> G
+  D --> H
+  D --> I
 ```
 
 | Term | Meaning | Above |
@@ -46,14 +48,23 @@ H   I               H, I are leaves too
 | **Full** | every node except the leaves has **two** children |
 | **Complete** | every level except possibly the last is completely filled, and the last level's nodes are **as far left as possible** |
 
-```text
-full, not complete        complete, not full
-
-   A                           A
-+--+--+                      +-+-+
-B     C                      B   C
-    +-+-+                 +--+
-    D   E                 D
+```mermaid
+flowchart TD
+  subgraph one["full, not complete"]
+    direction TD
+    fA[A] --> fB[B]
+    fA --> fC[C]
+    fC --> fD[D]
+    fC --> fE[E]
+  end
+  subgraph two["complete, not full"]
+    direction TD
+    cA[A] --> cB[B]
+    cA --> cC[C]
+    cB --> cD[D]
+    cB ~~~ cS:::hid
+  end
+  classDef hid fill:none,stroke:none,color:transparent
 ```
 
 The vocabulary tree at the top is both.
@@ -68,14 +79,16 @@ Three rules:
 
 The rules apply at **every** node, not just the root.
 
-```text
-         6
-     +---+----+
-     4        8
-  +--+--+   +-+-+
-  2     5   7   9
-+-+-+
-1   3
+```mermaid
+flowchart TD
+  n6[6] --> n4[4]
+  n6 --> n8[8]
+  n4 --> n2[2]
+  n4 --> n5[5]
+  n2 --> n1[1]
+  n2 --> n3[3]
+  n8 --> n7[7]
+  n8 --> n9[9]
 ```
 
 > [!important] 2024 Q5(a)(ii) — "Give **two** properties of a binary search tree" `[2]`
@@ -117,14 +130,17 @@ four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 > five         = make_tree(5, four, fifteen)
 > ```
 >
-> ```text
->       5
->    +--+---+
->    4     15
-> +--+   +--+--+
-> 3      8    24
->              +--+
->                27
+> ```mermaid
+> flowchart TD
+>   f5[5] --> f4[4]
+>   f5 --> f15[15]
+>   f4 --> f3[3]
+>   f4 ~~~ g1:::hid
+>   f15 --> f8[8]
+>   f15 --> f24[24]
+>   f24 ~~~ g2:::hid
+>   f24 --> f27[27]
+>   classDef hid fill:none,stroke:none,color:transparent
 > ```
 >
 > It is all just nested lists:
@@ -201,65 +217,105 @@ t1 = insert_tree(5, t1)      # right
 
 ## Traversals
 
-Visiting every node exactly once. Used for printing all values, testing whether any node has some property, or copying the tree.
+Visiting every node exactly once. Part 3 calls them **`flatten`** — a traversal flattens a tree into a list.
 
-```text
-         A
-     +---+----+
-     B        C
-  +--+--+   +-+-+
-  D     E   F   G
-+-+-+
-H   I
+```mermaid
+flowchart TD
+  t5[5] --> t2[2]
+  t5 --> t7[7]
+  t2 --> t1[1]
+  t2 ~~~ q1:::hid
+  t7 ~~~ q2:::hid
+  t7 --> t10[10]
+  classDef hid fill:none,stroke:none,color:transparent
 ```
 
-| Traversal | Order | Output |
-| --------- | ----- | ------ |
-| **Pre-order** (DFS) | **node**, left, right | `A B D H I E C F G` |
-| **In-order** (DFS) | left, **node**, right | `H D I B E A F C G` |
-| **Post-order** (DFS) | left, right, **node** | `H I D E B F G C A` |
-| **Breadth-first** | level by level, left to right | `A B C D E F G H I` |
+| Function | Order | Output on `t3` |
+| -------- | ----- | -------------- |
+| `flatten_pre` | **entry**, left, right | `[5, 2, 1, 7, 10]` |
+| `flatten` (in-order) | left, **entry**, right | `[1, 2, 5, 7, 10]` |
+| `flatten_post` | left, right, **entry** | `[1, 2, 10, 7, 5]` |
+| `flatten_bfs` | level by level, left to right | `[5, 2, 7, 1, 10]` |
 
-> [!tip] The name says where the node goes
-> **Pre**-order visits the node *before* its subtrees, **in**-order *between* them, **post**-order *after* both. Left always precedes right.
+> [!tip] The name says where the entry goes
+> **Pre** visits the entry *before* its subtrees, **in** *between* them, **post** *after* both. Left always precedes right.
 
-**DFS** is the first three — down one branch fully, then backtrack. **BFS** is the fourth — every node at depth `d` before any at depth `d + 1`.
+The first three are **DFS** — down one branch fully, then backtrack. `flatten_bfs` is **BFS** — every node at depth `d` before any at depth `d + 1`.
 
-> [!note]
-> The lecture explains the four orders but doesn't code them, and 2.1.4/2.1.5 both say *"implement"*. Written on your own ADT:
+## Writing the Traversals
+
+The three DFS ones are one function with `[entry(tree)]` moved:
 
 ```python
-def in_order(tree):
+def flatten(tree):
     if is_empty(tree):
         return []
-    return in_order(left_branch(tree)) + [entry(tree)] + in_order(right_branch(tree))
+    return flatten(left_branch(tree)) + [entry(tree)] + flatten(right_branch(tree))
 ```
 
-All three are that function with `[entry(tree)]` moved. Writing `L` and `R` for the two recursive calls:
+Writing `L` and `R` for the two recursive calls:
 
 | | Return line |
 | --- | ----------- |
-| `pre_order` | `[entry(tree)] + L + R` |
-| `in_order` | `L + [entry(tree)] + R` |
-| `post_order` | `L + R + [entry(tree)]` |
+| `flatten_pre` | `[entry(tree)] + L + R` |
+| `flatten` | `L + [entry(tree)] + R` |
+| `flatten_post` | `L + R + [entry(tree)]` |
 
-BFS can't be written that way — it needs a [[LT10c Queue|queue]] to remember the nodes waiting at the next level:
+BFS can't recurse like that — it needs a [[LT10c Queue|queue]] to hold the nodes waiting at the next level. Part 3 gives you `queue_adt`:
 
 ```python
-def breadth_first(tree):
+from queue_adt import *          # make_empty_queue, enqueue, dequeue, is_empty_queue
+
+def flatten_bfs(tree):
+    if is_empty(tree):
+        return []
     result = []
-    q = [tree]
-    while q != []:
-        node = q.pop(0)                     # dequeue
-        if not is_empty(node):
-            result.append(entry(node))
-            q.append(left_branch(node))     # enqueue both children
-            q.append(right_branch(node))
+    q = make_empty_queue()
+    enqueue(q, tree)                              # the node, not just its value
+    while not is_empty_queue(q):
+        node = dequeue(q)
+        result.append(entry(node))
+        if not is_empty(left_branch(node)):
+            enqueue(q, left_branch(node))
+        if not is_empty(right_branch(node)):
+            enqueue(q, right_branch(node))
     return result
 ```
 
+> [!important]
+> Enqueue the **node**, not `entry(node)` — you need its branches again when it comes off the queue. Guard each branch with `is_empty` or you enqueue `[]` and crash on `entry([])`.
+
 > [!tip] BFS and DFS are the same loop
-> Swap `q.pop(0)` for `s.pop()` — a [[LT10b Stack|stack]] instead of a queue — push **right before left**, and that loop outputs pre-order DFS instead. FIFO spreads across the level; LIFO dives down the branch.
+> Swap the queue for a [[LT10b Stack|stack]] and push **right before left**, and that loop outputs pre-order instead. FIFO spreads across the level; LIFO dives down the branch.
+
+> [!example]- The video's worked tree
+> ```mermaid
+> flowchart TD
+>   v75[75] --> v17[17]
+>   v75 --> v80[80]
+>   v17 --> v3[3]
+>   v17 --> v62[62]
+>   v3 ~~~ y1:::hid
+>   v3 --> v8[8]
+>   v62 --> v26[26]
+>   v62 --> v73[73]
+>   v80 ~~~ y2:::hid
+>   v80 --> v97[97]
+>   v97 --> v96[96]
+>   v97 ~~~ y3:::hid
+>   v96 --> v89[89]
+>   v96 ~~~ y4:::hid
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> | | |
+> | --- | --- |
+> | pre | `75 17 3 8 62 26 73 80 97 96 89` |
+> | in | `3 8 17 26 62 73 75 80 89 96 97` |
+> | post | `8 3 26 73 62 17 89 96 97 80 75` |
+> | bfs | `75 17 80 3 62 97 8 26 73 96 89` |
+>
+> In-order comes out **ascending** — *"in order will return the list that is actually in ascending order"*.
 
 ## Efficiency
 
@@ -282,16 +338,27 @@ making h the subject:   h = log2(n + 1) - 1
 
 The same six values, inserted in different orders:
 
-```text
-inserted 7,3,9,1,5,11        inserted 5,3,9,1,7,11
-
-     7                             5
-  +--+---+                      +--+--+
-  3      9                      3     9
-+-+-+    +--+                +--+   +-+--+
-1   5      11                1      7   11
-
-height 2 - balanced          height 2 - balanced
+```mermaid
+flowchart TD
+  subgraph b1["inserted 7,3,9,1,5,11 - height 2"]
+    direction TD
+    x7[7] --> x3[3]
+    x7 --> x9[9]
+    x3 --> x1[1]
+    x3 --> x5[5]
+    x9 ~~~ p1:::hid
+    x9 --> x11[11]
+  end
+  subgraph b2["inserted 5,3,9,1,7,11 - height 2"]
+    direction TD
+    y5[5] --> y3[3]
+    y5 --> y9[9]
+    y3 --> y1[1]
+    y3 ~~~ p2:::hid
+    y9 --> y7[7]
+    y9 --> y11[11]
+  end
+  classDef hid fill:none,stroke:none,color:transparent
 ```
 
 ```text
@@ -343,12 +410,14 @@ Other uses named in the lecture: storing the keys of a hash table so that a [[LT
 
 Follow the pointers from `Root` and the tree falls out — the array order means nothing:
 
-```text
-             Leona
-        +------+-------+
-     Bobbie         Simone
-    +---+---+       +--+---+
-  Alice   David   Peter   Tom
+```mermaid
+flowchart TD
+  L[Leona] --> Bo[Bobbie]
+  L --> Si[Simone]
+  Bo --> Al[Alice]
+  Bo --> Da[David]
+  Si --> Pe[Peter]
+  Si --> To[Tom]
 ```
 
 In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it must be.
@@ -361,14 +430,17 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 > | `Names[6].RPtr` | Null → `7` |
 > | `Names[7]` | `Null`, `Eric`, `Null` |
 >
-> ```text
->                  Leona
->           +--------+---------+
->        Bobbie             Simone
->     +-----+-----+         +--+---+
->   Alice       David     Peter   Tom
->                 +--+
->                  Eric
+> ```mermaid
+> flowchart TD
+>   L[Leona] --> Bo[Bobbie]
+>   L --> Si[Simone]
+>   Bo --> Al[Alice]
+>   Bo --> Da[David]
+>   Si --> Pe[Peter]
+>   Si --> To[Tom]
+>   Da ~~~ e1:::hid
+>   Da --> Er[Eric]
+>   classDef hid fill:none,stroke:none,color:transparent
 > ```
 
 > [!example]- 2020 Q3(f) — name the traversal `[1]`
@@ -394,30 +466,38 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 
 Countries in a BST — 13 marks. The queue half is in [[LT10c Queue|Queue]].
 
-```text
-            Belgium
-      +--------+---------+
-  Australia           Kuwait
-   +--+             +----+----+
-Andorra           Egypt   Singapore
-                 +--+
-              Bolivia
+```mermaid
+flowchart TD
+  Be[Belgium] --> Au[Australia]
+  Be --> Ku[Kuwait]
+  Au --> An[Andorra]
+  Au ~~~ z1:::hid
+  Ku --> Eg[Egypt]
+  Ku --> Sg[Singapore]
+  Eg --> Bo[Bolivia]
+  Eg ~~~ z2:::hid
+  classDef hid fill:none,stroke:none,color:transparent
 ```
 
 > [!example]- Q2(c)(iii) — insert the dequeued `China` and `Oman` `[2]`
 > - **China** — right of Belgium, left of Kuwait, left of Egypt, right of Bolivia → **Bolivia's right child**
 > - **Oman** — right of Belgium, right of Kuwait, left of Singapore → **Singapore's left child**
 >
-> ```text
->                Belgium
->       +-----------+-----------+
->   Australia                Kuwait
->    +--+                  +----+-----+
-> Andorra                Egypt    Singapore
->                       +--+       +--+
->                    Bolivia     Oman
->                       +--+
->                        China
+> ```mermaid
+> flowchart TD
+>   Be[Belgium] --> Au[Australia]
+>   Be --> Ku[Kuwait]
+>   Au --> An[Andorra]
+>   Au ~~~ w1:::hid
+>   Ku --> Eg[Egypt]
+>   Ku --> Sg[Singapore]
+>   Eg --> Bo[Bolivia]
+>   Eg ~~~ w2:::hid
+>   Bo ~~~ w3:::hid
+>   Bo --> Ch[China]
+>   Sg --> Om[Oman]
+>   Sg ~~~ w4:::hid
+>   classDef hid fill:none,stroke:none,color:transparent
 > ```
 
 ## Common Mistakes

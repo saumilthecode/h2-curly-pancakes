@@ -98,6 +98,9 @@
 ### LT 11b Binary Tree (Part 2)
 - [LT11b Binary Tree Part 2](https://www.youtube.com/watch?v=OgQr2uK39MM) | YIJC Computing | transcript available
 
+### LT 11b Binary Tree (Part 3)
+- [Traversal of Binary Search Trees](https://www.youtube.com/watch?v=AAiEyLqMvP8) | Jingkai | transcript available
+
 ## Back to Basics and Content Topics
 
 ### BTB 2 - File Handling

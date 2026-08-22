@@ -103,7 +103,14 @@ function outputNameForMarkdown(file) {
 }
 
 function encodeHref(file) {
-  return encodeURI(file).replace(/#/g, "%23");
+  // Only the LAST "#" separates a fragment (slugs never contain one), so a file
+  // name containing "#" still gets percent-encoded. Encoding the separator itself
+  // would turn "Note.html#heading" into a request for a file called that.
+  const hash = String(file).lastIndexOf("#");
+  if (hash === -1) return encodeURI(file).replace(/#/g, "%23");
+  const target = String(file).slice(0, hash);
+  const fragment = String(file).slice(hash + 1);
+  return encodeURI(target).replace(/#/g, "%23") + "#" + encodeURIComponent(fragment);
 }
 
 function escapeHtml(value) {
@@ -115,24 +122,43 @@ function escapeHtml(value) {
 }
 
 function splitMarkdownSegments(source) {
+  // A fence may be indented or sit inside a callout, so allow leading spaces and
+  // any number of "> " markers. Anything between the opening fence and the next
+  // line with a matching fence marker is code and must not be rewritten.
   const parts = [];
-  const fence = /(^|\n)(```|~~~)[\s\S]*?(\n\2[^\n]*)(?=\n|$)/g;
-  let last = 0;
-  let match;
+  let current = [];
+  let isCode = false;
+  let closeFence = null;
 
-  while ((match = fence.exec(source)) !== null) {
-    const start = match.index + match[1].length;
-    if (start > last) {
-      parts.push({ code: false, text: source.slice(last, start) });
+  const flush = () => {
+    if (current.length) parts.push({ code: isCode, text: current.join("\n") });
+    current = [];
+  };
+
+  for (const line of source.split("\n")) {
+    if (closeFence) {
+      current.push(line);
+      if (closeFence.test(line)) {
+        flush();
+        closeFence = null;
+        isCode = false;
+      }
+      continue;
     }
-    parts.push({ code: true, text: source.slice(start, fence.lastIndex) });
-    last = fence.lastIndex;
+
+    const opener = line.match(/^\s*(?:>\s?)*(```|~~~)/);
+    if (opener) {
+      flush();
+      isCode = true;
+      closeFence = new RegExp("^\\s*(?:>\\s?)*" + opener[1].replace(/`/g, "\\`"));
+      current.push(line);
+      continue;
+    }
+
+    current.push(line);
   }
 
-  if (last < source.length) {
-    parts.push({ code: false, text: source.slice(last) });
-  }
-
+  flush();
   return parts;
 }
 
@@ -195,37 +221,90 @@ function transformObsidianSyntax(source, knownNotes) {
           return `<a${cls} href="${encodeHref(resolved.href)}">${escapeHtml(label)}</a>`;
         });
     })
-    .join("");
+    .join("\n");
 }
 
 function transformCallouts(html) {
-  return html.replace(/<blockquote>\n([\s\S]*?)<\/blockquote>/g, (all, inner) => {
-    const callout = inner.match(/^<p>\[!(\w+)\]([-+]?)([^\n<]*)\n?([\s\S]*?)<\/p>\n?([\s\S]*)$/);
-    if (!callout) return all;
+  // Blockquotes nest, so a non-greedy /<blockquote>...<\/blockquote>/ closes on the
+  // wrong tag and shreds the markup. Walk the string tracking depth instead, and
+  // transform each block's contents before the block itself so inner callouts win.
+  const OPEN = "<blockquote>\n";
+  const CLOSE = "</blockquote>";
+  let out = "";
+  let cursor = 0;
 
-    const type = callout[1].toLowerCase();
-    const fold = callout[2];
-    const title = callout[3].trim() || type;
-    const firstBody = callout[4].trim();
-    const rest = callout[5].trim();
-    const icon = calloutIcons[type] || "!";
-    const body = [firstBody, rest].filter(Boolean).join("\n");
-    const titleMarkup = `<span class="callout-icon">${icon}</span><span>${escapeHtml(title)}</span>`;
-    const content = body ? `<div class="callout-content">${body}</div>` : "";
+  while (true) {
+    const start = html.indexOf(OPEN, cursor);
+    if (start === -1) {
+      out += html.slice(cursor);
+      return out;
+    }
 
-    // Obsidian fold markers: "-" starts collapsed, "+" starts expanded.
-    if (fold) {
-      return `<details class="callout callout-${type} callout-foldable"${fold === "+" ? " open" : ""}>
+    out += html.slice(cursor, start);
+
+    let depth = 1;
+    let scan = start + OPEN.length;
+    let end = -1;
+    while (depth > 0) {
+      const nextOpen = html.indexOf("<blockquote>", scan);
+      const nextClose = html.indexOf(CLOSE, scan);
+      if (nextClose === -1) break;
+      if (nextOpen !== -1 && nextOpen < nextClose) {
+        depth += 1;
+        scan = nextOpen + "<blockquote>".length;
+      } else {
+        depth -= 1;
+        scan = nextClose + CLOSE.length;
+        if (depth === 0) end = nextClose;
+      }
+    }
+
+    if (end === -1) {
+      // Unbalanced markup: emit the rest untouched rather than corrupt it.
+      out += html.slice(start);
+      return out;
+    }
+
+    const inner = transformCallouts(html.slice(start + OPEN.length, end));
+    out += renderCallout(inner);
+    cursor = end + CLOSE.length;
+  }
+}
+
+function renderCallout(inner) {
+  const callout = inner.match(/^<p>\[!(\w+)\]([-+]?)([\s\S]*?)<\/p>\n?([\s\S]*)$/);
+  if (!callout) return `<blockquote>\n${inner}</blockquote>`;
+
+  const type = callout[1].toLowerCase();
+  const fold = callout[2];
+  // callout[3] is already-rendered HTML: the title line, then any first paragraph.
+  // Split on the first newline rather than the first "<", so a title may contain
+  // inline markup, and do NOT escape it again — markdown-it has already done that.
+  const head = callout[3];
+  const newline = head.indexOf("\n");
+  const title = (newline === -1 ? head : head.slice(0, newline)).trim() || type;
+  const leadIn = newline === -1 ? "" : head.slice(newline + 1).trim();
+  // markdown-it had this text inside a <p> that we just consumed; keep it a
+  // paragraph so it is spaced like every later one.
+  const firstBody = leadIn ? `<p>${leadIn}</p>` : "";
+  const rest = callout[4].trim();
+  const icon = calloutIcons[type] || "!";
+  const body = [firstBody, rest].filter(Boolean).join("\n");
+  const titleMarkup = `<span class="callout-icon">${icon}</span><span>${title}</span>`;
+  const content = body ? `<div class="callout-content">${body}</div>` : "";
+
+  // Obsidian fold markers: "-" starts collapsed, "+" starts expanded.
+  if (fold) {
+    return `<details class="callout callout-${type} callout-foldable"${fold === "+" ? " open" : ""}>
 <summary class="callout-title">${titleMarkup}</summary>
 ${content}
 </details>`;
-    }
+  }
 
-    return `<aside class="callout callout-${type}">
+  return `<aside class="callout callout-${type}">
 <div class="callout-title">${titleMarkup}</div>
 ${content}
 </aside>`;
-  });
 }
 
 function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {

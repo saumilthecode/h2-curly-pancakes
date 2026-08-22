@@ -1,6 +1,6 @@
 # H2 Computing transcript index
 
-Successful transcripts: 90
+Successful transcripts: 91
 Unavailable transcripts: 1
 
 ## Transcript files
@@ -367,6 +367,11 @@ Unavailable transcripts: 1
   - Uploader: YIJC Computing
   - File: `90 - LT11b Binary Tree Part 2 [OgQr2uK39MM].txt`
   - Characters: 7,119
+
+- **LT 11b Binary Tree (Part 3)**: [Traversal of Binary Search Trees](https://www.youtube.com/watch?v=AAiEyLqMvP8)
+  - Uploader: Jingkai
+  - File: `91 - Traversal of Binary Search Trees [AAiEyLqMvP8].txt`
+  - Characters: 8,306
 
 ## Videos without transcripts
 
