@@ -533,9 +533,12 @@ pre.mermaid {
   line-height: normal;
 }
 
+/* Code is set smaller than body text so the longest line in the notes (93
+   chars, flatten_post) fits the column instead of scrolling off the edge. */
 pre code {
   padding: 0;
   background: transparent;
+  font-size: 0.82em;
 }
 
 .callout {

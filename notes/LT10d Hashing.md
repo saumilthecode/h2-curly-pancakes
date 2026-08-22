@@ -1,35 +1,44 @@
 > [!summary] Quick View
-> A hash function turns data into a number. A hash table stores an item at `hash(item) % table_size` so it can be found without searching.
+> A hash function turns a key into an index. A hash table gives expected `O(1)` insertion and lookup, but collisions must be handled correctly.
 
-## What Hashing Is
+## Two Uses of Hashing
 
-A hash function produces a digital fingerprint of the data — the **hash value**, **digest** or **checksum**.
+The word *hash* is used for two related but different jobs:
 
-> [!important] "State three features of a good hashing algorithm" — `[3]`, asked 2021 and 2022
-> The three characteristics from the LT10d lecture are the answer.
+| | Hash-table function | Cryptographic hash |
+| --- | --- | --- |
+| Purpose | map a key to a table index | make a fixed-length fingerprint of data |
+| Priorities | fast, deterministic, evenly distributed | one-way and collision-resistant |
+| Collision | expected and handled by the table | possible, but deliberately hard to find |
+| Examples | weighted character sum, `key % size` | SHA-256 |
 
-| Characteristic | Meaning |
-| -------------- | ------- |
-| Secure | non-reversible — you cannot get the data back from the hash |
-| Fixed size | long or short input produces a fixed-size digest |
-| Unique\* | ideally no two inputs share a digest |
+> [!important] "State three features of a good hashing algorithm" `[3]` — 2021 Q5(a) and 2022 Q8(d)
+> Asked twice in five years, same 3 marks. The marked answer is about the **table**, not security:
+>
+> | Feature | Meaning |
+> | ------- | ------- |
+> | Deterministic | the same key always hashes to the same value |
+> | Uniform distribution | values spread evenly across the table |
+> | Minimises clustering | few keys collide onto the same index |
 
-> [!warning]
-> \*Not true in reality — **collisions do occur**. Hashing is for comparison, **not encryption**.
+> [!warning] The lecture's three characteristics answer a different question
+> LT10d Part 1 gives *"Secure: non-reversible / Fixed size / Unique\*"*. Those describe a **cryptographic** hash (SHA-256), not the table function above. Use them if a question says *secure hash algorithm*; use the table above when it says *hash table*.
+>
+> Don't claim the simple weighted-sum function is secure or non-reversible — it is built for placement, not security. And `Unique` is marked with an asterisk in the lecture for a reason: **collisions do occur**.
 
 ## Why Use a Hash Table
 
 > [!important] 2021 Q5 asked both halves — hash table vs linear search `[2]`, and the disadvantage of binary search here `[2]`.
 
-Searching is a **single calculation plus one lookup** — no scanning.
+Without a collision, searching is a **single calculation plus one lookup**. Collisions add extra comparisons.
 
-| Search method | Time complexity | Needs sorted data? |
-| ------------- | --------------- | ------------------ |
-| Hash table | `O(1)` | no |
-| Linear search | `O(n)` | no |
-| Binary search | `O(log n)` | **yes** |
+| Search method | Expected / usual | Worst case | Needs sorted data? |
+| ------------- | ---------------- | ---------- | ------------------ |
+| Hash table | `O(1)` | `O(n)` if many keys collide | no |
+| Linear search | `O(n)` | `O(n)` | no |
+| Binary search | `O(log n)` | `O(log n)` | **yes** |
 
-- **vs linear search** — linear may check every record, so it gets slower as the data grows. A hash lookup stays constant no matter how large the table is.
+- **vs linear search** — linear may check every record. A well-sized hash table with a good distribution normally checks only one bucket or a short probe chain.
 - **vs binary search** — binary search is fast, but the data must be kept **sorted**. Maintaining that order on every insertion and deletion is expensive for large, frequently-changing datasets.
 
 ## The Lesson Hash Function
@@ -149,6 +158,23 @@ else:
 
 Searching: if the slot holds a list, do a linear search inside it (`item in tbl[i]`).
 
+A complete implementation is easier if every slot is consistently a bucket list:
+
+```python
+def make_chained_table(size):
+    return [[] for _ in range(size)]
+
+def insert_chained(table, item):
+    index = hash(item) % len(table)
+    table[index].append(item)
+
+def search_chained(table, item):
+    index = hash(item) % len(table)
+    return item in table[index]
+```
+
+If the question specifies `''`, `-1`, a plain record or a class at each slot, follow that representation instead of silently changing it.
+
 ### Linear Probing
 
 From the assigned slot, look for the next empty one, wrapping around at the end.
@@ -175,10 +201,31 @@ i = (i + 1) % len(table)
 
 Searching must follow the **same probe path** — check the assigned slot, then step forward the same way until you find the item or an empty slot.
 
+```python
+def insert_probe(table, item):
+    index = hash(item) % len(table)
+    for _ in range(len(table)):
+        if table[index] == '':
+            table[index] = item
+            return True
+        index = (index + 1) % len(table)
+    return False                         # table is full
+
+def search_probe(table, item):
+    index = hash(item) % len(table)
+    for _ in range(len(table)):
+        if table[index] == item:
+            return True
+        if table[index] == '':
+            return False                # probe chain has ended
+        index = (index + 1) % len(table)
+    return False
+```
+
 ## Common Mistakes
 
 - Forgetting `% len(table)`.
-- Thinking hashing is encryption — it is one-way and used for comparison.
+- Treating a table hash as encryption or assuming it has cryptographic security.
 - Assuming collisions never happen.
 - Searching a linear-probed table without following the probe path.
 - Forgetting a chained slot may hold either a plain value **or** a list.

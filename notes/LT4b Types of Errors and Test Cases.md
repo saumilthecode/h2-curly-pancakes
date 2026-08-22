@@ -66,12 +66,14 @@ Catch errors instead of letting the program crash.
 
 ```python
 try:
-    f = open("data.txt")
-    print(f.read())
-    f.close()
-except Exception as e:
-    print("Could not read file:", e)
+    total = int(input("Total: "))
+except ValueError:
+    print("Enter a whole number")
 ```
+
+Catch the **specific exception** you expect. A broad `except Exception` can hide
+unrelated programming mistakes and make debugging harder. For file-handling
+examples using `FileNotFoundError`, see [[BTB2 File Handling]].
 
 ## Test Case Categories
 

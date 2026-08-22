@@ -6,7 +6,7 @@
 Python's random numbers are not truly random — they come from a deterministic formula.
 
 - The same **seed** always produces the same sequence.
-- With no seed, Python uses the current system time.
+- With no explicit seed, Python normally uses randomness supplied by the operating system (falling back to time-based information if necessary).
 
 ```python
 from random import *

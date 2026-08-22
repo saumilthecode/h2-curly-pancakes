@@ -23,7 +23,7 @@
 > [!important]
 > Head = index `0`. Tail = end of the list. A queue removes from the **front**, so it uses `pop(0)`.
 
-Implementing a queue needs **two pointers**: a **head pointer** marking the next item to leave, and a **tail pointer** marking where the next item is added. Papers ask for these by name.
+An **array-based fixed-size queue** normally needs two pointers: a **head pointer** marking the next item to leave and a **tail pointer** marking the last item added. The simple Python-list implementation below does not need explicit pointers because `append()` and `pop(0)` manage the positions.
 
 ## Template
 
@@ -87,7 +87,7 @@ index   0     1     2     3     4
       |  .  |  .  |  C  |     |     |
       +-----+-----+-----+-----+-----+
          ^     ^     ^     ^
-         |     |     |     +- tail (next free slot)
+         |     |     |     +- next free slot (after tail)
          |     |     +------- head
          +-----+------------- dead space
 ```
@@ -111,7 +111,7 @@ head = (head + 1) % size      # dequeue
 **Advantage (2023 answer):** memory is used efficiently — freed positions are reclaimed, so a fixed array does not fill up prematurely and elements never need shifting.
 
 > [!warning]
-> With wrapping, `head == tail` is ambiguous — it means both empty and full. Keep a separate count, or leave one slot permanently unused.
+> Pointer equality alone does not identify the state reliably: depending on the convention it can mean one item, empty or full. Keep a separate count, or use a carefully defined one-unused-slot convention.
 
 > [!example]- Specimen Paper 1 Q2(c) — the same queue on the theory paper
 > A circular queue holding at most 5 items, `China` at index 2 (HeadPointer) and `Oman` at index 3 (TailPointer).
@@ -130,16 +130,63 @@ head = (head + 1) % size      # dequeue
 
 ### The y27 Specimen Version
 
-> [!important] Specimen Paper 2, Task 2.1–2.3 — **8 marks**, the model for your 2027 lab paper.
+> [!important] Specimen Paper 2, Tasks 2.1, 2.2 and 2.5 — **8 marks altogether**, the model for your 2027 lab paper.
 > A 1-D array of 10 initialised to `-1`, pointers named `headpointer` and `tailpointer` both starting at `-1`, and `items_in_queue` starting at `0`. That third variable is the "keep a separate count" fix above — the paper hands it to you rather than making you invent it.
 >
 > | Task | What it asks for | Marks |
 > | ---- | ---------------- | ----- |
 > | 2.1 | declare and initialise the array, both pointers, `items_in_queue` | `[1]` |
 > | 2.2 | `enqueue()` — return `False` if full; else store, update pointer(s) and count, return `True` | `[4]` |
-> | 2.3 | `dequeue()` — return `-1` if empty; else return the next element and update pointer(s) and count | `[3]` |
+> | 2.5 | `dequeue()` — return `-1` if empty; else return the next element and update pointer(s) and count | `[3]` |
 >
 > The marks sit on the **guard**, the **wrap**, and updating **both** the pointer and the count.
+
+The paper states the convention: *"`tailpointer` stores the index of the **last element** in the queue"*. A worked answer to 2.1, 2.2 and 2.5:
+
+```python
+MAX_SIZE = 10
+queue = [-1] * MAX_SIZE
+headpointer = -1
+tailpointer = -1
+items_in_queue = 0
+
+def enqueue(item):
+    global headpointer, tailpointer, items_in_queue
+
+    if items_in_queue == MAX_SIZE:
+        return False
+
+    if items_in_queue == 0:
+        headpointer = 0
+        tailpointer = 0
+    else:
+        tailpointer = (tailpointer + 1) % MAX_SIZE
+
+    queue[tailpointer] = item
+    items_in_queue += 1
+    return True
+
+def dequeue():
+    global headpointer, tailpointer, items_in_queue
+
+    if items_in_queue == 0:
+        return -1
+
+    item = queue[headpointer]
+    queue[headpointer] = -1
+    items_in_queue -= 1
+
+    if items_in_queue == 0:
+        headpointer = -1
+        tailpointer = -1
+    else:
+        headpointer = (headpointer + 1) % MAX_SIZE
+
+    return item
+```
+
+> [!warning]
+> Some textbooks define the tail as the **next free slot** instead. Either convention works, but its initial values, full/empty tests and update order differ. Never mix the two conventions in one implementation.
 
 ## Stack vs Queue
 
@@ -170,7 +217,7 @@ Used whenever arrival order must be preserved:
 | send a job | `enqueue(printq, job)` |
 | print the next job | `dequeue(printq)` |
 | see what's next | `front(printq)` |
-| cancel a job | `printq.remove(job)` |
+| cancel a job | not a core queue operation — rotate/filter using only the supplied operations |
 
 ## Rotating a Queue
 

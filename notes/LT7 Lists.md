@@ -8,7 +8,10 @@
 | Tuple `()` | yes | no | allowed |
 | List `[]` | yes | yes | allowed |
 | Dictionary `{k: v}` | by insertion | yes | keys must be unique |
-| Set `{}` | no | yes | not allowed |
+| Set `set()` | no | yes | not allowed |
+
+> [!warning]
+> `{}` creates an empty **dictionary**. The empty set is `set()`.
 
 ## Creating
 
@@ -67,10 +70,17 @@ lst = [3, 1, 4, 7, 3]
 ### `append` vs `extend`
 
 ```python
-[1, 2].append("hi")    # [1, 2, 'hi']       one item
-[1, 2].extend("hi")    # [1, 2, 'h', 'i']   iterates
-[1, 2].append([3, 4])  # [1, 2, [3, 4]]
-[1, 2].extend([3, 4])  # [1, 2, 3, 4]
+a = [1, 2]
+a.append("hi")         # a is now [1, 2, 'hi']; append returns None
+
+b = [1, 2]
+b.extend("hi")         # b is now [1, 2, 'h', 'i']; extend returns None
+
+c = [1, 2]
+c.append([3, 4])       # c is now [1, 2, [3, 4]]
+
+d = [1, 2]
+d.extend([3, 4])       # d is now [1, 2, 3, 4]
 ```
 
 ### `remove` vs `pop`

@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> Read from and write to external text and CSV files. In assessments, write the **explicit `open()` … `close()`** pair — that's how the mark is worded.
+> Read from and write to external text and CSV files. Both `open()` … `close()` and `with open(...)` are valid; follow any representation required by the question.
 
 ## Opening
 
@@ -9,8 +9,8 @@ data = f.read()
 f.close()
 ```
 
-> [!important] Always write the `close()`
-> Closing is a **separately itemised mark point**, not a formality:
+> [!important] Make sure the file is closed
+> If you use an explicit `open()`, include the matching `close()`. Closing has been a separately itemised mark point in school and legacy practical mark schemes:
 >
 > | Source | Wording |
 > | ------ | ------- |
@@ -19,15 +19,13 @@ f.close()
 > | Cambridge 9618/42 Nov 2023 | *"Opening text file to read and closing the file in an appropriate place"* |
 > | Cambridge 9618/43 Jun 2023 | *"Opening StackData.txt to read and closing file"* |
 >
-> Across seven published Cambridge Paper 4 mark schemes (2022–2024), **`with open(...)` does not appear once** — every Python model answer uses `X = open(...)` … `X.close()`.
->
-> `with` is valid Python and the syllabus reference guide does show it. But the mark is written around an examiner seeing an open **and** a close, so write the explicit pair whenever it is being marked.
+> Those Cambridge 9618 examples are useful practice, but they are not the revised Singapore 9569 paper. The 2027 Reference Guide shows **both** styles. A `with` statement closes the file automatically, including when an exception occurs.
 
 | Mode | Does |
 | ---- | ---- |
 | `"r"` | read — the default; errors if the file is missing |
 | `"w"` | write — creates the file, **overwrites** if it exists |
-| `"a"` | append — adds to the end of an existing file |
+| `"a"` | append — creates the file if needed, otherwise adds to its end |
 
 The `with` form, for reference — no `close()` is needed or expected inside it:
 
@@ -40,12 +38,13 @@ with open("output.txt", "w") as f:
 
 ```python
 try:
-    f = open("textfile.txt", "r")
-    print(f.read())
-    f.close()
-except Exception as e:
-    print(e)
+    with open("textfile.txt", "r") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("The file does not exist.")
 ```
+
+Catch the most specific exception you can handle. `except Exception` hides unrelated programming errors and makes debugging harder.
 
 ## Reading
 

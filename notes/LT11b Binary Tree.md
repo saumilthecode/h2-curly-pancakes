@@ -50,19 +50,19 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  subgraph one["full, not complete"]
-    direction TD
-    fA[A] --> fB[B]
-    fA --> fC[C]
-    fC --> fD[D]
-    fC --> fE[E]
-  end
   subgraph two["complete, not full"]
     direction TD
     cA[A] --> cB[B]
     cA --> cC[C]
     cB --> cD[D]
     cB ~~~ cS:::hid
+  end
+  subgraph one["full, not complete"]
+    direction TD
+    fA[A] --> fB[B]
+    fA --> fC[C]
+    fC --> fD[D]
+    fC --> fE[E]
   end
   classDef hid fill:none,stroke:none,color:transparent
 ```
@@ -213,7 +213,7 @@ t1 = insert_tree(5, t1)      # right
 > 5. Create the node there, set the parent's left/right pointer to it, and set the new node's own pointers to null.
 
 > [!warning] Deleting is out of scope
-> 2.1.3 says *"Exclude: editing and deleting nodes from binary search trees"*, and the lecture leaves `remove` as extra practice — *"this is not fully required inside of syllabus"*.
+> 2.1.3 says *"Exclude: editing and deleting nodes from binary **search** trees"* — the exclusion is worded against BSTs only. The lecture leaves `remove` as extra practice — *"this is not fully required inside of syllabus"*.
 
 ## Traversals
 
@@ -244,22 +244,26 @@ The first three are **DFS** — down one branch fully, then backtrack. `flatten_
 
 ## Writing the Traversals
 
-The three DFS ones are one function with `[entry(tree)]` moved:
+Same base case, same two recursive calls — only the position of `[entry(tree)]` changes:
 
 ```python
-def flatten(tree):
+def flatten_pre(tree):                                              # Q3
+    if is_empty(tree):
+        return []
+    return [entry(tree)] + flatten_pre(left_branch(tree)) + flatten_pre(right_branch(tree))
+
+def flatten(tree):                                                  # Q2 - in-order
     if is_empty(tree):
         return []
     return flatten(left_branch(tree)) + [entry(tree)] + flatten(right_branch(tree))
+
+def flatten_post(tree):                                             # Q4
+    if is_empty(tree):
+        return []
+    return flatten_post(left_branch(tree)) + flatten_post(right_branch(tree)) + [entry(tree)]
 ```
 
-Writing `L` and `R` for the two recursive calls:
-
-| | Return line |
-| --- | ----------- |
-| `flatten_pre` | `[entry(tree)] + L + R` |
-| `flatten` | `L + [entry(tree)] + R` |
-| `flatten_post` | `L + R + [entry(tree)]` |
+The empty tree returns `[]`, so `+` glues the three pieces together all the way back up. Left is always recursed before right.
 
 BFS can't recurse like that — it needs a [[LT10c Queue|queue]] to hold the nodes waiting at the next level. Part 3 gives you `queue_adt`:
 
@@ -321,7 +325,7 @@ def flatten_bfs(tree):
 
 Searching, inserting: one comparison per level, so the cost is the **height**, not the size.
 
-For a complete tree of height `h`, every level full:
+For a **complete** tree of height `h`, every level full:
 
 ```text
 n = 1 + 2 + 4 + ... + 2^h = 2^(h+1) - 1      [sum of a GP]
@@ -340,14 +344,18 @@ The same six values, inserted in different orders:
 
 ```mermaid
 flowchart TD
-  subgraph b1["inserted 7,3,9,1,5,11 - height 2"]
+  subgraph b3["inserted 1,3,5,7,9,11 - height 5"]
     direction TD
-    x7[7] --> x3[3]
-    x7 --> x9[9]
-    x3 --> x1[1]
-    x3 --> x5[5]
-    x9 ~~~ p1:::hid
-    x9 --> x11[11]
+    z1[1] ~~~ s1:::hid
+    z1 --> z3[3]
+    z3 ~~~ s2:::hid
+    z3 --> z5[5]
+    z5 ~~~ s3:::hid
+    z5 --> z7[7]
+    z7 ~~~ s4:::hid
+    z7 --> z9[9]
+    z9 ~~~ s5:::hid
+    z9 --> z11[11]
   end
   subgraph b2["inserted 5,3,9,1,7,11 - height 2"]
     direction TD
@@ -358,18 +366,19 @@ flowchart TD
     y9 --> y7[7]
     y9 --> y11[11]
   end
+  subgraph b1["inserted 7,3,9,1,5,11 - height 2"]
+    direction TD
+    x7[7] --> x3[3]
+    x7 --> x9[9]
+    x3 --> x1[1]
+    x3 --> x5[5]
+    x9 ~~~ p1:::hid
+    x9 --> x11[11]
+  end
   classDef hid fill:none,stroke:none,color:transparent
 ```
 
-```text
-inserted 1,3,5,7,9,11 - already sorted
-
-1 -> 3 -> 5 -> 7 -> 9 -> 11      every node is a right child
-
-height 5 - a chain
-```
-
-Sorted input is the worst case — the tree degenerates into a linked list.
+Sorted input is the worst case: every node becomes a right child, so the tree degenerates into a linked-list-shaped chain and search falls back to `O(n)`.
 
 > [!important] 2023 Q4(c) — "State how two BSTs can store the same data but have a different shape" `[1]`
 > The shape depends on the **order the values are inserted**.
@@ -390,7 +399,7 @@ Sorted input is the worst case — the tree degenerates into a linked list.
 Other uses named in the lecture: storing the keys of a hash table so that a [[LT10d Hashing|separate chain]] can be searched in `O(log n)` instead of `O(n)`, and divide-and-conquer generally.
 
 > [!important] Specimen Paper 1 Q2(a) — "advantage of a BST over a **linked list**" `[2]`
-> A linked list can only be searched from the head, one node at a time — `O(n)`. In a BST each comparison eliminates a whole subtree, roughly halving what is left, so a value is found in `O(log n)` comparisons.
+> A linked list can only be searched from the head, one node at a time — `O(n)`. In a reasonably balanced BST, each comparison discards one subtree, so a value is found in `O(log n)` comparisons. An unbalanced BST can still take `O(n)`.
 
 ## The Array Form Used in Paper 1
 

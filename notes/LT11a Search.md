@@ -209,7 +209,11 @@ Three things change from the plain version:
 | Worst case on 1000 items | 1000 checks | 10 checks |
 | Good for | small or unsorted data | large sorted data |
 
-Compare with [[LT10d Hashing|Hashing]], which reaches an item in `O(1)` — but only if you have the key, and it cannot answer range questions. A [[LT11b Binary Tree|binary search tree]] gets the same `O(log n)` without needing the data sorted into an array first.
+Compare with [[LT10d Hashing|Hashing]], which has **expected** `O(1)` lookup when
+you have the key, but can degrade to `O(n)` with severe collisions and cannot answer
+range questions. A balanced [[LT11b Binary Tree|binary search tree]] gives `O(log n)`
+search without needing the data stored as a sorted array; an unbalanced BST can also
+degrade to `O(n)`.
 
 ## Common Mistakes
 

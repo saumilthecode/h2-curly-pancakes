@@ -243,7 +243,7 @@ A single standard giving a unique code to characters from many languages and sym
 | Korean | 사랑 | `U+C0AC U+B791` |
 | Russian | люблю | `U+043B U+044E U+0431 U+043B U+044E` |
 
-One Chinese character needs 16 bits (`7231` hex); the two-character Korean word needs 16 bits each.
+These are **code points**, not fixed storage sizes. `U+7231` fits in four hexadecimal digits, but its encoded size depends on the encoding; for example, UTF-8 stores `U+7231` in three bytes.
 
 ```python
 print("사랑")    # 사랑

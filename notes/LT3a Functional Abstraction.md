@@ -71,18 +71,41 @@ square(square(2))    # TypeError - inner call gave back None
 3. One function's local scope cannot see another function's locals.
 4. The same name can be reused in different scopes without clashing.
 
+Reading a global name is allowed. Assigning to it creates a new local variable unless
+the name is declared with `global`:
+
+```python
+rate = 0.09
+
+def tax(amount):
+    return amount * rate       # reads the global rate
+
+count = 0
+
+def increment():
+    global count               # assignment now changes the global count
+    count += 1
+```
+
+Prefer parameters and returned values where possible. They make the inputs and
+outputs explicit, while a function that changes global state is harder to reuse and
+test.
+
 **Advantages of local over global variables:**
 
 - Avoids name clashes — the same name can be reused safely elsewhere.
 - Changes inside the function cannot break unrelated code.
 - Makes the function self-contained, so it is easier to reuse and test.
-- Memory is freed when the function ends.
+- Local names go out of scope when the function ends. An object itself remains if
+  another reference to it still exists.
 
 ## Common Mistakes
 
 - Using `print` where `return` is needed.
 - Forgetting `return`, so the function silently gives `None`.
 - Trying to read a local variable from outside its function.
+- Assigning to a global name inside a function without understanding that Python
+  treats it as local unless `global` is used.
 
 ## Related
 

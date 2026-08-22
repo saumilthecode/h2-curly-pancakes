@@ -42,9 +42,12 @@ Also taught in lecture:
 | Presence | `string != ""` |
 | Range | `0 < age < 99` |
 | Length | `len(string) == 8` |
-| Type | `string.isnumeric()`, `string.isalpha()` |
+| Type | convert inside `try` / `except`, e.g. `int(string)` |
 | Format | `email.endswith("@students.edu.sg")` |
 | Existence | `username in registered_users` |
+
+> [!note]
+> `string.isdigit()` and `string.isalpha()` check the **characters inside a string**. A true type check asks whether a value has, or can be converted to, the required type. Since `input()` always returns `str`, conversion with exception handling is the usual practical test.
 
 ## Check Digits
 
