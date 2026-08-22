@@ -81,17 +81,20 @@ def fib(n):
 > [!warning] Why `fib` is slow
 > Each call spawns two more, so the tree grows exponentially and the same values are recomputed many times. `fib(5)` alone calls `fib(2)` three times.
 >
-> ```text
-> fib(5)
-> +-- fib(4)
-> |   +-- fib(3)
-> |   |   +-- fib(2)   < recomputed
-> |   |   +-- fib(1)
-> |   +-- fib(2)       < recomputed
-> +-- fib(3)
->     +-- fib(2)       < recomputed
->     +-- fib(1)
+> ```mermaid
+> flowchart TD
+>   f5["fib(5)"] --> f4["fib(4)"]
+>   f5 --> f3b["fib(3)"]
+>   f4 --> f3a["fib(3)"]
+>   f4 --> f2c["fib(2)"]:::dup
+>   f3a --> f2a["fib(2)"]:::dup
+>   f3a --> f1a["fib(1)"]
+>   f3b --> f2b["fib(2)"]:::dup
+>   f3b --> f1b["fib(1)"]
+>   classDef dup stroke-width:2px,stroke-dasharray:4 3
 > ```
+>
+> The dashed nodes are the same call recomputed — `fib(2)` three times.
 >
 > The iterative version is `O(n)`.
 

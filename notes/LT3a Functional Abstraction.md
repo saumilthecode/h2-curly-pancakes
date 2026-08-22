@@ -71,25 +71,18 @@ square(square(2))    # TypeError - inner call gave back None
 3. One function's local scope cannot see another function's locals.
 4. The same name can be reused in different scopes without clashing.
 
-Reading a global name is allowed. Assigning to it creates a new local variable unless
-the name is declared with `global`:
+Reading a global is allowed (rule 2). **Assigning** to one makes a new local instead, unless you declare `global`:
 
 ```python
-rate = 0.09
-
-def tax(amount):
-    return amount * rate       # reads the global rate
-
 count = 0
 
 def increment():
-    global count               # assignment now changes the global count
+    global count               # without this line, count += 1 fails
     count += 1
 ```
 
-Prefer parameters and returned values where possible. They make the inputs and
-outputs explicit, while a function that changes global state is harder to reuse and
-test.
+> [!tip] You need this for the practical paper
+> The 2027 specimen Paper 2 queue task has `enqueue()` and `dequeue()` update `headpointer`, `tailpointer` and `items_in_queue` — all module-level. Each needs a `global` line. See [[LT10c Queue]].
 
 **Advantages of local over global variables:**
 

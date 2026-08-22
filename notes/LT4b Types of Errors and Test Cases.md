@@ -62,18 +62,28 @@ Also: a missing `return` (function silently gives `None`), off-by-one loop bound
 
 ## Exception Handling
 
-Catch errors instead of letting the program crash.
+Syllabus **1.5.6** — *"use appropriate error and exception handling techniques"*.
+
+> [!warning] Not in the Reference Guide — memorise it
+> The Reference Guide they hand you in Paper 2 has no `try` / `except` section. `with open(...)` **is** printed there; this is not. Two shapes cover almost everything:
 
 ```python
-try:
+try:                                    # bad input
     total = int(input("Total: "))
 except ValueError:
     print("Enter a whole number")
+
+try:                                    # missing file
+    with open("data.txt") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("The file does not exist.")
 ```
 
-Catch the **specific exception** you expect. A broad `except Exception` can hide
-unrelated programming mistakes and make debugging harder. For file-handling
-examples using `FileNotFoundError`, see [[BTB2 File Handling]].
+Catch the **specific** exception. A bare `except Exception` swallows your own bugs too.
+
+> [!tip] You often don't need it
+> Validating input is taught with `isnumeric()` in a `while` loop ([[LT4a Data validation and verification|LT4a]]), and full/empty guards are plain `if`s. Reach for `try` when a **conversion** or a **file** can fail — not for every check.
 
 ## Test Case Categories
 

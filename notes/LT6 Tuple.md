@@ -72,25 +72,27 @@ high, low = score((1, 2, 3, 4, 5))
 
 The values are **not** stored inside the tuple. The tuple stores references to them.
 
-```text
+```python
 x = (1, 2)
 y = (3, 4)
 z = (x, y)
-
-        z
-    +---+---+
-    |       |
-    v       v
-    x       y
-  +-+-+   +-+-+
-  |   |   |   |
-  v   v   v   v
-  1   2   3   4
-
-z        -> ((1, 2), (3, 4))
-z[0]     -> (1, 2)
-z[1][1]  -> 4
 ```
+
+```mermaid
+flowchart TD
+  z(("z")) --> x(("x"))
+  z --> y(("y"))
+  x --> n1["1"]
+  x --> n2["2"]
+  y --> n3["3"]
+  y --> n4["4"]
+```
+
+| Expression | Result |
+| ---------- | ------ |
+| `z` | `((1, 2), (3, 4))` |
+| `z[0]` | `(1, 2)` |
+| `z[1][1]` | `4` |
 
 `z` holds references to the two tuple objects — not to the *names* `x` and `y`.
 
