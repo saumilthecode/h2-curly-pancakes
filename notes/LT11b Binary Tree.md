@@ -149,6 +149,7 @@ four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 > [5, [4, [3, [], []], []], [15, [8, [], []], [24, [], [27, [], []]]]]
 > ```
 
+
 > [!note]
 > `print_tree()` needs `from LT11b_module import *`. That module exports its own `make_tree`, `entry`, `left_branch`, `right_branch`, `make_empty_tree` and `is_empty` too, so `import *` **overwrites** yours. Put the import above your definitions if you want yours to win.
 
@@ -241,6 +242,83 @@ flowchart TD
 > **Pre** visits the entry *before* its subtrees, **in** *between* them, **post** *after* both. Left always precedes right.
 
 The first three are **DFS** — down one branch fully, then backtrack. `flatten_bfs` is **BFS** — every node at depth `d` before any at depth `d + 1`.
+
+## Doing It By Hand
+
+The video separates two things: you **visit** a node (move onto it) and you **select** it (write it down). Visiting is not selecting — *"we don't select it first because there's a left sub tree"*.
+
+| Traversal | Select the node when |
+| --------- | -------------------- |
+| pre | you arrive — before going anywhere else |
+| in | its **left** subtree is finished |
+| post | **both** subtrees are finished |
+
+Left is always done before right. The walk is the same every time; only the moment you write the node down changes.
+
+**Steps** — start at the root:
+
+1. At a node, check whether the subtrees that must come first are done.
+2. If not, go into the **left** one and repeat from step 1.
+3. When left is done, select the node if the rule says so, then go into the **right** one.
+4. When both are done, come back up to the parent and carry on there.
+5. Stop when you come back up past the root.
+
+Where each node lands on `t3` — same tree, three different numberings:
+
+```mermaid
+flowchart TD
+  subgraph sPost["post-order"]
+    direction TD
+    o5["5 (5)"] --> o2["2 (2)"]
+    o5 --> o7["7 (4)"]
+    o2 --> o1["1 (1)"]
+    o2 ~~~ oz1:::hid
+    o7 ~~~ oz2:::hid
+    o7 --> o10["10 (3)"]
+  end
+  subgraph sIn["in-order"]
+    direction TD
+    i5["5 (3)"] --> i2["2 (2)"]
+    i5 --> i7["7 (4)"]
+    i2 --> i1["1 (1)"]
+    i2 ~~~ iz1:::hid
+    i7 ~~~ iz2:::hid
+    i7 --> i10["10 (5)"]
+  end
+  subgraph sPre["pre-order"]
+    direction TD
+    p5["5 (1)"] --> p2["2 (2)"]
+    p5 --> p7["7 (4)"]
+    p2 --> p1["1 (3)"]
+    p2 ~~~ pz1:::hid
+    p7 ~~~ pz2:::hid
+    p7 --> p10["10 (5)"]
+  end
+  classDef hid fill:none,stroke:none,color:transparent
+```
+
+> [!tip] Check yourself
+> In-order on a BST must come out **ascending**. If it doesn't, you traversed it wrong — or it isn't a BST.
+
+### BFS by Hand
+
+No recursion — *"we just need to go by level"*. Read left to right along each level before dropping down.
+
+Run the queue and it falls out. Dequeue a node, write it down, enqueue its children:
+
+| Dequeue | Write down | Enqueue | Queue after |
+| ------- | ---------- | ------- | ----------- |
+| — | — | `5` | `[5]` |
+| `5` | `5` | `2`, `7` | `[2, 7]` |
+| `2` | `2` | `1` | `[7, 1]` |
+| `7` | `7` | `10` | `[1, 10]` |
+| `1` | `1` | — | `[10]` |
+| `10` | `10` | — | `[]` |
+
+Queue empty → done: `[5, 2, 7, 1, 10]`.
+
+> [!warning]
+> Enqueue **left before right**, or the level comes out backwards.
 
 ## Writing the Traversals
 
