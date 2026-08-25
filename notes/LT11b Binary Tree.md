@@ -218,96 +218,41 @@ t1 = insert_tree(5, t1)      # right
 
 ## Traversals
 
-Visiting every node exactly once. Part 3 calls them **`flatten`** — a traversal flattens a tree into a list.
+One tree, four ways to read it. Each node shows where it lands in each order:
 
 ```mermaid
 flowchart TD
-  t5[5] --> t2[2]
-  t5 --> t7[7]
-  t2 --> t1[1]
-  t2 ~~~ q1:::hid
-  t7 ~~~ q2:::hid
-  t7 --> t10[10]
+  n5["<b>5</b><br>pre 1 · in 3<br>post 5 · bfs 1"] --> n2["<b>2</b><br>pre 2 · in 2<br>post 2 · bfs 2"]
+  n5 --> n7["<b>7</b><br>pre 4 · in 4<br>post 4 · bfs 3"]
+  n2 --> n1["<b>1</b><br>pre 3 · in 1<br>post 1 · bfs 4"]
+  n2 ~~~ z1:::hid
+  n7 ~~~ z2:::hid
+  n7 --> n10["<b>10</b><br>pre 5 · in 5<br>post 3 · bfs 5"]
   classDef hid fill:none,stroke:none,color:transparent
 ```
 
-| Function | Order | Output on `t3` |
-| -------- | ----- | -------------- |
-| `flatten_pre` | **entry**, left, right | `[5, 2, 1, 7, 10]` |
-| `flatten` (in-order) | left, **entry**, right | `[1, 2, 5, 7, 10]` |
-| `flatten_post` | left, right, **entry** | `[1, 2, 10, 7, 5]` |
-| `flatten_bfs` | level by level, left to right | `[5, 2, 7, 1, 10]` |
+| | `flatten_pre` | `flatten` | `flatten_post` | `flatten_bfs` |
+| --- | --- | --- | --- | --- |
+| Order | **entry**, L, R | L, **entry**, R | L, R, **entry** | level by level |
+| Output | `5 2 1 7 10` | `1 2 5 7 10` | `1 2 10 7 5` | `5 2 7 1 10` |
+| Type | DFS | DFS | DFS | BFS |
 
-> [!tip] The name says where the entry goes
-> **Pre** visits the entry *before* its subtrees, **in** *between* them, **post** *after* both. Left always precedes right.
+**Pre** = entry before its subtrees, **in** = between, **post** = after. Left always before right.
 
-The first three are **DFS** — down one branch fully, then backtrack. `flatten_bfs` is **BFS** — every node at depth `d` before any at depth `d + 1`.
+### By Hand
 
-## Doing It By Hand
+You **visit** a node (move onto it) and **select** it (write it down) — *"we don't select it first because there's a left sub tree"*.
 
-The video separates two things: you **visit** a node (move onto it) and you **select** it (write it down). Visiting is not selecting — *"we don't select it first because there's a left sub tree"*.
+| Select when | |
+| ----------- | - |
+| pre | you arrive |
+| in | left subtree done |
+| post | both subtrees done |
 
-| Traversal | Select the node when |
-| --------- | -------------------- |
-| pre | you arrive — before going anywhere else |
-| in | its **left** subtree is finished |
-| post | **both** subtrees are finished |
+BFS ignores all that — *"just go by level"*. Dequeue, write it down, enqueue its children:
 
-Left is always done before right. The walk is the same every time; only the moment you write the node down changes.
-
-**Steps** — start at the root:
-
-1. At a node, check whether the subtrees that must come first are done.
-2. If not, go into the **left** one and repeat from step 1.
-3. When left is done, select the node if the rule says so, then go into the **right** one.
-4. When both are done, come back up to the parent and carry on there.
-5. Stop when you come back up past the root.
-
-Where each node lands on `t3` — same tree, three different numberings:
-
-```mermaid
-flowchart TD
-  subgraph sPost["post-order"]
-    direction TD
-    o5["5 (5)"] --> o2["2 (2)"]
-    o5 --> o7["7 (4)"]
-    o2 --> o1["1 (1)"]
-    o2 ~~~ oz1:::hid
-    o7 ~~~ oz2:::hid
-    o7 --> o10["10 (3)"]
-  end
-  subgraph sIn["in-order"]
-    direction TD
-    i5["5 (3)"] --> i2["2 (2)"]
-    i5 --> i7["7 (4)"]
-    i2 --> i1["1 (1)"]
-    i2 ~~~ iz1:::hid
-    i7 ~~~ iz2:::hid
-    i7 --> i10["10 (5)"]
-  end
-  subgraph sPre["pre-order"]
-    direction TD
-    p5["5 (1)"] --> p2["2 (2)"]
-    p5 --> p7["7 (4)"]
-    p2 --> p1["1 (3)"]
-    p2 ~~~ pz1:::hid
-    p7 ~~~ pz2:::hid
-    p7 --> p10["10 (5)"]
-  end
-  classDef hid fill:none,stroke:none,color:transparent
-```
-
-> [!tip] Check yourself
-> In-order on a BST must come out **ascending**. If it doesn't, you traversed it wrong — or it isn't a BST.
-
-### BFS by Hand
-
-No recursion — *"we just need to go by level"*. Read left to right along each level before dropping down.
-
-Run the queue and it falls out. Dequeue a node, write it down, enqueue its children:
-
-| Dequeue | Write down | Enqueue | Queue after |
-| ------- | ---------- | ------- | ----------- |
+| Dequeue | Write | Enqueue | Queue after |
+| ------- | ----- | ------- | ----------- |
 | — | — | `5` | `[5]` |
 | `5` | `5` | `2`, `7` | `[2, 7]` |
 | `2` | `2` | `1` | `[7, 1]` |
@@ -315,10 +260,35 @@ Run the queue and it falls out. Dequeue a node, write it down, enqueue its child
 | `1` | `1` | — | `[10]` |
 | `10` | `10` | — | `[]` |
 
-Queue empty → done: `[5, 2, 7, 1, 10]`.
-
 > [!warning]
-> Enqueue **left before right**, or the level comes out backwards.
+> Enqueue **left before right**, or the level comes out backwards. In-order on a BST must come out **ascending** — if it doesn't, you traversed it wrong.
+
+> [!example]- The video's worked tree
+> ```mermaid
+> flowchart TD
+>   v75[75] --> v17[17]
+>   v75 --> v80[80]
+>   v17 --> v3[3]
+>   v17 --> v62[62]
+>   v3 ~~~ y1:::hid
+>   v3 --> v8[8]
+>   v62 --> v26[26]
+>   v62 --> v73[73]
+>   v80 ~~~ y2:::hid
+>   v80 --> v97[97]
+>   v97 --> v96[96]
+>   v97 ~~~ y3:::hid
+>   v96 --> v89[89]
+>   v96 ~~~ y4:::hid
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> | | |
+> | --- | --- |
+> | pre | `75 17 3 8 62 26 73 80 97 96 89` |
+> | in | `3 8 17 26 62 73 75 80 89 96 97` |
+> | post | `8 3 26 73 62 17 89 96 97 80 75` |
+> | bfs | `75 17 80 3 62 97 8 26 73 96 89` |
 
 ## Writing the Traversals
 
