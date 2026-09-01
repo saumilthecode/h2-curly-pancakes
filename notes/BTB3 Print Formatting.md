@@ -89,7 +89,7 @@ Index   Item         Price
 >
 > The value overflows its column rather than being cut off if it is too wide.
 
-Same idea for values read from a file — just convert them first:
+Convert values read from a file before formatting them:
 
 ```python
 height = float(student[2])

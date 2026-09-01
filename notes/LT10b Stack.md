@@ -86,6 +86,7 @@ while s != []:
 
 - Opening bracket → **push** it.
 - Closing bracket → **pop** and check it matches.
+- Closing bracket on an **empty** stack → unbalanced, stop there.
 - Valid only if the stack is **empty at the end**.
 
 ```python
@@ -97,7 +98,7 @@ pairs = {")": "(", "]": "[", "}": "{"}
 ( ( { } [ ) ] )       not balanced
 ```
 
-Counting brackets is not enough — order matters, which is why you need a stack.
+A count of `(` and `)` passes `)(`. The stack catches the order.
 
 ## Application: Postfix Notation
 
@@ -107,7 +108,7 @@ Counting brackets is not enough — order matters, which is why you need a stack
 | Prefix | before operands | `+ A B` |
 | Postfix | after operands | `A B +` |
 
-Evaluate postfix left to right: push operands, and on an operator pop two, combine, push the result.
+Evaluate postfix left to right: push operands, and on an operator pop two, combine, push the result. The expression may be handed to you as a tuple — `(7, 6, 2, '/', '+')` is `7 + 6 / 2 = 10`.
 
 ```text
 3 4 * 5 +          (infix: 3 * 4 + 5)
@@ -124,7 +125,7 @@ answer = 17
 > [!warning]
 > For `-` and `/` the order matters. `A B -` means `A - B` — the **first** value popped is the right-hand operand.
 
-Postfix needs **no brackets and no precedence rules** — the order of the symbols already fixes the order of evaluation. `3 4 5 + *` and `3 4 * 5 +` differ without needing `( )`.
+Symbol order already fixes the order of evaluation, so postfix needs **no brackets and no precedence rules**. `3 4 5 + *` and `3 4 * 5 +` differ without any `( )`.
 
 ## Common Mistakes
 

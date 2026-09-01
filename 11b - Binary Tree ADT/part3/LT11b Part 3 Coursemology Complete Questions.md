@@ -29,7 +29,7 @@ The lesson for this part is structured as follows:
 
 You will complete the above for the In-, Pre- and Post-Order Traversal on a Binary Search Tree (BST).
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/50011e80-97c0-4dfd-aabf-90648e4fe52e)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-020.png)
 
 We will be using the powerpoint slides to visualise the result. We will deal with 3 examples to check our understanding of all three types of traversals.
 
@@ -47,7 +47,7 @@ In this unplugged activity, you will familiarize yourself with the 4 traversals.
 
 Use the applet at [https://kjingkai.github.io/H2CP_DFS_BFS_traversal_applet/](https://kjingkai.github.io/H2CP_DFS_BFS_traversal_applet/) to perform the traversals
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/d131cff1-a015-4be2-ae04-844da8c80218)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-021.png)
 
 1. Generate a standard tree on the left using `Bulk Build `
 2. Enter the following comma-separated values `31, 18, 11, 30, 14, 28, 86, 39, 34, 76, 71, 82`

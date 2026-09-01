@@ -2,8 +2,6 @@
 > Compare **adjacent** pairs, swap any out of order, repeat. `O(n²)`, or `O(n)` best case if **optimised**.
 > Syllabus 2.2.1. Scope, Big-O and the cross-sort comparison are in [[LT12 Sorting Algorithms]].
 
-The name is because data *"bubbles up to the top of the dataset"*.
-
 ## One Pass
 
 `[24, 5, 36, 18, 12]`:
@@ -74,16 +72,23 @@ Q11 on the notebook's own lists, `n = 6`:
 | List | Simple | Improved | Optimised |
 | ---- | ------ | -------- | --------- |
 | `[5,4,3,2,1,0]` reversed | 30 | 15 | 15 |
-| `[5,4,0,1,2,3]` nearly sorted | 30 | 15 | **12** |
+| `[5,4,0,1,2,3]` | 30 | 15 | **12** |
+| `[3,0,2,4,1,5]` | 30 | 15 | **14** |
 | `[0,1,2,3,4,5]` sorted | 30 | 15 | **5** |
 
-Simple is always `n(n-1)`, improved always `n(n-1)/2` — the sum of an AP, `(n-1) + (n-2) + ... + 1`. Only **optimised** responds to the data, and that `swapped` flag is the whole difference between `O(n²)` and an `O(n)` best case.
+Simple always makes `n(n-1)` comparisons; improved makes `n(n-1)/2` — the sum `(n-1) + (n-2) + ... + 1`. Only **optimised** responds to the data, and its `swapped` flag is what gives the `O(n)` best case.
 
 | Best | `O(n)` **optimised only** |
 | --- | --- |
 | Average / worst | `O(n²)`, worst is a reversed list |
 | In-place | yes |
 | Stable | yes |
+
+## Exam
+
+> [!important] Describe bubble sort
+> Required keywords: **pass**, **compare**, **repeat**, **adjacent**, **swap** — and describe the first three passes.
+> **Compare** each **adjacent** pair along the list, **swapping** them if they are out of order. That is one **pass**, and it leaves the largest value at the end. **Repeat** on the remaining unsorted part, one fewer element each time, until a pass makes no swaps.
 
 ## Common Mistakes
 

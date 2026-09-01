@@ -138,7 +138,7 @@ Note : An empty string '' is used to denote a empty cell in the hash table.
 
 ### Diagrams
 
-![Diagram 1](https://yijc.coursemology.org/attachments/7ec6f755-f709-4fac-bd02-85c31d5f9bdd)
+![Diagram 1](Coursemology%20question%20assets/diagram-004.png)
 
 ### Template attachment
 

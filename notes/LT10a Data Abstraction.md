@@ -139,6 +139,9 @@ def make_rat(n, d):
 > def get_x(point):
 >     return point[0]
 >
+> def get_y(point):
+>     return point[1]
+>
 > def distance(p1, p2):
 >     rise = get_y(p2) - get_y(p1)
 >     run = get_x(p2) - get_x(p1)

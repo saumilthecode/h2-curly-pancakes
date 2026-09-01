@@ -770,7 +770,7 @@ is_empty(q) returns True if queue is empty and False otherwise
 
 ### Diagrams
 
-![Diagram 1](https://yijc.coursemology.org/attachments/d1da434e-2982-41ba-b439-fee85d054e6a)
+![Diagram 1](Coursemology%20question%20assets/diagram-001.gif)
 
 ### Template attachment
 

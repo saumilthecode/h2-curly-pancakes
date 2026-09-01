@@ -50,7 +50,7 @@ Please download the lecture slides and watch the lecture videos before attemptin
 - **TED-Ed video:** [What's the fastest way to alphabetize your bookshelf?](https://youtu.be/WaNLJf8xzC4) (4:38)
 - [Quick Sort with Hungarian folk dance](https://www.youtube.com/watch?v=ywWBy6J5gz8) (Optional - Play at 1.5x speed)
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/e5c04148-e43b-42e8-a88d-76389cf60dca)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-024.png)
 
 We will be using videos and cards to learn the sorting algorithm with examples. We will try to explain and elaborate on how the algorithm works.
 

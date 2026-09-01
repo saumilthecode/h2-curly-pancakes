@@ -197,7 +197,7 @@ denary_to_base(246, 2)          # '11110110'
 denary_to_base(51966, 16)       # 'CAFE'
 ```
 
-Prepending inside the loop is what reverses the remainders for you.
+Prepending reverses the remainders.
 
 ## ASCII
 

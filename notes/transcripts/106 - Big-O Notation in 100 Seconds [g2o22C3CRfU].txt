@@ -1,0 +1,62 @@
+Title: Big-O Notation in 100 Seconds
+Assessment(s): LT 11a Linear and Binary Search
+Linked label(s): Big-O Notation in 100 Seconds
+Uploader: Fireship
+YouTube: https://www.youtube.com/watch?v=g2o22C3CRfU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] Big O notation, a way to describe how
+[00:02 - 00:06] well an algorithm performs as its input
+[00:04 - 00:08] size grows. As we add more inputs or
+[00:06 - 00:09] data points to an algorithm, there are
+[00:08 - 00:11] two things that might grow in
+[00:09 - 00:12] complexity. It may take longer to run
+[00:11 - 00:14] the algorithm, which we call time
+[00:12 - 00:16] complexity, or it may require more
+[00:14 - 00:18] memory, which we call space complexity.
+[00:16 - 00:21] The variable n represents the number of
+[00:18 - 00:23] inputs. Now, imagine n being scaled up
+[00:21 - 00:24] to infinity. The faster the result grows
+[00:23 - 00:26] after each step, the worse your
+[00:24 - 00:28] algorithm performs. In technical
+[00:26 - 00:30] interviews, you'll often be asked to
+[00:28 - 00:31] estimate the time or space complexity of
+[00:30 - 00:33] the code you've implemented. Take for
+[00:31 - 00:35] example a loop over an array of
+[00:33 - 00:38] elements. It takes exactly one unit of
+[00:35 - 00:40] time to loop over each element. This is
+[00:38 - 00:41] known as linear complexity because we
+[00:40 - 00:43] have a perfect one-to-one relationship
+[00:41 - 00:44] between the number of inputs and the
+[00:43 - 00:46] amount of time it takes to execute the
+[00:44 - 00:48] algorithm. But we can often do better
+[00:46 - 00:50] than one unit of time. If we have a
+[00:48 - 00:52] sorted array, we can implement a binary
+[00:50 - 00:54] search where we start in the middle and
+[00:52 - 00:55] then jump back and forth until we find
+[00:54 - 00:57] the actual value we're looking for. This
+[00:55 - 00:59] is known as logarithmic complexity, and
+[00:57 - 01:01] it scales much better to a large number
+[00:59 - 01:03] of inputs. At the most efficient end of
+[01:01 - 01:05] the spectrum, we have constant time. An
+[01:03 - 01:07] example is looking up an element in an
+[01:05 - 01:08] array by its index. No matter how big
+[01:07 - 01:10] that array is, it should always take the
+[01:08 - 01:12] same amount of time. But things can also
+[01:10 - 01:14] get less efficient. Imagine a loop
+[01:12 - 01:16] within a loop. This is quadratic
+[01:14 - 01:18] complexity where the number of inputs is
+[01:16 - 01:19] raised to the power of two. And things
+[01:18 - 01:21] can still get worse with exponential
+[01:19 - 01:23] complexity. Imagine looping over every
+[01:21 - 01:25] possible combination in an array.
+[01:23 - 01:26] Some algorithms may have multiple
+[01:25 - 01:28] different growth rates of complexity.
+[01:26 - 01:31] Always simplify your notation down to
+[01:28 - 01:33] the fastest growing worst-case scenario.
+[01:31 - 01:35] This has been Big O notation in 100
+[01:33 - 01:38] seconds. Thanks for watching, and I will
+[01:35 - 01:38] see you in the next one.

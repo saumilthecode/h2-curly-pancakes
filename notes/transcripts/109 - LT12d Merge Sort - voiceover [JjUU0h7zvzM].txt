@@ -1,0 +1,60 @@
+Title: LT12d Merge Sort - voiceover
+Assessment(s): LT 12d Merge Sort
+Linked label(s): LT12 Merge Sort
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=JjUU0h7zvzM
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Hi, welcome back. Today we will be
+[00:01 - 00:05] dealing with merge sort.
+[00:10 - 00:13] The merge sort algorithm will first
+[00:11 - 00:16] divide the list into half over and over
+[00:13 - 00:16] again until
+[00:17 - 00:21] each list contains only one element.
+[00:20 - 00:24] Then it will merge the two lists
+[00:21 - 00:26] together into
+[00:24 - 00:28] a sorted list and do this repeatedly
+[00:26 - 00:31] until all the elements are combined
+[00:28 - 00:33] together into
+[00:31 - 00:37] one single sorted list. So, the basic
+[00:33 - 00:37] skills required is to know how
+[00:42 - 00:47] to split a list recursively and then
+[00:44 - 00:47] merge the two lists together.
+[00:51 - 00:56] Step one, we start by dividing the array
+[00:53 - 00:59] into two and again and again until every
+[00:56 - 01:01] array contains
+[00:59 - 01:03] only one element. In this example, we
+[01:01 - 01:06] have an array containing
+[01:03 - 01:09] 5 2 1 8 9. When we divide them into two
+[01:06 - 01:12] lists, 5 and 2 will be one list, 1 8 and
+[01:09 - 01:12] 9
+[01:13 - 01:18] will be another list. Then we further to
+[01:15 - 01:21] subdivide 5 and 2 into
+[01:18 - 01:23] two lists again. And likewise, 1 8 and 9
+[01:21 - 01:26] divide into two lists and we subdivide
+[01:23 - 01:26] again.
+[01:26 - 01:31] So, at this stage, all the lists contain
+[01:28 - 01:33] only one element. Then we start merging.
+[01:31 - 01:35] Comparing
+[01:33 - 01:39] the 2 and the 5, we merge it back to
+[01:35 - 01:41] become 2 5. Comparing the 8 and 9, we
+[01:39 - 01:43] merge it back
+[01:41 - 01:46] to become 8 and 9.
+[01:43 - 01:49] Next, we try to merge the 1 and the list
+[01:46 - 01:52] containing 8 and 9 forming
+[01:49 - 01:54] back the 1 8 9. Then we try to combine
+[01:52 - 01:57] the two lists, the 2 5 and 1 8 9
+[01:54 - 01:57] together
+[01:57 - 02:03] and form back a sorted list.
+[02:00 - 02:03] So, that's the idea of the merge sort.
+[02:07 - 02:10] In the case of merge sort, regardless of
+[02:09 - 02:13] whether the original array is sorted or
+[02:10 - 02:13] not,
+[02:15 - 02:18] we will have to go through the same
+[02:16 - 02:21] process of splitting and merging it
+[02:18 - 02:22] back. So, all of
+[02:21 - 02:26] them will have the same order of growth,
+[02:22 - 02:26] namely n log n.

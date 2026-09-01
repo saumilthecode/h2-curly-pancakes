@@ -24,7 +24,7 @@ The word *hash* is used for two related but different jobs:
 > [!warning] The lecture's three characteristics answer a different question
 > LT10d Part 1 gives *"Secure: non-reversible / Fixed size / Unique\*"*. Those describe a **cryptographic** hash (SHA-256), not the table function above. Use them if a question says *secure hash algorithm*; use the table above when it says *hash table*.
 >
-> Don't claim the simple weighted-sum function is secure or non-reversible — it is built for placement, not security. And `Unique` is marked with an asterisk in the lecture for a reason: **collisions do occur**.
+> Don't claim the simple weighted-sum function is secure or non-reversible; it exists to place items in a table. `Unique` carries an asterisk in the lecture because **collisions do occur**.
 
 ## Why Use a Hash Table
 
@@ -92,7 +92,36 @@ def transmit(data):
 transmitted: 123455
 ```
 
-Real uses: NRIC, vehicle plate numbers, ISBN, credit card (Luhn).
+Real uses: NRIC, vehicle plate numbers, ISBN, credit card (Luhn). Every one is the same shape — **weight each digit, sum, take a modulus** — only the weights, the modulus and the final mapping change.
+
+> [!example]- The two tutorial schemes
+> **NRIC** `S1234567D` — weights `2, 7, 6, 5, 4, 3, 2` on the seven digits, `+ 4` if the prefix is `T`, then `% 11` mapped through `J Z I H G F E D C B A` (remainder `0` → `J`).
+>
+> ```python
+> def last_letter(nric):
+>     weights = [2, 7, 6, 5, 4, 3, 2]
+>     total = 0
+>     for i in range(7):
+>         total += int(nric[i + 1]) * weights[i]
+>     if nric[0] == 'T':
+>         total += 4
+>     return 'JZIHGFEDCBA'[total % 11]
+> ```
+>
+> `S1234567` totals `106`, `106 % 11 = 7` → `D`. `T1234567` totals `110` → `J`.
+>
+> **ISBN-10** — weights `10, 9, 8, ..., 2` on the nine digits, check digit `(11 - total % 11) % 11`, and `10` is written `X`.
+>
+> ```python
+> def isbn(string):
+>     total = 0
+>     for i in range(9):
+>         total += int(string[i]) * (10 - i)
+>     check = (11 - total % 11) % 11
+>     return string + ('X' if check == 10 else str(check))
+> ```
+>
+> `075154926` totals `214`, `214 % 11 = 5`, so the check digit is `6` → `0751549266`.
 
 ## Hash Table
 

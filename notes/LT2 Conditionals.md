@@ -56,7 +56,7 @@ elif mark >= 50:
 
 ## Indentation
 
-Indentation defines the block — it is not decoration. Use 4 spaces, consistently.
+Indentation defines the block. Use 4 spaces, consistently.
 
 ```python
 if a > 0:

@@ -19,9 +19,14 @@
 | `front(q)` | look at head, don't remove | `q[0]` |
 | `is_empty(q)` | is it empty? | `q == []` |
 | `size(q)` | count items | `len(q)` |
+| `make_queue(seq)` | build one from a sequence | `list(seq)` |
+| `clear(q)` | remove everything, **in place** | `q.clear()` |
 
 > [!important]
 > Head = index `0`. Tail = end of the list. A queue removes from the **front**, so it uses `pop(0)`.
+
+> [!warning] Modifiers mutate in place
+> `enqueue`, `dequeue` and `clear` must change the queue passed in — *"they should not return a new queue"*. `q = []` inside `clear` rebinds the local name and leaves the caller's list untouched. `q.clear()` empties it.
 
 An **array-based fixed-size queue** needs two pointers: a **head pointer** marking the next item to leave, and a **tail pointer** marking the last item added. Papers ask for these by name. The Python-list version below doesn't need them — `append()` and `pop(0)` handle the positions.
 
@@ -124,7 +129,7 @@ head = (head + 1) % size      # dequeue
 > | ----- | - | - | - | - | - |
 > | Data | USA | | | | Togo |
 >
-> HeadPointer = `4`, TailPointer = `0`. `USA` wraps to index 0 because the tail was already at 4 — that wrap is the whole point of the question.
+> HeadPointer = `4`, TailPointer = `0`. `USA` wraps to index 0 because the tail was already at 4. That wrap is what the question tests.
 >
 > The dequeued items, `China` and `Oman`, then get inserted into a binary search tree — see [[LT11b Binary Tree]].
 
@@ -220,8 +225,6 @@ Used whenever arrival order must be preserved:
 | cancel a job | not a queue operation — rotate it out using the ones you're given |
 
 ## Rotating a Queue
-
-Take from the head, put straight back on the tail.
 
 ```python
 item = dequeue(q)

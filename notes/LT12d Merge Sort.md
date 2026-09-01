@@ -14,6 +14,18 @@ flowchart TD
   G --> I["9"]
 ```
 
+The tree *is* the recursion. `split` written on its own returns it as nested tuples:
+
+```python
+def split(seq):
+    if len(seq) < 2:                               # 1 element: return it as-is
+        return seq
+    mid = len(seq) // 2
+    return split(seq[:mid]), split(seq[mid:])
+```
+
+`split([5, 2, 1, 8, 9])` gives `(([5], [2]), ([1], ([8], [9])))` — read it against the diagram above. `merge_sort` below does the same splitting inline and merges on the way back up.
+
 | Merge | Result |
 | ----- | ------ |
 | `[5]` + `[2]` | `[2, 5]` |
@@ -48,12 +60,18 @@ def merge_sort(seq):
 | In-place | **no** — builds new lists |
 | Stable | yes |
 
-Every case is identical because *"regardless of whether the original array is sorted or not, we will have to go through the same process of splitting and merging it back"*. Halving `n` to 1 takes `log n` levels, each doing `n` work.
+Halving `n` to 1 takes `log n` levels, each doing `n` work, so every case is `O(n log n)`.
+
+## Exam
+
+> [!important] Describe merge sort
+> Required keywords: **divide**, **merge**, **repeat**.
+> **Divide** the list into two halves, and **repeat** on each half until every sublist holds one element. Then **merge** pairs of sublists back together, each time taking the smaller of the two front elements, until one sorted list remains.
 
 ## Common Mistakes
 
 - Forgetting the base case, or writing `len(seq) == 1` and looping forever on an empty list.
-- Calling merge sort in-place. It is the one sort here that is not.
+- Treating merge sort as in-place; it builds new lists.
 
 ## Related
 

@@ -21,9 +21,9 @@
 - [Bubble Sort](https://yijc.coursemology.org/courses/3257/videos/24705) ( 8:25)
 - [Bubble Sort Hungarian Folk Dance (YouTube Play at 150% Speed)](https://www.youtube.com/watch?v=lyZQPjUT5B4&t=48s) (Optional)
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/27486676-d9df-4283-ae5f-ee52675a8501)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-022.png)
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/50011e80-97c0-4dfd-aabf-90648e4fe52e)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-020.png)
 
 Please feel free to post questions via the comment box tagged to the lecture video.
 

@@ -2,7 +2,7 @@
 > Pick a **pivot**, smaller left, larger right, recurse on each side. `O(n log n)` average but **`O(n²)` worst case**.
 > Syllabus 2.2.1. Scope, Big-O and the cross-sort comparison are in [[LT12 Sorting Algorithms]].
 
-A placed pivot is in its **final** position. Values equal to the pivot may go either side — *"it doesn't matter about the value that is equal to the pivot"*.
+A placed pivot is in its **final** position; values equal to it may go either side.
 
 Cards `0`–`9`, pivot in brackets:
 
@@ -33,7 +33,7 @@ def qsort(seq):
     return qsort(left) + [pivot_value] + qsort(right)
 ```
 
-`left` and `right` are new lists, so this one is **not in-place** — *"the primary advantage of a quicksort is because it is in-place... the one we are going through is actually non-in-place"*.
+`left` and `right` are new lists, so this version is **not in-place**.
 
 ## In-Place
 
@@ -73,6 +73,26 @@ def quicksort(seq):                                 # wrapper hides the indices
 
 One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2, 0, 5, 8, 6, 7, 9]`.
 
+> [!example]- Extension — pivot at the **front** instead
+> Mirror every direction. `low` starts one past the pivot, `high` at the end, and the pivot swaps into `high`'s slot.
+>
+> ```python
+> def partition(seq, start, end):
+>     pivot = seq[start]
+>     low, high = start + 1, end                  # low skips the pivot now
+>     while low <= high:
+>         while low <= high and seq[low] < pivot:
+>             low += 1
+>         while low <= high and seq[high] >= pivot:
+>             high -= 1
+>         if low <= high:
+>             seq[low], seq[high] = seq[high], seq[low]
+>     seq[start], seq[high] = seq[high], seq[start]
+>     return high
+> ```
+>
+> `[6, 3, 7, 2, 8, 9, 0, 1, 4, 5]` returns `6` and gives `[0, 3, 5, 2, 4, 1, 6, 9, 8, 7]`. Either pivot choice has the same worst case — sorted input.
+
 > [!important]
 > `low <= high` must guard **both** inner loops or the pointers run off the segment. The recursive calls use `mid - 1` and `mid + 1` — the pivot is done and must be excluded, or the recursion never shrinks.
 
@@ -86,6 +106,10 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 > Last-element pivot on sorted data makes every partition maximally lopsided. 2.2.3 asks for **worst case**, so quicksort's answer is `O(n²)`.
 
 ## Exam
+
+> [!important] Describe quicksort
+> Required keywords: **pivot**, **partition**, **repeat**.
+> Choose a **pivot**, then **partition** the list so everything smaller sits on one side and everything larger on the other, leaving the pivot in its final position. **Repeat** on each partition until they hold one or no elements.
 
 > [!important] 2023 Q6(a) — how Quicksort sorts ascending `[3]`
 > Choose a pivot. Partition so all smaller values are one side, all larger the other, pivot between them in its final position. Recurse on each partition until they hold one or no elements.

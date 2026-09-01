@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> A tuple is an **ordered, immutable** collection. Once made, it cannot be changed.
+> A tuple is an **ordered, immutable** collection.
 
 ## Basics
 
@@ -28,6 +28,17 @@ del tup[6]         # cannot delete an element
 del tup            # but you CAN delete the whole tuple
 ```
 
+To "change" one element you rebuild the tuple around it:
+
+```python
+def change_value_at_index(tup, i, value):
+    if i >= len(tup):
+        return tup                              # out of range - unchanged
+    return tup[:i] + (value,) + tup[i + 1:]
+```
+
+Slice up to `i`, drop in a **one-element tuple**, slice from `i + 1`. Copying works the same way — build a new tuple from the elements rather than writing `b = a`, which only makes a second name for the same object.
+
 ## Operations
 
 ```python
@@ -35,6 +46,7 @@ tup + (1, 2)   # concatenation - creates a NEW tuple
 tup * 3        # repetition
 "b" in tup     # membership > True / False
 tup[2:5]       # slicing > a new tuple
+tup[1::2]      # step - every second element from index 1
 len(tup)
 max(tup)
 min(tup)

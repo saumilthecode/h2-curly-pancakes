@@ -24,7 +24,7 @@ Please download the lecture slides and watch the lecture videos before attemptin
 - [Insertion Sort](https://yijc.coursemology.org/courses/3257/videos/24832)(8:06)
 - [Insertion Sort with Romanian Folk Dance](https://www.youtube.com/embed/ROalU379l3U?start=1&end=142) (Optional: Playback at 1.5x speed)
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/50011e80-97c0-4dfd-aabf-90648e4fe52e)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-020.png)
 
 Please feel free to post questions via the comment box tagged to the lecture video. Have fun!
 

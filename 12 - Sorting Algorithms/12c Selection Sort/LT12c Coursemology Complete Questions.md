@@ -255,7 +255,7 @@ Note : A comparison occurs when two values are compared.
 
 A sample trace of the selection sort algorithm can be as follows:
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/d5d2a2c2-824c-4570-8607-cf42c2f6ee66)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-023.png)
 
 #### Public test cases
 

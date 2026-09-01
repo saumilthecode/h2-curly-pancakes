@@ -1,5 +1,5 @@
 > [!important] Key Distinction
-> **Validation** — is the data *sensible and reasonable*?
+> **Validation** — is the data *sensible, reasonable and allowable*?
 > **Verification** — does the data *match the original source*?
 
 Validation does **not** check whether data is accurate. `age = 35` is valid even if you are 17.
@@ -47,7 +47,7 @@ Also taught in lecture:
 | Existence | `username in registered_users` |
 
 > [!note]
-> These check the **characters in a string**, not the type of a value — `input()` always hands you a `str`. That is what the course asks for here. If you need the number itself, convert it afterwards.
+> `input()` always hands you a `str`, so these examine **characters in a string**. That is what the course asks for here; convert afterwards if you need the number itself.
 
 ## Check Digits
 

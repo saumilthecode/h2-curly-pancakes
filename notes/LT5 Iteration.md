@@ -110,6 +110,7 @@ Use `while value > 0:` instead. In Jupyter an infinite loop kills the kernel —
 - Off-by-one: forgetting `stop` is excluded, so `range(1, n)` misses `n`.
 - Putting `return` **inside** the loop body, so it exits on the first iteration.
 - Forgetting to update the counter in a `while` loop.
+- Starting a **product** accumulator at `0` instead of `1` — everything multiplies to zero. Sums start at `0`, products start at `1`.
 
 ## Related
 

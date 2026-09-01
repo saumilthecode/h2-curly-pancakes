@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LT12 Sorting Algorithms.md",
+                "file": "LT12e Quick Sort.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LT12 Sorting Algorithms"
+              "title": "LT12e Quick Sort"
             }
           }
         ]
@@ -215,14 +215,14 @@
   },
   "active": "6a4f31a92b7fccca",
   "lastOpenFiles": [
+    "LT12d Merge Sort.md",
+    "LT12e Quick Sort.md",
+    "LT12b Insertion Sort.md",
+    "LT12 Sorting Algorithms.md",
     "LT11b Binary Tree.md",
     "LT11a Search.md",
-    "LT12e Quick Sort.md",
-    "LT12d Merge Sort.md",
     "LT12c Selection Sort.md",
-    "LT12b Insertion Sort.md",
     "LT12a Bubble Sort.md",
-    "LT12 Sorting Algorithms.md",
     "transcripts/99 - LT12d Merge Sort [7SObKfT9hxA].txt",
     "transcripts/98 - LT12d Merge Sort Unplugged Activity [wOQz6GXn9CU].txt",
     "transcripts/97 - Select-sort with Gypsy folk dance [Ns4TPTC8whw].txt",

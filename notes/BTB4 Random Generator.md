@@ -37,7 +37,7 @@ x = round(random() * 5, 2)     # float from 0 to 5, 2 decimal places
 | `shuffle(lst)` | reorders the list **in place** | no |
 
 > [!note]
-> `randrange` and `shuffle` are **not** in the BTB4 lecture — they're here because the Paper 2 Reference Guide lists them. Conversely `seed`, `choice`, `choices`, `sample` and `normalvariate` are taught but aren't on that handout. The Reference Guide is a quick-reference sheet, not a list of what's allowed — it also leaves out `.strip()`, which your own mark scheme gives a mark for.
+> `randrange` and `shuffle` are **not** in the BTB4 lecture — they're here because the Paper 2 Reference Guide lists them. Conversely `seed`, `choice`, `choices`, `sample` and `normalvariate` are taught but aren't on that handout. The Reference Guide is a quick-reference sheet; it does not define what's allowed. It also leaves out `.strip()`, which your own mark scheme gives a mark for.
 
 ```python
 from random import *
@@ -56,7 +56,6 @@ for i in range(1000):
     lst.append(normalvariate(50, 7))    # mean 50, standard deviation 7
 ```
 
-Check the result:
 
 ```python
 from statistics import mean, stdev

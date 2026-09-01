@@ -27,7 +27,7 @@ f.close()
 | `"w"` | write — creates the file, **overwrites** if it exists |
 | `"a"` | append — creates the file if needed, otherwise adds to its end |
 
-The `with` form, for reference — no `close()` is needed or expected inside it:
+With `with`, do not call `close()` yourself:
 
 ```python
 with open("output.txt", "w") as f:
@@ -117,7 +117,7 @@ f.close()
 
 ### Reading Manually
 
-Same job without the module — split each line yourself.
+Without the module, split each line yourself.
 
 ```python
 def read_csv(filename):

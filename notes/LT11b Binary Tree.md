@@ -79,6 +79,9 @@ Three rules:
 
 The rules apply at **every** node, not just the root.
 
+> [!warning] A binary tree is not a BST
+> A plain binary tree constrains only the **shape** — at most two children per node. It says nothing about the values: duplicates are fine, there is no ordering, and a parent may have one child or none. Only "at most two children", "leaves have no children" and "the root is the only node with no parent" are true of *both*.
+
 ```mermaid
 flowchart TD
   n6[6] --> n4[4]
@@ -119,7 +122,7 @@ four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 ```
 
 > [!warning]
-> Always build the empty branches with `make_empty_tree()`, never a bare `[]`. The `[]` is the *representation* — the whole point of an [[LT10a Data Abstraction|ADT]] is that only the constructors and accessors touch it.
+> Always build the empty branches with `make_empty_tree()`, never a bare `[]`. The `[]` is the *representation*, and in an [[LT10a Data Abstraction|ADT]] only the constructors and accessors touch that.
 
 > [!example]- The lecture's `five` tree
 > ```python

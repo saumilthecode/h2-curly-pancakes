@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> Types, operators, booleans, strings and slicing — the building blocks everything else sits on.
+> Types, operators, booleans, strings and slicing.
 
 ## Types
 
@@ -87,6 +87,9 @@ Strings compare by character code, so comparisons are alphabetical-ish, not by l
 >
 > `not True` → `False`, `not False` → `True`.
 
+> [!important] Precedence
+> Maths first, then comparisons, then **`not`**, then **`and`**, then **`or`**. So `not a == b and c` reads as `((not (a == b)) and c)`. Bracket anything you would have to think about twice.
+
 ## Booleans and Truthiness
 
 - `True` equals `1`, `False` equals `0`.
@@ -129,7 +132,9 @@ len("Hello World")   # 11
 | Method | Does |
 | ------ | ---- |
 | `s.upper()` / `s.lower()` | change case |
-| `s.index(value)` | position of `value`, error if absent |
+| `s.find(value)` | position of `value`, **`-1`** if absent |
+| `s.index(value)` | position of `value`, **error** if absent |
+| `s.replace(old, new)` | a new string with **every** occurrence replaced |
 | `s.isdigit()` / `s.isalpha()` | check contents |
 | `ord(c)` / `chr(n)` | character ↔ code number |
 

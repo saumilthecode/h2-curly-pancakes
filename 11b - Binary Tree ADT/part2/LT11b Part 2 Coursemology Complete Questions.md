@@ -20,7 +20,7 @@ Please download the lecture slides and watch the lecture video before attempting
 
 - [LT11b Binary Tree (Part 2)](https://yijc.coursemology.org/courses/3257/videos/24867) (5:02)
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/e30ab087-eed3-40dc-96c9-24b24d89ecb8)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-014.png)
 
 We will be using slides to visualise and test our understanding of the binary search tree. We try to explain and describe the algorithm for performing a search on a binary search tree.
 
@@ -44,7 +44,7 @@ Please feel free to post questions via the comment box tagged to the lecture vid
 6. Starting from the root node, explore the tree to search. Remember to double click each visited node
 7. If you are sure that the key cannot be found in the BST, choose `Declare 'not in this tree'`.
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/e0e7b62b-1bc8-432b-95fe-66907857cb80)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-019.png)
 
 Have Fun!
 
@@ -84,7 +84,7 @@ How many comparisons are required to search for the following items in the BST?
 
 **Note:**You should always start searching from the Root Node.
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/738dad29-4723-4766-beed-617bc4e9cda2)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-018.png)
 
 #### Choices
 

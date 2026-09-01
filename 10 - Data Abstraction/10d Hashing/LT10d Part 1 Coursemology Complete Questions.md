@@ -81,7 +81,7 @@ Which of the following data has been transmitted correctly without error?
 
 ### Diagrams
 
-![Diagram 1](https://yijc.coursemology.org/attachments/f83ddc8d-024e-4b8a-8e1c-d545de6888c0)
+![Diagram 1](Coursemology%20question%20assets/diagram-003.png)
 
 ## Question 3: Calculate Checksum for data transmission
 
@@ -111,7 +111,7 @@ The return output is the transmitted data string, comprising the data and the ch
 
 ### Diagrams
 
-![Diagram 1](https://yijc.coursemology.org/attachments/f83ddc8d-024e-4b8a-8e1c-d545de6888c0)
+![Diagram 1](Coursemology%20question%20assets/diagram-003.png)
 
 ### Template attachment
 
@@ -379,7 +379,7 @@ An equivalent algorithm described in https://en.wikipedia.org/wiki/Check_digit#I
 
 ### Diagrams
 
-![Diagram 1](https://yijc.coursemology.org/attachments/47052335-7311-498c-a7db-565f1c554301)
+![Diagram 1](Coursemology%20question%20assets/diagram-002.png)
 
 ### Template attachment
 

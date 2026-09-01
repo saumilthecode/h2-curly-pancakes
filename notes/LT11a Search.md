@@ -78,7 +78,7 @@ def index(seq, item):
 `count` and `index` both build their answer **on the way back up** — each level adds `1` to whatever the level below returned.
 
 > [!warning]
-> Recursive `index` can't return `None` when the item is missing: the caller would try `1 + None`. Returning `0` instead is ambiguous — it also means "found at position 0" — hence the `print`. The iterative version has no such problem.
+> Recursive `index` can't return `None` when the item is missing — the caller would try `1 + None`. The base case returns `0`, so the `1`s added on the way back up total **`len(seq)`**: `index('mississippi', 'k')` gives `11`. That is the specified "not found" value, and the `print` is what makes it readable. The iterative version has no such problem and returns `None`.
 
 ## Binary Search
 

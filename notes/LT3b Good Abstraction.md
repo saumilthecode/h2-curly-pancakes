@@ -39,8 +39,6 @@ def hypotenuse(a, b):
     return sqrt(sum_of_squares(a, b))
 ```
 
-You check three short functions instead of re-reading one long expression.
-
 ## Why It Allows Reuse
 
 `square()` is written once and used by anything that needs it.
@@ -67,27 +65,47 @@ Same technique drives [[LT9b Recursion (Application)|recursive]] solutions.
 
 ## Avoid Magic Numbers
 
-Hardcoded constants are hard to change and hide their meaning. Name them instead.
+The lecture's taxi fare: **$3.00** for the first 1 km, **$0.22** per 400 m block or part of one up to 10 km, **$0.25** per block after that.
 
 ```python
-# magic numbers - what is 1000? what is 0.22?
-def fare(distance):
+from math import ceil
+
+def taxi_fare(distance):                                  # metres
     if distance <= 1000:
         return 3.0
-    return 3.0 + 0.22 * ((distance - 1000) // 400)
-
-
-# named constants - the rule reads itself, and a fare rise is one edit
-STAGE1_METRES = 1000
-START_FARE    = 3.0
-BLOCK_METRES  = 400
-BLOCK_FARE    = 0.22
-
-def fare(distance):
-    if distance <= STAGE1_METRES:
-        return START_FARE
-    return START_FARE + BLOCK_FARE * ((distance - STAGE1_METRES) // BLOCK_METRES)
+    elif distance <= 10000:
+        return 3.0 + 0.22 * ceil((distance - 1000) / 400)
+    else:
+        return 8.06 + 0.25 * ceil((distance - 10000) / 400)
 ```
+
+`ceil` because *"or less"* means a part block is charged in full. `taxi_fare(3300)` gives `4.32`, `taxi_fare(14500)` gives `11.06`.
+
+Every literal there is a **magic number**. When the fare rises you have to hunt each one down, and missing one leaves code that still runs and quietly returns the wrong fare.
+
+`8.06` is the fare at 10 km, so compute it — call the function itself.
+
+```python
+def taxi_fare(distance):
+    stage1     = 1000
+    stage2     = 10000
+    start_fare = 3.0
+    increment1 = 0.22
+    increment2 = 0.25
+    block      = 400
+
+    if distance <= stage1:
+        return start_fare
+    elif distance <= stage2:
+        return start_fare + increment1 * ceil((distance - stage1) / block)
+    else:
+        return taxi_fare(stage2) + increment2 * ceil((distance - stage2) / block)
+```
+
+Raising the start fare to `$3.20`, or shrinking the block to 300 m, is now one edit.
+
+> [!tip] The lecture's own caveat
+> Stripping out every constant is *"yes and no"*. Worth it for code that will be maintained; overkill for a function you run once.
 
 ## Common Mistakes
 

@@ -11,7 +11,7 @@ Theory — base case, recursion tree, call stack — is in [[LT9a Recursion|LT9a
 4. **Find the base case.** The smallest input whose answer you can state outright.
 
 > [!important]
-> Step 1 is the whole difficulty. Steps 2–4 are mechanical once you have it.
+> Step 1 is the hardest; steps 2–4 are mechanical.
 
 ## Shrinking Patterns
 

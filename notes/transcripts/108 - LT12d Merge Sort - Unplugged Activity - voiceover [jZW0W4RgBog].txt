@@ -1,0 +1,93 @@
+Title: LT12d Merge Sort - Unplugged Activity - voiceover
+Assessment(s): LT 12d Merge Sort
+Linked label(s): Unplugged activity for Merge Sort
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=jZW0W4RgBog
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Hi, we will be doing the unplug activity
+[00:02 - 00:05] for merge sort.
+[00:09 - 00:14] We start with a stack of 10 cards all
+[00:11 - 00:16] facing down on the table.
+[00:14 - 00:19] The whole idea is to divide them into
+[00:16 - 00:22] two groups and continue to subdivide
+[00:19 - 00:24] them into two groups again.
+[00:22 - 00:27] We continue to do so until every group
+[00:24 - 00:27] contains only one card.
+[00:29 - 00:32] Then when we want to merge it back,
+[00:31 - 00:35] we compare the two values of the
+[00:32 - 00:37] neighboring groups and
+[00:35 - 00:40] then merge them back together.
+[00:37 - 00:43] And we continue to do the merging until
+[00:40 - 00:44] we get back the one group again.
+[00:43 - 00:46] Now those cards in the group will be
+[00:44 - 00:48] sorted.
+[00:46 - 00:51] This is called the merge sort. I will
+[00:48 - 00:54] use the animation to demonstrate to you
+[00:51 - 00:57] how we're going to conduct this merge
+[00:54 - 01:00] sort in this unplug activity.
+[00:57 - 01:02] Assuming you have 10 cards, but then
+[01:00 - 01:06] they are all facing down.
+[01:02 - 01:06] Divide them into two groups.
+[01:07 - 01:11] Continue to subdivide them into two
+[01:08 - 01:11] groups.
+[01:13 - 01:18] You continue to do so until each group
+[01:15 - 01:18] contains only one card.
+[01:22 - 01:25] Okay, now we are ready to merge them
+[01:24 - 01:27] back.
+[01:25 - 01:32] So we start from the lowest, the bottom
+[01:27 - 01:32] row. There are two cards, the red
+[01:33 - 01:37] When you compare the two values, the one
+[01:35 - 01:39] will have to come first and then after
+[01:37 - 01:42] the eight, so we put the one on the left
+[01:39 - 01:42] followed by the eight.
+[01:43 - 01:48] The bottom most row we have the blue
+[01:45 - 01:50] cards also.
+[01:48 - 01:53] Then we make the comparison and three
+[01:50 - 01:53] comes first and then seven.
+[01:56 - 02:01] So now at the lowest row, we have a few
+[01:58 - 02:03] groups.
+[02:01 - 02:06] The two groups that are pink cards, we
+[02:03 - 02:06] can compare them.
+[02:15 - 02:21] The next group will consist of two cards
+[02:17 - 02:21] and one card, the pink and the red.
+[02:23 - 02:27] And to merge them together to form a
+[02:24 - 02:30] group of three cards, it will be one,
+[02:27 - 02:30] eight, and nine.
+[02:32 - 02:36] Same thing, we merge the two blue cards,
+[02:34 - 02:38] and then we merge the three cards
+[02:36 - 02:38] together.
+[02:48 - 02:52] Now, we try to merge the first two
+[02:49 - 02:52] neighboring groups.
+[02:54 - 03:00] Each time we compare the leftmost value,
+[02:56 - 03:00] in this case, we compare one and two.
+[03:01 - 03:05] And when one is taken, we compare two
+[03:03 - 03:07] and eight.
+[03:05 - 03:09] And when two is taken, we compare eight
+[03:07 - 03:11] and five.
+[03:09 - 03:12] And when five is taken away, we are left
+[03:11 - 03:15] with nine, and then we join into the
+[03:12 - 03:15] group.
+[03:18 - 03:22] Similarly, for the right-hand side of
+[03:20 - 03:26] the two groups, we compare four and
+[03:22 - 03:27] zero, zero will be taken.
+[03:26 - 03:29] If we compare four and three, three will
+[03:27 - 03:31] be taken.
+[03:29 - 03:33] And then we compare four and seven, four
+[03:31 - 03:35] will be taken.
+[03:33 - 03:36] Then we compare six and seven, six will
+[03:35 - 03:40] be taken.
+[03:36 - 03:40] Lastly, we are left with seven.
+[03:44 - 03:48] Now, we are left with down to two
+[03:46 - 03:51] groups, and then we merge them using the
+[03:48 - 03:51] same idea.
+[04:01 - 04:05] >> Try doing the merge sort
+[04:04 - 04:08] using the cards that you were given by
+[04:05 - 04:11] dividing them into
+[04:08 - 04:12] two groups and continue to divide and
+[04:11 - 04:15] when you have one card in each group,
+[04:12 - 04:19] you try to merge them back again and you
+[04:15 - 04:19] will get a sorted set of cards.

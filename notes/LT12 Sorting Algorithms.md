@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> The five sorts, and how to choose between them. One note each:
+> The five sorts and how to choose between them:
 > [[LT12a Bubble Sort]] · [[LT12b Insertion Sort]] · [[LT12c Selection Sort]] · [[LT12d Merge Sort]] · [[LT12e Quick Sort]]
 
 > [!important] Syllabus scope
@@ -13,7 +13,15 @@
 
 ## Big-O
 
-How the work grows with `n`. Constants and smaller terms are dropped, so `n(n-1)/2` is `O(n²)`. A log's base is only a constant factor, so `O(log n)` needs no base.
+How the work grows with `n`. Constants and smaller terms are dropped, so `n(n-1)/2` is `O(n²)`. A log's base is only a constant factor, so `O(log n)` needs no base. Where code mixes growth rates, quote only the **fastest-growing** one.
+
+| Growth | Name | Where you meet it |
+| ------ | ---- | ----------------- |
+| `O(1)` | constant | reading `seq[i]` by index |
+| `O(log n)` | logarithmic | [[LT11a Search\|binary search]] |
+| `O(n)` | linear | one loop over the list |
+| `O(n log n)` | — | merge sort, quicksort average |
+| `O(n²)` | quadratic | a loop inside a loop |
 
 ```mermaid
 %%{init: {"themeVariables": {"xyChart": {"plotColorPalette": "#e74c3c, #2980b9, #16a085"}}}}%%
@@ -32,7 +40,7 @@ xychart-beta
 | 100 | 100 | 664 | 10,000 |
 | 1000 | 1000 | 9,966 | **1,000,000** |
 
-No sort here is `O(log n)`. That last cell is the bubble sort warning: *"n = 1000 elements... 1 million comparisons"*.
+No sort here is `O(log n)`. The last cell is the bubble sort warning — *"1 million comparisons"* for `n = 1000`.
 
 > [!important] Growth is not speed
 > Big-O ignores constant overhead, so `O(n log n)` can lose on small inputs. Lecture timings, 1000 random lists each:
@@ -53,8 +61,9 @@ No sort here is `O(log n)`. That last cell is the bubble sort warning: *"n = 100
 | **In-place** | sorted items use the **same storage** — no second list built |
 | **Stable** | equal elements keep their **relative order** |
 
-> [!warning] Stability is a property of the code, not the algorithm
+> [!warning] Stability comes from the code
 > *"Did the code swap even when two elements are equal?"* `>` is stable, `>=` is not.
+> The output alone never shows it: `[9, 4, 3, 9, 3, 1]` sorts to `[1, 3, 3, 4, 9, 9]` either way. Track *which* `3` ended up first.
 
 One pass of each `O(n²)` sort:
 

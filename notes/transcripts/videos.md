@@ -91,6 +91,9 @@
 - [LT11a Part 1 Linear Search](https://www.youtube.com/watch?v=qwMthCimEP4) | YIJC Computing | transcript available
 - [LT11a Part 2 Binary Search](https://www.youtube.com/watch?v=aGGsDl0BXxE) | YIJC Computing | transcript available
 - [LT11a Unplugged Activity](https://www.youtube.com/watch?v=oa98tXuh6fU) | YIJC Computing | transcript available
+- [LINEAR search with FLAMENCO dance](https://www.youtube.com/watch?v=-PuqKbu9K3U) | AlgoRythmics | transcript unavailable
+- [BINARY search with FLAMENCO dance](https://www.youtube.com/watch?v=iP897Z5Nerk) | AlgoRythmics | transcript unavailable
+- [Big-O Notation in 100 Seconds](https://www.youtube.com/watch?v=g2o22C3CRfU) | Fireship | transcript available
 
 ### LT 11b Binary Tree (Part 1)
 - [LT11b Binary Tree Part 1](https://www.youtube.com/watch?v=Va3IM1PQ2sM) | YIJC Computing | transcript available
@@ -113,12 +116,16 @@
 ### [OPTIONAL] LT 12c Selection Sort
 - [12c Selection Sort (2020)](https://www.youtube.com/watch?v=KVXk2byimrE) | Kuang Jingkai [Staff] | transcript available
 - [Select-sort with Gypsy folk dance](https://www.youtube.com/watch?v=Ns4TPTC8whw) | AlgoRythmics | transcript available
+- [LT12c Selection Sort 2020 - voiceover](https://www.youtube.com/watch?v=K8U5rzNHnrw) | YIJC Computing | transcript available
 
 ### LT 12d Merge Sort
 - [LT12d Merge Sort   Unplugged Activity](https://www.youtube.com/watch?v=wOQz6GXn9CU) | YIJC Computing | transcript available
 - [LT12d Merge Sort](https://www.youtube.com/watch?v=7SObKfT9hxA) | YIJC Computing | transcript available
 - [LT12d Merge Sort   Time Complexity](https://www.youtube.com/watch?v=UPQYT8F5wDE) | YIJC Computing | transcript available
 - [Merge-sort with Transylvanian-saxon (German) folk dance](https://www.youtube.com/watch?v=XaqR3G_NVoo) | AlgoRythmics | transcript unavailable
+- [LT12d Merge Sort - Unplugged Activity - voiceover](https://www.youtube.com/watch?v=jZW0W4RgBog) | YIJC Computing | transcript available
+- [LT12d Merge Sort - voiceover](https://www.youtube.com/watch?v=JjUU0h7zvzM) | YIJC Computing | transcript available
+- [LT12d Merge Sort - Time Complexity - voiceover](https://www.youtube.com/watch?v=bikOdyeyeFE) | YIJC Computing | transcript available
 
 ### LT 12e Quicksort
 - [LT12e Quicksort Algorithm with Unplugged Activity](https://www.youtube.com/watch?v=F5YkhxAXZKk) | YIJC Computing | transcript available
@@ -127,6 +134,8 @@
 - [What's the fastest way to alphabetize your bookshelf? - Chand John](https://www.youtube.com/watch?v=WaNLJf8xzC4) | TED-Ed | transcript available
 - [Quick-sort with Hungarian (Küküllőmenti legényes) folk dance](https://www.youtube.com/watch?v=ywWBy6J5gz8) | AlgoRythmics | transcript unavailable
 - [LT12e Quicksort - Youtube Extract with Correction - voiceover](https://www.youtube.com/watch?v=8lE7eXqBICE) | YIJC Computing | transcript available
+- [LT12e Quicksort - Unplugged Activity - voiceover](https://www.youtube.com/watch?v=jCItOiGHShU) | YIJC Computing | transcript available
+- [Walkthrough LT12e In Place Quicksort Q6 13 - voiceover](https://www.youtube.com/watch?v=b-2a0q5hlCk) | YIJC Computing | transcript available
 
 ## Back to Basics and Content Topics
 

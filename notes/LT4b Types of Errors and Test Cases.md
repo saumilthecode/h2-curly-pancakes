@@ -7,7 +7,7 @@
 | -------- | ---------------- | ------- |
 | Syntax | before the code runs | Python refuses to run the file |
 | Runtime | during execution | program crashes part-way |
-| Logic | never — it runs fine | output is simply wrong |
+| Logic | never — it runs fine | output is wrong |
 
 ### Syntax Errors
 
@@ -49,6 +49,24 @@ Also: a missing `return` (function silently gives `None`), off-by-one loop bound
 ```python
 ((10) ** (1/2)) ** 2      # 10.000000000000002
 ```
+
+> [!example]- The four bugs from the training set
+> **Precedence** — `/` binds tighter than `+`:
+>
+> ```python
+> return x1 + x2 / 2        # x1 + (x2/2)
+> return (x1 + x2) / 2      # what was meant
+> ```
+>
+> **A name reused** — `area = 3.0` overwrites the function, so the next `area(4, 5)` raises `TypeError: 'float' object is not callable`. Never reuse a function's name as a variable.
+>
+> **Swapping without a temp** — `a = b` then `b = a` leaves both holding `b`'s value. The first assignment already destroyed `a`:
+>
+> ```python
+> temp = a; a = b; b = temp     # or just  a, b = b, a
+> ```
+>
+> **`true` / `false`** — Python's Booleans are capitalised. Lowercase raises `NameError: name 'true' is not defined` at run time.
 
 ## Debugging
 

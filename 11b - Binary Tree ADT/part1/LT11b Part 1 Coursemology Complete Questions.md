@@ -21,7 +21,7 @@ Please download the lecture slides and watch the lecture video before attempting
 
 - [LT11b Binary Tree (Part 1)](https://yijc.coursemology.org/courses/3257/videos/24866) (8:10)
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/e30ab087-eed3-40dc-96c9-24b24d89ecb8)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-014.png)
 
 We will be importing code to enable us to visualise the binary tree hierarchy. We try to explain and describe the algorithm for performing an action on a binary search tree.
 
@@ -35,7 +35,7 @@ Please feel free to post questions via the comment box tagged to the lecture vid
 
 Which numbered node is the root node?
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/a5d32168-8d4f-468c-9235-2e1fc2ca9de2)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-011.png)
 
 #### Choices
 
@@ -50,7 +50,7 @@ Which numbered node is the root node?
 
 Which node(s) is/are a child of node numbered 3?
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/7270856f-0f8b-499b-a6af-496bc9237577)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-010.png)
 
 #### Choices
 
@@ -65,7 +65,7 @@ Which node(s) is/are a child of node numbered 3?
 
 Which node is the parent of node number 14?
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/a8cd7fc3-a493-424e-ab28-5f1886bc03a0)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-012.png)
 
 #### Choices
 
@@ -82,7 +82,7 @@ The root node has 2 subtrees.
 
 Which nodes are the root nodes of the subtrees?
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/df5e12c0-4e07-41ba-89ce-2a91a3704ac5)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-013.png)
 
 #### Choices
 
@@ -101,7 +101,7 @@ Which nodes are the root nodes of the subtrees?
 
 Which are the leaf nodes?
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/27940ab6-2d90-4589-893a-9e6aae38791d)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-008.png)
 
 #### Choices
 
@@ -165,10 +165,10 @@ Which of the following is/are binary search tree(s)?
 ![Diagram (no alt text provided)](data:image/png;base64,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)
 
 # **E**
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/fcf20ad4-fd03-4750-aced-329e9a6aceb1)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-017.png)
 
 # **F**
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/ea6e4d99-a666-43a8-8690-801028e1964e)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-015.png)
 
 #### Choices
 
@@ -191,7 +191,7 @@ A binary tree is a Binary Search Tree (BST) if it adheres to the following rules
 
 Create a Binary Search Tree (BST) and insert the following integers into the BST, sequentially in the direction of the arrows:
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/2891e393-a664-4530-b674-7512813f8d0b)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-009.png)
 
 You may use the **whiteboard in the classroom**, on a piece of paper, or any other tools like [https://www.draw.io/](https://www.draw.io/) to create the BST diagram.
 
@@ -252,7 +252,7 @@ Construct the following binary tree using the Binary Tree ADT created in the pre
 
 you may use `make_empty_tree()`, `make_tree(entry, left, right)`, `entry(tree)`, `left_branch(tree)`, `right_branch(tree)`, `is_empty(tree)` and `print_tree(tree)` provided in the `LT11b_module.py`.
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/faefd752-8b0b-4312-b7db-6646a24eda7e)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-016.png)
 
 As an example, the following code will construct the sub-tree containing the nodes with 3 and 4:
 

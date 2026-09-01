@@ -46,6 +46,9 @@ lst[4] = 5              # lists are mutable
 | `lst * 3` | repetition |
 
 > [!note]
+> `len()` and `.count()` only see the **top level**. `[1, [2, 3], [4], (5, 6), (7,), (), (8, (9, 10)), 11, 12]` has `9` elements, and `.count(1)` on a list of nested lists counts only the `1`s that are elements in their own right.
+
+> [!note]
 > `max()` and `min()` need comparable elements. `sum(['a','b'])` and a mixed list of numbers and strings both raise errors.
 
 ## Methods
@@ -104,8 +107,53 @@ del lst          # delete the variable itself
 
 ```python
 lst2 = lst          # same list, two names - changing one changes both
-lst2 = lst.copy()   # a genuinely separate list
+lst2 = lst.copy()   # a separate list
 ```
+
+### Equivalent vs Identical
+
+`==` compares **contents**. `is` asks whether they are the **same object**.
+
+```python
+q = [123, 456]
+s = q                 # one list, two names
+q[0] = ()             # both names now see [(), 456]
+
+q is s                # True  - the same object
+q == [(), 456]        # True  - equal contents
+q is [(), 456]        # False - a fresh literal is a different object
+```
+
+
+## Mutate, or Return a New List
+
+*"The list should be mutated"* and *"returns a new list"* need different code, and the tests check with `is`.
+
+```python
+def double_up(lst):              # mutates: assign through the index
+    for i in range(len(lst)):
+        lst[i] = lst[i] * 2
+    return lst
+
+def remove_extras(lst):          # builds a new list, original untouched
+    result = []
+    for item in lst:
+        if item not in result:
+            result.append(item)
+    return result
+
+def remove_extra(lst):           # same job, in place
+    i = 0
+    while i < len(lst):
+        if lst[i] in lst[:i]:    # seen earlier?
+            lst.pop(i)           # don't advance - everything shifted left
+        else:
+            i += 1
+    return lst
+```
+
+> [!warning]
+> `for item in lst: lst.remove(item)` skips elements. Deleting during a `for` shifts everything left while the loop counter still moves right. Use a `while` with a manual index, or build a new list.
 
 ## Iteration
 

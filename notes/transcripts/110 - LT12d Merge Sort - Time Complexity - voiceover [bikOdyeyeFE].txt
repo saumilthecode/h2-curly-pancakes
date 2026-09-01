@@ -1,0 +1,151 @@
+Title: LT12d Merge Sort - Time Complexity - voiceover
+Assessment(s): LT 12d Merge Sort
+Linked label(s): Time Complexity
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=bikOdyeyeFE
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:03] I can demonstrate merge sort to you if
+[00:01 - 00:04] you like.
+[00:03 - 00:06] So for that, I've got another prop.
+[00:04 - 00:09] We bring in this. So I'll deal out seven
+[00:06 - 00:10] cards. For merge sort, we split the list
+[00:09 - 00:12] into two parts. Okay, so we've got this
+[00:10 - 00:14] left half goes there and the right half
+[00:12 - 00:16] goes there. So we've got two lists now.
+[00:14 - 00:18] This list gets split into two. This list
+[00:16 - 00:21] gets split into two. And then each of
+[00:18 - 00:22] these four lists gets split into two
+[00:21 - 00:25] until you've got either one card or no
+[00:22 - 00:27] cards in your list. Now what we do, we
+[00:25 - 00:29] look at each of these pairs of sorted
+[00:27 - 00:30] lists and we merge them back together in
+[00:29 - 00:33] the right order by looking at the top
+[00:30 - 00:35] cards in each list. First of all, we put
+[00:33 - 00:37] four and then we put seven. Okay, so now
+[00:35 - 00:38] that's a sorted list there. Okay, so
+[00:37 - 00:41] with 10 and 8, we look at the lowest
+[00:38 - 00:42] card, put that in first. We've got 8,
+[00:41 - 00:46] then we've got 10. And then this one,
+[00:42 - 00:47] we've got 5. And then we've got 7.
+[00:46 - 00:49] And with these two, we've got three out
+[00:47 - 00:51] of the empty list. So three just goes
+[00:49 - 00:53] there. Hopefully everyone will agree
+[00:51 - 00:55] that a list with just one card in it is
+[00:53 - 00:56] sorted. I've separated them just for
+[00:55 - 00:57] clarity so you can see the cards. You
+[00:56 - 01:00] should only be able to look at the top
+[00:57 - 01:01] element of each list. So now what we do,
+[01:00 - 01:02] we merge these two sublists back
+[01:01 - 01:04] together. Which is the lowest card
+[01:02 - 01:06] between 4 and 8? Those are the only two
+[01:04 - 01:07] we can see. So we pick four, that goes
+[01:06 - 01:10] in that list. And then we say, which is
+[01:07 - 01:13] lowest between 7 and 8? It's 7. Which is
+[01:10 - 01:14] lowest between 8 and nothing? It's 8.
+[01:13 - 01:16] And then similarly with 10 and nothing,
+[01:14 - 01:18] it's 10. And then we look at these two
+[01:16 - 01:20] lists. We pick the lowest, so we've got
+[01:18 - 01:23] three. And then we've got an empty list.
+[01:20 - 01:24] So we just put five there and seven
+[01:23 - 01:26] there.
+[01:24 - 01:28] So we've got two sorted lists now and
+[01:26 - 01:29] all we do is merge them back together.
+[01:28 - 01:31] So we've got four here and three here.
+[01:29 - 01:32] So three is lowest, so that goes first.
+[01:31 - 01:34] Between four and five, five and seven,
+[01:32 - 01:36] and seven and seven, and seven and eight
+[01:34 - 01:38] is seven. Eight and nothing is eight.
+[01:36 - 01:40] And then between 10 and nothing is 10. I
+[01:38 - 01:42] did three tests. We've got bubble sorts,
+[01:40 - 01:43] we've got the slightly better bubble
+[01:42 - 01:45] sort, which is the one where you check
+[01:43 - 01:46] less elements each time because you know
+[01:45 - 01:48] the highest ones are already sorted.
+[01:46 - 01:50] So we can see that actually around the
+[01:48 - 01:52] low end, merge sort can be significantly
+[01:50 - 01:54] slower
+[01:52 - 01:55] than either bubble sort.
+[01:54 - 01:57] And that's because merge sort's got
+[01:55 - 01:59] slightly more overhead associated with
+[01:57 - 02:02] it. And also, I guess the lists are more
+[01:59 - 02:03] likely to be sorted or nearer sorted
+[02:02 - 02:05] when they're smaller.
+[02:03 - 02:07] So, we got the input size here. So, I
+[02:05 - 02:09] sorted 10 things in this row. I ran it
+[02:07 - 02:11] 1,000 times for each. So, 1,000
+[02:09 - 02:13] different randomly sorted lists. So, it
+[02:11 - 02:15] took 391 nanoseconds to sort 10 things
+[02:13 - 02:18] with the first bubble sort,
+[02:15 - 02:20] 322 with the second bubble sort, and 770
+[02:18 - 02:22] with merge sort.
+[02:20 - 02:23] Even though merge sort should be
+[02:22 - 02:24] quicker, there's going to be a little
+[02:23 - 02:26] bit of overhead. It's a slightly more
+[02:24 - 02:28] complicated sorting algorithm. However,
+[02:26 - 02:32] as the input size gets bigger, if we get
+[02:28 - 02:34] to 100, say, bubble sort took 28,000
+[02:32 - 02:37] nanoseconds, the better bubble sort took
+[02:34 - 02:39] 19 microseconds, and merge sort took
+[02:37 - 02:41] about 8 microseconds. So, you can see
+[02:39 - 02:46] there that the merge sort's already
+[02:41 - 02:48] starting to take over even by 100.
+[02:46 - 02:52] So, let's see what it's like at 1,000.
+[02:48 - 02:54] Bubble sort is taking 3 milliseconds
+[02:52 - 02:55] to sort a list of 1,000 things. The
+[02:54 - 02:57] better bubble sort's taking 2
+[02:55 - 03:01] milliseconds, and merge sort is taking
+[02:57 - 03:03] 0.1 of a millisecond
+[03:01 - 03:04] to sort the list. With a small n, it
+[03:03 - 03:06] doesn't really make much difference, but
+[03:04 - 03:08] with a big n, it makes a world of
+[03:06 - 03:12] difference. It's really important. So,
+[03:08 - 03:14] at 5,000, it was taking 77 milliseconds
+[03:12 - 03:15] to sort with bubble sort, 51
+[03:14 - 03:18] milliseconds to sort with a better
+[03:15 - 03:20] bubble sort, 0.65 of a millisecond to do
+[03:18 - 03:22] merge sort.
+[03:20 - 03:25] Bubble sort, as I said earlier, scales
+[03:22 - 03:26] with the square of the input size.
+[03:25 - 03:28] So, we're going to call the input size
+[03:26 - 03:31] n. So, we can say bubble sort scales
+[03:28 - 03:31] with n squared.
+[03:31 - 03:35] Merge sort that we've just done, that
+[03:32 - 03:37] scales with the input size
+[03:35 - 03:40] times the log of the input size. A log
+[03:37 - 03:41] is just the inverse of a power.
+[03:40 - 03:44] So, if you've got 10 to the power of
+[03:41 - 03:45] three, say, is 1,000, log base 10 of
+[03:44 - 03:47] 1,000 is three. Whatever the base of the
+[03:45 - 03:49] log is, it's just a constant factor in
+[03:47 - 03:51] front of it, and that doesn't matter.
+[03:49 - 03:53] Merge sort will always take n times log
+[03:51 - 03:54] n run time.
+[03:53 - 03:56] So, in the best case, in the worst case,
+[03:54 - 03:57] in the average case,
+[03:56 - 03:58] you've always got to split the list into
+[03:57 - 04:01] two,
+[03:58 - 04:02] and into two again, and into two again.
+[04:01 - 04:04] And then you've still got to compare
+[04:02 - 04:05] them all and merge them back together.
+[04:04 - 04:06] So that one, that one, that one, that
+[04:05 - 04:07] one.
+[04:06 - 04:09] So you've kind of always got to do the
+[04:07 - 04:11] same number of steps. The best case of
+[04:09 - 04:13] merge sort is still n log n. Whereas
+[04:11 - 04:14] bubble sort, actually what you'll find
+[04:13 - 04:17] is if you've got a list that's already
+[04:14 - 04:19] sorted, it will only take n steps to do
+[04:17 - 04:20] it because all it's doing is goes
+[04:19 - 04:22] Do I need to swap these? No. Do I need
+[04:20 - 04:24] to swap these? No. Do I need to swap
+[04:22 - 04:26] these? No. So you've done basically n
+[04:24 - 04:27] steps, so it's proportional to the
+[04:26 - 04:29] number of cards. You don't need to do
+[04:27 - 04:30] any swaps, so you're done. But if you
+[04:29 - 04:32] want to sort a list with a million
+[04:30 - 04:34] things in, bubble sort's not the way to
+[04:32 - 04:34] go.

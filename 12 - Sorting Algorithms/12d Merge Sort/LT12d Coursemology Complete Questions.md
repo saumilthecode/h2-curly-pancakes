@@ -25,7 +25,7 @@ Please download the lecture slides and watch the lecture videos before attemptin
 - [Time Complexity](https://yijc.coursemology.org/courses/3257/videos/24835) - Merge Sort vs Bubble Sort (4:31)
 - [Merge Sort with Folk Dance](https://www.youtube.com/watch?v=XaqR3G_NVoo) (Optional: play at 1.5x speed)
 
-![Diagram (no alt text provided)](https://yijc.coursemology.org/attachments/e5c04148-e43b-42e8-a88d-76389cf60dca)
+![Diagram (no alt text provided)](Coursemology%20question%20assets/diagram-024.png)
 
 We will be using videos and cards to learn the sorting algorithm with examples. We will try to explain and elaborate on how the algorithm works.
 

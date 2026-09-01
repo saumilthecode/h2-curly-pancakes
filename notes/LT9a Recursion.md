@@ -204,7 +204,7 @@ def pong(n):
 Put `print(n)` on the first line of the function. If the value is not moving towards the base case, that is the bug.
 
 ```python
-factorial(-1)    # -1, -2, -3 ... goes past the base case
+factorial(0)     # 0, -1, -2 ... goes past the base case n == 1
 factorial(2.1)   # 2.1, 1.1, 0.1 ... never equals 1
 ```
 

@@ -1,7 +1,7 @@
 # H2 Computing transcript index
 
-Successful transcripts: 105
-Unavailable transcripts: 4
+Successful transcripts: 112
+Unavailable transcripts: 6
 
 ## Transcript files
 
@@ -443,7 +443,51 @@ Unavailable transcripts: 4
   - File: `105 - LT12e Quicksort - Youtube Extract with Correction - voiceover [8lE7eXqBICE].txt`
   - Characters: 7,417
 
+- **LT 11a Linear and Binary Search**: [Big-O Notation in 100 Seconds](https://www.youtube.com/watch?v=g2o22C3CRfU)
+  - Uploader: Fireship
+  - File: `106 - Big-O Notation in 100 Seconds [g2o22C3CRfU].txt`
+  - Characters: 2,791
+
+- **[OPTIONAL] LT 12c Selection Sort**: [LT12c Selection Sort 2020 - voiceover](https://www.youtube.com/watch?v=K8U5rzNHnrw)
+  - Uploader: YIJC Computing
+  - File: `107 - LT12c Selection Sort 2020 - voiceover [K8U5rzNHnrw].txt`
+  - Characters: 10,598
+
+- **LT 12d Merge Sort**: [LT12d Merge Sort - Unplugged Activity - voiceover](https://www.youtube.com/watch?v=jZW0W4RgBog)
+  - Uploader: YIJC Computing
+  - File: `108 - LT12d Merge Sort - Unplugged Activity - voiceover [jZW0W4RgBog].txt`
+  - Characters: 3,863
+
+- **LT 12d Merge Sort**: [LT12d Merge Sort - voiceover](https://www.youtube.com/watch?v=JjUU0h7zvzM)
+  - Uploader: YIJC Computing
+  - File: `109 - LT12d Merge Sort - voiceover [JjUU0h7zvzM].txt`
+  - Characters: 2,297
+
+- **LT 12d Merge Sort**: [LT12d Merge Sort - Time Complexity - voiceover](https://www.youtube.com/watch?v=bikOdyeyeFE)
+  - Uploader: YIJC Computing
+  - File: `110 - LT12d Merge Sort - Time Complexity - voiceover [bikOdyeyeFE].txt`
+  - Characters: 7,278
+
+- **LT 12e Quicksort**: [LT12e Quicksort - Unplugged Activity - voiceover](https://www.youtube.com/watch?v=jCItOiGHShU)
+  - Uploader: YIJC Computing
+  - File: `111 - LT12e Quicksort - Unplugged Activity - voiceover [jCItOiGHShU].txt`
+  - Characters: 4,260
+
+- **LT 12e Quicksort**: [Walkthrough LT12e In Place Quicksort Q6 13 - voiceover](https://www.youtube.com/watch?v=b-2a0q5hlCk)
+  - Uploader: YIJC Computing
+  - File: `112 - Walkthrough LT12e In Place Quicksort Q6 13 - voiceover [b-2a0q5hlCk].txt`
+  - Characters: 19,816
+
 ## Videos without transcripts
+
+- [LINEAR search with FLAMENCO dance](https://www.youtube.com/watch?v=-PuqKbu9K3U)
+  - Assessment(s): LT 11a Linear and Binary Search
+  - Uploader: AlgoRythmics
+  - Reason: Error: [YoutubeTranscript] 🚨 Transcript is disabled on this video (-PuqKbu9K3U)
+- [BINARY search with FLAMENCO dance](https://www.youtube.com/watch?v=iP897Z5Nerk)
+  - Assessment(s): LT 11a Linear and Binary Search
+  - Uploader: AlgoRythmics
+  - Reason: Error: [YoutubeTranscript] 🚨 Transcript is disabled on this video (iP897Z5Nerk)
 
 - [Insert-sort with Romanian folk dance](https://www.youtube.com/watch?v=ROalU379l3U)
   - Assessment(s): LT 12b Insertion Sort
