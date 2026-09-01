@@ -148,7 +148,7 @@ Circuit switching instead reserves one fixed path for the whole communication. P
 
 **Disadvantage, and how it is handled** — packets may arrive out of order, be delayed, or be lost. Sequence numbers reorder them; anything that fails its error check or never arrives is **requested again and retransmitted**.
 
-**Role of a router** — it inspects each packet's destination **IP address** and forwards it along the best available route towards that network, hop by hop. Each packet is routed independently, so different packets from the same message may take different paths.
+**Role of a router** — it inspects each packet's destination **IP address** and forwards it along the best available route towards that network, hop by hop.
 
 ## TCP
 

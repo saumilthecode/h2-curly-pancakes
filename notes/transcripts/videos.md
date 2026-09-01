@@ -101,6 +101,33 @@
 ### LT 11b Binary Tree (Part 3)
 - [Traversal of Binary Search Trees](https://www.youtube.com/watch?v=AAiEyLqMvP8) | Jingkai | transcript available
 
+### LT 12a Bubble Sort
+- [LT12a Bubble Sort (2026 VoiceOver)](https://www.youtube.com/watch?v=YRL38gjbzlo) | YIJC Computing | transcript available
+- [Bubble-sort with Hungarian ("Csángó") folk dance](https://www.youtube.com/watch?v=lyZQPjUT5B4) | AlgoRythmics | transcript available
+
+### LT 12b Insertion Sort
+- [LT12b Insertion Sort (2026 VoiceOver)](https://www.youtube.com/watch?v=EZ8q4reQpEw) | YIJC Computing | transcript available
+- [LT12b Insertion Sort (2026 VoiceOver) - unplugged activity](https://www.youtube.com/watch?v=QTh2RMHH-T0) | YIJC Computing | transcript available
+- [Insert-sort with Romanian folk dance](https://www.youtube.com/watch?v=ROalU379l3U) | AlgoRythmics | transcript unavailable
+
+### [OPTIONAL] LT 12c Selection Sort
+- [12c Selection Sort (2020)](https://www.youtube.com/watch?v=KVXk2byimrE) | Kuang Jingkai [Staff] | transcript available
+- [Select-sort with Gypsy folk dance](https://www.youtube.com/watch?v=Ns4TPTC8whw) | AlgoRythmics | transcript available
+
+### LT 12d Merge Sort
+- [LT12d Merge Sort   Unplugged Activity](https://www.youtube.com/watch?v=wOQz6GXn9CU) | YIJC Computing | transcript available
+- [LT12d Merge Sort](https://www.youtube.com/watch?v=7SObKfT9hxA) | YIJC Computing | transcript available
+- [LT12d Merge Sort   Time Complexity](https://www.youtube.com/watch?v=UPQYT8F5wDE) | YIJC Computing | transcript available
+- [Merge-sort with Transylvanian-saxon (German) folk dance](https://www.youtube.com/watch?v=XaqR3G_NVoo) | AlgoRythmics | transcript unavailable
+
+### LT 12e Quicksort
+- [LT12e Quicksort Algorithm with Unplugged Activity](https://www.youtube.com/watch?v=F5YkhxAXZKk) | YIJC Computing | transcript available
+- [Walkthrough LT12e Q4 5 Non in place Quicksort](https://www.youtube.com/watch?v=FLj2R7kLTfs) | YIJC Computing | transcript available
+- [Walkthrough LT12e Q6-13 In-place Quicksort](https://www.youtube.com/watch?v=EIaVvXl_Cps) | YIJC Computing | transcript available
+- [What's the fastest way to alphabetize your bookshelf? - Chand John](https://www.youtube.com/watch?v=WaNLJf8xzC4) | TED-Ed | transcript available
+- [Quick-sort with Hungarian (Küküllőmenti legényes) folk dance](https://www.youtube.com/watch?v=ywWBy6J5gz8) | AlgoRythmics | transcript unavailable
+- [LT12e Quicksort - Youtube Extract with Correction - voiceover](https://www.youtube.com/watch?v=8lE7eXqBICE) | YIJC Computing | transcript available
+
 ## Back to Basics and Content Topics
 
 ### BTB 2 - File Handling

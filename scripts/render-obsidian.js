@@ -172,8 +172,22 @@ function splitWikiTarget(rawTarget) {
 }
 
 function resolveNoteTarget(target, knownNotes) {
-  const [notePart, anchorPart] = target.split("#");
+  // Split on the FIRST "#": everything after it is the heading, which may itself
+  // contain "#" (e.g. "[[Note#Why # matters]]").
+  const hash = target.indexOf("#");
+  const notePart = hash === -1 ? target : target.slice(0, hash);
+  const anchorPart = hash === -1 ? "" : target.slice(hash + 1);
   const label = notePart.trim();
+
+  // "[[#Heading]]" has no note name - it points at a heading in this same note.
+  if (!label && anchorPart) {
+    return {
+      href: `#${slugify(anchorPart)}`,
+      missing: false,
+      label: anchorPart.trim(),
+    };
+  }
+
   const match = knownNotes.get(label.toLowerCase());
 
   if (!match) {

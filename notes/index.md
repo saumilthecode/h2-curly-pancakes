@@ -68,15 +68,16 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 - [[LT11a Search|LT11a Linear and Binary Search]] — iterative and recursive search, Big-O
 - [[LT11b Binary Tree|LT11b Binary Tree Parts 1–3]] — trees, BSTs, traversals, BFS and DFS
 
-## Not taught yet
-
 ### LT12 Sorting Algorithms
 
-- LT12a Bubble Sort
-- LT12b Insertion Sort
-- LT12c Selection Sort — not named in the y27 syllabus
-- LT12d Merge Sort
-- LT12e Quick Sort
+- [[LT12 Sorting Algorithms]] — Big-O, in-place and stable, the comparison table
+- [[LT12a Bubble Sort]] — adjacent swaps; simple, improved, optimised
+- [[LT12b Insertion Sort]] — build a sorted prefix
+- [[LT12c Selection Sort]] — not named in the y27 syllabus
+- [[LT12d Merge Sort]] — divide and merge, always `O(n log n)`
+- [[LT12e Quick Sort]] — pivot and partition, in-place and non-in-place
+
+## Not taught yet
 
 ### C4 Database and Basic SQL
 

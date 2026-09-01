@@ -35,11 +35,10 @@ flowchart TD
     B4 --> OUT
 ```
 
-Every `False` falls through to the next test. Every `True` runs its block and jumps straight to the end — the remaining conditions are never evaluated.
 
 ## Order Matters
 
-Once a gate is taken, the rest are never tested. Overlapping conditions must go **narrowest first**.
+Overlapping conditions must go **narrowest first**.
 
 ```python
 # WRONG - a mark of 95 prints "Pass", never "Distinction"

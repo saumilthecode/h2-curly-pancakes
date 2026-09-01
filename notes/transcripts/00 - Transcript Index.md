@@ -1,7 +1,7 @@
 # H2 Computing transcript index
 
-Successful transcripts: 91
-Unavailable transcripts: 1
+Successful transcripts: 105
+Unavailable transcripts: 4
 
 ## Transcript files
 
@@ -373,7 +373,92 @@ Unavailable transcripts: 1
   - File: `91 - Traversal of Binary Search Trees [AAiEyLqMvP8].txt`
   - Characters: 8,306
 
+- **LT 12a Bubble Sort**: [LT12a Bubble Sort (2026 VoiceOver)](https://www.youtube.com/watch?v=YRL38gjbzlo)
+  - Uploader: YIJC Computing
+  - File: `92 - LT12a Bubble Sort (2026 VoiceOver) [YRL38gjbzlo].txt`
+  - Characters: 10,886
+
+- **LT 12a Bubble Sort**: [Bubble-sort with Hungarian ("Csángó") folk dance](https://www.youtube.com/watch?v=lyZQPjUT5B4)
+  - Uploader: AlgoRythmics
+  - File: `93 - Bubble-sort with Hungarian ( Csángó ) folk dance [lyZQPjUT5B4].txt`
+  - Characters: 111
+
+- **LT 12b Insertion Sort**: [LT12b Insertion Sort (2026 VoiceOver)](https://www.youtube.com/watch?v=EZ8q4reQpEw)
+  - Uploader: YIJC Computing
+  - File: `94 - LT12b Insertion Sort (2026 VoiceOver) [EZ8q4reQpEw].txt`
+  - Characters: 8,097
+
+- **LT 12b Insertion Sort**: [LT12b Insertion Sort (2026 VoiceOver) - unplugged activity](https://www.youtube.com/watch?v=QTh2RMHH-T0)
+  - Uploader: YIJC Computing
+  - File: `95 - LT12b Insertion Sort (2026 VoiceOver) - unplugged activity [QTh2RMHH-T0].txt`
+  - Characters: 4,455
+
+- **[OPTIONAL] LT 12c Selection Sort**: [12c Selection Sort (2020)](https://www.youtube.com/watch?v=KVXk2byimrE)
+  - Uploader: Kuang Jingkai [Staff]
+  - File: `96 - 12c Selection Sort (2020) [KVXk2byimrE].txt`
+  - Characters: 10,950
+
+- **[OPTIONAL] LT 12c Selection Sort**: [Select-sort with Gypsy folk dance](https://www.youtube.com/watch?v=Ns4TPTC8whw)
+  - Uploader: AlgoRythmics
+  - File: `97 - Select-sort with Gypsy folk dance [Ns4TPTC8whw].txt`
+  - Characters: 501
+
+- **LT 12d Merge Sort**: [LT12d Merge Sort   Unplugged Activity](https://www.youtube.com/watch?v=wOQz6GXn9CU)
+  - Uploader: YIJC Computing
+  - File: `98 - LT12d Merge Sort Unplugged Activity [wOQz6GXn9CU].txt`
+  - Characters: 3,972
+
+- **LT 12d Merge Sort**: [LT12d Merge Sort](https://www.youtube.com/watch?v=7SObKfT9hxA)
+  - Uploader: YIJC Computing
+  - File: `99 - LT12d Merge Sort [7SObKfT9hxA].txt`
+  - Characters: 2,451
+
+- **LT 12d Merge Sort**: [LT12d Merge Sort   Time Complexity](https://www.youtube.com/watch?v=UPQYT8F5wDE)
+  - Uploader: YIJC Computing
+  - File: `100 - LT12d Merge Sort Time Complexity [UPQYT8F5wDE].txt`
+  - Characters: 7,038
+
+- **LT 12e Quicksort**: [LT12e Quicksort Algorithm with Unplugged Activity](https://www.youtube.com/watch?v=F5YkhxAXZKk)
+  - Uploader: YIJC Computing
+  - File: `101 - LT12e Quicksort Algorithm with Unplugged Activity [F5YkhxAXZKk].txt`
+  - Characters: 4,462
+
+- **LT 12e Quicksort**: [Walkthrough LT12e Q4 5 Non in place Quicksort](https://www.youtube.com/watch?v=FLj2R7kLTfs)
+  - Uploader: YIJC Computing
+  - File: `102 - Walkthrough LT12e Q4 5 Non in place Quicksort [FLj2R7kLTfs].txt`
+  - Characters: 7,383
+
+- **LT 12e Quicksort**: [Walkthrough LT12e Q6-13 In-place Quicksort](https://www.youtube.com/watch?v=EIaVvXl_Cps)
+  - Uploader: YIJC Computing
+  - File: `103 - Walkthrough LT12e Q6-13 In-place Quicksort [EIaVvXl_Cps].txt`
+  - Characters: 20,794
+
+- **LT 12e Quicksort**: [What's the fastest way to alphabetize your bookshelf? - Chand John](https://www.youtube.com/watch?v=WaNLJf8xzC4)
+  - Uploader: TED-Ed
+  - File: `104 - What's the fastest way to alphabetize your bookshelf - Chand John [WaNLJf8xzC4].txt`
+  - Characters: 4,282
+
+- **LT 12e Quicksort**: [LT12e Quicksort - Youtube Extract with Correction - voiceover](https://www.youtube.com/watch?v=8lE7eXqBICE)
+  - Uploader: YIJC Computing
+  - File: `105 - LT12e Quicksort - Youtube Extract with Correction - voiceover [8lE7eXqBICE].txt`
+  - Characters: 7,417
+
 ## Videos without transcripts
+
+- [Insert-sort with Romanian folk dance](https://www.youtube.com/watch?v=ROalU379l3U)
+  - Assessment(s): LT 12b Insertion Sort
+  - Uploader: AlgoRythmics
+  - Reason: Error: [YoutubeTranscript] 🚨 Transcript is disabled on this video (ROalU379l3U)
+
+
+- [Merge-sort with Transylvanian-saxon (German) folk dance](https://www.youtube.com/watch?v=XaqR3G_NVoo)
+  - Assessment(s): LT 12d Merge Sort
+  - Uploader: AlgoRythmics
+  - Reason: Error: [YoutubeTranscript] 🚨 Transcript is disabled on this video (XaqR3G_NVoo)
+- [Quick-sort with Hungarian (Küküllőmenti legényes) folk dance](https://www.youtube.com/watch?v=ywWBy6J5gz8)
+  - Assessment(s): LT 12e Quicksort
+  - Uploader: AlgoRythmics
+  - Reason: Error: [YoutubeTranscript] 🚨 Transcript is disabled on this video (ywWBy6J5gz8)
 
 - [How ARP Works step by step with example | Address Resolution Protocol in Cisco Switch & Router](https://www.youtube.com/watch?v=-bXsCweU1DA)
   - Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)

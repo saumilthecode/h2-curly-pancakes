@@ -149,7 +149,6 @@ four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 > [5, [4, [3, [], []], []], [15, [8, [], []], [24, [], [27, [], []]]]]
 > ```
 
-
 > [!note]
 > `print_tree()` needs `from LT11b_module import *`. That module exports its own `make_tree`, `entry`, `left_branch`, `right_branch`, `make_empty_tree` and `is_empty` too, so `import *` **overwrites** yours. Put the import above your definitions if you want yours to win.
 
@@ -339,35 +338,6 @@ def flatten_bfs(tree):
 
 > [!tip] BFS and DFS are the same loop
 > Swap the queue for a [[LT10b Stack|stack]] and push **right before left**, and that loop outputs pre-order instead. FIFO spreads across the level; LIFO dives down the branch.
-
-> [!example]- The video's worked tree
-> ```mermaid
-> flowchart TD
->   v75[75] --> v17[17]
->   v75 --> v80[80]
->   v17 --> v3[3]
->   v17 --> v62[62]
->   v3 ~~~ y1:::hid
->   v3 --> v8[8]
->   v62 --> v26[26]
->   v62 --> v73[73]
->   v80 ~~~ y2:::hid
->   v80 --> v97[97]
->   v97 --> v96[96]
->   v97 ~~~ y3:::hid
->   v96 --> v89[89]
->   v96 ~~~ y4:::hid
->   classDef hid fill:none,stroke:none,color:transparent
-> ```
->
-> | | |
-> | --- | --- |
-> | pre | `75 17 3 8 62 26 73 80 97 96 89` |
-> | in | `3 8 17 26 62 73 75 80 89 96 97` |
-> | post | `8 3 26 73 62 17 89 96 97 80 75` |
-> | bfs | `75 17 80 3 62 97 8 26 73 96 89` |
->
-> In-order comes out **ascending** — *"in order will return the list that is actually in ascending order"*.
 
 ## Efficiency
 

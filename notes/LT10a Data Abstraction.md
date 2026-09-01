@@ -117,7 +117,8 @@ def make_rat(n, d):
 >
 > ```python
 > make_point(x, y)               # constructor
-> get_x(point)  get_y(point)     # accessors
+> get_x(point)                   # accessors
+> get_y(point)
 > midpoint(p1, p2)               # utilities
 > gradient(p1, p2)
 > distance(p1, p2)

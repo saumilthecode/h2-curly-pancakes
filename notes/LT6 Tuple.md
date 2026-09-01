@@ -36,7 +36,8 @@ tup * 3        # repetition
 "b" in tup     # membership > True / False
 tup[2:5]       # slicing > a new tuple
 len(tup)
-max(tup)  min(tup)
+max(tup)
+min(tup)
 sorted(tup)    # returns a LIST, not a tuple
 tuple("abc")   # ('a', 'b', 'c')
 ```

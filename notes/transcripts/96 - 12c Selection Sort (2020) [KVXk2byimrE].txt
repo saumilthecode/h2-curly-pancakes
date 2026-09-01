@@ -1,0 +1,241 @@
+Title: 12c Selection Sort (2020)
+Assessment(s): [OPTIONAL] LT 12c Selection Sort
+Linked label(s): Selection Sort
+Uploader: Kuang Jingkai [Staff]
+YouTube: https://www.youtube.com/watch?v=KVXk2byimrE
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:03] now we move on the selection sort this
+[00:02 - 00:05] comes after we have learned bubble sort
+[00:03 - 00:06] and insertion sort
+[00:05 - 00:09] okay what we've learned in sorting so
+[00:06 - 00:10] far is that basically
+[00:09 - 00:12] there are different strategies to use
+[00:10 - 00:13] for sorting you can go from the very
+[00:12 - 00:15] random one
+[00:13 - 00:16] like randomly opening a card to face up
+[00:15 - 00:20] and then
+[00:16 - 00:22] swapping them around to try to sort the
+[00:20 - 00:24] correct order however this does not
+[00:22 - 00:25] guarantee complete sorting and more
+[00:24 - 00:27] importantly right it might result in
+[00:25 - 00:28] extra steps then of course you can do a
+[00:27 - 00:30] systematic approach
+[00:28 - 00:32] okay but how do we choose the cards to
+[00:30 - 00:33] review one at a time but before that
+[00:32 - 00:34] let's do the unplug activity for
+[00:33 - 00:36] selection sort first
+[00:34 - 00:38] so right now you just need to focus on
+[00:36 - 00:40] the slides on the screen there's no need
+[00:38 - 00:42] to use your laptop for this one
+[00:40 - 00:44] this is a one player game objective to
+[00:42 - 00:45] use selection sort to sort the cards in
+[00:44 - 00:48] ascending orders
+[00:45 - 00:49] only reviewing one card at any any time
+[00:48 - 00:51] you can make use of five of the number
+[00:49 - 00:53] cards that were given to you
+[00:51 - 00:56] okay randomly arranged and facing down
+[00:53 - 00:58] and two objects like pens or erasers
+[00:56 - 00:59] that will serve as a pointer or a
+[00:58 - 01:00] demarcation tool
+[00:59 - 01:03] you can only choose one card to be faced
+[01:00 - 01:04] at any point in time you can pick at the
+[01:03 - 01:06] cuts one at a time
+[01:04 - 01:08] cards can only be swapped once complete
+[01:06 - 01:08] get your tutor account to check your
+[01:08 - 01:11] method
+[01:08 - 01:13] but before we go into the actual unplug
+[01:11 - 01:14] activity let's look at how selection
+[01:13 - 01:16] sort work first
+[01:14 - 01:18] so let's say i open up the first two
+[01:16 - 01:20] cards here 15 and 14
+[01:18 - 01:21] i will mark my demarcation between
+[01:20 - 01:24] sorted and sorted
+[01:21 - 01:25] right now i see that on the left hand
+[01:24 - 01:27] side is considered as sorted right hand
+[01:25 - 01:28] side is unsorted so
+[01:27 - 01:30] there are no cuts on the left hand side
+[01:28 - 01:31] right now so the whole lease is
+[01:30 - 01:35] considered as unsorted
+[01:31 - 01:37] then we will compare the first card 15
+[01:35 - 01:38] versus the rest of the cards one by one
+[01:37 - 01:40] so right now
+[01:38 - 01:41] 14 is the smallest card but as we go
+[01:40 - 01:43] down the list and we open cut
+[01:41 - 01:45] by cut after you open 40 you can open
+[01:43 - 01:47] the next one and then we open the next
+[01:45 - 01:50] one over here and realize that hey
+[01:47 - 01:51] the fourth card is at 10. so 10
+[01:50 - 01:54] currently is the smallest value
+[01:51 - 01:55] i will shift my pointer to 10 and i go
+[01:54 - 01:56] down the list and open the fifth card
+[01:55 - 01:59] and realize oh this is
+[01:56 - 02:01] a value that's not smaller than 10. so
+[01:59 - 02:04] that means 10 is the smallest value here
+[02:01 - 02:05] i will do a sort between 10 and 15. and
+[02:04 - 02:07] once that is done
+[02:05 - 02:09] 10 is considered as sorted so my
+[02:07 - 02:13] demarcation can shift forward
+[02:09 - 02:14] by one okay and the pointer will
+[02:13 - 02:16] pointer for the smallest value will come
+[02:14 - 02:18] back to the first
+[02:16 - 02:19] unsorted value you can try this process
+[02:18 - 02:21] you just make
+[02:19 - 02:23] you basically you're trying to advance
+[02:21 - 02:24] this demarcation pointer
+[02:23 - 02:26] each time trying to find the smallest
+[02:24 - 02:28] value okay and once you your
+[02:26 - 02:29] demarcation pointer reaches the end you
+[02:28 - 02:31] have come to the
+[02:29 - 02:33] you have completed your sorting all
+[02:31 - 02:35] right for this period of time please
+[02:33 - 02:38] focus on this activity first let your
+[02:35 - 02:38] friends check
+[02:38 - 02:42] okay let's look at carefully what
+[02:40 - 02:44] selection sort is right now
+[02:42 - 02:46] let's say i have a list again the whole
+[02:44 - 02:48] aim of this selection sort is to do
+[02:46 - 02:50] this is to select the smallest element
+[02:48 - 02:52] in the list and stop it with the left
+[02:50 - 02:53] most unsorted element okay after i've
+[02:52 - 02:55] done the swap
+[02:53 - 02:57] that smallest element is considered
+[02:55 - 03:01] sorted so now let's look at the first
+[02:57 - 03:02] line of this unsortedly 5857193
+[03:01 - 03:04] it is highlighted in green this is the
+[03:02 - 03:07] current
+[03:04 - 03:08] left most unsorted all right i go down
+[03:07 - 03:10] the list
+[03:08 - 03:11] i find the smallest element right now is
+[03:10 - 03:13] one
+[03:11 - 03:14] so i do a sort between eight and one so
+[03:13 - 03:16] one will go to
+[03:14 - 03:18] the first position and then eight will
+[03:16 - 03:20] go to the fourth position
+[03:18 - 03:22] okay once i've done that one becomes
+[03:20 - 03:24] sorted okay there i do the same
+[03:22 - 03:26] now the next unsorted the leftmost and
+[03:24 - 03:28] sort of element is five
+[03:26 - 03:30] five i go to the list and look for the
+[03:28 - 03:31] next other smallest elements which is
+[03:30 - 03:33] three
+[03:31 - 03:34] three were swapped with five and now one
+[03:33 - 03:37] and three are considered as
+[03:34 - 03:39] swap as sorted so we run down this whole
+[03:37 - 03:40] process and you can see that the sorted
+[03:39 - 03:42] element grows bigger and bigger and
+[03:40 - 03:43] bigger until eventually the entire list
+[03:42 - 03:45] is considered as
+[03:43 - 03:46] sorted so just to show this process so
+[03:45 - 03:49] right now
+[03:46 - 03:51] five is being compared to the rest of
+[03:49 - 03:54] the list and one's the smallest
+[03:51 - 03:56] so one will swap with five
+[03:54 - 03:58] all right now with one sorted we
+[03:56 - 04:02] comparing two against the rest of them
+[03:58 - 04:04] to find the smallest and in this case
+[04:02 - 04:05] 2 is the smallest due so 2 will not be
+[04:04 - 04:08] solved
+[04:05 - 04:12] moving on we are looking at 4 now 4 6 5
+[04:08 - 04:16] 3 smallest in this lease is obviously 3
+[04:12 - 04:19] so 3 will stop with four
+[04:16 - 04:20] okay next we are comparing six five and
+[04:19 - 04:23] four
+[04:20 - 04:26] and the smallest in the list is four so
+[04:23 - 04:26] four will start with
+[04:26 - 04:29] six
+[04:30 - 04:34] and now we have five and six okay it
+[04:32 - 04:36] looks done but actually you realize the
+[04:34 - 04:38] code will continue to compare first
+[04:36 - 04:40] all right so this is how your selection
+[04:38 - 04:43] sort is done
+[04:40 - 04:45] all right let's move on
+[04:43 - 04:46] is selection sort in place okay what
+[04:45 - 04:48] what exactly is in place right remember
+[04:46 - 04:51] in place means that i do not create and
+[04:48 - 04:53] any extra memory space for this
+[04:51 - 04:55] if let's say my my list at first it
+[04:53 - 04:57] currently has six items
+[04:55 - 04:58] okay i do not create extra lists i do
+[04:57 - 05:01] not create extra
+[04:58 - 05:02] items to hold one of the elements as a
+[05:01 - 05:05] temporary place
+[05:02 - 05:06] so selection sort we can see that we are
+[05:05 - 05:07] just doing a mutual swap within the list
+[05:06 - 05:09] itself
+[05:07 - 05:11] so we are mutating the list as we go we
+[05:09 - 05:12] are not creating a new list
+[05:11 - 05:14] so we are not creating any additional
+[05:12 - 05:15] memory space okay so of course this is
+[05:14 - 05:18] considered as an
+[05:15 - 05:19] in-place sort okay is selection sort
+[05:18 - 05:21] stable what exactly is stable
+[05:19 - 05:22] let's say there's at least there's a
+[05:21 - 05:23] case where there are repeated elements
+[05:22 - 05:25] within
+[05:23 - 05:26] an unsorted lease so let's say that i
+[05:25 - 05:28] have two
+[05:26 - 05:30] threes here one the red and the blue one
+[05:28 - 05:32] a stable sort will give you
+[05:30 - 05:33] a result that the rate three will still
+[05:32 - 05:35] come before the blue one
+[05:33 - 05:38] an unstable one might reverse the
+[05:35 - 05:40] process so you have a three
+[05:38 - 05:41] the blue one will come ahead so this
+[05:40 - 05:42] depends on the implementation of the
+[05:41 - 05:43] sort
+[05:42 - 05:46] but let's look at how selection sort
+[05:43 - 05:46] does this area okay if we quickly look
+[05:46 - 05:48] at this
+[05:46 - 05:49] one over here let's say my list is now
+[05:48 - 05:52] four five three two
+[05:49 - 05:53] four one okay and there's a yellow four
+[05:52 - 05:55] and a blue four
+[05:53 - 05:56] again i go down this lace i look for the
+[05:55 - 05:59] smallest element which is one
+[05:56 - 06:00] so one be shifted and yellow four be
+[05:59 - 06:02] shifted to the back
+[06:00 - 06:04] now i go down this list again now one
+[06:02 - 06:06] sorted five three two four four
+[06:04 - 06:07] two is the smallest element so 2 will be
+[06:06 - 06:09] swapped with 5
+[06:07 - 06:10] and then of course we go through the
+[06:09 - 06:13] whole selection process and realize that
+[06:10 - 06:16] now the yellow 4 is actually at the back
+[06:13 - 06:18] of the blue 4. so this is a non-stable
+[06:16 - 06:20] process all right so this is something
+[06:18 - 06:22] you need to take note for selection sort
+[06:20 - 06:23] if you need a stable sort selection sort
+[06:22 - 06:24] is not the way forward
+[06:23 - 06:26] so we'll learn excel that it's actually
+[06:24 - 06:28] possible to do a stable selection sort
+[06:26 - 06:29] as well although growth for selection
+[06:28 - 06:31] sort in this case here right
+[06:29 - 06:33] best case is o n square because you look
+[06:31 - 06:36] at this you will make a pass off
+[06:33 - 06:37] you will look at the first row you will
+[06:36 - 06:40] compare
+[06:37 - 06:41] five elements then four three two and
+[06:40 - 06:44] one
+[06:41 - 06:46] so basically you have a sum of ap
+[06:44 - 06:48] average case is also o n square worst
+[06:46 - 06:50] case is also o n square
+[06:48 - 06:52] okay why is this the same because okay
+[06:50 - 06:53] if you look carefully at this right
+[06:52 - 06:56] if you go back to the previous slide
+[06:53 - 06:57] here uh regardless of whether the list
+[06:56 - 06:59] is sorted or not right
+[06:57 - 07:01] this selection sort will complete the
+[06:59 - 07:02] entire process you will run down until
+[07:01 - 07:04] you have the
+[07:02 - 07:06] last element sorted so regardless of
+[07:04 - 07:07] whether the list is sorted you will
+[07:06 - 07:09] still do the check
+[07:07 - 07:10] okay as you can see in the animation
+[07:09 - 07:13] that was done earlier
+[07:10 - 07:16] all right that's all for selection so
+[07:13 - 07:19] you can move on to the rest of the lte
+[07:16 - 07:19] questions
