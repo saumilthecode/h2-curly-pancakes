@@ -1,0 +1,12 @@
+Name,Phone,Address,RewardPoints
+Tan Wei Jie,89001234,51 Highland Rise #10-05 Singapore 234351,12500
+Lim Hui En,91234567,12 Maple Avenue #03-22 Singapore 548921,9800
+Ng Jun Hao,87654321,77 Sunset Walk #11-01 Singapore 732123,15800
+Chong Mei Lin,93456789,200 Orchid Road #08-12 Singapore 238801,13400
+Goh De Xun,92341122,19 Riverbank View #15-09 Singapore 563211,7200
+Leong Zhi Yi,90018844,9 Serene Lane #04-07 Singapore 457102,16100
+Teo Kai Jie,91123344,33 Central Boulevard #21-10 Singapore 018900,11000
+Foo Jia Xin,96543210,102 Greenridge Crescent #12-03 Singapore 679902,14200
+Wong Xin Yi,98887766,28 Horizon Drive #06-05 Singapore 551310,8900
+Tan Yu Sheng,97775555,60 East Coast Road #02-01 Singapore 428776,10400
+Liew Pei Ling,96664433,6 West Coast Rise #10-11 Singapore 126789,11900

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LT12e Quick Sort.md",
+                "file": "BTB2 File Handling.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LT12e Quick Sort"
+              "title": "BTB2 File Handling"
             }
           }
         ]
@@ -215,8 +215,9 @@
   },
   "active": "6a4f31a92b7fccca",
   "lastOpenFiles": [
-    "LT12d Merge Sort.md",
+    "LT10a Data Abstraction.md",
     "LT12e Quick Sort.md",
+    "LT12d Merge Sort.md",
     "LT12b Insertion Sort.md",
     "LT12 Sorting Algorithms.md",
     "LT11b Binary Tree.md",
@@ -244,7 +245,6 @@
     "LT10d Hashing.md",
     "LT10c Queue.md",
     "LT10b Stack.md",
-    "LT10a Data Abstraction.md",
     "LT9a Recursion.md",
     "C2 Data representation.md",
     "Hashing.md",
