@@ -123,17 +123,23 @@ Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
 >
 > 1m all primary keys · 1m all foreign keys · 1m all fields single word. Three descriptions with none of these score 0.
 
-> [!example]- 2026 Mastery P1 Q4 — composite key and what a PK does `[1+2]` (no mark scheme)
+> [!important] 2024 Promo P1 Q4 — `OrderDetails` `[1+2+1+2]`
 > `OrderDetails (CustomerID, ProductID, Quantity, UnitPrice, Date)`
 >
-> **(a)** `{CustomerID, ProductID, Date}`. `C004` bought `P2003` on both 14 and 15 Sep, so the first two fields alone repeat.
+> **(a)** Composite key `{CustomerID, ProductID, Date}` — `C004` bought `P2003` on both 14 and 15 Sep, so the first two alone repeat.
 >
 > ```text
 > OrderDetails (CustomerID, ProductID, Quantity, UnitPrice, Date)
 >               ──────────  ─────────                       ────
 > ```
 >
-> **(b)** It uniquely identifies each record, so no two records can be the same. Another table can refer to that record by storing the key as a foreign key.
+> **(b)** Two functions of a PK, 1m each:
+> 1. It **uniquely identifies** a particular record.
+> 2. Records are **sorted by the PK** for easy searching and retrieval.
+>
+> **(c)(i)** Add a field `OrderID` `[1]`. **(ii)** New PK `{OrderID}` (1m); better because it's one value to give instead of three, and faster to sort and search on (1m).
+>
+> 2026 Mastery P1 Q4 repeats (a) and (b).
 
 > [!example]- A-Level keys on link tables — 2020 Q6(b)(iii), 2021 Q2(d), 2023 Q4(b)
 > A table that records *who is linked to what* needs both sides in its key.

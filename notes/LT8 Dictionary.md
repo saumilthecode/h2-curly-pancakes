@@ -116,6 +116,13 @@ def average(result1, result2):
     return result
 ```
 
+> [!important] Promo P2 dictionaries
+> **2023 Task 4** — `bag = {'diamond': 0, …}`. Update for one gem: `bag['diamond'] += 1` (1m each). Loop a list of gems: 1m iterate, 1m `bag[gem]`, 1m `+= 1`. Exchange for coins `[5]`: 1m `bag['coin'] = 0` · 1m loop over `bag` · 1m `bag[key] * rate[key]` · 1m add to `'coin'` · 1m set the gem back to `0`.
+>
+> **2024 Task 7** — count `'gold'`, `'silver'`, `'diamonds'` in a passage `[4]`: 1m a built-in such as `.count()` · 1m start from `{'gold': 0, 'silver': 0, 'diamonds': 0}` · 1m `d[key] +=` · 1m output `{'gold': 3, 'silver': 2, 'diamonds': 2}` — `"golden"` counts as gold. Then `para.replace(word, 'wood')` for each word `[3]`.
+>
+> **2025 Task 8** — count letters `a`–`z` `[3]`: 1m loop over the passage · 1m check `a`–`z` · 1m create or add to the key. Then print letter, count and percentage to 2 d.p. in columns `[5]`.
+
 ## Common Mistakes
 
 - Using an index: `d[0]` looks for the *key* `0`, not the first entry.

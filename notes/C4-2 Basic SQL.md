@@ -31,7 +31,7 @@ CREATE TABLE Customers (
 );
 ```
 
-`NOT NULL` makes the field compulsory — `City` may be left empty. `;` ends the statement, so several can run together.
+`NOT NULL` makes a field compulsory; `City` can be empty. `;` ends each statement.
 
 Foreign keys each get their own clause:
 
@@ -48,7 +48,7 @@ CREATE TABLE Orders (
 );
 ```
 
-A composite key is **one** clause listing every field — `PRIMARY KEY(CustomerID, Colour, Date)`. Two separate `PRIMARY KEY` clauses is an error: *table has more than one primary key*.
+A composite key is **one** clause listing every field: `PRIMARY KEY(CustomerID, Colour, Date)`. Two `PRIMARY KEY` clauses raise *table has more than one primary key*.
 
 ### Data Types
 
@@ -75,7 +75,7 @@ VALUES ('Chang', 19, '24 - 12 oz bottles', 'Exotic Liquids', 'UK'),
 
 - Values match the column list **in order**.
 - `Id` is left out — the integer primary key **auto-increments**.
-- A field left out is saved as `NULL`, unless it is `NOT NULL` — then the insert fails.
+- Omitted field → `NULL`; if `NOT NULL`, the insert fails.
 - Several rows share one `VALUES`, separated by commas.
 - Text containing `'` goes in **double quotes**.
 - Strings are quoted, numbers are not. Line breaks don't matter.
@@ -178,13 +178,13 @@ DROP TABLE Customers;                                  -- the table itself is go
 | `DELETE FROM …` | all go | stays, empty |
 | `DROP TABLE …` | all go | **gone** |
 
-In `Northwind.db`, `Orders` still refers to Victoria's `Id`, so the **foreign key** blocks deleting her and dropping `Customers`. The practice file `dummy.db` has the constraint removed. SQLite has no `DROP DATABASE`.
+`Northwind.db`: `Orders` references Victoria's `Id`, so the **foreign key** blocks deleting her or dropping `Customers`. `dummy.db` removes this constraint. SQLite has no `DROP DATABASE`.
 
 > [!warning] Foreign keys are off by default outside DB Browser
-> DB Browser enforces them. The `sqlite3` command line and Python's `sqlite3` module ignore them until you run `PRAGMA foreign_keys = ON`.
+> DB Browser enforces foreign keys; the `sqlite3` CLI and Python module require `PRAGMA foreign_keys = ON`.
 
 > [!important] Before any `UPDATE` or `DELETE`
-> Run a `SELECT` with the **same `WHERE`** first to see which rows it will hit.
+> Preview affected rows with `SELECT` using the **same `WHERE`**.
 
 ## Exam
 
@@ -210,6 +210,19 @@ In `Northwind.db`, `Orders` still refers to Victoria's `Id`, so the **foreign ke
 > | 9.4 | `INSERT INTO … VALUES …` | 4 fields and 4 values |
 >
 > 9.3 is revenue **if everything sells** — multiply inside `SUM`, per row.
+
+> [!important] 2024 Promo P2 Task 8 — table `books (Id, Title, Author, Publisher, Year, UnitPrice, Quantity)` `[10]`
+> ```sql
+> SELECT Title, Publisher FROM books;                        -- 8.1
+> SELECT Title, Year FROM books WHERE Year > 2000;           -- 8.2
+> SELECT DISTINCT Publisher FROM books ORDER BY Publisher;   -- 8.3
+> SELECT SUM(UnitPrice * Quantity) FROM books;               -- 8.4
+> INSERT INTO books (Title, Author, Publisher, Year, UnitPrice, Quantity)
+> VALUES ('The Hidden Language of Computer Hardware and Software',
+>         'Charles Petzold', 'Microsoft Press', 2000, 34.99, 2);   -- 8.5
+> ```
+>
+> Same marks as 2025, plus **8.3**: 1m `ORDER BY`, 1m `DISTINCT` — each publisher once. `DISTINCT` isn't in the Reference Guide.
 
 > [!example]- 2024 A-Level P1 Q4(a)(iii) — create the property table `[4]`
 > Each property has a reference code, address, price in dollars and number of bedrooms.
@@ -263,7 +276,6 @@ In `Northwind.db`, `Orders` still refers to Victoria's `Id`, so the **foreign ke
 - `UPDATE` or `DELETE` with no `WHERE`.
 - `WHERE COUNT(…)` instead of `HAVING`.
 - Mixing up `DELETE FROM` (records) with `DROP TABLE` (the table).
-- Two `PRIMARY KEY` clauses for a composite key.
 - Clauses out of order, e.g. `LIMIT` before `ORDER BY`.
 - A single-quoted string that contains `'`.
 

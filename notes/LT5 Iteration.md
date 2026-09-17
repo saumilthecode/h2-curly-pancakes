@@ -104,6 +104,11 @@ while value != 0:     # 9, 7, 5, 3, 1, -1, -3 ... never exactly 0
 
 Use `while value > 0:`. An infinite loop kills the Jupyter kernel: restart it, then `print()` inside the loop to trace the variable.
 
+> [!important] Promo P2 Task 1 — input validation, every year
+> **2024 T1.1** `[2]`: re-prompt until `10 <= x <= 100` — 1m `while x < 10 or x > 100:` · 1m input again inside the loop.
+>
+> **2025 T1.1** `[4]`: collect 9 valid scores. A `for` loop with no validation capped at **2m**; a `while` loop without validation, **3m**.
+
 ## Common Mistakes
 
 - Hardcoding a value where the parameter should be used (`range(10)` instead of `range(n)`).

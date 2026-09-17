@@ -96,7 +96,7 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 > 2025 Promo P2 Task 5 gives this exact function as pseudocode, with `Hi ← Hi - 1`, the swap inside the loop, and the pivot swap blanked out.
 
 > [!important]
-> `low <= high` must guard **both** inner loops or the pointers run off the segment. The recursive calls use `mid - 1` and `mid + 1` — the pivot is done and must be excluded, or the recursion never shrinks.
+> Guard **both** inner loops with `low <= high` to stay within the segment. Exclude the placed pivot using `mid - 1` and `mid + 1` so recursion shrinks.
 
 | Best / average | `O(n log n)` |
 | --- | --- |

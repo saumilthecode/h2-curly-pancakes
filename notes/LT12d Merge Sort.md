@@ -14,7 +14,7 @@ flowchart TD
   G --> I["9"]
 ```
 
-The tree *is* the recursion. `split` written on its own returns it as nested tuples:
+`split` returns the recursion tree as nested tuples:
 
 ```python
 def split(seq):
@@ -67,6 +67,36 @@ Halving `n` to 1 takes `log n` levels, each doing `n` work, so every case is `O(
 > [!important] Describe merge sort
 > Required keywords: **divide**, **merge**, **repeat**.
 > **Divide** the list into two halves, and **repeat** on each half until every sublist holds one element. Then **merge** pairs of sublists back together, each time taking the smaller of the two front elements, until one sorted list remains.
+
+> [!important] 2024 Promo P1 Q2(a) — merge sort `[5, 2, 7, 1, 3, 8, 6, 4]` with a diagram `[4+1]`
+> ```text
+>             [5, 2, 7, 1, 3, 8, 6, 4]
+>             /                      \
+>      [5, 2, 7, 1]              [3, 8, 6, 4]
+>       /        \                /        \
+>    [5, 2]    [7, 1]          [3, 8]    [6, 4]
+>    /   \     /   \          /   \     /   \
+>  [5]  [2]  [7]  [1]        [3]  [8]  [6]  [4]
+>    \   /     \   /          \   /     \   /
+>    [2, 5]    [1, 7]          [3, 8]    [4, 6]
+>       \        /                \        /
+>      [1, 2, 5, 7]              [3, 4, 6, 8]
+>             \                      /
+>             [1, 2, 3, 4, 5, 6, 7, 8]
+> ```
+>
+> Words: 1m split in two recursively until single elements · 1m recombine, comparing the first elements of each sublist. Diagram: 1m halves down to single elements · 1m recombined into a sorted array.
+> **(ii)** Order of growth `O(n log n)` `[1]`. 2026 Mastery P1 Q2(a) is the same question.
+
+> [!example]- 2023 Promo P2 Task 5 — fill the merge sort pseudocode `[4+3+3]`
+> ```text
+> A  left  <- seq[:mid]                  B  right <- seq[mid:]
+> C  left  <- MergeSort(left)            D  right <- MergeSort(right)
+> E  result.append(left.pop(0))          F  result.append(right.pop(0))
+> G  result += right   (left is empty)   H  result += left
+> ```
+>
+> 1m per pair. Task 5.3 sorts `(name, timing)` tuples: 1m reuse the sort, 1m index `[1]`, 1m `float()` the timing string.
 
 ## Common Mistakes
 

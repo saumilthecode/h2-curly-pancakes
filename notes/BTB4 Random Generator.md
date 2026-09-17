@@ -3,7 +3,7 @@
 
 ## Pseudo-Random
 
-Python's random numbers are not truly random — they come from a deterministic formula.
+Python's random numbers are **pseudo-random**: they come from a deterministic formula.
 
 - The same **seed** always produces the same sequence.
 - With no seed, Python takes one from the operating system.

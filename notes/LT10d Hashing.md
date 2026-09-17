@@ -3,8 +3,6 @@
 
 ## Two Uses of Hashing
 
-The word *hash* is used for two related but different jobs:
-
 | | Hash-table function | Cryptographic hash |
 | --- | --- | --- |
 | Purpose | map a key to a table index | make a fixed-length fingerprint of data |
@@ -43,10 +41,8 @@ Without a collision, searching is a **single calculation plus one lookup**. Coll
 
 ## The Lesson Hash Function
 
-Uses the ASCII value of each character, weighted by its position.
-
 > [!warning] Why the weight is needed
-> Just summing the ASCII values ignores **order** — `abc`, `bca` and `cab` all total `294`, so anagrams collide every time. Multiplying each character by `i + 1` makes position count.
+> ASCII sums ignore **order**, so anagrams collide: `abc`, `bca` and `cab` all total `294`. Weight characters by `i + 1` to include position.
 
 ```python
 def hash(string):
@@ -92,7 +88,7 @@ def transmit(data):
 transmitted: 123455
 ```
 
-Real uses: NRIC, vehicle plate numbers, ISBN, credit card (Luhn). Every one is the same shape — **weight each digit, sum, take a modulus** — only the weights, the modulus and the final mapping change.
+Uses: NRIC, vehicle plates, ISBN, credit cards (Luhn). Pattern: **weight digits, sum, take a modulus**; weights, modulus and final mapping vary.
 
 > [!example]- The two tutorial schemes
 > **NRIC** `S1234567D` — weights `2, 7, 6, 5, 4, 3, 2` on the seven digits, `+ 4` if the prefix is `T`, then `% 11` mapped through `J Z I H G F E D C B A` (remainder `0` → `J`).
@@ -142,7 +138,7 @@ Storing `['cdab', 'dbac', 'dabc', 'bdac', 'badc']` in a table of size 5:
 | `bdac` | `985` | `0` |
 | `badc` | `988` | `3` ← collision |
 
-Searching without collisions is a single lookup — no linear search needed:
+Without collisions, a search is a single lookup:
 
 ```python
 def search(table, item):
@@ -202,7 +198,7 @@ def search_chained(table, item):
     return item in table[index]
 ```
 
-If the question says each slot holds `''`, `-1`, a record or a class, use that — don't swap in your own.
+Use the question's specified slot contents (`''`, `-1`, record or class).
 
 ### Linear Probing
 
@@ -228,7 +224,7 @@ i = (i + 1) % len(table)
 > [!important]
 > Loop at most `len(table)` times. A full table would otherwise probe forever.
 
-Searching must follow the **same probe path** — check the assigned slot, then step forward the same way until you find the item or an empty slot.
+Search along the **same probe path** until finding the item or an empty slot.
 
 ```python
 def insert_probe(table, item):
@@ -265,12 +261,21 @@ def search_probe(table, item):
 >
 > **(b)** A possible order: `2352`, `3857`, `5731`, `4249` (any order, all at their own hash), then `8131`, `6201`. Marks: the hashes (1m); `8131` after `3857` (1m); `6201` after `4249`, wrapping 9 → 0 (1m).
 
+> [!important] Promo P2 hash tables — asked every year `[8–16]`
+> **2024 Task 6** — hash = sum of `ord()` over the username before `@`, `% 20` `[3]`:
+> 1m slice before `@` · 1m loop and total · 1m `ord()` and `% 20`.
+>
+> Then insert with **linear probing** `[6]`: 1m table `[''] * 20` · 1m index from the hash · 1m store if empty · 1m else try `i + 1` · 1m loop over the other slots · 1m wrap with `% 20`. The four emails land at 8, 11, 9, 12.
+>
+> **2025 Task 7** — **separate chaining** `[6]`: 1m create and iterate · 1m compute the hash · 1m **empty** slot: store the string · 1m slot already a **list**: append · 1m slot holds **one string**: turn it into a list of both · 1m return and display.
+>
+> **2023 Task 6** — `query(num)` `[5]`: 1m hash · 1m check the slot is empty · 1m check it holds **that** vehicle · 1m return its status · 1m *"Vehicle not found."* Then `ready(num)` `[2]`: update the status, print *"Data updated"*.
+
 ## Common Mistakes
 
 - Forgetting `% len(table)`.
 - Treating a table hash as encryption or assuming it has cryptographic security.
 - Assuming collisions never happen.
-- Searching a linear-probed table without following the probe path.
 - Forgetting a chained slot may hold either a plain value **or** a list.
 
 ## Related

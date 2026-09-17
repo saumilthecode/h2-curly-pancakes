@@ -37,7 +37,7 @@
 - Backbone: **fibre optic cable**, much of it undersea.
 - Satellite reaches where cables can't, but the round trip adds **latency**.
 
-**Intranet** — a private network that uses internet technologies (web pages, email) but is restricted to one organisation. Reachable from outside only through controlled access.
+**Intranet** — an organisation's private network using internet technologies (web pages, email), with controlled external access.
 
 ## Client–Server vs Peer-to-Peer
 
@@ -56,7 +56,7 @@ A protocol is an agreed set of rules for communication. Without one:
 
 - devices from different manufacturers, running different software, cannot interpret each other's data
 - there is no agreement on message **format**, **order**, **speed** or **error checking**
-- the receiver has no way to tell where one message ends and the next begins
+- receivers cannot identify message boundaries
 
 ## Hosts, Nodes and Media
 
@@ -78,18 +78,18 @@ Media: copper cable carries electrical signals, fibre optic carries light pulses
 - **MAC** — 48-bit, hexadecimal, e.g. `00-16-EA-06-6C-3E`, built into the NIC
 - **IPv4** — 32-bit, four decimal numbers `0`–`255` separated by dots, e.g. `192.168.0.1`
 
-So the **two ways a device can be identified on a LAN** are its MAC address and its IP address.
+**Two ways to identify a device on a LAN:** its MAC address and its IP address.
 
-A host can be allocated an IP address in **two ways**:
+Two ways to allocate an IP address:
 
 - **Statically** — set by hand, and it stays put
 - **Dynamically** — assigned automatically from a pool by a **DHCP** server, on a lease
 
 > [!important]
-> IP gets the data to the correct **network**. MAC gets it to the correct **device** inside that network. ARP is what finds a device's MAC address from its IP address within a LAN.
+> ARP finds a device's MAC address from its IP address within a LAN.
 
 > [!important] Along the route
-> The destination **IP address stays the same** from source to final destination. The **MAC address changes at every hop** — it only ever identifies the next device on this link.
+> Destination **IP stays the same** end-to-end; **MAC changes at every hop** to identify the next device on the link.
 >
 >
 > ```mermaid
@@ -99,9 +99,8 @@ A host can be allocated an IP address in **two ways**:
 >     RB -->|"MAC: B to server"| S([server])
 > ```
 >
-> A new MAC pair on every link. The destination IP is identical on all three.
 
-MAC is your **name** — fixed, burned into the NIC. IP is your **current address** — it changes when you move network.
+MAC is fixed in the NIC; IP changes when moving networks.
 
 ### Private vs Public IP
 
@@ -112,7 +111,7 @@ MAC is your **name** — fixed, burned into the NIC. IP is your **current addres
 | Assigned by | the local router / DHCP | the ISP |
 | Example | `192.168.0.3` | `192.166.122.7` |
 
-The router swaps the private source address for its public one on the way out, and back again on the way in.
+Going out, the router swaps the private source IP for its public one; coming back, it swaps it back.
 
 ### Subnet Mask and Gateway
 
@@ -124,7 +123,7 @@ Subnet mask: 255.255.255.0
 Network:     192.168.0        < the part the mask keeps
 ```
 
-Destination outside the local network? Send it to the **default gateway** — the router.
+Send non-local traffic to the **default gateway** (router).
 
 ## Packet Switching
 
@@ -140,7 +139,7 @@ The internet uses packet switching.
 | Payload | the data |
 | Trailer | error check, e.g. CRC |
 
-Circuit switching instead reserves one fixed path for the whole communication. Packet switching is more resilient — if one route fails, packets take another.
+Circuit switching reserves a fixed path throughout communication. Packet switching is more resilient: packets can reroute around failures.
 
 **Why data is divided into packets** — small packets share the links fairly rather than one large transfer blocking them, and a corrupted packet only needs that packet resent, not the whole file.
 
@@ -309,6 +308,26 @@ SMTP runs over TCP to help ensure delivery.
 > **(d)** One more cloud service and its benefit `[1+1]` — IaaS (virtual networks, firewalls), PaaS (databases, web hosting) or SaaS (Microsoft 365, Google Workspace).
 >
 > Cloud computing is outside y27; the 2025 promo asked it anyway.
+
+> [!important] 2024 Promo P1 Q5 — joining two companies' LANs `[2+2+2+2+1]`
+> **(a)** A = **switch** (inside a LAN), B = **router** (between LANs).
+>
+> **(b)** Two differences, any two:
+>
+> | | Switch | Router |
+> | --- | ------ | ------ |
+> | Connects | devices **within** one network | **different** networks |
+> | Forwards by | MAC address | IP address |
+> | Job | delivers to the right device | picks the best path between networks |
+>
+> **(c)** Joining networks by cable, one each:
+> - **Advantage:** more reliable (less interference), faster with lower latency, more secure (needs physical access), consistent through walls
+> - **Disadvantage:** costly to install, inflexible when moving or adding devices, needs maintenance, hard to scale
+>
+> **(d)** Connecting via the internet instead: **security risk** — hacking, data breaches, cyberattacks `[2]`.
+> **(e)** Fix: a **VPN**, **firewall** or passwords, or **encrypt** the data, e.g. over HTTPS `[1]`.
+>
+> 2026 Mastery P1 Q5 repeats (a) and (b).
 
 ## Related
 

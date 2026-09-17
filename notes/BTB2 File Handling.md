@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> Read from and write to external text and CSV files. Both `open()` … `close()` and `with open(...)` are valid; follow any representation required by the question.
+> Read/write text and CSV files using `open()` … `close()` or `with open(...)`; follow the question's required form.
 
 ## Opening
 
@@ -44,7 +44,7 @@ except FileNotFoundError:
     print("The file does not exist.")
 ```
 
-Catch the **specific** exception. A bare `except Exception` swallows your own bugs too.
+Catch **specific** exceptions; `except Exception` can hide bugs.
 
 ## Reading
 
@@ -63,7 +63,7 @@ f.close()
 ```
 
 > [!warning]
-> Lines keep their trailing `\n`. Strip it with `.strip()` or `.rstrip("\n")`, or `print` adds a blank line between rows.
+> Strip trailing `\n` with `.strip()` or `.rstrip("\n")` to prevent `print` adding blank lines.
 
 ## Writing and Appending
 
@@ -96,7 +96,7 @@ for name, gender, ht, wt in content:
 f.close()
 ```
 
-Each row comes back as a **list**. Drop the `next(content)` line if there is no header, and use `for row in content:` if you don't want to unpack.
+Rows are **lists**. No header: omit `next(content)`. Without unpacking: use `for row in content:`.
 
 ```python
 from csv import writer
@@ -116,8 +116,6 @@ f.close()
 > Use `newline=""` when writing, or the file gets a blank line between every row.
 
 ### Reading Manually
-
-Without the module, split each line yourself.
 
 ```python
 def read_csv(filename):
@@ -146,6 +144,20 @@ def export(records, filename):
         f.write(",".join(str(field) for field in r) + "\n")
     f.close()
 ```
+
+> [!important] Promo P2 — read a file into a list of tuples, every year `[5–8]`
+> 2023 Task 3.1, 2024 Task 2.1 and 2025 Task 2.1 all mark the same steps, 1m each:
+>
+> | Step | Code |
+> | ---- | ---- |
+> | open **and close** | `f = open(filename)` … `f.close()` |
+> | skip the header | `next(f)` or `lines[1:]` |
+> | strip | `line.strip()` |
+> | split | `line.split(',')` |
+> | make a tuple | `tuple(line)` or `(line[0], line[1], line[3])` |
+> | start a list and append | `result = []` … `result.append(tup)` |
+>
+> Values come back as **strings** — later tasks give a mark for `int()` or `float()`.
 
 ## Common Mistakes
 

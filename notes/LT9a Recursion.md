@@ -7,8 +7,6 @@
 2. The function **calls itself**.
 3. Each call moves towards the base case (a **smaller** problem).
 
-Miss any one and it recurses forever until Python raises a maximum recursion depth error.
-
 ```python
 def factorial(n):
     if n == 1:          # 1. base case
@@ -22,10 +20,8 @@ def factorial(n):
 
 ## Writing One: Wishful Thinking
 
-Don't try to trace the whole thing in your head. Assume the smaller call already works, and only write the step that turns its answer into yours.
-
 1. What is the **smallest** input, and what's its obvious answer? → base case.
-2. Assume `f(n-1)` is correct. What single operation turns it into `f(n)`?
+2. Assume `f(n-1)` works. What one operation turns it into `f(n)`?
 
 Two ways to shrink the problem:
 
@@ -80,9 +76,9 @@ sequenceDiagram
     Note over A: returns 3 * 2 = 6
 ```
 
-Solid arrows are calls going **down** — each caller is suspended, its frame still on the stack. Dashed arrows are returns coming back **up**, popping frames in reverse order.
+Solid arrows are **calls**: each caller waits with its frame on the stack. Dashed arrows are **returns**, popping frames in reverse order.
 
-If the base case is never reached, frames keep being pushed until memory runs out — Python raises a **maximum recursion depth** error and the program stops.
+If the base case is never reached, stack frames accumulate until Python raises a **maximum recursion depth** error.
 
 ## Recursion vs Iteration
 
@@ -201,7 +197,7 @@ def pong(n):
 
 ## Debugging
 
-Put `print(n)` on the first line of the function. If the value is not moving towards the base case, that is the bug.
+Use `print(n)` at the function's start to check whether each call approaches the base case.
 
 ```python
 factorial(0)     # 0, -1, -2 ... goes past the base case n == 1

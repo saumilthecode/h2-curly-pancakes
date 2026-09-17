@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> The same value can be written in denary, binary or hexadecimal. Only the **base** changes, never the value.
+> Denary, binary and hexadecimal express the same value in different **bases**.
 
 > [!important] Syllabus scope
 > Conversions are examined for **positive integers** between **denary, binary and hexadecimal** only.
@@ -233,7 +233,7 @@ A single standard giving a unique code to characters from many languages and sym
 
 - ASCII has only 128 codes; even the spare 128 in a byte are nowhere near enough
 - different systems otherwise use different numbers for the same character
-- it is no longer capped at 16 bits, so it can cover every living language plus historical scripts and emoji
+- no 16-bit cap; can cover every living language, historical scripts and emoji
 
 | Language | Text | Unicode value |
 | -------- | ---- | ----------- |
@@ -243,7 +243,7 @@ A single standard giving a unique code to characters from many languages and sym
 | Korean | 사랑 | `U+C0AC U+B791` |
 | Russian | люблю | `U+043B U+044E U+0431 U+043B U+044E` |
 
-These are **code points**, not sizes. `U+7231` is four hex digits, but how many bytes it takes depends on the encoding — UTF-8 stores it in three.
+These are **code points**, not sizes: `U+7231` is four hex digits, but UTF-8 stores it in three bytes.
 
 ```python
 print("사랑")    # 사랑
@@ -311,9 +311,24 @@ Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
 > **(b)** The OUI is the first 3 bytes, `1F:A3:98` → `0001 1111 1010 0011 1001 1000` `[2]`. Some took the wrong digits, or converted to denary.
 > **(c)** 3 bytes are left for devices: 24 bits, so `2^24 = 16 777 216` addresses per OUI `[2]`.
 
+> [!important] 2024 Promo P1 Q3 — RGB colours `[2+2+2]`
+> **(a)** SeaGreen `2E:8B:57` to decimal. Either form scores:
+>
+> ```text
+> whole number   2E8B57 = 2×16^5 + 14×16^4 + 8×16^3 + 11×16^2 + 5×16 + 7 = 3 050 327
+> per colour     2E = 2×16 + 14 = 46    8B = 8×16 + 11 = 139    57 = 5×16 + 7 = 87
+> ```
+>
+> 1m correct base and powers · 1m answer.
+>
+> **(b)** Chocolate `D2:69:1E` to binary: `1101 0010 0110 1001 0001 1110` — 1m method, 1m answer. 2026 Mastery P1 Q3(a) is the same.
+>
+> **(c)** Two advantages of hex over decimal `[2]`:
+> - 1m **aligns with binary**: 4 bits make 1 hex digit, so converting to binary is direct.
+> - 1m **easier to read**: `2E:8B:57` shows the three colours at a glance; `3 050 327` can't be split into them.
+
 ## Common Mistakes
 
-- Reading division remainders downwards instead of upwards.
 - Forgetting hex `A`–`F` are `10`–`15`.
 - Dropping leading zeros when a fixed number of bits is asked for.
 - Using `int(value, base)` in a question that asks you to implement the conversion.

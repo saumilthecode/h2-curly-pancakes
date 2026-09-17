@@ -13,10 +13,8 @@
 
 ## Four Core Skills
 
-Each question builds on the last.
-
 1. `smallest(seq)` — return the smallest **value**, no `min()`.
-2. `smallest(seq)` — return its **index** instead. The index is what a swap needs.
+2. `smallest(seq)` — return its **index** for swapping.
 3. `swap_smallest(seq)` — swap that element with `seq[0]`.
 4. `selection_sort(seq)` — repeat skill 3 on the shrinking unsorted tail.
 
@@ -32,7 +30,7 @@ def selection_sort(seq):
     return seq
 ```
 
-Track the **index**, not the value — you cannot swap with a value you didn't locate.
+Track the **index**, not the value.
 
 ## Pseudocode
 
@@ -55,7 +53,7 @@ ENDWHILE
 ```
 
 > [!important] WHILE vs REPEAT-UNTIL
-> `WHILE` tests at the **start**, so the body may never run — you pass the condition to *enter*. `REPEAT-UNTIL` tests at the **end**, so the body always runs at least once — you pass the condition to *exit*. Python has no `REPEAT`; write `while True:` with `if <condition>: break` at the bottom.
+> `WHILE`: test at the **start**, enter if true; may run zero times. `REPEAT-UNTIL`: test at the **end**, exit if true; runs at least once. Python: `while True:` with `if <condition>: break` at the bottom.
 
 > [!example]- Trace `MyList = [53, 21, 60, 18, 42, 19]`
 > | `Count` | `Lowest` | `MyList` after the swap |
@@ -73,7 +71,7 @@ ENDWHILE
 | In-place | yes |
 | Stable | **no** |
 
-Every case runs `n - 1` passes and `n(n-1)/2` comparisons — *"regardless of whether the list is sorted, you will still do the check"*.
+Every case runs `n - 1` passes and `n(n-1)/2` comparisons.
 
 > [!example]- Why it is unstable
 > `5, 3, 6, 5, 9, 2, 7` — the smallest is `2`, so it swaps with the **first** `5`, which lands at index 5, behind the second `5`.

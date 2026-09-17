@@ -23,12 +23,12 @@
 | `clear(q)` | remove everything, **in place** | `q.clear()` |
 
 > [!important]
-> Head = index `0`. Tail = end of the list. A queue removes from the **front**, so it uses `pop(0)`.
+> Head = index `0`; tail = list end.
 
 > [!warning] Modifiers mutate in place
-> `enqueue`, `dequeue` and `clear` must change the queue passed in — *"they should not return a new queue"*. `q = []` inside `clear` rebinds the local name and leaves the caller's list untouched. `q.clear()` empties it.
+> `enqueue`, `dequeue` and `clear` mutate the caller's queue. In `clear`, use `q.clear()`; `q = []` only rebinds the local name.
 
-An **array-based fixed-size queue** needs two pointers: a **head pointer** marking the next item to leave, and a **tail pointer** marking the last item added. Papers ask for these by name. The Python-list version below doesn't need them — `append()` and `pop(0)` handle the positions.
+A **fixed-size array** queue needs a **head pointer** (next item to leave) and a **tail pointer** (last item added); papers ask for them by name. A Python list needs neither: `append()` and `pop(0)` track positions.
 
 ## Template
 
@@ -191,7 +191,7 @@ def dequeue():
 ```
 
 > [!warning]
-> Other books put the tail at the **next free slot** instead. Both work, but the initial values and the full/empty tests differ. Pick one and stick to it.
+> A tail pointing to the **next free slot** needs different initial values and full/empty tests. Keep one convention.
 
 ## Stack vs Queue
 
@@ -236,6 +236,11 @@ enqueue(q, item)
 ```
 
 Pass-the-parcel pattern: rotate `n` times, then dequeue one player, and repeat until one remains.
+
+> [!important] 2025 Promo P2 Task 4 — a print queue as a list `[3+5]`
+> `send(tup)`: 1m loop over the jobs · 1m `pqueue.append(job)` · 1m `return len(pqueue)`. A new empty queue or a hand counter scored 0.
+>
+> `pprint(n)`: 1m repeat `n` times · 1m **check empty before** dequeuing · 1m `pqueue.pop(0)` · 1m print *"The print queue is empty."* · 1m `return len(pqueue)`.
 
 ## Common Mistakes
 

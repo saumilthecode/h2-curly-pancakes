@@ -18,8 +18,6 @@ for i in range(4):
     print(i, end=" ")               # 0 1 2 3   - no line breaks
 ```
 
-Sending output to a file:
-
 ```python
 f = open("data.txt", "w")
 print("Print output to file.", file=f)
@@ -55,8 +53,6 @@ By default strings align left and numbers align right.
 
 ## Table Pattern
 
-Fixed widths make the columns line up.
-
 ```python
 prices = [("shirt", 12), ("pen", 1.5), ("cake", 4.56789)]
 
@@ -87,7 +83,7 @@ Index   Item         Price
 > | `{1:<10}` | value 1, left aligned, width 10 |
 > | `{2:>8.2f}` | value 2, right aligned, width 8, 2 decimals |
 >
-> The value overflows its column rather than being cut off if it is too wide.
+> Values exceeding column width overflow without truncation.
 
 Convert values read from a file before formatting them:
 

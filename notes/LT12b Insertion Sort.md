@@ -8,14 +8,12 @@ sorted            unsorted
                   ^ insert this one
 ```
 
-One pass moves one more element into the sorted prefix, so the sorted region grows from the **left**.
+Each pass adds one element to the sorted prefix on the **left**.
 
 ## Two Core Skills
 
 1. Swap two elements into order.
 2. Given a sorted run with one loose element at the end, swap it leftwards until it lands.
-
-Skill 1 sorts the first two, skill 2 absorbs the rest.
 
 ```python
 def insert(seq, i):                     # skill 2 - seq[:i] already sorted
@@ -105,6 +103,21 @@ Reversed is the worst case, `n(n-1)/2 = 15` for `n = 6`. Sorted is `n - 1 = 5` �
 > | insert `80`, `82` | `25 33 54 65 73 80 82 87` | 1m |
 >
 > Marks go to the initial sorted array, one insertion with no shift, one with a shift, and the correct states through to the end.
+
+> [!example]- 2024 Promo P2 Task 3.2 — insertion sort on `(date, time, temp)` tuples `[5]`
+> 1m `for` loop from index 1 · 1m `i > 0` · 1m compare the **temperatures** as `int` · 1m swap · 1m `while` loop with `i -= 1`.
+>
+> ```python
+> def insertion_sort(lst):
+>     for k in range(1, len(lst)):
+>         i = k
+>         while i > 0 and int(lst[i-1][2]) > int(lst[i][2]):
+>             lst[i-1], lst[i] = lst[i], lst[i-1]
+>             i -= 1
+>     return lst
+> ```
+>
+> The question asks for **ascending**. The scheme's code uses `<` in that comparison and sorts descending; `>` as above is ascending.
 
 ## Related
 

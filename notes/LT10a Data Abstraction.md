@@ -15,7 +15,7 @@ An **ADT** defines:
 - the data being represented
 - the operations allowed on that data
 
-It does **not** define how the data is stored, or how each operation is implemented.
+It does **not** define storage or operation implementations.
 
 ## ADT Function Types
 
@@ -48,10 +48,8 @@ def get_name(student):
     return student["name"]
 ```
 
-Code that calls `get_name(student)` works with both. Swapping the internal representation breaks nothing.
-
 > [!important]
-> An ADT can also **withhold** access. A student record may provide no accessor for the NRIC, so nothing outside the ADT can read it.
+> An ADT can **withhold** access: with no NRIC accessor, nothing outside the ADT can read it.
 
 ## Common ADTs
 
@@ -175,7 +173,7 @@ def make_rat(n, d):
 ## Common Mistakes
 
 - Reaching into the representation directly (`student[0]`) instead of calling the accessor.
-- Writing utilities that assume a tuple, so the ADT can no longer be swapped to a dictionary.
+- Utilities tied to tuples prevent switching the ADT to dictionaries.
 - Forgetting the constructor must return the value — not print it.
 
 ## Related

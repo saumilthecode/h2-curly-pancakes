@@ -3,6 +3,9 @@
 Singapore–Cambridge **H2 Computing 9569**, first examination 2027.
 Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
+> [!tip] Promo next
+> [[Promo Revision]] — last-minute route through the notes, most-tested first.
+
 ## Term 1
 
 ### LT1 Basic Python

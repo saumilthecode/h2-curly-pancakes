@@ -11,7 +11,7 @@
 | `x in seq` | `True` / `False` |
 
 > [!note]
-> `index()` stops at the first match — `'mississippi'.index('i')` is `1`, not the later ones. It also **raises an error** if the item is absent; our own version returns `None` instead.
+> `index()` returns the first match: `'mississippi'.index('i')` is `1`. It **raises an error** if the item is absent; our version returns `None`.
 
 ## Linear Search
 
@@ -45,7 +45,7 @@ def count(seq, item):           # how many?
 ```
 
 > [!important]
-> `find` and `index` `return` **inside** the loop — as soon as there's a match, stop. `count` can only return **after** the loop, because it must see every element.
+> `find` and `index` return **inside** the loop on a match; `count` returns **after** checking every element.
 
 ### Recursive Versions
 
@@ -75,10 +75,10 @@ def index(seq, item):
     return 1 + index(seq[1:], item)
 ```
 
-`count` and `index` both build their answer **on the way back up** — each level adds `1` to whatever the level below returned.
+On return, `index` adds `1` per level; `count` adds `1` per match.
 
 > [!warning]
-> Recursive `index` can't return `None` when the item is missing — the caller would try `1 + None`. The base case returns `0`, so the `1`s added on the way back up total **`len(seq)`**: `index('mississippi', 'k')` gives `11`. That is the specified "not found" value, and the `print` is what makes it readable. The iterative version has no such problem and returns `None`.
+> For a missing item, recursive `index` returns **`len(seq)`**: `index('mississippi', 'k')` gives `11`. The base case returns `0`; callers add `1`. Returning `None` would cause `1 + None`. Iterative `index` returns `None`.
 
 ## Binary Search
 
@@ -170,11 +170,11 @@ def BinarySearch(seq, item):
 ```
 
 > [!tip]
-> Slicing (`seq[:mid]`) also works but loses the original indices, so you can't report *where* the item was. Passing `lo`/`hi` keeps them.
+> Slicing loses original indices. Pass `lo`/`hi` to preserve the item's position.
 
 ## Searching Records, Not Numbers
 
-Real data is a sequence of records. You search on **one field** and return **another**.
+Search **one field**; return **another**.
 
 ```python
 def binary_search(tup, student):
@@ -192,13 +192,11 @@ def binary_search(tup, student):
     return None
 ```
 
-Three things change from the plain version:
-
 - the comparison reads **one field** of the record, `tup[mid][1]`
 - the data must be sorted **by that same field**
 - it returns the useful value (or `None`), not `True`/`False`
 
-`<` and `>` compare strings alphabetically, so the algorithm is unchanged — but the sort must be alphabetical too, or binary search will miss.
+`<` and `>` compare strings alphabetically, so the data must also be sorted alphabetically.
 
 ## Comparison
 
@@ -215,6 +213,29 @@ you have the key, but can degrade to `O(n)` with severe collisions and cannot an
 range questions. A balanced [[LT11b Binary Tree|binary search tree]] gives `O(log n)`
 search without needing the data stored as a sorted array; an unbalanced BST can also
 degrade to `O(n)`.
+
+## Exam
+
+> [!important] 2024 Promo P1 Q1 — find `42` in `[33, 37, 42, 51, 62, 71, 80, 83]` `[2+3+4]`
+> **(a) Linear.** Start at index 0; 42 isn't there, so move to index 1, then index 2, where it is found. Stop.
+> 1m start at the beginning · 1m search in sequence, found at index 2.
+>
+> **(b) Binary.**
+>
+> | Range | `mid` | Value | Then |
+> | ----- | ----- | ----- | ---- |
+> | 0–7 | `(0 + 7) // 2 = 3` | 51 | 51 > 42, search 0–2 |
+> | 0–2 | `(0 + 2) // 2 = 1` | 37 | 37 < 42, search 2–2 |
+> | 2–2 | 2 | 42 | found, stop |
+>
+> 1m start with indices 0 to 7 · 1m calculate the middle index · 1m eliminate half.
+>
+> **(c) "Both take the same number of steps, so they're equally efficient." True?** No. They match here only because of where 42 sits (1m). Linear search is `O(n)`, removing one element per step (1m). Binary search is `O(log n)` (1m), halving the search space each step (1m).
+>
+> 2026 Mastery P1 Q1 repeated (b) and (c) with the same scheme.
+
+> [!example]- 2025 Promo P2 Task 6 — iterative binary search `[4]`
+> 1m loop while `start <= end` · 1m check the value at `mid = (start + end) // 2` · 1m update the pointers · 1m `return False` after the loop.
 
 ## Common Mistakes
 

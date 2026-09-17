@@ -60,8 +60,6 @@ def peek(s):
 
 ## Application: Reverse a Sequence
 
-Push everything in, then pop everything out.
-
 ```text
 input:  a b c d
 stack:  [a, b, c, d]
@@ -108,7 +106,7 @@ A count of `(` and `)` passes `)(`. The stack catches the order.
 | Prefix | before operands | `+ A B` |
 | Postfix | after operands | `A B +` |
 
-Evaluate postfix left to right: push operands, and on an operator pop two, combine, push the result. The expression may be handed to you as a tuple — `(7, 6, 2, '/', '+')` is `7 + 6 / 2 = 10`.
+Evaluate left to right: push operands; for operators, pop two, combine, push result. Tuple input: `(7, 6, 2, '/', '+')` = `7 + 6 / 2 = 10`.
 
 ```text
 3 4 * 5 +          (infix: 3 * 4 + 5)
@@ -125,13 +123,13 @@ answer = 17
 > [!warning]
 > For `-` and `/` the order matters. `A B -` means `A - B` — the **first** value popped is the right-hand operand.
 
-Symbol order already fixes the order of evaluation, so postfix needs **no brackets and no precedence rules**. `3 4 5 + *` and `3 4 * 5 +` differ without any `( )`.
+Symbol order fixes evaluation order: **no brackets or precedence rules**. `3 4 5 + *` and `3 4 * 5 +` differ.
 
 ## Common Mistakes
 
 - Using `pop(0)` — that's a [[LT10c Queue|Queue]], not a stack.
-- Writing `return s.append(x)` in `push`. `.append()` returns `None`, so the function hands back `None`. A `push` should not return anything.
-- Reading the underlying list directly (`for item in s:`) instead of calling `pop()`. In an *application of stack* question that throws away the marks for using the ADT — and iterating a list does **not** reverse it the way popping does.
+- Returning `s.append(x)` from `push`: `.append()` returns `None`; `push` should not return anything.
+- Iterating the list (`for item in s:`) instead of calling `pop()`: it loses the ADT marks in *application of stack* questions and doesn't reverse.
 - Treating `peek()` as if it removes the item.
 - Popping an empty stack instead of returning `None`.
 - Reversing an already-reversed result a second time.

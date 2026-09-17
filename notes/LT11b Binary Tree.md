@@ -80,7 +80,7 @@ Three rules:
 The rules apply at **every** node, not just the root.
 
 > [!warning] A binary tree is not a BST
-> A plain binary tree constrains only the **shape** — at most two children per node. It says nothing about the values: duplicates are fine, there is no ordering, and a parent may have one child or none. Only "at most two children", "leaves have no children" and "the root is the only node with no parent" are true of *both*.
+> A plain binary tree limits only the **shape**: values can repeat, have no order, and a parent may have one child or none. True of **both**: at most two children, leaves have none, and the root is the only node with no parent.
 
 ```mermaid
 flowchart TD
@@ -146,14 +146,12 @@ four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 >   classDef hid fill:none,stroke:none,color:transparent
 > ```
 >
-> It is all just nested lists:
->
 > ```python
 > [5, [4, [3, [], []], []], [15, [8, [], []], [24, [], [27, [], []]]]]
 > ```
 
 > [!note]
-> `print_tree()` needs `from LT11b_module import *`. That module exports its own `make_tree`, `entry`, `left_branch`, `right_branch`, `make_empty_tree` and `is_empty` too, so `import *` **overwrites** yours. Put the import above your definitions if you want yours to win.
+> `print_tree()` requires `from LT11b_module import *`, which **overwrites** your `make_tree`, `entry`, `left_branch`, `right_branch`, `make_empty_tree` and `is_empty`. Import before your definitions to keep yours.
 
 ## Searching a BST — `contains`
 
@@ -172,9 +170,9 @@ def contains(x, tree):
 ```
 
 > [!important]
-> `return` the recursive call. Without it the function walks the tree and then returns `None`.
+> `return` recursive calls; otherwise the function returns `None`.
 
-The lecture slides call this same function `is_element_of_set(x, s)` — identical code, different name.
+The slides name this function `is_element_of_set(x, s)`.
 
 > [!important] Describe searching a BST — 2023 Promo Q4(b) `[3]`, 2025 Promo Q5(c) `[5]`
 > 1. Start at the **root** as the current node.
@@ -187,7 +185,7 @@ The lecture slides call this same function `is_element_of_set(x, s)` — identic
 
 ## Inserting — `insert_tree`
 
-A new value always ends up as a **new leaf**. Walk down as if searching; when you run off the bottom, that empty spot is where it goes.
+Insert as a **new leaf**: follow the search path to an empty branch.
 
 ```python
 def insert_tree(x, tree):
@@ -209,7 +207,7 @@ def insert_tree(x, tree):
 > | `elif x > entry(tree)` … `else: return tree` | `[1, 2, 3, 5]` — unchanged |
 > | plain `else` | `[1, 2, 3, 3, 5]` — duplicate |
 
-Each call rebuilds its node with **one** branch replaced, so the return value is the new tree — use it:
+Each call rebuilds its node with **one** branch replaced; use the returned tree:
 
 ```python
 insert_tree(5, t1)           # wrong - the new tree is thrown away
@@ -229,7 +227,7 @@ t1 = insert_tree(5, t1)      # right
 
 ## Traversals
 
-One tree, four ways to read it. Each node shows where it lands in each order:
+Each node shows its position in each traversal:
 
 ```mermaid
 flowchart TD
@@ -248,11 +246,9 @@ flowchart TD
 | Output | `5 2 1 7 10` | `1 2 5 7 10` | `1 2 10 7 5` | `5 2 7 1 10` |
 | Type | DFS | DFS | DFS | BFS |
 
-**Pre** = entry before its subtrees, **in** = between, **post** = after. Left always before right.
-
 ### By Hand
 
-You **visit** a node (move onto it) and **select** it (write it down) — *"we don't select it first because there's a left sub tree"*.
+**Visit** = move onto a node; **select** = write it down.
 
 | Select when | |
 | ----------- | - |
@@ -260,7 +256,7 @@ You **visit** a node (move onto it) and **select** it (write it down) — *"we d
 | in | left subtree done |
 | post | both subtrees done |
 
-BFS ignores all that — *"just go by level"*. Dequeue, write it down, enqueue its children:
+BFS goes level by level: dequeue, write it down, enqueue its children:
 
 | Dequeue | Write | Enqueue | Queue after |
 | ------- | ----- | ------- | ----------- |
@@ -272,7 +268,7 @@ BFS ignores all that — *"just go by level"*. Dequeue, write it down, enqueue i
 | `10` | `10` | — | `[]` |
 
 > [!warning]
-> Enqueue **left before right**, or the level comes out backwards. In-order on a BST must come out **ascending** — if it doesn't, you traversed it wrong.
+> Enqueue **left before right**. In-order on a BST comes out **ascending**, which checks your answer.
 
 > [!example]- The video's worked tree
 > ```mermaid
@@ -303,7 +299,7 @@ BFS ignores all that — *"just go by level"*. Dequeue, write it down, enqueue i
 
 ## Writing the Traversals
 
-Same base case, same two recursive calls — only the position of `[entry(tree)]` changes:
+Only `[entry(tree)]` changes position:
 
 ```python
 def flatten_pre(tree):                                              # Q3
@@ -322,7 +318,7 @@ def flatten_post(tree):                                             # Q4
     return flatten_post(left_branch(tree)) + flatten_post(right_branch(tree)) + [entry(tree)]
 ```
 
-The empty tree returns `[]`, so `+` glues the three pieces together all the way back up. Left is always recursed before right.
+The empty tree returns `[]`, so `+` joins the pieces on the way back up.
 
 BFS can't recurse like that — it needs a [[LT10c Queue|queue]] to hold the nodes waiting at the next level. Part 3 gives you `queue_adt`:
 
@@ -370,8 +366,6 @@ making h the subject:   h = log2(n + 1) - 1
 
 ### Insertion Order Decides the Shape
 
-The same six values, inserted in different orders:
-
 ```mermaid
 flowchart TD
   subgraph b3["inserted 1,3,5,7,9,11 - height 5"]
@@ -408,13 +402,13 @@ flowchart TD
   classDef hid fill:none,stroke:none,color:transparent
 ```
 
-Sorted input is the worst case: every node becomes a right child, so the tree degenerates into a linked-list-shaped chain and search falls back to `O(n)`.
+Sorted input is the worst case: every node becomes a right child, a chain with `O(n)` search.
 
 > [!important] 2023 Q4(c) — "State how two BSTs can store the same data but have a different shape" `[1]`
 > The shape depends on the **order the values are inserted**.
 
 > [!example]- Rebalancing
-> A tree drifts out of balance as you insert. The fix is a function that rebuilds it evenly, called from time to time — the lecture sets `balance_tree` as its Question of the Day. Not an assessed outcome.
+> Insertions can unbalance a tree. Periodically rebuild it evenly; the lecture's `balance_tree` Question of the Day is not assessed.
 
 ## BST vs Binary Search
 
@@ -433,7 +427,7 @@ Other uses named in the lecture: storing the keys of a hash table so that a [[LT
 
 ## The Array Form Used in Paper 1
 
-**Paper 1 draws the tree as an array of nodes**, not as the Python ADT above. Each element holds a left pointer, the data and a right pointer; a separate `Root` variable holds the index of the root; `Null` (or `-1`) means "no node this way". Used in 2020, 2021 and 2024.
+**Paper 1 uses an array of nodes**, not the Python ADT. Each node stores left pointer, data and right pointer; `Root` holds the root's index; `Null` (or `-1`) means no node. Used in 2020, 2021 and 2024.
 
 2021 Q7 — array `Names`, `Root = 1`:
 
@@ -447,7 +441,7 @@ Other uses named in the lecture: storing the keys of a hash table so that a [[LT
 | 5 | `0` | Simone | `4` |
 | 6 | Null | David | Null |
 
-Follow the pointers from `Root` and the tree falls out — the array order means nothing:
+Follow the pointers from `Root`; the array order means nothing:
 
 ```mermaid
 flowchart TD
@@ -539,7 +533,24 @@ flowchart TD
 >   classDef hid fill:none,stroke:none,color:transparent
 > ```
 
-> [!example]- 2023 Promo Q4 and 2025 Promo Q5 — the rest of the tree questions
+> [!example]- 2023, 2024 and 2025 promo tree questions
+> **2024 Q2(b)** insert `[5, 2, 7, 1, 3, 8, 6, 4]` in index order `[3+2]`:
+>
+> ```mermaid
+> flowchart TD
+>   q5["5"] --> q2["2"]
+>   q5 --> q7["7"]
+>   q2 --> q1["1"]
+>   q2 --> q3["3"]
+>   q3 ~~~ h6:::hid
+>   q3 --> q4["4"]
+>   q7 --> q6["6"]
+>   q7 --> q8["8"]
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> 1m root `5` · 1m left subtree · 1m right subtree. **(ii)** Ascending order: **in-order** traversal — from the root, visit the left subtree, then the node, then the right subtree (1m in-order, 1m left → node → right). 2026 Mastery P1 Q2(b) repeats (i).
+>
 > **2023 Q4(a)** insert `23_03, 23_07, 23_01, 23_04, 23_02, 23_05, 23_06, 23_08` in that order `[3]`, −1 per wrong node:
 >
 > ```mermaid
