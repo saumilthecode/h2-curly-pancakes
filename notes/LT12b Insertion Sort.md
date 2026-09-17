@@ -95,6 +95,17 @@ Reversed is the worst case, `n(n-1)/2 = 15` for `n = 6`. Sorted is `n - 1 = 5` �
 > [!important] Specimen 2027 P1 Q5(d) — two factors affecting performance `[2]`
 > The size of the data set, and how nearly sorted it already is.
 
+> [!important] 2025 Promo P1 Q1(a) — describe insertion sort on `[25, 54, 33, 65, 73, 87, 80, 82]` `[4]`
+> | Step | Sorted part | Mark |
+> | ---- | ----------- | ---- |
+> | start | `25` — one element is already sorted | 1m |
+> | insert `54` | `25 54` — bigger than `25`, **no shift** | 1m |
+> | insert `33` | `25 33 54` — `54` **shifts right**, `33` stops after `25` | 1m |
+> | `65`, `73`, `87` | each the largest so far, no shift | |
+> | insert `80`, `82` | `25 33 54 65 73 80 82 87` | 1m |
+>
+> Marks go to the initial sorted array, one insertion with no shift, one with a shift, and the correct states through to the end.
+
 ## Related
 
 - [[LT12 Sorting Algorithms]]

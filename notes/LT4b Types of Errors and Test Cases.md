@@ -3,11 +3,11 @@
 
 ## Error Categories
 
-| Category | When it shows up | Symptom |
-| -------- | ---------------- | ------- |
-| Syntax | before the code runs | Python refuses to run the file |
-| Runtime | during execution | program crashes part-way |
-| Logic | never — it runs fine | output is wrong |
+| Category | What it is | When it shows up | Symptom |
+| -------- | ---------- | ---------------- | ------- |
+| Syntax | code breaks Python's grammar | before the code runs | Python refuses to run the file |
+| Runtime | a valid line Python can't carry out, e.g. dividing by zero | during execution | program crashes part-way |
+| Logic | the code runs but does the wrong thing | never — it runs fine | output is wrong |
 
 ### Syntax Errors
 
@@ -34,8 +34,6 @@ Valid code that fails while running.
 
 ### Logic Errors
 
-The program runs and produces an answer — the wrong one.
-
 ```python
 def check(x):
     if x > 100:
@@ -58,7 +56,7 @@ Also: a missing `return` (function silently gives `None`), off-by-one loop bound
 > return (x1 + x2) / 2      # what was meant
 > ```
 >
-> **A name reused** — `area = 3.0` overwrites the function, so the next `area(4, 5)` raises `TypeError: 'float' object is not callable`. Never reuse a function's name as a variable.
+> **A name reused** — `area = 3.0` overwrites the function, so the next `area(4, 5)` raises `TypeError: 'float' object is not callable`.
 >
 > **Swapping without a temp** — `a = b` then `b = a` leaves both holding `b`'s value. The first assignment already destroyed `a`:
 >
@@ -76,7 +74,7 @@ Also: a missing `return` (function silently gives `None`), off-by-one loop bound
 - Narrow it down systematically — eliminate what cannot be the cause.
 
 > [!note]
-> Debugging removes the bugs you found. It does not prove the program is error-free — the remaining bugs are just harder to find.
+> Debugging removes the bugs you found; it does not prove the program is error-free.
 
 ## Exception Handling
 
@@ -121,7 +119,7 @@ Catch the **specific** exception. A bare `except Exception` swallows your own bu
 ```
 
 > [!warning] Why boundary tests exist
-> The sample data given in a question often **misses the boundary**. If the rule is "60 and above" and no one in the data is exactly 60, then `age > 60` passes every provided test and is still wrong. Test the limit itself, not just values near it.
+> Sample data often **misses the boundary**. For "60 and above", `age > 60` passes every provided test if nobody is exactly 60. **Test the boundary itself.**
 
 ### Worked Example
 
@@ -150,7 +148,7 @@ def percentage(score, total):
 > print(percentage(60, 60) == 100.0)    # True
 > ```
 >
-> Provided test cases are a floor, not a ceiling. Failing one usually means several others would fail too — write your own.
+> Write your own tests beyond the ones provided.
 
 ## Related
 

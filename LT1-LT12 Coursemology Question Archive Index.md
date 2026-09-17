@@ -68,3 +68,4 @@ The following stale Coursemology wrappers point to inaccessible legacy courses. 
 - LT7 Lists Part 1: `https://yijc.coursemology.org/courses/2380/videos/12465`
 - LT12e non-in-place Quicksort walkthrough: `https://yijc.coursemology.org/courses/2950/videos/20764`
 - LT12e unlabelled old extract link: `https://yijc.coursemology.org/courses/2380/videos/12530`
+- LT11a “Unplugged Activity - Guessing Game - obfuscated.py”: `https://yijc.coursemology.org/courses/2950/materials/folders/98357/files/160817` is forbidden, and no local copy was found. The associated question prompts and video coverage are preserved.

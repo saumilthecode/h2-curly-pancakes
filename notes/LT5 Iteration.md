@@ -102,7 +102,7 @@ while value != 0:     # 9, 7, 5, 3, 1, -1, -3 ... never exactly 0
     value = value - 2
 ```
 
-Use `while value > 0:` instead. In Jupyter an infinite loop kills the kernel — restart it, then add a `print()` inside the loop to see what the variable is doing.
+Use `while value > 0:`. An infinite loop kills the Jupyter kernel: restart it, then `print()` inside the loop to trace the variable.
 
 ## Common Mistakes
 
@@ -110,7 +110,7 @@ Use `while value > 0:` instead. In Jupyter an infinite loop kills the kernel —
 - Off-by-one: forgetting `stop` is excluded, so `range(1, n)` misses `n`.
 - Putting `return` **inside** the loop body, so it exits on the first iteration.
 - Forgetting to update the counter in a `while` loop.
-- Starting a **product** accumulator at `0` instead of `1` — everything multiplies to zero. Sums start at `0`, products start at `1`.
+- Starting a **product** at `0`, which makes everything zero. Sums start at `0`, products at `1`.
 
 ## Related
 

@@ -291,6 +291,26 @@ Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
 > 1010 1100   continuation
 > ```
 
+## Exam
+
+> [!important] 2025 Promo P1 Q3 — a game-controller packet `3C A7 9D 42` `[8]`
+> Bytes 1–3 hold a 12-bit X and a 12-bit Y. Byte 4 is one bit per button, in order `A B X Y R + Home C`.
+>
+> ```text
+>  3    C    A    7    9    D    4    2
+> 0011 1100 1010 0111 1001 1101 0100 0010        (a) [2]
+> |---- X -----| |---- Y -----| |buttons|
+> ```
+>
+> **(b)** X `0011 1100 1010`, Y `0111 1001 1101` `[2]`
+> **(c)** X = `2 + 8 + 64 + 128 + 256 + 512 = 970`; Y = `1949` `[2]`
+> **(d)** `0100 0010` — the **B** and **Home** buttons `[2]`
+
+> [!important] 2023 Promo P1 Q1 — MAC address `1F:A3:98:9A:FE:4E` `[5]`
+> **(a)** 12 hex digits × 4 = 48 bits = **6 bytes** `[1]`. Many answered *48 bytes*.
+> **(b)** The OUI is the first 3 bytes, `1F:A3:98` → `0001 1111 1010 0011 1001 1000` `[2]`. Some took the wrong digits, or converted to denary.
+> **(c)** 3 bytes are left for devices: 24 bits, so `2^24 = 16 777 216` addresses per OUI `[2]`.
+
 ## Common Mistakes
 
 - Reading division remainders downwards instead of upwards.

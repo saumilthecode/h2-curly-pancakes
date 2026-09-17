@@ -20,8 +20,6 @@ A good abstraction:
 
 ## Why It Makes Debugging Easier
 
-The same bug, written two ways:
-
 ```python
 # dense - buried in one expression
 def hypotenuse(a, b):
@@ -52,7 +50,7 @@ def area_of_circle(r):
 
 ## Solving Problems
 
-**Divide and conquer** — split a problem into smaller subproblems, since smaller problems are easier to solve.
+**Divide and conquer** — split a problem into smaller, easier subproblems.
 
 **Wishful thinking (top-down)** — write the solution assuming the helper functions already exist, then go back and write them.
 
@@ -81,7 +79,7 @@ def taxi_fare(distance):                                  # metres
 
 `ceil` because *"or less"* means a part block is charged in full. `taxi_fare(3300)` gives `4.32`, `taxi_fare(14500)` gives `11.06`.
 
-Every literal there is a **magic number**. When the fare rises you have to hunt each one down, and missing one leaves code that still runs and quietly returns the wrong fare.
+Every literal there is a **magic number**. When fares change each one must be found and edited; miss one and the code quietly returns the wrong fare.
 
 `8.06` is the fare at 10 km, so compute it — call the function itself.
 
@@ -105,13 +103,13 @@ def taxi_fare(distance):
 Raising the start fare to `$3.20`, or shrinking the block to 300 m, is now one edit.
 
 > [!tip] The lecture's own caveat
-> Stripping out every constant is *"yes and no"*. Worth it for code that will be maintained; overkill for a function you run once.
+> Naming every constant is *"yes and no"*: worth it for code that will be maintained, overkill for a function run once.
 
 ## Common Mistakes
 
 - Repeating a constant in several places instead of naming it once.
 - One long function that does everything, so a bug could be on any line.
-- Helper functions named `f`, `g`, `temp` — the decomposition stops helping if the names say nothing.
+- Helper functions with meaningless names like `f`, `g`, `temp`.
 
 ## Related
 

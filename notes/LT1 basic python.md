@@ -52,7 +52,7 @@ age  = int(input("How old are you? "))
 `==`  `!=`  `>`  `<`  `>=`  `<=` — all return a `bool`.
 
 > [!important] `==` vs `=`
-> `==` asks whether two values are the same. `=` assigns the value on the right to the name on the left.
+> `==` compares two values. `=` assigns the right-hand value to the left-hand name.
 
 ```python
 42 == 42      # True
@@ -88,7 +88,7 @@ Strings compare by character code, so comparisons are alphabetical-ish, not by l
 > `not True` → `False`, `not False` → `True`.
 
 > [!important] Precedence
-> Maths first, then comparisons, then **`not`**, then **`and`**, then **`or`**. So `not a == b and c` reads as `((not (a == b)) and c)`. Bracket anything you would have to think about twice.
+> Maths, comparisons, **`not`**, **`and`**, **`or`**, in that order. `not a == b and c` means `((not (a == b)) and c)`. Bracket anything unclear.
 
 ## Booleans and Truthiness
 
@@ -203,7 +203,6 @@ In Jupyter, `Ctrl` + `/` toggles comments on the selected lines.
 - Using `=` where `==` is meant.
 - Forgetting `stop` is excluded from a slice.
 - Expecting `int("3.5")` to work — it raises an error.
-- Comparing a number to its string form: `42 == "42"` is `False`.
 
 ## Related
 

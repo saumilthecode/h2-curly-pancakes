@@ -60,7 +60,7 @@ square(square(2))    # TypeError - inner call gave back None
 ```
 
 > [!warning]
-> A function with no `return` returns `None`. `print` is for showing a human; `return` is for using the value later.
+> A function with no `return` returns `None`.
 
 ## Scope
 
@@ -71,7 +71,7 @@ square(square(2))    # TypeError - inner call gave back None
 3. One function's local scope cannot see another function's locals.
 4. The same name can be reused in different scopes without clashing.
 
-Reading a global is allowed (rule 2). **Assigning** to one makes a new local instead, unless you declare `global`:
+Globals can be read, but **assigning** to one makes a new local unless you declare `global`:
 
 ```python
 count = 0

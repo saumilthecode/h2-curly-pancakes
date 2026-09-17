@@ -18,7 +18,7 @@ else:
 ## How It Runs
 
 > [!important] The one rule
-> Conditions are tested **top to bottom**. The first one that is `True` runs its block, and every remaining condition is skipped. If none are `True`, `else` runs.
+> Conditions are tested **top to bottom**. The first `True` one runs its block and the rest are skipped; if none is `True`, `else` runs.
 
 ```mermaid
 flowchart TD
@@ -66,7 +66,7 @@ print("done")           # always runs
 
 ## `pass`
 
-`pass` does nothing. Use it as a placeholder when a block is required but you have no code yet.
+`pass` does nothing; it holds the place of a required block you haven't written yet.
 
 > [!note]
 > `break` and `continue` control **loops**, not conditionals — see [[LT5 Iteration|Iteration]].
@@ -87,7 +87,7 @@ elif 30000 < volume <= 70000:       # dead
 Every parcel now gets the highest rate. Volume `18000` should charge `weight * 10` but charges `weight * 15` — `30` becomes `45`, with no error raised.
 
 > [!warning]
-> Check each bound against the one above it. Nothing in Python warns you that a branch can never run.
+> Check each bound against the one above it; Python gives no warning for an unreachable branch.
 
 ## Common Mistakes
 

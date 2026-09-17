@@ -77,12 +77,15 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 - [[LT12d Merge Sort]] — divide and merge, always `O(n log n)`
 - [[LT12e Quick Sort]] — pivot and partition, in-place and non-in-place
 
+### C4 Database and Basic SQL
+
+- [[C4-1 Introduction to Database]] — tables, records, fields, primary and foreign keys
+- [[C4-2 Basic SQL|C4-2a–e Basic SQL]] — create, insert, query, update, delete
+
 ## Not taught yet
 
 ### C4 Database and Basic SQL
 
-- C4-1 Introduction to Database
-- C4-2 Basic SQL — create, insert, query, update, delete
 - C4-3a Introduction to Relational Database
 - C4-3b Normalisation
 - C4-3c ER Diagram

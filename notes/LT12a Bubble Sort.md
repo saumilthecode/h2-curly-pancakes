@@ -30,11 +30,11 @@ The loop ends at `len(seq) - 2`, or `seq[i + 1]` runs off the end.
 
 ## Three Versions
 
-| Version | Inner loop | Outer loop |
-| ------- | ---------- | ---------- |
-| Simple | all `n - 1` pairs every pass | fixed count |
-| Improved | **one fewer pair** each pass | `n - 1` passes |
-| Optimised | one fewer pair each pass | **stops** on a swap-free pass |
+| Version | In words | Inner loop | Outer loop |
+| ------- | -------- | ---------- | ---------- |
+| Simple | every pass checks the whole list | all `n - 1` pairs every pass | fixed count |
+| Improved | skips the sorted tail | **one fewer pair** each pass | `n - 1` passes |
+| Optimised | skips the sorted tail and stops once a pass makes no swaps | one fewer pair each pass | **stops** on a swap-free pass |
 
 ```python
 def simple_bubblesort(seq):
@@ -89,6 +89,12 @@ Simple always makes `n(n-1)` comparisons; improved makes `n(n-1)/2` — the sum 
 > [!important] Describe bubble sort
 > Required keywords: **pass**, **compare**, **repeat**, **adjacent**, **swap** — and describe the first three passes.
 > **Compare** each **adjacent** pair along the list, **swapping** them if they are out of order. That is one **pass**, and it leaves the largest value at the end. **Repeat** on the remaining unsorted part, one fewer element each time, until a pass makes no swaps.
+
+> [!important] 2023 Promo P1 Q2(a)(b) — describe, then optimise `[2+1]`
+> **(a)** 1m compare adjacent elements from start to end, swapping if needed · 1m repeat the passes, `n - 1` of them.
+> **(b)** If a pass makes **no swaps**, the array is sorted, so **stop early**.
+>
+> Markers: say whether the *comparisons* or the *passes* repeat. For (b), "no swaps means sorted" scored nothing without **terminating early**.
 
 ## Common Mistakes
 

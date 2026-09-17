@@ -1,0 +1,115 @@
+Title: C4-2d_2e Basic SQL - Update and Delete Records and Tables v2
+Assessment(s): C4 Database and Basic SQL (SLS)
+Section: C4-2d and 2e Basic SQL - Update and Delete Records
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=-mC5SGlLOUU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Welcome back. For part four, we will be
+[00:02 - 00:08] doing updating of the data. So we will
+[00:05 - 00:10] be using the dummy db for this portion.
+[00:08 - 00:13] It is populated with the data same as
+[00:10 - 00:15] the northwind db. Now you have learned
+[00:13 - 00:17] from your query statement. We can select
+[00:15 - 00:20] everything from the table customer where
+[00:17 - 00:23] the first name is Thomas and last name
+[00:20 - 00:25] is hottie. Okay, let's run. So Thomas
+[00:23 - 00:27] hottie is in the country UK, the city
+[00:25 - 00:30] London. Okay, we can choose this icon to
+[00:27 - 00:32] add another SQL command. Let's say we
+[00:30 - 00:35] want to update customers table sets the
+[00:32 - 00:37] country to Singapore but only where the
+[00:35 - 00:40] first name is Thomas and last name is
+[00:37 - 00:43] Hadti. That means we are only changing
+[00:40 - 00:46] one particular person the country. Okay,
+[00:43 - 00:48] let's run this. So it has executed
+[00:46 - 00:50] successfully. Now let's go back to query
+[00:48 - 00:53] to look for this Thomas Hottie. Let's
+[00:50 - 00:55] run. You realize that the country has
+[00:53 - 00:58] been updated to Singapore. Now the next
+[00:55 - 01:00] line is going to be very dangerous. Take
+[00:58 - 01:02] a look at the customer, the customer
+[01:00 - 01:05] table. The country, it comes from all
+[01:02 - 01:08] sorts of countries, Germany, Mexico,
+[01:05 - 01:10] Sweden, France and so on and so forth.
+[01:08 - 01:13] Okay, let's say we are going to execute
+[01:10 - 01:16] another command and say update customer.
+[01:13 - 01:18] The customer table sets the country to
+[01:16 - 01:20] Singapore. Let's see what this SQL
+[01:18 - 01:23] command will do to the data in the
+[01:20 - 01:26] table. Query executed successfully.
+[01:23 - 01:30] There are 91 rows affected. Why is that
+[01:26 - 01:32] so? All the 91 customers their country
+[01:30 - 01:34] has been updated to Singapore. So
+[01:32 - 01:36] without the condition for a specific
+[01:34 - 01:39] person this is very dangerous because
+[01:36 - 01:41] all the data in the table will be
+[01:39 - 01:44] affected. Before we execute the next
+[01:41 - 01:47] command let's do our query asterisk from
+[01:44 - 01:50] table orders where the ID is equal to 7.
+[01:47 - 01:52] So this particular order the quantity is
+[01:50 - 01:55] 35. Now if I'm going to execute this
+[01:52 - 01:59] command update order sets the quantity
+[01:55 - 02:02] to 35 whatever existing quantity + 5
+[01:59 - 02:04] that will be 40. Okay let's run this and
+[02:02 - 02:08] go back to the previous command. The
+[02:04 - 02:10] previous quantity is 35. Now if I run it
+[02:08 - 02:13] it now becomes 40. So we have updated
+[02:10 - 02:15] the quantity and there is only one
+[02:13 - 02:17] record that is affected. Only one row is
+[02:15 - 02:20] affected because where ID is equal to
+[02:17 - 02:21] seven. Okay that's all I have for you.
+[02:20 - 02:24] Although these are three simple examples
+[02:21 - 02:26] but you can on your own you can try your
+[02:24 - 02:28] various ways of updating various data in
+[02:26 - 02:30] the customer the product or the order
+[02:28 - 02:33] tables. Please make sure that you're
+[02:30 - 02:36] still using the dummy db for this part
+[02:33 - 02:38] five to delete data and drop tables.
+[02:36 - 02:41] Before we try to delete the customer
+[02:38 - 02:44] let's do a query statement. Select
+[02:41 - 02:46] asterisk from customer where the first
+[02:44 - 02:48] name is equal to Victoria. Okay. And
+[02:46 - 02:50] run. Okay. Okay. So there is such a
+[02:48 - 02:53] person the ID is 11. Victoria Ashworth
+[02:50 - 02:56] she is from London and her country has
+[02:53 - 02:58] been updated to Singapore. If we want to
+[02:56 - 03:01] delete this customer I have removed the
+[02:58 - 03:03] foreign key constrainer from the
+[03:01 - 03:05] dummy.db table which allows you to
+[03:03 - 03:08] delete the customer. If you have used
+[03:05 - 03:11] the north wind db there is a foreign key
+[03:08 - 03:14] that tied to the customer because the
+[03:11 - 03:16] order table will require that. So that
+[03:14 - 03:18] will actually prevent you from deleting.
+[03:16 - 03:21] That's the reason why I asked you to try
+[03:18 - 03:24] this out in the dummy. DB file and not
+[03:21 - 03:26] using the northwind.db. What happens if
+[03:24 - 03:29] you use the command delete from customer
+[03:26 - 03:32] table without specifying which customer
+[03:29 - 03:35] you want to delete? Let's see what will
+[03:32 - 03:37] happen to the table. 90 rows affected.
+[03:35 - 03:39] Let's browse the data. There is no data
+[03:37 - 03:41] in the customer table because this
+[03:39 - 03:44] command deleted all the 90 rows of
+[03:41 - 03:46] customer. Now you realize that although
+[03:44 - 03:50] the customer data has been deleted, the
+[03:46 - 03:52] table is still inside the database. If
+[03:50 - 03:54] we choose to drop table customer, now go
+[03:52 - 03:58] back to the database structure. The
+[03:54 - 04:00] customer table no longer exists in DB
+[03:58 - 04:02] browser. It does not allow you to drop
+[04:00 - 04:04] the database using the command line. So
+[04:02 - 04:06] I hope you understand that it is very
+[04:04 - 04:09] dangerous when you try to update,
+[04:06 - 04:12] delete, or to drop a table. When we
+[04:09 - 04:15] update something, we want to specify
+[04:12 - 04:17] exactly which record to update. When we
+[04:15 - 04:20] want to delete, we also specify exactly
+[04:17 - 04:21] which records you want to delete. We
+[04:20 - 04:23] would not do updating or deleting
+[04:21 - 04:28] without a condition because that will
+[04:23 - 04:28] affect all the bet data in the table.

@@ -32,11 +32,11 @@ The word *hash* is used for two related but different jobs:
 
 Without a collision, searching is a **single calculation plus one lookup**. Collisions add extra comparisons.
 
-| Search method | Expected / usual | Worst case | Needs sorted data? |
-| ------------- | ---------------- | ---------- | ------------------ |
-| Hash table | `O(1)` | `O(n)` if many keys collide | no |
-| Linear search | `O(n)` | `O(n)` | no |
-| Binary search | `O(log n)` | `O(log n)` | **yes** |
+| Search method | How it finds an item | Expected / usual | Worst case | Needs sorted data? |
+| ------------- | -------------------- | ---------------- | ---------- | ------------------ |
+| Hash table | hash the key, look in that one slot | `O(1)` | `O(n)` if many keys collide | no |
+| Linear search | check each item in turn | `O(n)` | `O(n)` | no |
+| Binary search | check the middle, discard the half it can't be in | `O(log n)` | `O(log n)` | **yes** |
 
 - **vs linear search** — linear may check every record. A hash lookup checks one slot, or a short probe chain after a collision.
 - **vs binary search** — binary search is fast, but the data must be kept **sorted**. Maintaining that order on every insertion and deletion is expensive for large, frequently-changing datasets.
@@ -250,6 +250,20 @@ def search_probe(table, item):
         index = (index + 1) % len(table)
     return False
 ```
+
+> [!important] 2025 Promo P1 Q2 — linear probing, digit-sum hash `% 10` `[2+3]`
+> | Key | Hash | Stored at |
+> | --- | ---- | --------- |
+> | `6201` | 9 | **0** — 9 taken, wrapped round |
+> | `2352` | 2 | 2 |
+> | `3857` | 3 | 3 |
+> | `8131` | 3 | **4** — 3 taken |
+> | `5731` | 6 | 6 |
+> | `4249` | 9 | 9 |
+>
+> **(a)** Insert `2725`: `2+7+2+5 = 16`, `16 % 10 = 6` (1m). Index 6 holds `5731`, so probe to 7, which is free (1m).
+>
+> **(b)** A possible order: `2352`, `3857`, `5731`, `4249` (any order, all at their own hash), then `8131`, `6201`. Marks: the hashes (1m); `8131` after `3857` (1m); `6201` after `4249`, wrapping 9 → 0 (1m).
 
 ## Common Mistakes
 

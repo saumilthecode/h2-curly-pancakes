@@ -1,11 +1,11 @@
 > [!summary] Quick View
-> Find the version of the problem **one size smaller**, assume it is already solved, then write the single step that assembles the answer.
+> Find the problem **one size smaller**, assume it is solved, then write the step that combines it into the answer.
 
 Theory — base case, recursion tree, call stack — is in [[LT9a Recursion|LT9a]].
 
 ## The Method
 
-1. **Spot the smaller problem.** What does size `n` have in common with size `n - 1`? Sometimes it isn't obvious.
+1. **Spot the smaller problem.** What does size `n` have in common with size `n - 1`?
 2. **Write the relationship.** `f(n) = <something> combined with f(n-1)`.
 3. **Wishful thinking.** Assume `f(n-1)` already returns the right answer. Only write the combining step.
 4. **Find the base case.** The smallest input whose answer you can state outright.
@@ -24,8 +24,6 @@ Theory — base case, recursion tree, call stack — is in [[LT9a Recursion|LT9a
 | One row up a triangle | `n-1` on both `n` and `r` | `f(n-1, r-1) + f(n-1, r)` |
 
 ## Pattern: Head + Rest of String
-
-Handle the first character; recurse on everything after it.
 
 ```python
 def remove_adj_dup(string):
@@ -65,7 +63,7 @@ shift_right("12345", 2)  ->  "45123"
 ```
 
 > [!note]
-> The recursive call is the **whole** return value — nothing is left pending, so the stack does no work on the way back up. Contrast `factorial`, where a multiplication waits in every frame.
+> The recursive call is the **whole** return value, so nothing is left pending. In `factorial`, a multiplication waits in every frame.
 
 ## Pattern: Two Recursive Calls
 
@@ -79,7 +77,7 @@ def fib(n):
 ```
 
 > [!warning] Why `fib` is slow
-> Each call spawns two more, so the tree grows exponentially and the same values are recomputed many times. `fib(5)` alone calls `fib(2)` three times.
+> Each call spawns two more, so the call tree grows exponentially and repeats the same work.
 >
 > ```mermaid
 > flowchart TD
@@ -110,8 +108,6 @@ def f(n):
 `n < 3` covers all three base values in one test, and handles negatives — `f(-1)` returns `-1`.
 
 ## Pattern: Building a List
-
-Wrap the current item in a list and concatenate the recursive result.
 
 ```python
 def collatz(n):

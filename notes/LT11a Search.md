@@ -204,6 +204,7 @@ Three things change from the plain version:
 
 | | Linear | Binary |
 | --- | ------ | ------ |
+| How it works | check each element in turn | check the middle, discard the half the key can't be in |
 | Data must be sorted | no | **yes** |
 | Order of growth | `O(n)` | `O(log n)` |
 | Worst case on 1000 items | 1000 checks | 10 checks |

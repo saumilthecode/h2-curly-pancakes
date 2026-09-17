@@ -37,7 +37,7 @@ def change_value_at_index(tup, i, value):
     return tup[:i] + (value,) + tup[i + 1:]
 ```
 
-Slice up to `i`, drop in a **one-element tuple**, slice from `i + 1`. Copying works the same way — build a new tuple from the elements rather than writing `b = a`, which only makes a second name for the same object.
+`(value,)` needs the comma. To copy, rebuild from the elements; `b = a` only names the same object.
 
 ## Operations
 

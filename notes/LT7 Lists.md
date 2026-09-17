@@ -3,12 +3,12 @@
 
 ## Collection Types
 
-| Type | Ordered | Mutable | Duplicates |
-| ---- | ------- | ------- | ---------- |
-| Tuple `()` | yes | no | allowed |
-| List `[]` | yes | yes | allowed |
-| Dictionary `{k: v}` | by insertion | yes | keys must be unique |
-| Set `set()` | no | yes | not allowed |
+| Type | What it is | Ordered | Mutable | Duplicates |
+| ---- | ---------- | ------- | ------- | ---------- |
+| Tuple `()` | a sequence that can't change | yes | no | allowed |
+| List `[]` | a sequence you can change | yes | yes | allowed |
+| Dictionary `{k: v}` | values looked up by key | by insertion | yes | keys must be unique |
+| Set `set()` | a group of unique values | no | yes | not allowed |
 
 > [!warning]
 > `{}` creates an empty **dictionary**. The empty set is `set()`.
@@ -46,7 +46,7 @@ lst[4] = 5              # lists are mutable
 | `lst * 3` | repetition |
 
 > [!note]
-> `len()` and `.count()` only see the **top level**. `[1, [2, 3], [4], (5, 6), (7,), (), (8, (9, 10)), 11, 12]` has `9` elements, and `.count(1)` on a list of nested lists counts only the `1`s that are elements in their own right.
+> `len()` and `.count()` only see the **top level**. `[1, [2, 3], [4], (5, 6), (7,), (), (8, (9, 10)), 11, 12]` has `9` elements.
 
 > [!note]
 > `max()` and `min()` need comparable elements. `sum(['a','b'])` and a mixed list of numbers and strings both raise errors.
@@ -71,8 +71,6 @@ lst = [3, 1, 4, 7, 3]
 | `lst.copy()` | a new list with the same items | — |
 
 ### `append` vs `extend`
-
-`append` adds **one** item. `extend` iterates the argument and adds each element.
 
 ```python
 lst = [1, 2]
@@ -127,7 +125,7 @@ q is [(), 456]        # False - a fresh literal is a different object
 
 ## Mutate, or Return a New List
 
-*"The list should be mutated"* and *"returns a new list"* need different code, and the tests check with `is`.
+*"Mutated"* and *"returns a new list"* need different code; the tests check with `is`.
 
 ```python
 def double_up(lst):              # mutates: assign through the index

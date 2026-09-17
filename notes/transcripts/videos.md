@@ -208,3 +208,9 @@
 - [Circuit Switching vs. Packet Switching](https://www.youtube.com/watch?v=B1tElYnFqL8) | Sunny Classroom | transcript available
 - [How TCP starts and close session?](https://www.youtube.com/watch?v=zlIHLnOigmA) | Sunny Classroom | transcript available
 
+
+### C4 Database and Basic SQL (SLS)
+- [C4-1 Introduction to Database v2](https://www.youtube.com/watch?v=LiT_ktHG1-E) | YIJC Computing | transcript available
+- [C4-2a Basic SQL - create database and tables v2](https://www.youtube.com/watch?v=-OexChjx7kg) | YIJC Computing | transcript available
+- [C4-2b Basic SQL - insert data into tables v2](https://www.youtube.com/watch?v=Qk8n6iOcb0Y) | YIJC Computing | transcript available
+- [C4-2d_2e Basic SQL - Update and Delete Records and Tables v2](https://www.youtube.com/watch?v=-mC5SGlLOUU) | YIJC Computing | transcript available

@@ -38,7 +38,7 @@ d.clear()        # delete all entries
 > [!warning]
 > `in` searches keys. For `{'mains': 'chicken'}`, `'mains' in d` is `True` but `'chicken' in d` is `False`.
 
-A value can itself be a dictionary — chain the keys to reach inside:
+Chain keys to reach into a nested dictionary:
 
 ```python
 cat = {'name': 'kitty', 'age': 4, 'stats': {'ht': 12.5, 'wt': 3.7}}
@@ -86,7 +86,7 @@ def increase(d):
     return d
 ```
 
-**Counting** — the most examined dictionary use. Build the dictionary as you go: the first sighting creates the key, later ones add to it.
+**Counting** — the most examined use. The first sighting creates the key; later ones add to it.
 
 ```python
 def count(seq):
@@ -104,7 +104,7 @@ count([1,2,3,1,1,2,3,1,1,3,2])  ->  {1: 5, 2: 3, 3: 3}
 count('mississippi')            ->  {'m': 1, 'i': 4, 's': 4, 'p': 2}
 ```
 
-`result[item] += 1` on its own raises `KeyError` the first time, hence the `if`/`else`. The same shape counts words after `paragraph.split()`, or vowels only by wrapping the body in `if ch in 'aeiou':`.
+`result[item] += 1` alone raises `KeyError` for a new key. Count words after `paragraph.split()`; count vowels by wrapping the body in `if ch in 'aeiou':`.
 
 Combining two dictionaries with the same keys:
 
@@ -123,7 +123,7 @@ def average(result1, result2):
 - Using a list as a key — it's mutable, so it isn't allowed.
 - Accessing a missing key directly instead of checking with `in` first.
 - `d[item] += 1` without creating the key first — `KeyError` on the first occurrence.
-- Rebuilding a dictionary when the question says *return the mutated dictionary*, or mutating when it wants a new one. Read which is asked for.
+- Mutating when the question wants a new dictionary, or the reverse.
 
 ## Related
 

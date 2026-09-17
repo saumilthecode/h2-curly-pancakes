@@ -176,6 +176,15 @@ def contains(x, tree):
 
 The lecture slides call this same function `is_element_of_set(x, s)` — identical code, different name.
 
+> [!important] Describe searching a BST — 2023 Promo Q4(b) `[3]`, 2025 Promo Q5(c) `[5]`
+> 1. Start at the **root** as the current node.
+> 2. If the item **matches** the current node, return `True`.
+> 3. If it is **smaller**, move to the left child; if **larger**, the right child.
+> 4. Repeat from step 2.
+> 5. When the current node is **empty**, the item isn't in the tree — return `False`.
+>
+> 2025: 1m per step. 2023 markers: most answers skipped checking the root and never said how to detect **absence**. Array binary search or insertion scored 0.
+
 ## Inserting — `insert_tree`
 
 A new value always ends up as a **new leaf**. Walk down as if searching; when you run off the bottom, that empty spot is where it goes.
@@ -529,6 +538,48 @@ flowchart TD
 >   Sg ~~~ w4:::hid
 >   classDef hid fill:none,stroke:none,color:transparent
 > ```
+
+> [!example]- 2023 Promo Q4 and 2025 Promo Q5 — the rest of the tree questions
+> **2023 Q4(a)** insert `23_03, 23_07, 23_01, 23_04, 23_02, 23_05, 23_06, 23_08` in that order `[3]`, −1 per wrong node:
+>
+> ```mermaid
+> flowchart TD
+>   a3["23_03 Julie"] --> a1["23_01 Xavier"]
+>   a3 --> a7["23_07 Samantha"]
+>   a1 ~~~ h1:::hid
+>   a1 --> a2["23_02 Peter"]
+>   a7 --> a4["23_04 Beatrice"]
+>   a7 --> a8["23_08 John"]
+>   a4 ~~~ h2:::hid
+>   a4 --> a5["23_05 Alfred"]
+>   a5 ~~~ h3:::hid
+>   a5 --> a6["23_06 Teresa"]
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> Re-sorting the list before inserting lost marks.
+>
+> **2023 Q4(c)** search a BST `O(log n)`, an unsorted list `O(n)` `[2]`. Common error: `O(n log n)` for the BST. No explanation needed.
+>
+> **2023 Q4(d)** ascending order by matriculation number: **in-order** — visit the left subtree, then the node, then the right subtree `[2]`.
+>
+> **2025 Q5** on this tree:
+>
+> ```mermaid
+> flowchart TD
+>   p["PLUM"] --> b["BANANA"]
+>   p --> t["TOMATO"]
+>   b --> ap["APPLE"]
+>   b --> o["ORANGE"]
+>   o ~~~ h4:::hid
+>   o --> pe["PEACH"]
+>   t --> r["RAISIN"]
+>   t ~~~ h5:::hid
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> **(a)** post-order: `APPLE, PEACH, ORANGE, BANANA, RAISIN, TOMATO, PLUM` `[2]`, −1 per error.
+> **(b)** in-order gives **alphabetical order** `[1]`.
 
 ## Common Mistakes
 

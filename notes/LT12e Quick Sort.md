@@ -92,6 +92,8 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 > ```
 >
 > `[6, 3, 7, 2, 8, 9, 0, 1, 4, 5]` returns `6` and gives `[0, 3, 5, 2, 4, 1, 6, 9, 8, 7]`. Either pivot choice has the same worst case — sorted input.
+>
+> 2025 Promo P2 Task 5 gives this exact function as pseudocode, with `Hi ← Hi - 1`, the swap inside the loop, and the pivot swap blanked out.
 
 > [!important]
 > `low <= high` must guard **both** inner loops or the pointers run off the segment. The recursive calls use `mid - 1` and `mid + 1` — the pivot is done and must be excluded, or the recursion never shrinks.
@@ -123,6 +125,29 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 
 > [!important] 2020 Q2(b) — random pivot vs first/last `[2]`
 > First/last hits the worst case `O(n²)` on already-sorted or reversed data, which is common. Random makes a lopsided split unlikely whatever the input order.
+
+> [!important] 2023 Promo P1 Q2(c)–(f) — non-in-place, first-element pivot `[1+3+2+2]`
+> **(c)** The **median**: roughly equal halves, fewest recursive calls. Rejected: *average* (the mean may not be in the list), and *middle element* unless of the **sorted** array.
+>
+> **(d)** Fill the blanks:
+>
+> ```text
+> PivotIndex = 0                                  A
+> PivotValue = lst[PivotIndex]                    B
+> FOR element in lst:                             C
+>     IF element < PivotValue  THEN APPEND element TO Left
+>     ELSE IF element > PivotValue THEN APPEND element TO Right
+>     ELSE APPEND element TO Middle
+> RETURN QUICKSORT(Left) + Middle + QUICKSORT(Right)   D
+> ```
+>
+> `len(lst)//2` for A ignores *"first element"*. `element in range(lst)` for C lost the mark — `element` is a value, not an index.
+>
+> **(e)** `[542, 391, 215, 482, 304, 731, 629]` partitioned once: pivot `542` at **index 4**, giving `[391, 215, 482, 304, 542, 731, 629]`.
+>
+> **(f)** Advantage: `O(n log n)` against bubble sort's `O(n²)` — state **both**. Disadvantage: the non-in-place version builds new lists and needs extra memory; bubble sort does not.
+>
+> Scheme error: it labels `n log n` the *worst case*. Quicksort is `O(n log n)` **average**, `O(n²)` **worst**.
 
 ## Common Mistakes
 

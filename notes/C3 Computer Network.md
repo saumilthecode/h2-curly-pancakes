@@ -282,6 +282,34 @@ SMTP runs over TCP to help ensure delivery.
 > http://www.yijc.edu.sg
 > ```
 
+## Exam
+
+> [!important] 2025 Promo P1 Q6 — from USB drives to a LAN to the cloud `[8]`
+> **(a)** Two disadvantages of sharing files on removable drives `[2]`, any two:
+> - data lost if the drive is misplaced, stolen or damaged
+> - malware spreads between machines
+> - unauthorised access to the data
+> - no real-time collaboration
+>
+> **(b)** Two LAN functions besides file sharing `[2]`, any two:
+> - shared printers and scanners
+> - one shared internet connection to the ISP
+> - software installed once on an application server
+> - internal mail or messaging
+> - centralised backup
+> - centralised security: authentication, firewall, antivirus
+>
+> **(c)** Two advantages of a cloud provider `[2]`, any two:
+> - no upfront hardware cost, pay only for what you use, no maintenance
+> - scales up or down with demand
+> - ready immediately, without buying and setting up hardware
+> - high availability through redundancy
+> - accessible from anywhere with an internet connection
+>
+> **(d)** One more cloud service and its benefit `[1+1]` — IaaS (virtual networks, firewalls), PaaS (databases, web hosting) or SaaS (Microsoft 365, Google Workspace).
+>
+> Cloud computing is outside y27; the 2025 promo asked it anyway.
+
 ## Related
 
 - [[C2 Data representation]]

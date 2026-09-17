@@ -47,7 +47,7 @@ Also taught in lecture:
 | Existence | `username in registered_users` |
 
 > [!note]
-> `input()` always hands you a `str`, so these examine **characters in a string**. That is what the course asks for here; convert afterwards if you need the number itself.
+> `input()` returns a `str`, so these checks examine **characters**. Convert afterwards if you need the number.
 
 ## Check Digits
 
@@ -77,6 +77,15 @@ An extra digit calculated from the others and appended to the number, so an erro
 
 > [!tip]
 > A check digit is a **checksum** applied to identification numbers — same idea as [[LT10d Hashing|Hashing]].
+
+> [!example]- Database-entry questions — 2022 Q1(e), 2023 Q4(d), specimen 2027 P1 Q4(d)
+> **2022 Q1(e)** an event score from 0 to 25 inclusive `[1]`: **range check**.
+>
+> **2023 Q4(d)(i)** verify a driver licence number `[2]`: **double entry**, and a **visual check** against the licence itself.
+>
+> **2023 Q4(d)(ii)** three validations for the date a hired car is expected back `[3]`: **presence**, **format** (`DD/MM/YYYY`), **range** (not before the date hired).
+>
+> **Specimen Q4(d)** three **different** checks, one each for name, gender, date of birth `[3]`: name **presence**, gender **lookup** (`M` or `F` only), date of birth **format**.
 
 ## Related
 

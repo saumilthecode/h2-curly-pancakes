@@ -1,6 +1,6 @@
 # H2 Computing transcript index
 
-Successful transcripts: 112
+Successful transcripts: 116
 Unavailable transcripts: 6
 
 ## Transcript files
@@ -477,6 +477,26 @@ Unavailable transcripts: 6
   - Uploader: YIJC Computing
   - File: `112 - Walkthrough LT12e In Place Quicksort Q6 13 - voiceover [b-2a0q5hlCk].txt`
   - Characters: 19,816
+
+- **C4 Database and Basic SQL (SLS) - C4-1 Introduction to Database**: [C4-1 Introduction to Database v2](https://www.youtube.com/watch?v=LiT_ktHG1-E)
+  - Uploader: YIJC Computing
+  - File: `113 - C4-1 Introduction to Database v2 [LiT_ktHG1-E].txt`
+  - Characters: 14,741
+
+- **C4 Database and Basic SQL (SLS) - C4-2a Basic SQL - Create Database and Tables**: [C4-2a Basic SQL - create database and tables v2](https://www.youtube.com/watch?v=-OexChjx7kg)
+  - Uploader: YIJC Computing
+  - File: `114 - C4-2a Basic SQL - create database and tables v2 [-OexChjx7kg].txt`
+  - Characters: 6,739
+
+- **C4 Database and Basic SQL (SLS) - C4-2b Basic SQL - Insert Data into Tables**: [C4-2b Basic SQL - insert data into tables v2](https://www.youtube.com/watch?v=Qk8n6iOcb0Y)
+  - Uploader: YIJC Computing
+  - File: `115 - C4-2b Basic SQL - insert data into tables v2 [Qk8n6iOcb0Y].txt`
+  - Characters: 3,977
+
+- **C4 Database and Basic SQL (SLS) - C4-2d and 2e Basic SQL - Update and Delete Records**: [C4-2d_2e Basic SQL - Update and Delete Records and Tables v2](https://www.youtube.com/watch?v=-mC5SGlLOUU)
+  - Uploader: YIJC Computing
+  - File: `116 - C4-2d_2e Basic SQL - Update and Delete Records and Tables v2 [-mC5SGlLOUU].txt`
+  - Characters: 5,721
 
 ## Videos without transcripts
 
