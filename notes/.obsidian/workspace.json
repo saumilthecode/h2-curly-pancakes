@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BTB2 File Handling.md",
+                "file": "C4-2 Basic SQL.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BTB2 File Handling"
+              "title": "C4-2 Basic SQL"
             }
           }
         ]
@@ -215,6 +215,8 @@
   },
   "active": "6a4f31a92b7fccca",
   "lastOpenFiles": [
+    "C4-1 Introduction to Database.md",
+    "BTB2 File Handling.md",
     "LT10a Data Abstraction.md",
     "LT12e Quick Sort.md",
     "LT12d Merge Sort.md",
@@ -249,8 +251,6 @@
     "C2 Data representation.md",
     "Hashing.md",
     "LT2 Conditionals.md",
-    "BTB4 Random Generator.md",
-    "BTB3 Print Formatting.md",
     "queue-fifo.svg",
     "queue-pass-bomb.svg",
     "recursion.png",
