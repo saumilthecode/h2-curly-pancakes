@@ -105,6 +105,11 @@ Raising the start fare to `$3.20`, or shrinking the block to 300 m, is now one e
 > [!tip] The lecture's own caveat
 > Naming every constant is *"yes and no"*: worth it for code that will be maintained, overkill for a function run once.
 
+> [!important] 2023 Promo P2 Task 1 — a helper function, then reuse it `[3+4]`
+> `discriminant(a, b, c)` returns `b**2 - 4*a*c` if it's `>= 0`, else `None`: 1m calculation · 1m `if`/`else` and return · 1m **three test cases** — one positive, one negative, one zero.
+>
+> `quadratic_roots(a, b, c)` must **call `discriminant()`**, not redo the maths: 1m uses the helper · 1m `'No real root.'` when it's `None` · 1m both roots `(-b ± d ** 0.5) / (2 * a)` · 1m rounded to 1 d.p. and returned.
+
 ## Common Mistakes
 
 - Repeating a constant in several places instead of naming it once.

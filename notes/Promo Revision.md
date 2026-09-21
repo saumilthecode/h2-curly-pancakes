@@ -1,10 +1,14 @@
 > [!summary] Quick View
 > Last-minute route for the **JC1 promo**, most marks first. Ranked by what the 2023–2025 promos tested: 120 marks of P1, 180 of P2. Basics (types, conditionals, loops, input validation) left out.
 
-| Paper | Time | Marks |
-| ----- | ---- | ----- |
-| P1 Written | 1 h 10 min | 40 |
-| P2 Practical | 1 h 50 min | 60 |
+**Mon 5 Oct 2026, 1400–1715.** P2 first, a 15-minute admin break (you can't leave), then P1.
+
+| Paper | Time | Marks | Tools |
+| ----- | ---- | ----- | ----- |
+| P2 Practical | 1 h 50 min | 60 | Jupyter, DB Browser, the Specimen Insert (Reference Guide) |
+| P1 Theory | 1 h 10 min | 40 | written |
+
+**Scope:** every programming topic up to QuickSort, C2 Data Representation, C3 Networking (theory), C4 Databases — **basic SQL only**. Any programming topic can also come up in P1.
 
 ## Route
 
@@ -37,7 +41,7 @@ In Obsidian the boxes are links.
 [[LT12 Sorting Algorithms#Comparison|Comparison table]] · [[LT12e Quick Sort#Exam|Quick]] · [[LT12b Insertion Sort#Exam|Insertion]] · [[LT12d Merge Sort#Exam|Merge]] · [[LT12a Bubble Sort#Exam|Bubble]]
 
 - **P1** — describe a sort using its keywords and trace it on the given list; merge sort wants a diagram. Give worst-case Big-O for **both** sorts when comparing.
-- **P2** — fill blanks in quicksort-partition or merge pseudocode, then code it. Sorting tuples: compare `int(t[2])` or `float(t[1])`.
+- **P2** — fill blanks in quicksort-partition or merge pseudocode, then code it ([[BTB1 Pseudocode|pseudocode → Python]]). Sorting tuples: compare `int(t[2])` or `float(t[1])`.
 - Quicksort worst case is `O(n²)`; the ideal pivot is the **median**, not the average. Optimised bubble must say it **stops early**.
 
 ## 2. Hashing — 41 marks (P1 9, P2 32)
@@ -120,12 +124,12 @@ In Obsidian the boxes are links.
 
 - `append` to enqueue, `pop(0)` to dequeue, **check empty first**, return `len(queue)`.
 
-## Skip for Promo
+## Lowest Priority
 
-None of these appeared in the 2023, 2024 or 2025 promo, or the 2026 Mastery paper.
+All in scope, but none appeared in the 2023, 2024 or 2025 promo, or the 2026 Mastery paper. Revise these last.
 
-| Skip | Note |
-| ---- | ---- |
+| Topic | Note |
+| ----- | ---- |
 | ADTs — constructors, accessors, `make_…` / `get_…` | [[LT10a Data Abstraction]], [[LT11b Lesson Code (List ADT)]] |
 | Stacks, postfix, balanced brackets | [[LT10b Stack]] |
 | Selection sort | [[LT12c Selection Sort]] |

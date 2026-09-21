@@ -1,6 +1,3 @@
-> [!warning] Not examined
-> ADTs came up in WA2, LA2 and a checkpoint — never in a promo (2023–25) or an A-Level paper, and the y27 syllabus has no ADT outcome. Skip for promo.
-
 > [!summary] Quick View
 > Data abstraction hides **how data is stored** and exposes only the operations needed to use it.
 

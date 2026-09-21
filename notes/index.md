@@ -55,6 +55,7 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
 ### Back to Basics
 
+- [[BTB1 Pseudocode]] — reading pseudocode and turning it into Python
 - [[BTB2 File Handling]] — text and CSV I/O
 - [[BTB3 Print Formatting]] — `sep`, `end`, `format()`
 - [[BTB4 Random Generator]] — pseudo-random numbers and sampling
@@ -86,7 +87,9 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 - [[C4-1 Introduction to Database]] — tables, records, fields, primary and foreign keys
 - [[C4-2 Basic SQL|C4-2a–e Basic SQL]] — create, insert, query, update, delete
 
-## Not taught yet
+## Not in the promo
+
+Promo tests basic SQL only.
 
 ### C4 Database and Basic SQL
 

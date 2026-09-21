@@ -360,7 +360,7 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 >     ENDIF
 > ENDPROCEDURE
 >
-> CALL reverseInOrder(rootPtr)
+> reverseInOrder(rootPtr)
 > ```
 >
 > Move the `OUTPUT` line for the others: before both calls is pre-order, between is in-order, after is post-order.
