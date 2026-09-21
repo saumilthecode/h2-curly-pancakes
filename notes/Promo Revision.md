@@ -36,6 +36,8 @@ flowchart TD
 
 In Obsidian the boxes are links.
 
+Marks in each heading are totals from the 2023, 2024 and 2025 promos. **P1** = Paper 1 theory, **P2** = Paper 2 practical.
+
 ## 1. Sorting — 49 marks (P1 22, P2 27)
 
 [[LT12 Sorting Algorithms#Comparison|Comparison table]] · [[LT12e Quick Sort#Exam|Quick]] · [[LT12b Insertion Sort#Exam|Insertion]] · [[LT12d Merge Sort#Exam|Merge]] · [[LT12a Bubble Sort#Exam|Bubble]]
@@ -138,8 +140,6 @@ All in scope, but none appeared in the 2023, 2024 or 2025 promo, or the 2026 Mas
 | Topologies, TCP handshake, DNS, DHCP, subnets, email protocols | [[C3 Computer Network]] |
 | Random numbers | [[BTB4 Random Generator]] |
 | Magic numbers, flowcharts | [[LT3b Good Abstraction]], [[LT2 Conditionals]] |
-
-Stacks, check digits, UTF-8 and DNS have been on A-Level papers, so they come back later.
 
 > [!warning] Not in the Paper 2 Reference Guide
 > None of these is printed. **Bold** ones earned marks in the promo schemes.
