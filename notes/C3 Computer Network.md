@@ -329,6 +329,19 @@ SMTP runs over TCP to help ensure delivery.
 >
 > 2026 Mastery P1 Q5 repeats (a) and (b).
 
+> [!important] 2023 Promo P1 Q3 — file server, remote access, router and modem `[2+2+2+2]`
+> **(a)** Two benefits of keeping files on a **file server**:
+> - one up-to-date copy that every workstation can open, instead of versions scattered across USB drives
+> - backed up centrally, with access controlled by user permissions
+>
+> **(b)** Two other LAN functions — same list as 2025 Q6(b): shared printers, one internet connection, applications on a server, internal email, central backup and security.
+>
+> **(c)** Remote access. **Advantage:** staff reach their files from home or on the move. **Disadvantage:** the LAN is exposed to the internet — unauthorised access and intercepted data. A VPN reduces this.
+>
+> **(d)**
+> - **Router** — forwards packets between the LAN and the ISP's network, using IP addresses to pick the route.
+> - **Modem** — **mo**dulates the LAN's digital signal into a signal the ISP's line can carry, and **dem**odulates incoming signals back to digital.
+
 ## Related
 
 - [[C2 Data representation]]

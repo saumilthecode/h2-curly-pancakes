@@ -234,6 +234,9 @@ degrade to `O(n)`.
 >
 > 2026 Mastery P1 Q1 repeated (b) and (c) with the same scheme.
 
+> [!important] 2023 Promo P1 Q5(a) — find one record card, sorted by registration number `[2]`
+> **Binary search.** Open the cabinet at the middle card and compare registration numbers. If the target is smaller, discard the back half; if larger, the front half. Repeat on what's left until the card is found or no cards remain.
+
 > [!example]- 2025 Promo P2 Task 6 — iterative binary search `[4]`
 > 1m loop while `start <= end` · 1m check the value at `mid = (start + end) // 2` · 1m update the pointers · 1m `return False` after the loop.
 

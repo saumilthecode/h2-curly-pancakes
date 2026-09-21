@@ -61,7 +61,7 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
 ### LT10 Data Abstraction
 
-- [[LT10a Data Abstraction|LT10a Data Abstraction 1–2]] — ADTs, constructors, accessors, utilities
+- [[LT10a Data Abstraction|LT10a Data Abstraction 1–2]] — ADTs, constructors, accessors, utilities *(WA only, never in a promo)*
 - [[LT10b Stack]] — LIFO
 - [[LT10c Queue]] — FIFO, linear and circular
 - [[LT10d Hashing|LT10d Hashing Parts 1–3]] — checksums, hash tables, collisions
@@ -70,6 +70,7 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
 - [[LT11a Search|LT11a Linear and Binary Search]] — iterative and recursive search, Big-O
 - [[LT11b Binary Tree|LT11b Binary Tree Parts 1–3]] — trees, BSTs, traversals, BFS and DFS
+- [[LT11b Lesson Code (List ADT)]] — the lesson's `make_tree` Python *(WA only)*
 
 ### LT12 Sorting Algorithms
 

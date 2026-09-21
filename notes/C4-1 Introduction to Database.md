@@ -109,6 +109,15 @@ Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
 >       ──────────  ──────            ────
 > ```
 
+> [!important] 2025 Promo P1 Q4(a) — ER diagram `[2]`
+> One customer makes many bookings; one villa has many bookings.
+>
+> ```text
+> CUSTOMER ──────< BOOKING >────── VILLA
+> ```
+>
+> 1m the three entities · 1m both one-to-many links, with the "many" end at `BOOKING`.
+
 > [!important] 2025 Promo P1 Q4(b) — table descriptions `[3]`
 > A villa-hire company: `CUSTOMER`, `VILLA`, `BOOKING`.
 >

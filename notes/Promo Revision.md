@@ -42,7 +42,7 @@ In Obsidian the boxes are links.
 
 ## 2. Hashing — 41 marks (P1 9, P2 32)
 
-[[LT10d Hashing#Linear Probing|Linear probing]] · [[LT10d Hashing#Separate Chaining|Separate chaining]] · [[LT10d Hashing#Checksum|Checksum]]
+[[LT10d Hashing#Linear Probing|Linear probing]] · [[LT10d Hashing#Separate Chaining|Separate chaining]]
 
 - **P2 every year** — write the hash, build the table, search it. Marks: `[''] * size`, `% size`, store if empty, otherwise probe `(i + 1) % size` or turn the slot into a list.
 - **P1** — insert a key by linear probing; deduce a possible insertion order from the finished table.
@@ -119,6 +119,23 @@ In Obsidian the boxes are links.
 [[LT10c Queue#Core Operations|Core operations]]
 
 - `append` to enqueue, `pop(0)` to dequeue, **check empty first**, return `len(queue)`.
+
+## Skip for Promo
+
+None of these appeared in the 2023, 2024 or 2025 promo, or the 2026 Mastery paper.
+
+| Skip | Note |
+| ---- | ---- |
+| ADTs — constructors, accessors, `make_…` / `get_…` | [[LT10a Data Abstraction]], [[LT11b Lesson Code (List ADT)]] |
+| Stacks, postfix, balanced brackets | [[LT10b Stack]] |
+| Selection sort | [[LT12c Selection Sort]] |
+| Checksums and check digits | [[LT10d Hashing]], [[LT4a Data validation and verification]] |
+| UTF-8 | [[C2 Data representation]] |
+| Topologies, TCP handshake, DNS, DHCP, subnets, email protocols | [[C3 Computer Network]] |
+| Random numbers | [[BTB4 Random Generator]] |
+| Magic numbers, flowcharts | [[LT3b Good Abstraction]], [[LT2 Conditionals]] |
+
+Stacks, check digits, UTF-8 and DNS have been on A-Level papers, so they come back later.
 
 > [!warning] Not in the Paper 2 Reference Guide
 > None of these is printed. **Bold** ones earned marks in the promo schemes.
