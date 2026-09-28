@@ -63,6 +63,21 @@ Each call is **pushed onto the call stack** before the previous one finishes.
 3. When the **base case** returns, no new frame is pushed.
 4. Frames are then **popped** in reverse order (LIFO), each using the returned value to finish its own calculation.
 
+```text
+factorial(3) at its deepest point
+
+   +--------------------------------+
+   | f(1)   n = 1   returns 1       |   top, base case, pushes nothing
+   +--------------------------------+
+   | f(2)   n = 2   waiting on f(1) |
+   +--------------------------------+
+   | f(3)   n = 3   waiting on f(2) |   bottom, the original call
+   +--------------------------------+
+
+ pushed   f(3), f(2), f(1)
+ popped   f(1) gives 1, f(2) gives 2 * 1 = 2, f(3) gives 3 * 2 = 6
+```
+
 ```mermaid
 sequenceDiagram
     participant A as f(3)

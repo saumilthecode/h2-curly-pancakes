@@ -59,11 +59,32 @@ def hypotenuse(a, b):
     return sqrt(square(a) + square(b))   # pretend both exist
 ```
 
+```mermaid
+flowchart TD
+  h["hypotenuse(a, b)"] --> s["sum_of_squares(a, b)"]
+  h --> r["sqrt"]
+  s --> q1["square(a)"]
+  s --> q2["square(b)"]
+```
+
+Write the top box first and assume the ones below it work. Then write those.
+
 Same technique drives [[LT9b Recursion (Application)|recursive]] solutions.
 
 ## Avoid Magic Numbers
 
 The lecture's taxi fare: **$3.00** for the first 1 km, **$0.22** per 400 m block or part of one up to 10 km, **$0.25** per block after that.
+
+```text
+ metres   0        1000                        10000  ->
+          |---------|---------------------------|----------->
+            $3.00     $0.22 per 400 m block       $0.25 per 400 m block
+            flat      or part of one              or part of one
+
+ 3300 m    3.00 + 0.22 * ceil(2300/400) = 3.00 + 0.22 * 6  = 4.32
+ 10000 m   3.00 + 0.22 * ceil(9000/400) = 3.00 + 0.22 * 23 = 8.06
+ 14500 m   8.06 + 0.25 * ceil(4500/400) = 8.06 + 0.25 * 12 = 11.06
+```
 
 ```python
 from math import ceil

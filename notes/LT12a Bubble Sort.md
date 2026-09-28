@@ -38,6 +38,17 @@ The loop ends at `len(seq) - 2`, or `seq[i + 1]` runs off the end.
 
 `n` items need **`n - 1`** passes. One pass places the largest remaining element at the end, so the sorted region grows from the **right**.
 
+```text
+the same list, showing how much each pass still compares
+
+pass 1   4 pairs    3  6  8  5 | 9
+pass 2   3 pairs    3  6  5 | 8  9
+pass 3   2 pairs    3  5 | 6  8  9
+pass 4   1 pair     3 | 5  6  8  9      no swap, so optimised stops here
+
+ |  is the sorted tail. Simple keeps comparing 4 pairs every pass.
+```
+
 ## Three Versions
 
 | Version | In words | Inner loop | Outer loop |

@@ -243,6 +243,18 @@ A switch builds a **Source Address Table (SAT)**:
 | Star | all devices connect to a central switch | the switch is a single point of failure |
 | Mesh | devices connect to many or all others | high cost and complexity |
 
+```text
+bus          ring       star     mesh
+
+A   B   C    A --- B      A      A---B
+|   |   |    |     |      |      |\ /|
+=+===+===+=  |     |    B-S-C    | X |
+T         T  D --- C      |      |/ \|
+                          D      C---D
+
+ T is a terminator. S is the central switch. Mesh here is fully connected: 4 * 3 / 2 = 6 links.
+```
+
 Star is the most common in a LAN. For a fully meshed network:
 
 ```text
