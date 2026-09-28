@@ -146,7 +146,7 @@ def make_rat(n, d):
 >     return (rise ** 2 + run ** 2) ** 0.5
 > ```
 
-> [!example]- Group ADT — working over a collection
+> [!example]- Group ADT: working over a collection
 > ```python
 > def make_student(name, gender, score):
 >     return (name, gender, score)
@@ -174,7 +174,7 @@ def make_rat(n, d):
 
 - Reaching into the representation directly (`student[0]`) instead of calling the accessor.
 - Utilities tied to tuples prevent switching the ADT to dictionaries.
-- Forgetting the constructor must return the value — not print it.
+- Forgetting the constructor must return the value, not print it.
 
 ## Related
 

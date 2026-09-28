@@ -39,7 +39,7 @@ lst[4] = 5              # lists are mutable
 | Operation | Result |
 | --------- | ------ |
 | `len(lst)` | number of elements |
-| `sum(lst)` | total — numbers only |
+| `sum(lst)` | total (numbers only) |
 | `max(lst)` / `min(lst)` | largest / smallest |
 | `x in lst` | membership |
 | `lst1 + lst2` | concatenation, new list |
@@ -59,16 +59,16 @@ lst = [3, 1, 4, 7, 3]
 
 | Method | Does | Returns the item? |
 | ------ | ---- | ----------------- |
-| `lst.index(3)` | first position of `3` → `0`; error if absent | — |
-| `lst.count(3)` | how many times `3` appears → `2` | — |
+| `lst.index(3)` | first position of `3` → `0`, error if absent | - |
+| `lst.count(3)` | how many times `3` appears → `2` | - |
 | `lst.append(x)` | add **one** item to the end | no |
 | `lst.extend(seq)` | add **each** item of `seq` to the end | no |
 | `lst.insert(i, x)` | insert `x` at index `i` | no |
-| `lst.remove(x)` | remove the first `x`; error if absent | **no** |
+| `lst.remove(x)` | remove the first `x`, error if absent | **no** |
 | `lst.pop()` | remove and return the last item | **yes** |
 | `lst.pop(i)` | remove and return item at index `i` | **yes** |
 | `lst.reverse()` | reverse in place | no |
-| `lst.copy()` | a new list with the same items | — |
+| `lst.copy()` | a new list with the same items | - |
 
 ### `append` vs `extend`
 
@@ -85,7 +85,7 @@ lst.extend([3, 4])     # [1, 2, 3, 4]
 
 ### `remove` vs `pop`
 
-`remove` takes the **value**, `pop` takes the **index** — and only `pop` gives the item back.
+`remove` takes the **value**, `pop` takes the **index**, and only `pop` gives the item back.
 
 ## Deleting
 
@@ -108,6 +108,16 @@ lst2 = lst          # same list, two names - changing one changes both
 lst2 = lst.copy()   # a separate list
 ```
 
+```text
+lst2 = lst                      lst2 = lst.copy()
+
+ lst  --+                        lst  ---> [ 1, 2, 3 ]
+        +--> [ 1, 2, 3 ]
+ lst2 --+                        lst2 ---> [ 1, 2, 3 ]
+
+ one list, two names             two lists, changes stay separate
+```
+
 ### Equivalent vs Identical
 
 `==` compares **contents**. `is` asks whether they are the **same object**.
@@ -125,7 +135,7 @@ q is [(), 456]        # False - a fresh literal is a different object
 
 ## Mutate, or Return a New List
 
-*"Mutated"* and *"returns a new list"* need different code; the tests check with `is`.
+*"Mutated"* and *"returns a new list"* need different code. The tests check with `is`.
 
 ```python
 def double_up(lst):              # mutates: assign through the index
@@ -153,6 +163,19 @@ def remove_extra(lst):           # same job, in place
 > [!warning]
 > `for item in lst: lst.remove(item)` skips elements. Deleting during a `for` shifts everything left while the loop counter still moves right. Use a `while` with a manual index, or build a new list.
 
+```text
+for item in lst: lst.remove(item)    on [1, 2, 3, 4]
+
+i=0   [1, 2, 3, 4]    item = 1, remove it
+       ^
+i=1   [2, 3, 4]       item = 3, remove it   (2 slid into slot 0 and was skipped)
+          ^
+i=2   [2, 4]          index past the end, loop stops
+             ^
+
+result [2, 4]
+```
+
 ## Iteration
 
 ```python
@@ -170,10 +193,10 @@ while lst:                 # while lst is not empty
 
 ## Common Mistakes
 
-- Using `lst.remove(2)` when you meant index `2` — it removes the *value* `2`.
-- Expecting `lst.sort()` to return the sorted list; it returns `None`.
+- Using `lst.remove(2)` when you meant index `2`: it removes the *value* `2`.
+- Expecting `lst.sort()` to return the sorted list. It returns `None`.
 - Assigning instead of copying, then wondering why both lists changed.
-- Calling `.index()` or `.remove()` on a value that isn't there — both raise errors.
+- Calling `.index()` or `.remove()` on a value that isn't there: both raise errors.
 
 ## Related
 

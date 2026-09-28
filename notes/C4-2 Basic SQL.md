@@ -11,11 +11,11 @@
 
 | Term | Meaning |
 | ---- | ------- |
-| SQL | Structured Query Language — MySQL, Oracle, PostgreSQL are versions of it |
+| SQL | Structured Query Language, MySQL, Oracle, PostgreSQL are versions of it |
 | SQL Server | client–server DBMS: a database server, plus client apps that connect to it |
 | SQLite | **serverless** DBMS, embedded directly in an application |
 
-The lab tool is **DB Browser for SQLite**; statements go in the *Execute SQL* tab.
+The lab tool is **DB Browser for SQLite**. Statements go in the *Execute SQL* tab.
 
 ## C4-2a Create a Table
 
@@ -54,10 +54,10 @@ A composite key is **one** clause listing every field: `PRIMARY KEY(CustomerID, 
 
 | Type | Holds |
 | ---- | ----- |
-| `INTEGER` | whole numbers; Booleans as `0` / `1` |
+| `INTEGER` | whole numbers, Booleans as `0` / `1` |
 | `REAL` | decimals |
-| `TEXT` | strings; dates as `'YYYY-MM-DD'` |
-| `BLOB` | binary data such as an image — avoid, it bloats the file |
+| `TEXT` | strings, dates as `'YYYY-MM-DD'` |
+| `BLOB` | binary data such as an image (avoid: it bloats the file) |
 | `NUMERIC` | anything else, e.g. Boolean or DateTime |
 
 `CHAR(30)` is fixed length; `VARCHAR(30)` is variable, so `'John'` uses 4. SQLite stores both as `TEXT` and ignores the `(30)`.
@@ -74,8 +74,8 @@ VALUES ('Chang', 19, '24 - 12 oz bottles', 'Exotic Liquids', 'UK'),
 ```
 
 - Values match the column list **in order**.
-- `Id` is left out — the integer primary key **auto-increments**.
-- Omitted field → `NULL`; if `NOT NULL`, the insert fails.
+- `Id` is left out. The integer primary key **auto-increments**.
+- Omitted field → `NULL`. If `NOT NULL`, the insert fails.
 - Several rows share one `VALUES`, separated by commas.
 - Text containing `'` goes in **double quotes**.
 - Strings are quoted, numbers are not. Line breaks don't matter.
@@ -86,7 +86,7 @@ VALUES ('Chang', 19, '24 - 12 oz bottles', 'Exotic Liquids', 'UK'),
 SELECT … FROM … WHERE … GROUP BY … HAVING … ORDER BY … LIMIT …;
 ```
 
-Clauses must come in this order — `ORDER BY` before `WHERE` is a syntax error.
+Clauses must come in this order; `ORDER BY` before `WHERE` is a syntax error.
 
 ```sql
 SELECT * FROM Products;                              -- every field
@@ -102,7 +102,7 @@ SELECT DISTINCT SupplierName FROM Products;          -- each value once
 | `<>` or `!=` | not equal |
 | `>` `<` `>=` `<=` | comparisons |
 | `BETWEEN 10 AND 20` | range, **both ends included** |
-| `LIKE '%ja%'` | pattern — `%` is any number of characters, `_` exactly one |
+| `LIKE '%ja%'` | pattern: `%` is any number of characters, `_` exactly one |
 | `IN ('Germany', 'France', 'UK')` | any of the listed values |
 
 ```sql
@@ -153,6 +153,27 @@ ORDER BY COUNT(Id) DESC;
 > [!warning] `WHERE` cannot use an aggregate
 > `WHERE` filters **rows** before grouping; `HAVING` filters **groups** after. `WHERE COUNT(Id) > 5` fails with *misuse of aggregate*.
 
+```text
+the order the database works in, which is not the order you write
+
+ FROM Customers              all the rows
+      |
+      v
+ WHERE Country <> 'USA'      drop rows          no COUNT here, nothing is grouped yet
+      |
+      v
+ GROUP BY Country            rows collapse to one row per country
+      |
+      v
+ HAVING COUNT(Id) > 5        drop whole groups
+      |
+      v
+ SELECT COUNT(Id), Country   keep these columns
+      |
+      v
+ ORDER BY COUNT(Id) DESC     sort what is left
+```
+
 ## C4-2d Update
 
 ```sql
@@ -181,14 +202,14 @@ DROP TABLE Customers;                                  -- the table itself is go
 `Northwind.db`: `Orders` references Victoria's `Id`, so the **foreign key** blocks deleting her or dropping `Customers`. `dummy.db` removes this constraint. SQLite has no `DROP DATABASE`.
 
 > [!warning] Foreign keys are off by default outside DB Browser
-> DB Browser enforces foreign keys; the `sqlite3` CLI and Python module require `PRAGMA foreign_keys = ON`.
+> DB Browser enforces foreign keys. The `sqlite3` CLI and Python module require `PRAGMA foreign_keys = ON`.
 
 > [!important] Before any `UPDATE` or `DELETE`
 > Preview affected rows with `SELECT` using the **same `WHERE`**.
 
 ## Exam
 
-> [!important] 2025 Promo P2 Task 9 — `bakery.db`, table `products (Name, Description, UnitPrice, Quantity)` `[8]`
+> [!important] 2025 Promo P2 Task 9: `bakery.db`, table `products (Name, Description, UnitPrice, Quantity)` `[8]`
 > ```sql
 > SELECT Name, Description FROM products;                      -- 9.1
 >
@@ -209,9 +230,9 @@ DROP TABLE Customers;                                  -- the table itself is go
 > | 9.3 | `UnitPrice * Quantity` | `SUM()` |
 > | 9.4 | `INSERT INTO … VALUES …` | 4 fields and 4 values |
 >
-> 9.3 is revenue **if everything sells** — multiply inside `SUM`, per row.
+> 9.3 is revenue **if everything sells**. Multiply inside `SUM`, per row.
 
-> [!important] 2024 Promo P2 Task 8 — table `books (Id, Title, Author, Publisher, Year, UnitPrice, Quantity)` `[10]`
+> [!important] 2024 Promo P2 Task 8: table `books (Id, Title, Author, Publisher, Year, UnitPrice, Quantity)` `[10]`
 > ```sql
 > SELECT Title, Publisher FROM books;                        -- 8.1
 > SELECT Title, Year FROM books WHERE Year > 2000;           -- 8.2
@@ -222,9 +243,9 @@ DROP TABLE Customers;                                  -- the table itself is go
 >         'Charles Petzold', 'Microsoft Press', 2000, 34.99, 2);   -- 8.5
 > ```
 >
-> Same marks as 2025, plus **8.3**: 1m `ORDER BY`, 1m `DISTINCT` — each publisher once. `DISTINCT` isn't in the Reference Guide.
+> Same marks as 2025, plus **8.3**: 1m `ORDER BY`, 1m `DISTINCT` (each publisher once). `DISTINCT` isn't in the Reference Guide.
 
-> [!example]- 2024 A-Level P1 Q4(a)(iii) — create the property table `[4]`
+> [!example]- 2024 A-Level P1 Q4(a)(iii): create the property table `[4]`
 > Each property has a reference code, address, price in dollars and number of bedrooms.
 >
 > ```sql
@@ -239,7 +260,7 @@ DROP TABLE Customers;                                  -- the table itself is go
 >
 > The reference *code* is `TEXT`. Field names match your own table description from (a)(ii).
 
-> [!example]- SLS D1–D6 — `Northwind.db`
+> [!example]- SLS D1–D6: `Northwind.db`
 > ```sql
 > -- D1 customers from the UK (7 rows)
 > SELECT FirstName, LastName, Country FROM Customers WHERE Country = 'UK';
@@ -263,7 +284,7 @@ DROP TABLE Customers;                                  -- the table itself is go
 > SELECT COUNT(ProductName) FROM Products WHERE UnitPrice BETWEEN 20 AND 40;
 > ```
 
-> [!example]- SLS E1 — raise every price under $20 by $1 (`dummy.db`)
+> [!example]- SLS E1: raise every price under $20 by $1 (`dummy.db`)
 > ```sql
 > SELECT Id, UnitPrice FROM Products WHERE UnitPrice < 20;       -- 40 rows
 > UPDATE Products SET UnitPrice = UnitPrice + 1 WHERE UnitPrice < 20;

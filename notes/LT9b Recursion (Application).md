@@ -1,7 +1,7 @@
 > [!summary] Quick View
 > Find the problem **one size smaller**, assume it is solved, then write the step that combines it into the answer.
 
-Theory — base case, recursion tree, call stack — is in [[LT9a Recursion|LT9a]].
+Theory (base case, recursion tree, call stack) is in [[LT9a Recursion|LT9a]].
 
 ## The Method
 
@@ -11,7 +11,7 @@ Theory — base case, recursion tree, call stack — is in [[LT9a Recursion|LT9a
 4. **Find the base case.** The smallest input whose answer you can state outright.
 
 > [!important]
-> Step 1 is the hardest; steps 2–4 are mechanical.
+> Step 1 is the hardest. Steps 2–4 are mechanical.
 
 ## Shrinking Patterns
 
@@ -39,7 +39,7 @@ remove_adj_dup('abbccdd')  ->  'abcd'
 remove_adj_dup('100002')   ->  '102'
 ```
 
-Base case is `<= 1`, not `== 0` — with one character left, `string[1]` does not exist.
+Base case is `<= 1`, not `== 0`. With one character left, `string[1]` does not exist.
 
 ## Pattern: Counter as a Second Parameter
 
@@ -92,7 +92,7 @@ def fib(n):
 >   classDef dup stroke-width:2px,stroke-dasharray:4 3
 > ```
 >
-> The dashed nodes are the same call recomputed — `fib(2)` three times.
+> The dashed nodes are the same call recomputed: `fib(2)` three times.
 >
 > The iterative version is `O(n)`.
 
@@ -105,7 +105,7 @@ def f(n):
     return f(n - 1) + 2 * f(n - 2) + 3 * f(n - 3)
 ```
 
-`n < 3` covers all three base values in one test, and handles negatives — `f(-1)` returns `-1`.
+`n < 3` covers all three base values in one test, and handles negatives: `f(-1)` returns `-1`.
 
 ## Pattern: Building a List
 
@@ -128,7 +128,7 @@ collatz(3)  ->  [3, 10, 5, 16, 8, 4, 2, 1]
 > | | Result |
 > | --- | ------ |
 > | `n // 2` | `[3, 10, 5, 16, ...]` |
-> | `n / 2` | `[3.0, 10.0, 5.0, ...]` — floats |
+> | `n / 2` | `[3.0, 10.0, 5.0, ...]` (floats) |
 >
 > Tests still pass (`3.0 == 3`), so this one slips through silently.
 
@@ -136,7 +136,7 @@ Same shape for a tuple: `return (n,) + collatz(...)`.
 
 ## Pattern: Two Shrinking Parameters
 
-Pascal's triangle — each entry is the sum of the two above it.
+Pascal's triangle: each entry is the sum of the two above it.
 
 ```python
 def choose(n, r):
@@ -155,10 +155,10 @@ def choose(n, r):
 4C2 = 3C1 + 3C2 = 3 + 3 = 6
 ```
 
-The base case is the **edge** of the triangle, not a single value — both `r == 0` and `n == r` must be caught, or the recursion walks off the side.
+The base case is the **edge** of the triangle, not a single value. Both `r == 0` and `n == r` must be caught, or the recursion walks off the side.
 
 > [!example]- More from the training set
-> Alternating recurrence — different rules for odd and even:
+> Alternating recurrence: different rules for odd and even:
 >
 > ```python
 > def recursive_sum(x):
@@ -187,22 +187,22 @@ The base case is the **edge** of the triangle, not a single value — both `r ==
 > [!warning]
 > Test the base case against the *smallest legal input*, not a convenient one. `len(string) == 0` looks right until the recursive step reads `string[1]`.
 
-> [!important] Promo P2 recursion — the marks are always the same four
+> [!important] Promo P2 recursion: the marks are always the same four
 > **base case** · **smaller call** · **combine** it with this step · **call and display** the answer.
 >
 > | Task | Base case | Smaller call and combine |
 > | ---- | --------- | ------------------------ |
 > | 2024 T4 `sum_of_digits(n)` `[4]` | `n == 0` → `0` | `n % 10 + sum_of_digits(n // 10)` |
-> | 2024 T5 `distance(n)` `[4]` | `n == 1` → `400` | `distance(n - 1) + 7.67`; lane 8 = `453.69` |
+> | 2024 T5 `distance(n)` `[4]` | `n == 1` → `400` | `distance(n - 1) + 7.67`, lane 8 = `453.69` |
 > | 2025 T3 `population(c, m)` `[4]` | `m == 0` → `100` | `round(population(c, m - 1) * 1.2 - c)` |
-> | 2023 T2.1 `oddify(lst)` `[4]` | empty → `[]` | even: `oddify(lst[1:])`; odd: `[lst[0]] + oddify(lst[1:])` |
+> | 2023 T2.1 `oddify(lst)` `[4]` | empty → `[]` | even: `oddify(lst[1:])`, odd: `[lst[0]] + oddify(lst[1:])` |
 > | 2023 T2.2 `str_to_int(s)` `[4]` | one digit → `int(s)` | `int(s[0]) * 10**(len(s) - 1) + str_to_int(s[1:])` |
 
 ## Common Mistakes
 
 - Missing a base case when the recurrence reaches back more than one step.
 - `/` instead of `//`, quietly turning integers into floats.
-- Returning `[n] + f(...)` from one branch but `n + f(...)` from another — the types must match.
+- Returning `[n] + f(...)` from one branch but `n + f(...)` from another: the types must match.
 - Leaving a debugging `print()` in the submitted function.
 
 ## Related

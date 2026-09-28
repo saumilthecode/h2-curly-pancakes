@@ -23,12 +23,12 @@
 | `clear(q)` | remove everything, **in place** | `q.clear()` |
 
 > [!important]
-> Head = index `0`; tail = list end.
+> Head = index `0`. Tail = list end.
 
 > [!warning] Modifiers mutate in place
 > `enqueue`, `dequeue` and `clear` mutate the caller's queue. In `clear`, use `q.clear()`; `q = []` only rebinds the local name.
 
-A **fixed-size array** queue needs a **head pointer** (next item to leave) and a **tail pointer** (last item added); papers ask for them by name. A Python list needs neither: `append()` and `pop(0)` track positions.
+A **fixed-size array** queue needs a **head pointer** (next item to leave) and a **tail pointer** (last item added). Papers ask for them by name. A Python list needs neither: `append()` and `pop(0)` track positions.
 
 ## Template
 
@@ -48,15 +48,15 @@ def front(q):
 ```
 
 > [!important] Guard both ends
-> `dequeue` must check **empty**, and on a fixed-size queue `enqueue` must check **full**. The y27 specimen Paper 2 writes both into the spec — `enqueue()` *"returns False if the queue is full"*, `dequeue()` *"returns -1 if the queue is empty"* — so each guard is carrying marks. See [The y27 Specimen Version](#the-y27-specimen-version).
+> `dequeue` must check **empty**, and on a fixed-size queue `enqueue` must check **full**. The y27 specimen Paper 2 writes both into the spec: `enqueue()` *"returns False if the queue is full"*, `dequeue()` *"returns -1 if the queue is empty"*, so each guard is carrying marks. See [The y27 Specimen Version](#the-y27-specimen-version).
 
 > [!example]- Trace: enqueue and dequeue
 > | Step | Operation | Queue after | Returns |
 > | ---- | --------- | ----------- | ------- |
-> | 1 | `make_queue()` | `[]` | — |
-> | 2 | `dequeue(q)` | `[]` | `None` — nothing to dequeue |
-> | 3 | `enqueue(q, 5)` | `[5]` | — |
-> | 4 | `enqueue(q, 3)` | `[5, 3]` | — |
+> | 1 | `make_queue()` | `[]` | - |
+> | 2 | `dequeue(q)` | `[]` | `None` (nothing to dequeue) |
+> | 3 | `enqueue(q, 5)` | `[5]` | - |
+> | 4 | `enqueue(q, 3)` | `[5, 3]` | - |
 > | 5 | `front(q)` | `[5, 3]` | `5` |
 > | 6 | `dequeue(q)` | `[3]` | `5` |
 > | 7 | `dequeue(q)` | `[]` | `3` |
@@ -76,7 +76,7 @@ q.size()                       # number of items
 q.display()                    # print the queue
 ```
 
-Same FIFO idea — only the call style changes: `q.enqueue(x)` instead of `enqueue(q, x)`. Check emptiness with `q.size() != 0`, since there may be no `is_empty` method.
+Same FIFO idea. Only the call style changes: `q.enqueue(x)` instead of `enqueue(q, x)`. Check emptiness with `q.size() != 0`, since there may be no `is_empty` method.
 
 ## Linear vs Circular Queue
 
@@ -108,22 +108,40 @@ head = (head + 1) % size      # dequeue
 | --- | ------ | -------- |
 | When tail hits the end | queue is "full", even with free slots at the front | wraps round to index `0` |
 | Vacated front slots | wasted | reused |
-| Fix without wrapping | shift every element left — slow | not needed |
+| Fix without wrapping | shift every element left (slow) | not needed |
 | Full test | `tail == size - 1` | `count == size` |
 
 **Two differences (2020 answer):** the circular queue wraps its pointers using modulo so the array is reused, whereas the linear queue's space is used once and then wasted.
 
-**Advantage (2023 answer):** memory is used efficiently — freed positions are reclaimed, so a fixed array does not fill up prematurely and elements never need shifting.
+**Advantage (2023 answer):** memory is used efficiently: freed positions are reclaimed, so a fixed array does not fill up prematurely and elements never need shifting.
 
 > [!warning]
-> `head == tail` doesn't tell you the state on its own — it can mean one item, empty, or full. Keep a separate count, or leave one slot permanently unused.
+> `head == tail` doesn't tell you the state on its own. It can mean one item, empty, or full. Keep a separate count, or leave one slot permanently unused.
 
-> [!example]- Specimen Paper 1 Q2(c) — the same queue on the theory paper
+> [!example]- Specimen Paper 1 Q2(c): the same queue on the theory paper
 > A circular queue holding at most 5 items, `China` at index 2 (HeadPointer) and `Oman` at index 3 (TailPointer).
 >
-> **(i) Purpose of the two pointers** `[2]` — the head pointer holds the position of the item that will be removed next; the tail pointer holds the position of the last item added, so the next enqueue goes after it.
+> **(i) Purpose of the two pointers** `[2]`: the head pointer holds the position of the item that will be removed next. The tail pointer holds the position of the last item added, so the next enqueue goes after it.
 >
 > **(ii) After `Dequeue()`, `Enqueue("Togo")`, `Enqueue("USA")`, `Dequeue()`** `[2]`
+>
+> ```text
+> index      0      1      2      3      4
+>         +------+------+------+------+------+
+> start   |      |      |China | Oman |      |   H=2  T=3
+>         +------+------+------+------+------+
+>                          H      T
+>
+>   Dequeue        China out,  H = 3
+>   Enqueue Togo   T = (3+1) % 5 = 4
+>   Enqueue USA    T = (4+1) % 5 = 0   <- wraps past the end
+>   Dequeue        Oman out,   H = (3+1) % 5 = 4
+>
+>         +------+------+------+------+------+
+> end     | USA  |      |      |      | Togo |   H=4  T=0
+>         +------+------+------+------+------+
+>            T                           H
+> ```
 >
 > | Index | 0 | 1 | 2 | 3 | 4 |
 > | ----- | - | - | - | - | - |
@@ -131,18 +149,18 @@ head = (head + 1) % size      # dequeue
 >
 > HeadPointer = `4`, TailPointer = `0`. `USA` wraps to index 0 because the tail was already at 4. That wrap is what the question tests.
 >
-> The dequeued items, `China` and `Oman`, then get inserted into a binary search tree — see [[LT11b Binary Tree]].
+> The dequeued items, `China` and `Oman`, then get inserted into a binary search tree. See [[LT11b Binary Tree]].
 
 ### The y27 Specimen Version
 
-> [!important] Specimen Paper 2, Tasks 2.1, 2.2 and 2.5 — **8 marks altogether**, the model for your 2027 lab paper.
-> A 1-D array of 10 initialised to `-1`, pointers named `headpointer` and `tailpointer` both starting at `-1`, and `items_in_queue` starting at `0`. That third variable is the "keep a separate count" fix above — the paper hands it to you rather than making you invent it.
+> [!important] Specimen Paper 2, Tasks 2.1, 2.2 and 2.5: **8 marks altogether**, the model for your 2027 lab paper.
+> A 1-D array of 10 initialised to `-1`, pointers named `headpointer` and `tailpointer` both starting at `-1`, and `items_in_queue` starting at `0`. That third variable is the "keep a separate count" fix above. The paper hands it to you rather than making you invent it.
 >
 > | Task | What it asks for | Marks |
 > | ---- | ---------------- | ----- |
 > | 2.1 | declare and initialise the array, both pointers, `items_in_queue` | `[1]` |
-> | 2.2 | `enqueue()` — return `False` if full; else store, update pointer(s) and count, return `True` | `[4]` |
-> | 2.5 | `dequeue()` — return `-1` if empty; else return the next element and update pointer(s) and count | `[3]` |
+> | 2.2 | `enqueue()`: return `False` if full, else store, update pointer(s) and count, return `True` | `[4]` |
+> | 2.5 | `dequeue()`: return `-1` if empty, else return the next element and update pointer(s) and count | `[3]` |
 >
 > The marks sit on the **guard**, the **wrap**, and updating **both** the pointer and the count.
 
@@ -199,9 +217,9 @@ def dequeue():
 | --- | ----- | ----- |
 | Order | LIFO | FIFO |
 | Add | `push` | `enqueue` |
-| Remove | `pop` — from the top | `dequeue` — from the head |
-| Look | `peek` — top | `front` — head |
-| Openings | **one** — in and out at the top | **two** — in at the tail, out at the head |
+| Remove | `pop` (from the top) | `dequeue` (from the head) |
+| Look | `peek` (top) | `front` (head) |
+| Openings | **one** (in and out at the top) | **two** (in at the tail, out at the head) |
 | Shape | vertical | horizontal |
 
 ```text
@@ -222,7 +240,7 @@ Used whenever arrival order must be preserved:
 | send a job | `enqueue(printq, job)` |
 | print the next job | `dequeue(printq)` |
 | see what's next | `front(printq)` |
-| cancel a job | not a queue operation — rotate it out using the ones you're given |
+| cancel a job | not a queue operation, rotate it out using the ones you're given |
 
 ## Rotating a Queue
 
@@ -237,14 +255,14 @@ enqueue(q, item)
 
 Pass-the-parcel pattern: rotate `n` times, then dequeue one player, and repeat until one remains.
 
-> [!important] 2025 Promo P2 Task 4 — a print queue as a list `[3+5]`
+> [!important] 2025 Promo P2 Task 4: a print queue as a list `[3+5]`
 > `send(tup)`: 1m loop over the jobs · 1m `pqueue.append(job)` · 1m `return len(pqueue)`. A new empty queue or a hand counter scored 0.
 >
 > `pprint(n)`: 1m repeat `n` times · 1m **check empty before** dequeuing · 1m `pqueue.pop(0)` · 1m print *"The print queue is empty."* · 1m `return len(pqueue)`.
 
 ## Common Mistakes
 
-- Using `pop()` instead of `pop(0)` — that turns it into a stack.
+- Using `pop()` instead of `pop(0)`: that turns it into a stack.
 - Treating `front()` as if it removes the item.
 - Dequeuing an empty queue instead of returning `None`.
 - Forgetting that after `pop(0)` every later item shifts left by one.

@@ -3,7 +3,7 @@
 > Scope and the cross-sort comparison are in [[LT12 Sorting Algorithms]].
 
 > [!warning] Not in outcome 2.2.1
-> 2.2.1 names only insertion, bubble, quicksort and merge; the assessment is marked *[OPTIONAL]*. Its own preamble warns it *"may be tested during the A Level exam if the pseudocode/algorithm is given in a question"*, so learn to read the pseudocode below.
+> 2.2.1 names only insertion, bubble, quicksort and merge. The assessment is marked *[OPTIONAL]*. Its own preamble warns it *"may be tested during the A Level exam if the pseudocode/algorithm is given in a question"*, so learn to read the pseudocode below.
 > Learn it for the contrast: the only `O(n²)` sort here that is **unstable**, and the only one with **no best case**.
 
 ```text
@@ -13,10 +13,10 @@
 
 ## Four Core Skills
 
-1. `smallest(seq)` — return the smallest **value**, no `min()`.
-2. `smallest(seq)` — return its **index** for swapping.
-3. `swap_smallest(seq)` — swap that element with `seq[0]`.
-4. `selection_sort(seq)` — repeat skill 3 on the shrinking unsorted tail.
+1. `smallest(seq)`: return the smallest **value**, no `min()`.
+2. `smallest(seq)`: return its **index** for swapping.
+3. `swap_smallest(seq)`: swap that element with `seq[0]`.
+4. `selection_sort(seq)`: repeat skill 3 on the shrinking unsorted tail.
 
 ```python
 def selection_sort(seq):
@@ -53,7 +53,7 @@ ENDWHILE
 ```
 
 > [!important] WHILE vs REPEAT-UNTIL
-> `WHILE`: test at the **start**, enter if true; may run zero times. `REPEAT-UNTIL`: test at the **end**, exit if true; runs at least once. Python: `while True:` with `if <condition>: break` at the bottom.
+> `WHILE`: test at the **start**, enter if true. May run zero times. `REPEAT-UNTIL`: test at the **end**, exit if true. Runs at least once. Python: `while True:` with `if <condition>: break` at the bottom.
 
 > [!example]- Trace `MyList = [53, 21, 60, 18, 42, 19]`
 > | `Count` | `Lowest` | `MyList` after the swap |
@@ -64,9 +64,9 @@ ENDWHILE
 > | 4 | 42 | `18 19 21 42 53 60` |
 > | 5 | 53 | `18 19 21 42 53 60` |
 >
-> Pass 5 swaps an element with itself. The scan still ran — that is why there is no best case.
+> Pass 5 swaps an element with itself. The scan still ran. That is why there is no best case.
 
-| Best / average / worst | `O(n²)` — the scan always runs to the end |
+| Best / average / worst | `O(n²)` (the scan always runs to the end) |
 | --- | --- |
 | In-place | yes |
 | Stable | **no** |
@@ -74,7 +74,7 @@ ENDWHILE
 Every case runs `n - 1` passes and `n(n-1)/2` comparisons.
 
 > [!example]- Why it is unstable
-> `5, 3, 6, 5, 9, 2, 7` — the smallest is `2`, so it swaps with the **first** `5`, which lands at index 5, behind the second `5`.
+> `5, 3, 6, 5, 9, 2, 7`: the smallest is `2`, so it swaps with the **first** `5`, which lands at index 5, behind the second `5`.
 >
 > ```text
 > 5a  3  6  5b  9  2  7   ->   2  3  6  5b  9  5a  7
@@ -89,7 +89,7 @@ Every case runs `n - 1` passes and `n(n-1)/2` comparisons.
 > Find the **smallest** value in the **unsorted** part of the list, **swap** it with the first unsorted element, then **repeat** on the rest until one element remains.
 
 > [!example]- Sorting tuples, and counting comparisons
-> People are `(gender, age)`; sort oldest first. Only the comparison flips — `>` instead of `<` on `item[1]`.
+> People are `(gender, age)`. Sort oldest first. Only the comparison flips: `>` instead of `<` on `item[1]`.
 >
 > ```python
 > for j in range(i + 1, n):
@@ -98,7 +98,7 @@ Every case runs `n - 1` passes and `n(n-1)/2` comparisons.
 >         biggest = j
 > ```
 >
-> `n = 3` gives 3 comparisons, `n = 4` gives 6 — `n(n-1)/2`, independent of the data.
+> `n = 3` gives 3 comparisons, `n = 4` gives 6: `n(n-1)/2`, independent of the data.
 
 ## Related
 

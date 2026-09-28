@@ -1,6 +1,6 @@
 > [!summary] Quick View
-> **Linear search** checks every element — `O(n)`, works on any sequence.
-> **Binary search** halves the range each step — `O(log n)`, **needs sorted data**.
+> **Linear search** checks every element: `O(n)`, works on any sequence.
+> **Binary search** halves the range each step: `O(log n)`, **needs sorted data**.
 
 ## Python's Built-in Searches
 
@@ -11,7 +11,7 @@
 | `x in seq` | `True` / `False` |
 
 > [!note]
-> `index()` returns the first match: `'mississippi'.index('i')` is `1`. It **raises an error** if the item is absent; our version returns `None`.
+> `index()` returns the first match: `'mississippi'.index('i')` is `1`. It **raises an error** if the item is absent. Our version returns `None`.
 
 ## Linear Search
 
@@ -19,8 +19,8 @@ Sequential: go through every element in turn. Works on unsorted data.
 
 | Case | Comparisons |
 | ---- | ----------- |
-| Best | 1 — first element |
-| Worst | `n` — last element, or not present at all |
+| Best | 1 (first element) |
+| Worst | `n` (last element, or not present at all) |
 | Order of growth | `O(n)` |
 
 ```python
@@ -78,12 +78,12 @@ def index(seq, item):
 On return, `index` adds `1` per level; `count` adds `1` per match.
 
 > [!warning]
-> For a missing item, recursive `index` returns **`len(seq)`**: `index('mississippi', 'k')` gives `11`. The base case returns `0`; callers add `1`. Returning `None` would cause `1 + None`. Iterative `index` returns `None`.
+> For a missing item, recursive `index` returns **`len(seq)`**: `index('mississippi', 'k')` gives `11`. The base case returns `0`. Callers add `1`. Returning `None` would cause `1 + None`. Iterative `index` returns `None`.
 
 ## Binary Search
 
 > [!warning] Precondition
-> The sequence **must be sorted**. State this in any "describe the algorithm" answer — it's a mark.
+> The sequence **must be sorted**. State this in any "describe the algorithm" answer. It's a mark.
 
 Divide and conquer: compare the middle element to the **key**, then throw away the half it cannot be in. Repeat until found, or until the range is empty.
 
@@ -98,15 +98,26 @@ idx   0   1   2   3   4   5   6   7   8   9
 
 1. `lo = 0`, `hi = len(seq) - 1`.
 2. While `lo <= hi`:
-3. `mid = (lo + hi) // 2` — **integer division**, an index can't be `4.5`.
+3. `mid = (lo + hi) // 2` (**integer division**). An index can't be `4.5`.
 4. If `seq[mid] == key` → found, return `True`.
 5. If `key < seq[mid]` → search left: `hi = mid - 1`.
 6. Else → search right: `lo = mid + 1`.
-7. If `lo > hi` the range is empty — the key does not exist, return `False`.
+7. If `lo > hi` the range is empty: the key does not exist, return `False`.
 
 | Order of growth | `O(log n)` |
 | --------------- | ---------- |
 | Why | each step halves the remaining elements |
+
+```text
+what is left to search, worst case
+
+ 10  ->  5  ->  2  ->  1  ->  0      4 comparisons for 10 elements
+    /2     /2     /2     /2
+
+ 1,000 elements need 10, and 1,000,000 need 20.
+ Doubling the list adds one comparison. That is O(log n).
+ Linear search on the same lists needs 1,000 and 1,000,000.
+```
 
 ### Trace Table
 
@@ -119,7 +130,7 @@ Searching `[5, 9, 12, 18, 25, 34, 85, 100, 123, 345]` for **key = 85**:
 | 0 | 9 | True | 4 | 25 | False | False |
 | 5 | 9 | True | 7 | 100 | False | True |
 | 5 | 6 | True | 5 | 34 | False | False |
-| 6 | 6 | True | 6 | 85 | **True** | — |
+| 6 | 6 | True | 6 | 85 | **True** | - |
 
 > [!example]- Same list, key = 86 (not present)
 > | Low | High | Low <= High | Mid | Seq[Mid] | Key == Seq[Mid] | Key < Seq[Mid] |
@@ -128,9 +139,9 @@ Searching `[5, 9, 12, 18, 25, 34, 85, 100, 123, 345]` for **key = 85**:
 > | 5 | 9 | True | 7 | 100 | False | True |
 > | 5 | 6 | True | 5 | 34 | False | False |
 > | 6 | 6 | True | 6 | 85 | False | False |
-> | 7 | 6 | **False** | — | — | — | — |
+> | 7 | 6 | **False** | - | - | - | - |
 >
-> The search stops the moment `Low > High`. Only then can you say the key is **not** in the sequence. Note the last row still has to be written out — `Low > High` is the finding.
+> The search stops the moment `Low > High`. Only then can you say the key is **not** in the sequence. Note the last row still has to be written out; `Low > High` is the finding.
 
 ### Iterative Code
 
@@ -151,7 +162,7 @@ def BinarySearch(seq, item):
 
 ### Recursive Code
 
-A **helper function** carries `lo` and `hi`; the outer function just sets them up.
+A **helper function** carries `lo` and `hi`. The outer function just sets them up.
 
 ```python
 def Search(seq, lo, hi, item):
@@ -174,7 +185,7 @@ def BinarySearch(seq, item):
 
 ## Searching Records, Not Numbers
 
-Search **one field**; return **another**.
+Search **one field**. Return **another**.
 
 ```python
 def binary_search(tup, student):
@@ -211,13 +222,13 @@ def binary_search(tup, student):
 Compare with [[LT10d Hashing|Hashing]], which has **expected** `O(1)` lookup when
 you have the key, but can degrade to `O(n)` with severe collisions and cannot answer
 range questions. A balanced [[LT11b Binary Tree|binary search tree]] gives `O(log n)`
-search without needing the data stored as a sorted array; an unbalanced BST can also
+search without needing the data stored as a sorted array. An unbalanced BST can also
 degrade to `O(n)`.
 
 ## Exam
 
-> [!important] 2024 Promo P1 Q1 — find `42` in `[33, 37, 42, 51, 62, 71, 80, 83]` `[2+3+4]`
-> **(a) Linear.** Start at index 0; 42 isn't there, so move to index 1, then index 2, where it is found. Stop.
+> [!important] 2024 Promo P1 Q1: find `42` in `[33, 37, 42, 51, 62, 71, 80, 83]` `[2+3+4]`
+> **(a) Linear.** Start at index 0. 42 isn't there, so move to index 1, then index 2, where it is found. Stop.
 > 1m start at the beginning · 1m search in sequence, found at index 2.
 >
 > **(b) Binary.**
@@ -234,19 +245,19 @@ degrade to `O(n)`.
 >
 > 2026 Mastery P1 Q1 repeated (b) and (c) with the same scheme.
 
-> [!important] 2023 Promo P1 Q5(a) — find one record card, sorted by registration number `[2]`
-> **Binary search.** Open the cabinet at the middle card and compare registration numbers. If the target is smaller, discard the back half; if larger, the front half. Repeat on what's left until the card is found or no cards remain.
+> [!important] 2023 Promo P1 Q5(a): find one record card, sorted by registration number `[2]`
+> **Binary search.** Open the cabinet at the middle card and compare registration numbers. If the target is smaller, discard the back half. If larger, the front half. Repeat on what's left until the card is found or no cards remain.
 
-> [!example]- 2025 Promo P2 Task 6 — iterative binary search `[4]`
+> [!example]- 2025 Promo P2 Task 6: iterative binary search `[4]`
 > 1m loop while `start <= end` · 1m check the value at `mid = (start + end) // 2` · 1m update the pointers · 1m `return False` after the loop.
 
 ## Common Mistakes
 
-- Using `/` instead of `//` for `mid` — gives a float, and `seq[4.5]` is a `TypeError`.
-- `hi = mid` or `lo = mid` instead of `mid - 1` / `mid + 1` — the range stops shrinking and the loop never ends.
+- Using `/` instead of `//` for `mid`: gives a float, and `seq[4.5]` is a `TypeError`.
+- `hi = mid` or `lo = mid` instead of `mid - 1` / `mid + 1`: the range stops shrinking and the loop never ends.
 - Setting `hi = len(seq)` instead of `len(seq) - 1`.
 - Forgetting `return` on the recursive call.
-- Applying binary search to unsorted data — it will "work" and silently give wrong answers.
+- Applying binary search to unsorted data: it will "work" and silently give wrong answers.
 - Saying "not found" before `lo > hi`.
 
 ## Related

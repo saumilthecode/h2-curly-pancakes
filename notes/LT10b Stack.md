@@ -42,18 +42,18 @@ def peek(s):
 ```
 
 > [!important] The empty check is a mark, not a nicety
-> Your LS2 mark scheme writes **`0m if not checking empty stack`** against the `else` branch — omit the guard and the whole part scores zero.
+> Your LS2 mark scheme writes **`0m if not checking empty stack`** against the `else` branch. Omit the guard and the whole part scores zero.
 >
 > If a question gives the structure a **maximum size**, the mirror guard on `push` is marked too: the y27 specimen Paper 2 requires its queue `enqueue()` to return `False` when full. Assume any bounded structure needs both guards.
 
 > [!example]- Trace: push and pop
 > | Step | Operation | Stack after | Returns |
 > | ---- | --------- | ----------- | ------- |
-> | 1 | `make_empty_stack()` | `[]` | — |
-> | 2 | `pop(s)` | `[]` | `None` — nothing to pop |
-> | 3 | `push(s, 7)` | `[7]` | — |
-> | 4 | `push(s, 5)` | `[7, 5]` | — |
-> | 5 | `push(s, 3)` | `[7, 5, 3]` | — |
+> | 1 | `make_empty_stack()` | `[]` | - |
+> | 2 | `pop(s)` | `[]` | `None` (nothing to pop) |
+> | 3 | `push(s, 7)` | `[7]` | - |
+> | 4 | `push(s, 5)` | `[7, 5]` | - |
+> | 5 | `push(s, 3)` | `[7, 5, 3]` | - |
 > | 6 | `pop(s)` | `[7, 5]` | `3` |
 > | 7 | `peek(s)` | `[7, 5]` | `5` |
 > | 8 | `is_empty(s)` | `[7, 5]` | `False` |
@@ -106,7 +106,7 @@ A count of `(` and `)` passes `)(`. The stack catches the order.
 | Prefix | before operands | `+ A B` |
 | Postfix | after operands | `A B +` |
 
-Evaluate left to right: push operands; for operators, pop two, combine, push result. Tuple input: `(7, 6, 2, '/', '+')` = `7 + 6 / 2 = 10`.
+Evaluate left to right: push operands. For operators, pop two, combine, push result. Tuple input: `(7, 6, 2, '/', '+')` = `7 + 6 / 2 = 10`.
 
 ```text
 3 4 * 5 +          (infix: 3 * 4 + 5)
@@ -121,13 +121,13 @@ answer = 17
 ```
 
 > [!warning]
-> For `-` and `/` the order matters. `A B -` means `A - B` — the **first** value popped is the right-hand operand.
+> For `-` and `/` the order matters. `A B -` means `A - B`. The **first** value popped is the right-hand operand.
 
 Symbol order fixes evaluation order: **no brackets or precedence rules**. `3 4 5 + *` and `3 4 * 5 +` differ.
 
 ## Common Mistakes
 
-- Using `pop(0)` — that's a [[LT10c Queue|Queue]], not a stack.
+- Using `pop(0)`: that's a [[LT10c Queue|Queue]], not a stack.
 - Returning `s.append(x)` from `push`: `.append()` returns `None`; `push` should not return anything.
 - Iterating the list (`for item in s:`) instead of calling `pop()`: it loses the ADT marks in *application of stack* questions and doesn't reverse.
 - Treating `peek()` as if it removes the item.

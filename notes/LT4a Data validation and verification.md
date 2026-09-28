@@ -1,6 +1,6 @@
 > [!important] Key Distinction
-> **Validation** — is the data *sensible, reasonable and allowable*?
-> **Verification** — does the data *match the original source*?
+> **Validation**: is the data *sensible, reasonable and allowable*?
+> **Verification**: does the data *match the original source*?
 
 Validation does **not** check whether data is accurate. `age = 35` is valid even if you are 17.
 
@@ -11,8 +11,8 @@ Validation does **not** check whether data is accurate. `age = 35` is valid even
 
 **Two methods of verification:**
 
-- **Double entry** — the data is typed twice and the two copies compared.
-- **Visual check / proofreading** — the operator reads the entered data back against the source document.
+- **Double entry**: the data is typed twice and the two copies compared.
+- **Visual check / proofreading**: the operator reads the entered data back against the source document.
 
 ## Validation Techniques
 
@@ -53,12 +53,12 @@ Also taught in lecture:
 
 An extra digit calculated from the others and appended to the number, so an error can be spotted on entry.
 
-**Two types of error a check digit detects** — 2020 Q5(b)(iii), *"Name two types of error that check digits usually detect"* `[2]`:
+**Two types of error a check digit detects**: 2020 Q5(b)(iii), *"Name two types of error that check digits usually detect"* `[2]`:
 
-- **Transcription error** — a single digit typed wrongly (`02757` → `02157`)
-- **Transposition error** — two adjacent digits swapped (`02757` → `02575`)
+- **Transcription error**: a single digit typed wrongly (`02757` → `02157`)
+- **Transposition error**: two adjacent digits swapped (`02757` → `02575`)
 
-> [!example]- Worked example — Modulus 11 check digit for `02757` (2020 Q5(c), `[3]`)
+> [!example]- Worked example: Modulus 11 check digit for `02757` (2020 Q5(c), `[3]`)
 > Weights, starting from the first digit: `6, 5, 4, 3, 2`.
 >
 > ```text
@@ -73,12 +73,12 @@ An extra digit calculated from the others and appended to the number, so an erro
 >
 > So the full number is `02757X`.
 >
-> 2020 Q5(d) then asks for **two reasons** the field is stored as a **string, not an integer** `[2]`: the check digit can be `X`, which is not a digit; and a leading zero would be lost from an integer.
+> 2020 Q5(d) then asks for **two reasons** the field is stored as a **string, not an integer** `[2]`: the check digit can be `X`, which is not a digit. And a leading zero would be lost from an integer.
 
 > [!tip]
-> A check digit is a **checksum** applied to identification numbers — same idea as [[LT10d Hashing|Hashing]].
+> A check digit is a **checksum** applied to identification numbers, same idea as [[LT10d Hashing|Hashing]].
 
-> [!example]- Database-entry questions — 2022 Q1(e), 2023 Q4(d), specimen 2027 P1 Q4(d)
+> [!example]- Database-entry questions: 2022 Q1(e), 2023 Q4(d), specimen 2027 P1 Q4(d)
 > **2022 Q1(e)** an event score from 0 to 25 inclusive `[1]`: **range check**.
 >
 > **2023 Q4(d)(i)** verify a driver licence number `[2]`: **double entry**, and a **visual check** against the licence itself.

@@ -1,11 +1,11 @@
 > [!summary] Quick View
 > A **binary tree** is non-linear: nodes joined by edges in a hierarchy, each node with **at most two** children.
-> A **binary search tree (BST)** adds ordering — everything left of a node is smaller, everything right is larger. Search is `O(log n)` **if the tree is balanced**.
+> A **binary search tree (BST)** adds ordering: everything left of a node is smaller, everything right is larger. Search is `O(log n)` **if the tree is balanced**.
 
-> [!important] Syllabus scope — and it's examined nearly every year
+> [!important] Syllabus scope: and it's examined nearly every year
 > | Ref | Outcome |
 > | --- | ------- |
-> | 2.1.3 | create, update (edit, insert, delete) and **search** operations for binary trees (including BSTs) — *Exclude: editing and deleting nodes from binary search trees* |
+> | 2.1.3 | create, update (edit, insert, delete) and **search** operations for binary trees (including BSTs), *Exclude: editing and deleting nodes from binary search trees* |
 > | 2.1.4 | pre-order, in-order and post-order traversals, **including the application of in-order traversal for BSTs** |
 > | 2.1.5 | **breadth-first search and depth-first search** for binary trees |
 >
@@ -30,7 +30,7 @@ flowchart TD
 | Node | holds the data | `A`–`I` |
 | Edge | the line joining two nodes | 8 of them |
 | Root | the one node with no parent | `A` |
-| Parent / child | `B` is `A`'s **left child**, `C` its **right child** | — |
+| Parent / child | `B` is `A`'s **left child**, `C` its **right child** | - |
 | Siblings | children of the same parent | `H` and `I` |
 | Leaf | a node with no children | `E`, `F`, `G`, `H`, `I` |
 | Subtree | a node's left and right branches are **themselves binary trees** | `B`, `D`, `E`, `H`, `I` are `A`'s left subtree |
@@ -73,7 +73,7 @@ The vocabulary tree at the top is both.
 
 Three rules:
 
-1. Each node stores a **distinct** key — no duplicates.
+1. Each node stores a **distinct** key: no duplicates.
 2. Every key in a node's **left** subtree is **less than** that node's key.
 3. Every key in its **right** subtree is **greater than** that node's key.
 
@@ -94,8 +94,8 @@ flowchart TD
   n8 --> n9[9]
 ```
 
-> [!important] 2024 Q5(a)(ii) — "Give **two** properties of a binary search tree" `[2]`
-> Any two of: all keys in a node's left subtree are smaller than the node's key; all keys in its right subtree are larger; every node has at most two children; the keys are unique.
+> [!important] 2024 Q5(a)(ii): "Give **two** properties of a binary search tree" `[2]`
+> Any two of: all keys in a node's left subtree are smaller than the node's key. All keys in its right subtree are larger. Every node has at most two children. The keys are unique.
 
 ### In-Order Traversal Gives Sorted Order
 
@@ -103,29 +103,29 @@ Read the tree above **left, node, right** and you get `1 2 3 4 5 6 7 8 9`. That 
 
 ## Searching and Inserting
 
-The lesson's Python for these (`contains`, `insert_tree`, the traversals) is in [[LT11b Lesson Code (List ADT)]] — WA only; no exam has asked for it.
+Python for all of it, `contains`, `insert_tree`, the traversals and BFS, is in [[LT11b Lesson Code (List ADT)]].
 
-> [!important] Describe searching a BST — 2023 Promo Q4(b) `[3]`, 2025 Promo Q5(c) `[5]`
+> [!important] Describe searching a BST: 2023 Promo Q4(b) `[3]`, 2025 Promo Q5(c) `[5]`
 > 1. Start at the **root** as the current node.
 > 2. If the item **matches** the current node, return `True`.
-> 3. If it is **smaller**, move to the left child; if **larger**, the right child.
+> 3. If it is **smaller**, move to the left child. If **larger**, the right child.
 > 4. Repeat from step 2.
-> 5. When the current node is **empty**, the item isn't in the tree — return `False`.
+> 5. When the current node is **empty**, the item isn't in the tree. Return `False`.
 >
 > 2025: 1m per step. 2023 markers: most answers skipped checking the root and never said how to detect **absence**. Array binary search or insertion scored 0.
 
 Insert as a **new leaf**: follow the search path to an empty branch.
 
-> [!important] "Describe the steps when a value is inserted into a BST" — specimen Paper 1 Q2(b), `[5]`
+> [!important] "Describe the steps when a value is inserted into a BST": specimen Paper 1 Q2(b), `[5]`
 > Five marks, five steps:
 > 1. Start at the **root**. If the tree is empty, the new value becomes the root.
 > 2. Compare the new value with the current node's value.
-> 3. If it is **smaller**, follow the **left** pointer; if **larger**, follow the **right** pointer.
+> 3. If it is **smaller**, follow the **left** pointer. If **larger**, follow the **right** pointer.
 > 4. Repeat from step 2 until the pointer you need to follow is **null**.
 > 5. Create the node there, set the parent's left/right pointer to it, and set the new node's own pointers to null.
 
 > [!warning] Deleting is out of scope
-> 2.1.3 says *"Exclude: editing and deleting nodes from binary **search** trees"* — the exclusion is worded against BSTs only. The lecture leaves `remove` as extra practice — *"this is not fully required inside of syllabus"*.
+> 2.1.3 says *"Exclude: editing and deleting nodes from binary **search** trees"*. The exclusion is worded against BSTs only. The lecture leaves `remove` as extra practice: *"this is not fully required inside of syllabus"*.
 
 ## Traversals
 
@@ -150,7 +150,7 @@ flowchart TD
 
 ### By Hand
 
-**Visit** = move onto a node; **select** = write it down.
+**Visit** = move onto a node. **Select** = write it down.
 
 | Select when | |
 | ----------- | - |
@@ -162,12 +162,12 @@ BFS goes level by level: dequeue, write it down, enqueue its children:
 
 | Dequeue | Write | Enqueue | Queue after |
 | ------- | ----- | ------- | ----------- |
-| — | — | `5` | `[5]` |
+| - | - | `5` | `[5]` |
 | `5` | `5` | `2`, `7` | `[2, 7]` |
 | `2` | `2` | `1` | `[7, 1]` |
 | `7` | `7` | `10` | `[1, 10]` |
-| `1` | `1` | — | `[10]` |
-| `10` | `10` | — | `[]` |
+| `1` | `1` | - | `[10]` |
+| `10` | `10` | - | `[]` |
 
 > [!warning]
 > Enqueue **left before right**. In-order on a BST comes out **ascending**, which checks your answer.
@@ -214,7 +214,7 @@ making h the subject:   h = log2(n + 1) - 1
 | Shape | Height | Search |
 | ----- | ------ | ------ |
 | Balanced | `≈ log2 n` | `O(log n)` |
-| Unbalanced (one long chain) | `n - 1` | `O(n)` — no better than a [[LT7 Lists\|list]] |
+| Unbalanced (one long chain) | `n - 1` | `O(n)` (no better than a [[LT7 Lists\|list]]) |
 
 ### Insertion Order Decides the Shape
 
@@ -256,11 +256,11 @@ flowchart TD
 
 Sorted input is the worst case: every node becomes a right child, a chain with `O(n)` search.
 
-> [!important] 2023 Q4(c) — "State how two BSTs can store the same data but have a different shape" `[1]`
+> [!important] 2023 Q4(c): "State how two BSTs can store the same data but have a different shape" `[1]`
 > The shape depends on the **order the values are inserted**.
 
 > [!example]- Rebalancing
-> Insertions can unbalance a tree. Periodically rebuild it evenly; the lecture's `balance_tree` Question of the Day is not assessed.
+> Insertions can unbalance a tree. Periodically rebuild it evenly. The lecture's `balance_tree` Question of the Day is not assessed.
 
 ## BST vs Binary Search
 
@@ -274,14 +274,14 @@ Sorted input is the worst case: every node becomes a right child, a chain with `
 
 Other uses named in the lecture: storing the keys of a hash table so that a [[LT10d Hashing|separate chain]] can be searched in `O(log n)` instead of `O(n)`, and divide-and-conquer generally.
 
-> [!important] Specimen Paper 1 Q2(a) — "advantage of a BST over a **linked list**" `[2]`
-> A linked list can only be searched from the head, one node at a time — `O(n)`. In a BST each comparison throws away a whole subtree, roughly halving what's left, so you find a value in `O(log n)`. Only while it stays balanced.
+> [!important] Specimen Paper 1 Q2(a): "advantage of a BST over a **linked list**" `[2]`
+> A linked list can only be searched from the head, one node at a time: `O(n)`. In a BST each comparison throws away a whole subtree, roughly halving what's left, so you find a value in `O(log n)`. Only while it stays balanced.
 
 ## The Array Form Used in Paper 1
 
 **Paper 1 uses an array of nodes.** Each node stores left pointer, data and right pointer; `Root` holds the root's index; `Null` (or `-1`) means no node. Used in 2020, 2021 and 2024.
 
-2021 Q7 — array `Names`, `Root = 1`:
+2021 Q7: array `Names`, `Root = 1`:
 
 | Index | LPtr | Data | RPtr |
 | ----- | ---- | ---- | ---- |
@@ -293,7 +293,7 @@ Other uses named in the lecture: storing the keys of a hash table so that a [[LT
 | 5 | `0` | Simone | `4` |
 | 6 | Null | David | Null |
 
-Follow the pointers from `Root`; the array order means nothing:
+Follow the pointers from `Root`. The array order means nothing:
 
 ```mermaid
 flowchart TD
@@ -305,10 +305,10 @@ flowchart TD
   Si --> To[Tom]
 ```
 
-In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it must be.
+In-order: `Alice Bobbie David Leona Peter Simone Tom` (alphabetical, as it must be).
 
-> [!example]- 2021 Q7(b) — insert **Eric** `[2]`
-> Eric < Leona → left to index 3 (Bobbie). Eric > Bobbie → right to index 6 (David). Eric > David, and David's RPtr is Null — so that's the spot.
+> [!example]- 2021 Q7(b): insert **Eric** `[2]`
+> Eric < Leona → left to index 3 (Bobbie). Eric > Bobbie → right to index 6 (David). Eric > David, and David's RPtr is Null, so that's the spot.
 >
 > | Change | |
 > | ------ | - |
@@ -328,7 +328,7 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 >   classDef hid fill:none,stroke:none,color:transparent
 > ```
 
-> [!example]- 2020 Q3(f) — name the traversal `[1]`
+> [!example]- 2020 Q3(f): name the traversal `[1]`
 > ```text
 > 01 PROCEDURE P(Index: INTEGER)
 > 02   IF b_tree[Index].l_ptr <> -1 THEN
@@ -340,11 +340,11 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 > 08   OUTPUT b_tree[Index].data_item
 > 09 ENDPROCEDURE
 > ```
-> Left, then right, then output → **post-order**. The `<> -1` tests on lines 02 and 05 are the **base case** — they stop the recursion at a null pointer.
+> Left, then right, then output → **post-order**. The `<> -1` tests on lines 02 and 05 are the **base case**. They stop the recursion at a null pointer.
 >
-> The rest of Q3 was recursion and the call [[LT10b Stack|stack]] — see [[LT9a Recursion]].
+> The rest of Q3 was recursion and the call [[LT10b Stack|stack]]. See [[LT9a Recursion]].
 
-> [!important] 2024 Q5(c) — write a recursive **reverse** in-order procedure `[6]`
+> [!important] 2024 Q5(c): write a recursive **reverse** in-order procedure `[6]`
 > Defined in the paper as: follow the **right** pointer and repeat → output the node → follow the **left** pointer and repeat. On a BST it outputs the keys in **descending** order.
 >
 > Same shape as 2020 Q3(f), with the steps reordered (no mark scheme):
@@ -367,7 +367,7 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` — alphabetical, as it mu
 
 ## Worked Example: Specimen Paper 1 Q2
 
-Countries in a BST — 13 marks. The queue half is in [[LT10c Queue|Queue]].
+Countries in a BST: 13 marks. The queue half is in [[LT10c Queue|Queue]].
 
 ```mermaid
 flowchart TD
@@ -382,9 +382,9 @@ flowchart TD
   classDef hid fill:none,stroke:none,color:transparent
 ```
 
-> [!example]- Q2(c)(iii) — insert the dequeued `China` and `Oman` `[2]`
-> - **China** — right of Belgium, left of Kuwait, left of Egypt, right of Bolivia → **Bolivia's right child**
-> - **Oman** — right of Belgium, right of Kuwait, left of Singapore → **Singapore's left child**
+> [!example]- Q2(c)(iii): insert the dequeued `China` and `Oman` `[2]`
+> - **China**: right of Belgium, left of Kuwait, left of Egypt, right of Bolivia → **Bolivia's right child**
+> - **Oman**: right of Belgium, right of Kuwait, left of Singapore → **Singapore's left child**
 >
 > ```mermaid
 > flowchart TD
@@ -419,7 +419,7 @@ flowchart TD
 >   classDef hid fill:none,stroke:none,color:transparent
 > ```
 >
-> 1m root `5` · 1m left subtree · 1m right subtree. **(ii)** Ascending order: **in-order** traversal — from the root, visit the left subtree, then the node, then the right subtree (1m in-order, 1m left → node → right). 2026 Mastery P1 Q2(b) repeats (i).
+> 1m root `5` · 1m left subtree · 1m right subtree. **(ii)** Ascending order: **in-order** traversal. From the root, visit the left subtree, then the node, then the right subtree (1m in-order, 1m left → node → right). 2026 Mastery P1 Q2(b) repeats (i).
 >
 > **2023 Q4(a)** insert `23_03, 23_07, 23_01, 23_04, 23_02, 23_05, 23_06, 23_08` in that order `[3]`, −1 per wrong node:
 >
@@ -442,7 +442,7 @@ flowchart TD
 >
 > **2023 Q4(c)** search a BST `O(log n)`, an unsorted list `O(n)` `[2]`. Common error: `O(n log n)` for the BST. No explanation needed.
 >
-> **2023 Q4(d)** ascending order by matriculation number: **in-order** — visit the left subtree, then the node, then the right subtree `[2]`.
+> **2023 Q4(d)** ascending order by matriculation number: **in-order**. Visit the left subtree, then the node, then the right subtree `[2]`.
 >
 > **2025 Q5** on this tree:
 >
@@ -464,10 +464,10 @@ flowchart TD
 
 ## Common Mistakes
 
-- Comparing against the **root only** — the ordering rule holds at every node.
+- Comparing against the **root only**. The ordering rule holds at every node.
 - Counting height in **nodes** instead of edges.
 - Inserting a value into the middle. A new value is always a **new leaf**.
-- Mixing up in-order and pre-order — only in-order gives a BST back sorted.
+- Mixing up in-order and pre-order. Only in-order gives a BST back sorted.
 - Assuming `O(log n)`. That holds only while the tree is balanced.
 
 ## Related

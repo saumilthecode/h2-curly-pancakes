@@ -1,5 +1,6 @@
 > [!summary] Quick View
-> The lesson's list-based tree ADT and the Python built on it. **WA only** — no promo (2023–25) or A-Level paper has asked you to code a tree this way. The exam material is in [[LT11b Binary Tree]].
+> The tree algorithms in Python: **search** (`contains`), **insert** (`insert_tree`), the three **traversals** and **BFS**, all built on the lesson's list ADT `[entry, left, right]`.
+> Papers ask for these as descriptions or pointer pseudocode, not this exact code. The exam answers are in [[LT11b Binary Tree]].
 
 ## The Binary Tree ADT
 
@@ -14,7 +15,7 @@ def right_branch(tree):               return tree[2]
 def is_empty(tree):                   return (tree == [])          # predicate
 ```
 
-A leaf has **both** branches empty. Build bottom-up — children first, since `make_tree` takes them as arguments:
+A leaf has **both** branches empty. Build bottom-up: children first, since `make_tree` takes them as arguments:
 
 ```python
 three = make_tree(3, make_empty_tree(), make_empty_tree())
@@ -53,7 +54,7 @@ four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 > [!note]
 > `print_tree()` requires `from LT11b_module import *`, which **overwrites** your `make_tree`, `entry`, `left_branch`, `right_branch`, `make_empty_tree` and `is_empty`. Import before your definitions to keep yours.
 
-## Searching a BST — `contains`
+## Searching a BST: `contains`
 
 The recursion is the same shape as [[LT11a Search|binary search]]: compare, then throw away the half that cannot hold the key.
 
@@ -70,11 +71,11 @@ def contains(x, tree):
 ```
 
 > [!important]
-> `return` recursive calls; otherwise the function returns `None`.
+> `return` recursive calls. Otherwise the function returns `None`.
 
 The slides name this function `is_element_of_set(x, s)`.
 
-## Inserting — `insert_tree`
+## Inserting: `insert_tree`
 
 Insert as a **new leaf**: follow the search path to an empty branch.
 
@@ -87,7 +88,7 @@ def insert_tree(x, tree):
     elif x > entry(tree):
         return make_tree(entry(tree), left_branch(tree), insert_tree(x, right_branch(tree)))
     else:
-        return tree                 # x is already here — keys stay distinct
+        return tree                 # x is already here, keys stay distinct
 ```
 
 > [!important] Why the fourth branch matters
@@ -95,10 +96,10 @@ def insert_tree(x, tree):
 >
 > | Version | Result |
 > | ------- | ------ |
-> | `elif x > entry(tree)` … `else: return tree` | `[1, 2, 3, 5]` — unchanged |
-> | plain `else` | `[1, 2, 3, 3, 5]` — duplicate |
+> | `elif x > entry(tree)` … `else: return tree` | `[1, 2, 3, 5]` (unchanged) |
+> | plain `else` | `[1, 2, 3, 3, 5]` (duplicate) |
 
-Each call rebuilds its node with **one** branch replaced; use the returned tree:
+Each call rebuilds its node with **one** branch replaced. Use the returned tree:
 
 ```python
 insert_tree(5, t1)           # wrong - the new tree is thrown away
@@ -128,7 +129,7 @@ def flatten_post(tree):                                             # Q4
 
 The empty tree returns `[]`, so `+` joins the pieces on the way back up.
 
-BFS can't recurse like that — it needs a [[LT10c Queue|queue]] to hold the nodes waiting at the next level. Part 3 gives you `queue_adt`:
+BFS can't recurse like that. It needs a [[LT10c Queue|queue]] to hold the nodes waiting at the next level. Part 3 gives you `queue_adt`:
 
 ```python
 from queue_adt import *          # make_empty_queue, enqueue, dequeue, is_empty_queue
@@ -150,10 +151,10 @@ def flatten_bfs(tree):
 ```
 
 > [!important]
-> Enqueue the **node**, not `entry(node)` — you need its branches again when it comes off the queue. Guard each branch with `is_empty` or you enqueue `[]` and crash on `entry([])`.
+> Enqueue the **node**, not `entry(node)`. You need its branches again when it comes off the queue. Guard each branch with `is_empty` or you enqueue `[]` and crash on `entry([])`.
 
 > [!tip] BFS and DFS are the same loop
-> Swap the queue for a [[LT10b Stack|stack]] and push **right before left**, and that loop outputs pre-order instead. FIFO spreads across the level; LIFO dives down the branch.
+> Swap the queue for a [[LT10b Stack|stack]] and push **right before left**, and that loop outputs pre-order instead. FIFO spreads across the level. LIFO dives down the branch.
 
 ## Related
 

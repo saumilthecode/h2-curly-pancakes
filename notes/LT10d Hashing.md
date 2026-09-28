@@ -10,7 +10,7 @@
 | Collision | expected and handled by the table | possible, but deliberately hard to find |
 | Examples | weighted character sum, `key % size` | SHA-256 |
 
-> [!important] "State three features of a good hashing algorithm" `[3]` — 2021 Q5(a) and 2022 Q8(d)
+> [!important] "State three features of a good hashing algorithm" `[3]`: 2021 Q5(a) and 2022 Q8(d)
 > Asked twice in five years, same 3 marks. The marked answer is about the **table**, not security:
 >
 > | Feature | Meaning |
@@ -20,13 +20,13 @@
 > | Minimises clustering | few keys collide onto the same index |
 
 > [!warning] The lecture's three characteristics answer a different question
-> LT10d Part 1 gives *"Secure: non-reversible / Fixed size / Unique\*"*. Those describe a **cryptographic** hash (SHA-256), not the table function above. Use them if a question says *secure hash algorithm*; use the table above when it says *hash table*.
+> LT10d Part 1 gives *"Secure: non-reversible / Fixed size / Unique\*"*. Those describe a **cryptographic** hash (SHA-256), not the table function above. Use them if a question says *secure hash algorithm*. Use the table above when it says *hash table*.
 >
-> Don't claim the simple weighted-sum function is secure or non-reversible; it exists to place items in a table. `Unique` carries an asterisk in the lecture because **collisions do occur**.
+> Don't claim the simple weighted-sum function is secure or non-reversible. It exists to place items in a table. `Unique` carries an asterisk in the lecture because **collisions do occur**.
 
 ## Why Use a Hash Table
 
-> [!important] 2021 Q5 asked both halves — hash table vs linear search `[2]`, and the disadvantage of binary search here `[2]`.
+> [!important] 2021 Q5 asked both halves: hash table vs linear search `[2]`, and the disadvantage of binary search here `[2]`.
 
 Without a collision, searching is a **single calculation plus one lookup**. Collisions add extra comparisons.
 
@@ -36,8 +36,8 @@ Without a collision, searching is a **single calculation plus one lookup**. Coll
 | Linear search | check each item in turn | `O(n)` | `O(n)` | no |
 | Binary search | check the middle, discard the half it can't be in | `O(log n)` | `O(log n)` | **yes** |
 
-- **vs linear search** — linear may check every record. A hash lookup checks one slot, or a short probe chain after a collision.
-- **vs binary search** — binary search is fast, but the data must be kept **sorted**. Maintaining that order on every insertion and deletion is expensive for large, frequently-changing datasets.
+- **vs linear search**: linear may check every record. A hash lookup checks one slot, or a short probe chain after a collision.
+- **vs binary search**: binary search is fast, but the data must be kept **sorted**. Maintaining that order on every insertion and deletion is expensive for large, frequently-changing datasets.
 
 ## The Lesson Hash Function
 
@@ -88,10 +88,10 @@ def transmit(data):
 transmitted: 123455
 ```
 
-Uses: NRIC, vehicle plates, ISBN, credit cards (Luhn). Pattern: **weight digits, sum, take a modulus**; weights, modulus and final mapping vary.
+Uses: NRIC, vehicle plates, ISBN, credit cards (Luhn). Pattern: **weight digits, sum, take a modulus**. Weights, modulus and final mapping vary.
 
 > [!example]- The two tutorial schemes
-> **NRIC** `S1234567D` — weights `2, 7, 6, 5, 4, 3, 2` on the seven digits, `+ 4` if the prefix is `T`, then `% 11` mapped through `J Z I H G F E D C B A` (remainder `0` → `J`).
+> **NRIC** `S1234567D`: weights `2, 7, 6, 5, 4, 3, 2` on the seven digits, `+ 4` if the prefix is `T`, then `% 11` mapped through `J Z I H G F E D C B A` (remainder `0` → `J`).
 >
 > ```python
 > def last_letter(nric):
@@ -106,7 +106,7 @@ Uses: NRIC, vehicle plates, ISBN, credit cards (Luhn). Pattern: **weight digits,
 >
 > `S1234567` totals `106`, `106 % 11 = 7` → `D`. `T1234567` totals `110` → `J`.
 >
-> **ISBN-10** — weights `10, 9, 8, ..., 2` on the nine digits, check digit `(11 - total % 11) % 11`, and `10` is written `X`.
+> **ISBN-10**: weights `10, 9, 8, ..., 2` on the nine digits, check digit `(11 - total % 11) % 11`, and `10` is written `X`.
 >
 > ```python
 > def isbn(string):
@@ -247,13 +247,13 @@ def search_probe(table, item):
     return False
 ```
 
-> [!important] 2025 Promo P1 Q2 — linear probing, digit-sum hash `% 10` `[2+3]`
+> [!important] 2025 Promo P1 Q2: linear probing, digit-sum hash `% 10` `[2+3]`
 > | Key | Hash | Stored at |
 > | --- | ---- | --------- |
-> | `6201` | 9 | **0** — 9 taken, wrapped round |
+> | `6201` | 9 | **0** (9 taken, wrapped round) |
 > | `2352` | 2 | 2 |
 > | `3857` | 3 | 3 |
-> | `8131` | 3 | **4** — 3 taken |
+> | `8131` | 3 | **4** (3 taken) |
 > | `5731` | 6 | 6 |
 > | `4249` | 9 | 9 |
 >
@@ -261,20 +261,20 @@ def search_probe(table, item):
 >
 > **(b)** A possible order: `2352`, `3857`, `5731`, `4249` (any order, all at their own hash), then `8131`, `6201`. Marks: the hashes (1m); `8131` after `3857` (1m); `6201` after `4249`, wrapping 9 → 0 (1m).
 
-> [!important] 2023 Promo P1 Q5(b)(c) — record cards in 100 files by hash value `[2+2]`
+> [!important] 2023 Promo P1 Q5(b)(c): record cards in 100 files by hash value `[2+2]`
 > **(b)** Cards whose registration numbers give the **same hash value** are all kept in that file. To find one, go to the file, then look through its few cards. This is separate chaining.
 >
-> **(c)** Advantage: the hash of the registration number gives the **file directly**, so there is no search through the rest of the cabinet — `O(1)` on average. A new card goes straight into its file, with no re-sorting.
+> **(c)** Advantage: the hash of the registration number gives the **file directly**, so there is no search through the rest of the cabinet (`O(1)` on average). A new card goes straight into its file, with no re-sorting.
 
-> [!important] Promo P2 hash tables — asked every year `[8–16]`
-> **2024 Task 6** — hash = sum of `ord()` over the username before `@`, `% 20` `[3]`:
+> [!important] Promo P2 hash tables: asked every year `[8–16]`
+> **2024 Task 6**: hash = sum of `ord()` over the username before `@`, `% 20` `[3]`:
 > 1m slice before `@` · 1m loop and total · 1m `ord()` and `% 20`.
 >
 > Then insert with **linear probing** `[6]`: 1m table `[''] * 20` · 1m index from the hash · 1m store if empty · 1m else try `i + 1` · 1m loop over the other slots · 1m wrap with `% 20`. The four emails land at 8, 11, 9, 12.
 >
-> **2025 Task 7** — **separate chaining** `[6]`: 1m create and iterate · 1m compute the hash · 1m **empty** slot: store the string · 1m slot already a **list**: append · 1m slot holds **one string**: turn it into a list of both · 1m return and display.
+> **2025 Task 7** (**separate chaining**, `[6]`): 1m create and iterate · 1m compute the hash · 1m **empty** slot: store the string · 1m slot already a **list**: append · 1m slot holds **one string**: turn it into a list of both · 1m return and display.
 >
-> **2023 Task 6** — `query(num)` `[5]`: 1m hash · 1m check the slot is empty · 1m check it holds **that** vehicle · 1m return its status · 1m *"Vehicle not found."* Then `ready(num)` `[2]`: update the status, print *"Data updated"*.
+> **2023 Task 6** (`query(num)`, `[5]`): 1m hash · 1m check the slot is empty · 1m check it holds **that** vehicle · 1m return its status · 1m *"Vehicle not found."* Then `ready(num)` `[2]`: update the status, print *"Data updated"*.
 
 ## Common Mistakes
 

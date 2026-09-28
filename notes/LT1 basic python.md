@@ -19,9 +19,9 @@
 | ---- | ------ |
 | `str(123)` | `"123"` |
 | `float("45.2")` | `45.2` |
-| `int(23.8)` | `23` — truncates, does not round |
+| `int(23.8)` | `23` (truncates, does not round) |
 | `int("42")` | `42` |
-| `int("42.5")` | **error** — string must look like an `int` |
+| `int("42.5")` | **error**: string must look like an `int` |
 | `int("yijc")` | **error** |
 
 > [!warning]
@@ -35,7 +35,7 @@ age  = int(input("How old are you? "))
 ```
 
 > [!warning]
-> `input()` **always returns a string**, whatever the user types. `input() + 1` is a `TypeError` — convert with `int()` or `float()` first.
+> `input()` **always returns a string**, whatever the user types. `input() + 1` is a `TypeError`. Convert with `int()` or `float()` first.
 
 ## Arithmetic Operators
 
@@ -49,7 +49,7 @@ age  = int(input("How old are you? "))
 
 ## Comparison Operators
 
-`==`  `!=`  `>`  `<`  `>=`  `<=` — all return a `bool`.
+`==`  `!=`  `>`  `<`  `>=`  `<=` all return a `bool`.
 
 > [!important] `==` vs `=`
 > `==` compares two values. `=` assigns the right-hand value to the left-hand name.
@@ -97,7 +97,7 @@ Strings compare by character code, so comparisons are alphabetical-ish, not by l
 - So `while lst:` means "while `lst` is not empty".
 
 > [!warning]
-> Write `True` and `False` — not `true`, `false`, `"True"` or `"False"`.
+> Write `True` and `False`, not `true`, `false`, `"True"` or `"False"`.
 
 ## Strings
 
@@ -151,10 +151,10 @@ text[start:stop:step]
 The index is a cursor sitting to the *left* of each character:
 
 ```text
- a  b  c  d  e  f  g  h
- |  |  |  |  |  |  |  |  |
- 0  1  2  3  4  5  6  7  8
--8 -7 -6 -5 -4 -3 -2 -1
+  a   b   c   d   e   f   g   h
+|   |   |   |   |   |   |   |   |
+0   1   2   3   4   5   6   7   8
+-8  -7  -6  -5  -4  -3  -2  -1
 
 text[1:6]  -> "bcdef"     cut at 1, cut at 6
 text[:2]   -> "ab"        start defaults to 0
@@ -170,14 +170,14 @@ Identifier rules from the syllabus reference guide:
 
 - start with `a`–`z`, `A`–`Z` or `_`, then letters, digits or `_`
 - reserved words (`if`, `class`, `return` …) cannot be used
-- **case sensitive** — `Total` and `total` are different names
+- **case sensitive**: `Total` and `total` are different names
 
 Outcome 1.3.2 asks for **meaningful** names, so `total_score` earns marks where `x` does not.
 
 | Statement | Does |
 | --------- | ---- |
 | `a = 1` | assign |
-| `b += c` | augmented assignment — same as `b = b + c` |
+| `b += c` | augmented assignment, same as `b = b + c` |
 | `x[y] = z` | set list index `y`, or dictionary key `y` |
 | `del a` | delete the variable |
 | `del x[y]` | delete a list item or dictionary key |
@@ -202,7 +202,7 @@ In Jupyter, `Ctrl` + `/` toggles comments on the selected lines.
 
 - Using `=` where `==` is meant.
 - Forgetting `stop` is excluded from a slice.
-- Expecting `int("3.5")` to work — it raises an error.
+- Expecting `int("3.5")` to work: it raises an error.
 
 ## Related
 

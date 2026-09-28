@@ -16,7 +16,7 @@ def factorial(n):
 ```
 
 > [!tip]
-> Applying this to actual problems — the shrinking patterns, choosing base cases, worked examples — is in [[LT9b Recursion (Application)|LT9b]].
+> Applying this to actual problems (the shrinking patterns, choosing base cases, worked examples) is in [[LT9b Recursion (Application)|LT9b]].
 
 ## Writing One: Wishful Thinking
 
@@ -28,7 +28,7 @@ Two ways to shrink the problem:
 | Reduction | Size `n` becomes | Example |
 | --------- | ---------------- | ------- |
 | By one | `n - 1` | `factorial`, list traversal |
-| Divide and conquer | `n / 2` | [[LT11a Search\|Search]] — binary search |
+| Divide and conquer | `n / 2` | [[LT11a Search\|Search]] (binary search) |
 
 ## Recursion Tree
 
@@ -47,14 +47,14 @@ factorial(5)
 = 5 * 24  = 120
 ```
 
-Going down defers the multiplications; coming back up performs them.
+Going down defers the multiplications. Coming back up performs them.
 
 > [!important]
 > Paper 1 asks you to **draw a recursion tree** to trace a call. Show the calls going down and the returned values coming back up.
 
 ## How the Stack Is Used
 
-> [!important] Asked in 2020, 2021 and 2024 — worth 3–4 marks each time.
+> [!important] Asked in 2020, 2021 and 2024: worth 3–4 marks each time.
 
 Each call is **pushed onto the call stack** before the previous one finishes.
 
@@ -94,7 +94,7 @@ If the base case is never reached, stack frames accumulate until Python raises a
 | --- | --------- | --------- |
 | Repeats by | the function calling itself | a loop construct |
 | Stops when | base case is reached | loop condition becomes `False` |
-| Memory | a new stack frame per call — can hit the recursion limit | one frame, constant |
+| Memory | a new stack frame per call, can hit the recursion limit | one frame, constant |
 | Speed | slower, call overhead | faster |
 | Suits | self-similar problems (trees, nested structures) | simple counting and accumulation |
 
@@ -134,7 +134,7 @@ def list_sum(arr):
 ```
 
 > [!example]- More worked patterns
-> Reverse a string — take the last character, recurse on the rest:
+> Reverse a string: take the last character, recurse on the rest:
 >
 > ```python
 > def reverse_string(s):
@@ -143,7 +143,7 @@ def list_sum(arr):
 >     return s[-1] + reverse_string(s[:-1])
 > ```
 >
-> Palindrome — compare the ends, recurse on the middle:
+> Palindrome: compare the ends, recurse on the middle:
 >
 > ```python
 > def is_palindrome(s):
@@ -154,7 +154,7 @@ def list_sum(arr):
 >     return is_palindrome(s[1:-1])
 > ```
 >
-> Find maximum — compare the head against the best of the tail:
+> Find maximum: compare the head against the best of the tail:
 >
 > ```python
 > def find_max(arr):
@@ -166,7 +166,7 @@ def list_sum(arr):
 >     return rest_max
 > ```
 >
-> Count with an index — move the index instead of slicing:
+> Count with an index: move the index instead of slicing:
 >
 > ```python
 > def count_passes(students, index):

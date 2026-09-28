@@ -6,8 +6,8 @@
 
 ## Bits and Bytes
 
-- **Bit** — one binary digit, `0` or `1`
-- **Byte** — 8 bits
+- **Bit**: one binary digit, `0` or `1`
+- **Byte**: 8 bits
 - `n` bits give `2 ** n` different patterns
 
 | Bits | Patterns |
@@ -121,7 +121,7 @@ Same method for hex, converting remainders `10`–`15` to `A`–`F`:
 > [!warning]
 > Two standard slips:
 > - Reading the remainders **downwards**. The last remainder is the **first** digit of the answer.
-> - **Stopping at 1.** Keep going until the quotient is `0` — `1 / 2 = 0 r 1` supplies the leading bit.
+> - **Stopping at 1.** Keep going until the quotient is `0`; `1 / 2 = 0 r 1` supplies the leading bit.
 
 ### Alternative: Sum of Weights
 
@@ -138,7 +138,7 @@ For denary → binary, subtract the largest place value that fits, repeatedly.
 47 = 00101111 base 2
 ```
 
-Faster than division for small numbers, and it self-checks — the chosen weights must add back to the original.
+Faster than division for small numbers, and it self-checks: the chosen weights must add back to the original.
 
 ## Binary ↔ Hex Shortcut
 
@@ -154,9 +154,9 @@ Keep leading zeros when a fixed width is asked for.
 
 ## Why These Bases Are Used
 
-**Binary** — digital circuits have two stable states: off/on, low/high voltage, false/true.
+**Binary**: digital circuits have two stable states: off/on, low/high voltage, false/true.
 
-**Hexadecimal** — a compact way to write binary:
+**Hexadecimal**: a compact way to write binary:
 
 - 1 hex digit replaces 4 binary digits, so a byte is 2 characters instead of 8
 - shorter values are easier for people to read, write and copy without error
@@ -222,7 +222,7 @@ digit = "7"
 ord(digit) - ord("0")    # 7 - character digit to its number
 ```
 
-> [!important] "Explain one limitation of ASCII" — 2 marks, asked 2024
+> [!important] "Explain one limitation of ASCII": 2 marks, asked 2024
 > ASCII uses only 7 bits, so it can represent just **128 characters**. That is enough for English letters, digits and punctuation, but it **cannot represent characters from other languages** such as Chinese, Arabic or Greek, nor symbols like emoji.
 
 ## Unicode
@@ -231,9 +231,9 @@ A single standard giving a unique code to characters from many languages and sym
 
 **Why it's needed**
 
-- ASCII has only 128 codes; even the spare 128 in a byte are nowhere near enough
+- ASCII has only 128 codes. Even the spare 128 in a byte are nowhere near enough
 - different systems otherwise use different numbers for the same character
-- no 16-bit cap; can cover every living language, historical scripts and emoji
+- no 16-bit cap. Can cover every living language, historical scripts and emoji
 
 | Language | Text | Unicode value |
 | -------- | ---- | ----------- |
@@ -251,28 +251,28 @@ print("사랑")    # 사랑
 
 ### ASCII vs Unicode
 
-Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
+Both rows below were 2021 Q6(c): `[1]` and `[2]`.
 
 | Question | Answer |
 | -------- | ------ |
-| Values common to both? | The **first 128 values (0–127) are identical** — Unicode was designed to stay backwards compatible with ASCII. |
+| Values common to both? | The **first 128 values (0–127) are identical**, because Unicode was designed to stay backwards compatible with ASCII. |
 | Advantage of Unicode over ASCII? | It encodes far more characters, so text in **any language** plus symbols can be represented, not just English. One shared standard also means different systems agree on the same number for the same character. |
 
 > [!example]- UTF-8 encoding
-> Not named in the learning outcomes — but 2023 asked *"explain one advantage of using UTF-8 encoding rather than ASCII"* for 2 marks, and it was covered in the C2b lecture.
+> Not named in the learning outcomes, but 2023 asked *"explain one advantage of using UTF-8 encoding rather than ASCII"* for 2 marks, and it was covered in the C2b lecture.
 >
-> **Advantage over ASCII:** UTF-8 can represent **every Unicode character**, so it handles any language, while remaining **backwards compatible** — the 128 ASCII characters still take a single byte, so no space is wasted on English text.
+> **Advantage over ASCII:** UTF-8 can represent **every Unicode character**, so it handles any language, while remaining **backwards compatible**: the 128 ASCII characters still take a single byte, so no space is wasted on English text.
 >
-> UTF-8 stores a Unicode value in 1–4 bytes. The **first** byte says how many bytes the character uses; every continuation byte starts `10`.
+> UTF-8 stores a Unicode value in 1–4 bytes. The **first** byte says how many bytes the character uses. Every continuation byte starts `10`.
 >
 > | Bytes | First byte | Continuation bytes |
 > | ----- | ---------- | ------------------ |
-> | 1 | `0xxxxxxx` | — |
+> | 1 | `0xxxxxxx` | - |
 > | 2 | `110xxxxx` | `10xxxxxx` |
 > | 3 | `1110xxxx` | `10xxxxxx` × 2 |
 > | 4 | `11110xxx` | `10xxxxxx` × 3 |
 >
-> Encoding `£` (Unicode `A3`, `1010 0011`) — needs 11 bits padded across 2 bytes:
+> Encoding `£` (Unicode `A3`, `1010 0011`) needs 11 bits padded across 2 bytes:
 >
 > ```text
 > value:       000 1010 0011
@@ -280,7 +280,7 @@ Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
 > byte 2: 10  100011   ->  1100 0010  1010 0011
 > ```
 >
-> Decoding a stream — read the first byte's prefix to know how far the character extends:
+> Decoding a stream: read the first byte's prefix to know how far the character extends:
 >
 > ```text
 > 0010 0100   starts 0     -> 1 byte   -> 24   hex  ->  $
@@ -293,7 +293,7 @@ Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
 
 ## Exam
 
-> [!important] 2025 Promo P1 Q3 — a game-controller packet `3C A7 9D 42` `[8]`
+> [!important] 2025 Promo P1 Q3: a game-controller packet `3C A7 9D 42` `[8]`
 > Bytes 1–3 hold a 12-bit X and a 12-bit Y. Byte 4 is one bit per button, in order `A B X Y R + Home C`.
 >
 > ```text
@@ -303,15 +303,15 @@ Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
 > ```
 >
 > **(b)** X `0011 1100 1010`, Y `0111 1001 1101` `[2]`
-> **(c)** X = `2 + 8 + 64 + 128 + 256 + 512 = 970`; Y = `1949` `[2]`
-> **(d)** `0100 0010` — the **B** and **Home** buttons `[2]`
+> **(c)** X = `2 + 8 + 64 + 128 + 256 + 512 = 970`. Y = `1949` `[2]`
+> **(d)** `0100 0010`: the **B** and **Home** buttons `[2]`
 
-> [!important] 2023 Promo P1 Q1 — MAC address `1F:A3:98:9A:FE:4E` `[5]`
+> [!important] 2023 Promo P1 Q1: MAC address `1F:A3:98:9A:FE:4E` `[5]`
 > **(a)** 12 hex digits × 4 = 48 bits = **6 bytes** `[1]`. Many answered *48 bytes*.
 > **(b)** The OUI is the first 3 bytes, `1F:A3:98` → `0001 1111 1010 0011 1001 1000` `[2]`. Some took the wrong digits, or converted to denary.
 > **(c)** 3 bytes are left for devices: 24 bits, so `2^24 = 16 777 216` addresses per OUI `[2]`.
 
-> [!important] 2024 Promo P1 Q3 — RGB colours `[2+2+2]`
+> [!important] 2024 Promo P1 Q3: RGB colours `[2+2+2]`
 > **(a)** SeaGreen `2E:8B:57` to decimal. Either form scores:
 >
 > ```text
@@ -321,7 +321,7 @@ Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
 >
 > 1m correct base and powers · 1m answer.
 >
-> **(b)** Chocolate `D2:69:1E` to binary: `1101 0010 0110 1001 0001 1110` — 1m method, 1m answer. 2026 Mastery P1 Q3(a) is the same.
+> **(b)** Chocolate `D2:69:1E` to binary: `1101 0010 0110 1001 0001 1110` (1m method, 1m answer). 2026 Mastery P1 Q3(a) is the same.
 >
 > **(c)** Two advantages of hex over decimal `[2]`:
 > - 1m **aligns with binary**: 4 bits make 1 hex digit, so converting to binary is direct.
@@ -332,7 +332,7 @@ Both rows below were 2021 Q6(c) — `[1]` and `[2]`.
 - Forgetting hex `A`–`F` are `10`–`15`.
 - Dropping leading zeros when a fixed number of bits is asked for.
 - Using `int(value, base)` in a question that asks you to implement the conversion.
-- Confusing ASCII with Unicode — ASCII is 128 codes; Unicode covers many languages.
+- Confusing ASCII with Unicode: ASCII is 128 codes. Unicode covers many languages.
 
 ## Related
 

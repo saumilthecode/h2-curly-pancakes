@@ -13,12 +13,12 @@ else:
 ```
 
 - `elif` and `else` are both optional.
-- `else` has no condition — it catches everything left over.
+- `else` has no condition. It catches everything left over.
 
 ## How It Runs
 
 > [!important] The one rule
-> Conditions are tested **top to bottom**. The first `True` one runs its block and the rest are skipped; if none is `True`, `else` runs.
+> Conditions are tested **top to bottom**. The first `True` one runs its block and the rest are skipped. If none is `True`, `else` runs.
 
 ```mermaid
 flowchart TD
@@ -66,10 +66,10 @@ print("done")           # always runs
 
 ## `pass`
 
-`pass` does nothing; it holds the place of a required block you haven't written yet.
+`pass` does nothing. It holds the place of a required block you haven't written yet.
 
 > [!note]
-> `break` and `continue` control **loops**, not conditionals — see [[LT5 Iteration|Iteration]].
+> `break` and `continue` control **loops**, not conditionals. See [[LT5 Iteration|Iteration]].
 
 ## Unreachable Branches
 
@@ -84,21 +84,21 @@ elif 30000 < volume <= 70000:       # dead
     return round(weight * 8)
 ```
 
-Every parcel now gets the highest rate. Volume `18000` should charge `weight * 10` but charges `weight * 15` — `30` becomes `45`, with no error raised.
+Every parcel now gets the highest rate. Volume `18000` should charge `weight * 10` but charges `weight * 15`; `30` becomes `45`, with no error raised.
 
 > [!warning]
-> Check each bound against the one above it; Python gives no warning for an unreachable branch.
+> Check each bound against the one above it. Python gives no warning for an unreachable branch.
 
 ## Common Mistakes
 
 - Putting the broader condition before the narrower one.
 - Using `=` instead of `==` in the condition.
-- Expecting more than one branch to run — only the first match does.
+- Expecting more than one branch to run. Only the first match does.
 
 > [!tip] Flowcharts
-> Dropped in the **y27** syllabus (your one) — the old y26 outcomes 1.1.1–1.1.2 required them, y27 has no mention. Coursemology lists the lecture as **"[old syllabus] LT 2a - Flow Charts"**.
+> Dropped in the **y27** syllabus (your one). The old y26 outcomes 1.1.1–1.1.2 required them. Y27 has no mention. Coursemology lists the lecture as **"[old syllabus] LT 2a - Flow Charts"**.
 >
-> Past papers still ask for them: 2024 Q1(a) was *"Draw a flowchart to represent the operation"* for **4 marks**. Expect to meet one while practising; don't drill drawing them for your own paper.
+> Past papers still ask for them: 2024 Q1(a) was *"Draw a flowchart to represent the operation"* for **4 marks**. Expect to meet one while practising. Don't drill drawing them for your own paper.
 
 ## Related
 

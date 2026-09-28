@@ -2,7 +2,7 @@
 > Pick a **pivot**, smaller left, larger right, recurse on each side. `O(n log n)` average but **`O(n²)` worst case**.
 > Syllabus 2.2.1. Scope, Big-O and the cross-sort comparison are in [[LT12 Sorting Algorithms]].
 
-A placed pivot is in its **final** position; values equal to it may go either side.
+A placed pivot is in its **final** position. Values equal to it may go either side.
 
 Cards `0`–`9`, pivot in brackets:
 
@@ -37,12 +37,22 @@ def qsort(seq):
 
 ## In-Place
 
-`low` walks right past everything **smaller** than the pivot, `high` walks left past everything **`>=`** it; when both stop, swap. Finally swap the pivot into the gap.
+`low` walks right past everything **smaller** than the pivot, `high` walks left past everything **`>=`** it. When both stop, swap. Finally swap the pivot into the gap.
 
 ```text
-seq  1  3  7  2  8  9  0  6  4 | 5      pivot = 5
-                                          low stops at 7 (not < 5)
-                                          high stops at 4 (not >= 5)
+pivot = 5, the last element. low walks right while values are < 5,
+high walks left while values are >= 5. When both stop, swap.
+
+index   0  1  2  3  4  5  6  7  8  9
+        1  3  7  2  8  9  0  6  4  5
+              L                 H  P    swap 7 and 4
+        1  3  4  2  8  9  0  6  7  5
+                    L     H        P    swap 8 and 0
+        1  3  4  2  0  9  8  6  7  5
+                    H  L           P    crossed, so swap 9 with the pivot
+        1  3  4  2  0  5  8  6  7  9
+        \___ < 5 ___/  ^  \___ >= 5 __/
+                    index 5, final spot
 ```
 
 ```python
@@ -73,7 +83,7 @@ def quicksort(seq):                                 # wrapper hides the indices
 
 One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2, 0, 5, 8, 6, 7, 9]`.
 
-> [!example]- Extension — pivot at the **front** instead
+> [!example]- Extension: pivot at the **front** instead
 > Mirror every direction. `low` starts one past the pivot, `high` at the end, and the pivot swaps into `high`'s slot.
 >
 > ```python
@@ -91,7 +101,7 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 >     return high
 > ```
 >
-> `[6, 3, 7, 2, 8, 9, 0, 1, 4, 5]` returns `6` and gives `[0, 3, 5, 2, 4, 1, 6, 9, 8, 7]`. Either pivot choice has the same worst case — sorted input.
+> `[6, 3, 7, 2, 8, 9, 0, 1, 4, 5]` returns `6` and gives `[0, 3, 5, 2, 4, 1, 6, 9, 8, 7]`. Either pivot choice has the same worst case: sorted input.
 >
 > 2025 Promo P2 Task 5 gives this exact function as pseudocode, with `Hi ← Hi - 1`, the swap inside the loop, and the pivot swap blanked out.
 
@@ -100,7 +110,7 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 
 | Best / average | `O(n log n)` |
 | --- | --- |
-| **Worst** | `O(n²)` — every pivot is the largest or smallest |
+| **Worst** | `O(n²)` (every pivot is the largest or smallest) |
 | In-place | yes (two-pointer), no (`left`/`right`) |
 | Stable | **no** |
 
@@ -113,20 +123,20 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 > Required keywords: **pivot**, **partition**, **repeat**.
 > Choose a **pivot**, then **partition** the list so everything smaller sits on one side and everything larger on the other, leaving the pivot in its final position. **Repeat** on each partition until they hold one or no elements.
 
-> [!important] 2023 Q6(a) — how Quicksort sorts ascending `[3]`
+> [!important] 2023 Q6(a): how Quicksort sorts ascending `[3]`
 > Choose a pivot. Partition so all smaller values are one side, all larger the other, pivot between them in its final position. Recurse on each partition until they hold one or no elements.
 
-> [!important] 2023 Q6(b) — worst-case time complexity `[1]`
+> [!important] 2023 Q6(b): worst-case time complexity `[1]`
 > `O(n²)`.
 
-> [!important] 2020 Q2(a) — the ideal pivot `[1+1]`
-> **(i)** The **median** — it halves the array, so recursion is `log n` deep.
+> [!important] 2020 Q2(a): the ideal pivot `[1+1]`
+> **(i)** The **median**: it halves the array, so recursion is `log n` deep.
 > **(ii)** Finding the median costs as much as sorting.
 
-> [!important] 2020 Q2(b) — random pivot vs first/last `[2]`
+> [!important] 2020 Q2(b): random pivot vs first/last `[2]`
 > First/last hits the worst case `O(n²)` on already-sorted or reversed data, which is common. Random makes a lopsided split unlikely whatever the input order.
 
-> [!important] 2023 Promo P1 Q2(c)–(f) — non-in-place, first-element pivot `[1+3+2+2]`
+> [!important] 2023 Promo P1 Q2(c)–(f): non-in-place, first-element pivot `[1+3+2+2]`
 > **(c)** The **median**: roughly equal halves, fewest recursive calls. Rejected: *average* (the mean may not be in the list), and *middle element* unless of the **sorted** array.
 >
 > **(d)** Fill the blanks:
@@ -141,11 +151,11 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 > RETURN QUICKSORT(Left) + Middle + QUICKSORT(Right)   D
 > ```
 >
-> `len(lst)//2` for A ignores *"first element"*. `element in range(lst)` for C lost the mark — `element` is a value, not an index.
+> `len(lst)//2` for A ignores *"first element"*. `element in range(lst)` for C lost the mark: `element` is a value, not an index.
 >
 > **(e)** `[542, 391, 215, 482, 304, 731, 629]` partitioned once: pivot `542` at **index 4**, giving `[391, 215, 482, 304, 542, 731, 629]`.
 >
-> **(f)** Advantage: `O(n log n)` against bubble sort's `O(n²)` — state **both**. Disadvantage: the non-in-place version builds new lists and needs extra memory; bubble sort does not.
+> **(f)** Advantage: `O(n log n)` against bubble sort's `O(n²)`. State **both**. Disadvantage: the non-in-place version builds new lists and needs extra memory. Bubble sort does not.
 >
 > Scheme error: it labels `n log n` the *worst case*. Quicksort is `O(n log n)` **average**, `O(n²)` **worst**.
 
@@ -153,7 +163,7 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 
 - Giving the worst case as `O(n log n)`. It is `O(n²)`.
 - Calling the `left`/`right` version in-place.
-- Iterating the whole sequence in the non-in-place version — the pivot duplicates.
+- Iterating the whole sequence in the non-in-place version: the pivot duplicates.
 
 ## Related
 

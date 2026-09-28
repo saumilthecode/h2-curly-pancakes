@@ -16,7 +16,7 @@
 | `FOR element in lst:` | `for element in lst:` | 2023 promo |
 | `REPEAT` … `UNTIL cond` | `while True:` … `if cond: break` | LT12c |
 | `FUNCTION F(m: INTEGER) RETURNS INTEGER` … `ENDFUNCTION` | `def F(m):` | specimen |
-| `PROCEDURE P(Index: INTEGER)` … `ENDPROCEDURE` | `def P(index):` — returns nothing | 2020 A-Level |
+| `PROCEDURE P(Index: INTEGER)` … `ENDPROCEDURE` | `def P(index):` (returns nothing) | 2020 A-Level |
 | `RETURN x` | `return x` | all |
 | `OUTPUT x` | `print(x)` | 2020 A-Level |
 | `LENGTH(Seq)` | `len(seq)` | 2025 promo |
@@ -24,14 +24,14 @@
 | `< Code to Swap Seq[Lo] with Seq[Hi] >` | `seq[lo], seq[hi] = seq[hi], seq[lo]` | 2025 promo |
 
 > [!warning] Four traps
-> - `=` inside an `IF` is a **comparison** — write `==`.
+> - `=` inside an `IF` is a **comparison**. Write `==`.
 > - `//` after code is a **comment** in the 2025 pseudocode (`// Search upwards …`), but `length(seq) // 2` in the 2023 one is floor division. Read the context.
 > - `FOR … TO n` **includes** `n`, so `range` needs `n + 1`.
 > - LT12b and LT12c pseudocode index arrays from **1**. Python starts at `0`.
 
 ## Exam
 
-> [!important] Specimen 2027 P1 Q1(a)(ii) — rewrite a `FOR` loop as a `WHILE` loop `[4]`
+> [!important] Specimen 2027 P1 Q1(a)(ii): rewrite a `FOR` loop as a `WHILE` loop `[4]`
 > ```text
 > 01 FUNCTION IterSum(m: INTEGER, n: INTEGER) RETURNS INTEGER
 > 02   total = 0
@@ -54,12 +54,12 @@
 > RETURN total
 > ```
 
-> [!important] Promo P2 — fill the blanks, then code it
-> **2025 Task 5** — partition with the first element as pivot: A `Hi ← Hi - 1`, B swap `Seq[Lo]` and `Seq[Hi]`, C swap `Seq[Start]` and `Seq[Hi]`. Then `QuickSortHelper` A/B are the two recursive calls on `Start … Mid - 1` and `Mid + 1 … End`. See [[LT12e Quick Sort]].
+> [!important] Promo P2: fill the blanks, then code it
+> **2025 Task 5**: partition with the first element as pivot: A `Hi ← Hi - 1`, B swap `Seq[Lo]` and `Seq[Hi]`, C swap `Seq[Start]` and `Seq[Hi]`. Then `QuickSortHelper` A/B are the two recursive calls on `Start … Mid - 1` and `Mid + 1 … End`. See [[LT12e Quick Sort]].
 >
-> **2023 Task 5** — merge sort blanks A–H. See [[LT12d Merge Sort#Exam|LT12d]].
+> **2023 Task 5**: merge sort blanks A–H. See [[LT12d Merge Sort#Exam|LT12d]].
 >
-> **2023 P1 Q2(d)** — non-in-place quicksort blanks A–D. See [[LT12e Quick Sort#Exam|LT12e]].
+> **2023 P1 Q2(d)**: non-in-place quicksort blanks A–D. See [[LT12e Quick Sort#Exam|LT12e]].
 
 ## Related
 

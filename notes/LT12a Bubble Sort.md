@@ -4,12 +4,22 @@
 
 ## One Pass
 
-`[24, 5, 36, 18, 12]`:
+`[24, 5, 36, 18, 12]`, brackets mark the pair being compared:
+
+```text
+(24   5)  36   18   12     swap
+  5 (24   36) 18   12      no swap
+  5  24 (36   18) 12       swap
+  5  24  18 (36   12)      swap
+  5  24  18  12 | 36       36 is now fixed
+                | sorted
+```
+
 
 | `i` | Compare | | After |
 | --- | ------- | - | ----- |
 | 0 | `24`, `5` | swap | `5, 24, 36, 18, 12` |
-| 1 | `24`, `36` | — | `5, 24, 36, 18, 12` |
+| 1 | `24`, `36` | - | `5, 24, 36, 18, 12` |
 | 2 | `36`, `18` | swap | `5, 24, 18, 36, 12` |
 | 3 | `36`, `12` | swap | `5, 24, 18, 12, 36` |
 
@@ -76,7 +86,7 @@ Q11 on the notebook's own lists, `n = 6`:
 | `[3,0,2,4,1,5]` | 30 | 15 | **14** |
 | `[0,1,2,3,4,5]` sorted | 30 | 15 | **5** |
 
-Simple always makes `n(n-1)` comparisons; improved makes `n(n-1)/2` — the sum `(n-1) + (n-2) + ... + 1`. Only **optimised** responds to the data, and its `swapped` flag is what gives the `O(n)` best case.
+Simple always makes `n(n-1)` comparisons. Improved makes `n(n-1)/2`, the sum `(n-1) + (n-2) + ... + 1`. Only **optimised** responds to the data, and its `swapped` flag is what gives the `O(n)` best case.
 
 | Best | `O(n)` **optimised only** |
 | --- | --- |
@@ -87,10 +97,10 @@ Simple always makes `n(n-1)` comparisons; improved makes `n(n-1)/2` — the sum 
 ## Exam
 
 > [!important] Describe bubble sort
-> Required keywords: **pass**, **compare**, **repeat**, **adjacent**, **swap** — and describe the first three passes.
+> Required keywords: **pass**, **compare**, **repeat**, **adjacent**, **swap**. Describe the first three passes.
 > **Compare** each **adjacent** pair along the list, **swapping** them if they are out of order. That is one **pass**, and it leaves the largest value at the end. **Repeat** on the remaining unsorted part, one fewer element each time, until a pass makes no swaps.
 
-> [!important] 2023 Promo P1 Q2(a)(b) — describe, then optimise `[2+1]`
+> [!important] 2023 Promo P1 Q2(a)(b): describe, then optimise `[2+1]`
 > **(a)** 1m compare adjacent elements from start to end, swapping if needed · 1m repeat the passes, `n - 1` of them.
 > **(b)** If a pass makes **no swaps**, the array is sorted, so **stop early**.
 >
@@ -98,8 +108,8 @@ Simple always makes `n(n-1)` comparisons; improved makes `n(n-1)/2` — the sum 
 
 ## Common Mistakes
 
-- Inner loop to `len(seq)` not `len(seq) - 1` — `seq[i + 1]` goes out of range.
-- Claiming an `O(n)` best case without saying **optimised**; simple and improved cannot stop early.
+- Inner loop to `len(seq)` not `len(seq) - 1`: `seq[i + 1]` goes out of range.
+- Claiming an `O(n)` best case without saying **optimised**. Simple and improved cannot stop early.
 - Counting `n` passes instead of `n - 1`.
 
 ## Related

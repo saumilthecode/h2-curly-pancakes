@@ -1,7 +1,7 @@
 > [!summary] Quick View
 > Breaking a problem into small, well-named functions. Manage complexity by dividing and conquering.
 
-The mechanics of writing a function — parameters, `return`, scope — are in [[LT3a Functional Abstraction|LT3a]].
+The mechanics of writing a function (parameters, `return`, scope) are in [[LT3a Functional Abstraction|LT3a]].
 
 ## What Makes an Abstraction Good
 
@@ -50,9 +50,9 @@ def area_of_circle(r):
 
 ## Solving Problems
 
-**Divide and conquer** — split a problem into smaller, easier subproblems.
+**Divide and conquer**: split a problem into smaller, easier subproblems.
 
-**Wishful thinking (top-down)** — write the solution assuming the helper functions already exist, then go back and write them.
+**Wishful thinking (top-down)**: write the solution assuming the helper functions already exist, then go back and write them.
 
 ```python
 def hypotenuse(a, b):
@@ -79,9 +79,9 @@ def taxi_fare(distance):                                  # metres
 
 `ceil` because *"or less"* means a part block is charged in full. `taxi_fare(3300)` gives `4.32`, `taxi_fare(14500)` gives `11.06`.
 
-Every literal there is a **magic number**. When fares change each one must be found and edited; miss one and the code quietly returns the wrong fare.
+Every literal there is a **magic number**. When fares change each one must be found and edited. Miss one and the code quietly returns the wrong fare.
 
-`8.06` is the fare at 10 km, so compute it — call the function itself.
+`8.06` is the fare at 10 km, so compute it: call the function itself.
 
 ```python
 def taxi_fare(distance):
@@ -105,8 +105,8 @@ Raising the start fare to `$3.20`, or shrinking the block to 300 m, is now one e
 > [!tip] The lecture's own caveat
 > Naming every constant is *"yes and no"*: worth it for code that will be maintained, overkill for a function run once.
 
-> [!important] 2023 Promo P2 Task 1 — a helper function, then reuse it `[3+4]`
-> `discriminant(a, b, c)` returns `b**2 - 4*a*c` if it's `>= 0`, else `None`: 1m calculation · 1m `if`/`else` and return · 1m **three test cases** — one positive, one negative, one zero.
+> [!important] 2023 Promo P2 Task 1: a helper function, then reuse it `[3+4]`
+> `discriminant(a, b, c)` returns `b**2 - 4*a*c` if it's `>= 0`, else `None`: 1m calculation · 1m `if`/`else` and return · 1m **three test cases** (one positive, one negative, one zero).
 >
 > `quadratic_roots(a, b, c)` must **call `discriminant()`**, not redo the maths: 1m uses the helper · 1m `'No real root.'` when it's `None` · 1m both roots `(-b ± d ** 0.5) / (2 * a)` · 1m rounded to 1 d.p. and returned.
 

@@ -45,14 +45,31 @@ while total < 5:
 
 ## Loop Control
 
-- `break` — exit the loop immediately.
-- `continue` — skip the rest of this iteration, go to the next one.
+- `break`: exit the loop immediately.
+- `continue`: skip the rest of this iteration, go to the next one.
 
 ```python
 for i in range(9):
     if i % 2 == 0:
         continue      # skip evens
     print(i)          # 1 3 5 7
+```
+
+```text
+        for i in range(9):
+              |
+   +--------> i = next value from range          range exhausted
+   |          |                                        |
+   |          v                                        v
+   |   if i % 2 == 0:  -- true --> continue --+     loop ends
+   |          |                               |
+   |          | false                         |
+   |          v                               |
+   |       print(i)                           |
+   |          |                               |
+   +----------+<------------------------------+
+
+   break, anywhere in the body, jumps straight to "loop ends"
 ```
 
 ## Accumulator Pattern
@@ -70,7 +87,7 @@ def factorial(n):
 > [!example]- Trace table for `factorial(6)`
 > | `i` | `result` after the step |
 > | --- | ---------------------- |
-> | — | `1` |
+> | - | `1` |
 > | `1` | `1` |
 > | `2` | `2` |
 > | `3` | `6` |
@@ -104,10 +121,10 @@ while value != 0:     # 9, 7, 5, 3, 1, -1, -3 ... never exactly 0
 
 Use `while value > 0:`. An infinite loop kills the Jupyter kernel: restart it, then `print()` inside the loop to trace the variable.
 
-> [!important] Promo P2 Task 1 — input validation, every year
-> **2024 T1.1** `[2]`: re-prompt until `10 <= x <= 100` — 1m `while x < 10 or x > 100:` · 1m input again inside the loop.
+> [!important] Promo P2 Task 1: input validation, every year
+> **2024 T1.1** `[2]`: re-prompt until `10 <= x <= 100`. 1m `while x < 10 or x > 100:` · 1m input again inside the loop.
 >
-> **2025 T1.1** `[4]`: collect 9 valid scores. A `for` loop with no validation capped at **2m**; a `while` loop without validation, **3m**.
+> **2025 T1.1** `[4]`: collect 9 valid scores. A `for` loop with no validation capped at **2m**. A `while` loop without validation, **3m**.
 
 ## Common Mistakes
 

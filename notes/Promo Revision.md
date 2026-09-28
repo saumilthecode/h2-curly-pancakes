@@ -8,7 +8,7 @@
 | P2 Practical | 1 h 50 min | 60 | Jupyter, DB Browser, the Specimen Insert (Reference Guide) |
 | P1 Theory | 1 h 10 min | 40 | written |
 
-**Scope:** every programming topic up to QuickSort, C2 Data Representation, C3 Networking (theory), C4 Databases — **basic SQL only**. Any programming topic can also come up in P1.
+**Scope:** every programming topic up to QuickSort, C2 Data Representation, C3 Networking (theory), C4 Databases (**basic SQL only**). Any programming topic can also come up in P1.
 
 ## Route
 
@@ -38,89 +38,89 @@ In Obsidian the boxes are links.
 
 Marks in each heading are totals from the 2023, 2024 and 2025 promos. **P1** = Paper 1 theory, **P2** = Paper 2 practical.
 
-## 1. Sorting — 49 marks (P1 22, P2 27)
+## 1. Sorting: 49 marks (P1 22, P2 27)
 
 [[LT12 Sorting Algorithms#Comparison|Comparison table]] · [[LT12e Quick Sort#Exam|Quick]] · [[LT12b Insertion Sort#Exam|Insertion]] · [[LT12d Merge Sort#Exam|Merge]] · [[LT12a Bubble Sort#Exam|Bubble]]
 
-- **P1** — describe a sort using its keywords and trace it on the given list; merge sort wants a diagram. Give worst-case Big-O for **both** sorts when comparing.
-- **P2** — fill blanks in quicksort-partition or merge pseudocode, then code it ([[BTB1 Pseudocode|pseudocode → Python]]). Sorting tuples: compare `int(t[2])` or `float(t[1])`.
-- Quicksort worst case is `O(n²)`; the ideal pivot is the **median**, not the average. Optimised bubble must say it **stops early**.
+- **P1**: describe a sort using its keywords and trace it on the given list. Merge sort wants a diagram. Give worst-case Big-O for **both** sorts when comparing.
+- **P2**: fill blanks in quicksort-partition or merge pseudocode, then code it ([[BTB1 Pseudocode|pseudocode → Python]]). Sorting tuples: compare `int(t[2])` or `float(t[1])`.
+- Quicksort worst case is `O(n²)`. The ideal pivot is the **median**, not the average. Optimised bubble must say it **stops early**.
 
-## 2. Hashing — 41 marks (P1 9, P2 32)
+## 2. Hashing: 41 marks (P1 9, P2 32)
 
 [[LT10d Hashing#Linear Probing|Linear probing]] · [[LT10d Hashing#Separate Chaining|Separate chaining]]
 
-- **P2 every year** — write the hash, build the table, search it. Marks: `[''] * size`, `% size`, store if empty, otherwise probe `(i + 1) % size` or turn the slot into a list.
-- **P1** — insert a key by linear probing; deduce a possible insertion order from the finished table.
+- **P2 every year**: write the hash, build the table, search it. Marks: `[''] * size`, `% size`, store if empty, otherwise probe `(i + 1) % size` or turn the slot into a list.
+- **P1**: insert a key by linear probing. Deduce a possible insertion order from the finished table.
 - Searching follows the **same probe path** and stops at an empty slot.
 
-## 3. Networks — 25 marks (P1)
+## 3. Networks: 25 marks (P1)
 
 [[C3 Computer Network#Exam|Promo answers]] · [[C3 Computer Network#Switches and Routers|Switch vs router]]
 
-- **Switch** joins devices in a LAN by MAC; **router** joins networks by IP.
+- **Switch** joins devices in a LAN by MAC. **Router** joins networks by IP.
 - LAN benefits: shared printers, one internet connection, central backup and security.
-- Cables: reliable, fast, secure — but costly and inflexible. Over the internet: security risk, fixed by VPN, firewall, encryption.
+- Cables: reliable, fast, secure, but costly and inflexible. Over the internet: security risk, fixed by VPN, firewall, encryption.
 
-## 4. File to list of tuples — 25 marks (P2)
+## 4. File to list of tuples: 25 marks (P2)
 
 [[BTB2 File Handling#Reading Manually|Reading manually]]
 
 - Six marks, every year: open **and close**, skip the header with `next(f)`, `strip()`, `split(',')`, make a tuple, append to a list.
-- Every value comes back a **string** — `int()` or `float()` before any arithmetic.
+- Every value comes back a **string**: `int()` or `float()` before any arithmetic.
 
-## 5. Dictionary counting — 25 marks (P2)
+## 5. Dictionary counting: 25 marks (P2)
 
 [[LT8 Dictionary#Patterns|Patterns]]
 
 - Start from `{'gold': 0, …}` or create the key on first sighting, then `d[key] += 1`.
 - To transform every value, loop over the keys and assign through `d[key]`.
 
-## 6. Binary search tree — 23 marks (P1)
+## 6. Binary search tree: 23 marks (P1)
 
-[[LT11b Binary Tree#Binary Search Tree|BST rules]] · [[LT11b Binary Tree#Traversals|Traversals]]
+[[LT11b Binary Tree#Binary Search Tree|BST rules]] · [[LT11b Binary Tree#Traversals|Traversals]] · [[LT11b Lesson Code (List ADT)|The code]]
 
-- Insert in the **given** order; re-sorting first loses marks.
+- Insert in the **given** order. Re-sorting first loses marks.
 - Describe search: root → compare → left if smaller, right if larger → repeat → **empty means absent**. Most answers forget the last step.
 - In-order gives ascending order. Search is `O(log n)` when balanced; `O(n log n)` was the common wrong answer.
 
-## 7. Recursion — 20 marks (P2)
+## 7. Recursion: 20 marks (P2)
 
 [[LT9b Recursion (Application)#The Method|The method]]
 
 - Four marks each time: **base case**, **smaller call**, **combine**, **call and display**.
 - Recurrences (`P(n) = 1.2 × P(n-1) - c`, lane `n` = lane `n-1` + 7.67) go straight into code.
 
-## 8. Number bases — 19 marks (P1)
+## 8. Number bases: 19 marks (P1)
 
 [[C2 Data representation#Exam|Promo answers]]
 
 - 1 hex digit = 4 bits. Split into bytes first: MAC organisation ID = first 3 bytes, RGB = 3 bytes, bit fields by position.
 - `n` bits give `2^n` values. Hex beats decimal: maps straight to binary, and easier to read.
 
-## 9. SQL — 18 marks (P2)
+## 9. SQL: 18 marks (P2)
 
 [[C4-2 Basic SQL#Exam|Promo answers]]
 
 - `SELECT … FROM … WHERE … ORDER BY`, `SUM(UnitPrice * Quantity)`, `INSERT INTO … VALUES` with every field matched.
 - `DISTINCT` has been examined and isn't in the Reference Guide.
 
-## 10. Linear and binary search — 15 marks
+## 10. Linear and binary search: 15 marks
 
 [[LT11a Search#Exam|Promo answers]]
 
 - Describe binary search with **indices**: `mid = (lo + hi) // 2`, discard half, repeat.
 - "Same number of steps here" doesn't make them equally efficient: `O(n)` vs `O(log n)`.
 
-## 11. Database keys — 11 marks (P1)
+## 11. Database keys: 11 marks (P1)
 
 [[C4-1 Introduction to Database#Exam|Promo answers]]
 
 - Composite key: find the rows that repeat and add fields until they can't. A single `OrderID` is simpler.
-- PK functions: identifies each record uniquely; records are sorted by it for searching.
+- PK functions: identifies each record uniquely. Records are sorted by it for searching.
 - Table descriptions: PK underlined, FK dashed, **field names one word**.
 
-## 12. Queue — 8 marks (P2)
+## 12. Queue: 8 marks (P2)
 
 [[LT10c Queue#Core Operations|Core operations]]
 
@@ -132,7 +132,7 @@ All in scope, but none appeared in the 2023, 2024 or 2025 promo, or the 2026 Mas
 
 | Topic | Note |
 | ----- | ---- |
-| ADTs — constructors, accessors, `make_…` / `get_…` | [[LT10a Data Abstraction]], [[LT11b Lesson Code (List ADT)]] |
+| ADTs: constructors, accessors, `make_…` / `get_…` | [[LT10a Data Abstraction]] |
 | Stacks, postfix, balanced brackets | [[LT10b Stack]] |
 | Selection sort | [[LT12c Selection Sort]] |
 | Checksums and check digits | [[LT10d Hashing]], [[LT4a Data validation and verification]] |
@@ -150,4 +150,4 @@ All in scope, but none appeared in the 2023, 2024 or 2025 promo, or the 2026 Mas
 > | **`.count()`** **`.replace()`** `.find()` `.items()` `.keys()` `.values()` | `LIMIT` `GROUP BY` `HAVING` `AVG()` |
 > | `try` / `except` | |
 >
-> Every algorithm — sorts, searches, BST, hashing, recursion — is yours to write from memory.
+> Every algorithm (sorts, searches, BST, hashing, recursion) is yours to write from memory.

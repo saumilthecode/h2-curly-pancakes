@@ -7,7 +7,7 @@
 | -------- | ---------- | ---------------- | ------- |
 | Syntax | code breaks Python's grammar | before the code runs | Python refuses to run the file |
 | Runtime | a valid line Python can't carry out, e.g. dividing by zero | during execution | program crashes part-way |
-| Logic | the code runs but does the wrong thing | never — it runs fine | output is wrong |
+| Logic | the code runs but does the wrong thing | never (it runs fine) | output is wrong |
 
 ### Syntax Errors
 
@@ -49,39 +49,39 @@ Also: a missing `return` (function silently gives `None`), off-by-one loop bound
 ```
 
 > [!example]- The four bugs from the training set
-> **Precedence** — `/` binds tighter than `+`:
+> **Precedence**: `/` binds tighter than `+`:
 >
 > ```python
 > return x1 + x2 / 2        # x1 + (x2/2)
 > return (x1 + x2) / 2      # what was meant
 > ```
 >
-> **A name reused** — `area = 3.0` overwrites the function, so the next `area(4, 5)` raises `TypeError: 'float' object is not callable`.
+> **A name reused**: `area = 3.0` overwrites the function, so the next `area(4, 5)` raises `TypeError: 'float' object is not callable`.
 >
-> **Swapping without a temp** — `a = b` then `b = a` leaves both holding `b`'s value. The first assignment already destroyed `a`:
+> **Swapping without a temp**: `a = b` then `b = a` leaves both holding `b`'s value. The first assignment already destroyed `a`:
 >
 > ```python
 > temp = a; a = b; b = temp     # or just  a, b = b, a
 > ```
 >
-> **`true` / `false`** — Python's Booleans are capitalised. Lowercase raises `NameError: name 'true' is not defined` at run time.
+> **`true` / `false`**: Python's Booleans are capitalised. Lowercase raises `NameError: name 'true' is not defined` at run time.
 
 ## Debugging
 
-- Read the error message — it names the line and the type.
-- Check variable values; add `print()` at the top of a loop or function to trace them.
+- Read the error message. It names the line and the type.
+- Check variable values. Add `print()` at the top of a loop or function to trace them.
 - Re-run with smaller or different inputs. Does the same error appear?
-- Narrow it down systematically — eliminate what cannot be the cause.
+- Narrow it down systematically: eliminate what cannot be the cause.
 
 > [!note]
-> Debugging removes the bugs you found; it does not prove the program is error-free.
+> Debugging removes the bugs you found. It does not prove the program is error-free.
 
 ## Exception Handling
 
-Syllabus **1.5.6** — *"use appropriate error and exception handling techniques"*.
+Syllabus **1.5.6**: *"use appropriate error and exception handling techniques"*.
 
-> [!warning] Not in the Reference Guide — memorise it
-> The Reference Guide they hand you in Paper 2 has no `try` / `except` section. `with open(...)` **is** printed there; this isn't. Two shapes:
+> [!warning] Not in the Reference Guide: memorise it
+> The Reference Guide they hand you in Paper 2 has no `try` / `except` section. `with open(...)` **is** printed there. This isn't. Two shapes:
 
 ```python
 try:                                    # bad input
@@ -99,7 +99,7 @@ except FileNotFoundError:
 Catch the **specific** exception. A bare `except Exception` swallows your own bugs too.
 
 > [!tip] You don't need it everywhere
-> Input validation is `isnumeric()` in a `while` loop ([[LT4a Data validation and verification|LT4a]]); full/empty guards are plain `if`s. Use `try` when a **conversion** or a **file** can fail.
+> Input validation is `isnumeric()` in a `while` loop ([[LT4a Data validation and verification|LT4a]]). Full/empty guards are plain `if`s. Use `try` when a **conversion** or a **file** can fail.
 
 ## Test Case Categories
 
@@ -141,7 +141,7 @@ def percentage(score, total):
 ```
 
 > [!tip] Write tests that answer themselves
-> Print the **comparison**, not the result — then every passing test reads `True` and you never have to recompute the expected answer by hand.
+> Print the **comparison**, not the result. Then every passing test reads `True` and you never have to recompute the expected answer by hand.
 >
 > ```python
 > print(percentage(20, 80) == 25.0)     # True

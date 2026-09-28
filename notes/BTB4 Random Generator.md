@@ -37,7 +37,7 @@ x = round(random() * 5, 2)     # float from 0 to 5, 2 decimal places
 | `shuffle(lst)` | reorders the list **in place** | no |
 
 > [!note]
-> `randrange` and `shuffle` are **not** in the BTB4 lecture — they're here because the Paper 2 Reference Guide lists them. Conversely `seed`, `choice`, `choices`, `sample` and `normalvariate` are taught but aren't on that handout. The Reference Guide is a quick-reference sheet; it does not define what's allowed. It also leaves out `.strip()`, which your own mark scheme gives a mark for.
+> `randrange` and `shuffle` are **not** in the BTB4 lecture. They're here because the Paper 2 Reference Guide lists them. Conversely `seed`, `choice`, `choices`, `sample` and `normalvariate` are taught but aren't on that handout. The Reference Guide is a quick-reference sheet. It does not define what's allowed. It also leaves out `.strip()`, which your own mark scheme gives a mark for.
 
 ```python
 from random import *
@@ -66,9 +66,9 @@ print(stdev(lst))
 
 ## Common Mistakes
 
-- Expecting `randint(1, 6)` to exclude `6` — it doesn't, unlike `range`.
-- Expecting `shuffle()` to return the list; it returns `None` and shuffles in place.
-- Calling `sample(lst, k)` with `k` larger than the list — that's an error.
+- Expecting `randint(1, 6)` to exclude `6`: it doesn't, unlike `range`.
+- Expecting `shuffle()` to return the list. It returns `None` and shuffles in place.
+- Calling `sample(lst, k)` with `k` larger than the list: that's an error.
 - Setting a seed and then wondering why the "random" values never change.
 
 ## Related

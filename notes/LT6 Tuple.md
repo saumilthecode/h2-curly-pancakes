@@ -55,10 +55,10 @@ tuple("abc")   # ('a', 'b', 'c')
 ```
 
 > [!important]
-> `tup = tup + (4,)` does not modify the tuple — it builds a new one and points the name at it. `id(tup)` before and after shows a **different** memory address.
+> `tup = tup + (4,)` does not modify the tuple. It builds a new one and points the name at it. `id(tup)` before and after shows a **different** memory address.
 
 > [!note]
-> `max` / `min` on characters compare **ASCII values**, and capitals come before lowercase — `max("aZ")` is `'a'` (97), not `'Z'` (90). See [[C2 Data representation]].
+> `max` / `min` on characters compare **ASCII values**, and capitals come before lowercase; `max("aZ")` is `'a'` (97), not `'Z'` (90). See [[C2 Data representation]].
 
 ## Iteration
 
@@ -72,7 +72,7 @@ for i in range(len(tup)):
 
 ## Returning Several Values
 
-A function returns one value — make that value a tuple to hand back several.
+A function returns one value. Make that value a tuple to hand back several.
 
 ```python
 def score(tup):
@@ -92,22 +92,25 @@ z = (x, y)
 ```
 
 ```mermaid
-flowchart TD
-  z(("z")) --> x(("x"))
-  z --> y(("y"))
-  x --> n1["1"]
-  x --> n2["2"]
-  y --> n3["3"]
-  y --> n4["4"]
+flowchart LR
+  x(["x"]) --> t1
+  y(["y"]) --> t2
+  z(["z"]) --> t3["outer tuple"]
+  t3 --> t1["tuple (1, 2)"]
+  t3 --> t2["tuple (3, 4)"]
+  t1 --> a["1"]
+  t1 --> b["2"]
+  t2 --> c["3"]
+  t2 --> d["4"]
 ```
+
+Rounded boxes are **names**, rectangles are **objects**. The outer tuple's two slots hold the very same tuples that `x` and `y` name.
 
 | Expression | Result |
 | ---------- | ------ |
 | `z` | `((1, 2), (3, 4))` |
 | `z[0]` | `(1, 2)` |
 | `z[1][1]` | `4` |
-
-`z` holds references to the two tuple objects — not to the *names* `x` and `y`.
 
 ## Identity vs Equality
 

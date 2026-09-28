@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> Read/write text and CSV files using `open()` … `close()` or `with open(...)`; follow the question's required form.
+> Read/write text and CSV files using `open()` … `close()` or `with open(...)`. Follow the question's required form.
 
 ## Opening
 
@@ -19,13 +19,13 @@ f.close()
 > | Cambridge 9618/42 Nov 2023 | *"Opening text file to read and closing the file in an appropriate place"* |
 > | Cambridge 9618/43 Jun 2023 | *"Opening StackData.txt to read and closing file"* |
 >
-> Those were Cambridge **9618** papers — a different syllabus. The y27 Reference Guide prints **both** styles, so either is fine. `with` closes the file for you, even if something goes wrong inside.
+> Those were Cambridge **9618** papers (a different syllabus). The y27 Reference Guide prints **both** styles, so either is fine. `with` closes the file for you, even if something goes wrong inside.
 
 | Mode | Does |
 | ---- | ---- |
-| `"r"` | read — the default; errors if the file is missing |
-| `"w"` | write — creates the file, **overwrites** if it exists |
-| `"a"` | append — creates the file if needed, otherwise adds to its end |
+| `"r"` | read (the default), errors if the file is missing |
+| `"w"` | write: creates the file, **overwrites** if it exists |
+| `"a"` | append: creates the file if needed, otherwise adds to its end |
 
 With `with`, do not call `close()` yourself:
 
@@ -74,13 +74,13 @@ for i in range(10):
 f.close()
 ```
 
-`write()` takes a **string** — convert numbers with `str()`, and add `\n` yourself.
+`write()` takes a **string**. Convert numbers with `str()`, and add `\n` yourself.
 
 Change `"w"` to `"a"` to append instead of overwrite.
 
 ## CSV Files
 
-Comma-separated values — plain text, one row per line, fields separated by commas. Used by spreadsheets and databases. A `.txt` file may use another separator, such as a tab.
+Comma-separated values: plain text, one row per line, fields separated by commas. Used by spreadsheets and databases. A `.txt` file may use another separator, such as a tab.
 
 ### With the `csv` Module
 
@@ -131,8 +131,26 @@ def read_csv(filename):
 ```
 
 - `.strip()` removes the newline
-- `.split(",")` breaks the line into fields — use `.split("\t")` for tab-separated files
+- `.split(",")` breaks the line into fields. Use `.split("\t")` for tab-separated files
 - convert numbers as you go: `float(row[2])`
+
+```text
+one line, step by step
+
+  "Ali,M,1.72,60\n"
+        |  .strip()          drop the newline
+        v
+  "Ali,M,1.72,60"
+        |  .split(",")       cut on the commas
+        v
+  ['Ali', 'M', '1.72', '60']        every field is still a string
+        |  tuple()
+        v
+  ('Ali', 'M', '1.72', '60')
+        |  records.append(...)
+        v
+  records = [('Ali', 'M', '1.72', '60'), ('Bea', 'F', '1.60', '52'), ...]
+```
 
 ### Writing Manually
 
@@ -145,7 +163,7 @@ def export(records, filename):
     f.close()
 ```
 
-> [!important] Promo P2 — read a file into a list of tuples, every year `[5–8]`
+> [!important] Promo P2: read a file into a list of tuples, every year `[5–8]`
 > 2023 Task 3.1, 2024 Task 2.1 and 2025 Task 2.1 all mark the same steps, 1m each:
 >
 > | Step | Code |
@@ -157,14 +175,14 @@ def export(records, filename):
 > | make a tuple | `tuple(line)` or `(line[0], line[1], line[3])` |
 > | start a list and append | `result = []` … `result.append(tup)` |
 >
-> Values come back as **strings** — later tasks give a mark for `int()` or `float()`.
+> Values come back as **strings**. Later tasks give a mark for `int()` or `float()`.
 
 ## Common Mistakes
 
-- Opening with `"w"` when you meant `"a"` — it wipes the file.
+- Opening with `"w"` when you meant `"a"`: it wipes the file.
 - Forgetting `\n`, so everything lands on one line.
 - Writing a number without `str()`.
-- Forgetting the values read from a file are **strings** — convert before doing arithmetic.
+- Forgetting the values read from a file are **strings**. Convert before doing arithmetic.
 - Forgetting to skip the header row.
 
 ## Related

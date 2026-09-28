@@ -23,7 +23,7 @@ dict()                                # empty
 dict([('boys', 11), ('girls', 13)])   # from key-value pairs
 ```
 
-`dict()` accepts any sequence of key-value pairs — list of tuples, tuple of tuples, list of lists.
+`dict()` accepts any sequence of key-value pairs: list of tuples, tuple of tuples, list of lists.
 
 ## Access, Check, Update
 
@@ -66,7 +66,7 @@ for key, value in d.items():   # both at once
 
 | Loop | Each item is |
 | ---- | ------------ |
-| `for k in d:` | a **key** — use `d[k]` for the value |
+| `for k in d:` | a **key** (use `d[k]` for the value) |
 | `for v in d.values():` | a value |
 | `for pair in d.items():` | a **tuple** `('apple', 4)` |
 | `for k, v in d.items():` | the tuple, unpacked |
@@ -86,7 +86,7 @@ def increase(d):
     return d
 ```
 
-**Counting** — the most examined use. The first sighting creates the key; later ones add to it.
+**Counting**: the most examined use. The first sighting creates the key. Later ones add to it.
 
 ```python
 def count(seq):
@@ -104,7 +104,25 @@ count([1,2,3,1,1,2,3,1,1,3,2])  ->  {1: 5, 2: 3, 3: 3}
 count('mississippi')            ->  {'m': 1, 'i': 4, 's': 4, 'p': 2}
 ```
 
-`result[item] += 1` alone raises `KeyError` for a new key. Count words after `paragraph.split()`; count vowels by wrapping the body in `if ch in 'aeiou':`.
+```text
+count('mississippi'), one character at a time
+
+ char   branch taken        result
+ -----  ------------------  ----------------------------------
+  m     new key             {'m': 1}
+  i     new key             {'m': 1, 'i': 1}
+  s     new key             {'m': 1, 'i': 1, 's': 1}
+  s     seen before, += 1   {'m': 1, 'i': 1, 's': 2}
+  i     seen before, += 1   {'m': 1, 'i': 2, 's': 2}
+  s     seen before, += 1   {'m': 1, 'i': 2, 's': 3}
+  s     seen before, += 1   {'m': 1, 'i': 2, 's': 4}
+  i     seen before, += 1   {'m': 1, 'i': 3, 's': 4}
+  p     new key             {'m': 1, 'i': 3, 's': 4, 'p': 1}
+  p     seen before, += 1   {'m': 1, 'i': 3, 's': 4, 'p': 2}
+  i     seen before, += 1   {'m': 1, 'i': 4, 's': 4, 'p': 2}
+```
+
+`result[item] += 1` alone raises `KeyError` for a new key. Count words after `paragraph.split()`. Count vowels by wrapping the body in `if ch in 'aeiou':`.
 
 Combining two dictionaries with the same keys:
 
@@ -117,19 +135,19 @@ def average(result1, result2):
 ```
 
 > [!important] Promo P2 dictionaries
-> **2023 Task 4** — `bag = {'diamond': 0, …}`. Update for one gem: `bag['diamond'] += 1` (1m each). Loop a list of gems: 1m iterate, 1m `bag[gem]`, 1m `+= 1`. Exchange for coins `[5]`: 1m `bag['coin'] = 0` · 1m loop over `bag` · 1m `bag[key] * rate[key]` · 1m add to `'coin'` · 1m set the gem back to `0`.
+> **2023 Task 4**, starting from `bag = {'diamond': 0, …}`. Update for one gem: `bag['diamond'] += 1` (1m each). Loop a list of gems: 1m iterate, 1m `bag[gem]`, 1m `+= 1`. Exchange for coins `[5]`: 1m `bag['coin'] = 0` · 1m loop over `bag` · 1m `bag[key] * rate[key]` · 1m add to `'coin'` · 1m set the gem back to `0`.
 >
-> **2024 Task 7** — count `'gold'`, `'silver'`, `'diamonds'` in a passage `[4]`: 1m a built-in such as `.count()` · 1m start from `{'gold': 0, 'silver': 0, 'diamonds': 0}` · 1m `d[key] +=` · 1m output `{'gold': 3, 'silver': 2, 'diamonds': 2}` — `"golden"` counts as gold. Then `para.replace(word, 'wood')` for each word `[3]`.
+> **2024 Task 7**: count `'gold'`, `'silver'`, `'diamonds'` in a passage `[4]`: 1m a built-in such as `.count()` · 1m start from `{'gold': 0, 'silver': 0, 'diamonds': 0}` · 1m `d[key] +=` · 1m output `{'gold': 3, 'silver': 2, 'diamonds': 2}`. `"golden"` counts as gold. Then `para.replace(word, 'wood')` for each word `[3]`.
 >
-> **2025 Task 8** — count letters `a`–`z` `[3]`: 1m loop over the passage · 1m check `a`–`z` · 1m create or add to the key. Then print letter, count and percentage to 2 d.p. in columns `[5]`.
+> **2025 Task 8**: count letters `a`–`z` `[3]`: 1m loop over the passage · 1m check `a`–`z` · 1m create or add to the key. Then print letter, count and percentage to 2 d.p. in columns `[5]`.
 
 ## Common Mistakes
 
 - Using an index: `d[0]` looks for the *key* `0`, not the first entry.
 - Expecting `in` to find a value.
-- Using a list as a key — it's mutable, so it isn't allowed.
+- Using a list as a key: it's mutable, so it isn't allowed.
 - Accessing a missing key directly instead of checking with `in` first.
-- `d[item] += 1` without creating the key first — `KeyError` on the first occurrence.
+- `d[item] += 1` without creating the key first: `KeyError` on the first occurrence.
 - Mutating when the question wants a new dictionary, or the reverse.
 
 ## Related

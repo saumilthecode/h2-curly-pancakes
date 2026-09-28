@@ -28,9 +28,9 @@ f.close()
 
 ```text
 "{0:<8}".format(value)
-   | |+- width 8
-   | +-- align left
-   +---- which value (index 0)
+  | |+- width 8
+  | +-- align left
+  +---- which value (index 0)
 ```
 
 | Format | Meaning |
@@ -45,9 +45,9 @@ By default strings align left and numbers align right.
 
 ```text
 {0:6.2f}
- |  | |+- f = float
- |  | +-- 2 decimal places
- |  +---- total width 6
+ | | |+- f = float
+ | | +-- 2 decimal places
+ | +---- total width 6
  +------- value index 0
 ```
 
@@ -98,8 +98,8 @@ print("{0:<8}{1:<12}{2:>10.2f}".format(i, name, bmi))
 ## Common Mistakes
 
 - `{0:6.2f}` means width `6`, **not** 6 decimal places.
-- Using `.2f` on a string read from a file or `input()` — convert with `float()` first.
-- Expecting `sep` to work inside a single string; it only goes between separate arguments.
+- Using `.2f` on a string read from a file or `input()`. Convert with `float()` first.
+- Expecting `sep` to work inside a single string. It only goes between separate arguments.
 - Forgetting `end` **replaces** the newline, so the next print continues on the same line.
 
 ## Related

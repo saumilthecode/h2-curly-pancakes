@@ -1,8 +1,8 @@
 > [!summary] Quick View
-> A network connects devices so data can move between them. IP gets data to the right **network**; MAC gets it to the right **device**.
+> A network connects devices so data can move between them. IP gets data to the right **network**. MAC gets it to the right **device**.
 
 > [!important] What 4.1 examines
-> Five outcomes. (4.2 Web Applications is the other half of Module 4 — taught later.)
+> Five outcomes. (4.2 Web Applications is the other half of Module 4, taught later.)
 >
 > | Outcome | Where |
 > | ------- | ----- |
@@ -12,32 +12,33 @@
 > | 4.1.4 how data is transmitted in a packet-switching network | Packet Switching |
 > | 4.1.5 client–server architecture | Client–Server vs Peer-to-Peer |
 >
-> Everything else here — topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID — came from the C3a lecture and videos. **Not named** in y27. Read it, don't drill it. The 2020–2024 papers are the old syllabus, so use them for the concepts, not to guess what's coming.
+> Everything else here (topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID) came from the C3a lecture and videos. **Not named** in y27. Read it, don't drill it. The 2020–2024 papers are the old syllabus, so use them for the concepts, not to guess what's coming.
 
 ## Network Types
 
 | Type | Scale |
 | ---- | ----- |
-| PAN | personal, a few metres |
+| PAN | personal, a few metres (Bluetooth, NFC, USB) |
 | LAN | one room or building |
 | WLAN | wireless LAN |
-| CAN | campus — several nearby LANs |
+| CAN | campus (several nearby LANs) |
 | MAN | city scale |
-| WAN | country or global; the internet is a WAN |
+| WAN | country or global (the internet is a WAN) |
 | SAN | storage area network |
 
 > [!important] Internet ≠ Web
 > | | Is |
 > | --- | -- |
-> | Internet | the infrastructure — cables, routers, connected machines |
-> | Web | one service on it — pages and links, over HTTP |
+> | Internet | the infrastructure: cables, routers, connected machines |
+> | Web | one service on it: pages and links, over HTTP |
 >
 > Email, DNS and file transfer also run on the internet but are not the web.
 
-- Backbone: **fibre optic cable**, much of it undersea.
+- Backbone: **fibre optic cable**, much of it undersea. Light pulses cross the oceans, then get converted to electrical signals for local ISPs.
+- **ICANN** manages the global IP addressing and domain name system.
 - Satellite reaches where cables can't, but the round trip adds **latency**.
 
-**Intranet** — an organisation's private network using internet technologies (web pages, email), with controlled external access.
+**Intranet**: an organisation's private network using internet technologies (web pages, email), with controlled external access.
 
 ## Client–Server vs Peer-to-Peer
 
@@ -63,7 +64,7 @@ A protocol is an agreed set of rules for communication. Without one:
 | Term | Meaning |
 | ---- | ------- |
 | Host | a client or server on the network |
-| Node | anything on the network — host, switch or router |
+| Node | anything on the network: host, switch or router |
 | Medium | the physical or wireless path the signal travels |
 
 Media: copper cable carries electrical signals, fibre optic carries light pulses, wireless carries electromagnetic waves.
@@ -75,21 +76,22 @@ Media: copper cable carries electrical signals, fibre optic carries light pulses
 | MAC | the physical device | delivery **within** a LAN |
 | IP | the device's network location | routing **between** networks |
 
-- **MAC** — 48-bit, hexadecimal, e.g. `00-16-EA-06-6C-3E`, built into the NIC
-- **IPv4** — 32-bit, four decimal numbers `0`–`255` separated by dots, e.g. `192.168.0.1`
+- **MAC**: 48-bit, hexadecimal, e.g. `00-16-EA-06-6C-3E`, built into the NIC
+- **IPv4**: 32-bit, four decimal numbers `0`–`255` separated by dots, e.g. `192.168.0.1`
+- **IPv6**: 128-bit
 
 **Two ways to identify a device on a LAN:** its MAC address and its IP address.
 
 Two ways to allocate an IP address:
 
-- **Statically** — set by hand, and it stays put
-- **Dynamically** — assigned automatically from a pool by a **DHCP** server, on a lease
+- **Statically**: set by hand, and it stays put
+- **Dynamically**: assigned automatically from a pool by a **DHCP** server, on a lease
 
 > [!important]
 > ARP finds a device's MAC address from its IP address within a LAN.
 
 > [!important] Along the route
-> Destination **IP stays the same** end-to-end; **MAC changes at every hop** to identify the next device on the link.
+> Destination **IP stays the same** end-to-end. **MAC changes at every hop** to identify the next device on the link.
 >
 >
 > ```mermaid
@@ -100,7 +102,7 @@ Two ways to allocate an IP address:
 > ```
 >
 
-MAC is fixed in the NIC; IP changes when moving networks.
+MAC is fixed in the NIC. IP changes when moving networks.
 
 ### Private vs Public IP
 
@@ -111,7 +113,13 @@ MAC is fixed in the NIC; IP changes when moving networks.
 | Assigned by | the local router / DHCP | the ISP |
 | Example | `192.168.0.3` | `192.166.122.7` |
 
-Going out, the router swaps the private source IP for its public one; coming back, it swaps it back.
+### NAT (Network Address Translation)
+
+The router swaps each device's private source IP for its one public IP on the way out. It keeps track of which device sent each request, so on the way back it swaps in the right private IP.
+
+- one public IP serves every device on the home network
+- private IPs can repeat across different networks. Only public IPs must be unique
+- ISPs do the same on a big scale with **carrier-grade NAT (CGNAT)**: thousands of users share one public IP, which also makes it hard for outsiders to pinpoint where a user is
 
 ### Subnet Mask and Gateway
 
@@ -136,22 +144,52 @@ The internet uses packet switching.
 | Packet part | Contains |
 | ----------- | -------- |
 | Header | source IP, destination IP, protocol, sequence number |
-| Payload | the data |
-| Trailer | error check, e.g. CRC |
+| Payload | the data, typically 1,000 to 1,500 bytes; padded if the packet is fixed-length and the data is short |
+| Trailer | end-of-packet marker and error check (CRC) |
 
-Circuit switching reserves a fixed path throughout communication. Packet switching is more resilient: packets can reroute around failures.
+```text
+one packet
 
-**Why data is divided into packets** — small packets share the links fairly rather than one large transfer blocking them, and a corrupted packet only needs that packet resent, not the whole file.
++-------------------------------+------------------+---------------------+
+| Header                        | Payload          | Trailer             |
+| source IP, destination IP,    | 1,000 to 1,500   | end marker + CRC    |
+| protocol, sequence number     | bytes of data    |                     |
++-------------------------------+------------------+---------------------+
+```
 
-**Why packets are sequentially numbered** — they arrive out of order after taking different routes, so the numbers let the destination **reassemble them correctly** and spot any that are missing.
+```text
+independent routes
 
-**Disadvantage, and how it is handled** — packets may arrive out of order, be delayed, or be lost. Sequence numbers reorder them; anything that fails its error check or never arrives is **requested again and retransmitted**.
+                      router B
+                    /          \
+ sender -- router A              router D -- receiver
+                    \          /
+                      router C
 
-**Role of a router** — it inspects each packet's destination **IP address** and forwards it along the best available route towards that network, hop by hop.
+ packets 1 and 3 take B, packet 2 takes C, and they can arrive 1, 3, 2.
+ The sequence numbers put them back in order.
+```
+
+**CRC:** the sender works out a check value from the payload and stores it in the trailer. The receiver does the same calculation. If they don't match, the packet is rejected and a resend is requested.
+
+| | Circuit switching | Packet switching |
+| --- | --- | --- |
+| Path | one dedicated path, held for the whole communication | each packet finds its own fastest route |
+| Used for | traditional phone calls (PSTN) | the internet (TCP/IP) |
+| Good | guaranteed bandwidth | efficient; reroutes around broken equipment |
+| Bad | wasteful when data isn't flowing all the time | packets arrive out of order and must be reassembled |
+
+**Why data is divided into packets**: small packets share the links fairly rather than one large transfer blocking them, and a corrupted packet only needs that packet resent, not the whole file.
+
+**Why packets are sequentially numbered**: they arrive out of order after taking different routes, so the numbers let the destination **reassemble them correctly** and spot any that are missing.
+
+**Disadvantage, and how it is handled**: packets may arrive out of order, be delayed, or be lost. Sequence numbers reorder them. Anything that fails its error check or never arrives is **requested again and retransmitted**.
+
+**Role of a router**: it inspects each packet's destination **IP address** and forwards it along the best available route towards that network, hop by hop.
 
 ## TCP
 
-Transmission Control Protocol — **connection-oriented** and **reliable**. A session has three stages: set up, transfer, close.
+Transmission Control Protocol: **connection-oriented** and **reliable**. A session has three stages: set up, transfer, close.
 
 ### Three-Way Handshake
 
@@ -168,10 +206,10 @@ sequenceDiagram
 | Step | Meaning |
 | ---- | ------- |
 | `SYN` | "can we talk?" |
-| `SYN + ACK` | "yes — and can we talk?" |
+| `SYN + ACK` | "yes, and can we talk?" |
 | `ACK` | "yes" |
 
-Closing takes **four** steps: `FIN`, `ACK`, `FIN`, `ACK` — each side must close its own direction.
+Closing takes **four** steps: `FIN`, `ACK`, `FIN`, `ACK`. Each side must close its own direction.
 
 During transfer TCP guarantees packets are **delivered** and **reassembled in order**, requesting retransmission of anything missing.
 
@@ -200,7 +238,7 @@ A switch builds a **Source Address Table (SAT)**:
 
 | Topology | Idea | Risk |
 | -------- | ---- | ---- |
-| Bus | all devices share one cable | a cable break collapses the network |
+| Bus | all devices share one cable, with a terminator at each end | a cable break collapses the network |
 | Ring | devices form a closed loop | one failure can disrupt traffic |
 | Star | all devices connect to a central switch | the switch is a single point of failure |
 | Mesh | devices connect to many or all others | high cost and complexity |
@@ -215,7 +253,7 @@ connections = n * (n - 1) / 2
 
 A server provides services to clients: web, DNS, DHCP, mail, file.
 
-Enterprise servers are built for reliability — run 24/7, handle many concurrent connections, and may use ECC RAM, RAID storage, redundant power supplies and hot-swappable drives.
+Enterprise servers are built for reliability: run 24/7, handle many concurrent connections, and may use ECC RAM, RAID storage, redundant power supplies and hot-swappable drives.
 
 ## DNS
 
@@ -225,17 +263,42 @@ Translates domain names into IP addresses, so nobody has to memorise numbers.
 www.yijc.edu.sg  ->  192.168.0.12
 ```
 
-1. browser asks the resolver
-2. resolver asks a root server
+```mermaid
+sequenceDiagram
+    participant B as Browser
+    participant R as ISP resolver
+    participant Ro as Root server
+    participant T as TLD server for .sg
+    participant A as Authoritative server
+    B->>R: www.yijc.edu.sg?
+    R->>Ro: who handles .sg?
+    Ro-->>R: ask the .sg TLD server
+    R->>T: who handles yijc.edu.sg?
+    T-->>R: ask its authoritative server
+    R->>A: www.yijc.edu.sg?
+    A-->>R: 192.168.0.12
+    R-->>B: 192.168.0.12
+    Note over R: cached, so the next lookup stops here
+```
+
+1. browser asks the ISP's resolver, unless the address is already cached
+2. resolver asks a root server (13 sets worldwide)
 3. root points to the TLD server (`.com`, `.sg`)
 4. TLD points to the authoritative name server
-5. authoritative server returns the IP address
+5. authoritative server returns the IP address, and the resolver caches it for next time
 
 ## DHCP
 
-Dynamic Host Configuration Protocol — automatically gives a device its IP address, subnet mask, default gateway and DNS server.
+Dynamic Host Configuration Protocol: automatically gives a device its IP address, subnet mask, default gateway and DNS server.
 
-Addresses are handed out on a **lease**. When the lease expires the address returns to the pool for reuse.
+Addresses are **leased**, not owned:
+
+1. **Request**: the device joins and broadcasts a request.
+2. **Lease**: the server assigns an address from its pool.
+3. **Renew**: halfway through the lease, the device asks to renew.
+4. **Expire**: a disconnected device stops renewing, and the address goes back to the pool.
+
+Servers and printers can get a **reservation**, a fixed IP tied to their MAC address.
 
 ## Email Protocols
 
@@ -263,7 +326,7 @@ SMTP runs over TCP to help ensure delivery.
 > LAN2 network: 192.168.1      Router NIC2: 192.168.1.1
 > ```
 >
-> Devices in LAN1 use gateway `192.168.0.1`; devices in LAN2 use `192.168.1.1`.
+> Devices in LAN1 use gateway `192.168.0.1`. Devices in LAN2 use `192.168.1.1`.
 >
 > DNS server:
 >
@@ -283,7 +346,7 @@ SMTP runs over TCP to help ensure delivery.
 
 ## Exam
 
-> [!important] 2025 Promo P1 Q6 — from USB drives to a LAN to the cloud `[8]`
+> [!important] 2025 Promo P1 Q6: from USB drives to a LAN to the cloud `[8]`
 > **(a)** Two disadvantages of sharing files on removable drives `[2]`, any two:
 > - data lost if the drive is misplaced, stolen or damaged
 > - malware spreads between machines
@@ -305,11 +368,11 @@ SMTP runs over TCP to help ensure delivery.
 > - high availability through redundancy
 > - accessible from anywhere with an internet connection
 >
-> **(d)** One more cloud service and its benefit `[1+1]` — IaaS (virtual networks, firewalls), PaaS (databases, web hosting) or SaaS (Microsoft 365, Google Workspace).
+> **(d)** One more cloud service and its benefit `[1+1]`: IaaS (virtual networks, firewalls), PaaS (databases, web hosting) or SaaS (Microsoft 365, Google Workspace).
 >
-> Cloud computing is outside y27; the 2025 promo asked it anyway.
+> Cloud computing is outside y27. The 2025 promo asked it anyway.
 
-> [!important] 2024 Promo P1 Q5 — joining two companies' LANs `[2+2+2+2+1]`
+> [!important] 2024 Promo P1 Q5: joining two companies' LANs `[2+2+2+2+1]`
 > **(a)** A = **switch** (inside a LAN), B = **router** (between LANs).
 >
 > **(b)** Two differences, any two:
@@ -324,23 +387,23 @@ SMTP runs over TCP to help ensure delivery.
 > - **Advantage:** more reliable (less interference), faster with lower latency, more secure (needs physical access), consistent through walls
 > - **Disadvantage:** costly to install, inflexible when moving or adding devices, needs maintenance, hard to scale
 >
-> **(d)** Connecting via the internet instead: **security risk** — hacking, data breaches, cyberattacks `[2]`.
+> **(d)** Connecting via the internet instead: **security risk**: hacking, data breaches, cyberattacks `[2]`.
 > **(e)** Fix: a **VPN**, **firewall** or passwords, or **encrypt** the data, e.g. over HTTPS `[1]`.
 >
 > 2026 Mastery P1 Q5 repeats (a) and (b).
 
-> [!important] 2023 Promo P1 Q3 — file server, remote access, router and modem `[2+2+2+2]`
+> [!important] 2023 Promo P1 Q3: file server, remote access, router and modem `[2+2+2+2]`
 > **(a)** Two benefits of keeping files on a **file server**:
 > - one up-to-date copy that every workstation can open, instead of versions scattered across USB drives
 > - backed up centrally, with access controlled by user permissions
 >
-> **(b)** Two other LAN functions — same list as 2025 Q6(b): shared printers, one internet connection, applications on a server, internal email, central backup and security.
+> **(b)** Two other LAN functions (same list as 2025 Q6(b)): shared printers, one internet connection, applications on a server, internal email, central backup and security.
 >
-> **(c)** Remote access. **Advantage:** staff reach their files from home or on the move. **Disadvantage:** the LAN is exposed to the internet — unauthorised access and intercepted data. A VPN reduces this.
+> **(c)** Remote access. **Advantage:** staff reach their files from home or on the move. **Disadvantage:** the LAN is open to the internet, so unauthorised access and intercepted data become possible. A VPN reduces this.
 >
 > **(d)**
-> - **Router** — forwards packets between the LAN and the ISP's network, using IP addresses to pick the route.
-> - **Modem** — **mo**dulates the LAN's digital signal into a signal the ISP's line can carry, and **dem**odulates incoming signals back to digital.
+> - **Router**: forwards packets between the LAN and the ISP's network, using IP addresses to pick the route.
+> - **Modem**: **mo**dulates the LAN's digital signal into a signal the ISP's line can carry, and **dem**odulates incoming signals back to digital.
 
 ## Related
 

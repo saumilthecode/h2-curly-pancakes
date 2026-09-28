@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> Keep a sorted run at the front; take the next element and swap it leftwards into place. `O(n²)`, `O(n)` on nearly sorted data.
+> Keep a sorted run at the front. Take the next element and swap it leftwards into place. `O(n²)`, `O(n)` on nearly sorted data.
 > Syllabus 2.2.1. Scope, Big-O and the cross-sort comparison are in [[LT12 Sorting Algorithms]].
 
 ```text
@@ -32,7 +32,7 @@ def insertion_sort(seq):
 
 ## Pseudocode
 
-Exam pseudocode **shifts** elements right; the Python above swaps them. Indexing starts at **1**.
+Exam pseudocode **shifts** elements right. The Python above swaps them. Indexing starts at **1**.
 
 ```text
 FOR Pointer <- 2 TO NumberOfItems
@@ -55,7 +55,20 @@ ENDFOR
 > | 5 | 42 | `18 21 42 53 60 19` |
 > | 6 | 19 | `18 19 21 42 53 60` |
 >
-> `Pointer` 3 changes nothing — `60` is already past everything.
+> `Pointer` 3 changes nothing; `60` is already past everything.
+>
+> Shifting puts `32` into a sorted run without losing it:
+>
+> ```text
+> hold 32, then copy each bigger value one slot right
+>
+> [ 8  23  45  78 | 32  56 ]    hold = 32
+> [ 8  23  45  78  78  56 ]     78 copied right
+> [ 8  23  45  45  78  56 ]     45 copied right
+> [ 8  23  32  45  78 | 56 ]    23 <= 32, so drop 32 in
+> ```
+>
+> The duplicate is normal. That slot is overwritten when `hold` goes back in.
 
 ## Comparisons Counted
 
@@ -67,9 +80,9 @@ ENDFOR
 | `[7,1,3,5,8,4]` | 10 |
 | `[1,3,5,4,8,7]` nearly sorted | 7 |
 
-Reversed is the worst case, `n(n-1)/2 = 15` for `n = 6`. Sorted is `n - 1 = 5` — one failed test per element, which is the `O(n)` best case.
+Reversed is the worst case, `n(n-1)/2 = 15` for `n = 6`. Sorted is `n - 1 = 5`: one failed test per element, which is the `O(n)` best case.
 
-| Best | `O(n)` — sorted already, no swaps |
+| Best | `O(n)` (sorted already, no swaps) |
 | --- | --- |
 | Average / worst | `O(n²)` |
 | In-place | yes |
@@ -77,7 +90,7 @@ Reversed is the worst case, `n(n-1)/2 = 15` for `n = 6`. Sorted is `n - 1 = 5` �
 
 ## Exam
 
-> [!important] Specimen 2027 P1 Q5(c) — complete the pass table `[4]`
+> [!important] Specimen 2027 P1 Q5(c): complete the pass table `[4]`
 > `swift kite plover avocet swallow` ascending.
 >
 > | Pass | List |
@@ -90,21 +103,21 @@ Reversed is the worst case, `n(n-1)/2 = 15` for `n = 6`. Sorted is `n - 1 = 5` �
 >
 > One row per element absorbed. `swallow` < `swift` on the third letter.
 
-> [!important] Specimen 2027 P1 Q5(d) — two factors affecting performance `[2]`
+> [!important] Specimen 2027 P1 Q5(d): two factors affecting performance `[2]`
 > The size of the data set, and how nearly sorted it already is.
 
-> [!important] 2025 Promo P1 Q1(a) — describe insertion sort on `[25, 54, 33, 65, 73, 87, 80, 82]` `[4]`
+> [!important] 2025 Promo P1 Q1(a): describe insertion sort on `[25, 54, 33, 65, 73, 87, 80, 82]` `[4]`
 > | Step | Sorted part | Mark |
 > | ---- | ----------- | ---- |
-> | start | `25` — one element is already sorted | 1m |
-> | insert `54` | `25 54` — bigger than `25`, **no shift** | 1m |
-> | insert `33` | `25 33 54` — `54` **shifts right**, `33` stops after `25` | 1m |
+> | start | `25`: one element is already sorted | 1m |
+> | insert `54` | `25 54`: bigger than `25`, **no shift** | 1m |
+> | insert `33` | `25 33 54`: `54` **shifts right**, `33` stops after `25` | 1m |
 > | `65`, `73`, `87` | each the largest so far, no shift | |
 > | insert `80`, `82` | `25 33 54 65 73 80 82 87` | 1m |
 >
 > Marks go to the initial sorted array, one insertion with no shift, one with a shift, and the correct states through to the end.
 
-> [!example]- 2024 Promo P2 Task 3.2 — insertion sort on `(date, time, temp)` tuples `[5]`
+> [!example]- 2024 Promo P2 Task 3.2: insertion sort on `(date, time, temp)` tuples `[5]`
 > 1m `for` loop from index 1 · 1m `i > 0` · 1m compare the **temperatures** as `int` · 1m swap · 1m `while` loop with `i -= 1`.
 >
 > ```python
