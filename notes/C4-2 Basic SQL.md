@@ -145,8 +145,8 @@ ORDER BY COUNT(Id) DESC;
 | `COUNT(Id)` | `Country` |
 | ----------- | --------- |
 | 13 | USA |
-| 11 | France |
 | 11 | Germany |
+| 11 | France |
 | 9 | Brazil |
 | 7 | UK |
 
@@ -243,7 +243,7 @@ DROP TABLE Customers;                                  -- the table itself is go
 >         'Charles Petzold', 'Microsoft Press', 2000, 34.99, 2);   -- 8.5
 > ```
 >
-> Same marks as 2025, plus **8.3**: 1m `ORDER BY`, 1m `DISTINCT` (each publisher once). `DISTINCT` isn't in the Reference Guide.
+> Same marks as 2025, plus **8.3**: 1m `SELECT … FROM … ORDER BY …`, 1m `DISTINCT` **and** sorted by `Publisher`. `DISTINCT` isn't in the Reference Guide.
 
 > [!example]- 2024 A-Level P1 Q4(a)(iii): create the property table `[4]`
 > Each property has a reference code, address, price in dollars and number of bedrooms.

@@ -48,12 +48,12 @@ def front(q):
 ```
 
 > [!important] Guard both ends
-> `dequeue` must check **empty**, and on a fixed-size queue `enqueue` must check **full**. The y27 specimen Paper 2 writes both into the spec: `enqueue()` *"returns False if the queue is full"*, `dequeue()` *"returns -1 if the queue is empty"*, so each guard is carrying marks. See [The y27 Specimen Version](#the-y27-specimen-version).
+> `dequeue` must check **empty**, and on a fixed-size queue `enqueue` must check **full**. The y27 specimen Paper 2 writes both into the spec: `enqueue()` *"returns False if the queue is full"*, `dequeue()` *"returns -1 if the queue is empty"*, so each guard is carrying marks. See [[LT10c Queue#The y27 Specimen Version|The y27 Specimen Version]].
 
 > [!example]- Trace: enqueue and dequeue
 > | Step | Operation | Queue after | Returns |
 > | ---- | --------- | ----------- | ------- |
-> | 1 | `make_queue()` | `[]` | - |
+> | 1 | `make_queue([])` | `[]` | - |
 > | 2 | `dequeue(q)` | `[]` | `None` (nothing to dequeue) |
 > | 3 | `enqueue(q, 5)` | `[5]` | - |
 > | 4 | `enqueue(q, 3)` | `[5, 3]` | - |
@@ -76,7 +76,7 @@ q.size()                       # number of items
 q.display()                    # print the queue
 ```
 
-Same FIFO idea. Only the call style changes: `q.enqueue(x)` instead of `enqueue(q, x)`. Check emptiness with `q.size() != 0`, since there may be no `is_empty` method.
+Same FIFO idea. Only the call style changes: `q.enqueue(x)` instead of `enqueue(q, x)`. Test for an empty queue with `q.size() == 0`, since there may be no `is_empty` method.
 
 ## Linear vs Circular Queue
 
@@ -259,6 +259,31 @@ Pass-the-parcel pattern: rotate `n` times, then dequeue one player, and repeat u
 > `send(tup)`: 1m loop over the jobs · 1m `pqueue.append(job)` · 1m `return len(pqueue)`. A new empty queue or a hand counter scored 0.
 >
 > `pprint(n)`: 1m repeat `n` times · 1m **check empty before** dequeuing · 1m `pqueue.pop(0)` · 1m print *"The print queue is empty."* · 1m `return len(pqueue)`.
+
+> [!important] 2026 Mock Promo P2 Task 4: round-robin printing with a queue ADT `[5+3]`
+> `module.py` gives `make_empty_queue()`, `is_empty_queue(queue)`, `enqueue(queue, item)` and `dequeue(queue)` (returns `None` when empty). Use them, not list methods. Each job is `(job_code, pages_remaining)` and prints one page per turn.
+>
+> ```python
+> def process_turn(queue):
+>     if is_empty_queue(queue):                       # 1m
+>         return None
+>     job = dequeue(queue)                            # 1m
+>     pages_remaining = job[1] - 1                    # 1m
+>     if pages_remaining > 0:
+>         enqueue(queue, (job[0], pages_remaining))   # 1m a new tuple: tuples can't change
+>         return None
+>     return job[0]                                   # 1m finished
+>
+> def completion_order(queue):
+>     completed = []                                  # 1m
+>     while not is_empty_queue(queue):                # 1m
+>         job_code = process_turn(queue)
+>         if job_code is not None:
+>             completed.append(job_code)              # 1m
+>     return completed
+> ```
+>
+> Jobs `("P101", 2), ("P102", 1), ("P103", 3)` finish in the order `['P102', 'P101', 'P103']`.
 
 ## Common Mistakes
 

@@ -10,16 +10,17 @@ f.close()
 ```
 
 > [!important] Make sure the file is closed
-> If you use an explicit `open()`, include the matching `close()`. Closing has been a separately itemised mark point in school and legacy practical mark schemes:
+> If you use an explicit `open()`, include the matching `close()`. Your schemes give a mark for it:
 >
 > | Source | Wording |
 > | ------ | ------- |
-> | Your LS2 mark scheme | `1m: both open and close` |
-> | Cambridge 9618/42 Nov 2022 | *"closing the text file (in appropriate place)"* |
-> | Cambridge 9618/42 Nov 2023 | *"Opening text file to read and closing the file in an appropriate place"* |
-> | Cambridge 9618/43 Jun 2023 | *"Opening StackData.txt to read and closing file"* |
+> | LS2 | `1m: both open and close` |
+> | 2023 Promo P2 | `[1]open,read,close file` |
+> | 2024 Promo P2 | `1m open and close` |
+> | 2025 Promo P2 | `1m open and close` |
+> | 2026 Mastery P2 | `1m open and close` |
 >
-> Those were Cambridge **9618** papers (a different syllabus). The y27 Reference Guide prints **both** styles, so either is fine. `with` closes the file for you, even if something goes wrong inside.
+> The y27 Reference Guide prints **both** styles, so either is fine. `with` closes the file for you, even if something goes wrong inside. The Mock Promo's own answer uses `with`.
 
 | Mode | Does |
 | ---- | ---- |
@@ -113,7 +114,7 @@ f.close()
 ```
 
 > [!important]
-> Use `newline=""` when writing, or the file gets a blank line between every row.
+> Use `newline=""` when writing, or on Windows the file gets a blank line between every row.
 
 ### Reading Manually
 
@@ -133,6 +134,7 @@ def read_csv(filename):
 - `.strip()` removes the newline
 - `.split(",")` breaks the line into fields. Use `.split("\t")` for tab-separated files
 - convert numbers as you go: `float(row[2])`
+- this builds a **tuple** of tuples. For the exam's **list** of tuples, start with `data = []` and use `data.append(tuple(row))`
 
 ```text
 one line, step by step
@@ -147,7 +149,7 @@ one line, step by step
         |  tuple()
         v
   ('Ali', 'M', '1.72', '60')
-        |  records.append(...)
+        |  records.append(...)   the exam wants a list of tuples
         v
   records = [('Ali', 'M', '1.72', '60'), ('Bea', 'F', '1.60', '52'), ...]
 ```
@@ -163,19 +165,27 @@ def export(records, filename):
     f.close()
 ```
 
-> [!important] Promo P2: read a file into a list of tuples, every year `[5–8]`
-> 2023 Task 3.1, 2024 Task 2.1 and 2025 Task 2.1 all mark the same steps, 1m each:
+> [!important] Promo P2: read a file into a list, every year
+> | Paper | Task | Builds | Marks |
+> | ----- | ---- | ------ | ----- |
+> | 2023 | 3.1 | a list of **lists** (open and close were given) | `[5]` |
+> | 2024 | 2.1 | a list of tuples | `[6]` |
+> | 2025 | 2.1 | a list of tuples | `[6]` |
+> | 2026 Mock | 2.1 | a list of tuples, `Area` left out, readings as `float` | `[4]` |
+>
+> What the schemes tick:
 >
 > | Step | Code |
 > | ---- | ---- |
-> | open **and close** | `f = open(filename)` … `f.close()` |
+> | open **and close** (2024, 2025) | `f = open(filename)` … `f.close()` |
 > | skip the header | `next(f)` or `lines[1:]` |
-> | strip | `line.strip()` |
-> | split | `line.split(',')` |
-> | make a tuple | `tuple(line)` or `(line[0], line[1], line[3])` |
+> | strip and split (2m in 2024) | `line.strip().split(',')` |
+> | make a tuple | `tuple(line)` |
 > | start a list and append | `result = []` … `result.append(tup)` |
 >
-> Values come back as **strings**. Later tasks give a mark for `int()` or `float()`.
+> 2023 gave its mark for iterating instead of the tuple. The 2024 scheme's code builds `(line[0], line[1], line[3])`, which drops two scores the question asked for. Keep every field the question lists.
+>
+> Values come back as **strings**. The Mock gave 1m for converting the readings to numbers, and later tasks give a mark for `int()` or `float()`.
 
 ## Common Mistakes
 

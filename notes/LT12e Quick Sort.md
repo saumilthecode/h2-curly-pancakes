@@ -112,7 +112,7 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 | --- | --- |
 | **Worst** | `O(n²)` (every pivot is the largest or smallest) |
 | In-place | yes (two-pointer), no (`left`/`right`) |
-| Stable | **no** |
+| Stable | **no**, except the three-list version (`less`, `equal`, `greater`), which keeps equal items in order |
 
 > [!warning] The worst case is the sorted list
 > Last-element pivot on sorted data makes every partition maximally lopsided. 2.2.3 asks for **worst case**, so quicksort's answer is `O(n²)`.
@@ -159,11 +159,38 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 >
 > Scheme error: it labels `n log n` the *worst case*. Quicksort is `O(n log n)` **average**, `O(n²)` **worst**.
 
+> [!important] 2026 Mock Promo P2 Task 9: out-of-place quicksort on `(species, number_sighted)` `[3+5]`
+> ```python
+> def partition(records):
+>     pivot = records[0][1]                         # 1m first record's count
+>     less = []
+>     equal = []
+>     greater = []                                  # 1m three new lists
+>     for record in records:
+>         if record[1] < pivot:
+>             less.append(record)
+>         elif record[1] == pivot:
+>             equal.append(record)
+>         else:
+>             greater.append(record)                # 1m every record placed
+>     return less, equal, greater
+>
+> def quick_sort(records):
+>     if len(records) <= 1:
+>         return records.copy()                     # 1m a new list
+>     less, equal, greater = partition(records)     # 1m
+>     sorted_less = quick_sort(less)                # 1m
+>     sorted_greater = quick_sort(greater)          # 1m
+>     return sorted_less + equal + sorted_greater   # 1m
+> ```
+>
+> The pivot record lands in `equal`, so looping over every record is correct here. `records` itself never changes. The sightings sort to Pangolin 3, Otter 7, Monitor Lizard 7, Kingfisher 12, Civet 12, Wild Boar 15, Hornbill 18, Macaque 24.
+
 ## Common Mistakes
 
 - Giving the worst case as `O(n log n)`. It is `O(n²)`.
 - Calling the `left`/`right` version in-place.
-- Iterating the whole sequence in the non-in-place version: the pivot duplicates.
+- Iterating the whole sequence in the two-list (`left`/`right`) version: the pivot duplicates. The three-list version with `Middle` (2023 Promo, Mock Promo) loops over everything on purpose.
 
 ## Related
 

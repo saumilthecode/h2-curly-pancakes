@@ -4,7 +4,7 @@
 
 > [!warning] Not in outcome 2.2.1
 > 2.2.1 names only insertion, bubble, quicksort and merge. The assessment is marked *[OPTIONAL]*. Its own preamble warns it *"may be tested during the A Level exam if the pseudocode/algorithm is given in a question"*, so learn to read the pseudocode below.
-> Learn it for the contrast: the only `O(n²)` sort here that is **unstable**, and the only one with **no best case**.
+> Learn it for the contrast: the only `O(n²)` sort here that is **unstable**, and the only one whose **best case is still `O(n²)`**.
 
 ```text
 [ 1  2 | 6  4  7  3 ]      smallest of 6 4 7 3 is 3, swap with 6
@@ -64,7 +64,7 @@ ENDWHILE
 > | 4 | 42 | `18 19 21 42 53 60` |
 > | 5 | 53 | `18 19 21 42 53 60` |
 >
-> Pass 5 swaps an element with itself. The scan still ran. That is why there is no best case.
+> Pass 5 swaps an element with itself. The scan still ran. That is why even sorted input is `O(n²)`.
 
 | Best / average / worst | `O(n²)` (the scan always runs to the end) |
 | --- | --- |

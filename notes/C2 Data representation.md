@@ -327,6 +327,17 @@ Both rows below were 2021 Q6(c): `[1]` and `[2]`.
 > - 1m **aligns with binary**: 4 bits make 1 hex digit, so converting to binary is direct.
 > - 1m **easier to read**: `2E:8B:57` shows the three colours at a glance; `3 050 327` can't be split into them.
 
+> [!important] 2026 Mock Promo P1 Q2: equipment-status labels `[2+2+2+1+1]`
+> **(a)** `10101110`: split into nibbles `1010` `1110` (1m), giving **`AE`** (1m).
+>
+> **(b)** `3D` = `3 × 16 + 13` (1m) = **61** (1m).
+>
+> **(c)** Using the given codes (`F 01000110`, `R 01010010`): `01010010` is **R**, `01000110` is **F**, so the label is **RF** (1m each).
+>
+> **(d)** One byte per character: 18 characters need **18 bytes**.
+>
+> **(e)** The same bit pattern must stand for the same character on both computers. Otherwise the receiver reads the characters wrongly.
+
 ## Common Mistakes
 
 - Forgetting hex `A`–`F` are `10`–`15`.

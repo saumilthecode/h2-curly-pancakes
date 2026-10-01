@@ -87,6 +87,15 @@ An extra digit calculated from the others and appended to the number, so an erro
 >
 > **Specimen Q4(d)** three **different** checks, one each for name, gender, date of birth `[3]`: name **presence**, gender **lookup** (`M` or `F` only), date of birth **format**.
 
+> [!important] 2026 Mock Promo P1 Q1: a visitor-pass form `[3+2+2]`
+> `VisitorName` must not be empty, `PartySize` must be an integer, `PassCode` is `V` followed by exactly three digits.
+>
+> **(a)** `VisitorName`: **presence** check. `PartySize`: **type** check. `PassCode`: **format** check. 1m each.
+>
+> **(b)** `Nur, four, V318` fails the **type** check: `four` is not an integer. `Wei Ming, 4, 318V` fails the **format** check: it isn't `V` followed by three digits.
+>
+> **(c)** `Alicia Tan, 5, V381` is accepted though the real party size is 3. `5` is an integer, so it passes the rule (1m). Validation checks that data follows the rules. It does not check the value matches reality (1m).
+
 ## Related
 
 - [[LT4b Types of Errors and Test Cases]]

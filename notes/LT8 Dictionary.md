@@ -122,7 +122,7 @@ count('mississippi'), one character at a time
   i     seen before, += 1   {'m': 1, 'i': 4, 's': 4, 'p': 2}
 ```
 
-`result[item] += 1` alone raises `KeyError` for a new key. Count words after `paragraph.split()`. Count vowels by wrapping the body in `if ch in 'aeiou':`.
+`result[item] += 1` alone raises `KeyError` for a new key. Count words after `paragraph.split()`. Count vowels by wrapping the body in `if item in 'aeiou':`.
 
 Combining two dictionaries with the same keys:
 
@@ -139,7 +139,7 @@ def average(result1, result2):
 >
 > **2024 Task 7**: count `'gold'`, `'silver'`, `'diamonds'` in a passage `[4]`: 1m a built-in such as `.count()` · 1m start from `{'gold': 0, 'silver': 0, 'diamonds': 0}` · 1m `d[key] +=` · 1m output `{'gold': 3, 'silver': 2, 'diamonds': 2}`. `"golden"` counts as gold. Then `para.replace(word, 'wood')` for each word `[3]`.
 >
-> **2025 Task 8**: count letters `a`–`z` `[3]`: 1m loop over the passage · 1m check `a`–`z` · 1m create or add to the key. Then print letter, count and percentage to 2 d.p. in columns `[5]`.
+> **2025 Task 8.1**: count letters `a`–`z` `[3]`. The scheme ticks: loop over the passage · check `a`–`z` · check whether the letter is already a key · add to it or create it · count the total letters. Then print letter, count and percentage to 2 d.p. in columns `[5]`.
 
 ## Common Mistakes
 

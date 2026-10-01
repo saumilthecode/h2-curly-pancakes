@@ -274,7 +274,39 @@ def search_probe(table, item):
 >
 > **2025 Task 7** (**separate chaining**, `[6]`): 1m create and iterate · 1m compute the hash · 1m **empty** slot: store the string · 1m slot already a **list**: append · 1m slot holds **one string**: turn it into a list of both · 1m return and display.
 >
-> **2023 Task 6** (`query(num)`, `[5]`): 1m hash · 1m check the slot is empty · 1m check it holds **that** vehicle · 1m return its status · 1m *"Vehicle not found."* Then `ready(num)` `[2]`: update the status, print *"Data updated"*.
+> **2023 Task 6.3** (`query(num)`, `[4]` on the paper, though the scheme lists five points): 1m hash · 1m check the slot is empty · 1m check it holds **that** vehicle · 1m return its status · 1m *"Vehicle not found."* Then `ready(num)` `[2]`: update the status, print *"Data updated"*.
+
+> [!important] 2026 Mock Promo P2 Task 8: linear probing in steps of 2 `[2+4+2]`
+> 11 cells, unused ones hold `None`, and `hash_locker(code, size)` is given. On a collision, move on with `(index + 2) % 11`. Since 11 is odd, this visits every cell once: from 8 it goes `8, 10, 1, 3, 5, 7, 9, 0, 2, 4, 6`.
+>
+> ```python
+> def probe_sequence(initial_index, table_size):
+>     sequence = [initial_index]                               # 1m
+>     current = (initial_index + 2) % table_size
+>     while current != initial_index:                          # 1m add 2, wrap, stop before repeating
+>         sequence.append(current)
+>         current = (current + 2) % table_size
+>     return sequence
+>
+> def insert_parcel(table, record):
+>     initial_index = hash_locker(record[0], len(table))        # 1m
+>     for index in probe_sequence(initial_index, len(table)):   # 1m
+>         if table[index] is None:
+>             table[index] = record                             # 1m
+>             return True
+>     return False                                              # 1m table full
+>
+> def find_parcel(table, locker_code):
+>     initial_index = hash_locker(locker_code, len(table))
+>     for index in probe_sequence(initial_index, len(table)):   # 1m same path, valid stops
+>         if table[index] is None:
+>             return None
+>         if table[index][0] == locker_code:
+>             return table[index]                               # 1m
+>     return None
+> ```
+>
+> Create the table with `parcel_table = [None] * 11`.
 
 ## Common Mistakes
 

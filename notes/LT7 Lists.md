@@ -73,7 +73,7 @@ lst = [3, 1, 4, 7, 3]
 ### `append` vs `extend`
 
 ```python
-lst = [1, 2]
+lst = [1, 2]           # each line below starts again from [1, 2]
 lst.append("hi")       # [1, 2, 'hi']
 lst.extend("hi")       # [1, 2, 'h', 'i']
 lst.append([3, 4])     # [1, 2, [3, 4]]

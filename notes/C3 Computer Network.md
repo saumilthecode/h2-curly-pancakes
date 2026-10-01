@@ -12,7 +12,7 @@
 > | 4.1.4 how data is transmitted in a packet-switching network | Packet Switching |
 > | 4.1.5 client–server architecture | Client–Server vs Peer-to-Peer |
 >
-> Everything else here (topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID) came from the C3a lecture and videos. **Not named** in y27. Read it, don't drill it. The 2020–2024 papers are the old syllabus, so use them for the concepts, not to guess what's coming.
+> Everything else here (topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID) came from the C3a lecture and videos. **Not named** in y27, but the 2026 Mock Promo still asked how the switch and router register a new device (switch learns its MAC, router assigns its IP by DHCP). The 2020–2024 papers are the old syllabus, so use them for the concepts, not to guess what's coming.
 
 ## Network Types
 
@@ -222,7 +222,7 @@ During transfer TCP guarantees packets are **delivered** and **reassembled in or
 ## Switches and Routers
 
 > [!important] Promo favourite
-> 2024 Q5 and the 2026 Mastery paper: name the device, then give **two differences** `[2+2]`. 2023 Q3(d): what a router and a modem do `[2]`. Model answers under [[C3 Computer Network#Exam|Exam]].
+> 2024 Q5 and the 2026 Mastery paper: name the device, then give **two differences** `[2+2]`. 2023 Q3(d): what a router and a modem do `[2]`. 2026 Mock Q3(b): how the switch and router register a new device `[2]`. Model answers under [[C3 Computer Network#Exam|Exam]].
 
 | | Hub | Switch | Router |
 | --- | --- | --- | --- |
@@ -452,6 +452,15 @@ SMTP runs over TCP to help ensure delivery.
 > **(d)**
 > - **Router**: forwards packets between the LAN and the ISP's network, using IP addresses to pick the route.
 > - **Modem**: **mo**dulates the LAN's digital signal into a signal the ISP's line can carry, and **dem**odulates incoming signals back to digital.
+
+> [!important] 2026 Mock Promo P1 Q3: library branches `[3+2+2+2]`
+> **(a)** The network in one branch: **LAN**. The one joining branches in different places: **WAN**. The staff-only catalogue: **intranet**.
+>
+> **(b)** A tablet joins for the first time. The **switch** learns (registers) the tablet's **MAC address** (1m). The **router** assigns it an **IP address** and stores the allocation in its **DHCP** table (1m). DHCP message names, leases and NAT aren't needed.
+>
+> **(c)** The tablet, as client, sends a search **request** to the server (1m). The server processes it and **returns** the matching catalogue data (1m).
+>
+> **(d)** A protocol is an agreed set of rules, e.g. how the request and response are formatted and sent (1m). Shared rules let client and server interpret the data the same way and communicate (1m).
 
 ## Related
 

@@ -9,7 +9,7 @@
 | `float` | real number | `3.14` |
 | `bool` | `True` / `False` | `True` |
 | `str` | text, immutable | `"yijc"` |
-| `None` | absence of a value | `None` |
+| `NoneType` | absence of a value | `None` |
 
 `type(x)` returns the type of `x`.
 
@@ -93,7 +93,7 @@ Strings compare by character code, so comparisons are alphabetical-ish, not by l
 ## Booleans and Truthiness
 
 - `True` equals `1`, `False` equals `0`.
-- Anything **not `0` and not empty** counts as `True` in a condition.
+- `0`, `None`, `False` and empty strings, lists, tuples and dictionaries count as `False` in a condition. Everything else here counts as `True`.
 - So `while lst:` means "while `lst` is not empty".
 
 > [!warning]
@@ -177,7 +177,7 @@ Outcome 1.3.2 asks for **meaningful** names, so `total_score` earns marks where 
 | Statement | Does |
 | --------- | ---- |
 | `a = 1` | assign |
-| `b += c` | augmented assignment, same as `b = b + c` |
+| `b += c` | augmented assignment: `b = b + c` for numbers and strings (a list is changed in place) |
 | `x[y] = z` | set list index `y`, or dictionary key `y` |
 | `del a` | delete the variable |
 | `del x[y]` | delete a list item or dictionary key |

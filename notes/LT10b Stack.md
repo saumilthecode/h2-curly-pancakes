@@ -125,10 +125,39 @@ answer = 17
 
 Symbol order fixes evaluation order: **no brackets or precedence rules**. `3 4 5 + *` and `3 4 * 5 +` differ.
 
+## Exam
+
+> [!important] 2026 Mock Promo P2 Task 6: trail backtracking with a stack `[3+2+3]`
+> `module.py` gives `make_empty_stack()` and `is_empty_stack(stack)`. You write the rest.
+>
+> ```python
+> def push(stack, checkpoint):
+>     stack.append(checkpoint)           # 1m
+>     return stack                       # the question asks for the stack back
+>
+> def pop(stack):
+>     if is_empty_stack(stack):          # 1m
+>         return None
+>     return stack.pop()                 # 1m
+>
+> def peek(stack):
+>     if is_empty_stack(stack):          # 1m
+>         return None
+>     return stack[-1]                   # 1m
+>
+> def backtrack(stack):
+>     route = []                         # 1m
+>     while not is_empty_stack(stack):   # 1m
+>         route.append(pop(stack))
+>     return route                       # 1m
+> ```
+>
+> After pushing `("ENTRANCE", "PINE", "RIDGE", "LAKE")`, `peek(trail)` is `'LAKE'` and `backtrack(trail)` is `['LAKE', 'RIDGE', 'PINE', 'ENTRANCE']`.
+
 ## Common Mistakes
 
 - Using `pop(0)`: that's a [[LT10c Queue|Queue]], not a stack.
-- Returning `s.append(x)` from `push`: `.append()` returns `None`; `push` should not return anything.
+- Returning `s.append(x)` from `push`: `.append()` returns `None`. If the question wants the stack back (Mock Promo Task 6.1), append first, then `return s`.
 - Iterating the list (`for item in s:`) instead of calling `pop()`: it loses the ADT marks in *application of stack* questions and doesn't reverse.
 - Treating `peek()` as if it removes the item.
 - Popping an empty stack instead of returning `None`.

@@ -117,6 +117,20 @@ Simple always makes `n(n-1)` comparisons. Improved makes `n(n-1)/2`, the sum `(n
 >
 > Markers: say whether the *comparisons* or the *passes* repeat. For (b), "no swaps means sorted" scored nothing without **terminating early**.
 
+> [!important] 2026 Mock Promo P2 Task 5: bubble sort tuples, descending, counting swaps `[4]`
+> ```python
+> def bubble_sort(samples):
+>     swaps = 0
+>     for end in range(len(samples) - 1, 0, -1):             # 1m repeated passes
+>         for index in range(end):
+>             if samples[index][1] < samples[index + 1][1]:  # 1m descending, equal never swaps
+>                 samples[index], samples[index + 1] = samples[index + 1], samples[index]
+>                 swaps += 1                                 # 1m swap whole tuples and count
+>     return swaps                                           # 1m
+> ```
+>
+> Strict `<` leaves equal priorities in their original order, as the question demands: `S101` stays ahead of `S103`. The six samples take **6** swaps.
+
 ## Common Mistakes
 
 - Inner loop to `len(seq)` not `len(seq) - 1`: `seq[i + 1]` goes out of range.

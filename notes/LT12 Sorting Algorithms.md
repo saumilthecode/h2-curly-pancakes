@@ -73,15 +73,15 @@ No sort here is `O(log n)`. The last cell is the bubble sort warning: *"1 millio
 | | [[LT12b Insertion Sort\|Insertion]] | take the next element, shift it left until it fits the **sorted prefix** | `O(n)` | `O(n²)` | `O(n²)` | yes | yes |
 | | [[LT12a Bubble Sort\|Bubble]] (optimised) | compare **adjacent** pairs and swap any out of order, so the largest bubbles to the right end. Stop after a pass with no swaps | `O(n)` | `O(n²)` | `O(n²)` | yes | yes |
 | Recursive | [[LT12d Merge Sort\|Merge]] | halve until each piece has one element, then **merge** pairs back in order | `O(n log n)` | `O(n log n)` | `O(n log n)` | **no** | yes |
-| | [[LT12e Quick Sort\|Quicksort]] | pick a **pivot**, put smaller values left and larger right, repeat on each side | `O(n log n)` | `O(n log n)` | **`O(n²)`** | yes | no |
+| | [[LT12e Quick Sort\|Quicksort]] | pick a **pivot**, put smaller values left and larger right, repeat on each side | `O(n log n)` | `O(n log n)` | **`O(n²)`** | yes (two-pointer), no (new lists) | no, except the three-list version |
 | Gambling | Bogosort | shuffle at random until sorted | `O(n)` | `O(n·n!)` | unbounded | yes | no |
 
 Bogosort isn't in the syllabus.
 
-Nearly sorted → insertion or optimised bubble. Guaranteed performance → merge, the only `O(n log n)` worst case. Tight memory → anything but merge. Order of equal items matters → not selection, not quicksort.
+Nearly sorted → insertion or optimised bubble. Guaranteed performance → merge, the only `O(n log n)` worst case. Tight memory → not merge, and not the `left`/`right` quicksort. Order of equal items matters → not selection, not two-pointer quicksort.
 
 > [!example]- 1280 books, one second per comparison
-> Bubble 818,560 comparisons (**nine days**). Insertion about half (**five days**). Quicksort **under 3½ hours**.
+> Bubble 818,560 comparisons (**nine days**). Insertion about half (**five days**). Quicksort, if the splits stay balanced, **under 3½ hours**.
 
 ## Exam Answers
 

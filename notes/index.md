@@ -4,7 +4,7 @@ Singapore–Cambridge **H2 Computing 9569**, first examination 2027.
 Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
 > [!tip] Promo next
-> [[Promo Revision]]: last-minute route through the notes, most-tested first.
+> [[Promo Revision]]: last-minute route through the notes, most-tested first, including the 2026 Mock Promo.
 
 ## Term 1
 
@@ -62,7 +62,7 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
 ### LT10 Data Abstraction
 
-- [[LT10a Data Abstraction|LT10a Data Abstraction 1–2]]: ADTs, constructors, accessors, utilities *(WA only, never in a promo)*
+- [[LT10a Data Abstraction|LT10a Data Abstraction 1–2]]: ADTs, constructors, accessors, utilities *(not in the 2023–2025 promos, but the 2026 Mock Promo uses queue and stack ADT functions)*
 - [[LT10b Stack]]: LIFO
 - [[LT10c Queue]]: FIFO, linear and circular
 - [[LT10d Hashing|LT10d Hashing Parts 1–3]]: checksums, hash tables, collisions
@@ -89,7 +89,7 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
 ## Not in the promo
 
-Promo tests basic SQL only.
+Your teachers said the promo tests basic SQL only, and the 2026 Mock has no ER diagram or normalisation. The 2025 promo did ask an ER diagram, so glance at the one in [[C4-1 Introduction to Database#Exam|C4-1]].
 
 ### C4 Database and Basic SQL
 

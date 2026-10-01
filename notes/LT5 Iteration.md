@@ -111,7 +111,7 @@ def factorial(n):
 
 ## Infinite Loops
 
-The condition must eventually become `False`.
+The condition must eventually become `False` (or the body must `break`).
 
 ```python
 value = 9
@@ -119,12 +119,21 @@ while value != 0:     # 9, 7, 5, 3, 1, -1, -3 ... never exactly 0
     value = value - 2
 ```
 
-Use `while value > 0:`. An infinite loop kills the Jupyter kernel: restart it, then `print()` inside the loop to trace the variable.
+Use `while value > 0:`. An infinite loop hangs the cell: interrupt the kernel (■), restart it if that fails, then `print()` inside the loop to trace the variable.
 
-> [!important] Promo P2 Task 1: input validation, every year
+> [!important] Promo P2 Task 1: input validation in 2024, 2025 and the Mock
 > **2024 T1.1** `[2]`: re-prompt until `10 <= x <= 100`. 1m `while x < 10 or x > 100:` · 1m input again inside the loop.
 >
 > **2025 T1.1** `[4]`: collect 9 valid scores. A `for` loop with no validation capped at **2m**. A `while` loop without validation, **3m**.
+>
+> **2026 Mock T1** `[4+2]`: 1m re-prompt until the name is non-empty with no digit · 1m re-prompt until the item count is 1 to 6 · 1m keep going until that many readings are stored · 1m check each reading is 0 to 100 before appending. Then 1m average rounded to 1 d.p. · 1m count readings `>= 70` and display everything. The scheme's name check:
+>
+> ```python
+> while inspector == "" or any(character.isdigit() for character in inspector):
+>     inspector = input("Invalid name. Inspector name: ")
+> ```
+>
+> Readings `42, 75, 68, 91, 54` give average `66.0` and `2` items needing attention.
 
 ## Common Mistakes
 

@@ -7,7 +7,7 @@
 > | --- | ------- | ----- |
 > | 3.3.1 | table, record and field | here |
 > | 3.3.2 | primary, secondary, composite and foreign keys | here, except secondary |
-> | 3.3.3–3.3.5 | redundancy, 3NF, ER diagrams | C4-3, not taught yet |
+> | 3.3.3–3.3.5 | redundancy, 3NF, ER diagrams | flat-file redundancy here (asked in the Mock Promo). The rest is C4-3, not taught yet |
 > | 3.3.6–3.3.7 | NoSQL | not taught yet |
 > | 3.3.8 | SQL statements | [[C4-2 Basic SQL]] |
 >
@@ -25,6 +25,8 @@ Limitations of **flat files** (SLS A1):
 - data inconsistency
 - hard to update or change data
 - hard to search or query
+
+**Data redundancy**: the same data stored more than once, e.g. a course's title and venue repeated in every enrolment row. **Data inconsistency**: one copy gets changed but the others don't, so the same item ends up with conflicting values.
 
 ## Table, Record, Field
 
@@ -75,6 +77,8 @@ For `STUDENTS (RegNo, Name, Gender, MobileNo)`:
 | `{Gender}` | many students share it |
 
 Check what *could* repeat across all possible records. Ten sample rows can't show it.
+
+A **candidate key** is any field (or set of fields) that could be the primary key, because its value uniquely identifies each record. Asked in the 2026 Mock.
 
 ### Composite Primary Key
 
@@ -171,6 +175,15 @@ Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
 > ```
 >
 > A car goes out to one customer at a time, so `{RegistrationNumber, DateHired}` is enough for `Hire`'s key. `RegistrationNumber` is part of that key **and** a foreign key to `Car`.
+
+> [!important] 2026 Mock Promo P1 Q5: course enrolments in a flat file `[2+2+2]`
+> Fields `EnrolmentID, ParticipantName, CourseCode, CourseTitle, Venue`. Five records, and `C08` (Introduction to Coding, Lab 1) appears three times.
+>
+> **(a)** `Studio 2` is in the field **Venue** (1m). Record `E1044` is `E1044, Chen, C15, Robotics Basics, Lab 3` (1m).
+>
+> **(b)** **Redundancy**: the title and venue for `C08` are stored again in every `C08` row (1m). **Inconsistency**: change one copy without the others, and the same course has conflicting titles or venues (1m).
+>
+> **(c)** Candidate key **`EnrolmentID`**: its value uniquely identifies each record (1m). Not `ParticipantName`: the same name can appear in more than one record, as `Aisha` does (1m).
 
 ## Common Mistakes
 

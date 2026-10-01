@@ -187,8 +187,8 @@ The base case is the **edge** of the triangle, not a single value. Both `r == 0`
 > [!warning]
 > Test the base case against the *smallest legal input*, not a convenient one. `len(string) == 0` looks right until the recursive step reads `string[1]`.
 
-> [!important] Promo P2 recursion: the marks are always the same four
-> **base case** · **smaller call** · **combine** it with this step · **call and display** the answer.
+> [!important] Promo P2 recursion: 4 or 5 marks a function
+> The **base case** always earns one. The rest go to the **smaller call**, the **combining** step, and in 2024 T5 and 2025 T3 to **calling it and displaying** the answer. 2023 split them across the two branches instead.
 >
 > | Task | Base case | Smaller call and combine |
 > | ---- | --------- | ------------------------ |
@@ -197,6 +197,7 @@ The base case is the **edge** of the triangle, not a single value. Both `r == 0`
 > | 2025 T3 `population(c, m)` `[4]` | `m == 0` → `100` | `round(population(c, m - 1) * 1.2 - c)` |
 > | 2023 T2.1 `oddify(lst)` `[4]` | empty → `[]` | even: `oddify(lst[1:])`, odd: `[lst[0]] + oddify(lst[1:])` |
 > | 2023 T2.2 `str_to_int(s)` `[4]` | one digit → `int(s)` | `int(s[0]) * 10**(len(s) - 1) + str_to_int(s[1:])` |
+> | 2026 Mock T3 `count_character(code, target)` `[5]` | `code == ""` → `0` | `current + count_character(code[1:], target)`, where `current` is `1` if `code[0] == target`, else `0` |
 
 ## Common Mistakes
 

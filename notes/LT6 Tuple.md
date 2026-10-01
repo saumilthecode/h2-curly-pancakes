@@ -25,7 +25,7 @@ tup.append('h')    # cannot add
 tup.remove('g')    # cannot remove
 del tup[6]         # cannot delete an element
 
-del tup            # but you CAN delete the whole tuple
+del tup            # but you CAN delete the name tup
 ```
 
 To "change" one element you rebuild the tuple around it:
@@ -58,7 +58,7 @@ tuple("abc")   # ('a', 'b', 'c')
 > `tup = tup + (4,)` does not modify the tuple. It builds a new one and points the name at it. `id(tup)` before and after shows a **different** memory address.
 
 > [!note]
-> `max` / `min` on characters compare **ASCII values**, and capitals come before lowercase; `max("aZ")` is `'a'` (97), not `'Z'` (90). See [[C2 Data representation]].
+> `max` / `min` on characters compare their **character codes**. In ASCII, `A`–`Z` (65–90) come before `a`–`z` (97–122), so `max("aZ")` is `'a'` (97), not `'Z'` (90). See [[C2 Data representation]].
 
 ## Iteration
 

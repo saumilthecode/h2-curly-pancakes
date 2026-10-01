@@ -1,5 +1,5 @@
 > [!summary] Quick View
-> **Linear search** checks every element: `O(n)`, works on any sequence.
+> **Linear search** checks each element in turn until it finds the item: `O(n)`, works on any sequence.
 > **Binary search** halves the range each step: `O(log n)`, **needs sorted data**.
 
 ## Python's Built-in Searches
@@ -11,7 +11,7 @@
 | `x in seq` | `True` / `False` |
 
 > [!note]
-> `index()` returns the first match: `'mississippi'.index('i')` is `1`. It **raises an error** if the item is absent. Our version returns `None`.
+> `index()` returns the first match: `'mississippi'.index('i')` is `1`. It **raises an error** if the item is absent. Our iterative `index` returns `None`.
 
 ## Linear Search
 
@@ -243,13 +243,36 @@ degrade to `O(n)`.
 >
 > **(c) "Both take the same number of steps, so they're equally efficient." True?** No. They match here only because of where 42 sits (1m). Linear search is `O(n)`, removing one element per step (1m). Binary search is `O(log n)` (1m), halving the search space each step (1m).
 >
-> 2026 Mastery P1 Q1 repeated (b) and (c) with the same scheme.
+> 2026 Mastery P1 Q1 repeated (b) and (c) as its (a) and (b), with the same scheme.
 
 > [!important] 2023 Promo P1 Q5(a): find one record card, sorted by registration number `[2]`
 > **Binary search.** Open the cabinet at the middle card and compare registration numbers. If the target is smaller, discard the back half. If larger, the front half. Repeat on what's left until the card is found or no cards remain.
 
 > [!example]- 2025 Promo P2 Task 6: iterative binary search `[4]`
 > 1m loop while `start <= end` · 1m check the value at `mid = (start + end) // 2` · 1m update the pointers · 1m `return False` after the loop.
+
+> [!important] 2026 Mock Promo P1 Q4(a): linear search for `392` in `[417, 203, 586, 144, 392, 251]` `[3]`
+> Compared in order: `417`, `203`, `586` (1m), then `144`, then `392`, and stop (1m). Returns index **4** (1m).
+
+> [!important] 2026 Mock Promo P2 Task 7: binary search that counts comparisons `[5+1]`
+> ```python
+> def find_box(codes, target):
+>     low = 0
+>     high = len(codes) - 1
+>     comparisons = 0                      # 1m bounds and counter
+>     while low <= high:                   # 1m loop and midpoint
+>         middle = (low + high) // 2
+>         comparisons += 1
+>         if codes[middle] == target:
+>             return middle, comparisons   # 1m found
+>         if codes[middle] < target:
+>             low = middle + 1             # 1m
+>         else:
+>             high = middle - 1            # 1m
+>     return -1, comparisons
+> ```
+>
+> Count one comparison per midpoint checked. On the 15 sorted box codes, `"B412"` gives `(5, 3)` and `"D200"` gives `(-1, 4)`. Testing both earns the last mark.
 
 ## Common Mistakes
 

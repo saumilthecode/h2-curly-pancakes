@@ -46,6 +46,8 @@ FOR Pointer <- 2 TO NumberOfItems
 ENDFOR
 ```
 
+This is the lesson's pseudocode word for word. Once `CurrentItem` reaches `0` it still reads `MyList[0]`, which doesn't exist when indexing starts at 1. In Python put the index test first: `while i > 0 and seq[i - 1] > seq[i]`.
+
 > [!example]- Trace `MyList = [53, 21, 60, 18, 42, 19]`
 > | `Pointer` | `ItemToBeInserted` | `MyList` after |
 > | --------- | ------------------ | -------------- |

@@ -32,7 +32,7 @@ x = round(random() * 5, 2)     # float from 0 to 5, 2 decimal places
 | Function | Gives | In BTB4? |
 | -------- | ----- | -------- |
 | `choice(lst)` | one item | yes |
-| `sample(lst, k)` | `k` items, no repeats | yes |
+| `sample(lst, k)` | `k` items, each position picked at most once | yes |
 | `choices(lst, k=k)` | `k` items, repeats allowed | yes |
 | `shuffle(lst)` | reorders the list **in place** | no |
 
@@ -44,8 +44,8 @@ from random import *
 
 lst = ["Adam", "Bob", "Charles", "Daniel"]
 
-print(choice(lst))       # 'Bob'
-print(sample(lst, 2))    # ['Daniel', 'Adam']
+print(choice(lst))       # e.g. Bob
+print(sample(lst, 2))    # e.g. ['Daniel', 'Adam']
 ```
 
 ## Normal Distribution

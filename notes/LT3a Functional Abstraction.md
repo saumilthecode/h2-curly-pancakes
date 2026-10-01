@@ -16,7 +16,7 @@ def name(formal_parameters):
 | name | what the function is called |
 | formal parameters | names used in the body for the values passed in |
 | arguments | the actual values supplied at the call |
-| body | the logic (must be indented 4 spaces) |
+| body | the logic (indented, normally 4 spaces) |
 | `return` | sends a value back to the caller |
 
 Type hints are optional and not enforced:

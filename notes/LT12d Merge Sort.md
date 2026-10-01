@@ -26,6 +26,9 @@ def split(seq):
 
 `split([5, 2, 1, 8, 9])` gives `(([5], [2]), ([1], ([8], [9])))`. Read it against the diagram above. `merge_sort` below does the same splitting inline and merges on the way back up.
 
+> [!warning] Where the extra element goes
+> `len(seq) // 2` puts the extra element of an odd-length list on the **right**: `[5, 2]` and `[1, 8, 9]`. The 2026 Mock told you to put it on the **left**, and its marks depend on that. Follow the question. In code, `mid = (len(seq) + 1) // 2` puts it on the left.
+
 | Merge | Result |
 | ----- | ------ |
 | `[5]` + `[2]` | `[2, 5]` |
@@ -96,7 +99,7 @@ Halving `n` to 1 takes `log n` levels, each doing `n` work, so every case is `O(
 > ```
 >
 > Words: 1m split in two recursively until single elements · 1m recombine, comparing the first elements of each sublist. Diagram: 1m halves down to single elements · 1m recombined into a sorted array.
-> **(ii)** Order of growth `O(n log n)` `[1]`. 2026 Mastery P1 Q2(a) is the same question.
+> **(ii)** Order of growth `O(n log n)` `[1]`. 2026 Mastery P1 Q2(a) repeats part (i), the diagram `[4]`.
 
 > [!example]- 2023 Promo P2 Task 5: fill the merge sort pseudocode `[4+3+3]`
 > ```text
@@ -108,9 +111,34 @@ Halving `n` to 1 takes `log n` levels, each doing `n` work, so every case is `O(
 >
 > 1m per pair. Task 5.3 sorts `(name, timing)` tuples: 1m reuse the sort, 1m index `[1]`, 1m `float()` the timing string.
 
+> [!important] 2026 Mock Promo P1 Q4(b)–(d) `[3+3+1]`
+> **(b)** Merge `[144, 251, 417]` with `[203, 392, 586]`: take `144`, `203`, `251` (1m), then `392`, `417` (1m), giving `[144, 203, 251, 392, 417, 586]` (1m).
+>
+> **(c)** Merge sort `[38, 12, 45, 7, 26, 19]`, extra value of an odd split on the **left**:
+>
+> ```text
+>           [38, 12, 45, 7, 26, 19]
+>             /                \
+>       [38, 12, 45]        [7, 26, 19]
+>         /      \            /      \
+>     [38, 12]   [45]     [7, 26]   [19]
+>      /   \               /   \
+>   [38]  [12]           [7]  [26]
+>      \   /               \   /
+>     [12, 38]   [45]     [7, 26]   [19]
+>         \      /            \      /
+>       [12, 38, 45]        [7, 19, 26]
+>             \                /
+>           [7, 12, 19, 26, 38, 45]
+> ```
+>
+> 1m first split, then splitting down to single values · 1m the middle merges `[12, 38]`, `[12, 38, 45]`, `[7, 26]`, `[7, 19, 26]` · 1m the final list.
+>
+> **(d)** Worst case `O(n log n)`.
+
 ## Common Mistakes
 
-- Forgetting the base case, or writing `len(seq) == 1` and looping forever on an empty list.
+- Forgetting the base case, or writing `len(seq) == 1` and recursing forever on an empty list.
 - Treating merge sort as in-place. It builds new lists.
 
 ## Related
