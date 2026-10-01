@@ -11,7 +11,7 @@
 
 | Term | Meaning |
 | ---- | ------- |
-| SQL | Structured Query Language, MySQL, Oracle, PostgreSQL are versions of it |
+| SQL | Structured Query Language. MySQL, Oracle and PostgreSQL are DBMSs that use it |
 | SQL Server | client–server DBMS: a database server, plus client apps that connect to it |
 | SQLite | **serverless** DBMS, embedded directly in an application |
 
@@ -74,7 +74,7 @@ VALUES ('Chang', 19, '24 - 12 oz bottles', 'Exotic Liquids', 'UK'),
 ```
 
 - Values match the column list **in order**.
-- `Id` is left out. The integer primary key **auto-increments**.
+- `Id` is left out. SQLite fills in the integer primary key **automatically**.
 - Omitted field → `NULL`. If `NOT NULL`, the insert fails.
 - Several rows share one `VALUES`, separated by commas.
 - Text containing `'` goes in **double quotes**.

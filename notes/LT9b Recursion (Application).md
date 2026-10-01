@@ -128,11 +128,11 @@ collatz(3)  ->  [3, 10, 5, 16, 8, 4, 2, 1]
 > | | Result |
 > | --- | ------ |
 > | `n // 2` | `[3, 10, 5, 16, ...]` |
-> | `n / 2` | `[3.0, 10.0, 5.0, ...]` (floats) |
+> | `n / 2` | `[3, 10, 5.0, 16.0, ...]` (floats from the first halving on) |
 >
 > Tests still pass (`3.0 == 3`), so this one slips through silently.
 
-Same shape for a tuple: `return (n,) + collatz(...)`.
+Same shape for a tuple: base case `return (1,)`, then `return (n,) + collatz(...)`.
 
 ## Pattern: Two Shrinking Parameters
 

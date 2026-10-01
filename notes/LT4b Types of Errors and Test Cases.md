@@ -132,10 +132,11 @@ For `percentage(score, total)`:
 | Boundary | `percentage(60, 60)` | `100.0` |
 | Erroneous | `percentage(-10, 80)` | rejected |
 | Erroneous | `percentage(120, 60)` | rejected |
+| Erroneous | `percentage(10, 0)` | rejected, not a division by zero |
 
 ```python
 def percentage(score, total):
-    if score < 0 or score > total:
+    if total <= 0 or score < 0 or score > total:
         return 'Error'
     return (score / total) * 100
 ```

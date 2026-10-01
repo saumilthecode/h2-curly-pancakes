@@ -203,7 +203,7 @@ BFS goes level by level: dequeue, write it down, enqueue its children:
 
 Searching, inserting: one comparison per level, so the cost is the **height**, not the size.
 
-For a **complete** tree of height `h`, every level full:
+For a tree of height `h` with **every level full**:
 
 ```text
 n = 1 + 2 + 4 + ... + 2^h = 2^(h+1) - 1      [sum of a GP]
@@ -363,7 +363,7 @@ In-order: `Alice Bobbie David Leona Peter Simone Tom` (alphabetical, as it must 
 > reverseInOrder(rootPtr)
 > ```
 >
-> Move the `OUTPUT` line for the others: before both calls is pre-order, between is in-order, after is post-order.
+> For the others, put the calls back to **left then right**, then move the `OUTPUT` line: before both calls is pre-order, between is in-order, after is post-order.
 
 ## Worked Example: Specimen Paper 1 Q2
 

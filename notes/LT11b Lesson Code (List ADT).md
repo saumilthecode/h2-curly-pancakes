@@ -56,7 +56,7 @@ four  = make_tree(4, three, make_empty_tree())        # 3 is 4's left child
 
 ## Searching a BST: `contains`
 
-The recursion is the same shape as [[LT11a Search|binary search]]: compare, then throw away the half that cannot hold the key.
+The recursion is the same shape as [[LT11a Search|binary search]]: compare, then throw away the subtree that cannot hold the key.
 
 ```python
 def contains(x, tree):

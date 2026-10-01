@@ -121,7 +121,7 @@ Simple always makes `n(n-1)` comparisons. Improved makes `n(n-1)/2`, the sum `(n
 
 - Inner loop to `len(seq)` not `len(seq) - 1`: `seq[i + 1]` goes out of range.
 - Claiming an `O(n)` best case without saying **optimised**. Simple and improved cannot stop early.
-- Counting `n` passes instead of `n - 1`.
+- Counting `n` passes instead of `n - 1`. The simple version's loop runs `n` times, but its last pass never swaps.
 
 ## Related
 

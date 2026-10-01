@@ -131,7 +131,7 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 
 > [!important] 2020 Q2(a): the ideal pivot `[1+1]`
 > **(i)** The **median**: it halves the array, so recursion is `log n` deep.
-> **(ii)** Finding the median costs as much as sorting.
+> **(ii)** Finding the median is expensive: the data would have to be sorted first.
 
 > [!important] 2020 Q2(b): random pivot vs first/last `[2]`
 > First/last hits the worst case `O(n²)` on already-sorted or reversed data, which is common. Random makes a lopsided split unlikely whatever the input order.

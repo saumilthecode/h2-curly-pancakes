@@ -49,7 +49,7 @@ def get_name(student):
 ```
 
 > [!important]
-> An ADT can **withhold** access: with no NRIC accessor, nothing outside the ADT can read it.
+> An ADT can **withhold** access: with no NRIC accessor, the ADT offers no way to read it.
 
 ## Common ADTs
 

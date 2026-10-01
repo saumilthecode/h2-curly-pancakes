@@ -56,7 +56,7 @@ An extra digit calculated from the others and appended to the number, so an erro
 **Two types of error a check digit detects**: 2020 Q5(b)(iii), *"Name two types of error that check digits usually detect"* `[2]`:
 
 - **Transcription error**: a single digit typed wrongly (`02757` → `02157`)
-- **Transposition error**: two adjacent digits swapped (`02757` → `02575`)
+- **Transposition error**: two adjacent digits swapped (`02757` → `02577`)
 
 > [!example]- Worked example: Modulus 11 check digit for `02757` (2020 Q5(c), `[3]`)
 > Weights, starting from the first digit: `6, 5, 4, 3, 2`.

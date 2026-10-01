@@ -56,9 +56,9 @@ Marks in each heading are totals from the 2023, 2024 and 2025 promos. **P1** = P
 
 ## 3. Networks: 25 marks (P1)
 
-[[C3 Computer Network#Exam|Promo answers]] · [[C3 Computer Network#Switches and Routers|Switch vs router]]
+[[C3 Computer Network#Exam|Promo answers]] · [[C3 Computer Network#Switches and Routers|Switch vs router]] · [[C3 Computer Network#How a Switch Works|How a switch works]] · [[C3 Computer Network#How a Router Works|How a router works]]
 
-- **Switch** joins devices in a LAN by MAC. **Router** joins networks by IP.
+- **Switch** joins devices in one LAN by **MAC**, learning which port each MAC is on (SAT). **Router** joins different networks by **IP** using its routing table, and is each LAN's default gateway. Asked 2024 and in the 2026 Mastery paper.
 - LAN benefits: shared printers, one internet connection, central backup and security.
 - Cables: reliable, fast, secure, but costly and inflexible. Over the internet: security risk, fixed by VPN, firewall, encryption.
 

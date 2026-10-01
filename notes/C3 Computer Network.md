@@ -221,18 +221,54 @@ During transfer TCP guarantees packets are **delivered** and **reassembled in or
 
 ## Switches and Routers
 
-| Device | Layer | Uses | Purpose |
-| ------ | ----- | ---- | ------- |
-| Hub | 1 | no addressing | broadcasts to every port |
-| Switch | 2 | MAC addresses | connects devices **inside** one LAN |
-| Router | 3 | IP addresses | connects **different** networks |
+> [!important] Promo favourite
+> 2024 Q5 and the 2026 Mastery paper: name the device, then give **two differences** `[2+2]`. 2023 Q3(d): what a router and a modem do `[2]`. Model answers under [[C3 Computer Network#Exam|Exam]].
 
-A switch builds a **Source Address Table (SAT)**:
+| | Hub | Switch | Router |
+| --- | --- | --- | --- |
+| Layer | 1, physical | 2, data link | 3, network |
+| Reads | nothing | **MAC** address | **IP** address |
+| Connects | devices in a LAN | devices **within one LAN** | **different networks**, e.g. a LAN to the internet |
+| Sends data | copies it to **every** port | only to the **destination's port** | towards the destination network along the **best path** |
+| Keeps | no table | **Source Address Table**: MAC → port | **routing table**: known IP addresses and possible paths |
 
-1. starts empty
-2. records the source MAC address and port of each incoming frame
-3. broadcasts to all other ports when the destination is unknown
-4. once a reply arrives, sends future traffic straight to the correct port
+A hub sends everything to everyone: a security risk, and it wastes bandwidth.
+
+The IP gets data to the right building (the router). The MAC gets it to the right desk (the device).
+
+### How a Switch Works
+
+The SAT starts **empty**. The switch fills it from the **source** MAC of every frame it receives.
+
+```text
+E (port 8) sends a frame to F (port 9)
+
+1. frame arrives on port 8    log the source           SAT: E -> 8
+2. F is not in the SAT        broadcast to every port except 8
+3. F replies on port 9        log the source           SAT: E -> 8, F -> 9
+4. from then on               E and F talk port 8 <-> port 9 only
+```
+
+### How a Router Works
+
+- It has **one NIC per network** it joins, each with an IP address in that network.
+- Each device sets its **default gateway** to the router's NIC on its own LAN.
+- Traffic for another network goes to the gateway. The router reads the **destination IP**, checks its routing table, and forwards the packet towards that network or out to the WAN.
+- The destination IP stays the same all the way. The MAC changes at every hop ([[C3 Computer Network#Addressing|Addressing]]).
+
+```text
+LAN1 (192.168.0)                        LAN2 (192.168.1)
+
+PC A --+                                          +-- PC C
+       switch1 --- NIC1 [ router ] NIC2 --- switch2
+PC B --+       192.168.0.1     192.168.1.1        +-- PC D
+
+gateway for A, B: 192.168.0.1           gateway for C, D: 192.168.1.1
+```
+
+Filius Hands-on 3: cable `switch1` straight to `switch2` and the ping fails. The two LANs have different network IDs, so they need a router between them. Add the router, set each gateway, and the ping works.
+
+A home "router" is a **hybrid**: router, switch and Wi-Fi in one box.
 
 ## Topologies
 

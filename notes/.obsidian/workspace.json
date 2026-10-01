@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LT11b Binary Tree.md",
+                "file": "C3 Computer Network.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LT11b Binary Tree"
+              "title": "C3 Computer Network"
             }
           }
         ]
@@ -215,6 +215,7 @@
   },
   "active": "6a4f31a92b7fccca",
   "lastOpenFiles": [
+    "LT11b Binary Tree.md",
     "LT11b Lesson Code (List ADT).md",
     "LT12a Bubble Sort.md",
     "LT12 Sorting Algorithms.md",
@@ -230,7 +231,6 @@
     "C4-1 Introduction to Database.md",
     "Promo Revision.md",
     "LT10c Queue.md",
-    "LT11b Binary Tree.md",
     "LT6 Tuple.md",
     "BTB1 Pseudocode.md",
     "BTB2 File Handling.md",

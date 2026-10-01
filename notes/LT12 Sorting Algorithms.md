@@ -62,7 +62,7 @@ No sort here is `O(log n)`. The last cell is the bubble sort warning: *"1 millio
 | **Stable** | equal elements keep their **relative order** |
 
 > [!warning] Stability comes from the code
-> *"Did the code swap even when two elements are equal?"* `>` is stable, `>=` is not.
+> *"Did the code swap even when two elements are equal?"* In bubble and insertion sort, `>` is stable and `>=` is not. Selection sort is unstable either way.
 > The output alone never shows it: `[9, 4, 3, 9, 3, 1]` sorts to `[1, 3, 3, 4, 9, 9]` either way. Track *which* `3` ended up first.
 
 ## Comparison
