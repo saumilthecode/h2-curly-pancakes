@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/saumilthecode/h2-curly-pancakes#readme",
   "devDependencies": {
-    "markdown-it": "^14.3.0",
+    "markdown-it": "^14.3.2",
     "markdown-it-anchor": "^9.2.1"
   }
 }
