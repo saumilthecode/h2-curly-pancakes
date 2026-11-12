@@ -221,7 +221,7 @@ During transfer TCP guarantees packets are **delivered** and **reassembled in or
 
 ## Switches and Routers
 
-> [!important] Promo favourite
+> [!important] Asked in most papers
 > 2024 Q5 and the 2026 Mastery paper: name the device, then give **two differences** `[2+2]`. 2023 Q3(d): what a router and a modem do `[2]`. 2026 Mock Q3(b): how the switch and router register a new device `[2]`. Model answers under [[C3 Computer Network#Exam|Exam]].
 
 | | Hub | Switch | Router |

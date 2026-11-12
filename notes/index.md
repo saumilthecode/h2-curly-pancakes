@@ -1,10 +1,7 @@
 # H2 Computing Notes
 
 Singapore–Cambridge **H2 Computing 9569**, first examination 2027.
-Ordered by the 26S13 J1 scheme of work, not by syllabus module.
-
-> [!tip] Promo next
-> [[Promo Revision]]: last-minute route through the notes, most-tested first, including the 2026 Mock Promo.
+Ordered by the 26S13 scheme of work, not by syllabus module.
 
 ## Term 1
 
@@ -62,7 +59,7 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 
 ### LT10 Data Abstraction
 
-- [[LT10a Data Abstraction|LT10a Data Abstraction 1–2]]: ADTs, constructors, accessors, utilities *(not in the 2023–2025 promos, but the 2026 Mock Promo uses queue and stack ADT functions)*
+- [[LT10a Data Abstraction|LT10a Data Abstraction 1–2]]: ADTs, constructors, accessors, utilities
 - [[LT10b Stack]]: LIFO
 - [[LT10c Queue]]: FIFO, linear and circular
 - [[LT10d Hashing|LT10d Hashing Parts 1–3]]: checksums, hash tables, collisions
@@ -87,9 +84,7 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 - [[C4-1 Introduction to Database]]: tables, records, fields, primary and foreign keys
 - [[C4-2 Basic SQL|C4-2a–e Basic SQL]]: create, insert, query, update, delete
 
-## Post-Promo
-
-Taught after the promo (5 Oct 2026), from the November online and face-to-face sessions.
+## Term 4
 
 ### C4 Relational Database and Advanced SQL
 
@@ -97,6 +92,8 @@ Taught after the promo (5 Oct 2026), from the November online and face-to-face s
 - [[C4-3b Normalisation]]: 1NF, 2NF, 3NF, table descriptions
 - [[C4-3c ER Diagram]]: entities, relationships, linked entities
 - [[C4-4 Advanced SQL]]: linked tables, queries across two and three tables
+
+## J2 Curriculum
 
 ### C5 Python with SQLite
 
