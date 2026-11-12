@@ -101,6 +101,12 @@ Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
 
 ## Exam
 
+> [!important] Finish the sentence (class, 12 Nov)
+> A primary key is a **field**, or combination of fields, that **uniquely identifies each record** in a table.
+> A foreign key is a **field** in one table that **refers to the primary key of another table**.
+>
+> Start with *field*, not "a value" or "data". Cambridge mark schemes also accept *attribute* for field and *tuple* for record.
+
 > [!important] SLS A5–A7: spot the key
 > **A5** `BALLOONS (Colour_, Price, AmountSold, Stock)`: every colour appears once.
 >

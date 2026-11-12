@@ -1,41 +1,33 @@
 > [!summary] Quick View
-> A **relational database** keeps data in separate tables that are **linked by keys**, so each fact is stored **once**.
+> A **relational database** keeps data in separate tables **linked by keys**, so each fact is stored **once**.
 > Storing a fact more than once is **data redundancy**. It causes three **anomalies**: update, deletion, insertion.
-> **Functional** and **transitive dependencies** say which field decides which. [[C4-3b Normalisation]] uses them to remove the redundancy.
-> Syllabus 3.3.3. Tables and keys are in [[C4-1 Introduction to Database]].
+> Syllabus 3.3.3. Next: [[C4-3b Normalisation]].
 
 ## Why Split into Tables
 
-The lecture's video: an online shop for cat accessories keeps **one spreadsheet**, one row per order.
+A cat-accessory shop keeps one spreadsheet, one row per order. Mary orders again after moving house, so her address is stored twice with **different values**. Three customers are called Mary Johnson. Parcels go to the wrong place.
 
-- Mary buys a cat leash. Later she buys three more, after moving house. Her address is now stored twice, with **different values**.
-- Look her up and you get three addresses, and three different customers called Mary Johnson. Shipments go to the wrong place.
+The fix is three tables. `Orders` holds only the customer's ID and the product's ID, not their details, so a change of address is made **in one place**.
 
-The fix is three smaller tables. `Orders` does not repeat the customer's details or the product's details. It **pulls in their IDs**.
-
-```text
- Customers                  Orders                      Products
- ─────────                  ──────                      ────────
- CustomerID   <──────────   CustomerID                  ProductID
- Name                       ProductID    ──────────>    ProductType
- Address                    Date                        QuantityInStock
- ContactInfo                Quantity
+```mermaid
+erDiagram
+  direction LR
+  Customers ||--|{ Orders : ""
+  Orders }|--|| Products : ""
 ```
-
-A change of address is now made **in one place**. The connections between the tables are what make the database *relational*.
 
 ## Data Integrity
 
-**Data integrity** is the **accuracy, consistency and reliability** of the data stored in a database. It ensures the data stays correct and unaltered during storage, retrieval and processing.
+The **accuracy, consistency and reliability** of the data in a database. The data stays correct and unaltered during storage, retrieval and processing.
 
-| Part | Means | Kept by |
-| ---- | ----- | ------- |
-| **Accuracy** | the data entered is accurate and free from errors | **validation rules** at data entry, so values are reasonable and within expected limits ([[LT4a Data validation and verification\|LT4a]]) |
-| **Consistency** | the same data in several places agrees: all copies are updated together | **constraint rules** such as the primary key and foreign key |
+| | Means | Kept by |
+| --- | ----- | ------- |
+| **Accuracy** | the data entered is accurate and free from errors | **validation rules** at data entry ([[LT4a Data validation and verification\|LT4a]]) |
+| **Consistency** | the same data in several places agrees | **constraint rules**: primary key, foreign key |
 
 ## Data Redundancy
 
-**Redundancy** is having **several copies of the same data**, within one table or across several tables.
+**Several copies of the same data**, within one table or across tables. It costs **storage**, and causes **inconsistency** when the copies are not all updated.
 
 | MatricNo | Name | Gender | CivicsClass | CivicsTutor |
 | -------- | ---- | ------ | ----------- | ----------- |
@@ -48,109 +40,61 @@ A change of address is now made **in one place**. The connections between the ta
 | 7 | George | M | 22S11 | Mary Ng |
 | 8 | Hongli | M | 22S11 | Mary Ng |
 
-*"Peter Tan tutors 22S01"* is one fact, stored four times. Two costs:
-
-1. more **storage space and cost**
-2. **inconsistency**, when the copies are not all updated properly
+*Peter Tan tutors 22S01* is one fact, stored four times.
 
 ## The Three Anomalies
 
-| Anomaly | Definition | On the table above |
+| Anomaly | Definition | In the table above |
 | ------- | ---------- | ------------------ |
-| **Update** | a data inconsistency that results from data redundancy and a **partial update** | 22S01's tutor changes to John Lim, but only Alex's record is updated |
-| **Deletion** | the **unintended loss** of data due to the deletion of other data | Eliza is the only student in 22S05. Delete her and the tutor of 22S05 is lost |
+| **Update** | a data inconsistency that results from data redundancy and a **partial update** | 22S01's tutor changes to John Lim, but only Alex's record is updated. Now 22S01 has two tutors |
+| **Deletion** | the **unintended loss** of data due to the deletion of other data | Eliza is the only student in 22S05. Delete her and nobody knows who tutors 22S05 |
 | **Insertion** | the **inability to add** data because other data is absent | new student Yan Lin has no class yet, so her class and tutor are left out |
 
-```text
-UPDATE     22S01's tutor becomes John Lim, but only one record is changed
-
-           1  Alex     M  22S01  John Lim     <- updated
-           2  Brandon  M  22S01  Peter Tan    <- missed. Who tutors 22S01 now?
-
-DELETION   Eliza leaves, so her record is deleted
-
-           5  Eliza    F  22S05  Jane Wong    <- the only record of who tutors 22S05
-
-INSERTION  Yan Lin joins before she is given a class
-
-           9  Yan Lin  F  ?      ?            <- CivicsClass and CivicsTutor are omitted
-```
-
-All three come from the same fault: one table holds facts about **two different things**, students and classes. The deletion anomaly is *"an example of how combining information that does not really belong together into one table can cause problems"*.
-
-The insertion anomaly also runs the other way. A new class 22S09 and its tutor cannot be recorded until a student joins it, because every record needs a `MatricNo`.
+All three happen because one table holds facts about two things: students and classes.
 
 ## Data Dependencies
 
-A **dependency** is the relationship between attributes of a table. Two kinds matter, and both are needed for [[C4-3b Normalisation]].
-
 ### Functional Dependency
 
-Y is **functionally dependent** on X when the value of X **uniquely determines** the value of Y.
+`X → Y`: the value of X **uniquely determines** the value of Y. Y is **functionally dependent** on X.
 
-```text
-X → Y              MatricNo → Name
-```
-
-| Written | Read it as |
-| ------- | ---------- |
-| `MatricNo → Name` | `MatricNo` determines `Name`. `Name` is functionally dependent on `MatricNo` |
-
-The thing **after** the arrow is the dependent one. Test it by asking: *if I tell you X, can you give me exactly one Y?*
-
-| Try | Result |
-| --- | ------ |
-| `MatricNo` 5 → `Name`? | Eliza, and only Eliza. **Holds** |
-| `Gender` M → `Name`? | Alex, Brandon, Charles… **Does not hold** |
-| `CivicsClass` 22S11 → `CivicsTutor`? | Mary Ng every time. **Holds** |
+`MatricNo → Name` holds: give me a `MatricNo` and I can give you exactly one `Name`. `Gender → Name` does not: M gives Alex, Brandon, Charles…
 
 ### Transitive Dependency
 
-A transitive dependency is formed by **two functional dependencies**. Z is transitively dependent on X when all three hold:
+Two functional dependencies in a chain. Z is **transitively dependent** on X when:
 
-| Condition | Here |
-| --------- | ---- |
-| Y depends on X: `X → Y` | `MatricNo → CivicsClass` |
-| X does **not** depend on Y | a class does not pick out one student: 22S01 has four |
-| Z depends on Y: `Y → Z` | `CivicsClass → CivicsTutor` |
+1. Y depends on X: `X → Y`
+2. X does **not** depend on Y
+3. Z depends on Y: `Y → Z`
 
-```text
- MatricNo ────────> CivicsClass ────────> CivicsTutor
-    X                    Y                     Z
-    └──────────── transitive: X → Z ───────────┘
+```mermaid
+flowchart LR
+  X["MatricNo"] --> Y["CivicsClass"] --> Z["CivicsTutor"]
+  X -.->|"transitive"| Z
 ```
 
-So `CivicsTutor` is **transitively dependent** on `MatricNo`: it depends on the key only *through* `CivicsClass`.
+A student has one class, a class has one tutor, but a class does not pick out one student (22S01 has four). So `CivicsTutor` depends on `MatricNo` only **through** `CivicsClass`.
 
-> [!important] This is where the redundancy comes from
-> The tutor is a fact about the **class**, but the table stores it once per **student**. Every student in 22S01 repeats `Peter Tan`. Moving `CivicsClass → CivicsTutor` into its own table stores it once. That step is **3NF** in [[C4-3b Normalisation#Step 3 Third Normal Form|C4-3b]].
+That is why `Peter Tan` repeats: the tutor is a fact about the class, stored once per student. [[C4-3b Normalisation#Step 3 Third Normal Form|3NF]] moves it into its own table.
 
 ## Exam
 
-> [!important] SLS C4-3a Q1–Q2: definitions
-> **Q1 Define data integrity.** The accuracy, consistency and reliability of the data stored in a database. It ensures that the data remains correct and unaltered during operations such as storage, retrieval and processing.
+> [!important] SLS C4-3a Q1–Q5: define and explain
+> - **Data integrity:** the accuracy, consistency and reliability of the data stored in a database. It ensures the data remains correct and unaltered during storage, retrieval and processing.
+> - **Data redundancy:** having several copies of the same data within or across tables. It increases storage space and cost, and may cause inconsistent data.
+> - **Update anomaly:** a data inconsistency that results from data redundancy and a partial update. *If 22S01's tutor changes to John Lim and only Alex's record is updated, 22S01 shows two tutors.*
+> - **Deletion anomaly:** the unintended loss of data due to the deletion of other data. *Deleting Eliza, the only student in 22S05, also loses the fact that Jane Wong tutors 22S05.*
+> - **Insertion anomaly:** the inability to add data due to the absence of other data. *Yan Lin has no class yet, so her `CivicsClass` and `CivicsTutor` have to be omitted.*
 >
-> **Q2 Define data redundancy.** Having several copies of the same data within a table or across several tables. It increases storage space and cost, and may cause inconsistent data when the copies are not updated properly.
+> For an anomaly, give the definition **and** an example with values from the table.
 
-> [!important] SLS C4-3a Q3–Q5: explain each anomaly
-> State **what it is**, then show it with **values from a table**.
->
-> **Q3 Update anomaly.** A data inconsistency that results from data redundancy and a partial update. The same data is stored in several records, so if the user updates one without realising it is stored elsewhere, the copies no longer agree. *If 22S01's tutor changes to John Lim and only Alex's record is updated, the table shows two different tutors for 22S01.*
->
-> **Q4 Deletion anomaly.** The unintended loss of data due to the deletion of other data. *Eliza is the only student in 22S05, so deleting her record also loses the fact that Jane Wong is the tutor of 22S05.*
->
-> **Q5 Insertion anomaly.** The inability to add data to the database due to the absence of other data. *New student Yan Lin has not been assigned a class, so her `CivicsClass` and `CivicsTutor` have to be omitted.*
->
-> These answers use the lecture slides' wording. SLS's own suggested answers are not in your archive.
+> [!tip] Class, 11 Nov
+> Marks are lost in the phrasing, not the knowledge. If a question wants two advantages, pick the two that fit its context.
 
-> [!important] 2026 Mock Promo P1 Q5(b): redundancy and inconsistency `[2]`
-> Already examined on a flat file. The answer is in [[C4-1 Introduction to Database#Exam|C4-1]]: the title and venue of course `C08` are stored again in every `C08` row (redundancy), and changing one copy without the others leaves conflicting values (inconsistency).
+The 2026 Mock Promo asked redundancy and inconsistency on a flat file: [[C4-1 Introduction to Database#Exam|C4-1]].
 
-> [!tip] From class, 11 Nov 2026: how theory marks are lost
-> Knowing the idea is not enough. The answer has to be **phrased completely**. Read the sample answers and ask what is missing from each.
-> When a question wants **two** advantages, list every one you know, then pick the two that fit the **context** given and are taught at this level.
-
-> [!example]- Practice, written for these notes (not from a paper)
+> [!example]- Practice
 > `LOAN (LoanID, Member, ISBN, Title, Publisher)`
 >
 > | LoanID | Member | ISBN | Title | Publisher |
@@ -159,23 +103,21 @@ So `CivicsTutor` is **transitively dependent** on `MatricNo`: it depends on the 
 > | 2 | Ben | 111 | Dune | Ace |
 > | 3 | Chen | 222 | Emma | Penguin |
 >
-> - **Redundancy:** the title and publisher of ISBN 111 are stored twice.
-> - **Update anomaly:** change the publisher of 111 in loan 1 only, and 111 has two publishers.
-> - **Deletion anomaly:** delete loan 3, the only loan of 222, and the library no longer knows 222 is *Emma* by Penguin.
-> - **Insertion anomaly:** a new book that nobody has borrowed cannot be added, because there is no `LoanID` for it.
-> - **Transitive dependency:** `LoanID → ISBN → Title`. `ISBN` does not determine `LoanID`: 111 has loans 1 and 2.
+> - **Redundancy:** the title and publisher of 111 are stored twice.
+> - **Update:** change 111's publisher in loan 1 only, and 111 has two publishers.
+> - **Deletion:** delete loan 3 and nobody knows 222 is *Emma* by Penguin.
+> - **Insertion:** a book nobody has borrowed cannot be added. It has no `LoanID`.
+> - **Transitive:** `LoanID → ISBN → Title`, and `ISBN` does not determine `LoanID`.
 
 ## Common Mistakes
 
 - Reading the arrow backwards. In `X → Y` it is **Y** that depends on X.
-- Explaining an update anomaly without saying that **only some** of the copies were changed.
-- Swapping deletion and insertion: deletion **loses** data you wanted to keep, insertion **cannot add** data you have.
-- Judging a dependency from the sample rows alone. Ask what *could* happen: two students can share a name, so `Name → MatricNo` does not hold.
-- Calling a repeated value redundancy when it is a **link**. After normalising, `22S01` still appears once per student. That is a foreign key doing its job.
+- Explaining an update anomaly without saying only **some** copies were changed.
+- Swapping deletion and insertion: one **loses** data, the other **cannot add** it.
+- Calling a repeated foreign key redundancy. `22S01` once per student is a link, not a repeated fact.
 
 ## Related
 
 - [[C4-1 Introduction to Database]]
 - [[C4-3b Normalisation]]
 - [[C4-3c ER Diagram]]
-- [[LT4a Data validation and verification]]
