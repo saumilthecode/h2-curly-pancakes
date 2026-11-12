@@ -4,7 +4,7 @@
 > Tables, records and keys are in [[C4-1 Introduction to Database]].
 
 > [!important] What the Paper 2 Reference Guide prints
-> **Given:** `CREATE TABLE` with `PRIMARY KEY (…)` and `FOREIGN KEY … REFERENCES`, `SELECT … WHERE … ORDER BY`, `COUNT` `MAX` `MIN` `SUM`, `INSERT`, `UPDATE`, `DELETE`, `DROP TABLE`, and joins (C4-4, not taught yet).
+> **Given:** `CREATE TABLE` with `PRIMARY KEY (…)` and `FOREIGN KEY … REFERENCES`, `SELECT … WHERE … ORDER BY`, `COUNT` `MAX` `MIN` `SUM`, `INSERT`, `UPDATE`, `DELETE`, `DROP TABLE`, and joins ([[C4-4 Advanced SQL|C4-4]]).
 > Types `NULL` `REAL` `INTEGER` `TEXT` · constraints `NOT NULL` `PRIMARY KEY` `AUTOINCREMENT` `UNIQUE` · operators `=` `!=` `<` `<=` `>` `>=` `AND` `OR` `NOT` `IS` `IS NOT` `||`.
 >
 > **Not printed, so memorise:** `DISTINCT`, `BETWEEN`, `LIKE` with `%` and `_`, `IN`, `LIMIT`, `GROUP BY`, `HAVING`, `AVG()`.
@@ -303,5 +303,7 @@ DROP TABLE Customers;                                  -- the table itself is go
 ## Related
 
 - [[C4-1 Introduction to Database]]
+- [[C4-4 Advanced SQL]]
+- [[C5a Python with SQLite]]
 - [[BTB2 File Handling]]
 - [[LT1 basic python]]

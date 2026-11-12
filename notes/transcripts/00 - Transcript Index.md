@@ -1,6 +1,6 @@
 # H2 Computing transcript index
 
-Successful transcripts: 116
+Successful transcripts: 122
 Unavailable transcripts: 6
 
 ## Transcript files
@@ -497,6 +497,36 @@ Unavailable transcripts: 6
   - Uploader: YIJC Computing
   - File: `116 - C4-2d_2e Basic SQL - Update and Delete Records and Tables v2 [-mC5SGlLOUU].txt`
   - Characters: 5,721
+
+- **C4-3a Introduction to Relational Database (SLS)**: [C4-3a Intro to Relational Database v2](https://www.youtube.com/watch?v=glY2j2GZHBo)
+  - Uploader: YIJC Computing
+  - File: `117 - C4-3a Intro to Relational Database v2 [glY2j2GZHBo].txt`
+  - Characters: 14,163
+
+- **C4-3b Normalisation (SLS)**: [C4-3b Normalisation v2](https://www.youtube.com/watch?v=npIreALkehI)
+  - Uploader: YIJC Computing
+  - File: `118 - C4-3b Normalisation v2 [npIreALkehI].txt`
+  - Characters: 12,738
+
+- **C4-3c Entity-Relationship Diagram (SLS)**: [C4-3c ER Diagram v2](https://www.youtube.com/watch?v=huh9yCT5VK8)
+  - Uploader: YIJC Computing
+  - File: `119 - C4-3c ER Diagram v2 [huh9yCT5VK8].txt`
+  - Characters: 9,355
+
+- **C4-4 Advanced SQL (SLS)**: [C4-4 Advanced SQL v2](https://www.youtube.com/watch?v=gYzGuqwSlpE)
+  - Uploader: YIJC Computing
+  - File: `120 - C4-4 Advanced SQL v2 [gYzGuqwSlpE].txt`
+  - Characters: 14,778
+
+- **C4-1 Introduction to Database slides, page 4**: [C4 1 Old School Library Card Catalog](https://www.youtube.com/watch?v=wvcatnesYcw)
+  - Uploader: YIJC Computing
+  - File: `121 - C4 1 Old School Library Card Catalog [wvcatnesYcw].txt`
+  - Characters: 3,376
+
+- **C4-3a Introduction to Relational Database slides, page 2**: [C4 1 Why Database](https://www.youtube.com/watch?v=znw_rnnnWjY)
+  - Uploader: YIJC Computing
+  - File: `122 - C4 1 Why Database [znw_rnnnWjY].txt`
+  - Characters: 5,419
 
 ## Videos without transcripts
 

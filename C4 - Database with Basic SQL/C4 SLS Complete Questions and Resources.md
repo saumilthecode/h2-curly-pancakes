@@ -4,6 +4,8 @@
 - **Extracted:** 1 September 2026
 - **Sections covered:** C4-1 and C4-2a to C4-2e
 - **Question count:** 14
+- **Live package rechecked:** 12 November 2026, current title “C4-1 Database and C4-2 Basic SQL”. All five sections and 14 prompts remain covered.
+- **Full C4 coverage and availability:** [C4 Archive Index](C4%20Archive%20Index.md)
 
 This is a prompt-only archive. It excludes the student’s answers, submission status, marks and correctness feedback.
 

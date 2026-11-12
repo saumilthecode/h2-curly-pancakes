@@ -21,6 +21,8 @@ f.close()
 > | 2026 Mastery P2 | `1m open and close` |
 >
 > The y27 Reference Guide prints **both** styles, so either is fine. `with` closes the file for you, even if something goes wrong inside. The Mock Promo's own answer uses `with`.
+>
+> From class, 11 Nov 2026: your teachers checked with SEAB, and you are no longer penalised for having no `close()` when the file is opened with `with open(...)`. Adding `f.close()` after the `with` block is not penalised either. A plain `open()` must still be closed. The recording is rough at this point, so confirm the wording with your teacher.
 
 | Mode | Does |
 | ---- | ---- |

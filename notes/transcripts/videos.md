@@ -214,3 +214,13 @@
 - [C4-2a Basic SQL - create database and tables v2](https://www.youtube.com/watch?v=-OexChjx7kg) | YIJC Computing | transcript available
 - [C4-2b Basic SQL - insert data into tables v2](https://www.youtube.com/watch?v=Qk8n6iOcb0Y) | YIJC Computing | transcript available
 - [C4-2d_2e Basic SQL - Update and Delete Records and Tables v2](https://www.youtube.com/watch?v=-mC5SGlLOUU) | YIJC Computing | transcript available
+
+### C4-3 Relational Database and C4-4 Advanced SQL (SLS)
+- [C4-3a Intro to Relational Database v2](https://www.youtube.com/watch?v=glY2j2GZHBo) | YIJC Computing | transcript available
+- [C4-3b Normalisation v2](https://www.youtube.com/watch?v=npIreALkehI) | YIJC Computing | transcript available
+- [C4-3c ER Diagram v2](https://www.youtube.com/watch?v=huh9yCT5VK8) | YIJC Computing | transcript available
+- [C4-4 Advanced SQL v2](https://www.youtube.com/watch?v=gYzGuqwSlpE) | YIJC Computing | transcript available
+
+### C4 supplementary videos linked in slides
+- [C4 1 Old School Library Card Catalog](https://www.youtube.com/watch?v=wvcatnesYcw) | YIJC Computing | English transcript available | C4-1 Introduction to Database slides, page 4
+- [C4 1 Why Database](https://www.youtube.com/watch?v=znw_rnnnWjY) | YIJC Computing | English transcript available | C4-3a Introduction to Relational Database slides, page 2

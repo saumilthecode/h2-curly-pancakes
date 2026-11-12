@@ -1,0 +1,91 @@
+{
+  "1": {
+    "text": "12345671Create database tablesPast Answers (0)Description\nFollow the slides from 1 to 8 closely to create the 3 tables in Database.db: \n\nCustomers\nProducts\nOrders (create this table last)\n\nSubmit this empty database here.\nAnswerUploaded FilesNo files uploaded.Drag and drop or click to upload files*You must upload EXACTLY 1 file for this questionSubmitContinueCommentsRich Text EditorParagraphFont SizeBoldItalicUnderlineStrikethroughCodeInsert code blockInsert code blockBlock quoteRemove FormatSubscriptSuperscriptFont FamilyFont ColorHighlightHighlightIncrease indentDecrease indentBulleted ListBulleted ListNumbered ListNumbered ListText alignmentInsert tableUpload image from computerLinkInsert mediaCommentSave Draft",
+    "template": [],
+    "images": []
+  },
+  "2": {
+    "text": "12345672Question 2Past Answers (0)Description\nDownload the Northwind.db database and use it for all the query questions.\n \nWrite a SQL query statement to find the Customers, i.e. FirstName and LastName, who purchased the product \"Lakkalik ri\" in Feb 2013\n \nOutput from DB Browser should be as follows:\n\nAnswerReset AnswerCheck AnswerContinuePublic Test CasesExpressionExpectedans1{(24, 'Maria', 'Larsson'), (87, 'Pirkko', 'Koskitalo')}CommentsRich Text EditorParagraphFont SizeBoldItalicUnderlineStrikethroughCodeInsert code blockInsert code blockBlock quoteRemove FormatSubscriptSuperscriptFont FamilyFont ColorHighlightHighlightIncrease indentDecrease indentBulleted ListBulleted ListNumbered ListNumbered ListText alignmentInsert tableUpload image from computerLinkInsert mediaCommentSave Draft",
+    "template": [
+      "#Copy·your·query·statement·into·the·string·below.¤",
+      "¤",
+      "query1='''¤",
+      "SELECT·which·attribute(s)·FROM·which·table(s)·and·necessary·condition(s)¤",
+      "'''¤",
+      "¶"
+    ],
+    "images": [
+      "Question assets/Q2-1.png"
+    ]
+  },
+  "3": {
+    "text": "12345673Question 3Past Answers (0)Description\nWrite a SQL query statement to find how much Manuel Pereira spent on Jul 30 2012.\n \nOutput from DB Browser should be as follows:\n\nAnswerReset AnswerCheck AnswerContinuePublic Test CasesExpressionExpectedans1{(380,)}CommentsRich Text EditorParagraphFont SizeBoldItalicUnderlineStrikethroughCodeInsert code blockInsert code blockBlock quoteRemove FormatSubscriptSuperscriptFont FamilyFont ColorHighlightHighlightIncrease indentDecrease indentBulleted ListBulleted ListNumbered ListNumbered ListText alignmentInsert tableUpload image from computerLinkInsert mediaCommentSave Draft",
+    "template": [
+      "#Copy·your·query·statement·into·the·string·below.¤",
+      "¤",
+      "query1='''¤",
+      "SELECT·which·attribute(s)·FROM·which·table(s)·and·necessary·condition(s)¤",
+      "'''¤",
+      "¶"
+    ],
+    "images": [
+      "Question assets/Q3-1.png"
+    ]
+  },
+  "4": {
+    "text": "12345674Question 4Past Answers (0)Description\nWrite a SQL query statement to count the number of different customers buying products from UK.\n \nOutput from DB Browser should be as follows:\n\nAnswerReset AnswerCheck AnswerContinuePublic Test CasesExpressionExpectedans1{(50,)}CommentsRich Text EditorParagraphFont SizeBoldItalicUnderlineStrikethroughCodeInsert code blockInsert code blockBlock quoteRemove FormatSubscriptSuperscriptFont FamilyFont ColorHighlightHighlightIncrease indentDecrease indentBulleted ListBulleted ListNumbered ListNumbered ListText alignmentInsert tableUpload image from computerLinkInsert mediaCommentSave Draft",
+    "template": [
+      "#Copy·your·query·statement·into·the·string·below.¤",
+      "¤",
+      "query1='''¤",
+      "SELECT·which·attribute(s)·FROM·which·table(s)·and·necessary·condition(s)¤",
+      "'''¤",
+      "¶"
+    ],
+    "images": [
+      "Question assets/Q4-1.png"
+    ]
+  },
+  "5": {
+    "text": "12345675Question 5Past Answers (0)Description\nWrite a SQL query statement to list all the products purchased by Ann Devon.\n \nOutput from DB Browser should be as follows:\n\nAnswerReset AnswerCheck AnswerContinuePublic Test CasesExpressionExpectedans1{('Spegesild',), ('Konbu',), ('Inlagd Sill',), ('Guaran\\xa0 Fant\\xa0stica',), ('Gula Malacca',), ('Gnocchi di nonna Alice',), ('Sirop d rable',), ('Flotemysost',)}Show moreCommentsRich Text EditorParagraphFont SizeBoldItalicUnderlineStrikethroughCodeInsert code blockInsert code blockBlock quoteRemove FormatSubscriptSuperscriptFont FamilyFont ColorHighlightHighlightIncrease indentDecrease indentBulleted ListBulleted ListNumbered ListNumbered ListText alignmentInsert tableUpload image from computerLinkInsert mediaCommentSave Draft",
+    "template": [
+      "#Copy·your·query·statement·into·the·string·below.¤",
+      "¤",
+      "query1='''¤",
+      "SELECT·which·attribute(s)·FROM·which·table(s)·and·necessary·condition(s)¤",
+      "'''¤",
+      "¶"
+    ],
+    "images": [
+      "Question assets/Q5-1.png"
+    ]
+  },
+  "6": {
+    "text": "12345676Question 6Past Answers (0)Description\nWrite a SQL query statement to find the total revenue received from all the orders for 'Ipoh Coffee'.\n \nOutput From DB Browser should be as follows: \nAnswerReset AnswerCheck AnswerContinuePublic Test CasesExpressionExpectedans1[(12604,)]CommentsRich Text EditorParagraphFont SizeBoldItalicUnderlineStrikethroughCodeInsert code blockInsert code blockBlock quoteRemove FormatSubscriptSuperscriptFont FamilyFont ColorHighlightHighlightIncrease indentDecrease indentBulleted ListBulleted ListNumbered ListNumbered ListText alignmentInsert tableUpload image from computerLinkInsert mediaCommentSave Draft",
+    "template": [
+      "#Copy·your·query·statement·into·the·string·below.¤",
+      "¤",
+      "query1='''¤",
+      "SELECT·which·attribute(s)·FROM·which·table(s)·and·necessary·condition(s)¤",
+      "'''¤",
+      "¶"
+    ],
+    "images": [
+      "Question assets/Q6-1.png"
+    ]
+  },
+  "7": {
+    "text": "12345677Question 7Past Answers (0)Description\nWrite a SQL query statement to list the top 5 products that has the highest quantities sold to American customers.\nOutput from DB Browser should be as follows:\n\nYou may want to note that there are 122 records of orders made by American customers,\neach of these orders has the quantity ordered by the customer.\nIn these 122 orders, there are only 57 unique products.\nTo look for Top5 products ordered, you may consider adding up all the quantities of a particular product.\nAnswerReset AnswerCheck AnswerPublic Test CasesExpressionExpectedans1{('Geitost', 189), ('Gorgonzola Telino', 144), ('R ssle Sauerkraut', 124), ('C te de Blaye', 149), (\"Chef Anton's Cajun Seasoning\", 134)}Show moreCommentsRich Text EditorParagraphFont SizeBoldItalicUnderlineStrikethroughCodeInsert code blockInsert code blockBlock quoteRemove FormatSubscriptSuperscriptFont FamilyFont ColorHighlightHighlightIncrease indentDecrease indentBulleted ListBulleted ListNumbered ListNumbered ListText alignmentInsert tableUpload image from computerLinkInsert mediaCommentSave Draft",
+    "template": [
+      "#Copy·your·query·statement·into·the·string·below.¤",
+      "¤",
+      "query1='''¤",
+      "SELECT·which·attribute(s)·FROM·which·table(s)·and·necessary·condition(s)¤",
+      "'''¤",
+      "¶"
+    ],
+    "images": [
+      "Question assets/Q7-1.png"
+    ]
+  }
+}

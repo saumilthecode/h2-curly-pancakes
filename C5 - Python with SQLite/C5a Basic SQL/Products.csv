@@ -1,0 +1,79 @@
+Id,ProductName,UnitPrice,Package,SupplierName,SupplierCountry
+1,Chai,18,10 boxes x 20 bags,Exotic Liquids,UK
+2,Chang,19,24 - 12 oz bottles,Exotic Liquids,UK
+3,Aniseed Syrup,10,12 - 550 ml bottles,Exotic Liquids,UK
+4,Chef Anton's Cajun Seasoning,22,48 - 6 oz jars,New Orleans Cajun Delights,USA
+5,Chef Anton's Gumbo Mix,21.35,36 boxes,New Orleans Cajun Delights,USA
+6,Grandma's Boysenberry Spread,25,12 - 8 oz jars,Grandma Kelly's Homestead,USA
+7,Uncle Bob's Organic Dried Pears,30,12 - 1 lb pkgs.,Grandma Kelly's Homestead,USA
+8,Northwoods Cranberry Sauce,40,12 - 12 oz jars,Grandma Kelly's Homestead,USA
+9,Mishi Kobe Niku,97,18 - 500 g pkgs.,Tokyo Traders,Japan
+10,Ikura,31,12 - 200 ml jars,Tokyo Traders,Japan
+11,Queso Cabrales,21,1 kg pkg.,Cooperativa de Quesos Las Cabras,Spain
+12,Queso Manchego La Pastora,38,10 - 500 g pkgs.,Cooperativa de Quesos Las Cabras,Spain
+13,Konbu,6,2 kg box,Mayumi's,Japan
+14,Tofu,23.25,40 - 100 g pkgs.,Mayumi's,Japan
+15,Genen Shouyu,15.5,24 - 250 ml bottles,Mayumi's,Japan
+16,Pavlova,17.45,32 - 500 g boxes,"Pavlova, Ltd.",Australia
+17,Alice Mutton,39,20 - 1 kg tins,"Pavlova, Ltd.",Australia
+18,Carnarvon Tigers,62.5,16 kg pkg.,"Pavlova, Ltd.",Australia
+19,Teatime Chocolate Biscuits,9.2,10 boxes x 12 pieces,"Specialty Biscuits, Ltd.",UK
+20,Sir Rodney's Marmalade,81,30 gift boxes,"Specialty Biscuits, Ltd.",UK
+21,Sir Rodney's Scones,10,24 pkgs. x 4 pieces,"Specialty Biscuits, Ltd.",UK
+22,Gustaf's Kn ckebr d,21,24 - 500 g pkgs.,PB Kn ckebr d AB,Sweden
+23,Tunnbr d,9,12 - 250 g pkgs.,PB Kn ckebr d AB,Sweden
+24,Guarany Fantystica,4.5,12 - 355 ml cans,Refrescos Americanas LTDA,Brazil
+25,NuNuCa Nua-Nougat-Creme,14,20 - 450 g glasses,Heli Sawaren GmbH & Co. KG,Germany
+26,Gumb r Gummib rchen,31.23,100 - 250 g bags,Heli Sawaren GmbH & Co. KG,Germany
+27,Schoggi Schokolade,43.9,100 - 100 g pieces,Heli Sawaren GmbH & Co. KG,Germany
+28,R ssle Sauerkraut,45.6,25 - 825 g cans,Plutzer Lebensmittelgroam rkte AG,Germany
+29,Thringer Rostbratwurst,123.79,50 bags x 30 sausgs.,Plutzer Lebensmittelgroam rkte AG,Germany
+30,Nortd-Ost Matjeshering,25.89,10 - 200 g glasses,Nord-Ost-Fisch Handelsgesellschaft mbH,Germany
+31,Gorgonzola Telino,12.5,12 - 100 g pkgs,Formaggi Fortini s.r.l.,Italy
+32,Mascarpone Fabioli,32,24 - 200 g pkgs.,Formaggi Fortini s.r.l.,Italy
+33,Geitost,2.5,500 g,Norske Meierier,Norway
+34,Sasquatch Ale,14,24 - 12 oz bottles,Bigfoot Breweries,USA
+35,Steeleye Stout,18,24 - 12 oz bottles,Bigfoot Breweries,USA
+36,Inlagd Sill,19,24 - 250 g  jars,Svensk Sj f da AB,Sweden
+37,Gravad lax,26,12 - 500 g pkgs.,Svensk Sj f da AB,Sweden
+38,C te de Blaye,263.5,12 - 75 cl bottles,Aux joyeux eccl siastiques,France
+39,Chartreuse verte,18,750 cc per bottle,Aux joyeux eccl siastiques,France
+40,Boston Crab Meat,18.4,24 - 4 oz tins,New England Seafood Cannery,USA
+41,Jack's New England Clam Chowder,9.65,12 - 12 oz cans,New England Seafood Cannery,USA
+42,Singaporean Hokkien Fried Mee,14,32 - 1 kg pkgs.,Leka Trading,Singapore
+43,Ipoh Coffee,46,16 - 500 g tins,Leka Trading,Singapore
+44,Gula Malacca,19.45,20 - 2 kg bags,Leka Trading,Singapore
+45,Rogede sild,9.5,1k pkg.,Lyngbysild,Denmark
+46,Spegesild,12,4 - 450 g glasses,Lyngbysild,Denmark
+47,Zaanse koeken,9.5,10 - 4 oz boxes,Zaanse Snoepfabriek,Netherlands
+48,Chocolade,12.75,10 pkgs.,Zaanse Snoepfabriek,Netherlands
+49,Maxilaku,20,24 - 50 g pkgs.,Karkki Oy,Finland
+50,Valkoinen suklaa,16.25,12 - 100 g bars,Karkki Oy,Finland
+51,Manjimup Dried Apples,53,50 - 300 g pkgs.,"G'day, Mate",Australia
+52,Filo Mix,7,16 - 2 kg boxes,"G'day, Mate",Australia
+53,Perth Pasties,32.8,48 pieces,"G'day, Mate",Australia
+54,TourtiSre,7.45,16 pies,Ma Maison,Canada
+55,Pft chinois,24,24 boxes x 2 pies,Ma Maison,Canada
+56,Gnocchi di nonna Alice,38,24 - 250 g pkgs.,Pasta Buttini s.r.l.,Italy
+57,Ravioli Angelo,19.5,24 - 250 g pkgs.,Pasta Buttini s.r.l.,Italy
+58,Escargots de Bourgogne,13.25,24 pieces,Escargots Nouveaux,France
+59,Raclette Courdavault,55,5 kg pkg.,Gai pfturage,France
+60,Camembert Pierrot,34,15 - 300 g rounds,Gai pfturage,France
+61,Sirop d rable,28.5,24 - 500 ml bottles,For ts d rables,Canada
+62,Tarte au sucre,49.3,48 pies,For ts d rables,Canada
+63,Vegie-spread,43.9,15 - 625 g jars,"Pavlova, Ltd.",Australia
+64,Wimmers gute Semmelkn del,33.25,20 bags x 4 pieces,Plutzer Lebensmittelgroam rkte AG,Germany
+65,Louisiana Fiery Hot Pepper Sauce,21.05,32 - 8 oz bottles,New Orleans Cajun Delights,USA
+66,Louisiana Hot Spiced Okra,17,24 - 8 oz jars,New Orleans Cajun Delights,USA
+67,Laughing Lumberjack Lager,14,24 - 12 oz bottles,Bigfoot Breweries,USA
+68,Scottish Longbreads,12.5,10 boxes x 8 pieces,"Specialty Biscuits, Ltd.",UK
+69,Gudbrandsdalsost,36,10 kg pkg.,Norske Meierier,Norway
+70,Outback Lager,15,24 - 355 ml bottles,"Pavlova, Ltd.",Australia
+71,Flotemysost,21.5,10 - 500 g pkgs.,Norske Meierier,Norway
+72,Mozzarella di Giovanni,34.8,24 - 200 g pkgs.,Formaggi Fortini s.r.l.,Italy
+73,R d Kaviar,15,24 - 150 g jars,Svensk Sj f da AB,Sweden
+74,Longlife Tofu,10,5 kg pkg.,Tokyo Traders,Japan
+75,Rh nbr u Klosterbier,7.75,24 - 0.5 l bottles,Plutzer Lebensmittelgroam rkte AG,Germany
+76,Lakkalik ri,18,500 ml,Karkki Oy,Finland
+77,Original Frankfurter grne Soae,13,12 boxes,Plutzer Lebensmittelgroam rkte AG,Germany
+78,Stroopwafels,9.75,24 pieces,Zaanse Snoepfabriek,Netherlands

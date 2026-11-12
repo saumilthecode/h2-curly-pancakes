@@ -87,13 +87,17 @@ Ordered by the 26S13 J1 scheme of work, not by syllabus module.
 - [[C4-1 Introduction to Database]]: tables, records, fields, primary and foreign keys
 - [[C4-2 Basic SQL|C4-2a–e Basic SQL]]: create, insert, query, update, delete
 
-## Not in the promo
+## Post-Promo
 
-Your teachers said the promo tests basic SQL only, and the 2026 Mock has no ER diagram or normalisation. The 2025 promo did ask an ER diagram, so glance at the one in [[C4-1 Introduction to Database#Exam|C4-1]].
+Taught after the promo (5 Oct 2026), from the November online and face-to-face sessions.
 
-### C4 Database and Basic SQL
+### C4 Relational Database and Advanced SQL
 
-- C4-3a Introduction to Relational Database
-- C4-3b Normalisation
-- C4-3c ER Diagram
-- C4-4 Advanced SQL
+- [[C4-3a Introduction to Relational Database]]: data integrity, redundancy, the three anomalies, dependencies
+- [[C4-3b Normalisation]]: 1NF, 2NF, 3NF, table descriptions
+- [[C4-3c ER Diagram]]: entities, relationships, linked entities
+- [[C4-4 Advanced SQL]]: linked tables, queries across two and three tables
+
+### C5 Python with SQLite
+
+- [[C5a Python with SQLite]]: `sqlite3` from Python: create, insert from CSV, update, delete, fetch

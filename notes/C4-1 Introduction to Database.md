@@ -7,9 +7,9 @@
 > | --- | ------- | ----- |
 > | 3.3.1 | table, record and field | here |
 > | 3.3.2 | primary, secondary, composite and foreign keys | here, except secondary |
-> | 3.3.3–3.3.5 | redundancy, 3NF, ER diagrams | flat-file redundancy here (asked in the Mock Promo). The rest is C4-3, not taught yet |
+> | 3.3.3–3.3.5 | redundancy, 3NF, ER diagrams | flat-file redundancy here (asked in the Mock Promo). The rest: [[C4-3a Introduction to Relational Database\|C4-3a]], [[C4-3b Normalisation\|C4-3b]], [[C4-3c ER Diagram\|C4-3c]] |
 > | 3.3.6–3.3.7 | NoSQL | not taught yet |
-> | 3.3.8 | SQL statements | [[C4-2 Basic SQL]] |
+> | 3.3.8 | SQL statements | [[C4-2 Basic SQL]], [[C4-4 Advanced SQL]], [[C5a Python with SQLite]] |
 >
 > Every A-Level Paper 1 from 2020 to 2024, and the 2027 specimen, has a database question worth 19–27 marks, mostly normalisation and ER diagrams (C4-3).
 
@@ -195,4 +195,7 @@ Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
 ## Related
 
 - [[C4-2 Basic SQL]]
+- [[C4-3a Introduction to Relational Database]]
+- [[C4-3b Normalisation]]
+- [[C4-3c ER Diagram]]
 - [[LT4a Data validation and verification]]
