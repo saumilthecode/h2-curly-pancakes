@@ -98,7 +98,7 @@ That is why `Peter Tan` repeats: the tutor is a fact about the class, stored onc
 > [!tip] Class, 11 Nov
 > Marks are lost in the phrasing, not the knowledge. If a question wants two advantages, pick the two that fit its context.
 
-The 2026 Mock Promo asked redundancy and inconsistency on a flat file: [[C4-1 Introduction to Database#Exam|C4-1]].
+A worked flat-file question on redundancy and inconsistency is in [[C4-1 Introduction to Database#Exam|C4-1]].
 
 > [!example]- Practice
 > `LOAN (LoanID, Member, ISBN, Title, Publisher)`

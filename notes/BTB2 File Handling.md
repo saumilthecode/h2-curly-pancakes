@@ -9,20 +9,11 @@ data = f.read()
 f.close()
 ```
 
-> [!important] Make sure the file is closed
-> If you use an explicit `open()`, include the matching `close()`. Your schemes give a mark for it:
+> [!important] Close what you open
+> A plain `open()` needs its matching `close()`, and mark schemes give a mark for it.
+> `with open(...) as f:` closes the file for you, even if something goes wrong inside, so it needs no `close()`.
 >
-> | Source | Wording |
-> | ------ | ------- |
-> | LS2 | `1m: both open and close` |
-> | 2023 Promo P2 | `[1]open,read,close file` |
-> | 2024 Promo P2 | `1m open and close` |
-> | 2025 Promo P2 | `1m open and close` |
-> | 2026 Mastery P2 | `1m open and close` |
->
-> The y27 Reference Guide prints **both** styles, so either is fine. `with` closes the file for you, even if something goes wrong inside. The Mock Promo's own answer uses `with`.
->
-> Class, 11 Nov: after checking with SEAB, `with open(...)` no longer loses marks for having no `close()`. A plain `open()` must still be closed.
+> The [[Reference Guide]] prints both styles, so either is fine.
 
 | Mode | Does |
 | ---- | ---- |
@@ -167,7 +158,7 @@ def export(records, filename):
     f.close()
 ```
 
-> [!important] Promo P2: read a file into a list, every year
+> [!important] Promo P2 tasks: read a file into a list
 > | Paper | Task | Builds | Marks |
 > | ----- | ---- | ------ | ----- |
 > | 2023 | 3.1 | a list of **lists** (open and close were given) | `[5]` |
@@ -187,7 +178,7 @@ def export(records, filename):
 >
 > 2023 gave its mark for iterating instead of the tuple. The 2024 scheme's code builds `(line[0], line[1], line[3])`, which drops two scores the question asked for. Keep every field the question lists.
 >
-> Values come back as **strings**. The Mock gave 1m for converting the readings to numbers, and later tasks give a mark for `int()` or `float()`.
+> Values come back as **strings**. Converting them with `int()` or `float()` earns a mark.
 
 ## Common Mistakes
 

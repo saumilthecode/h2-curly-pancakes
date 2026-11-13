@@ -74,27 +74,99 @@ function titleFromFile(file) {
   return path.basename(file, ".md");
 }
 
+// The index's "## " headings become the sidebar's groups. Links above the first
+// heading (the Reference Guide tip) sit ungrouped at the top of the sidebar.
 function readIndexEntries(knownNotes) {
   const indexPath = path.join(notesDir, "index.md");
   if (!fs.existsSync(indexPath)) return [];
 
-  const source = fs.readFileSync(indexPath, "utf8");
   const entries = [];
   const wikiLink = /\[\[((?:[^|\]\\]|\\.)+)(?:\|([^\]]+))?\]\]/g;
-  let match;
+  let group = null;
 
-  while ((match = wikiLink.exec(source)) !== null) {
-    const target = match[1].replace(/\\\|/g, "|").replace(/\\$/, "").trim();
-    const file = knownNotes.get(target.toLowerCase());
-    if (!file || file === "index.md") continue;
+  for (const part of splitMarkdownSegments(fs.readFileSync(indexPath, "utf8"))) {
+    if (part.code) continue;
 
-    entries.push({
-      file,
-      title: (match[2] || target).trim(),
-    });
+    for (const line of part.text.split("\n")) {
+      const heading = line.match(/^##\s+(.+?)\s*$/);
+      if (heading) {
+        group = heading[1];
+        continue;
+      }
+
+      let match;
+      while ((match = wikiLink.exec(line)) !== null) {
+        const target = match[1].replace(/\\\|/g, "|").replace(/\\$/, "").trim();
+        const file = knownNotes.get(target.toLowerCase());
+        if (!file || file === "index.md") continue;
+
+        entries.push({
+          file,
+          title: (match[2] || target).trim(),
+          group,
+        });
+      }
+    }
   }
 
   return entries;
+}
+
+// Markdown-it inline source with the markup taken out, for the search index.
+function plainText(value) {
+  return String(value)
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<[^>]+>/g, "")
+    .replace(/\[!\w+\][-+]?/g, " ")
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\*\*|__|`/g, "")
+    .replace(/\\\|/g, "|")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// One search entry per section of a page: the text before the first heading,
+// then each h2 and h3, so a hit can link straight to the heading it sits under.
+function searchSections(file, pageTitle, tokens) {
+  const page = outputNameForMarkdown(file);
+  const sections = [{ s: "", h: encodeHref(page), x: [] }];
+
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
+
+    if (token.type === "heading_open" && (token.tag === "h2" || token.tag === "h3")) {
+      const id = token.attrGet("id");
+      sections.push({
+        s: plainText(tokens[i + 1].content),
+        h: encodeHref(id ? `${page}#${id}` : page),
+        x: [],
+      });
+      i += 2; // the heading's inline token and heading_close
+      continue;
+    }
+
+    const current = sections[sections.length - 1];
+    if (token.type === "inline" || token.type === "html_block") {
+      current.x.push(plainText(token.content));
+    } else if (token.type === "code_block") {
+      current.x.push(token.content);
+    } else if (token.type === "fence" && (token.info || "").trim().split(/\s+/)[0] !== "mermaid") {
+      current.x.push(token.content);
+    }
+  }
+
+  return sections
+    .map((section) => ({
+      t: pageTitle,
+      s: section.s,
+      h: section.h,
+      x: section.x.join(" ").replace(/\s+/g, " ").trim(),
+    }))
+    .filter((section) => section.s || section.x);
 }
 
 function outputNameForMarkdown(file) {
@@ -321,25 +393,40 @@ ${content}
 </aside>`;
 }
 
-function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
+function renderMarkdown(file, source, knownNotes, displayTitles, navEntries, searchDocs) {
   const transformed = transformObsidianSyntax(source, knownNotes);
-  const body = transformCallouts(md.render(transformed));
+  // Same as md.render, but keeping the tokens so the search index can use the
+  // heading ids markdown-it-anchor assigned.
+  const env = {};
+  const tokens = md.parse(transformed, env);
+  const body = transformCallouts(md.renderer.render(tokens, md.options, env));
   const pageTitle = file === "index.md" ? "H2 Computing Notes" : displayTitles.get(file) || titleFromFile(file);
   const mermaidScript = body.includes('class="mermaid"') ? MERMAID_SCRIPT : "";
+
+  if (file !== "index.md") searchDocs.push(...searchSections(file, pageTitle, tokens));
 
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <title>${escapeHtml(pageTitle)}</title>
   <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
 <body>
   <div class="site-shell">
-    <aside class="site-sidebar">
-      <a class="site-title" href="index.html">H2 Computing Notes</a>
-      ${renderNav(knownNotes, file, displayTitles, navEntries)}
+    <aside class="site-sidebar" id="site-sidebar">
+      <div class="sidebar-head">
+        <a class="site-title" href="index.html">H2 Computing Notes</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar-body">Menu</button>
+      </div>
+      <div class="sidebar-body" id="sidebar-body">
+        <input class="search-input" id="search-input" type="search" placeholder="Search notes" aria-label="Search notes" title="Press / to search" autocomplete="off" spellcheck="false">
+        <div class="search-results" id="search-results" hidden></div>
+        ${renderNav(knownNotes, file, displayTitles, navEntries)}
+      </div>
     </aside>
     <main class="markdown-preview-view">
       ${file !== "index.md" ? `<h1>${escapeHtml(pageTitle)}</h1>` : ""}
@@ -353,34 +440,62 @@ function renderMarkdown(file, source, knownNotes, displayTitles, navEntries) {
 
 const MERMAID_SCRIPT = `<script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true, theme: "neutral", securityLevel: "strict" });
+    const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "neutral", securityLevel: "strict" });
   </script>`;
 
+// Sidebar: ungrouped links first, then one collapsible group per "## " heading in
+// the index. Only the group holding the current page starts open. Notes the index
+// doesn't link to go in a final "Other" group.
 function renderNav(knownNotes, currentFile, displayTitles, navEntries) {
-  const indexFiles = new Set(navEntries.map((entry) => entry.file));
-  const ordered = [
-    ...navEntries.map((entry) => entry.file),
-    ...Array.from(knownNotes.values())
-      .filter((file) => !indexFiles.has(file)),
-  ]
-    .filter((file) => file !== "index.md" && file !== "* index.md" && !file.startsWith("."))
-    .filter((file, index, files) => files.indexOf(file) === index);
+  const link = (file) => {
+    const title = displayTitles.get(file) || titleFromFile(file);
+    const active = file === currentFile;
+    return `<a class="nav-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""} href="${encodeHref(outputNameForMarkdown(file))}">${escapeHtml(title)}</a>`;
+  };
 
-  const links = ordered
-    .map((file) => {
-      const title = displayTitles.get(file) || titleFromFile(file);
-      const active = file === currentFile ? " active" : "";
-      return `<a class="nav-link${active}" href="${encodeHref(outputNameForMarkdown(file))}">${escapeHtml(title)}</a>`;
-    })
-    .join("\n");
+  const seen = new Set(["index.md", "* index.md"]);
+  const top = [];
+  const groups = [];
 
-  return `<nav>${links}</nav>`;
+  for (const entry of navEntries) {
+    if (seen.has(entry.file)) continue;
+    seen.add(entry.file);
+
+    if (!entry.group) {
+      top.push(entry.file);
+      continue;
+    }
+    let group = groups.find((g) => g.name === entry.group);
+    if (!group) {
+      group = { name: entry.group, files: [] };
+      groups.push(group);
+    }
+    group.files.push(entry.file);
+  }
+
+  const others = Array.from(knownNotes.values()).filter((file) => !seen.has(file) && !file.startsWith("."));
+  if (others.length) groups.push({ name: "Other", files: others });
+
+  const sections = groups.map((group) => {
+    const open = group.files.includes(currentFile) ? " open" : "";
+    return `<details class="nav-group"${open}>
+<summary>${escapeHtml(group.name)}</summary>
+${group.files.map(link).join("\n")}
+</details>`;
+  });
+
+  return `<nav class="site-nav" aria-label="Notes">
+${top.map(link).join("\n")}
+${sections.join("\n")}
+</nav>`;
 }
 
 function copyAssets() {
   const assetsDir = path.join(outDir, "assets");
   fs.mkdirSync(assetsDir, { recursive: true });
   fs.writeFileSync(path.join(assetsDir, "site.css"), siteCss());
+  fs.copyFileSync(path.join(__dirname, "site.js"), path.join(assetsDir, "site.js"));
 
   for (const entry of fs.readdirSync(notesDir, { withFileTypes: true })) {
     const source = path.join(notesDir, entry.name);
@@ -425,11 +540,35 @@ function siteCss() {
   --text-accent: #4b6fb5;
   --interactive-accent: #5c7cba;
   --code-background: #eeece7;
+  --hover: rgba(92, 124, 186, 0.13);
+  --mark: rgba(255, 196, 0, 0.38);
+  --missing: #a15c45;
   --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+
+/* Dark mode follows the device setting. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #1b1a19;
+    --background-secondary: #232220;
+    --background-modifier-border: #3b3936;
+    --text-normal: #e7e4df;
+    --text-muted: #a49f97;
+    --text-accent: #93abe0;
+    --interactive-accent: #7c98d0;
+    --code-background: #272624;
+    --hover: rgba(124, 152, 208, 0.18);
+    --mark: rgba(255, 196, 0, 0.3);
+    --missing: #d08a72;
+    color-scheme: dark;
+  }
 }
 
 * { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -455,12 +594,49 @@ body {
   border-right: 1px solid var(--background-modifier-border);
 }
 
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
 .site-title {
   display: block;
-  margin-bottom: 18px;
   color: var(--text-normal);
   font-weight: 700;
   text-decoration: none;
+}
+
+/* Only shown on narrow screens, see the media query at the end. */
+.menu-toggle {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 7px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font: inherit;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: -1px;
 }
 
 .nav-link {
@@ -474,8 +650,79 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  background: rgba(92, 124, 186, 0.13);
+  background: var(--hover);
   color: var(--text-normal);
+}
+
+.nav-group { margin-top: 4px; }
+
+.nav-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav-group > summary::-webkit-details-marker { display: none; }
+
+.nav-group > summary::before {
+  content: "\\203A";
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.nav-group[open] > summary::before { transform: rotate(90deg); }
+.nav-group > summary:hover { color: var(--text-normal); }
+.nav-group > .nav-link { padding-left: 24px; }
+
+.search-hit {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: var(--text-normal);
+  text-decoration: none;
+}
+
+.search-hit:hover,
+.search-hit:focus {
+  background: var(--hover);
+  outline: none;
+}
+
+.hit-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hit-text {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.search-empty {
+  margin: 0;
+  padding: 6px 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+mark {
+  background: var(--mark);
+  color: inherit;
+  border-radius: 2px;
 }
 
 .markdown-preview-view {
@@ -505,7 +752,7 @@ h2 { border-bottom: 1px solid var(--background-modifier-border); padding-bottom:
 a { color: var(--text-accent); }
 a.internal-link { text-decoration: none; font-weight: 500; }
 a.internal-link:hover { text-decoration: underline; }
-a.missing { color: #a15c45; }
+a.missing { color: var(--missing); }
 
 table {
   border-collapse: collapse;
@@ -613,15 +860,33 @@ pre code {
   border-radius: 8px;
 }
 
+/* Phones: the sidebar shrinks to a bar with the title and a Menu button, and
+   the links and search open below it on demand instead of filling the page. */
 @media (max-width: 820px) {
-  .site-shell { grid-template-columns: 1fr; }
+  /* minmax(0, …), not 1fr: a wide diagram or table must scroll inside the page,
+     not stretch the page past the screen. */
+  .site-shell { grid-template-columns: minmax(0, 1fr); }
   .site-sidebar {
-    position: static;
+    z-index: 20;
     height: auto;
+    overflow: visible;
+    padding: 10px 16px;
     border-right: 0;
     border-bottom: 1px solid var(--background-modifier-border);
   }
-  .markdown-preview-view { padding: 32px 20px 64px; }
+  .sidebar-head { margin-bottom: 0; }
+  .menu-toggle { display: inline-block; }
+  .sidebar-body { display: none; }
+  .site-sidebar.open .sidebar-body {
+    display: block;
+    margin-top: 12px;
+    max-height: calc(100vh - 64px);
+    max-height: calc(100dvh - 64px);
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  .markdown-preview-view { padding: 24px 16px 64px; }
+  h1, h2, h3, h4 { scroll-margin-top: 64px; }
 }`;
 }
 
@@ -642,11 +907,13 @@ function main() {
 
   copyAssets();
 
+  const searchDocs = [];
   for (const file of noteFiles) {
     const source = fs.readFileSync(path.join(notesDir, file), "utf8");
-    const html = renderMarkdown(file, source, knownNotes, displayTitles, navEntries);
+    const html = renderMarkdown(file, source, knownNotes, displayTitles, navEntries, searchDocs);
     fs.writeFileSync(path.join(outDir, outputNameForMarkdown(file)), html);
   }
+  fs.writeFileSync(path.join(outDir, "assets", "search.json"), JSON.stringify(searchDocs));
 
   fs.writeFileSync(path.join(outDir, ".nojekyll"), "");
   console.log(`Rendered ${noteFiles.length} notes to ${path.relative(root, outDir)}`);

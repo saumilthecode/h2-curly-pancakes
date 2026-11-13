@@ -71,7 +71,7 @@ Ordered by the 26S13 scheme of work, not by syllabus module.
 
 - [[LT11a Search|LT11a Linear and Binary Search]]: iterative and recursive search, Big-O
 - [[LT11b Binary Tree|LT11b Binary Tree Parts 1–3]]: trees, BSTs, traversals, BFS and DFS
-- [[LT11b Lesson Code (List ADT)]]: the lesson's `make_tree` Python *(WA only)*
+- [[LT11b Lesson Code (List ADT)]]: the lesson's `make_tree` Python
 
 ### LT12 Sorting Algorithms
 
