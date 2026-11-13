@@ -1,0 +1,171 @@
+> [!summary] Quick View
+> Stack = **LIFO**, Last In First Out. Everything happens at the top.
+
+```text
+      push v    ^ pop         both act on the TOP
+         +-------+
+  top >  |   C   |  < s[-1]   last in, first out
+         +-------+
+         |   B   |
+         +-------+
+bottom > |   A   |  < s[0]    first in, last out
+         +-------+
+```
+
+## Core Operations
+
+| Operation | Meaning | Python list |
+| --------- | ------- | ----------- |
+| `push(s, x)` | add to top | `s.append(x)` |
+| `pop(s)` | remove and return top | `s.pop()` |
+| `peek(s)` | look at top, don't remove | `s[-1]` |
+| `is_empty(s)` | is it empty? | `s == []` |
+
+> [!important]
+> Top of stack = **end** of the Python list. You cannot pop an empty stack.
+
+## Template
+
+```python
+def push(s, item):
+    s.append(item)
+
+def pop(s):
+    if s == []:
+        return None
+    return s.pop()
+
+def peek(s):
+    if s == []:
+        return None
+    return s[-1]
+```
+
+> [!important] The empty check is a mark, not a nicety
+> Your LS2 mark scheme writes **`0m if not checking empty stack`** against the `else` branch. Omit the guard and the whole part scores zero.
+>
+> If a question gives the structure a **maximum size**, the mirror guard on `push` is marked too: the y27 specimen Paper 2 requires its queue `enqueue()` to return `False` when full. Assume any bounded structure needs both guards.
+
+> [!example]- Trace: push and pop
+> | Step | Operation | Stack after | Returns |
+> | ---- | --------- | ----------- | ------- |
+> | 1 | `make_empty_stack()` | `[]` | - |
+> | 2 | `pop(s)` | `[]` | `None` (nothing to pop) |
+> | 3 | `push(s, 7)` | `[7]` | - |
+> | 4 | `push(s, 5)` | `[7, 5]` | - |
+> | 5 | `push(s, 3)` | `[7, 5, 3]` | - |
+> | 6 | `pop(s)` | `[7, 5]` | `3` |
+> | 7 | `peek(s)` | `[7, 5]` | `5` |
+> | 8 | `is_empty(s)` | `[7, 5]` | `False` |
+
+## Application: Reverse a Sequence
+
+```text
+input:  a b c d
+stack:  [a, b, c, d]
+pop:    d c b a
+```
+
+## Application: Denary to Binary
+
+Repeated division gives the remainders backwards, so a stack flips them.
+
+```python
+while n > 0:
+    push(s, n % 2)
+    n = n // 2
+
+bits = ""
+while s != []:
+    bits += str(pop(s))
+```
+
+## Application: Balanced Brackets
+
+- Opening bracket → **push** it.
+- Closing bracket → **pop** and check it matches.
+- Closing bracket on an **empty** stack → unbalanced, stop there.
+- Valid only if the stack is **empty at the end**.
+
+```python
+pairs = {")": "(", "]": "[", "}": "{"}
+```
+
+```text
+( [ ] ( { ( ) } ) )   balanced
+( ( { } [ ) ] )       not balanced
+```
+
+A count of `(` and `)` passes `)(`. The stack catches the order.
+
+## Application: Postfix Notation
+
+| Notation | Operator sits | `A + B` written as |
+| -------- | ------------- | ------------------ |
+| Infix | between operands | `A + B` |
+| Prefix | before operands | `+ A B` |
+| Postfix | after operands | `A B +` |
+
+Evaluate left to right: push operands. For operators, pop two, combine, push result. Tuple input: `(7, 6, 2, '/', '+')` = `7 + 6 / 2 = 10`.
+
+```text
+3 4 * 5 +          (infix: 3 * 4 + 5)
+
+push 3                    [3]
+push 4                    [3, 4]
+*  -> pop 4, pop 3, push 12   [12]
+push 5                    [12, 5]
++  -> pop 5, pop 12, push 17  [17]
+
+answer = 17
+```
+
+> [!warning]
+> For `-` and `/` the order matters. `A B -` means `A - B`. The **first** value popped is the right-hand operand.
+
+Symbol order fixes evaluation order: **no brackets or precedence rules**. `3 4 5 + *` and `3 4 * 5 +` differ.
+
+## Exam
+
+> [!important] 2026 Mock Promo P2 Task 6: trail backtracking with a stack `[3+2+3]`
+> `module.py` gives `make_empty_stack()` and `is_empty_stack(stack)`. You write the rest.
+>
+> ```python
+> def push(stack, checkpoint):
+>     stack.append(checkpoint)           # 1m
+>     return stack                       # the question asks for the stack back
+>
+> def pop(stack):
+>     if is_empty_stack(stack):          # 1m
+>         return None
+>     return stack.pop()                 # 1m
+>
+> def peek(stack):
+>     if is_empty_stack(stack):          # 1m
+>         return None
+>     return stack[-1]                   # 1m
+>
+> def backtrack(stack):
+>     route = []                         # 1m
+>     while not is_empty_stack(stack):   # 1m
+>         route.append(pop(stack))
+>     return route                       # 1m
+> ```
+>
+> After pushing `("ENTRANCE", "PINE", "RIDGE", "LAKE")`, `peek(trail)` is `'LAKE'` and `backtrack(trail)` is `['LAKE', 'RIDGE', 'PINE', 'ENTRANCE']`.
+
+## Common Mistakes
+
+- Using `pop(0)`: that's a [[LT10c Queue|Queue]], not a stack.
+- Returning `s.append(x)` from `push`: `.append()` returns `None`. If the question wants the stack back (Mock Promo Task 6.1), append first, then `return s`.
+- Iterating the list (`for item in s:`) instead of calling `pop()`: it loses the ADT marks in *application of stack* questions and doesn't reverse.
+- Treating `peek()` as if it removes the item.
+- Popping an empty stack instead of returning `None`.
+- Reversing an already-reversed result a second time.
+
+## Related
+
+- [[LT10a Data Abstraction]]
+- [[LT10c Queue]]
+- [[LT9a Recursion]]
+- [[C2 Data representation]]

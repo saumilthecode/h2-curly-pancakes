@@ -1,0 +1,479 @@
+> [!summary] Quick View
+> A **binary tree** is non-linear: nodes joined by edges in a hierarchy, each node with **at most two** children.
+> A **binary search tree (BST)** adds ordering: everything left of a node is smaller, everything right is larger. Search is `O(log n)` **if the tree is balanced**.
+
+> [!important] Syllabus scope: and it's examined nearly every year
+> | Ref | Outcome |
+> | --- | ------- |
+> | 2.1.3 | create, update (edit, insert, delete) and **search** operations for binary trees (including BSTs), *Exclude: editing and deleting nodes from binary search trees* |
+> | 2.1.4 | pre-order, in-order and post-order traversals, **including the application of in-order traversal for BSTs** |
+> | 2.1.5 | **breadth-first search and depth-first search** for binary trees |
+>
+> Asked in 2020 Q3, 2021 Q7, 2023 Q4, 2024 Q5 and specimen 2027 Paper 1 Q2.
+
+## Vocabulary
+
+```mermaid
+flowchart TD
+  A --> B
+  A --> C
+  B --> D
+  B --> E
+  C --> F
+  C --> G
+  D --> H
+  D --> I
+```
+
+| Term | Meaning | Above |
+| ---- | ------- | ----- |
+| Node | holds the data | `A`–`I` |
+| Edge | the line joining two nodes | 8 of them |
+| Root | the one node with no parent | `A` |
+| Parent / child | `B` is `A`'s **left child**, `C` its **right child** | - |
+| Siblings | children of the same parent | `H` and `I` |
+| Leaf | a node with no children | `E`, `F`, `G`, `H`, `I` |
+| Subtree | a node's left and right branches are **themselves binary trees** | `B`, `D`, `E`, `H`, `I` are `A`'s left subtree |
+| **Height** of the tree | edges on the **longest** root → leaf path | `3` (`A→B→D→H`) |
+| **Depth** of a node | edges on the path root → that node | `D` is at depth `2` |
+| **Size** | number of nodes | `9` |
+
+> [!warning]
+> Height and depth are counted in **edges**, not nodes. A single-node tree has height `0`.
+
+### Full vs Complete
+
+| | Rule |
+| --- | ---- |
+| **Full** | every node except the leaves has **two** children |
+| **Complete** | every level except possibly the last is completely filled, and the last level's nodes are **as far left as possible** |
+
+```mermaid
+flowchart TD
+  subgraph two["complete, not full"]
+    direction TD
+    cA[A] --> cB[B]
+    cA --> cC[C]
+    cB --> cD[D]
+    cB ~~~ cS:::hid
+  end
+  subgraph one["full, not complete"]
+    direction TD
+    fA[A] --> fB[B]
+    fA --> fC[C]
+    fC --> fD[D]
+    fC --> fE[E]
+  end
+  classDef hid fill:none,stroke:none,color:transparent
+```
+
+The vocabulary tree at the top is both.
+
+## Binary Search Tree
+
+Three rules:
+
+1. Each node stores a **distinct** key: no duplicates.
+2. Every key in a node's **left** subtree is **less than** that node's key.
+3. Every key in its **right** subtree is **greater than** that node's key.
+
+The rules apply at **every** node, not just the root.
+
+> [!warning] A binary tree is not a BST
+> A plain binary tree limits only the **shape**: values can repeat, have no order, and a parent may have one child or none. True of **both**: at most two children, leaves have none, and the root is the only node with no parent.
+
+```mermaid
+flowchart TD
+  n6[6] --> n4[4]
+  n6 --> n8[8]
+  n4 --> n2[2]
+  n4 --> n5[5]
+  n2 --> n1[1]
+  n2 --> n3[3]
+  n8 --> n7[7]
+  n8 --> n9[9]
+```
+
+> [!important] 2024 Q5(a)(ii): "Give **two** properties of a binary search tree" `[2]`
+> Any two of: all keys in a node's left subtree are smaller than the node's key. All keys in its right subtree are larger. Every node has at most two children. The keys are unique.
+
+### In-Order Traversal Gives Sorted Order
+
+Read the tree above **left, node, right** and you get `1 2 3 4 5 6 7 8 9`. That is 2.1.4's *"application of in-order tree traversal for binary search trees"*.
+
+## Searching and Inserting
+
+Python for all of it, `contains`, `insert_tree`, the traversals and BFS, is in [[LT11b Lesson Code (List ADT)]].
+
+> [!important] Describe searching a BST: 2023 Promo Q4(b) `[3]`, 2025 Promo Q5(c) `[5]`
+> 1. Start at the **root** as the current node.
+> 2. If the item **matches** the current node, return `True`.
+> 3. If it is **smaller**, move to the left child. If **larger**, the right child.
+> 4. Repeat from step 2.
+> 5. When the current node is **empty**, the item isn't in the tree. Return `False`.
+>
+> 2025: 1m per step. 2023 markers: most answers skipped checking the root and never said how to detect **absence**. Array binary search or insertion scored 0.
+
+Insert as a **new leaf**: follow the search path to an empty branch.
+
+> [!important] "Describe the steps when a value is inserted into a BST": specimen Paper 1 Q2(b), `[5]`
+> Five marks, five steps:
+> 1. Start at the **root**. If the tree is empty, the new value becomes the root.
+> 2. Compare the new value with the current node's value.
+> 3. If it is **smaller**, follow the **left** pointer. If **larger**, follow the **right** pointer.
+> 4. Repeat from step 2 until the pointer you need to follow is **null**.
+> 5. Create the node there, set the parent's left/right pointer to it, and set the new node's own pointers to null.
+
+> [!warning] Deleting is out of scope
+> 2.1.3 says *"Exclude: editing and deleting nodes from binary **search** trees"*. The exclusion is worded against BSTs only. The lecture leaves `remove` as extra practice: *"this is not fully required inside of syllabus"*.
+
+## Traversals
+
+Each node shows its position in each traversal:
+
+```mermaid
+flowchart TD
+  n5["<b>5</b><br>pre 1 · in 3<br>post 5 · bfs 1"] --> n2["<b>2</b><br>pre 2 · in 2<br>post 2 · bfs 2"]
+  n5 --> n7["<b>7</b><br>pre 4 · in 4<br>post 4 · bfs 3"]
+  n2 --> n1["<b>1</b><br>pre 3 · in 1<br>post 1 · bfs 4"]
+  n2 ~~~ z1:::hid
+  n7 ~~~ z2:::hid
+  n7 --> n10["<b>10</b><br>pre 5 · in 5<br>post 3 · bfs 5"]
+  classDef hid fill:none,stroke:none,color:transparent
+```
+
+| | Pre-order | In-order | Post-order | BFS |
+| --- | --- | --- | --- | --- |
+| Order | **node**, L, R | L, **node**, R | L, R, **node** | level by level |
+| Output | `5 2 1 7 10` | `1 2 5 7 10` | `1 2 10 7 5` | `5 2 7 1 10` |
+| Type | DFS | DFS | DFS | BFS |
+
+### By Hand
+
+**Visit** = move onto a node. **Select** = write it down.
+
+| Select when | |
+| ----------- | - |
+| pre | you arrive |
+| in | left subtree done |
+| post | both subtrees done |
+
+BFS goes level by level: dequeue, write it down, enqueue its children:
+
+| Dequeue | Write | Enqueue | Queue after |
+| ------- | ----- | ------- | ----------- |
+| - | - | `5` | `[5]` |
+| `5` | `5` | `2`, `7` | `[2, 7]` |
+| `2` | `2` | `1` | `[7, 1]` |
+| `7` | `7` | `10` | `[1, 10]` |
+| `1` | `1` | - | `[10]` |
+| `10` | `10` | - | `[]` |
+
+> [!warning]
+> Enqueue **left before right**. In-order on a BST comes out **ascending**, which checks your answer.
+
+> [!example]- The video's worked tree
+> ```mermaid
+> flowchart TD
+>   v75[75] --> v17[17]
+>   v75 --> v80[80]
+>   v17 --> v3[3]
+>   v17 --> v62[62]
+>   v3 ~~~ y1:::hid
+>   v3 --> v8[8]
+>   v62 --> v26[26]
+>   v62 --> v73[73]
+>   v80 ~~~ y2:::hid
+>   v80 --> v97[97]
+>   v97 --> v96[96]
+>   v97 ~~~ y3:::hid
+>   v96 --> v89[89]
+>   v96 ~~~ y4:::hid
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> | | |
+> | --- | --- |
+> | pre | `75 17 3 8 62 26 73 80 97 96 89` |
+> | in | `3 8 17 26 62 73 75 80 89 96 97` |
+> | post | `8 3 26 73 62 17 89 96 97 80 75` |
+> | bfs | `75 17 80 3 62 97 8 26 73 96 89` |
+
+## Efficiency
+
+Searching, inserting: one comparison per level, so the cost is the **height**, not the size.
+
+For a tree of height `h` with **every level full**:
+
+```text
+n = 1 + 2 + 4 + ... + 2^h = 2^(h+1) - 1      [sum of a GP]
+
+making h the subject:   h = log2(n + 1) - 1
+```
+
+| Shape | Height | Search |
+| ----- | ------ | ------ |
+| Balanced | `≈ log2 n` | `O(log n)` |
+| Unbalanced (one long chain) | `n - 1` | `O(n)` (no better than a [[LT7 Lists\|list]]) |
+
+### Insertion Order Decides the Shape
+
+```mermaid
+flowchart TD
+  subgraph b3["inserted 1,3,5,7,9,11 - height 5"]
+    direction TD
+    z1[1] ~~~ s1:::hid
+    z1 --> z3[3]
+    z3 ~~~ s2:::hid
+    z3 --> z5[5]
+    z5 ~~~ s3:::hid
+    z5 --> z7[7]
+    z7 ~~~ s4:::hid
+    z7 --> z9[9]
+    z9 ~~~ s5:::hid
+    z9 --> z11[11]
+  end
+  subgraph b2["inserted 5,3,9,1,7,11 - height 2"]
+    direction TD
+    y5[5] --> y3[3]
+    y5 --> y9[9]
+    y3 --> y1[1]
+    y3 ~~~ p2:::hid
+    y9 --> y7[7]
+    y9 --> y11[11]
+  end
+  subgraph b1["inserted 7,3,9,1,5,11 - height 2"]
+    direction TD
+    x7[7] --> x3[3]
+    x7 --> x9[9]
+    x3 --> x1[1]
+    x3 --> x5[5]
+    x9 ~~~ p1:::hid
+    x9 --> x11[11]
+  end
+  classDef hid fill:none,stroke:none,color:transparent
+```
+
+Sorted input is the worst case: every node becomes a right child, a chain with `O(n)` search.
+
+> [!important] 2023 Q4(c): "State how two BSTs can store the same data but have a different shape" `[1]`
+> The shape depends on the **order the values are inserted**.
+
+> [!example]- Rebalancing
+> Insertions can unbalance a tree. Periodically rebuild it evenly. The lecture's `balance_tree` Question of the Day is not assessed.
+
+## BST vs Binary Search
+
+| | [[LT11a Search\|Binary search]] | Binary search tree |
+| --- | ------------- | ------------------ |
+| Structure | sorted array / list | tree of nodes |
+| Precondition | the sequence **must be sorted first** | the ordering is built in as you insert |
+| Each step | discards half the range | discards one subtree |
+| Insert | shift the later elements along | attach a new leaf, nothing moves |
+| Cost | `O(log n)` | `O(log n)` **if balanced** |
+
+Other uses named in the lecture: storing the keys of a hash table so that a [[LT10d Hashing|separate chain]] can be searched in `O(log n)` (if balanced) instead of `O(n)`, and divide-and-conquer generally.
+
+> [!important] Specimen Paper 1 Q2(a): "advantage of a BST over a **linked list**" `[2]`
+> A linked list can only be searched from the head, one node at a time: `O(n)`. In a BST each comparison throws away a whole subtree, roughly halving what's left, so you find a value in `O(log n)`. Only while it stays balanced.
+
+## The Array Form Used in Paper 1
+
+**Paper 1 uses an array of nodes.** Each node stores left pointer, data and right pointer; `Root` holds the root's index; `Null` (or `-1`) means no node. Used in 2020, 2021 and 2024.
+
+2021 Q7: array `Names`, `Root = 1`:
+
+| Index | LPtr | Data | RPtr |
+| ----- | ---- | ---- | ---- |
+| 0 | Null | Peter | Null |
+| 1 | `3` | **Leona** | `5` |
+| 2 | Null | Alice | Null |
+| 3 | `2` | Bobbie | `6` |
+| 4 | Null | Tom | Null |
+| 5 | `0` | Simone | `4` |
+| 6 | Null | David | Null |
+
+Follow the pointers from `Root`. The array order means nothing:
+
+```mermaid
+flowchart TD
+  L[Leona] --> Bo[Bobbie]
+  L --> Si[Simone]
+  Bo --> Al[Alice]
+  Bo --> Da[David]
+  Si --> Pe[Peter]
+  Si --> To[Tom]
+```
+
+In-order: `Alice Bobbie David Leona Peter Simone Tom` (alphabetical, as it must be).
+
+> [!example]- 2021 Q7(b): insert **Eric** `[2]`
+> Eric < Leona → left to index 3 (Bobbie). Eric > Bobbie → right to index 6 (David). Eric > David, and David's RPtr is Null, so that's the spot.
+>
+> | Change | |
+> | ------ | - |
+> | `Names[6].RPtr` | Null → `7` |
+> | `Names[7]` | `Null`, `Eric`, `Null` |
+>
+> ```mermaid
+> flowchart TD
+>   L[Leona] --> Bo[Bobbie]
+>   L --> Si[Simone]
+>   Bo --> Al[Alice]
+>   Bo --> Da[David]
+>   Si --> Pe[Peter]
+>   Si --> To[Tom]
+>   Da ~~~ e1:::hid
+>   Da --> Er[Eric]
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+
+> [!example]- 2020 Q3(f): name the traversal `[1]`
+> ```text
+> 01 PROCEDURE P(Index: INTEGER)
+> 02   IF b_tree[Index].l_ptr <> -1 THEN
+> 03     P(b_tree[Index].l_ptr)
+> 04   ENDIF
+> 05   IF b_tree[Index].r_ptr <> -1 THEN
+> 06     P(b_tree[Index].r_ptr)
+> 07   ENDIF
+> 08   OUTPUT b_tree[Index].data_item
+> 09 ENDPROCEDURE
+> ```
+> Left, then right, then output → **post-order**. The `<> -1` tests on lines 02 and 05 are the **base case**. They stop the recursion at a null pointer.
+>
+> The rest of Q3 was recursion and the call [[LT10b Stack|stack]]. See [[LT9a Recursion]].
+
+> [!important] 2024 Q5(c): write a recursive **reverse** in-order procedure `[6]`
+> Defined in the paper as: follow the **right** pointer and repeat → output the node → follow the **left** pointer and repeat. On a BST it outputs the keys in **descending** order.
+>
+> Same shape as 2020 Q3(f), with the steps reordered (no mark scheme):
+>
+> ```text
+> PROCEDURE reverseInOrder(ptr : INTEGER)
+>     IF bst[ptr].rightPtr <> -1 THEN
+>         reverseInOrder(bst[ptr].rightPtr)
+>     ENDIF
+>     OUTPUT bst[ptr].dataValue
+>     IF bst[ptr].leftPtr <> -1 THEN
+>         reverseInOrder(bst[ptr].leftPtr)
+>     ENDIF
+> ENDPROCEDURE
+>
+> reverseInOrder(rootPtr)
+> ```
+>
+> For the others, put the calls back to **left then right**, then move the `OUTPUT` line: before both calls is pre-order, between is in-order, after is post-order.
+
+## Worked Example: Specimen Paper 1 Q2
+
+Countries in a BST: 13 marks. The queue half is in [[LT10c Queue|Queue]].
+
+```mermaid
+flowchart TD
+  Be[Belgium] --> Au[Australia]
+  Be --> Ku[Kuwait]
+  Au --> An[Andorra]
+  Au ~~~ z1:::hid
+  Ku --> Eg[Egypt]
+  Ku --> Sg[Singapore]
+  Eg --> Bo[Bolivia]
+  Eg ~~~ z2:::hid
+  classDef hid fill:none,stroke:none,color:transparent
+```
+
+> [!example]- Q2(c)(iii): insert the dequeued `China` and `Oman` `[2]`
+> - **China**: right of Belgium, left of Kuwait, left of Egypt, right of Bolivia → **Bolivia's right child**
+> - **Oman**: right of Belgium, right of Kuwait, left of Singapore → **Singapore's left child**
+>
+> ```mermaid
+> flowchart TD
+>   Be[Belgium] --> Au[Australia]
+>   Be --> Ku[Kuwait]
+>   Au --> An[Andorra]
+>   Au ~~~ w1:::hid
+>   Ku --> Eg[Egypt]
+>   Ku --> Sg[Singapore]
+>   Eg --> Bo[Bolivia]
+>   Eg ~~~ w2:::hid
+>   Bo ~~~ w3:::hid
+>   Bo --> Ch[China]
+>   Sg --> Om[Oman]
+>   Sg ~~~ w4:::hid
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+
+> [!example]- 2023, 2024 and 2025 promo tree questions
+> **2024 Q2(b)** insert `[5, 2, 7, 1, 3, 8, 6, 4]` in index order `[3+2]`:
+>
+> ```mermaid
+> flowchart TD
+>   q5["5"] --> q2["2"]
+>   q5 --> q7["7"]
+>   q2 --> q1["1"]
+>   q2 --> q3["3"]
+>   q3 ~~~ h6:::hid
+>   q3 --> q4["4"]
+>   q7 --> q6["6"]
+>   q7 --> q8["8"]
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> 1m root `5` · 1m left subtree · 1m right subtree. **(ii)** Ascending order: **in-order** traversal. From the root, visit the left subtree, then the node, then the right subtree (1m in-order, 1m left → node → right). 2026 Mastery P1 Q2(b) repeats (i).
+>
+> **2023 Q4(a)** insert `23_03, 23_07, 23_01, 23_04, 23_02, 23_05, 23_06, 23_08` in that order `[3]`, −1 per wrong node:
+>
+> ```mermaid
+> flowchart TD
+>   a3["23_03 Julie"] --> a1["23_01 Xavier"]
+>   a3 --> a7["23_07 Samantha"]
+>   a1 ~~~ h1:::hid
+>   a1 --> a2["23_02 Peter"]
+>   a7 --> a4["23_04 Beatrice"]
+>   a7 --> a8["23_08 John"]
+>   a4 ~~~ h2:::hid
+>   a4 --> a5["23_05 Alfred"]
+>   a5 ~~~ h3:::hid
+>   a5 --> a6["23_06 Teresa"]
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> Re-sorting the list before inserting lost marks.
+>
+> **2023 Q4(c)** search a BST `O(log n)`, an unsorted list `O(n)` `[2]`. Common error: `O(n log n)` for the BST. No explanation needed.
+>
+> **2023 Q4(d)** ascending order by matriculation number: **in-order**. Visit the left subtree, then the node, then the right subtree `[2]`.
+>
+> **2025 Q5** on this tree:
+>
+> ```mermaid
+> flowchart TD
+>   p["PLUM"] --> b["BANANA"]
+>   p --> t["TOMATO"]
+>   b --> ap["APPLE"]
+>   b --> o["ORANGE"]
+>   o ~~~ h4:::hid
+>   o --> pe["PEACH"]
+>   t --> r["RAISIN"]
+>   t ~~~ h5:::hid
+>   classDef hid fill:none,stroke:none,color:transparent
+> ```
+>
+> **(a)** post-order: `APPLE, PEACH, ORANGE, BANANA, RAISIN, TOMATO, PLUM` `[2]`, −1 per error.
+> **(b)** in-order gives **alphabetical order** `[1]`.
+
+## Common Mistakes
+
+- Comparing against the **root only**. The ordering rule holds at every node.
+- Counting height in **nodes** instead of edges.
+- Inserting a value into the middle. A new value is always a **new leaf**.
+- Mixing up in-order and pre-order. Only in-order gives a BST back sorted.
+- Assuming `O(log n)`. That holds only while the tree is balanced.
+
+## Related
+
+- [[LT11a Search]]
+- [[LT9a Recursion]]
+- [[LT10b Stack]]
+- [[LT10c Queue]]
+- [[LT10d Hashing]]
