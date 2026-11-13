@@ -7,7 +7,7 @@
 > | --- | ------- | ----- |
 > | 3.3.1 | table, record and field | here |
 > | 3.3.2 | primary, secondary, composite and foreign keys | here, except secondary |
-> | 3.3.3–3.3.5 | redundancy, 3NF, ER diagrams | flat-file redundancy here (asked in the Mock Promo). The rest: [[C4-3a Introduction to Relational Database\|C4-3a]], [[C4-3b Normalisation\|C4-3b]], [[C4-3c ER Diagram\|C4-3c]] |
+> | 3.3.3–3.3.5 | redundancy, 3NF, ER diagrams | flat-file redundancy here. The rest: [[C4-3a Introduction to Relational Database\|C4-3a]], [[C4-3b Normalisation\|C4-3b]], [[C4-3c ER Diagram\|C4-3c]] |
 > | 3.3.6–3.3.7 | NoSQL | not taught yet |
 > | 3.3.8 | SQL statements | [[C4-2 Basic SQL]], [[C4-4 Advanced SQL]], [[C5a Python with SQLite]] |
 >
@@ -78,7 +78,7 @@ For `STUDENTS (RegNo, Name, Gender, MobileNo)`:
 
 Check what *could* repeat across all possible records. Ten sample rows can't show it.
 
-A **candidate key** is any field (or set of fields) that could be the primary key, because its value uniquely identifies each record. Asked in the 2026 Mock.
+A **candidate key** is any field (or set of fields) that could be the primary key, because its value uniquely identifies each record.
 
 ### Composite Primary Key
 

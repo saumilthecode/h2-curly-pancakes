@@ -121,7 +121,7 @@ while value != 0:     # 9, 7, 5, 3, 1, -1, -3 ... never exactly 0
 
 Use `while value > 0:`. An infinite loop hangs the cell: interrupt the kernel (■), restart it if that fails, then `print()` inside the loop to trace the variable.
 
-> [!important] Promo P2 Task 1: input validation in 2024, 2025 and the Mock
+> [!important] Promo P2 tasks: input validation
 > **2024 T1.1** `[2]`: re-prompt until `10 <= x <= 100`. 1m `while x < 10 or x > 100:` · 1m input again inside the loop.
 >
 > **2025 T1.1** `[4]`: collect 9 valid scores. A `for` loop with no validation capped at **2m**. A `while` loop without validation, **3m**.

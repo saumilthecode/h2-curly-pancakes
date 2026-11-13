@@ -54,7 +54,7 @@
 > RETURN total
 > ```
 
-> [!important] Promo P2: fill the blanks, then code it
+> [!important] Promo P2 tasks: fill the blanks, then code it
 > **2025 Task 5**: partition with the first element as pivot: A `Hi ← Hi - 1`, B swap `Seq[Lo]` and `Seq[Hi]`, C swap `Seq[Start]` and `Seq[Hi]`. Then `QuickSortHelper` A/B are the two recursive calls on `Start … Mid - 1` and `Mid + 1 … End`. See [[LT12e Quick Sort]].
 >
 > **2023 Task 5**: merge sort blanks A–H. See [[LT12d Merge Sort#Exam|LT12d]].

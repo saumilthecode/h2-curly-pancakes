@@ -12,7 +12,7 @@
 > | 4.1.4 how data is transmitted in a packet-switching network | Packet Switching |
 > | 4.1.5 client–server architecture | Client–Server vs Peer-to-Peer |
 >
-> Everything else here (topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID) came from the C3a lecture and videos. **Not named** in y27, but the 2026 Mock Promo still asked how the switch and router register a new device (switch learns its MAC, router assigns its IP by DHCP). The 2020–2024 papers are the old syllabus, so use them for the concepts, not to guess what's coming.
+> Everything else here (topologies, the switch's SAT, DHCP, SMTP/POP3/IMAP, RAID) came from the C3a lecture and videos and is **not named** in the y27 syllabus. It still helps you explain the five outcomes. The 2020–2024 A-Level papers are the old syllabus, so use them for the concepts, not to guess what's coming.
 
 ## Network Types
 
@@ -221,7 +221,7 @@ During transfer TCP guarantees packets are **delivered** and **reassembled in or
 
 ## Switches and Routers
 
-> [!important] Asked in most papers
+> [!important] School papers on switches and routers
 > 2024 Q5 and the 2026 Mastery paper: name the device, then give **two differences** `[2+2]`. 2023 Q3(d): what a router and a modem do `[2]`. 2026 Mock Q3(b): how the switch and router register a new device `[2]`. Model answers under [[C3 Computer Network#Exam|Exam]].
 
 | | Hub | Switch | Router |

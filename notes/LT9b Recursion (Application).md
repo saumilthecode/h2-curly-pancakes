@@ -187,8 +187,8 @@ The base case is the **edge** of the triangle, not a single value. Both `r == 0`
 > [!warning]
 > Test the base case against the *smallest legal input*, not a convenient one. `len(string) == 0` looks right until the recursive step reads `string[1]`.
 
-> [!important] Promo P2 recursion: 4 or 5 marks a function
-> The **base case** always earns one. The rest go to the **smaller call**, the **combining** step, and in 2024 T5 and 2025 T3 to **calling it and displaying** the answer. 2023 split them across the two branches instead.
+> [!important] Promo P2 tasks: recursion
+> Every scheme below gives a mark for the **base case**. The rest go to the **smaller call**, the **combining** step, and in 2024 T5 and 2025 T3 to **calling it and displaying** the answer. 2023 split them across the two branches instead.
 >
 > | Task | Base case | Smaller call and combine |
 > | ---- | --------- | ------------------------ |

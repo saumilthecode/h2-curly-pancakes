@@ -266,7 +266,7 @@ def search_probe(table, item):
 >
 > **(c)** Advantage: the hash of the registration number gives the **file directly**, so there is no search through the rest of the cabinet (`O(1)` on average). A new card goes straight into its file, with no re-sorting.
 
-> [!important] Promo P2 hash tables: asked every year `[8–16]`
+> [!important] Promo P2 tasks: hash tables `[8–16]`
 > **2024 Task 6**: hash = sum of `ord()` over the username before `@`, `% 20` `[3]`:
 > 1m slice before `@` · 1m loop and total · 1m `ord()` and `% 20`.
 >
