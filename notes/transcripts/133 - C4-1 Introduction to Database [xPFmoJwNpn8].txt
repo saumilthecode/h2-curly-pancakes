@@ -1,0 +1,295 @@
+Title: C4-1 Introduction to Database
+Assessment(s): Released Coursemology video catalog - C4-1 Introduction to Database
+Linked label(s): C4-1 Introduction to Database
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=xPFmoJwNpn8
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24771
+Published course start: 2026-10-04T08:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] hi we'll be starting our lesson on C4
+[00:04 - 00:07] database and basic
+[00:08 - 00:13] SQL now the first part we will do a
+[00:11 - 00:16] introduction to database this will be on
+[00:13 - 00:16] the database
+[00:16 - 00:22] concept now a database is a collection
+[00:19 - 00:25] of related data stored in an organized
+[00:22 - 00:28] and logical manner now storing data in a
+[00:25 - 00:31] database allow us to access and manage
+[00:28 - 00:33] the data example of databases in real
+[00:31 - 00:37] lives includes medical record of patient
+[00:33 - 00:40] is Hospital Supermarket inventory or
+[00:37 - 00:40] even our own contact
+[00:42 - 00:49] list let's watch this video about how uh
+[00:46 - 00:51] the old school library uh keep track of
+[00:49 - 00:54] the inventory of all the library
+[00:51 - 00:56] books I was really bored and I didn't
+[00:54 - 00:58] know what to do and I was just sitting
+[00:56 - 01:02] around the house just killing time and
+[00:58 - 01:05] then I had this great idea hey I know
+[01:02 - 01:07] what I'll do put on my sunglasses and
+[01:05 - 01:11] walked across the street to visit the
+[01:07 - 01:13] Bell F public library and when I walked
+[01:11 - 01:15] in the doors I found something that I
+[01:13 - 01:22] haven't seen in many many many many
+[01:15 - 01:22] years a card catalog a true card
+[01:23 - 01:30] catalog a card catalog is basically um a
+[01:28 - 01:34] record keeping system of what the
+[01:30 - 01:38] library has and each book has its own
+[01:34 - 01:40] card and it also has a a an author card
+[01:38 - 01:43] where you can look up books by an
+[01:40 - 01:45] author's last name well anyway I went
+[01:43 - 01:47] into the library and as I was looking at
+[01:45 - 01:49] this and taking some pictures of it I
+[01:47 - 01:52] thought okay what about let's take a
+[01:49 - 01:55] look about Gary Paulson so you can pull
+[01:52 - 01:57] out the files and you can look at the
+[01:55 - 01:58] cards individually now you see those
+[01:57 - 02:00] little circles right there those that's
+[01:58 - 02:03] a rod that's going through the cards so
+[02:00 - 02:06] the cards can't be taken out so I was
+[02:03 - 02:08] looking up Gary Paulson and you can see
+[02:06 - 02:11] this is kind of what the cards look like
+[02:08 - 02:14] and then I decided I wonder if they have
+[02:11 - 02:16] Gary Paulson's book Hatchet and so we
+[02:14 - 02:18] see here that his books are
+[02:16 - 02:22] listed
+[02:18 - 02:24] and let's see and here we go here's
+[02:22 - 02:27] Hatchet so I found Hatchet and the
+[02:24 - 02:30] information and I went to the shelf and
+[02:27 - 02:32] lo and behold there was Gary Paulson's
+[02:30 - 02:34] great book
+[02:32 - 02:36] Hatchet so when you get your book you
+[02:34 - 02:38] take it to the counter and you open it
+[02:36 - 02:41] up and there's a card inside and what
+[02:38 - 02:42] they do is you show them your library
+[02:41 - 02:45] card or tell them your name and they
+[02:42 - 02:47] write your library card number on the
+[02:45 - 02:50] line and stamp the due date which I
+[02:47 - 02:54] haven't seen in a long time
+[02:50 - 02:57] then they take that card and they put it
+[02:54 - 03:00] within this filing system that was just
+[02:57 - 03:03] amazing looking they have all the cards
+[03:00 - 03:06] arranged by the days in which um the
+[03:03 - 03:07] books are due and so they have them that
+[03:06 - 03:11] say if the book was due on the 15th they
+[03:07 - 03:13] put it behind um the 15th and so when
+[03:11 - 03:15] they get the book back and they see the
+[03:13 - 03:18] date that it was due they can find that
+[03:15 - 03:22] card number and pull the card and put it
+[03:18 - 03:22] back in the book and reshel
+[03:26 - 03:32] it in the video clip that you have just
+[03:28 - 03:36] seen uh they have this card that records
+[03:32 - 03:38] the uh author the title of the books and
+[03:36 - 03:42] the publisher and all the relevant
+[03:38 - 03:44] details and they all sorted according to
+[03:42 - 03:46] uh whether the author's name or the T
+[03:44 - 03:46] book title's
+[03:48 - 03:54] name now let's talk about this cut index
+[03:51 - 03:57] system now uh every card will have a
+[03:54 - 03:59] hater now so it could be for example if
+[03:57 - 04:01] you are keeping track of customer name
+[03:59 - 04:04] now then you will want to file all this
+[04:01 - 04:06] customer name in alphabetical order now
+[04:04 - 04:08] that will make it easy for us to search
+[04:06 - 04:10] for a particular
+[04:08 - 04:12] customer but what happen if we want to
+[04:10 - 04:14] look out for a customer not by their
+[04:12 - 04:16] name but by their
+[04:14 - 04:19] address then you realize that uh the
+[04:16 - 04:21] addresses are not sorted in any order
+[04:19 - 04:24] and you have to go through all the
+[04:21 - 04:26] customers card just to look for this one
+[04:24 - 04:28] staying at 13 The High Street for
+[04:26 - 04:30] example or what happen if you want to
+[04:28 - 04:33] look out for a customer customer with a
+[04:30 - 04:36] particular contact number you realize
+[04:33 - 04:38] that this is a limitation of uh using
+[04:36 - 04:41] such a manual cut
+[04:38 - 04:44] index so this is a reason why uh when
+[04:41 - 04:47] computer comes into play uh datas are
+[04:44 - 04:52] all converted into uh digital and being
+[04:47 - 04:52] maintained and managed in a
+[04:56 - 05:00] database let's talk about database table
+[04:59 - 05:02] few
+[05:00 - 05:02] and
+[05:04 - 05:09] Records a database is an organized
+[05:06 - 05:12] collection of data typically structured
+[05:09 - 05:17] into table to facilitate efficient
+[05:12 - 05:20] assess management and updating of
+[05:17 - 05:22] information each table within a database
+[05:20 - 05:26] consists of rows and we don't call them
+[05:22 - 05:30] rows we they are known as records and
+[05:26 - 05:30] the columns are known as fusees
+[05:31 - 05:37] a record represent a single entry in the
+[05:34 - 05:41] table containing data relating related
+[05:37 - 05:45] to a specific item or
+[05:41 - 05:48] entity each field within a record holds
+[05:45 - 05:52] a particular type of data such as text
+[05:48 - 05:55] number dates or corresponding to a
+[05:52 - 05:58] specific attribute of the
+[05:55 - 06:00] entity this kind of tabulated structure
+[05:58 - 06:07] allows for clear organization of the
+[06:00 - 06:07] data making it easy to query analyze and
+[06:14 - 06:20] maintain now what you see here is a
+[06:17 - 06:22] table uh within the database so they
+[06:20 - 06:25] consist of rows and we know them as
+[06:22 - 06:28] records and the columns each columns are
+[06:25 - 06:30] known as the field now you can see that
+[06:28 - 06:34] there are 10 records
+[06:30 - 06:37] each records contain data for the four
+[06:34 - 06:39] FS what are the four FS the registration
+[06:37 - 06:42] number the name the gender and the
+[06:39 - 06:45] mobile number do take note that the few
+[06:42 - 06:47] names are all single word for example
+[06:45 - 06:49] mobile number is written without a
+[06:47 - 06:53] spacing between mobile number it's a
+[06:49 - 06:53] single word same for the registration
+[06:55 - 07:03] number so this is known as one record
+[06:58 - 07:03] and each C represent the
+[07:04 - 07:09] field now let's talk about table
+[07:12 - 07:18] descriptions a table description can be
+[07:15 - 07:20] Express in this manner with a table name
+[07:18 - 07:23] and all the attributes attributes are
+[07:20 - 07:24] the fuse for example this is a table the
+[07:23 - 07:27] name is called
+[07:24 - 07:29] students using a bracket and then we
+[07:27 - 07:31] have the four FS the four attributes the
+[07:29 - 07:35] the registration number the name the
+[07:31 - 07:35] gender and the mobile
+[07:37 - 07:41] number now the data value for each fuel
+[07:40 - 07:44] should be
+[07:41 - 07:45] Atomic you do not expect to see two
+[07:44 - 07:47] handphone
+[07:45 - 07:50] number
+[07:47 - 07:52] okay and each records can only have one
+[07:50 - 07:56] mobile number for
+[07:52 - 07:59] example now each records the row should
+[07:56 - 08:01] be unique you will not want to see two
+[07:59 - 08:04] rows that is exactly the same same rows
+[08:01 - 08:07] cannot appear twice within the
+[08:04 - 08:09] table the order of the fuse whether you
+[08:07 - 08:11] put name as a second column or you put
+[08:09 - 08:15] it at the third column or the last
+[08:11 - 08:18] column it doesn't matter it is not
+[08:15 - 08:20] important each fuse must be unique so
+[08:18 - 08:22] you have a uh let's say you want to keep
+[08:20 - 08:25] cheack of two mobile number then you
+[08:22 - 08:27] have to label as mobile number one and
+[08:25 - 08:30] mobile number two and these are two
+[08:27 - 08:33] different FS Okay so you cannot expect
+[08:30 - 08:35] to have a name and also a name again so
+[08:33 - 08:37] each field must be unique it must only
+[08:35 - 08:37] appear
+[08:39 - 08:45] once now let's talk about primary key a
+[08:42 - 08:48] primary key is a field that helps to
+[08:45 - 08:51] uniquely identify a particular record in
+[08:48 - 08:54] a table the data value of this field
+[08:51 - 08:56] should not change over time now let's
+[08:54 - 09:00] say I want to refer to a particular
+[08:56 - 09:03] records how can I tell you well I can
+[09:00 - 09:05] tell you the registration number name
+[09:03 - 09:08] gender and mobile
+[09:05 - 09:10] number let's say I'm telling you is
+[09:08 - 09:14] registration number eight the name is
+[09:10 - 09:18] Amy she's a female and a mobile
+[09:14 - 09:20] number uh the mobile number is 9864
+[09:18 - 09:24] 883 would you be able to identify this
+[09:20 - 09:26] person sure you will be able identify
+[09:24 - 09:29] this particular
+[09:26 - 09:32] record now that is given to you with all
+[09:29 - 09:35] the four attribute being mentioned what
+[09:32 - 09:37] happen if I only mention three if I were
+[09:35 - 09:40] to say the registration number is six
+[09:37 - 09:41] the name is Alex and the mobile number
+[09:40 - 09:43] is
+[09:41 - 09:45] 98675
+[09:43 - 09:48] 171 straight away you will be able to
+[09:45 - 09:52] identify so instead of giving four
+[09:48 - 09:52] attributes giving three will be
+[09:53 - 09:58] sufficient I can also just give you the
+[09:55 - 10:01] name and mobile number for example I say
+[09:58 - 10:05] Alice using 950
+[10:01 - 10:07] 29176 you would be able to identify this
+[10:05 - 10:11] record how about if I just give you the
+[10:07 - 10:14] registration number two and the name
+[10:11 - 10:17] Adrian are you able to identify the cord
+[10:14 - 10:19] you can so you realize that you you you
+[10:17 - 10:22] can give you can provide lesser and
+[10:19 - 10:24] lesser attributes but yet still able to
+[10:22 - 10:27] identify a particular
+[10:24 - 10:29] record I can also give the registration
+[10:27 - 10:33] and the gender but I guess doesn't
+[10:29 - 10:35] matter right registration one male
+[10:33 - 10:38] registration two
+[10:35 - 10:40] male in fact if you were to just give
+[10:38 - 10:44] the registration I would be able to
+[10:40 - 10:48] identify which role we are talking
+[10:44 - 10:50] about now the wrong choice will be if I
+[10:48 - 10:53] were to give you gender alone oh the
+[10:50 - 10:55] person is a male now which male are we
+[10:53 - 10:59] talking about there are so many of
+[10:55 - 11:01] them if I were to tell you at least now
+[10:59 - 11:02] these are only 10 records we expect
+[11:01 - 11:04] maybe there's hundred and thousands of
+[11:02 - 11:07] records and there may be some duplicates
+[11:04 - 11:09] in terms of names so giving the name
+[11:07 - 11:10] atas may not be good enough because
+[11:09 - 11:12] there may be another person with the
+[11:10 - 11:15] same
+[11:12 - 11:17] name also mobile number providing you
+[11:15 - 11:20] the mobile number is it sufficient now
+[11:17 - 11:22] will there be any case where two person
+[11:20 - 11:25] share a a same home
+[11:22 - 11:27] number then in that case the giving the
+[11:25 - 11:30] mobile number will not be sufficient you
+[11:27 - 11:32] will not be able to help us identify the
+[11:30 - 11:34] record so which one is the best choice
+[11:32 - 11:37] to be the primary
+[11:34 - 11:39] key I hope by now you identify just
+[11:37 - 11:42] giving the registration number will be
+[11:39 - 11:44] sufficient just tell me the registration
+[11:42 - 11:46] number I we will be able to identify
+[11:44 - 11:49] which record we are referring to so
+[11:46 - 11:51] that's the purpose of a primary key it
+[11:49 - 11:55] is a field that helps us to uniquely
+[11:51 - 11:55] identify a particular record in the
+[11:57 - 12:04] table now what happened we have a
+[12:00 - 12:06] situation where there is no registration
+[12:04 - 12:10] number now to identify a particular
+[12:06 - 12:13] records we probably need the name the
+[12:10 - 12:16] gender and the mobile number or maybe we
+[12:13 - 12:18] just need the name and mobile number
+[12:16 - 12:21] gender is not that
+[12:18 - 12:23] important but the wrong choice will be
+[12:21 - 12:26] giving name and gender because like I
+[12:23 - 12:30] said earlier the same person the same
+[12:26 - 12:34] name Adam may appear uh multiple times
+[12:30 - 12:36] okay if when we our our database get
+[12:34 - 12:39] bigger giving the uh gender and the
+[12:36 - 12:43] mobile number may not be able to help us
+[12:39 - 12:45] identify the uh record a particular
+[12:43 - 12:49] record and of course giving name gender
+[12:45 - 12:51] individually will not help also okay so
+[12:49 - 12:54] in this case when we don't have the a
+[12:51 - 12:58] field called registration number then
+[12:54 - 13:00] the best primary key will be giving name
+[12:58 - 13:02] and mobile number to
+[13:00 - 13:04] together two person can be sharing the
+[13:02 - 13:05] same mobile number but their name will
+[13:04 - 13:07] be
+[13:05 - 13:11] different so in this case the primary
+[13:07 - 13:14] key is no longer a single field it is a
+[13:11 - 13:17] composite primary key this composite
+[13:14 - 13:21] primary key consists of two
+[13:17 - 13:24] Fields now this composite b key will
+[13:21 - 13:28] help us identify uh a particular record
+[13:24 - 13:28] in the table
+[13:29 - 13:33] I hope this short introduction helps you
+[13:32 - 13:36] understand a little bit more about
+[13:33 - 13:36] database

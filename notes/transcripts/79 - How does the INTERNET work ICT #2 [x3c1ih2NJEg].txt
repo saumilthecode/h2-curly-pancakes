@@ -1,0 +1,143 @@
+Title: How does the INTERNET work? | ICT #2
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: Sabin Civil Engineering
+YouTube: https://www.youtube.com/watch?v=x3c1ih2NJEg
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:03] How does the internet work?
+[00:03 - 00:05] The video you are watching now
+[00:07 - 00:10] traveled thousands of miles from a Google Data Center to reach you.
+[00:13 - 00:21] Let's learn how the internet works by getting to understand the details of this data's incredible journey.
+[00:21 - 00:25] The data center which can be thousands of miles away from you has your video stored inside it.
+[00:25 - 00:32] how does this data reach your mobile phone or a laptop?
+[00:32 - 00:36] An easy way to achieve this goal would be with use of satellites.
+[00:36 - 00:42] From the data center, a signal could be sent to the satellite via an antenna,
+[00:42 - 00:46] and then from the satellite a signal could be sent to your mobile phone
+[00:46 - 00:48] via another antenna near to you.
+[00:48 - 00:50] However, this way of transmitting signals is not a good idea.
+[00:52 - 00:54] Let's see why.
+[00:54 - 00:56] The satellite is parked nearly 22,000 miles above the earth's equator,
+[00:58 - 01:03] so in order for the data transmission to be successful,
+[01:03 - 01:06] the data would have to travel a total distance of 44,000 miles.
+[01:06 - 01:10] Such a long distance of travel causes a significant delay in receiving the signal.
+[01:10 - 01:16] More specifically it causes huge latency which is unacceptable
+[01:16 - 01:18] for most internet applications
+[01:18 - 01:20] so if this video does not reach you via a satellite then
+[01:21 - 01:23] how does it actually get to you?
+[01:23 - 01:25] Well it is done with the help of a complicated
+[01:25 - 01:27] network of optical fiber cables,
+[01:27 - 01:31] which connect between the data center and your device.
+[01:33 - 01:37] Your phone could be connected to the internet via cellular data or any Wi-Fi router,
+[01:37 - 01:40] but ultimately at some point your phone will be connected
+[01:40 - 01:45] to this network of optical fiber cables
+[01:45 - 01:49] We saw at the beginning that the video you are currently watching
+[01:49 - 01:53] is stored inside a data center.
+[01:53 - 01:58] To be more specific, it is stored in a solid-state device within the data center.
+[01:58 - 02:02] This SSD acts as the internal memory of a server.
+[02:02 - 02:07] The server is simply a powerful computer whose job is to provide you the video or
+[02:07 - 02:09] other stored content when you request it.
+[02:09 - 02:11] Now the challenge is how to transfer the data stored
+[02:12 - 02:16] in the data center specifically to your device via the
+[02:16 - 02:19] complex network of optical fiber cables.
+[02:19 - 02:21] Let's see how this is done.
+[02:22 - 02:26] Before proceeding further we should first understand an important concept
+[02:26 - 02:28] which is the concept of an IP address.
+[02:28 - 02:30] Every device that is connected to the Internet
+[02:31 - 02:36] whether it is a server a computer or a mobile phone is identified uniquely by a
+[02:36 - 02:39] string of numbers known as an IP address.
+[02:39 - 02:43] You can consider the IP address similar
+[02:43 - 02:48] to your home address that is the address, that uniquely identifies your home.
+[02:49 - 02:54] Any letter sent to you reaches you precisely because of your home address.
+[02:55 - 03:00] Similarly in the internet world an IP address acts as a shipping address
+[03:00 - 03:03] through which all information reaches its destination.
+[03:03 - 03:08] Your internet service provider will decide the IP address of your device and you are able to see what
+[03:08 - 03:14] IP address your ISP has given to your mobile phone or laptop.
+[03:14 - 03:20] The server in the data center also has an IP address.
+[03:20 - 03:25] The server stores a website so you can access any website just by knowing the
+[03:25 - 03:29] server's IP address. However, it is difficult for a person to remember so
+[03:29 - 12:59] many IP addresses.
+[03:30 - 03:33] So to solve this problem domain names like
+[03:33 - 03:39] youtube.com, facebook.com etc are used which correspond to IP addresses
+[03:39 - 03:43] which are easier for us to remember than the long sequence of numbers
+[03:44 - 03:48] Another thing to notice here is that a server has the capability of storing several websites
+[03:48 - 03:53] and if the server consists of multiple websites all the websites cannot be
+[03:53 - 03:56] accessed with the server's IP address.
+[03:56 - 03:58] In such cases additional pieces of
+[03:58 - 04:03] information, host headers are used to uniquely identify the website.
+[04:03 - 04:08] However, for the giant web sites like Facebook.com or YouTube.com the entire data
+[04:08 - 04:14] center infrastructure will be dedicated to the storage of the particular website.
+[04:14 - 04:20] To access the internet we always use domain names instead of the complex IP address numbers.
+[04:20 - 04:25] From where does the internet get IP addresses corresponding to our domain name requests.
+[04:25 - 04:32] Well, for this purpose the internet uses a huge phone book known as DNS.
+[04:32 - 04:34] If you know a person's name, but don't know their telephone number
+[04:34 - 04:38] you can simply look it up in a phone book.
+[04:38 - 04:43] The DNS server provides the same service to the internet.
+[04:43 - 04:48] Your internet service provider or other organizations can manage the DNS server.
+[04:48 - 04:51] Let's have a recap of the whole operation.
+[04:52 - 21:32] You enter the domain name,
+[04:53 - 04:57] the browser sends a request to the DNS server to get the corresponding IP address.
+[04:57 - 05:01] After getting the IP address,
+[05:01 - 05:04] your browser simply forwards the request to the data center,
+[05:04 - 05:08] more specifically to the respective server.
+[05:08 - 05:13] Once the server gets a request to access a particular website the data flow starts.
+[05:13 - 05:18] The data is transferred in digital format via optical fiber cables,
+[05:18 - 05:21] more specifically in the form of light pulses.
+[05:21 - 05:23] These light pulses sometimes have
+[05:23 - 05:27] to travel thousands of miles via the optical fiber cable to reach their destination.
+[05:27 - 05:31] During their journey they often have to go through tough terrains
+[05:31 - 05:34] such as hilly areas or under the sea.
+[05:34 - 05:36] There are a few global companies who lay
+[05:37 - 05:41] and maintain these optical cable networks.
+[05:41 - 05:47] These visuals show how the laying of optical fiber cables is done with the help of a ship.
+[05:48 - 05:52] A plow is dropped deep into the sea from the ship,
+[05:52 - 05:58] and this plow creates a trench on the seabed and to which places the optical fiber cable.
+[05:59 - 06:01] In fact, this complex optical cable
+[06:01 - 06:04] network is the backbone of the Internet.
+[06:04 - 06:06] These optical fiber cables carrying the
+[06:06 - 06:12] light are stretched across the seabed to your doorstep where they are connected to a router.
+[06:13 - 06:15] The router converts these light signals
+[06:15 - 06:17] to electrical signals.
+[06:18 - 06:20] An Ethernet cable is then used to
+[06:20 - 06:23] transmit the electrical signals to your laptop.
+[06:24 - 06:28] However if you are accessing the Internet using cellular data,
+[06:28 - 06:32] from the optical cable the signal has to be sent to a cell tower
+[06:32 - 06:35] and from the cell tower the signal
+[06:35 - 06:39] reaches your cell phone in the form of electromagnetic waves.
+[06:40 - 06:44] Since the Internet is a global network it has become important to have an
+[06:44 - 06:51] organization to manage things like IP address assignment, domain name registration etc
+[06:51 - 06:56] this is all managed by an institution called ICANN located in the USA.
+[06:56 - 06:59] One amazing thing about the internet is its efficiency in
+[06:59 - 07:04] transmitting data when compared with cellular and landline communication technologies.
+[07:04 - 07:08] This video you are watching from the Google Data Center is sent to
+[07:08 - 07:11] you in the form of a huge collection of zeros and ones.
+[07:11 - 07:16] What makes the data transfer in the internet efficient is the way in which these zeros and ones
+[07:16 - 07:21] are chopped up into small chunks known as packets and transmitted.
+[07:21 - 07:26] Let's assume these streams of zeros and ones are divided into different packets by the
+[07:26 - 07:30] server where each packet consists of six bits.
+[07:30 - 07:34] Along with the bits of the video each packet also consists of the sequence
+[07:34 - 07:39] number and the IP addresses of the server and your phone.
+[07:39 - 07:43] With this information the packets are routed towards your phone.
+[07:43 - 07:48] It's not necessary that all packets are routed through the same path and each packet independently
+[07:48 - 07:51] takes the best route available at that time.
+[07:51 - 07:56] Upon reaching your phone the packets are reassembled according to their sequence number.
+[07:56 - 08:01] If it is the case that any packets fail to reach your phone and acknowledgement
+[08:01 - 08:04] is sent from your phone to resend the lost packets.
+[08:04 - 08:06] Now compare this with a postal network
+[08:07 - 08:11] with a good infrastructure, but the customers do not follow the basic rules
+[08:11 - 08:13] regarding the destination addresses.
+[08:13 - 08:15] In this scenario letters won't be able to
+[08:15 - 08:18] reach the correct destination.
+[08:19 - 08:23] Similarly in the internet we use something called protocols for the
+[08:23 - 08:26] management of this complex flow of data packets.
+[08:26 - 08:28] The protocols set the rules for
+[08:28 - 08:32] data packet conversion, attachment of the source and destination addresses to each packet
+[08:32 - 08:38] and the rules for routers etc for different applications the protocols
+[08:38 - 08:39] used are different.
+[08:41 - 08:45] We hope this video has given you a good understanding about how the internet works,
+[08:45 - 08:49] more specifically about the amazing journey of data packets
+[08:49 - 08:51] from the data center to your mobile phone.
+[08:52 - 08:58] Please don't forget to support us at patreon.com. Thank You!

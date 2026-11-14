@@ -1,0 +1,89 @@
+Title: What's the fastest way to alphabetize your bookshelf? - Chand John
+Assessment(s): LT 12e Quicksort
+Linked label(s): What's the fastest way to alphabetize your bookshelf?
+Uploader: TED-Ed
+YouTube: https://www.youtube.com/watch?v=WaNLJf8xzC4
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:06 - 00:09] You work at the college library.
+[00:09 - 00:11] You're in the middle of a quiet afternoon
+[00:11 - 00:18] when suddenly a shipment of 1,280 different books arrives.
+[00:18 - 00:21] The books have been dropped of in one long straight line,
+[00:21 - 00:23] but they're all out of order,
+[00:23 - 00:27] and the automatic sorting system is broken.
+[00:27 - 00:29] To make matters worse, classes start tomorrow,
+[00:29 - 00:32] which means that first thing in the morning,
+[00:32 - 00:36] students will show up in droves looking for these books.
+[00:36 - 00:39] How can you get them all sorted in time?
+[00:39 - 00:44] One way would be to start at one end of the line with the first pair of books.
+[00:44 - 00:48] If the first two books are in order, then leave them as they are.
+[00:48 - 00:50] Otherwise, swap them.
+[00:50 - 00:53] Then, look at the second and third books,
+[00:53 - 00:54] repeat the process,
+[00:54 - 00:57] and continue until you reach the end of the line.
+[00:57 - 01:01] At some point, you'll come across the book that should be last,
+[01:01 - 01:04] and keep swapping it with every subsequent book,
+[01:04 - 01:09] moving it down the line until it reaches the end where it belongs.
+[01:09 - 01:12] Then, start from the beginning and repeat the process
+[01:12 - 01:15] to get the second to last book in its proper place,
+[01:15 - 01:18] and keep going until all books are sorted.
+[01:18 - 01:21] This approach is called Bubble Sort.
+[01:21 - 01:24] It's simple but slow.
+[01:24 - 01:29] You'd make 1,279 comparisons in the first round,
+[01:29 - 01:33] then 1,278, and so on,
+[01:33 - 01:38] adding up to 818,560 comparisons.
+[01:38 - 01:44] If each took just one second, the process would take over nine days.
+[01:44 - 01:48] A second strategy would be to start by sorting just the first two books.
+[01:48 - 01:53] Then, take the third book and compare it with the book in the second spot.
+[01:53 - 01:57] If it belongs before the second book, swap them,
+[01:57 - 01:59] then compare it with the book in the first spot,
+[01:59 - 02:01] and swap again if needed.
+[02:01 - 02:03] Now you've sorted the first three books.
+[02:03 - 02:07] Keep adding one book at a time to the sorted sub-line,
+[02:07 - 02:11] comparing and swapping the new book with the one before it
+[02:11 - 02:16] until it's correctly placed among the books sorted so far.
+[02:16 - 02:18] This is called Insertion Sort.
+[02:18 - 02:22] Unlike Bubble Sort, it usually doesn't require comparing every pair of books.
+[02:22 - 02:26] On average, we'd expect to only need to compare each book
+[02:26 - 02:29] to half of the books that came before it.
+[02:29 - 02:32] In that case, the total number of comparisons
+[02:32 - 02:35] would be 409,280,
+[02:35 - 02:38] taking almost five days.
+[02:38 - 02:40] You're still doing way too many comparisons.
+[02:40 - 02:42] Here's a better idea.
+[02:42 - 02:44] First, pick a random book.
+[02:44 - 02:49] Call it the partition and compare it to every other book.
+[02:49 - 02:51] Then, divide the line
+[02:51 - 02:55] by placing all the books that come before the partition on its left
+[02:55 - 02:58] and all the ones that come after it on its right.
+[02:58 - 03:00] You've just saved loads of time
+[03:00 - 03:03] by not having to compare any of the books on the left
+[03:03 - 03:07] to any of the ones on the right ever again.
+[03:07 - 03:09] Now, looking only at the books on the left,
+[03:09 - 03:12] you can again pick a random partition book
+[03:12 - 03:17] and separate those books that come before it from those that come after it.
+[03:17 - 03:19] You can keep creating sub-partitions like this
+[03:19 - 03:22] until you have a bunch of small sub-lines,
+[03:22 - 03:27] each of which you'd sort quickly using another strategy, like Insertion Sort.
+[03:27 - 03:32] Each round of partitioning requires about 1,280 comparisons.
+[03:32 - 03:35] If your partitions are pretty balanced,
+[03:35 - 03:41] dividing the books into 128 sub-lines of ten would take about seven rounds,
+[03:41 - 03:43] or 8,960 seconds.
+[03:43 - 03:48] Sorting these sub-lines would add about 22 seconds each.
+[03:48 - 03:51] All in all, this method known as QuickSort
+[03:51 - 03:54] could sort the books in under three and a half hours.
+[03:54 - 03:55] But there's a catch.
+[03:55 - 03:59] Your partitions could end up lopsided, saving no time at all.
+[03:59 - 04:01] Luckily, this rarely happens.
+[04:01 - 04:04] That's why QuickSort is one of the most efficient strategies
+[04:04 - 04:06] used by programmers today.
+[04:06 - 04:10] They use it for things like sorting items in an online store by price,
+[04:10 - 04:14] or creating a list of all the gas stations close to a given location
+[04:14 - 04:16] sorted by distance.
+[04:16 - 04:20] In your case, you're done quick sorting with time to spare.
+[04:20 - 04:22] Just another high-stakes day in the library.

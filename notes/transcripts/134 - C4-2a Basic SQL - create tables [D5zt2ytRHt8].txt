@@ -1,0 +1,156 @@
+Title: C4-2a Basic SQL - create tables
+Assessment(s): Released Coursemology video catalog - C4-2a Basic SQL - create tables
+Linked label(s): C4-2a Basic SQL - create tables
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=D5zt2ytRHt8
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24836
+Published course start: 2026-10-04T14:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:02 - 00:11] hi today's lesson will be on basic
+[00:07 - 00:13] SQL SQL stand for structured query
+[00:11 - 00:17] language there are many different
+[00:13 - 00:22] version of SQL language
+[00:17 - 00:23] MySQL Microsoft cbase Oracle sap
+[00:22 - 00:26] postgress
+[00:23 - 00:29] SQL but all of these uh different
+[00:26 - 00:34] version of SQL language they all support
+[00:29 - 00:37] the major commands for crud c stand for
+[00:34 - 00:41] create r stand for read update and
+[00:37 - 00:45] delete so each of these uh language uh
+[00:41 - 00:49] will support uh creating selecting or
+[00:45 - 00:49] insert or update and delete
+[00:51 - 00:58] functions part one we will be learning
+[00:54 - 01:02] how to create database and
+[00:58 - 01:05] tables I'll be referring to the slides
+[01:02 - 01:07] and demonstrating to you how to use the
+[01:05 - 01:07] DB
+[01:08 - 01:14] browser
+[01:10 - 01:16] first on your start button type
+[01:14 - 01:19] DB and that will call out the DB browser
+[01:16 - 01:19] for SQL
+[01:20 - 01:26] light now when you begin there is
+[01:23 - 01:31] nothing there's no database created so
+[01:26 - 01:31] first we need to create a new database
+[01:32 - 01:36] I will name this database as just
+[01:37 - 01:44] database and when this dialogue box pops
+[01:40 - 01:48] up just cancel so now you are actually
+[01:44 - 01:50] opening up the database called database.
+[01:48 - 01:53] DB there is no
+[01:50 - 01:53] table there's no
+[01:55 - 02:03] data now we will go on to create a table
+[01:59 - 02:06] and this table is product I'm going to
+[02:03 - 02:10] use the DB browser to create the
+[02:06 - 02:10] table click on create
+[02:10 - 02:16] table the name will be
+[02:13 - 02:18] products now be careful of the capital
+[02:16 - 02:21] letter and the small letter and product
+[02:18 - 02:24] with a s add
+[02:21 - 02:27] fuel so the first fuel that we have is a
+[02:24 - 02:30] ID capital I and a small letter
+[02:27 - 02:34] D and the type is a
+[02:30 - 02:37] integer and it is not now let's continue
+[02:34 - 02:37] to add another
+[02:39 - 02:45] field product name is a text at field
+[02:43 - 02:51] the unit
+[02:45 - 02:51] price without spacing unit price is a
+[02:54 - 02:59] numeric package is a text
+[03:01 - 03:06] supplier
+[03:03 - 03:06] name it is a
+[03:07 - 03:11] Tex supplier
+[03:14 - 03:21] country text so we will identify the ID
+[03:19 - 03:26] as the primary
+[03:21 - 03:30] key select here so ID will be chosen as
+[03:26 - 03:33] the prim key there it goes and click on
+[03:30 - 03:37] okay so the table has been
+[03:33 - 03:40] created you can go on to create the
+[03:37 - 03:43] customer table by simply clicking on
+[03:40 - 03:43] create
+[03:58 - 04:02] table for
+[04:56 - 05:03] create a text file a new text file
+[05:00 - 05:06] and we are going just to call it create
+[05:03 - 05:06] table.
+[05:08 - 05:13] SQL click on this select this and open
+[05:11 - 05:13] with a
+[05:14 - 05:20] notepad so what you can do now is to
+[05:17 - 05:23] copy the create
+[05:20 - 05:27] statement and paste it
+[05:23 - 05:29] here now they all appear in a a
+[05:27 - 05:32] wraparound string which we can organize
+[05:29 - 05:32] it this
+[05:52 - 05:59] way put a semi colon right at the
+[05:56 - 06:02] end now the DB browser will introduce
+[05:59 - 06:04] the uh single codee for all the names
+[06:02 - 06:07] that you put in and these are
+[06:04 - 06:10] unnecessary just now when we create the
+[06:07 - 06:11] customers table and the individual VI we
+[06:10 - 06:13] did not put in the single code so these
+[06:11 - 06:17] are actually unnecessary but never mind
+[06:13 - 06:20] if it's there the semi colon here is to
+[06:17 - 06:24] denote that this whole line of command
+[06:20 - 06:27] has completed this is one single line of
+[06:24 - 06:31] command let's copy the uh create
+[06:27 - 06:34] statement for the product
+[06:31 - 06:37] table and paste it inside here and then
+[06:34 - 06:37] organize it a
+[06:50 - 06:57] bit add a semicolon to it to signify
+[06:54 - 06:57] that this is one complete
+[06:57 - 07:05] Command save this text file now let's
+[07:02 - 07:05] delete away the
+[07:14 - 07:20] tables when you see the execute SQL
+[07:18 - 07:24] icons
+[07:20 - 07:26] here you will use the uh SQL command to
+[07:24 - 07:31] create
+[07:26 - 07:31] tables click on the tab execute SQL
+[07:35 - 07:41] copy and paste the three
+[07:39 - 07:46] commands the three commands are for you
+[07:41 - 07:46] to create the three
+[07:46 - 07:53] tables select on the execute SQL button
+[07:51 - 07:56] and runs
+[07:53 - 07:58] it you can go to the database structure
+[07:56 - 08:01] to check that you have created the three
+[07:58 - 08:05] tables
+[08:01 - 08:09] so it is very simple to create tables if
+[08:05 - 08:09] you know how to type this
+[08:10 - 08:16] command next I want to talk about the
+[08:13 - 08:18] data type that is available in the SQL
+[08:16 - 08:21] like or the DB
+[08:18 - 08:25] browser you have seen just now that the
+[08:21 - 08:29] data types are integer text BL o this is
+[08:25 - 08:32] a binary data type which allows you to
+[08:29 - 08:35] have data types like images or sound
+[08:32 - 08:39] file but we will not encourage you to
+[08:35 - 08:42] save a image file into the database that
+[08:39 - 08:45] will make the database file size uh very
+[08:42 - 08:48] huge and then you have real real are for
+[08:45 - 08:52] decimal uh and then the
+[08:48 - 08:54] numeric what you also need to know that
+[08:52 - 08:57] besides the text that is available in
+[08:54 - 09:01] our DB browser you can actually specify
+[08:57 - 09:04] it as car or V car c stand for character
+[09:01 - 09:06] you can specify the fixed length of this
+[09:04 - 09:09] character maybe for name you want to
+[09:06 - 09:09] specify 30
+[09:09 - 09:16] character but in the case of vaka if you
+[09:12 - 09:19] will specify the name as 30 character
+[09:16 - 09:22] now if the person's name is
+[09:19 - 09:25] just John and it only uses up four
+[09:22 - 09:29] character space the rest of the 26 will
+[09:25 - 09:33] be freed up so it allows the freeing up
+[09:29 - 09:37] of unused space whereas car when you uh
+[09:33 - 09:40] specify that it is 30y spacing it will
+[09:37 - 09:42] be reserve for the name regardless of
+[09:40 - 09:45] whether you use it or
+[09:42 - 09:48] not I want you to note that uh in the
+[09:45 - 09:50] case of Boolean true and false we will
+[09:48 - 09:54] normally choose an integer to denote
+[09:50 - 09:58] zero as false one as true the case of
+[09:54 - 10:00] date and time we will use text to save
+[09:58 - 10:03] the details okay we will not go too much
+[10:00 - 10:08] into details about this uh data type
+[10:03 - 10:08] Affinity in SQL like

@@ -1,0 +1,3 @@
+SELECT COUNT(Id)
+FROM Products
+WHERE UnitPrice BETWEEN 20 AND 40;

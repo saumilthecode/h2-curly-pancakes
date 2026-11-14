@@ -1,0 +1,22 @@
+Points,Country,Driver Name,Team Name
+233,Netherlands,M. Verstappen,Red Bull
+170,Monaco,C. Leclerc,Ferrari
+163,Mexico,S. Perez,Red Bull
+144,Spain,C. Sainz Jr.,Ferrari
+143,United Kingdom,G. Russell,Mercedes
+127,United Kingdom,L. Hamilton,Mercedes
+70,United Kingdom,L. Norris,McLaren
+56,France,E. Ocon,Alpine
+46,Finland,V. Bottas,Alfa Romeo
+37,Spain,F. Alonso,Alpine
+22,Denmark,K. Magnussen,Haas
+19,Australia,D. Ricciardo,McLaren
+16,France,P. Gasly,AlphaTauri
+15,Germany,S. Vettel,Aston Martin
+12,Germany,M. Schumacher,Haas
+11,Japan,Y. Tsunoda,AlphaTauri
+5,China,G. Zhou,Alfa Romeo
+4,Canada,L. Stroll,Aston Martin
+3,Thailand,A. Albon,Williams
+0,Canada,N. Latifi,Williams
+0,Germany,N. Hulkenberg,Aston Martin

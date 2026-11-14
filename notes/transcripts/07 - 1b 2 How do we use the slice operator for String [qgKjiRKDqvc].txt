@@ -1,0 +1,125 @@
+Title: 1b 2  How do we use the slice operator   for String
+LT: LT 1b - Basic Python - About Strings
+Linked label: 2. How do we use the slice operator - for String
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=qgKjiRKDqvc
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] how do we use the slice operator
+[00:04 - 00:08] in the previous video we learned how to
+[00:06 - 00:11] use the index operator to get a single
+[00:08 - 00:13] item from a list or string
+[00:11 - 00:17] what do we do if we want to get more
+[00:13 - 00:17] than one item from a list or string
+[00:18 - 00:23] while the index operator is used to get
+[00:20 - 00:26] only a single item this slice operator
+[00:23 - 00:30] is used to extract the subset of items
+[00:26 - 00:30] from a list or string
+[00:30 - 00:33] this is what the slice operator looks
+[00:32 - 00:35] like
+[00:33 - 00:37] [Music]
+[00:35 - 00:40] to extract the subset of items from a
+[00:37 - 00:42] list or string we use the slice operator
+[00:40 - 00:45] together with the start and stop indices
+[00:42 - 00:47] of the required items
+[00:45 - 00:50] this extracts the subset of items
+[00:47 - 00:53] positioned from the start index up to
+[00:50 - 00:55] but not including the stop index
+[00:53 - 00:59] we can think of the items at the stop
+[00:55 - 01:00] index and beyond as being sliced off
+[00:59 - 01:04] [Music]
+[01:00 - 01:06] let's use 0 as the start index and 2 as
+[01:04 - 01:08] the stop index
+[01:06 - 01:11] this means we will extract the subset of
+[01:08 - 01:15] items starting from index 0
+[01:11 - 01:16] up to but not including index 2.
+[01:15 - 01:19] so
+[01:16 - 01:23] digits 0 colon 2 will give us the first
+[01:19 - 01:25] integer with an index of 0
+[01:23 - 01:27] and the second integer with an index of
+[01:25 - 01:29] one
+[01:27 - 01:31] we exclude the third item which has an
+[01:29 - 01:35] index of two
+[01:31 - 01:36] it has been sliced off
+[01:35 - 01:39] similarly
+[01:36 - 01:43] subject zero colon two will give us the
+[01:39 - 01:44] first two characters c and o
+[01:43 - 01:48] the rest of the string from the third
+[01:44 - 01:50] character m onwards has been sliced off
+[01:48 - 01:53] [Music]
+[01:50 - 01:57] like the index operator we can also use
+[01:53 - 02:01] a slice operator with negative indices
+[01:57 - 02:03] for instance digits 0 colon negative 3
+[02:01 - 02:04] will extract integers starting from
+[02:03 - 02:07] index 0
+[02:04 - 02:10] up to but not including index negative
+[02:07 - 02:12] three
+[02:10 - 02:13] this will give us one
+[02:12 - 02:14] nine
+[02:13 - 02:16] six
+[02:14 - 02:18] five and two
+[02:16 - 02:21] similarly subject
+[02:18 - 02:23] one colon negative six
+[02:21 - 02:27] will extract the characters starting
+[02:23 - 02:28] from index 1 up to but not including
+[02:27 - 02:29] index negative 6.
+[02:28 - 02:32] [Music]
+[02:29 - 02:34] however be careful when using negative
+[02:32 - 02:34] indices
+[02:35 - 02:38] if the stopping boundary occurs before
+[02:36 - 02:40] the starting boundary
+[02:38 - 02:42] the result will be an empty list or
+[02:40 - 02:44] string
+[02:42 - 02:47] if the start and stop indices are the
+[02:44 - 02:48] same we will also get an empty list or
+[02:47 - 02:49] string
+[02:48 - 02:53] for example
+[02:49 - 02:54] digits 0 colon 0 will result in an empty
+[02:53 - 02:57] list
+[02:54 - 03:00] and subject 2 colon 2 will result in an
+[02:57 - 03:02] empty string
+[03:00 - 03:06] this is because there are no items
+[03:02 - 03:06] between the start and stop indices
+[03:06 - 03:11] note that this is different from using
+[03:08 - 03:16] the index operator with a single index
+[03:11 - 03:16] which gets an item in a list or string
+[03:18 - 03:21] to extract at least one item or
+[03:20 - 03:23] character
+[03:21 - 03:27] we need to make sure that the stop index
+[03:23 - 03:27] occurs after the start index
+[03:27 - 03:32] if we omit the start index the slide
+[03:30 - 03:33] starts from the beginning of the list or
+[03:32 - 03:35] string
+[03:33 - 03:37] for example
+[03:35 - 03:40] if we use the slice operator on the list
+[03:37 - 03:42] digits with a stop index of 6 but omit
+[03:40 - 03:44] the start index
+[03:42 - 03:46] the slice operator will extract the
+[03:44 - 03:51] integers from the beginning of the list
+[03:46 - 03:51] up to but not including index 6.
+[03:51 - 03:56] similarly if we use the slice operator
+[03:54 - 04:00] on the string subject with a stop index
+[03:56 - 04:02] of 6 but omit the start index the slice
+[04:00 - 04:04] operator will extract the characters
+[04:02 - 04:08] from the beginning of the string up to
+[04:04 - 04:09] but not including index 6.
+[04:08 - 04:12] [Music]
+[04:09 - 04:15] if we omit the stop index the slice
+[04:12 - 04:18] reaches the end of the list or string
+[04:15 - 04:21] for example if we use the slice operator
+[04:18 - 04:24] on the list digits with a start index of
+[04:21 - 04:26] 3 but omit the stop index
+[04:24 - 04:28] the slice operator will extract the
+[04:26 - 04:31] integers starting from index 3 until the
+[04:28 - 04:31] end of the list
+[04:31 - 04:36] similarly if we use the slice operator
+[04:34 - 04:39] on the string subject with a start index
+[04:36 - 04:41] of 3 but omit the stop index
+[04:39 - 04:44] the slice operator will extract the
+[04:41 - 04:46] character starting from index 3 until
+[04:44 - 04:53] the end of the string
+[04:46 - 04:53] [Music]
+[05:01 - 05:04] you

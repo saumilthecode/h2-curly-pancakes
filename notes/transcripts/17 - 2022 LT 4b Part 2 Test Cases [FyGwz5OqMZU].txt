@@ -1,0 +1,151 @@
+Title: 2022 LT 4b Part 2   Test Cases
+LT: LT 4b - Types of Error and Test Cases
+Linked label: 2. Test Cases
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=FyGwz5OqMZU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:07] hi welcome back for second part we'll be
+[00:04 - 00:07] talking about test cases
+[00:08 - 00:13] now we use test cases to ensure that our
+[00:10 - 00:16] function perform the way we intended
+[00:13 - 00:18] so i'll remember if we recall that a
+[00:16 - 00:20] function is just like a black box you
+[00:18 - 00:23] put in the input you get the output so
+[00:20 - 00:26] we make use of the test cases to put in
+[00:23 - 00:28] various types of inputs and and checking
+[00:26 - 00:32] on the output to see that whether they
+[00:28 - 00:32] they deliver the correct outputs or not
+[00:33 - 00:37] now test cases are not constructed
+[00:35 - 00:38] randomly that means you don't just throw
+[00:37 - 00:42] in the
+[00:38 - 00:43] random values as inputs and then just
+[00:42 - 00:44] look at the
+[00:43 - 00:47] outputs
+[00:44 - 00:50] they consist of normal
+[00:47 - 00:52] data values they consist of extreme or
+[00:50 - 00:54] what we call boundary data values
+[00:52 - 00:57] abnormal values
+[00:54 - 00:59] and volume data
+[00:57 - 00:59] values
+[01:00 - 01:03] okay what are the normal data values now
+[01:02 - 01:05] uh
+[01:03 - 01:08] data
+[01:05 - 01:11] that we are supposed to
+[01:08 - 01:14] input into the functions so that is the
+[01:11 - 01:17] acceptable the normal range of data
+[01:14 - 01:21] so we try some of these uh as our test
+[01:17 - 01:22] cases we use the normal data value
+[01:21 - 01:23] okay
+[01:22 - 01:27] and then we
+[01:23 - 01:28] maybe use a calculator or try using
+[01:27 - 01:32] work out the
+[01:28 - 01:35] steps to ensure that the output is as
+[01:32 - 01:35] what we expected
+[01:35 - 01:40] so for example we have this function
+[01:37 - 01:43] that is calculating the percentage
+[01:40 - 01:47] so uh any value that is you know the
+[01:43 - 01:49] score 20 of 80 40 of 80
+[01:47 - 01:51] would deliver this function will give us
+[01:49 - 01:53] the percentage
+[01:51 - 01:56] now uh take a closer look at the way we
+[01:53 - 01:59] construct the print statement
+[01:56 - 02:01] or in this way we will get both
+[01:59 - 02:04] test cases as true
+[02:01 - 02:06] if the the function is written correctly
+[02:04 - 02:10] they will deliver us true
+[02:06 - 02:13] so this way of writing is better
+[02:10 - 02:15] so that we don't have to remember
+[02:13 - 02:20] or calculate the answer manually each
+[02:15 - 02:20] time as we run these two test cases
+[02:20 - 02:25] now what are extreme and boundary values
+[02:24 - 02:27] now uh
+[02:25 - 02:30] the extreme values like for example when
+[02:27 - 02:32] we talk about percentage it can be as
+[02:30 - 02:34] low as zero percent as high as hundred
+[02:32 - 02:37] percent so this is the
+[02:34 - 02:40] acceptable uh values and they are the
+[02:37 - 02:42] boundary values so we need to check to
+[02:40 - 02:44] make sure that our function is able to
+[02:42 - 02:45] give this full range
+[02:44 - 02:49] so
+[02:45 - 02:51] back to our percentage functions
+[02:49 - 02:54] 0 out of 80 that would give us a 0
+[02:51 - 02:56] percent 60 of 60 that will give us 100
+[02:54 - 02:58] so these are the kind of test cases that
+[02:56 - 03:00] we can use
+[02:58 - 03:02] okay abnormal data value that means it
+[03:00 - 03:04] shouldn't be accepted for example
+[03:02 - 03:06] percentage we will never accept a
+[03:04 - 03:08] negative percent
+[03:06 - 03:10] or uh when we talk about score we will
+[03:08 - 03:12] not talk about more than 100
+[03:10 - 03:14] so these are belongs
+[03:12 - 03:16] to the abnormal
+[03:14 - 03:19] uh data values so they are actually
+[03:16 - 03:20] outside the boundary values so as i've
+[03:19 - 03:24] mentioned right you nobody scores a
+[03:20 - 03:28] negative 10 or nobody scores a 120 for a
+[03:24 - 03:31] test that is a 60 bucks total
+[03:28 - 03:34] okay so we test this and do now so this
+[03:31 - 03:36] function actually uh is not written
+[03:34 - 03:38] properly in the sense where it gives
+[03:36 - 03:41] negative percent and it also give
+[03:38 - 03:44] percentage uh that is more 100
+[03:41 - 03:47] so how can we amend this okay if we put
+[03:44 - 03:49] a conditioner right to show that if the
+[03:47 - 03:51] score is less than zero or the
+[03:49 - 03:53] scoreboard and the total
+[03:51 - 03:55] uh return the error message
+[03:53 - 03:57] okay so uh
+[03:55 - 03:58] whatever the score that we put in at the
+[03:57 - 04:00] total
+[03:58 - 04:02] our answer will confine to between zero
+[04:00 - 04:05] to hundred percent so this will make
+[04:02 - 04:08] sure that our functions take care of the
+[04:05 - 04:11] abnormal data values
+[04:08 - 04:16] okay uh some cases where programs are
+[04:11 - 04:19] returner to re-enlarge amount of data
+[04:16 - 04:22] okay or large value so we need to
+[04:19 - 04:25] test whether the program is efficient or
+[04:22 - 04:27] not uh maybe the whole program logically
+[04:25 - 04:30] is you know is able to calculate the
+[04:27 - 04:33] answer but it takes a long time
+[04:30 - 04:36] uh so so the code need to be improved so
+[04:33 - 04:38] that it can be more efficient so we need
+[04:36 - 04:40] to supply volume
+[04:38 - 04:44] data values that means large amount of
+[04:40 - 04:46] data values to stress test the program
+[04:44 - 04:48] to make sure that is able to deliver the
+[04:46 - 04:50] answer
+[04:48 - 04:52] within a shorter
+[04:50 - 04:54] time
+[04:52 - 04:56] so in summary we need to use appropriate
+[04:54 - 04:58] test cases
+[04:56 - 05:01] to ensure that our programs are
+[04:58 - 05:03] performed many a time student comes to
+[05:01 - 05:05] us and say hey teacher we failed a
+[05:03 - 05:08] private test case
+[05:05 - 05:09] can i know what test case i feel uh the
+[05:08 - 05:12] answer
+[05:09 - 05:15] that i normally reply to the student is
+[05:12 - 05:18] if you can fail one or two test cases
+[05:15 - 05:20] you know in the private or
+[05:18 - 05:22] public test cases it means that there
+[05:20 - 05:24] are there will be a lot of other test
+[05:22 - 05:27] cases that your function will fail have
+[05:24 - 05:29] you written your own test cases so do
+[05:27 - 05:31] not just rely on the test cases that we
+[05:29 - 05:34] provide in cosmology you must have the
+[05:31 - 05:36] habit of testing your functions with
+[05:34 - 05:38] your own test cases and when you write
+[05:36 - 05:41] your own test cases remember you make
+[05:38 - 05:43] use of the normal uh data value the
+[05:41 - 05:46] extreme which is the boundary uh data
+[05:43 - 05:49] values abnormal data values okay to see
+[05:46 - 05:52] whether your functions are delivered as
+[05:49 - 05:55] is intended okay so that's all for this
+[05:52 - 05:55] part of the video

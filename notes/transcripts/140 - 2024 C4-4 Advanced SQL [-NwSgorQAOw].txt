@@ -1,0 +1,337 @@
+Title: 2024 C4-4 Advanced SQL
+Assessment(s): Released Coursemology video catalog - C4-4 Advanced SQL
+Linked label(s): C4-4 Advanced SQL
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=-NwSgorQAOw
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24838
+Published course start: 2026-10-22T08:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:01 - 00:07] hi welcome back today we will continue
+[00:04 - 00:09] with our C4 database with
+[00:07 - 00:15] SQL in this lesson you will learn about
+[00:09 - 00:15] Advanced SQL which involves multiple
+[00:16 - 00:22] tables previously you have created the
+[00:19 - 00:26] tables for customers and
+[00:22 - 00:29] products and now we want to go on to uh
+[00:26 - 00:30] continue and create the table for this
+[00:29 - 00:34] order
+[00:30 - 00:37] order table is a linked entities between
+[00:34 - 00:40] the customer attributes and the product
+[00:37 - 00:43] attributes in the order
+[00:40 - 00:50] table we have the order
+[00:43 - 00:53] ID order date customer ID product ID and
+[00:50 - 00:57] quantity both the customer ID and the
+[00:53 - 01:00] product ID these are the foreign key
+[00:57 - 01:05] referring to the customer table
+[01:00 - 01:05] ID and the ID in product
+[01:07 - 01:14] tables you have previously learned how
+[01:09 - 01:16] to create a table using the DB browser
+[01:14 - 01:16] so that will be
+[01:26 - 01:32] similar the two special
+[01:28 - 01:35] lines referring to the foreign keys for
+[01:32 - 01:39] customer ID which reference to the
+[01:35 - 01:41] customer table I uh the field ID and
+[01:39 - 01:43] also the product ID which is also a
+[01:41 - 01:46] foreign key referring to the products
+[01:43 - 01:46] table
+[01:51 - 01:58] ID please go ahead and create the order
+[01:54 - 01:58] table using your DB browser
+[02:00 - 02:06] now you must remember that first we must
+[02:03 - 02:08] create the customer table then the
+[02:06 - 02:11] product table before we create the
+[02:08 - 02:14] orders table if not the foreign key
+[02:11 - 02:17] reference will fail and the creating of
+[02:14 - 02:17] the order table will not be
+[02:20 - 02:25] successful you may copy down all the uh
+[02:24 - 02:28] creation
+[02:25 - 02:32] statement uh and save it in the text
+[02:28 - 02:32] file called create tables .
+[02:32 - 02:38] SQL basically this is a text file
+[02:35 - 02:38] created using the
+[02:39 - 02:46] notepad if you have all this uh command
+[02:42 - 02:50] to create the three tables in future you
+[02:46 - 02:53] can just run with the exq SQL and run to
+[02:50 - 02:56] create all the tables without having to
+[02:53 - 02:56] type them one by
+[02:57 - 03:04] one now let's talk about and uh query uh
+[03:01 - 03:07] between multiple tables you need to use
+[03:04 - 03:09] the north. DB uh if the original
+[03:07 - 03:11] database has been uh corrupted or
+[03:09 - 03:15] modified uh please download from the
+[03:11 - 03:15] cosmology again to use the original
+[03:20 - 03:28] database the northwin uh database uh
+[03:24 - 03:31] uses the same uh table customers
+[03:28 - 03:33] products and all
+[03:31 - 03:36] though it has been populated with all
+[03:33 - 03:38] the necessary data for the following
+[03:36 - 03:42] lesson now there are two challenges in
+[03:38 - 03:42] this uh lesson let's go through the
+[03:42 - 03:45] first
+[03:42 - 03:47] challenge how do we find the customer
+[03:45 - 03:50] that means the first name and the last
+[03:47 - 03:51] name who purchased the product of this
+[03:50 - 03:55] particular
+[03:51 - 03:57] product in February
+[03:55 - 04:00] 2013 now let's take a look at what are
+[03:57 - 04:03] the problems that we have if we look at
+[04:00 - 04:05] the order table and search for all the
+[04:03 - 04:09] orders made in February
+[04:05 - 04:12] 2013 we will find all the orders but
+[04:09 - 04:13] which product ID correspond to this
+[04:12 - 04:15] particular
+[04:13 - 04:17] product because we do not know what is
+[04:15 - 04:21] the product
+[04:17 - 04:22] ID so that's one problem let's say we
+[04:21 - 04:24] know that the product ID for this
+[04:22 - 04:27] particular
+[04:24 - 04:30] item but the other tables only provide
+[04:27 - 04:32] the customer ID how do we go about
+[04:30 - 04:36] finding their
+[04:32 - 04:36] names so this is the second
+[04:39 - 04:45] problem now let's try to do query
+[04:42 - 04:47] involving one table step one like what
+[04:45 - 04:49] we say before we need to know what is
+[04:47 - 04:53] the product ID for this particular
+[04:49 - 04:55] item we may use the SQL command select
+[04:53 - 04:57] ID from products where the product names
+[04:55 - 04:59] is equal to the item that we
+[04:57 - 05:03] want and then we will be able to find
+[04:59 - 05:03] that the product ID is
+[05:04 - 05:11] 76 step two using the product ID
+[05:08 - 05:14] 76 and then combining the information
+[05:11 - 05:17] that it is purchased in February 2013
+[05:14 - 05:17] let's find the customer
+[05:17 - 05:26] IDs you may key in all this SQL command
+[05:22 - 05:28] take note on the dates order dates light
+[05:26 - 05:31] because the date is safe while together
+[05:28 - 05:32] with the time and we only are interested
+[05:31 - 05:36] in February
+[05:32 - 05:38] 2013 so we can use the uh wild card key
+[05:36 - 05:40] the percentage sign to make sure that
+[05:38 - 05:43] the order dat so long as it contains a
+[05:40 - 05:45] string February
+[05:43 - 05:49] 2013 we don't care whether is it
+[05:45 - 05:49] February the 3rd or February the
+[05:49 - 05:55] 5th and we ignore all the
+[05:52 - 05:58] timings Now using the SQL query we are
+[05:55 - 06:00] able to find that our customer ID 24 and
+[05:58 - 06:02] 2087
+[06:00 - 06:04] have purchased this particular product
+[06:02 - 06:04] product
+[06:05 - 06:10] 76 now the next step of course is to use
+[06:07 - 06:12] the customer ID to find what are their
+[06:10 - 06:15] names the first and the last
+[06:12 - 06:18] name so step number
+[06:15 - 06:19] three we use the ID that we have found
+[06:18 - 06:22] ID 24 and
+[06:19 - 06:24] id7 using the SQL
+[06:22 - 06:25] command but we need to look into the
+[06:24 - 06:27] table called
+[06:25 - 06:30] customers
+[06:27 - 06:35] okay select first name last name from
+[06:30 - 06:36] customers table where ID 24 or ID equal
+[06:35 - 06:39] to
+[06:36 - 06:42] 87 from here we will be able to
+[06:39 - 06:44] determine all the uh the names of these
+[06:42 - 06:44] two
+[06:44 - 06:51] person so you realize that we have used
+[06:47 - 06:52] three steps making query from one table
+[06:51 - 06:55] at a
+[06:52 - 06:58] time is there a better
+[06:55 - 07:01] way so one possible solution is that
+[06:58 - 07:02] let's say we know the product ID for
+[07:01 - 07:05] this particular item is
+[07:02 - 07:07] 76 then we may want to combine step two
+[07:05 - 07:10] and step three
+[07:07 - 07:11] together now let's take a look at
+[07:10 - 07:15] combining two
+[07:11 - 07:17] tables query involving two
+[07:15 - 07:20] tables now there is a link between the
+[07:17 - 07:25] customer table and the order table
+[07:20 - 07:29] namely the customer ID is the same as
+[07:25 - 07:32] the customer ID in the order tables
+[07:29 - 07:35] so this is the condition that we can use
+[07:32 - 07:37] to try to identify which are the records
+[07:35 - 07:37] they have in
+[07:38 - 07:44] common so the idea is that we take the
+[07:41 - 07:48] customer ID that we have found customer
+[07:44 - 07:50] ID 24 and 87 and go to the customer
+[07:48 - 07:55] table and try to find their
+[07:50 - 07:55] names so this is a query involving two
+[07:57 - 08:03] tables so we select the customer ID the
+[08:01 - 08:05] first name and the last name from two
+[08:03 - 08:07] tables from the order tables and the
+[08:05 - 08:10] customer
+[08:07 - 08:14] tables where the order dates is in
+[08:10 - 08:17] February 2013 and the product ID is
+[08:14 - 08:19] 76 now to link the two tables that we
+[08:17 - 08:22] are dealing with the order table and the
+[08:19 - 08:26] customer table we put in the condition
+[08:22 - 08:30] and customer table. ID is equal to the
+[08:26 - 08:33] ERS table. customer
+[08:30 - 08:34] ID these two few the values we want them
+[08:33 - 08:37] to be the
+[08:34 - 08:40] same from here we will be able to
+[08:37 - 08:42] identify all the names run it and see
+[08:40 - 08:42] for
+[08:43 - 08:51] yourself all tables is the only table
+[08:47 - 08:53] that contains the few customer ID hence
+[08:51 - 08:57] there is no real
+[08:53 - 09:00] need to indicate that it is orders.
+[08:57 - 09:02] customer ID we can just
+[09:00 - 09:05] that use customer ID
+[09:02 - 09:08] directly because there is no ambiguity
+[09:05 - 09:11] when we mention customer ID we know that
+[09:08 - 09:15] customer ID have to be referred to uh a
+[09:11 - 09:15] field within the table order's
+[09:16 - 09:22] table but there is nothing wrong if you
+[09:19 - 09:24] were to indicate the table's name dot
+[09:22 - 09:27] the field that you
+[09:24 - 09:30] want so if we can combine two tables to
+[09:27 - 09:33] make query we can also combine three
+[09:30 - 09:34] tables to make the query and that will
+[09:33 - 09:36] be the best
+[09:34 - 09:38] solution we can combine step one step
+[09:36 - 09:41] two and step three together and perform
+[09:38 - 09:45] in a single
+[09:41 - 09:48] query now let's recap there is a link
+[09:45 - 09:51] between customer and Order table namely
+[09:48 - 09:53] the customer ID and the customer ID in
+[09:51 - 09:56] ERS
+[09:53 - 09:57] table there is also a link between order
+[09:56 - 10:00] and the products
+[09:57 - 10:03] table Within the orders that is a
+[10:00 - 10:08] product ID and those values will be the
+[10:03 - 10:10] same as the values in the product tables
+[10:08 - 10:15] ID so we'll make use of these two
+[10:10 - 10:15] condition to link all the three tables
+[10:15 - 10:18] together okay in the diagram it will
+[10:17 - 10:21] looks like
+[10:18 - 10:24] this based on the product that we want
+[10:21 - 10:28] to look for we find the product
+[10:24 - 10:30] ID from here we go to the orders table
+[10:28 - 10:31] and we look which are the customer that
+[10:30 - 10:34] make the
+[10:31 - 10:36] purchase using the custom ID we go to
+[10:34 - 10:37] the customer table we will be able to
+[10:36 - 10:42] find the
+[10:37 - 10:42] names all in a single query
+[10:46 - 10:51] statement so this the first few lines
+[10:49 - 10:53] are the same we select customer ID first
+[10:51 - 10:56] name and last name that is what we want
+[10:53 - 10:59] to display from three tables now orders
+[10:56 - 11:02] table customer table and product tables
+[10:59 - 11:05] for the dates in February 2013 for the
+[11:02 - 11:08] product that we are looking for and in
+[11:05 - 11:09] two more conditions the first condition
+[11:08 - 11:11] is the one that links between the
+[11:09 - 11:14] customer table and the order
+[11:11 - 11:18] table the next condition is the order
+[11:14 - 11:18] table linking with the product
+[11:19 - 11:24] tables try this to see for yourself you
+[11:22 - 11:26] will be able to find the names of the
+[11:24 - 11:31] customer who purchased this particular
+[11:26 - 11:31] product in February 2013
+[11:34 - 11:39] as we have mentioned before there is no
+[11:36 - 11:42] need to indicates the orders table for
+[11:39 - 11:47] the product ID because product ID is the
+[11:42 - 11:49] only one that exists in the order tables
+[11:47 - 11:51] and also customer ID it only exist in
+[11:49 - 11:52] the order table so there's no need to
+[11:51 - 11:54] indicate the table name but there's
+[11:52 - 11:57] nothing wrong if you indicate the table
+[11:54 - 11:57] names
+[12:00 - 12:06] challenge
+[12:02 - 12:11] two how do we find how much this person
+[12:06 - 12:11] spends in July 30th
+[12:12 - 12:15] 2012 let's analyze what's the problem
+[12:14 - 12:18] that we are
+[12:15 - 12:21] facing if we look into the orders
+[12:18 - 12:23] table how do we know what is the
+[12:21 - 12:27] customer ID of this
+[12:23 - 12:29] person next even if we know his customer
+[12:27 - 12:31] ID
+[12:29 - 12:34] but how do we know which
+[12:31 - 12:36] product cost how much he could have
+[12:34 - 12:38] bought many
+[12:36 - 12:41] products and if we don't know what are
+[12:38 - 12:44] the unit costs and the quantity that he
+[12:41 - 12:48] purchased how are we able to add up the
+[12:44 - 12:48] total so these are the
+[12:49 - 12:54] problems so let's take a look and try to
+[12:52 - 12:57] find what are the product ordered by
+[12:54 - 12:57] this person
+[13:00 - 13:06] looking from the customers table we
+[13:03 - 13:08] should be able to find the customer id
+[13:06 - 13:08] id
+[13:09 - 13:16] 33 looking at the orders
+[13:12 - 13:19] table for customer ID 33 we will be able
+[13:16 - 13:19] to find all the product
+[13:20 - 13:25] ID he purchased product ID to and
+[13:23 - 13:28] product ID
+[13:25 - 13:29] 54 for product ID 2 he purchased 20
+[13:28 - 13:33] pieces
+[13:29 - 13:33] and product ID 54 he bought
+[13:34 - 13:40] six but we do not know what are these
+[13:38 - 13:45] products now we shall go to the products
+[13:40 - 13:47] table using the product ID 2 and 54 we
+[13:45 - 13:52] should be able to find the product
+[13:47 - 13:55] name and of course we also know the unit
+[13:52 - 13:57] price so we are making use of the
+[13:55 - 13:59] conditions between customer tables and
+[13:57 - 14:01] Order tables
+[13:59 - 14:05] and the order tables and the product
+[14:01 - 14:05] tables to make the
+[14:07 - 14:13] query so using this SQL s query
+[14:11 - 14:16] statement we will be able to find the
+[14:13 - 14:19] product names that purchased by this
+[14:16 - 14:22] customer you will also note that this
+[14:19 - 14:25] person purchased the two product on two
+[14:22 - 14:27] separate dates one is on 30th of July
+[14:25 - 14:30] the other one is on 18th of December
+[14:27 - 14:34] 2013
+[14:30 - 14:38] now here come to our question that we
+[14:34 - 14:41] asking how much did he spend on July
+[14:38 - 14:45] 30th so we are specifically referring to
+[14:41 - 14:47] the order that he make on 30th of
+[14:45 - 14:51] July and in order to find the purchases
+[14:47 - 14:55] uh on 30th of July we need to use the
+[14:51 - 14:59] condition order dates like July 30th
+[14:55 - 15:03] 2012 so that it will filter off only the
+[14:59 - 15:03] order that is made on the 30th of
+[15:04 - 15:09] July in order to calculate the total
+[15:07 - 15:12] amount that he spends we will need to
+[15:09 - 15:15] multiply the quantity that he purchased
+[15:12 - 15:15] and the unit price for the
+[15:16 - 15:22] item the quantity can be found from the
+[15:19 - 15:24] orders table and the unit price can be
+[15:22 - 15:28] found in the products
+[15:24 - 15:33] table so with that we are able to find
+[15:28 - 15:33] the total amount that spend on 30th of
+[15:35 - 15:41] July so this is just one last note for
+[15:39 - 15:44] those few name that can be identified
+[15:41 - 15:48] from which table that is taken from you
+[15:44 - 15:48] need not indicates the table
+[15:49 - 15:54] name in the case of first name it only
+[15:52 - 15:56] exists in the customer table so you can
+[15:54 - 15:58] just use first name and the last name
+[15:56 - 16:00] without specifying that it is from
+[15:58 - 16:03] customer
+[16:00 - 16:07] table in the case of unit price and the
+[16:03 - 16:09] quantity the only f with the name unit
+[16:07 - 16:12] price can be found only in the products
+[16:09 - 16:14] table and the quantity can only be found
+[16:12 - 16:17] in the a table so there's no need to
+[16:14 - 16:20] indicate the table
+[16:17 - 16:25] names in the case of
+[16:20 - 16:29] ID product ID we also have the customer
+[16:25 - 16:33] ID we also have the order ID so it is
+[16:29 - 16:36] important for us to indicate the table
+[16:33 - 16:40] names that's the end of our lesson on
+[16:36 - 16:40] the database and SQL

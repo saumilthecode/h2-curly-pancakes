@@ -1,0 +1,91 @@
+Title: How TCP starts and close session?
+Assessment(s): C3c Additional Resources
+Linked label(s): How TCP starts and closes session
+Uploader: Sunny Classroom
+YouTube: https://www.youtube.com/watch?v=zlIHLnOigmA
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:09] hello and this is sunny welcome back
+[00:04 - 00:13] today my topic is how to CP starts and
+[00:09 - 00:18] closes a session tcp stands for
+[00:13 - 00:21] transmission control protocol it is the
+[00:18 - 00:26] most popular transport protocol on a
+[00:21 - 00:30] tcp/ip network when tcp is used to trust
+[00:26 - 00:35] me the data it will include three stages
+[00:30 - 00:38] session studying data transmission and a
+[00:35 - 00:43] session india let me use an example to
+[00:38 - 00:47] demonstrate these three stages here is
+[00:43 - 00:52] the scenario a web client which is your
+[00:47 - 00:56] browser once a web page from web server
+[00:52 - 01:00] but the first is first a connection or
+[00:56 - 01:05] session must be established between your
+[01:00 - 01:09] browser and the web server TCP uses a
+[01:05 - 01:14] three-way handshake to start a session
+[01:09 - 01:18] step one the client sends a single sim
+[01:14 - 01:22] packet to the server asking for a
+[01:18 - 01:28] session saying simply means hi web
+[01:22 - 01:30] server do you want to talk step two the
+[01:28 - 01:35] web server replies 'as with a single
+[01:30 - 01:38] thing ACK packet scene ACK means the
+[01:35 - 01:43] server acknowledges the clients request
+[01:38 - 01:46] and ask the client for a talk is like
+[01:43 - 01:50] yes I want to talk do you want to talk
+[01:46 - 01:53] is it sounds weird to ask a client do
+[01:50 - 01:59] you want to talk but this is how TCP
+[01:53 - 02:02] talks I will explain later on step three
+[01:59 - 02:07] the client replies with a syncing packet
+[02:02 - 02:10] which simply says yes I want to talk the
+[02:07 - 02:13] three-way handshake process is not very
+[02:10 - 02:17] natural to people when we people talk
+[02:13 - 02:20] we normally say hi Bob do you want to
+[02:17 - 02:24] talk even Bob wants to talk Bob anomaly
+[02:20 - 02:28] replies sure under a normal situation
+[02:24 - 02:33] Bob would not say sure I want to talk
+[02:28 - 02:36] but do you want to talk because Bob
+[02:33 - 02:39] assumes that I want to talk otherwise I
+[02:36 - 02:44] will not ask Bob to talk in the first
+[02:39 - 02:49] place however computers never make
+[02:44 - 02:54] assumptions at least in the year of 2018
+[02:49 - 02:58] and in the near future basically two
+[02:54 - 03:01] computers use a three-way handshake to
+[02:58 - 03:05] negotiate and start a session before any
+[03:01 - 03:09] webpage get transferred once the
+[03:05 - 03:12] connection is established data packets
+[03:09 - 03:16] are transferred during the data
+[03:12 - 03:20] transmission TCP also guarantees that
+[03:16 - 03:25] the data is a successfully received and
+[03:20 - 03:28] is reassembled in a cracked order after
+[03:25 - 03:32] server sends all packets to the client a
+[03:28 - 03:36] four step procedure is also performed
+[03:32 - 03:37] before the connection is closed here is
+[03:36 - 03:41] how it works
+[03:37 - 03:45] step 1 the server sends faint ACK packet
+[03:41 - 03:51] to the Clym saying I'm Adam can you hear
+[03:45 - 03:55] me this is what faint ack means step to
+[03:51 - 04:00] the client responds with a sickly packet
+[03:55 - 04:01] saying yes I got your message yes I hear
+[04:00 - 04:05] you
+[04:01 - 04:08] step 3 when the client completes
+[04:05 - 04:12] downloading the web page it is Saints
+[04:08 - 04:16] faint ack to the server basically saying
+[04:12 - 04:21] I am done can you hear me
+[04:16 - 04:25] step 4 the server responds with ACK
+[04:21 - 04:27] after this the session between them can
+[04:25 - 04:30] be properly closed on
+[04:27 - 04:31] the client continues to ask for another
+[04:30 - 04:34] webpage
+[04:31 - 04:38] in summary TCP uses a three-way
+[04:34 - 04:43] handshake to start the connection before
+[04:38 - 04:46] any data packets are transmitted during
+[04:43 - 04:49] the data transmission TCP also
+[04:46 - 04:55] guarantees data packets are delivered
+[04:49 - 04:59] and reassembled correctly they TCP uses
+[04:55 - 05:02] a four-step procedure to terminate the
+[04:59 - 05:07] connection there's a three-stage process
+[05:02 - 05:10] makes a TCP connection oriented and a
+[05:07 - 05:13] reliable protocol thank you very much
+[05:10 - 05:18] and see you next time
+[05:13 - 05:18] [Music]

@@ -1,0 +1,142 @@
+Title: C4-2d and 2e Basic SQL - Update and Delete Records and Tables
+Assessment(s): Released Coursemology video catalog - C4-2d and 2e Basic SQL - Update and Delete Records and Tables
+Linked label(s): C4-2d and 2e Basic SQL - Update and Delete Records and Tables
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=py0QIVHqYEk
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24861
+Published course start: 2026-10-04T14:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:02 - 00:08] welcome
+[00:04 - 00:10] back for part four we will be doing
+[00:08 - 00:14] updating of the
+[00:10 - 00:17] data so we'll be using the dy. DB for
+[00:14 - 00:17] this
+[00:19 - 00:26] portion it is populated with the data
+[00:23 - 00:29] same as the north wind.
+[00:26 - 00:31] DB now you have learned from your query
+[00:29 - 00:36] statement we can
+[00:31 - 00:40] select everything from the table
+[00:36 - 00:43] customer where the first
+[00:40 - 00:47] name is
+[00:43 - 00:47] Thomas and last
+[00:49 - 00:52] name is
+[00:54 - 01:02] hardi okay let's run so Thomas hardi is
+[00:58 - 01:06] uh in the country UK the city London
+[01:02 - 01:08] okay we can choose this icon uh to add
+[01:06 - 01:10] another SQL
+[01:08 - 01:14] command let's say we want to update
+[01:10 - 01:18] customers table sets the country to
+[01:14 - 01:20] Singapore but only where the first name
+[01:18 - 01:23] is Thomas and last name is Hadi that
+[01:20 - 01:26] means we are only changing one
+[01:23 - 01:28] particular person uh the country okay
+[01:26 - 01:32] let's run
+[01:28 - 01:35] this so it has executed successfully now
+[01:32 - 01:38] let's go back to query to look for this
+[01:35 - 01:40] Thomas Hadi let's run you realize that
+[01:38 - 01:43] the country has been updated to
+[01:40 - 01:45] Singapore now the next line is going to
+[01:43 - 01:49] be very dangerous take a look at the
+[01:45 - 01:51] customer the customer table the country
+[01:49 - 01:54] that comes from all sorts of country
+[01:51 - 01:57] Germany Mexico Sweden France and so on
+[01:54 - 02:01] so forth okay let's say we're going to
+[01:57 - 02:04] execute another command and says update
+[02:01 - 02:07] customer the customer table sets the
+[02:04 - 02:10] country to Singapore let's see what this
+[02:07 - 02:14] SQ command will du to the data in the
+[02:10 - 02:17] table query executed successfully okay
+[02:14 - 02:20] the 91 rules
+[02:17 - 02:23] affected why is that so all the 91
+[02:20 - 02:26] customer their country has been updated
+[02:23 - 02:29] to Singapore so without the condition
+[02:26 - 02:31] for a specific person this is very
+[02:29 - 02:33] dangerous because all the data in the
+[02:31 - 02:38] table will be affected before we execute
+[02:33 - 02:41] the next command let's do our query
+[02:38 - 02:43] select
+[02:41 - 02:46] esteric from
+[02:43 - 02:47] table
+[02:46 - 02:52] orders
+[02:47 - 02:54] where the ID is uh equal to
+[02:52 - 02:57] 7
+[02:54 - 03:00] okay so this particular order the
+[02:57 - 03:02] quantity is 35
+[03:00 - 03:06] now if I'm going to execute this command
+[03:02 - 03:08] update order set the quantity to 35
+[03:06 - 03:11] whatever existing quantity plus five
+[03:08 - 03:14] that would be 40 okay let's run
+[03:11 - 03:17] this and go back to the previous command
+[03:14 - 03:21] the previous quantity is 35 now if I run
+[03:17 - 03:24] it it's now become 40 so we have updated
+[03:21 - 03:24] the quantity and there's only one record
+[03:24 - 03:28] that's
+[03:24 - 03:32] affected okay only one row is affected
+[03:28 - 03:32] because where ID could to
+[03:37 - 03:41] seventh okay that's all I have for you
+[03:39 - 03:43] although these are three simple example
+[03:41 - 03:46] but you can on your own you can try your
+[03:43 - 03:49] various way of updating various data in
+[03:46 - 03:52] the customer the product or the order
+[03:49 - 03:55] tables okay please make sure that you
+[03:52 - 03:58] are still using the dy. DB for this part
+[03:55 - 04:01] five to delete data and drop
+[03:58 - 04:05] tables before we try to delete the
+[04:01 - 04:10] customer let's do a query statement
+[04:05 - 04:10] select Aster from
+[04:10 - 04:17] customer where the first
+[04:15 - 04:20] name is equal
+[04:17 - 04:22] to
+[04:20 - 04:25] victorial okay and run okay so there's
+[04:22 - 04:30] such a person the ID is 11 Victoria
+[04:25 - 04:32] asworth she's from London and country
+[04:30 - 04:35] have been updated to Singapore
+[04:32 - 04:35] right
+[04:36 - 04:41] uh if we if we want to delete this
+[04:42 - 04:46] customer I have removed the uh foreign
+[04:45 - 04:50] key
+[04:46 - 04:53] constrainer uh from the dam. DB table
+[04:50 - 04:57] which allows you to delete the
+[04:53 - 05:01] customer okay if you have used the uh
+[04:57 - 05:05] North wind. DB there is a foreign key
+[05:01 - 05:08] that tied to the customer uh because the
+[05:05 - 05:11] order table will require that so that
+[05:08 - 05:13] will actually prevent you from deleting
+[05:11 - 05:18] that's the reason why I as you to try
+[05:13 - 05:21] this out in the dy. DB file uh and not
+[05:18 - 05:25] using the do. DB what happen if you use
+[05:21 - 05:27] the command delete from customer table
+[05:25 - 05:28] without specifying which customer you
+[05:27 - 05:32] want to
+[05:28 - 05:36] delete let's see what will happen to the
+[05:32 - 05:38] table 90 rows are
+[05:36 - 05:45] facted let's browse the
+[05:38 - 05:50] data there's no data in the customer
+[05:45 - 05:53] table because this command deleted all
+[05:50 - 05:56] the 90 rows of uh customer now you
+[05:53 - 05:59] realize that although the uh customer
+[05:56 - 06:01] data has been deleted the table is there
+[05:59 - 06:04] it's uh still inside the
+[06:01 - 06:09] database if we choose to
+[06:04 - 06:09] drop table
+[06:12 - 06:18] customer now go back to the database
+[06:14 - 06:21] structure the customer table no longer
+[06:18 - 06:24] exist in DB browser it does not allow
+[06:21 - 06:26] you to uh drop the database uh using the
+[06:24 - 06:29] command
+[06:26 - 06:33] line so I hope you understand that it is
+[06:29 - 06:36] uh very dangerous when you try to update
+[06:33 - 06:38] delete or to drop a table uh when we
+[06:36 - 06:42] update something we want to specify
+[06:38 - 06:45] exactly which record uh to updates uh
+[06:42 - 06:47] when we want to delete we also specify
+[06:45 - 06:50] exactly which records you want to delete
+[06:47 - 06:52] we would not uh do updating or deleting
+[06:50 - 06:57] uh without a condition because that will
+[06:52 - 06:57] affect all the data in the table

@@ -1,0 +1,105 @@
+Title: LT12b Insertion Sort (2026 VoiceOver) - unplugged activity
+Assessment(s): LT 12b Insertion Sort
+Linked label(s): Insertion Sort unplugged activity
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=QTh2RMHH-T0
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] Hi, today we will be learning about
+[00:01 - 00:04] insertion sort.
+[00:06 - 00:10] Now, let's play an unplugged activity.
+[00:12 - 00:16] For this unplugged activity, assuming
+[00:14 - 00:18] that you start with an empty left hand
+[00:16 - 00:20] and you
+[00:18 - 00:22] have five cards that are facing down on
+[00:20 - 00:25] the table.
+[00:22 - 00:28] These are the five cards that you want
+[00:25 - 00:30] to sort them in the ascending order.
+[00:28 - 00:33] First, remove one card from the table
+[00:30 - 00:35] and place it in your left hand.
+[00:33 - 00:36] And since that's the only card in your
+[00:35 - 00:38] left hand,
+[00:36 - 00:41] it is sorted.
+[00:38 - 00:44] Next, remove another card and put it on
+[00:41 - 00:44] the rightmost of the left hand.
+[00:46 - 00:49] That means it is the last card in your
+[00:48 - 00:52] left hand.
+[00:49 - 00:54] Now, there are two cards in your hand.
+[00:52 - 00:56] Now, you need to compare these two cards
+[00:54 - 01:00] and then swap if necessary to make sure
+[00:56 - 01:00] that these two cards are sorted.
+[01:02 - 01:06] Repeating step number two, remove one
+[01:04 - 01:09] card from the table and place it at the
+[01:06 - 01:09] last card in
+[01:10 - 01:14] your left hand.
+[01:12 - 01:15] So, there are three cards in your left
+[01:14 - 01:17] hand now,
+[01:15 - 01:19] of which two cards are sorted, the third
+[01:17 - 01:22] one
+[01:19 - 01:24] is not sorted.
+[01:22 - 01:28] Compare this last card with the adjacent
+[01:24 - 01:28] card, swap if necessary.
+[01:30 - 01:35] After swapping, compare again and to see
+[01:32 - 01:35] whether you need to swap.
+[01:37 - 01:41] After all the comparison and swapping,
+[01:39 - 01:43] you will have three sorted cards in your
+[01:41 - 01:43] left hand.
+[01:45 - 01:49] Repeating step number two again, remove
+[01:47 - 01:50] one card from the table and place it at
+[01:49 - 01:52] the end
+[01:50 - 01:54] of your left hand.
+[01:52 - 01:56] So, there are three sorted cards plus
+[01:54 - 01:59] the last card, which is the fourth one,
+[01:56 - 02:01] which is not sorted.
+[01:59 - 02:04] Compare this card with the adjacent
+[02:01 - 02:04] card. Swap if necessary.
+[02:05 - 02:09] Do another comparison. Swap if
+[02:06 - 02:09] necessary.
+[02:09 - 02:15] You will stop comparing when there is no
+[02:11 - 02:15] requirement to swap the card.
+[02:16 - 02:20] Repeat step number two and three until
+[02:18 - 02:23] you have all the five cards held in your
+[02:20 - 02:23] left hand sorted.
+[02:27 - 02:31] Assuming you have five cards and they
+[02:29 - 02:34] are unknown cards to you. So, let's put
+[02:31 - 02:34] them face down.
+[02:36 - 02:41] Take one card and put it into your left
+[02:39 - 02:44] hand. This will be the first sorted card
+[02:41 - 02:45] in your left hand.
+[02:44 - 02:49] Take another card from the table and put
+[02:45 - 02:49] it into your left hand.
+[02:49 - 02:56] Now, do the comparison and swap so that
+[02:52 - 02:56] these two cards are in sorted order.
+[03:02 - 03:06] Now, you have two cards sorted in your
+[03:03 - 03:08] left hand.
+[03:06 - 03:13] Take the third card, comparing this card
+[03:08 - 03:13] with the adjacent card, which is 10.
+[03:15 - 03:21] Since 36 is bigger than 10, there is no
+[03:19 - 03:25] swapping is required and we stop there.
+[03:21 - 03:25] Now, we have three cards sorted.
+[03:25 - 03:29] Taking the fourth card from the table,
+[03:27 - 03:33] and let's compare this 24 with the
+[03:29 - 03:33] adjacent card 36.
+[03:35 - 03:39] And you need to perform a swap to put
+[03:36 - 03:39] them in order.
+[03:41 - 03:46] Make another comparison between 24 and
+[03:43 - 03:49] 10 and you realize there is no swapping
+[03:46 - 03:49] is required.
+[03:49 - 03:52] Stop there.
+[03:53 - 03:58] So, now you have four cards in your left
+[03:55 - 03:58] hand. They are sorted.
+[03:58 - 04:05] Take the fifth card from the table, make
+[04:00 - 04:05] the comparison with the adjacent card.
+[04:07 - 04:11] Swap it so that they will be in order.
+[04:11 - 04:18] Make another comparison between 12 and
+[04:13 - 04:18] 24, and do the necessary swapping.
+[04:22 - 04:26] Compare 12 and 10, and you realize that
+[04:24 - 04:28] there is no need to swap.
+[04:26 - 04:31] So, since there is no more card on the
+[04:28 - 04:34] table, you have five cards all in your
+[04:31 - 04:34] left hand, sorted.
+[04:35 - 04:40] Try this unplug activity using the card
+[04:37 - 04:40] that you are given.

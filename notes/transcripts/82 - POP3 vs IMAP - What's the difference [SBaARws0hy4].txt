@@ -1,0 +1,79 @@
+Title: POP3 vs IMAP - What's the difference?
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=SBaARws0hy4
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Hey guys, in this video we're going to talk about a couple of different email protocols and
+[00:05 - 00:13] these are POP3 and IMAP. Now these protocols are used for retrieving email from an email server.
+[00:13 - 00:20] So for example if you're using an email client such as Microsoft outlook, you would configure
+[00:20 - 00:26] outlook with either POP3 or IMAP to retrieve your email on a computer. And you can also use
+[00:26 - 00:33] these protocols on your tablet or smartphone to retrieve your email. So you can use either one,
+[00:33 - 00:40] the choice is yours. But the question is, which protocol do you want to use? Is one better than
+[00:40 - 00:46] the other? So that's what we're going to talk about. So let's talk about POP3 first. Now POP3
+[00:46 - 00:53] stands for post office protocol 3. Now POP3 is the simplest of the two protocols because the
+[00:53 - 01:01] only thing that POP3 does is download the email to your device from a mail server. And it only
+[01:01 - 01:07] downloads what's in your inbox folder, which is where your email is, and that's pretty much it.
+[01:07 - 01:13] It doesn't download any other folders or their contents. So it doesn't download your sent items,
+[01:13 - 01:19] your drafts, your deleted emails, and so on. Because it only downloads what's
+[01:19 - 01:26] in your inbox and it doesn't do any kind of synchronization. So for example here we have
+[01:26 - 01:32] two computers that are configured to retrieve the same email account. And as you can tell,
+[01:32 - 01:39] the folder structures are different on these two computers because POP3 does not synchronize the
+[01:39 - 01:46] folders. Now by default when you're using POP3, the email will be deleted on the mail server once
+[01:46 - 01:53] it's downloaded to a device. So no copy of the email is kept on the server. So what happens is,
+[01:53 - 01:58] is when a new email comes into the mail server, if this computer up here it checks the mail
+[01:58 - 02:05] server first before this computer down here, this computer will receive the email but this
+[02:05 - 02:11] other computer will not. Because the email has already been downloaded. So no copy of
+[02:11 - 02:17] the email is kept on the server. However most email clients will have a setting that you can
+[02:17 - 02:23] check to leave a copy on the server so that all of your devices can retrieve the email.
+[02:26 - 02:33] Noe let's talk about IMAP. And IMAP stands for internet message access protocol. Now IMAP is also
+[02:33 - 02:39] used for retrieving email but IMAP is a little bit different. IMAP allows you to view your email
+[02:39 - 02:47] that's on the server from multiple devices. The email is kept on the server and it caches local
+[02:47 - 02:54] copies of the email on to all of your devices. And it synchronizes all of your folders and
+[02:54 - 03:01] everything that's in them. So it syncs your inbox, sent items, deleted items, drafts, and
+[03:01 - 03:08] any custom folders that you may have created. So when you view your email on your computer, tablet,
+[03:08 - 03:14] or smartphone, your email would be exactly the same because everything is synchronized.
+[03:16 - 03:22] So for example in this demonstration we see that all the email and folders are exactly
+[03:22 - 03:28] the same between these two computers. So if we delete an email on this computer here, the
+[03:28 - 03:34] email will be deleted on the mail server and then be deleted on this computer also.
+[03:36 - 03:41] So if we go to the other computer, and for example let's go ahead and delete all the
+[03:41 - 03:47] emails. And when this happens, all the emails on the server and the other computer will
+[03:47 - 03:55] be deleted also. And if any new emails come in, the email first goes to the mail server, then
+[03:55 - 04:01] as these computers sync with the mail server, the new email will appear on these computers.
+[04:04 - 04:11] So in another example let's go ahead and make a custom folder. So we'll make a custom folder
+[04:11 - 04:17] and then give it a name. And because we're using IMAP, the folder and all of its contents will be
+[04:17 - 04:24] added and synced to the other computer also. So every computer, tablet, and smartphone that you
+[04:24 - 04:31] have, will have the exact same email and folder structure as the others. So that's how IMAP works.
+[04:33 - 04:40] So as a comparison between POP3 and IMAP. On the left we have POP3, and as you can see, the folder
+[04:40 - 04:47] structure is different between these two email clients because POP3 only downloads the contents
+[04:47 - 04:53] of your inbox folder. It doesn't do any email or folder syncing, so that's why the emails and
+[04:53 - 05:00] the folder structure are different. But in IMAP everything is the same. The email and
+[05:00 - 05:05] folder structure are identical because IMAP syncs everything with all of your devices.
+[05:07 - 05:15] Now both POP3 and IMAP are configured in your email client in the incoming server settings. So
+[05:15 - 05:22] for example if you're using Gmail and you wanted to use POP3, you would type pop.gamil.com in your
+[05:22 - 05:28] incoming server settings. Or if you wanted to use IMAP, you would type imap.gmail.com
+[05:33 - 05:38] So the question is, which protocol do you actually want to use? And that really depends
+[05:38 - 05:44] on your situation. Now POP3 is good if you're only going to retrieve your email from one
+[05:44 - 05:50] device. The advantage of using POP3 is that since the email is downloaded to your device,
+[05:50 - 05:56] you can view your downloaded email even if you don't have an internet connection. So the
+[05:56 - 06:01] only time that you need an internet connection and POP3, is when you're receiving new email or
+[06:01 - 06:09] sending email. Another advantage of POP3 is that it saves storage space on the mail server because
+[06:09 - 06:16] the emails are deleted when they are downloaded to a device. Now a disadvantage of POP3, is that
+[06:16 - 06:22] since the emails are removed from the server and downloaded to your device, you would need a plan
+[06:22 - 06:29] to backup your emails in case your device crashes or is lost. And another disadvantage is that your
+[06:29 - 06:36] device has a better chance of being infected with viruses since the emails are fully downloaded.
+[06:37 - 06:43] Now IMAP is good when you're going to retrieve your email from multiple devices. An advantage
+[06:43 - 06:49] of using IMAP is that all the email is stored on the mail server. So whether you're accessing your
+[06:49 - 06:56] email using an email client or webmail, you'll be able to see all your email including your
+[06:56 - 07:03] sent items, drafts, deleted items, and any custom folders. And all the email and all
+[07:03 - 07:08] folders are all synchronized. So every device that you have will see the exact same thing.
+[07:08 - 07:15] Now a disadvantage of IMAP is that you will not be able to view your emails without an
+[07:15 - 07:21] internet connection. And this is because IMAP only caches local copies of the email on your
+[07:21 - 07:27] device and doesn't download them. However some email clients will give you an option that you
+[07:27 - 07:33] can check to have IMAP download the emails to your device instead of just caching them.

@@ -1,0 +1,324 @@
+Title: 2021 LT3b Good Abstraction Pt 1
+LT: LT 3b - Good Abstraction
+Linked label: Good Abstraction Pt 1
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=UYy283H2cMU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] okay hi mr quang here let's talk about
+[00:02 - 00:08] lecture three three b we will be talking
+[00:05 - 00:10] about good abstraction okay what exactly
+[00:08 - 00:12] do we mean by good abstraction so let's
+[00:10 - 00:13] look at the details of this uh series of
+[00:12 - 00:16] lecture
+[00:13 - 00:17] okay so good for to for this lecture
+[00:16 - 00:19] right we're going to talk about what
+[00:17 - 00:21] abstraction means and so understand
+[00:19 - 00:23] these advantages and so to understand
+[00:21 - 00:25] key approaches to problem solving
+[00:23 - 00:27] right what's going on
+[00:25 - 00:28] essentially for abstraction right what
+[00:27 - 00:31] you're trying to do is to manage
+[00:28 - 00:33] complexity okay and also you need to
+[00:31 - 00:35] divide and conquer right so basically
+[00:33 - 00:37] you will see how we can break down
+[00:35 - 00:39] problems into simpler chunks and then we
+[00:37 - 00:42] can uh we can address each uh
+[00:39 - 00:44] each chunk on this one first before we
+[00:42 - 00:47] combine them back together again
+[00:44 - 00:49] all right so basically what we're trying
+[00:47 - 00:51] to do is that when we have a problem we
+[00:49 - 00:53] don't just look at the problem as a
+[00:51 - 00:55] whole we try to break it down into uh
+[00:53 - 00:57] subtasks right so there's sub problem
+[00:55 - 00:59] ones a problem two and of course from
+[00:57 - 01:03] there we can further divide it to maybe
+[00:59 - 01:04] even some sub problem okay so we try to
+[01:03 - 01:07] break it down as much as we can because
+[01:04 - 01:10] when we do this we are able to
+[01:07 - 01:11] resolve smaller problems more easily
+[01:10 - 01:14] than we when we do we're dealing with a
+[01:11 - 01:16] big problem so we are just solving by
+[01:14 - 01:19] solving each part one by one and then
+[01:16 - 01:21] combining them to get a solution
+[01:19 - 01:25] right so when you talk about abstraction
+[01:21 - 01:26] we are taking a problem we are not just
+[01:25 - 01:28] looking at the primitives that involve
+[01:26 - 01:30] the problem that means we are not
+[01:28 - 01:33] looking at the variables the the kind of
+[01:30 - 01:35] strings we use integers to use etc etc
+[01:33 - 01:37] but we are looking at how we can break
+[01:35 - 01:38] it down into uh instead of just using
+[01:37 - 01:41] one function to solve you want to break
+[01:38 - 01:43] it down to use uh
+[01:41 - 01:45] multiple small smaller functions to
+[01:43 - 01:48] address the issue okay so we make use of
+[01:45 - 01:50] abstractions to to to do this
+[01:48 - 01:51] okay so what makes a good abstraction
+[01:50 - 01:52] right
+[01:51 - 01:54] okay so these are some of the points
+[01:52 - 01:56] that's required for good abstraction
+[01:54 - 01:57] there are seven points that we have
+[01:56 - 02:01] highlighted and then we'll go through
+[01:57 - 02:01] them one by one right now
+[02:01 - 02:05] okay first one a good abstraction makes
+[02:04 - 02:08] it more natural to think about tasks and
+[02:05 - 02:09] subtasks okay what do we mean by this
+[02:08 - 02:11] let's look at the next one okay when we
+[02:09 - 02:13] want to build a new house do we think
+[02:11 - 02:15] about the bricks directly
+[02:13 - 02:17] we we could because we would start to
+[02:15 - 02:20] count or to build this entire house i
+[02:17 - 02:21] need a certain number of bricks but i
+[02:20 - 02:23] realize it's very hard to estimate the
+[02:21 - 02:25] number of bricks you need if you do not
+[02:23 - 02:27] know any details of the house so it
+[02:25 - 02:29] makes more sense to break down the house
+[02:27 - 02:30] into to break down this problem into
+[02:29 - 02:32] smaller parts like for example when i
+[02:30 - 02:34] want to build a house the first question
+[02:32 - 02:36] i asked myself uh what kind of house i
+[02:34 - 02:39] want to build do i want to build a house
+[02:36 - 02:41] a two level house a one level house or
+[02:39 - 02:44] do i want to build one with a
+[02:41 - 02:45] rustic team or an industrial team and
+[02:44 - 02:48] then once we have done that we can start
+[02:45 - 02:50] to break down how many rooms we want for
+[02:48 - 02:52] for their house okay so we break it down
+[02:50 - 02:54] the rooms first and then from each room
+[02:52 - 02:56] we can now start to think about how many
+[02:54 - 02:57] bricks we need okay so this is a more
+[02:56 - 02:59] intuitive way of solving the problem
+[02:57 - 03:01] because for us
+[02:59 - 03:02] is not intuitive for us to when we think
+[03:01 - 03:04] about how so think about the bricks
+[03:02 - 03:05] number of breaks directly first we think
+[03:04 - 03:06] about what we want to build the
+[03:05 - 03:08] different
+[03:06 - 03:10] sections of the house first
+[03:08 - 03:12] all right so in the same vein of thought
+[03:10 - 03:14] okay this is essentially dividing and
+[03:12 - 03:16] conquer in this same way on top right
+[03:14 - 03:17] when we run the right program we don't
+[03:16 - 03:20] think about what are the primitives that
+[03:17 - 03:22] we need to use first we think of what
+[03:20 - 03:25] what
+[03:22 - 03:27] how we can break down our program into
+[03:25 - 03:28] smaller functions that we can use and
+[03:27 - 03:30] then from the functions we start to
+[03:28 - 03:31] think about the primitives that we want
+[03:30 - 03:33] to bring in
+[03:31 - 03:34] okay so this is essentially dividing and
+[03:33 - 03:37] conquering
+[03:34 - 03:38] okay next it makes programs easier to
+[03:37 - 03:40] understand
+[03:38 - 03:42] all right so let's look at this function
+[03:40 - 03:44] here uh compare the top one top one
+[03:42 - 03:47] right you have defined clearly a sum of
+[03:44 - 03:49] squares function a square function and
+[03:47 - 03:51] then your hypotenuse function
+[03:49 - 03:53] which makes use of the sum of squares
+[03:51 - 03:57] function over here okay you can see that
+[03:53 - 03:59] basically right this this way of working
+[03:57 - 04:02] is that if you look at this sum of
+[03:59 - 04:03] squares is defined outside here but then
+[04:02 - 04:06] this sum of squares is so dependent on
+[04:03 - 04:08] the square function that is uh in here
+[04:06 - 04:11] as well all right so you may think that
+[04:08 - 04:13] this is quite cumbersome but why why
+[04:11 - 04:16] can't you write it at the bottom like
+[04:13 - 04:18] this where you just basically
+[04:16 - 04:20] uh mush everything into one
+[04:18 - 04:22] you can but then in terms of making sure
+[04:20 - 04:24] your code is easy to understand like for
+[04:22 - 04:26] example like six months down the road
+[04:24 - 04:27] you look at your code again okay will
+[04:26 - 04:30] you be able to understand
+[04:27 - 04:32] this uh very very quickly will someone
+[04:30 - 04:34] else be able to understand your code
+[04:32 - 04:36] very easily as well like for some people
+[04:34 - 04:38] right they think of square as just
+[04:36 - 04:41] a power two but in this case you are
+[04:38 - 04:44] thinking of a a times a okay so this is
+[04:41 - 04:46] not so clear but then to the reader when
+[04:44 - 04:48] he sees some of squares right he's very
+[04:46 - 04:50] clear for if for him what you're doing
+[04:48 - 04:51] okay
+[04:50 - 04:53] next
+[04:51 - 04:55] it captures common patterns okay what do
+[04:53 - 04:59] we mean by this okay let's look at this
+[04:55 - 05:00] uh this uh statement here so you have
+[04:59 - 05:02] your this this is your spending for each
+[05:00 - 05:05] month based on your income
+[05:02 - 05:07] okay so you have my finances equals to
+[05:05 - 05:08] them food then you can see that oh this
+[05:07 - 05:10] is
+[05:08 - 05:12] uh basically type you give your string
+[05:10 - 05:14] for food then converting a number
+[05:12 - 05:15] into a string and then playing together
+[05:14 - 05:18] so you get a
+[05:15 - 05:20] combined statement for of your spending
+[05:18 - 05:21] but you notice something that that
+[05:20 - 05:23] always comes out in this case right
+[05:21 - 05:26] there is this always one one thousand
+[05:23 - 05:28] 1000 1000 1000 here okay what exactly is
+[05:26 - 05:31] happening here because right now right
+[05:28 - 05:32] you can see this is actually your income
+[05:31 - 05:34] for that month
+[05:32 - 05:37] all right so
+[05:34 - 05:38] imagine if you want to if let's say six
+[05:37 - 05:41] months down the road your pay has
+[05:38 - 05:43] increased to 1005. all right if you want
+[05:41 - 05:44] to update this you have to update every
+[05:43 - 05:47] single
+[05:44 - 05:50] one of them every single 1000 1000 1000
+[05:47 - 05:52] change for them all right so if in this
+[05:50 - 05:54] case right we use a function that calls
+[05:52 - 05:57] in uh that cause the cause for the
+[05:54 - 05:58] argument of the salary to go in okay
+[05:57 - 06:01] then you can
+[05:58 - 06:03] within your within your the body of a
+[06:01 - 06:06] function itself right you can just call
+[06:03 - 06:08] on salary okay so in this case right i
+[06:06 - 06:10] can use this function for my i can use
+[06:08 - 06:11] this function on a salary or one
+[06:10 - 06:13] thousand dollars
+[06:11 - 06:15] if down the road i got a pay agreement
+[06:13 - 06:18] then my salary could be thousand two or
+[06:15 - 06:20] thousand five this this code this
+[06:18 - 06:22] function will adapt itself accordingly
+[06:20 - 06:24] right because you have not hardcoded the
+[06:22 - 06:28] 1000 dollars into the
+[06:24 - 06:28] into the function itself
+[06:28 - 06:32] okay next
+[06:30 - 06:33] it allows for the code to be reused all
+[06:32 - 06:35] right so this one is quite useful
+[06:33 - 06:37] especially you're working on the massive
+[06:35 - 06:39] project okay what do we mean by that all
+[06:37 - 06:41] right so let's say we define a square
+[06:39 - 06:44] function okay define square that returns
+[06:41 - 06:46] x times x okay so for this one right
+[06:44 - 06:48] just how we use the square function to
+[06:46 - 06:50] find the hypotenuse but if you think
+[06:48 - 06:51] about it is also useful to calculate
+[06:50 - 06:54] other things as well for example the
+[06:51 - 06:56] area of a circle so if if i write a
+[06:54 - 06:58] function to determine area of circle
+[06:56 - 07:00] right given its radius i can we know
+[06:58 - 07:02] that function we know that this equation
+[07:00 - 07:05] is area equals to pi r square so i
+[07:02 - 07:08] define pi as 3.14159 and then i write
+[07:05 - 07:11] the function define area of circle r so
+[07:08 - 07:13] i just return pi times square r i don't
+[07:11 - 07:16] have to write
+[07:13 - 07:18] return pi times r times r you can do
+[07:16 - 07:19] that but then the thing is that you have
+[07:18 - 07:22] already written the
+[07:19 - 07:24] the square function you can use it again
+[07:22 - 07:26] here okay so there's no need to
+[07:24 - 07:29] replicate your work
+[07:26 - 07:32] okay next it hides the implementation
+[07:29 - 07:34] details okay what do we mean by that
+[07:32 - 07:37] okay remember we talk about this we have
+[07:34 - 07:38] an aerial circuit generator so if let's
+[07:37 - 07:40] say you are the one who wrote the
+[07:38 - 07:43] function then of course you know what's
+[07:40 - 07:45] inside this function but to the end user
+[07:43 - 07:47] right it's not important for him to know
+[07:45 - 07:49] what this function is to another program
+[07:47 - 07:51] that's called calling or this function
+[07:49 - 07:53] right it's not important for the program
+[07:51 - 07:58] to know what's inside this
+[07:53 - 08:00] area of circle gen generator okay
+[07:58 - 08:02] right next then it separates
+[08:00 - 08:04] specification from implementation it's
+[08:02 - 08:06] similar to just now what we have so
+[08:04 - 08:08] remember this remember we mentioned in
+[08:06 - 08:11] 3a that functional abstraction is a
+[08:08 - 08:13] black box okay so you don't need to know
+[08:11 - 08:15] how a car works you know to drive it
+[08:13 - 08:17] okay what this means is that if you just
+[08:15 - 08:20] imagine if i have a function called car
+[08:17 - 08:22] okay basically you just need to drive
+[08:20 - 08:24] the car you don't have to know how the
+[08:22 - 08:26] car works okay you don't need to know
+[08:24 - 08:28] what's going on inside the car you just
+[08:26 - 08:30] need to know that you use the car to get
+[08:28 - 08:31] from point a to point b
+[08:30 - 08:33] right
+[08:31 - 08:36] so basically you are trying to separate
+[08:33 - 08:38] the specification from implementation
+[08:36 - 08:40] okay so specifically here is what you
+[08:38 - 08:43] should do impedementation is how it does
+[08:40 - 08:46] it so this is like for example let's say
+[08:43 - 08:48] you are a client you you are looking for
+[08:46 - 08:51] someone to pro program something for you
+[08:48 - 08:54] then basically you tell your you tell
+[08:51 - 08:57] your coders oh i want my code to be able
+[08:54 - 09:00] to do this i okay i i want the code to
+[08:57 - 09:03] take an input and do this okay the then
+[09:00 - 09:04] is up to the coder to implement this you
+[09:03 - 09:06] don't have to know what's happening
+[09:04 - 09:08] behind the scenes okay you just need to
+[09:06 - 09:10] know that when you get the end product
+[09:08 - 09:11] right you run it it works correctly for
+[09:10 - 09:13] for you
+[09:11 - 09:14] okay so that was that's what i mean by
+[09:13 - 09:16] separating specification from
+[09:14 - 09:17] implementation
+[09:16 - 09:18] okay
+[09:17 - 09:21] yep
+[09:18 - 09:23] and next it makes debugging which is
+[09:21 - 09:25] fixing errors easier okay for this let's
+[09:23 - 09:27] look at the example here
+[09:25 - 09:29] which code where is the bar which code
+[09:27 - 09:31] is easier to check okay so i'm going to
+[09:29 - 09:33] flash two codes for you on the screen
+[09:31 - 09:35] okay actually i can show you one okay
+[09:33 - 09:37] just look at this one first
+[09:35 - 09:41] okay so this one i have written square
+[09:37 - 09:42] root of a plus b a plus a times b plus b
+[09:41 - 09:44] all right
+[09:42 - 09:46] then versus the other version
+[09:44 - 09:46] okay
+[09:47 - 09:51] so this one is i have a square function
+[09:49 - 09:53] i have a sum of squares function
+[09:51 - 09:55] okay and then i have a hypotenuse
+[09:53 - 09:58] function all right i think this one you
+[09:55 - 10:00] can spot error quite easily let me just
+[09:58 - 10:04] backtrack to the previous one hypotenuse
+[10:00 - 10:06] right so you realize that now this is
+[10:04 - 10:07] actually wrong as well but it's a bit
+[10:06 - 10:09] harder to spot error because now this
+[10:07 - 10:11] you have to look at each line within one
+[10:09 - 10:13] function to find the error in this case
+[10:11 - 10:16] the error here is actually
+[10:13 - 10:18] this one here it should be a a times a
+[10:16 - 10:21] plus b times b correct okay but you'll
+[10:18 - 10:23] be easier to spot it on this one here
+[10:21 - 10:24] sum of squares okay so
+[10:23 - 10:27] look at some sum of squares function
+[10:24 - 10:29] this is correct square x plus square y
+[10:27 - 10:31] and then hypotenuse is the square root
+[10:29 - 10:33] of sum of squares a and b which is fine
+[10:31 - 10:34] but then now you can see clearly in your
+[10:33 - 10:37] square function this is wrong because
+[10:34 - 10:40] square should be return x
+[10:37 - 10:42] x power 2 or just x times x so this is
+[10:40 - 10:45] easier for you to spot
+[10:42 - 10:46] okay so this is basically what we have
+[10:45 - 10:49] why we need to make use of good
+[10:46 - 10:52] abstraction uh i think for me personally
+[10:49 - 10:53] i feel that uh being for allowing the
+[10:52 - 10:55] code to be reused is one of the most
+[10:53 - 10:57] used useful
+[10:55 - 10:59] feature here so this is something you
+[10:57 - 11:02] need to take into account when you are
+[10:59 - 11:03] writing your functions okay we'll stop
+[11:02 - 11:05] here for this part then we will talk
+[11:03 - 11:07] about the next uh we'll give we'll show
+[11:05 - 11:10] you a real-life example in the next
+[11:07 - 11:10] video

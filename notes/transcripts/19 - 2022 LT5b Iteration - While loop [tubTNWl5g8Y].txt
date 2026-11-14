@@ -1,0 +1,462 @@
+Title: 2022 LT5b Iteration - While loop
+LT: LT 5b - Iteration (while-loop) (2025)
+Linked label: Iteration : While-loop
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=tubTNWl5g8Y
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] hi students for this lecture we will be
+[00:02 - 00:07] discussing another type of iteration the
+[00:05 - 00:09] wow loop
+[00:07 - 00:12] before we start let's say we get a offer
+[00:09 - 00:14] to invest like this
+[00:12 - 00:17] so this is an investment opportunity
+[00:14 - 00:18] with 20 percent interest per year and
+[00:17 - 00:21] someone who
+[00:18 - 00:23] gives an example where he invested 500
+[00:21 - 00:25] of his own money and in 5 years it turns
+[00:23 - 00:26] into 1 000.
+[00:25 - 00:28] can you check if the calculations are
+[00:26 - 00:31] correct
+[00:28 - 00:32] we can use a flowchart to analyze this
+[00:31 - 00:33] at the start
+[00:32 - 00:37] t
+[00:33 - 00:39] time is 0 years we can input 500
+[00:37 - 00:42] as the amount to go along with the
+[00:39 - 00:43] whatsapp message at the decision symbol
+[00:42 - 00:46] since the amount is less than one
+[00:43 - 00:48] thousand dollars we go right
+[00:46 - 00:50] t increments to one and the amount
+[00:48 - 00:52] increases by twenty percent to six
+[00:50 - 00:55] hundred
+[00:52 - 00:56] since the amount is still not more than
+[00:55 - 00:59] one thousand dollars
+[00:56 - 01:00] we go right again and update the values
+[00:59 - 01:04] to
+[01:00 - 01:06] t is equals to 2 and amount is 720 then
+[01:04 - 01:08] we go in the loop it is still not more
+[01:06 - 01:11] than 1 thousand dollars we update the
+[01:08 - 01:13] amount and the value of t to 3 and 8 x
+[01:11 - 01:15] 4.
+[01:13 - 01:18] now we follow the flow of the arrows is
+[01:15 - 01:21] the amount more than 1 000 no
+[01:18 - 01:22] so we update the values again t is now
+[01:21 - 01:24] four
+[01:22 - 01:26] and amount is one thousand thirty six
+[01:24 - 01:29] dollars and eighty cents so we go and
+[01:26 - 01:32] check here again and it is now indeed
+[01:29 - 01:34] more than one thousand dollars so yes
+[01:32 - 01:35] we do an output
+[01:34 - 01:37] showing that it takes four years for
+[01:35 - 01:39] your investment to go to one thousand
+[01:37 - 01:40] dollars
+[01:39 - 01:42] so it doesn't really take five years to
+[01:40 - 01:44] double your money with compounding
+[01:42 - 01:46] interest it only takes four years
+[01:44 - 01:48] perhaps the message is a scam
+[01:46 - 01:51] other than the fact that john doe is
+[01:48 - 01:52] lying let's go back to the flow chart do
+[01:51 - 01:54] you realize that we have done another
+[01:52 - 01:56] exercise to do a loop to find out how
+[01:54 - 01:58] long it takes for an investment to go to
+[01:56 - 02:00] one thousand dollars
+[01:58 - 02:02] but what kind of loop is this
+[02:00 - 02:04] can we use a for loop
+[02:02 - 02:05] if you do right what is the range that
+[02:04 - 02:08] you are going to use
+[02:05 - 02:10] do we know the start and the end to use
+[02:08 - 02:13] a for loop
+[02:10 - 02:15] another way of iteration is a while loop
+[02:13 - 02:17] similar to a for loop a while loop is a
+[02:15 - 02:20] control structure used to repeat a block
+[02:17 - 02:21] of code within a loop
+[02:20 - 02:23] but we check for condition before
+[02:21 - 02:24] looping
+[02:23 - 02:26] while loop is useful when we don't know
+[02:24 - 02:29] exactly how many times we need to repeat
+[02:26 - 02:30] until we fail the condition where we
+[02:29 - 02:32] exit the loop
+[02:30 - 02:33] this is suitable for the scenario in a
+[02:32 - 02:35] previous slide
+[02:33 - 02:37] the python code for a while loop looks
+[02:35 - 02:39] like the code in yellow
+[02:37 - 02:41] the code in the body of the loop must be
+[02:39 - 02:43] indented from the while statement to
+[02:41 - 02:46] distinguish the code in the loop and the
+[02:43 - 02:46] code outside the loop
+[02:46 - 02:50] here we will look at a simple example of
+[02:49 - 02:53] a while loop
+[02:50 - 02:56] first total is set to 0. now we check if
+[02:53 - 02:59] we enter the while loop since total 0 is
+[02:56 - 03:02] less than 5 we go into the loop body
+[02:59 - 03:06] where we increment total from 0 to 1 and
+[03:02 - 03:08] we print 1. we check the condition again
+[03:06 - 03:11] since total one is less than five we
+[03:08 - 03:14] loop again where we increment total to
+[03:11 - 03:16] two and we print two
+[03:14 - 03:19] now total two is less than five we go
+[03:16 - 03:22] into the loop body total is equals to 2
+[03:19 - 03:25] plus 1 3 where we print 3. now we check
+[03:22 - 03:29] again 3 is less than 5 yes so total is
+[03:25 - 03:31] incremented by 1 and we print 4.
+[03:29 - 03:33] then we check the condition again total
+[03:31 - 03:36] is less than 5 yes
+[03:33 - 03:38] total 4 is equal to 4 plus 1 5 print
+[03:36 - 03:41] total 5.
+[03:38 - 03:42] now we check again is total 5 less than
+[03:41 - 03:43] 5
+[03:42 - 03:46] no it's not
+[03:43 - 03:48] so we exit the loop and exit loop is
+[03:46 - 03:50] printed
+[03:48 - 03:52] we would have checked the condition
+[03:50 - 03:54] and looped the code for five times on
+[03:52 - 03:57] the sixth time
+[03:54 - 04:00] the condition fails so we exit the loop
+[03:57 - 04:02] this is how the loop works
+[04:00 - 04:04] a while loop has some similarities with
+[04:02 - 04:06] an if statement
+[04:04 - 04:08] both have similar code structure and
+[04:06 - 04:11] indentation
+[04:08 - 04:15] both check if an expression is true
+[04:11 - 04:18] before executing the code in the body
+[04:15 - 04:21] the difference is the code body in the
+[04:18 - 04:24] if statement is only executed once
+[04:21 - 04:27] the code body in a while statement is
+[04:24 - 04:29] executed repeatedly until the expression
+[04:27 - 04:29] is false
+[04:30 - 04:34] let's pause for a moment and take a look
+[04:33 - 04:38] at the code here
+[04:34 - 04:38] what do you think the code is doing
+[04:38 - 04:42] the code looks like it's getting the
+[04:40 - 04:45] user to input a hobby
+[04:42 - 04:47] if the input is not blank it is added
+[04:45 - 04:49] onto a string
+[04:47 - 04:52] if it is blank
+[04:49 - 04:56] it breaks out of the loop and outputs
+[04:52 - 04:58] all the hobbies do you figure that out
+[04:56 - 05:00] what is the disadvantage of writing the
+[04:58 - 05:00] code this way
+[05:01 - 05:06] the disadvantage is that it can only
+[05:03 - 05:09] accept a maximum of 5 hobbies perhaps we
+[05:06 - 05:10] think that it is enough for most people
+[05:09 - 05:12] but what if someone has more than 5
+[05:10 - 05:14] hobbies
+[05:12 - 05:16] what if you are entering for all the
+[05:14 - 05:17] hobbies for an entire class of 20
+[05:16 - 05:20] students
+[05:17 - 05:22] then surely 5 is not enough
+[05:20 - 05:26] with a for loop we are forced to define
+[05:22 - 05:27] a maximum fixed number of times to loop
+[05:26 - 05:30] let's see how this can be better by
+[05:27 - 05:34] using a while loop
+[05:30 - 05:36] this was the code you saw previously but
+[05:34 - 05:38] instead of using a for loop
+[05:36 - 05:40] here is an implementation where we use a
+[05:38 - 05:42] while loop
+[05:40 - 05:44] it performs in a similar way getting the
+[05:42 - 05:46] user to input hobbies
+[05:44 - 05:48] there are some advantages
+[05:46 - 05:51] the code is more intuitive to understand
+[05:48 - 05:53] it has no fixed numbers like 5.
+[05:51 - 05:54] it can also handle the scenario where a
+[05:53 - 05:55] person has more than five hobbies
+[05:54 - 05:58] because
+[05:55 - 06:01] it is not limited to a fixed number
+[05:58 - 06:03] this block of code can be run in jupiter
+[06:01 - 06:06] notebook you can pause the video to try
+[06:03 - 06:08] it
+[06:06 - 06:09] compare the difference between for loops
+[06:08 - 06:12] and while loops
+[06:09 - 06:14] in a for loop the process is repeated
+[06:12 - 06:16] for a fixed number of times or a fixed
+[06:14 - 06:18] number of elements
+[06:16 - 06:19] but in a while loop the process is
+[06:18 - 06:22] repeated
+[06:19 - 06:23] while a certain condition is true
+[06:22 - 06:26] when the condition is false we exit the
+[06:23 - 06:28] loop
+[06:26 - 06:31] can we also break or continue in a while
+[06:28 - 06:33] loop just like we can do so in a for
+[06:31 - 06:33] loop
+[06:33 - 06:39] the answer is yes break is a control
+[06:36 - 06:41] statement that terminates the iteration
+[06:39 - 06:44] and exits the while loop
+[06:41 - 06:46] this is similar to the for loop
+[06:44 - 06:47] can you predict what will be the output
+[06:46 - 06:50] of this code
+[06:47 - 06:50] pause the video and make a guess
+[06:53 - 06:58] first total is initialized to 0 then we
+[06:56 - 07:01] check if we enter the wow loop
+[06:58 - 07:02] since 0 is less than 10 we will go into
+[07:01 - 07:05] the loop
+[07:02 - 07:07] where we will print 0
+[07:05 - 07:10] and increment total to 1.
+[07:07 - 07:12] we will pass this if statement because
+[07:10 - 07:14] total is not equal to 4.
+[07:12 - 07:18] then we check if we enter the loop again
+[07:14 - 07:20] its total 1 less than 10 yes so we go in
+[07:18 - 07:24] we print total 1
+[07:20 - 07:26] and increase total to 2.
+[07:24 - 07:28] we will skip this statement and we will
+[07:26 - 07:31] check whether we go into the loop again
+[07:28 - 07:34] total 2 is less than 10 yes so we go
+[07:31 - 07:36] into the loop and print total
+[07:34 - 07:39] increase total to 3
+[07:36 - 07:41] and then we will skip this now we will
+[07:39 - 07:44] look check if we look again
+[07:41 - 07:48] this total 3 less than 10 yes so we
+[07:44 - 07:51] print total we increase total to 1.
+[07:48 - 07:52] and here since total is equal to 4 we
+[07:51 - 07:54] break
+[07:52 - 07:57] since we break out of the loop we will
+[07:54 - 07:58] come to this line here where we print
+[07:57 - 08:00] exit loop
+[07:58 - 08:03] we will not loop to print
+[08:00 - 08:06] 4 or 5 onwards
+[08:03 - 08:06] have you predicted the output correctly
+[08:07 - 08:11] continue is another control statement
+[08:09 - 08:14] used to control the flow of the program
+[08:11 - 08:16] code similar to for loops it immediately
+[08:14 - 08:19] stops the current iteration and starts
+[08:16 - 08:22] the next iteration
+[08:19 - 08:26] can you predict the output for this code
+[08:22 - 08:26] pause the video and make a guess
+[08:26 - 08:32] first we initialize total to zero
+[08:29 - 08:34] since total zero is less than seven we
+[08:32 - 08:37] enter the wow look
+[08:34 - 08:40] where total is incremented to one
+[08:37 - 08:44] since one is not divisible by 2 we pass
+[08:40 - 08:47] and we print the total 1. with total 1
+[08:44 - 08:49] now less than 7 we meet the condition to
+[08:47 - 08:51] enter the loop again where total is
+[08:49 - 08:53] increased to 2.
+[08:51 - 08:55] 2 is divisible
+[08:53 - 08:57] so we go into the if statement where we
+[08:55 - 09:00] execute continue
+[08:57 - 09:02] meaning we skip the current iteration
+[09:00 - 09:05] which is skip printing and we check for
+[09:02 - 09:08] the next iteration
+[09:05 - 09:11] with total 2 less than 7 we iterate
+[09:08 - 09:14] again where total is increased to 3.
+[09:11 - 09:16] since total 3 is not divisible by 2 we
+[09:14 - 09:18] pass on this statement and we print the
+[09:16 - 09:20] total 3.
+[09:18 - 09:22] then we iterate again
+[09:20 - 09:23] since total 3 is less than 7
+[09:22 - 09:25] we enter again
+[09:23 - 09:29] total is now 4
+[09:25 - 09:31] 4 is divisible by 2 so we continue
+[09:29 - 09:34] now we look again
+[09:31 - 09:36] 4 is less than 7 so we go into the loop
+[09:34 - 09:38] total is now five
+[09:36 - 09:42] total is not divisible by two
+[09:38 - 09:44] we print the total five
+[09:42 - 09:45] then we check to see if we go into the
+[09:44 - 09:47] loop again
+[09:45 - 09:51] five is less than seven so we go into
+[09:47 - 09:53] the loop total is now six
+[09:51 - 09:56] total is divisible by two
+[09:53 - 09:59] so we continue we will check
+[09:56 - 10:00] to see if we enter the loop again six is
+[09:59 - 10:01] less than seven
+[10:00 - 10:03] so
+[10:01 - 10:05] we go into the loop total six is now
+[10:03 - 10:08] increased to seven
+[10:05 - 10:10] total seven is not divisible by two so
+[10:08 - 10:12] we do not go here into the if statement
+[10:10 - 10:14] and we print total seven
+[10:12 - 10:17] then we loop again
+[10:14 - 10:21] total seven is not less than seven so we
+[10:17 - 10:22] do not go into the loop anymore
+[10:21 - 10:24] okay if we feel the condition to enter
+[10:22 - 10:28] the loop we will skip the loop and we
+[10:24 - 10:32] will jump here to exit the loop
+[10:28 - 10:34] have you predicted the correct output
+[10:32 - 10:36] you can see that continue and break
+[10:34 - 10:40] performs very similarly for both a for
+[10:36 - 10:40] loop and a while loop
+[10:41 - 10:45] let us look at another example of a
+[10:43 - 10:47] while loop here
+[10:45 - 10:48] if the user enters a positive integer
+[10:47 - 10:51] value 10
+[10:48 - 10:53] what will happen
+[10:51 - 10:56] we can see that the loop will print and
+[10:53 - 10:59] decrement the value by 2 each time
+[10:56 - 11:02] until it is 0 where it terminates in
+[10:59 - 11:05] other words it counts down 2 at a time
+[11:02 - 11:07] until 0 to exit
+[11:05 - 11:08] what will happen if a student enters a
+[11:07 - 11:10] value like 9
+[11:08 - 11:13] try copying this code and test it when
+[11:10 - 11:15] the input is 9. you will encounter a
+[11:13 - 11:15] problem
+[11:16 - 11:20] did you get this output
+[11:18 - 11:22] you will not see any errors but the
+[11:20 - 11:25] program will not respond
+[11:22 - 11:28] let's analyze what was printed out
+[11:25 - 11:33] it seems to progress as expected from 9
+[11:28 - 11:35] to 7 to 5 to 3 then 1.
+[11:33 - 11:38] we expect it to stop at 0 but it goes
+[11:35 - 11:41] past 0 and keeps going minus 1 minus 3
+[11:38 - 11:44] minus 5 endlessly
+[11:41 - 11:46] so the logic to leave the loop is not
+[11:44 - 11:48] working as we wanted it to
+[11:46 - 11:50] it is stuck in an infinite loop where it
+[11:48 - 11:54] keeps decrementing and printing
+[11:50 - 11:54] decrementing and printing
+[11:54 - 11:58] how do we manage the unresponsive or
+[11:57 - 12:01] dead kernel
+[11:58 - 12:04] we should identify when this happens in
+[12:01 - 12:05] jupiter notebook observe the asterisk at
+[12:04 - 12:07] the line number
+[12:05 - 12:09] and the gray circle
+[12:07 - 12:11] signs that the kernel is dead
+[12:09 - 12:14] press the restart button
+[12:11 - 12:16] to restart the kernel to regain control
+[12:14 - 12:20] alternatively you can also click on the
+[12:16 - 12:22] kernel to restart and clear output
+[12:20 - 12:24] it is fortunate that there is a print
+[12:22 - 12:27] statement within the while loop so that
+[12:24 - 12:29] we can see what went wrong
+[12:27 - 12:32] it skipped the number 0 and the loop
+[12:29 - 12:33] cannot terminate it keeps decreasing and
+[12:32 - 12:37] printing beyond what it was planned to
+[12:33 - 12:39] do using up system resources wastefully
+[12:37 - 12:40] we needed to manually interview to stop
+[12:39 - 12:42] the process
+[12:40 - 12:45] and stop the kernel
+[12:42 - 12:47] since we can visualize what is wrong it
+[12:45 - 12:49] is easy to fix the code to work for
+[12:47 - 12:52] inputs like 9. just change the while
+[12:49 - 12:57] loop condition from
+[12:52 - 12:57] not equals zero to greater than zero
+[12:57 - 13:02] in iteration you can be tasked to
+[13:00 - 13:04] write a factorial n function using a
+[13:02 - 13:06] while loop
+[13:04 - 13:10] recall that we wrote a factorial
+[13:06 - 13:12] function using a for loop before
+[13:10 - 13:15] can you think of a strategy of how we
+[13:12 - 13:15] can use a while loop to do this
+[13:17 - 13:20] first
+[13:18 - 13:23] we can use a while loop to loop the
+[13:20 - 13:25] numbers we want to multiply with
+[13:23 - 13:28] so we will loop from 1 to n
+[13:25 - 13:30] in this example factorial 6 it will be
+[13:28 - 13:32] from 1 to 6.
+[13:30 - 13:35] but in order to do that we need to set
+[13:32 - 13:37] up some variables before we loop
+[13:35 - 13:40] we can set up some variables named
+[13:37 - 13:40] result that stores the current result
+[13:40 - 13:42] and
+[13:40 - 13:44] counter
+[13:42 - 13:47] which is the number that goes from 1 to
+[13:44 - 13:48] n in this case 1 to 6.
+[13:47 - 13:52] then we need to think of what should be
+[13:48 - 13:53] in the loop to implement the strategy
+[13:52 - 13:57] we should repeatedly
+[13:53 - 13:59] multiply the result with a counter
+[13:57 - 14:01] and increase counter by one
+[13:59 - 14:05] so these are the two steps that we
+[14:01 - 14:05] should be repeating over and over again
+[14:06 - 14:11] applying the strategy on factorial 6 we
+[14:09 - 14:14] trace the steps for this scenario the
+[14:11 - 14:17] while loop should work like this
+[14:14 - 14:18] first we initialize a result variable as
+[14:17 - 14:21] one
+[14:18 - 14:22] and the counter variable as one
+[14:21 - 14:25] note that they are color coded yellow
+[14:22 - 14:27] yellow and green
+[14:25 - 14:29] in the first iteration we multiply
+[14:27 - 14:32] result with counter
+[14:29 - 14:36] and store it back in the result
+[14:32 - 14:38] we get 1 times 1 equals to 1.
+[14:36 - 14:40] we also update counter in a background
+[14:38 - 14:42] by increasing it to 2 to get ready for
+[14:40 - 14:44] the next calculation
+[14:42 - 14:47] in the second iteration
+[14:44 - 14:51] we also multiply result with counter we
+[14:47 - 14:53] get one times two equals to two
+[14:51 - 14:56] we also update counter increasing it by
+[14:53 - 14:58] one two three
+[14:56 - 15:02] for the third iteration multiplying
+[14:58 - 15:05] result with counter we get 2 times 3
+[15:02 - 15:07] equals to 6.
+[15:05 - 15:09] we update counter
+[15:07 - 15:11] again to 4 to get ready for the next
+[15:09 - 15:13] iteration
+[15:11 - 15:16] by repeating these same steps
+[15:13 - 15:19] we can eventually obtain the answer for
+[15:16 - 15:19] factorial six
+[15:21 - 15:25] we have formed some plans to use a while
+[15:23 - 15:27] loop but we also need to know when to
+[15:25 - 15:29] stop looping
+[15:27 - 15:32] so can you think of a suitable condition
+[15:29 - 15:32] for the while loop
+[15:33 - 15:37] now try to write code for the factorial
+[15:34 - 15:41] function pause the video and try it out
+[15:37 - 15:41] continue the video for a hint
+[15:44 - 15:46] this can be the starting point to write
+[15:45 - 15:48] the function
+[15:46 - 15:49] can you figure out the code to put in a
+[15:48 - 15:53] loop
+[15:49 - 15:54] result must be initialized as 1 not 0 so
+[15:53 - 15:56] that multiplication will give a
+[15:54 - 15:59] meaningful answer
+[15:56 - 16:03] pause the video again to try
+[15:59 - 16:03] continue playing to see the answer
+[16:03 - 16:07] do you think of this answer
+[16:05 - 16:09] let's see what's going on when factorial
+[16:07 - 16:10] 6 is called
+[16:09 - 16:13] first
+[16:10 - 16:16] result encounter is set to 1
+[16:13 - 16:18] then we check the while loop
+[16:16 - 16:20] since counter 1 is less than equal to n
+[16:18 - 16:22] which is 6
+[16:20 - 16:25] we go into the while loop where result
+[16:22 - 16:27] is equals to result 1 times counter 1
+[16:25 - 16:28] which is equals to 1
+[16:27 - 16:31] stop here
+[16:28 - 16:31] counter increases to 2.
+[16:32 - 16:35] now
+[16:33 - 16:36] counter 2 is less than or equal to 6 so
+[16:35 - 16:39] we really loop again
+[16:36 - 16:43] result is equals to result
+[16:39 - 16:44] 1 times counter 2 which will give you 2
+[16:43 - 16:48] counter
+[16:44 - 16:48] is incremented by 1 2 3
+[16:49 - 16:54] since counter is equals to 3 we will
+[16:51 - 16:58] loop again result is equals to result 2
+[16:54 - 17:02] times counter 3 which will give you 6.
+[16:58 - 17:02] counter 3 is now incremented to 4.
+[17:02 - 17:07] now we check again do we look yes if
+[17:05 - 17:08] counter 4 is still less than or equal to
+[17:07 - 17:11] 6
+[17:08 - 17:13] result which is equals to 6
+[17:11 - 17:14] multiplied with counter 4 will give you
+[17:13 - 17:19] 24
+[17:14 - 17:21] counter increases by 1 to 5.
+[17:19 - 17:24] now we check again yes we still look
+[17:21 - 17:28] because 5 is less than or equal to 6
+[17:24 - 17:30] result is equals to result 24 times
+[17:28 - 17:33] counter which is 5
+[17:30 - 17:36] and that will give me 120
+[17:33 - 17:36] counter increases by 1 to 6.
+[17:37 - 17:42] so we check do we loop again counter 6
+[17:39 - 17:44] is less than or equal to 6 yes so we go
+[17:42 - 17:48] into the loop
+[17:44 - 17:50] result is now equals to result 120 times
+[17:48 - 17:53] counter 6 which will give me
+[17:50 - 17:57] 720
+[17:53 - 17:59] counter increases by 1 to 7.
+[17:57 - 18:00] now we check the loop whether we go in
+[17:59 - 18:04] again
+[18:00 - 18:05] 7 is greater than n6 so we do not go
+[18:04 - 18:08] into the loop anymore we exit the loop
+[18:05 - 18:09] here and return the result
+[18:08 - 18:12] with this we have come to the end of the
+[18:09 - 18:14] video attempt the questions in a lecture
+[18:12 - 18:17] training and refer to your lecture notes
+[18:14 - 18:17] as you do so

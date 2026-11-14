@@ -1,0 +1,87 @@
+Title: Hub, Switch, & Router Explained - What's the difference?
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=1z0ULvg_pW8
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] Hello, everyone in this video. We're going to talk about the difference between a hub, a switch, and a router.
+[00:08 - 00:14] Now all three of these devices are similar, but there is a difference in the way they handle data.
+[00:15 - 00:17] So we'll first talk about a hub.
+[00:20 - 00:26] Now the purpose of a hub is to connect all of your network devices together on an internal network.
+[00:27 - 00:33] It's a device that has multiple ports that accepts Ethernet connections from network devices
+[00:33 - 00:36] Now a hub is considered not to be
+[00:36 - 11:06] intelligent
+[00:36 - 00:44] because it does not filter any data or has any intelligence as to where the data is supposed to be sent. And that's because
+[00:44 - 00:50] the only thing a hub knows is when a device is connected to one of its ports.
+[00:51 - 00:57] So when a data packet arrives at one of the ports, it is copied to all of the other ports.
+[00:57 - 01:02] So all the devices on that hub sees that data packets.
+[01:02 - 01:06] So again, a data packet comes into one port then the hub will just
+[01:07 - 01:11] rebroadcast that data to every port that has a device connected to it.
+[01:13 - 01:15] So even if this computer here only
+[01:15 - 01:21] wanted to communicate with this computer over here, these other computers would still receive the data,
+[01:22 - 01:25] even though that data was not intended for them.
+[01:25 - 01:31] So when this happens it not only creates security concerns, but it also creates unnecessary
+[01:32 - 01:35] traffic on the network, which wastes bandwidth.
+[01:39 - 01:41] Now a switch is very similar to a hub.
+[01:41 - 01:48] It's also a device that has multiple ports that accepts Ethernet connections from network devices.
+[01:48 - 01:55] But unlike a hub, a switch is intelligent. A switch can actually learn the physical
+[01:55 - 02:01] addresses of the devices that are connected to it and it stores these physical
+[02:01 - 02:04] addresses, called MAC addresses, in its table.
+[02:05 - 02:12] So when a data packet is sent to a switch, it's only directed to the intended destination port,
+[02:12 - 02:17] unlike a hub where a hub will just rebroadcast the data to every port.
+[02:20 - 02:26] So as an example, if this computer here wanted to communicate with this computer over here,
+[02:26 - 02:29] the data packet arrives at the switch
+[02:29 - 02:34] and then the switch will look at its table of MAC addresses and matching ports and
+[02:35 - 02:41] deliver the data to the correct port. And then the data packet would only go to that computer.
+[02:41 - 02:46] So that's the major difference between a hub and a switch. So as a result
+[02:47 - 02:51] switches are far more preferred over hubs because they reduce any
+[02:52 - 02:54] unnecessary traffic on the network.
+[02:56 - 03:02] So as a review, a hub only detects that a device is physically connected to it. And
+[03:03 - 03:05] a switch can detect specific devices
+[03:05 - 03:11] that are connected to it because it keeps a record of the MAC addresses of those devices.
+[03:15 - 03:20] Now hubs and switches are used to exchange data within a local area network.
+[03:21 - 03:24] For example, such as in your home network or in a business.
+[03:25 - 03:31] They are not used to exchange data outside their own network, such as out on the internet.
+[03:31 - 03:39] Because to exchange or route data outside their own network to another network, such as out on the internet,
+[03:39 - 03:42] a device needs to be able to read IP
+[03:42 - 03:50] addresses. And hubs and switches do not read IP addresses. So that's where the router comes in.
+[03:51 - 03:58] Now a router does exactly what its name implies. A router is a device that routes or forwards data
+[03:58 - 04:00] from one network to another
+[04:00 - 04:07] based on their IP address. When a data packet is received from the router, the router
+[04:07 - 04:10] inspects the data's IP address and
+[04:10 - 04:17] determines if the packet was meant for its own network or if it's meant for another network. If the router
+[04:17 - 04:22] determines that the data packet is meant for its own network, it receives it.
+[04:23 - 04:28] But if it's not meant for its own network, it sends it off to another network.
+[04:28 - 04:32] So a router is essentially the gateway of a network.
+[04:36 - 04:42] So here we have a private network with its router and we'll refer to this as the 'red network',
+[04:42 - 04:49] Indicated by the red colored screens on the computers. And over here you're going to have different data packets,
+[04:49 - 04:53] indicated by their different colors which represents different IP
+[04:53 - 04:59] addresses. And they are going to be entering the red network's router from the internet.
+[04:59 - 05:03] Now the router is only going to accept the red data packets,
+[05:04 - 05:08] because they are the only ones that are intended for this network. So
+[05:08 - 05:16] all of the other data packets, the yellows, blues, greens, etc, will be rejected by this router
+[05:16 - 05:23] because they were not intended for this network, because their IP addresses were not meant for this network.
+[05:28 - 05:34] Now here is an expanded view of routers over the internet. There are four networks here,
+[05:35 - 05:39] indicated by their different colors and each network has their own router,
+[05:39 - 05:46] along with their hubs or switches and their computers. So right now as you can see, each network is just
+[05:46 - 05:53] exchanging information within their own network. Their data is not going out on the internet.
+[05:53 - 05:56] So they are not communicating with other networks.
+[05:56 - 06:01] They are just exchanging data within their own network using their hub or switch.
+[06:02 - 06:06] Now let's go ahead and exchange data between different networks.
+[06:06 - 06:10] So let's say for example that this computer here on the red network
+[06:11 - 06:14] wants to communicate with a computer here on the blue network.
+[06:15 - 06:21] So for this to happen, the data packet has to leave their own network and go out on the internet.
+[06:22 - 06:24] So the computer sends their data,
+[06:24 - 06:29] and it goes to the network's router, and once the data packet reaches the router,
+[06:30 - 06:32] the Router will look at the IP
+[06:32 - 06:38] address of the data packet and then forward the data out on the internet to the next router and
+[06:38 - 06:41] then make its way to the blue network's router and
+[06:42 - 06:45] then to the intended destination computer.
+[06:46 - 06:49] So in a nutshell this is how routers work.
+[06:51 - 06:59] So in conclusion, hubs and switches are used to create networks while routers are used to connect networks

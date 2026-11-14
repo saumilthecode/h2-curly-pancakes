@@ -1,0 +1,52 @@
+Title: Network Types:  LAN, WAN, PAN, CAN, MAN, SAN, WLAN
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=4_zSIXb7tLQ
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Hello everyone, in this video we're going to talk about the different network types. And these
+[00:05 - 00:11] network types depend on how large they are and how much of an area they cover geographically..
+[00:11 - 00:17] Now most people who have a basic knowledge of networking are familiar with terms such as LAN
+[00:17 - 00:24] and WAN. But in addition to those there are a few more network types that a lot of people are not
+[00:24 - 00:31] familiar with. So that's what we're going to talk about in this video. So let's first talk about a
+[00:31 - 00:37] PAN. PAN stands for personal area network. Now this is a type of network that is used
+[00:37 - 00:43] on a personal level. It's a small network that is used for connecting devices such as smartphones,
+[00:43 - 00:49] tablets, and laptops. And they connect to each other by using wireless technologies
+[00:49 - 00:55] such as bluetooth, infrared, and near field communication or NFC. But they
+[00:55 - 01:03] can also connect by using a wired connection such as a USB cable. PANs are generally used
+[01:03 - 01:09] for transferring small files such as music, photos, calendar appointments, and so on.
+[01:12 - 01:18] And the next type of network is a LAN . Now LAN stands for local area network. A local area
+[01:18 - 01:25] network is a group of devices such as computers, servers, switches, and printers which are located
+[01:25 - 01:32] in the same building, such as in an office or in a home. In other words, in close proximity to each
+[01:32 - 01:39] other. The most common type of LAN is an Ethernet LAN, where two or more computers are connected to
+[01:39 - 01:48] Ethernet cables using a switch. Now a WLAN or wireless local area network is a local area
+[01:48 - 01:56] network that uses wireless communication instead of wired communication. A wireless LAN is defined
+[01:56 - 02:03] as having at least two devices that use wireless communication to form a local area network. A
+[02:03 - 02:10] wireless LAN will typically have a Wi-Fi router or a wireless access point for wireless devices
+[02:10 - 02:17] such as laptops, tablets, wireless desktops, and smartphones, to communicate. So in simple terms,
+[02:17 - 02:25] a wireless LAN is a LAN but without using cables. And the next network type is a CAN.
+[02:25 - 02:33] Now CAN stands for campus area network. A CAN is a network that joins two or more LANs together
+[02:33 - 02:41] within a limited area. So for example a CAN could be a university that has multiple buildings in
+[02:41 - 02:48] the same general area that are connected to each other to form a larger network. So these buildings
+[02:48 - 02:54] could be different departments on a University's property with each building having their own LAN
+[02:54 - 03:00] in their department. And then the buildings are connected to form a campus area network.
+[03:02 - 03:09] And the next network type is a MAN. MAN stands for metropolitan area network. Now this is a
+[03:09 - 03:16] larger network than a CAN. It's a network that spans over several buildings in a city or
+[03:16 - 03:23] town. MANs are typically connected using a high speed connection such as fiber optic cable. It's
+[03:23 - 03:29] a high speed network that gives the ability for sharing data and resources within a city.
+[03:30 - 03:37] And the next one is a SAN or storage area network. Now a SAN is a special high speed
+[03:37 - 03:44] network that stores and provides access to large amounts of data. Basically what a SAN is,
+[03:44 - 03:50] is that it's a dedicated network that's used for data storage. This network consists of multiple
+[03:50 - 03:57] disk arrays, switches, and servers. One of the main reasons for using a SAN is because
+[03:57 - 04:02] SANs are not affected by network traffic such as bottlenecks that can happen in
+[04:02 - 04:08] a local area network. And that's because SANs aren't really a part of a local area network,
+[04:08 - 04:16] it's partitioned off. It's a network all by itself. And then finally there's the wide
+[04:16 - 04:24] area network or WAN. A WAN is the largest type of network. A WAN includes multiple LANs, CANs,
+[04:24 - 04:31] and MANs. It's a network that spans over a large geographical area such as a country continent
+[04:31 - 04:38] or even the entire globe. A good example of a wide area network is the internet.

@@ -1,0 +1,356 @@
+Title: LT10b Stack Part 1
+LT: LT 10b - Stack ADT
+Linked label: Stack ADT - Part 1
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=cCZNkocF-2k
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] okay hi i'm miss mr kong uh today we'll
+[00:02 - 00:08] look at the stack aadt and uh the
+[00:05 - 00:10] concepts behind so how to implement it
+[00:08 - 00:11] it's not a very complicated topic so i
+[00:10 - 00:14] think we can go a bit faster for this
+[00:11 - 00:16] one right so let's look at how we do a
+[00:14 - 00:18] stack all right so the stack follows a
+[00:16 - 00:21] bit a very simple
+[00:18 - 00:23] principle okay your stack here uh
+[00:21 - 00:25] essentially what it does is that it only
+[00:23 - 00:27] has one opening at the top all right so
+[00:25 - 00:28] you you can only put in from one one and
+[00:27 - 00:29] you can only take out from one end as
+[00:28 - 00:31] well
+[00:29 - 00:34] all right so when you want to put into a
+[00:31 - 00:35] stack right you push into it so this is
+[00:34 - 00:36] the push
+[00:35 - 00:38] all right then when you want to take
+[00:36 - 00:39] something out from the stack right you
+[00:38 - 00:42] pop and you realize that you can only
+[00:39 - 00:43] take out the top one okay which uh
+[00:42 - 00:45] regardless of how many plates you have
+[00:43 - 00:47] right you can only remove the the
+[00:45 - 00:48] topmost plate after you move the top
+[00:47 - 00:51] mostly then you can move on to take out
+[00:48 - 00:52] the next pair and so on so forth right
+[00:51 - 00:53] then
+[00:52 - 00:55] uh oops sorry
+[00:53 - 00:56] then the first item will always be
+[00:55 - 00:57] important because that's the first thing
+[00:56 - 00:59] you put in the latest item you pulling
+[00:57 - 01:01] away at the top
+[00:59 - 01:03] all right so so this is what i mean by
+[01:01 - 01:05] the last in first out
+[01:03 - 01:07] property so that the the item that gets
+[01:05 - 01:09] put in the most recent will be the first
+[01:07 - 01:11] one to come out when you when you pop
+[01:09 - 01:13] when you pop the stack
+[01:11 - 01:15] right so if your stack is empty you
+[01:13 - 01:16] cannot pop it so if this whole thing if
+[01:15 - 01:19] there's nothing inside there's not
+[01:16 - 01:20] nothing for you to pop pop out all right
+[01:19 - 01:22] okay
+[01:20 - 01:25] so how how do you use how do we
+[01:22 - 01:27] implement a stack in a pi python right
+[01:25 - 01:29] we are essentially using a list all
+[01:27 - 01:32] right so we need to write a few uh
+[01:29 - 01:35] assessors we need right a few
+[01:32 - 01:38] constructors okay and also how to add
+[01:35 - 01:40] data how to uh take out data right so
+[01:38 - 01:42] the first one is to make an empty stack
+[01:40 - 01:43] okay so this one will create an empty
+[01:42 - 01:46] stack so basically you're just creating
+[01:43 - 01:48] an mmd list all right then once i've
+[01:46 - 01:50] done that right you have two commands
+[01:48 - 01:52] that are quite common and in fact the
+[01:50 - 01:55] most most important for stack operations
+[01:52 - 01:58] one is the push push stack item okay so
+[01:55 - 02:00] it appends an item and element into the
+[01:58 - 02:02] list okay so when you do that that will
+[02:00 - 02:04] be when you push something in right that
+[02:02 - 02:06] will be your latest entry right okay
+[02:04 - 02:08] then when you take got one item right
+[02:06 - 02:11] you use a pop okay you pop the stack you
+[02:08 - 02:13] remove the last element at least and so
+[02:11 - 02:15] it returns the remove element so the
+[02:13 - 02:17] keyword here you are returning you are
+[02:15 - 02:18] not deleting it you are just taking it
+[02:17 - 02:21] out from the stack and then you want to
+[02:18 - 02:23] use it all right okay then there is one
+[02:21 - 02:25] more which is also quite useful for you
+[02:23 - 02:27] to check what is the next item okay
+[02:25 - 02:30] because you don't want to use uh pop to
+[02:27 - 02:32] check what the item is let's say you if
+[02:30 - 02:35] you are not certain what the next item
+[02:32 - 02:36] is right if you pop uh if you pop it all
+[02:35 - 02:38] right then it's gone already okay so you
+[02:36 - 02:40] can pick
+[02:38 - 02:42] okay you can pick at the stack so there
+[02:40 - 02:43] uh that returns you the last item the
+[02:42 - 02:45] list but does not remove it from the
+[02:43 - 02:48] list all right so let's look at how a
+[02:45 - 02:51] stack uh operation actually works right
+[02:48 - 02:53] so let's say this this on the right hand
+[02:51 - 02:55] side is uh is example of a stack okay
+[02:53 - 02:57] then what i do is that first we make an
+[02:55 - 02:59] empty stack okay so this stack now is
+[02:57 - 03:02] called s okay so this is stack s all
+[02:59 - 03:04] right okay so then the next first comma
+[03:02 - 03:06] we try to do we try to do pop s okay but
+[03:04 - 03:08] right now the stack is empty so there's
+[03:06 - 03:09] nothing for you to pop
+[03:08 - 03:11] all right
+[03:09 - 03:12] yep so empty seg nothing to pop all
+[03:11 - 03:14] right
+[03:12 - 03:16] then you push
+[03:14 - 03:20] a seven into the stack okay so seven
+[03:16 - 03:21] goes in all right then next one you push
+[03:20 - 03:23] five in the stack so you can see you
+[03:21 - 03:25] want to push five in right five is
+[03:23 - 03:27] actually the top most item okay seven is
+[03:25 - 03:29] uh the first to go in right but then
+[03:27 - 03:31] seven is right now at the bottom you
+[03:29 - 03:33] push in three as well so now you have
+[03:31 - 03:35] three five seven all right from the top
+[03:33 - 03:37] okay that makes you pop you pop s right
+[03:35 - 03:38] for the first the first item will take
+[03:37 - 03:40] out right you'll be taking out three
+[03:38 - 03:43] first okay so once you've done that
+[03:40 - 03:45] you'll return you three and then
+[03:43 - 03:46] three is gone okay now your stack is
+[03:45 - 03:49] just five and seven five is the highest
+[03:46 - 03:52] one okay you pop again you remove five
+[03:49 - 03:54] which is the next which is the last item
+[03:52 - 03:56] so you just pop it up right so you know
+[03:54 - 03:58] you set one left right you can check
+[03:56 - 04:01] whether the second smd you know so you
+[03:58 - 04:03] can do it is empty s okay equals to
+[04:01 - 04:04] force so this one you can see if you
+[04:03 - 04:06] think about this right this is just
+[04:04 - 04:07] making use of your length length of your
+[04:06 - 04:09] list
+[04:07 - 04:11] okay so you can do land s okay so you
+[04:09 - 04:12] can try that later
+[04:11 - 04:14] all right
+[04:12 - 04:15] okay then
+[04:14 - 04:18] sorry hold on
+[04:15 - 04:21] click on me all right okay then you can
+[04:18 - 04:23] pick okay pick you don't pop it out okay
+[04:21 - 04:25] so if you do pick s you will show seven
+[04:23 - 04:27] all right because that's the last uh
+[04:25 - 04:31] there's there's a there's the last item
+[04:27 - 04:33] okay the the topmost item okay pick is
+[04:31 - 04:35] different from pop because remember pop
+[04:33 - 04:37] will take it out for you to use pick you
+[04:35 - 04:38] just you look at it all right so if
+[04:37 - 04:40] right now if you choose to run is empty
+[04:38 - 04:42] as again right you will still get force
+[04:40 - 04:44] because uh uh
+[04:42 - 04:48] server is you inside you haven't pop opt
+[04:44 - 04:50] out right so that that's it for stack
+[04:48 - 04:53] of operations it's not too complex okay
+[04:50 - 04:55] but uh later you have a chance to to
+[04:53 - 04:58] code it okay you basically just calling
+[04:55 - 05:00] lisa okay so what can stack be used for
+[04:58 - 05:02] right i'm just going to talk about two
+[05:00 - 05:05] simpler applications for this first
+[05:02 - 05:07] video then later for the second video
+[05:05 - 05:08] we'll talk something a bit more complex
+[05:07 - 05:10] okay first first thing what i can do is
+[05:08 - 05:12] that we can use it to reverse a sequence
+[05:10 - 05:15] so for example i have a sequence like
+[05:12 - 05:18] this d c b a right if i put in the stack
+[05:15 - 05:19] right if i that means i'll be putting in
+[05:18 - 05:21] i'll be putting in
+[05:19 - 05:22] d first so d will go in first then
+[05:21 - 05:25] followed by c
+[05:22 - 05:28] then followed by b followed by a all
+[05:25 - 05:30] right so this will happen so once it
+[05:28 - 05:31] goes to the stack right it goes in you
+[05:30 - 05:33] push
+[05:31 - 05:35] them in one by one from the front push d
+[05:33 - 05:36] push c push b push a
+[05:35 - 05:38] right
+[05:36 - 05:40] oh sorry oh the other way around okay
+[05:38 - 05:42] i'm pushing from the back okay so i can
+[05:40 - 05:43] do that as well
+[05:42 - 05:43] right
+[05:43 - 05:46] okay
+[05:43 - 05:47] i got mixed up my extras okay so you
+[05:46 - 05:50] push that in and then when you pop it
+[05:47 - 05:52] out you can just push it you can just
+[05:50 - 05:54] stick from the back okay so you pop it
+[05:52 - 05:56] out right all right you can do it this
+[05:54 - 05:58] way okay but another way of doing this
+[05:56 - 06:00] is to pop if you do it the other way
+[05:58 - 06:03] like what i previously thought i was
+[06:00 - 06:05] doing uh if you put it in you will get
+[06:03 - 06:07] something like this you will get you pop
+[06:05 - 06:09] push push in d first right then you push
+[06:07 - 06:11] in c then you push in b pushing a all
+[06:09 - 06:13] right then when you take it out you will
+[06:11 - 06:15] take out the first item you'll take out
+[06:13 - 06:17] you'll take out a
+[06:15 - 06:20] then you take out b then you take out c
+[06:17 - 06:23] take out d i'll sorry d right so that
+[06:20 - 06:24] work as well okay so this one's a bit
+[06:23 - 06:26] counterintuitive because you are
+[06:24 - 06:28] actually uh taking
+[06:26 - 06:30] elements from the back which is not the
+[06:28 - 06:33] way we do it usually though but it's not
+[06:30 - 06:35] wrong also all right okay next we're
+[06:33 - 06:36] going to look at one more application uh
+[06:35 - 06:39] this is something that you have done
+[06:36 - 06:41] before how to convert dainteri to binary
+[06:39 - 06:42] numbers
+[06:41 - 06:45] okay so remember lassen we learned how
+[06:42 - 06:48] to uh last semi learned to convert
+[06:45 - 06:51] dainry to binary right we use the uh we
+[06:48 - 06:52] we keep on d dividing by two right so
+[06:51 - 06:55] maybe let's just take the same symbol
+[06:52 - 06:58] number zero take um 27 okay so 47 okay
+[06:55 - 06:59] so 47 i divide by 2
+[06:58 - 07:02] i will get
+[06:59 - 07:05] one remainder then this will become 23
+[07:02 - 07:08] then divide by 2 again get one remainder
+[07:05 - 07:11] then i divide again i get
+[07:08 - 07:13] 11 then one remainder so then i divide
+[07:11 - 07:14] again one remainder
+[07:13 - 07:15] then
+[07:14 - 07:16] i will get
+[07:15 - 07:19] two
+[07:16 - 07:20] and then this will give me zero is it oh
+[07:19 - 07:22] sorry there are two
+[07:20 - 07:24] then i get one then i get one remainder
+[07:22 - 07:26] then after that supposed to reverse this
+[07:24 - 07:29] i supposed to take from the bottom up
+[07:26 - 07:31] right okay so we can streamline this
+[07:29 - 07:33] processor all right so let me just wipe
+[07:31 - 07:35] with my slide
+[07:33 - 07:37] okay let me just clear off the screen
+[07:35 - 07:40] first okay
+[07:37 - 07:41] let me just clear pen markings all right
+[07:40 - 07:44] so let's look at what we have okay so
+[07:41 - 07:46] again i'm using 47 base 10 now right so
+[07:44 - 07:49] i'm going to convert this okay so let's
+[07:46 - 07:51] see how i can do this all right
+[07:49 - 07:51] so
+[07:52 - 07:57] um okay
+[07:54 - 08:00] yeah so again sorry 47 then we divide by
+[07:57 - 08:02] 2 we get 23 and remainder 1.
+[08:00 - 08:04] all right then we just go to every time
+[08:02 - 08:06] we divide we're just going to pop the
+[08:04 - 08:07] remainder i'll push the remainder into a
+[08:06 - 08:10] stack okay so we're going to push the
+[08:07 - 08:12] first one in the stack first right so
+[08:10 - 08:14] one goes in then we again we divide by
+[08:12 - 08:16] two again now 23 divided by two again we
+[08:14 - 08:19] get remainder one okay so we'll push in
+[08:16 - 08:22] one again all right 11 divided by two i
+[08:19 - 08:23] get remainder one as well i'm gonna push
+[08:22 - 08:24] in the one again
+[08:23 - 08:27] okay
+[08:24 - 08:28] right then i divide by 2 again
+[08:27 - 08:31] all right
+[08:28 - 08:33] now i also get uh oh i divide by 5. 5
+[08:31 - 08:35] divided by 2 i get remainder 1
+[08:33 - 08:39] okay so i push in the fourth one then i
+[08:35 - 08:42] have 2 2 divided by 2 i get remainder 0.
+[08:39 - 08:43] okay so i push in zero then the last
+[08:42 - 08:46] digit over here
+[08:43 - 08:48] okay the last digit here over here i'll
+[08:46 - 08:52] just push it in okay once i reach one i
+[08:48 - 08:53] don't wanna stop okay so if i push it in
+[08:52 - 08:55] okay
+[08:53 - 08:57] so this last remainder one will go in as
+[08:55 - 09:00] well okay then once they've done that
+[08:57 - 09:02] right you can just pop it out okay
+[09:00 - 09:04] so you just pop it out then you'll get
+[09:02 - 09:06] uh you'll get
+[09:04 - 09:07] let me check ah so you just pop up one
+[09:06 - 09:10] by one you get
+[09:07 - 09:12] one zero one one
+[09:10 - 09:13] one one all right so let's check whether
+[09:12 - 09:15] the answer is right now
+[09:13 - 09:15] okay
+[09:18 - 09:22] oh
+[09:19 - 09:24] okay so just pop up one by one yep so
+[09:22 - 09:26] that telly is the answer that we have
+[09:24 - 09:28] over here okay so you can try this one
+[09:26 - 09:31] this is not too difficult to do
+[09:28 - 09:33] all right okay so i'm gonna do uh we can
+[09:31 - 09:34] do one more first one more example over
+[09:33 - 09:36] here
+[09:34 - 09:39] all right so let's move on
+[09:36 - 09:41] okay we can use it to check whether your
+[09:39 - 09:43] uh parenthesis or your brackets are
+[09:41 - 09:46] balanced or not all right
+[09:43 - 09:48] so for this okay uh what it what do you
+[09:46 - 09:49] understand by this right okay remember
+[09:48 - 09:52] when you want to open the bracket right
+[09:49 - 09:54] you have to close it within the same uh
+[09:52 - 09:56] same house
+[09:54 - 09:59] you have to close a bracket first before
+[09:56 - 10:01] you okay if you open let's say for
+[09:59 - 10:04] example you open this first bracket
+[10:01 - 10:05] okay then you open the second bracket
+[10:04 - 10:07] right you cannot for example you cannot
+[10:05 - 10:08] do this you cannot
+[10:07 - 10:10] uh do this
+[10:08 - 10:13] round bracket then you do square bracket
+[10:10 - 10:14] then you close the round bracket first
+[10:13 - 10:16] you can't do it that way
+[10:14 - 10:18] okay you have to make sure that what you
+[10:16 - 10:20] you have to while you open inside you
+[10:18 - 10:22] have to close close it first right so
+[10:20 - 10:24] this is why i meant by balance so for
+[10:22 - 10:26] example or the first one the first row
+[10:24 - 10:29] here this is balance the second one is
+[10:26 - 10:30] not balanced if you look at this i open
+[10:29 - 10:33] the first
+[10:30 - 10:35] first bracket second bracket third okay
+[10:33 - 10:38] i closed my third one
+[10:35 - 10:40] okay but now i open a fourth one but
+[10:38 - 10:42] before i click i settle this fourth one
+[10:40 - 10:45] right i'm trying to close the second one
+[10:42 - 10:46] okay so this is not a balance uh
+[10:45 - 10:47] parenthesis
+[10:46 - 10:50] right
+[10:47 - 10:51] so you can basically use uh your stacks
+[10:50 - 10:53] to check
+[10:51 - 10:56] to check for this as well okay so we
+[10:53 - 10:58] just can't count we we we can't say for
+[10:56 - 11:01] example okay this one is a one bracket
+[10:58 - 11:04] two bracket uh
+[11:01 - 11:06] three four as even okay so each one has
+[11:04 - 11:07] a pair but you have to be in the right
+[11:06 - 11:09] order as well
+[11:07 - 11:11] all right so if you go over the stack
+[11:09 - 11:14] right if you see uh open bracket you
+[11:11 - 11:16] push in the stack if you see a closed
+[11:14 - 11:18] bracket right pop an element out then
+[11:16 - 11:20] compare whether it is a corresponding
+[11:18 - 11:23] stack or not all right so you will see
+[11:20 - 11:25] this example inside you are inside your
+[11:23 - 11:28] tutorial later okay so what it means is
+[11:25 - 11:30] that if i see one of this any of this
+[11:28 - 11:32] right i will just put it into my stack
+[11:30 - 11:35] okay so let's say i see
+[11:32 - 11:38] i see this i see a open bracket okay so
+[11:35 - 11:40] i put it in okay the next time i see a
+[11:38 - 11:42] close bracket okay i will pop the latest
+[11:40 - 11:44] one out okay
+[11:42 - 11:46] pop the latest i don't right now let's
+[11:44 - 11:49] say i see a round closing bracket right
+[11:46 - 11:51] i will pop out this one and see whether
+[11:49 - 11:53] it forms a pair with this with the one
+[11:51 - 11:54] that i'm checking right now okay if you
+[11:53 - 11:57] if it doesn't form a pair that means
+[11:54 - 11:58] it's not a bad balance parenthesis you
+[11:57 - 12:01] can just
+[11:58 - 12:03] return fossa all right okay
+[12:01 - 12:05] okay so i think let's stop here for now
+[12:03 - 12:07] you can pause for a while try some
+[12:05 - 12:10] questions before you watch the next next
+[12:07 - 12:10] video as well alright

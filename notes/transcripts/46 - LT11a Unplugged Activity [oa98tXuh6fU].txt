@@ -1,0 +1,71 @@
+Title: LT11a Unplugged Activity
+LT: LT 11a Linear and Binary Search
+Linked label: Guess the Magic Number
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=oa98tXuh6fU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] okay for the unplugged activity we'll be
+[00:04 - 00:09] playing the guessing game okay a magic
+[00:07 - 00:13] number between 0 to 100 has been
+[00:09 - 00:13] randomly selected or make a guess choose
+[00:13 - 00:17] a value
+[00:13 - 00:19] if your value have uh uh you have chosen
+[00:17 - 00:21] it's larger than the magic number then
+[00:19 - 00:24] guess it with a smaller value next time
+[00:21 - 00:26] if your gas is smaller than the magic
+[00:24 - 00:29] number then you need to choose a larger
+[00:26 - 00:31] value next time okay you keep guessing
+[00:29 - 00:33] until you get the magic number
+[00:31 - 00:35] okay all together how many guesses did
+[00:33 - 00:38] you make before you get the correct
+[00:35 - 00:42] magic number okay you may run the
+[00:38 - 00:42] program code on guessing game.py
+[00:43 - 00:50] now if you open up the python file in
+[00:47 - 00:53] your usual way using the idle or you see
+[00:50 - 00:55] a lot of uh garbage code don't worry
+[00:53 - 00:59] just run the code
+[00:55 - 00:59] just run the module F5
+[01:02 - 01:07] it will prompt you to make a guess okay
+[01:04 - 01:09] let me try let's say 25
+[01:07 - 01:12] I need to choose something bigger so
+[01:09 - 01:14] let's say 50. and they asked me to
+[01:12 - 01:15] choose something smaller let's say I
+[01:14 - 01:17] have it as 30
+[01:15 - 01:21] and I need to choose something bigger
+[01:17 - 01:25] okay and let's try it 40. uh something
+[01:21 - 01:25] smaller so 35 32
+[01:26 - 01:33] something big gold and 32 so 35
+[01:30 - 01:36] something bigger 37
+[01:33 - 01:39] something bigger 38
+[01:36 - 01:46] okay so I took eight guesses to make it
+[01:39 - 01:48] correct 25 50 30 40 32 35 37 and 38 I'm
+[01:46 - 01:50] sure you can do better so you can try
+[01:48 - 01:53] out with the game and see how many
+[01:50 - 01:55] guesses you take or you will take to get
+[01:53 - 01:59] the correct magic number
+[01:55 - 01:59] you may pause here to play the game
+[02:05 - 02:09] welcome back
+[02:06 - 02:12] how do you find the unplugged activity
+[02:09 - 02:15] do you really need to go through from 0
+[02:12 - 02:17] to 100 and make your guesses before you
+[02:15 - 02:19] get the correct magic number
+[02:17 - 02:22] I'm sure none of you did that
+[02:19 - 02:25] you probably chose a number that is
+[02:22 - 02:26] roughly in the middle for example 50. so
+[02:25 - 02:28] that you divide the whole range into two
+[02:26 - 02:31] halves
+[02:28 - 02:33] then decide whether the magic number is
+[02:31 - 02:35] enough the lower half which is 0 to 50
+[02:33 - 02:39] or the upper half which is from 50 to
+[02:35 - 02:42] 100 and then repeatedly divide
+[02:39 - 02:45] the range into two halves again
+[02:42 - 02:47] and each time as you zoom it down you
+[02:45 - 02:49] can very quickly identify what is the
+[02:47 - 02:52] magic number
+[02:49 - 02:57] so this activity help us understand the
+[02:52 - 03:00] core algorithm of the binary search we
+[02:57 - 03:00] should be learning today

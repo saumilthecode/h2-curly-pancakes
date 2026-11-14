@@ -1,0 +1,428 @@
+Title: LT1a Intro to Python   Part 2
+LT: LT 1a - Introduction to Python
+Linked label: Introduction to Python - Part 2
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=fbz7h5b6iRs
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] okay uh that much about the uh some
+[00:03 - 00:07] basics about programming uh let's talk
+[00:05 - 00:08] about this uh the element
+[00:07 - 00:10] in python
+[00:08 - 00:13] uh
+[00:10 - 00:16] primitives uh what are primitives uh you
+[00:13 - 00:18] can see our primitives as the basic
+[00:16 - 00:20] building blocks
+[00:18 - 00:22] in the programming language there are
+[00:20 - 00:24] basic building blocks and what are they
+[00:22 - 00:25] are in python
+[00:24 - 00:28] uh dumbbells
+[00:25 - 00:30] okay you have individuals you have
+[00:28 - 00:33] a floating points
+[00:30 - 00:35] uh and then you have operations uh your
+[00:33 - 00:38] plus minus times divide and we have a
+[00:35 - 00:40] ball later on and then symbols okay the
+[00:38 - 00:42] way we represent things are variables
+[00:40 - 00:45] symbols
+[00:42 - 00:47] okay and then we put this thing together
+[00:45 - 00:50] so uh in a programming language uh it
+[00:47 - 00:51] allows us to uh combine some of these
+[00:50 - 00:52] things together
+[00:51 - 00:55] okay
+[00:52 - 00:58] for example uh you know you can put a
+[00:55 - 01:00] a a number uh and then plus with an
+[00:58 - 01:01] operation with another number and then
+[01:00 - 01:03] it can
+[01:01 - 01:06] calculate and then tells you that uh
+[01:03 - 01:08] five plus three is a eight so basically
+[01:06 - 01:11] we are just putting uh operations and
+[01:08 - 01:13] doubles together and then they operate
+[01:11 - 01:17] okay
+[01:13 - 01:20] uh we can also type it in this manner um
+[01:17 - 01:22] and the uh computer were able to
+[01:20 - 01:24] interpret and says that they must add
+[01:22 - 01:28] the five and three together first and
+[01:24 - 01:29] then minus of the two times the three
+[01:28 - 01:31] okay
+[01:29 - 01:32] so the bracket also communicate which
+[01:31 - 01:35] are the
+[01:32 - 01:35] process that you want to do first
+[01:39 - 01:42] okay means of abstraction what is
+[01:41 - 01:45] abstraction
+[01:42 - 01:45] now um
+[01:45 - 01:51] for example a remote control now within
+[01:49 - 01:53] a remote control itself you have some
+[01:51 - 01:56] circuit board you have the battery you
+[01:53 - 01:58] have all the electronics you have the
+[01:56 - 02:00] buttons
+[01:58 - 02:03] but we don't have to understand
+[02:00 - 02:06] how each of this component works
+[02:03 - 02:09] we simply take the remote control
+[02:06 - 02:11] and then look at the button and we press
+[02:09 - 02:14] well it will turn on our tv will turn on
+[02:11 - 02:16] the fan it will turn on the light we can
+[02:14 - 02:17] use the remote control to up the volume
+[02:16 - 02:20] and then
+[02:17 - 02:21] to switch it off so we simply need to
+[02:20 - 02:24] know that
+[02:21 - 02:27] what is the purpose of this button and
+[02:24 - 02:29] then use it we don't have to worry about
+[02:27 - 02:31] the mechanics behind now that is the
+[02:29 - 02:34] idea of abstraction
+[02:31 - 02:34] so
+[02:34 - 02:36] the
+[02:35 - 02:38] python programming
+[02:36 - 02:40] uh we are able uh when we do programming
+[02:38 - 02:44] not just python programming when we do
+[02:40 - 02:47] programming uh we are able to abstract
+[02:44 - 02:50] uh uh and put away all the complex
+[02:47 - 02:53] coding and simplify so that uh each
+[02:50 - 02:56] function or procedure that we write we
+[02:53 - 02:58] know exactly uh uh what is the function
+[02:56 - 03:00] of it the purpose of it and then all we
+[02:58 - 03:03] need to do is just to use uh that so it
+[03:00 - 03:04] makes programming very simple and very
+[03:03 - 03:07] readable
+[03:04 - 03:08] okay uh let me use something
+[03:07 - 03:10] last week
+[03:08 - 03:13] about what you mean by abstraction
+[03:10 - 03:15] for example if you are just doing a
+[03:13 - 03:18] number class of the first well we all
+[03:15 - 03:22] know 7 plus 6 is 13.
+[03:18 - 03:23] but let's say we we assign
+[03:22 - 03:26] a
+[03:23 - 03:27] 7 to the symbol a
+[03:26 - 03:31] okay
+[03:27 - 03:35] now if we assign 7 to the symbol a
+[03:31 - 03:37] and now when we say a plus six
+[03:35 - 03:40] well the computer is able to understand
+[03:37 - 03:43] that a is uh the value that's assigned
+[03:40 - 03:46] to is seven so automatically he will
+[03:43 - 03:47] add the seven and the six together
+[03:46 - 03:49] okay
+[03:47 - 03:53] now uh this this give us an advantage
+[03:49 - 03:56] why because from here onward uh what is
+[03:53 - 03:58] the value of a well it it depends on us
+[03:56 - 04:02] we can just reassign it to another value
+[03:58 - 04:06] so for any value of a i can plus six and
+[04:02 - 04:08] the uh the computer will know uh uh
+[04:06 - 04:12] to add these two numbers together okay
+[04:08 - 04:15] so the use of variable here uh is a form
+[04:12 - 04:17] of abstractions to do the calculations
+[04:15 - 04:17] okay
+[04:18 - 04:22] now um
+[04:20 - 04:25] we will do more abstraction in
+[04:22 - 04:26] subsequently uh as we go along uh let's
+[04:25 - 04:29] talk about
+[04:26 - 04:31] variables um
+[04:29 - 04:32] variables
+[04:31 - 04:35] uh
+[04:32 - 04:37] typically uh we are using just a to z
+[04:35 - 04:40] the small letters and the capital letter
+[04:37 - 04:43] uh we've included say underscore
+[04:40 - 04:45] uh we can also use number but then you
+[04:43 - 04:46] must have the uh
+[04:45 - 04:48] uh
+[04:46 - 04:51] start with a character before you go to
+[04:48 - 04:55] number okay and then you can use this
+[04:51 - 04:56] alpha numeric to define as a variable
+[04:55 - 04:59] and
+[04:56 - 05:01] uh the variables are case sensitive okay
+[04:59 - 05:03] so uh uh
+[05:01 - 05:05] when you spell a car
+[05:03 - 05:09] cai capital letter is not the same as
+[05:05 - 05:11] the variable c-a-r in small letter okay
+[05:09 - 05:13] so you have to be careful with uh
+[05:11 - 05:14] variables
+[05:13 - 05:16] okay
+[05:14 - 05:18] at coccoli it's not the same as kokori
+[05:16 - 05:18] okay
+[05:22 - 05:26] now there are certain keywords that you
+[05:23 - 05:26] need to avoid because in programming we
+[05:26 - 05:30] have
+[05:26 - 05:33] if else statement while loop or for so
+[05:30 - 05:35] we will avoid using such word as a
+[05:33 - 05:36] variable
+[05:35 - 05:38] okay
+[05:36 - 05:41] um
+[05:38 - 05:43] uh this is just a convention that uh if
+[05:41 - 05:45] you want to talk about how the change
+[05:43 - 05:48] you can say cloud change with underscore
+[05:45 - 05:49] or we don't use spacing okay we link up
+[05:48 - 05:52] word
+[05:49 - 05:54] as a variable using the underscore
+[05:52 - 05:56] there are other
+[05:54 - 05:58] there are other conventions whereas for
+[05:56 - 06:00] example the camera case which we will
+[05:58 - 06:04] deal with when we are learning the
+[06:00 - 06:04] object oriented programming
+[06:04 - 06:08] okay another important topic types
+[06:07 - 06:10] okay
+[06:08 - 06:13] um in python
+[06:10 - 06:15] um these are the three uh uh the types
+[06:13 - 06:18] are uh integers
+[06:15 - 06:20] okay and then we have floats
+[06:18 - 06:23] uh both stand for boolean boolean means
+[06:20 - 06:23] the true and false
+[06:24 - 06:28] and then we have string
+[06:26 - 06:32] okay now string will be represented with
+[06:28 - 06:35] a sing a double quote uh or a single
+[06:32 - 06:39] quote okay
+[06:35 - 06:40] so we can represent string in either way
+[06:39 - 06:42] okay
+[06:40 - 06:46] uh if without the
+[06:42 - 06:50] single or double code then this y ijc
+[06:46 - 06:51] will be a variable okay so uh you must
+[06:50 - 06:54] distinguish between a variable and a
+[06:51 - 06:56] string title
+[06:54 - 06:58] and then there's a nun type okay num
+[06:56 - 07:00] type means that there's absolute value
+[06:58 - 07:03] then this is now okay so there's a nun
+[07:00 - 07:06] type okay so let's recap this uh what
+[07:03 - 07:08] are the types available integer float
+[07:06 - 07:09] boolean
+[07:08 - 07:12] string
+[07:09 - 07:12] and the num type
+[07:16 - 07:21] okay let's say uh you want to know uh
+[07:19 - 07:24] you know a particular value uh what is
+[07:21 - 07:28] the type so uh in your uh
+[07:24 - 07:30] in your jupiter or in your python item
+[07:28 - 07:32] you can actually uh type this
+[07:30 - 07:33] and uh
+[07:32 - 07:35] look for the type okay i'm gonna quick
+[07:33 - 07:36] from this powerpoint and then show you
+[07:35 - 07:40] how this
+[07:36 - 07:40] can be done uh on
+[07:42 - 07:49] jupiter um go to your start button and
+[07:46 - 07:53] then type chiptune
+[07:49 - 07:53] to call out the jupiter notebook
+[08:06 - 08:11] okay once the server
+[08:08 - 08:12] is loaded uh it will use the browser as
+[08:11 - 08:15] an interface
+[08:12 - 08:18] now let's start a new
+[08:15 - 08:18] python tree
+[08:25 - 08:28] okay you must have seen this uh in the
+[08:27 - 08:31] uh
+[08:28 - 08:32] uh selection test no so this is a
+[08:31 - 08:35] jupiter interface
+[08:32 - 08:37] now for example if i say so
+[08:35 - 08:40] well uh you learn uh let's say one two
+[08:37 - 08:42] three so i want to know what is the type
+[08:40 - 08:44] 1.23
+[08:42 - 08:47] okay and then all i need to do is
+[08:44 - 08:48] continue enter and run it is an integer
+[08:47 - 08:49] type
+[08:48 - 08:52] okay
+[08:49 - 08:52] now um
+[08:52 - 08:58] what's the difference between
+[08:55 - 09:01] putting a double quote and a
+[08:58 - 09:01] for the one two three
+[09:04 - 09:11] now to ask to run this uh uh a command
+[09:08 - 09:12] you have to type the code enter
+[09:11 - 09:15] right
+[09:12 - 09:17] so you need to distinguish between the
+[09:15 - 09:20] uh the integer
+[09:17 - 09:23] and a string
+[09:20 - 09:23] okay
+[09:29 - 09:34] you can test another one
+[09:32 - 09:34] how about a
+[09:35 - 09:39] type for
+[09:37 - 09:39] a nun
+[09:39 - 09:44] okay
+[09:41 - 09:45] oh it's a num type
+[09:44 - 09:47] uh
+[09:45 - 09:52] let's say i assign a
+[09:47 - 09:55] uh equal to one two three
+[09:52 - 09:55] dot four five six
+[09:55 - 09:59] and then
+[09:57 - 10:02] uh what is the type
+[09:59 - 10:05] of a
+[10:02 - 10:07] it is a float
+[10:05 - 10:07] okay
+[10:10 - 10:14] so uh as you listen to the video
+[10:13 - 10:18] uh
+[10:14 - 10:20] uh try to uh not just listen or read
+[10:18 - 10:23] but i will also
+[10:20 - 10:27] launch your uh this uh
+[10:23 - 10:30] idol or jupiter to test okay to test the
+[10:27 - 10:31] code to make sure that it works
+[10:30 - 10:34] okay
+[10:31 - 10:38] now uh we can also uh convert
+[10:34 - 10:40] uh uh uh from one type to another okay
+[10:38 - 10:42] we can convert
+[10:40 - 10:42] uh
+[10:43 - 10:48] let's say now we have uh a
+[10:48 - 10:53] one two three
+[10:51 - 10:57] right how how do i know that is an
+[10:53 - 10:58] integer so let's say i do a type and a
+[10:57 - 11:01] uh
+[10:58 - 11:04] and i run it well it is an integer
+[11:01 - 11:04] so now let's say i uh
+[11:04 - 11:05] uh
+[11:04 - 11:08] [Music]
+[11:05 - 11:10] change a to
+[11:08 - 11:11] a string
+[11:10 - 11:15] okay instead of a
+[11:11 - 11:15] now i um
+[11:16 - 11:21] and then i check what is the type of a
+[11:20 - 11:23] okay
+[11:21 - 11:25] it is a string
+[11:23 - 11:28] okay
+[11:25 - 11:31] now if let's say i have a as a float
+[11:28 - 11:33] let's say like the uh slide shows
+[11:31 - 11:36] 25.2
+[11:33 - 11:36] and then
+[11:39 - 11:44] if i were to convert that to an integer
+[11:46 - 11:49] okay
+[11:47 - 11:51] then what is the
+[11:49 - 11:54] integer
+[11:51 - 11:54] okay now let's take a look at say what
+[11:54 - 11:57] is
+[11:54 - 11:59] a um
+[11:57 - 12:02] after you connect to integer
+[11:59 - 12:05] is 25
+[12:02 - 12:08] okay so when you use the integer uh it
+[12:05 - 12:10] will basically translate off the decimal
+[12:08 - 12:13] and then just take the integer portion
+[12:10 - 12:16] then one question that you may have now
+[12:13 - 12:17] is that uh if does it round off round up
+[12:16 - 12:19] or does it
+[12:17 - 12:21] let's see 45.5
+[12:19 - 12:22] uh
+[12:21 - 12:25] that's 45
+[12:22 - 12:28] how about 46
+[12:25 - 12:32] 45.6 for example
+[12:28 - 12:34] it is still round out how about 45.9
+[12:32 - 12:36] okay so i guess
+[12:34 - 12:39] you understand when it uh when you
+[12:36 - 12:41] change a flow to an integer it will only
+[12:39 - 12:44] take the integer portion
+[12:41 - 12:44] okay
+[12:45 - 12:52] you can convert a
+[12:47 - 12:54] you can convert a float to a sink
+[12:52 - 12:58] okay and then
+[12:54 - 12:59] now you have 45.6 45.9 sorry
+[12:58 - 13:00] okay
+[12:59 - 13:03] um
+[13:00 - 13:06] then or can you convert a string
+[13:03 - 13:08] can you convert a string let's say uh y
+[13:06 - 13:10] i j c
+[13:08 - 13:11] and then try to convert that into an
+[13:10 - 13:13] integer
+[13:11 - 13:14] okay
+[13:13 - 13:15] and
+[13:14 - 13:17] let's try see
+[13:15 - 13:19] you know what's the value of y igc
+[13:17 - 13:22] integer
+[13:19 - 13:25] well it runs into an error message
+[13:22 - 13:27] okay so you can't convert
+[13:25 - 13:30] a string
+[13:27 - 13:30] to an integer
+[13:30 - 13:32] um
+[13:32 - 13:36] we have seen ourselves just now trying
+[13:34 - 13:37] to convert
+[13:36 - 13:39] uh uh
+[13:37 - 13:42] floats to integer
+[13:39 - 13:46] we try to convert uh integer one to
+[13:42 - 13:46] three and then try to convert
+[13:48 - 13:53] okay and see what happens
+[13:50 - 13:56] well it converts to float and by adding
+[13:53 - 13:58] a point zero okay so uh integer one two
+[13:56 - 13:59] three become one hundred and three point
+[13:58 - 14:01] zero
+[13:59 - 14:02] okay so you can play around and explore
+[14:01 - 14:04] the typical
+[14:02 - 14:05] or in the
+[14:04 - 14:08] conversion
+[14:05 - 14:08] okay
+[14:10 - 14:14] now let's let me go back to the slides
+[14:14 - 14:19] we want to talk about assignment
+[14:17 - 14:21] so uh just now uh
+[14:19 - 14:23] in the brief introduction i i actually
+[14:21 - 14:26] did using the jupiter to do assignment
+[14:23 - 14:28] uh a equal to uh integer one two three
+[14:26 - 14:32] so now let's say you can assign abc
+[14:28 - 14:35] now uh notes that abc is a variable
+[14:32 - 14:38] so uh there is no uh uh double quote uh
+[14:35 - 14:40] double quote will make it a string so
+[14:38 - 14:46] what we are saying that we are assigning
+[14:40 - 14:46] uh 28 to this variable called abc okay
+[14:46 - 14:51] and then my string
+[14:49 - 14:56] by string
+[14:51 - 14:56] this is a variable
+[14:57 - 15:03] okay
+[14:58 - 15:06] and then this variable has a value
+[15:03 - 15:10] and the type of this value is a string
+[15:06 - 15:12] okay because it's included by the two
+[15:10 - 15:14] single quotes
+[15:12 - 15:15] okay so that is
+[15:14 - 15:20] how you assign
+[15:15 - 15:23] a certain string to a variable
+[15:20 - 15:24] okay each time as you assign a value to
+[15:23 - 15:27] a variable
+[15:24 - 15:29] uh the computer actually keep the value
+[15:27 - 15:32] at a particular address
+[15:29 - 15:35] okay so that if you need to retrieve the
+[15:32 - 15:38] value it will point to this particular
+[15:35 - 15:41] address uh to get uh to the value for
+[15:38 - 15:44] the variable
+[15:41 - 15:47] okay so under this address the value is
+[15:44 - 15:48] r28 and then with another address for my
+[15:47 - 15:50] string
+[15:48 - 15:52] the value is actually the string called
+[15:50 - 15:57] this is a string
+[15:52 - 15:59] okay no there's another way well assign
+[15:57 - 16:01] uh a two variable at the same time for
+[15:59 - 16:02] example you have a variable x and a
+[16:01 - 16:04] variable y
+[16:02 - 16:09] and you want to assign values like one
+[16:04 - 16:10] to x and two to y you can uh use a
+[16:09 - 16:12] shortcut
+[16:10 - 16:14] to assign two values to the two
+[16:12 - 16:16] variables
+[16:14 - 16:19] okay so x would be one and then y would
+[16:16 - 16:21] be the two okay again x and y will take
+[16:19 - 16:22] on a different address will be pointing
+[16:21 - 16:24] to different address
+[16:22 - 16:27] and each of these addresses will have
+[16:24 - 16:27] the value one and two
+[16:27 - 16:33] okay operations uh what we are familiar
+[16:30 - 16:35] with is the plus minus times divide okay
+[16:33 - 16:37] and then we have this one which is the
+[16:35 - 16:40] power and then we have this one which is
+[16:37 - 16:43] the quotient and then this one is the
+[16:40 - 16:45] uh modulus okay how does it work
+[16:43 - 16:47] uh
+[16:45 - 16:49] well multiplication you know two times
+[16:47 - 16:50] three that will gives you uh
+[16:49 - 16:52] six
+[16:50 - 16:53] and then the
+[16:52 - 16:56] uh
+[16:53 - 16:58] two esteric answer that is two to the
+[16:56 - 16:59] power of three double asterisk means
+[16:58 - 17:01] power
+[16:59 - 17:02] that will gives you eight
+[17:01 - 17:05] okay
+[17:02 - 17:05] um
+[17:07 - 17:12] 11 divided by 3 this is our normal
+[17:10 - 17:13] divisions and then that will result in a
+[17:12 - 17:17] float
+[17:13 - 17:19] okay 3.666 okay now when you use a
+[17:17 - 17:22] double slash that would mean the
+[17:19 - 17:24] quotient so instead of giving the exact
+[17:22 - 17:27] it just gives you the whole number the
+[17:24 - 17:29] individual portion which is the quotient
+[17:27 - 17:30] so in this case it's a tree
+[17:29 - 17:32] uh
+[17:30 - 17:35] but what happened if you want the
+[17:32 - 17:37] remainder uh when 11 divided by 3 you
+[17:35 - 17:41] can take the use of percentage size so
+[17:37 - 17:43] that is the modulus uh 11 modulo 3 then
+[17:41 - 17:44] you will get the remainder
+[17:43 - 17:45] 2.
+[17:44 - 17:47] okay you can try this out on your
+[17:45 - 17:51] jupiter i will not quit for my
+[17:47 - 17:51] powerpoint presentation for vr

@@ -1,0 +1,309 @@
+Title: LT1b Intro to Python  About Strings Part 1
+LT: LT 1b - Basic Python - About Strings
+Linked label: Basic Python - About Strings (Part 1)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=hKy7HyUDEJE
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:07] early dotted lectures on this uh basic
+[00:04 - 00:07] title we're going to talk about strings
+[00:08 - 00:14] okay string is any sequence of character
+[00:11 - 00:16] uh used to store word sentence or even
+[00:14 - 00:19] the whole entire paragraph
+[00:16 - 00:21] now um if you remember in our earlier
+[00:19 - 00:23] lecture we use a double or single quote
+[00:21 - 00:26] to to keep
+[00:23 - 00:28] a string or define a string so the
+[00:26 - 00:30] shortest string that you can define is
+[00:28 - 00:33] probably the empty string where in
+[00:30 - 00:34] between these two single double chord
+[00:33 - 00:37] there's nothing inside so it's a
+[00:34 - 00:38] shortest kind of string where is empty
+[00:37 - 00:40] string
+[00:38 - 00:41] or you can choose to have just a single
+[00:40 - 00:45] character
+[00:41 - 00:45] within the string itself okay
+[00:46 - 00:50] now the data type of string is
+[00:49 - 00:53] istr
+[00:50 - 00:54] okay if you remember uh integer will be
+[00:53 - 00:56] int
+[00:54 - 00:59] right
+[00:56 - 01:00] okay uh i mentioned before string can
+[00:59 - 01:01] either use a
+[01:00 - 01:04] uh
+[01:01 - 01:07] double chord or a single quote
+[01:04 - 01:12] now you must bear in mind that this uh
+[01:07 - 01:15] spam spam is actually a variable
+[01:12 - 01:16] okay this variable is assigned to a
+[01:15 - 01:18] string
+[01:16 - 01:21] okay
+[01:18 - 01:25] so do not put a double or single quota
+[01:21 - 01:25] on the variable spam
+[01:29 - 01:34] now a string can contain a single code
+[01:32 - 01:37] for example over here right
+[01:34 - 01:40] when we talk about uh that is at least
+[01:37 - 01:42] scat now if if there is a single code
+[01:40 - 01:45] within the string that you try to
+[01:42 - 01:47] represent then it is best to use double
+[01:45 - 01:49] quote outside because the double quote
+[01:47 - 01:51] will tell you where the starts at the
+[01:49 - 01:53] end of the string but there will be a
+[01:51 - 01:56] complication here if you were to use a
+[01:53 - 01:59] single code then python would not know
+[01:56 - 02:00] how to interpret this whereas the start
+[01:59 - 02:03] there's a start but where does the
+[02:00 - 02:05] string ends so you can try this on your
+[02:03 - 02:06] jupiter and you see whether it runs into
+[02:05 - 02:09] the arrow
+[02:06 - 02:11] now elasticity error because of the use
+[02:09 - 02:14] of the single code of course one way to
+[02:11 - 02:16] avoid it is don't use single code just
+[02:14 - 02:18] use double code but there is another way
+[02:16 - 02:21] that we can overcome this or that is the
+[02:18 - 02:23] use of this x gate
+[02:21 - 02:25] now basically escape character is to
+[02:23 - 02:28] tell you ignore that
+[02:25 - 02:31] apostrophe s or ignore that particular
+[02:28 - 02:34] single code okay so let's take a look at
+[02:31 - 02:35] a few examples here now when you put a
+[02:34 - 02:38] apostrophe at
+[02:35 - 02:41] sorry backspace a single quote then you
+[02:38 - 02:43] realize that you could use a
+[02:41 - 02:45] single quote to represent your string
+[02:43 - 02:47] then this apostrophe s will not
+[02:45 - 02:49] interfere
+[02:47 - 02:52] similarly if you use a backslash double
+[02:49 - 02:53] quote then when you define a string you
+[02:52 - 02:56] can use a
+[02:53 - 02:57] double quote to represent and then the
+[02:56 - 02:59] outputs
+[02:57 - 03:00] will contain
+[02:59 - 03:03] the
+[03:00 - 03:05] double quotes okay
+[03:03 - 03:08] now uh backslash t
+[03:05 - 03:11] uh will have a different purpose now
+[03:08 - 03:13] that will uh uh sort of tap so that
+[03:11 - 03:16] there's an equal spacing between the
+[03:13 - 03:19] column we can use this like you know uh
+[03:16 - 03:21] for class name and telephone you want to
+[03:19 - 03:22] separate it by an equal
+[03:21 - 03:25] indentation
+[03:22 - 03:27] so uh you can use a backslash tab to do
+[03:25 - 03:30] it here
+[03:27 - 03:33] uh backslash n is for new layer so when
+[03:30 - 03:36] you print the class they have telephone
+[03:33 - 03:39] uh if you put a backslash end it will go
+[03:36 - 03:42] to a new line okay
+[03:39 - 03:45] uh double uh backslash which means that
+[03:42 - 03:47] to ignore the the second backslash the
+[03:45 - 03:49] first one uh the first backslash is to
+[03:47 - 03:51] tell people to ignore the second message
+[03:49 - 03:55] so in that way you are able to predict a
+[03:51 - 03:57] backslash within your your stream
+[03:55 - 04:01] now you should try uh
+[03:57 - 04:04] a jupiter to see whether uh you know how
+[04:01 - 04:06] to use these uh backslash a single code
+[04:04 - 04:08] uh and then uh well if you for
+[04:06 - 04:09] confidence you may not even want to use
+[04:08 - 04:12] a backslash single code you just
+[04:09 - 04:15] uh enclosed it by a double quote that
+[04:12 - 04:15] will also work
+[04:16 - 04:23] uh you learned earlier on that you can
+[04:18 - 04:25] use hex hash sire to buckle uh the uh
+[04:23 - 04:27] the commander within your code itself
+[04:25 - 04:28] and python will not execute that
+[04:27 - 04:29] particular command
+[04:28 - 04:31] okay
+[04:29 - 04:33] now there's a simpler way
+[04:31 - 04:36] when you're using this python idle you
+[04:33 - 04:40] can use alternate three to comment
+[04:36 - 04:42] or use alternate four to uncover it okay
+[04:40 - 04:43] so there's a certain line of code that
+[04:42 - 04:45] let's say you don't want python to
+[04:43 - 04:47] execute all you need to do is to
+[04:45 - 04:49] highlight those few lines and you press
+[04:47 - 04:51] alternate three it will be commented and
+[04:49 - 04:53] a python will not write and then later
+[04:51 - 04:55] when you're ready to run those code all
+[04:53 - 04:57] you need to do is just to press
+[04:55 - 05:01] alternate 4 for that particular line and
+[04:57 - 05:03] that line will be uncommented and can be
+[05:01 - 05:05] used to execute the
+[05:03 - 05:08] where python run the program you will be
+[05:05 - 05:08] executed
+[05:10 - 05:16] uh when you want to uh a comment bound
+[05:13 - 05:18] hyperlyzer so whole paragraph for
+[05:16 - 05:22] example uh alternatively you can choose
+[05:18 - 05:24] to use triple single code okay triple
+[05:22 - 05:26] single quote okay
+[05:24 - 05:29] from the beginning to the end the whole
+[05:26 - 05:32] paragraph will be taken as a comment and
+[05:29 - 05:32] it will not be executed
+[05:34 - 05:39] now next we want to talk about some
+[05:36 - 05:43] operators that can be used in string
+[05:39 - 05:43] okay like for example
+[05:43 - 05:46] this will be
+[05:44 - 05:49] a true or false for example you want to
+[05:46 - 05:50] check whether uh within hello world
+[05:49 - 05:53] itself
+[05:50 - 05:56] is there a hollow in hello so you can
+[05:53 - 05:58] say uh the string hollow in hello
+[05:56 - 06:01] but the answer is true
+[05:58 - 06:03] right because uh you can find hello in
+[06:01 - 06:05] second so you will return true
+[06:03 - 06:07] now if you try to check how low which is
+[06:05 - 06:10] capital letter in the hello world you
+[06:07 - 06:11] realize it cannot be found because
+[06:10 - 06:14] it is
+[06:11 - 06:17] a case sensitive so there is no capital
+[06:14 - 06:21] letter h e l o will be the hollow word
+[06:17 - 06:21] so it will return force
+[06:22 - 06:25] you can also make use of the
+[06:23 - 06:28] mathematical or
+[06:25 - 06:30] arithmetic operations like the plus and
+[06:28 - 06:33] a bounded right but when you use it with
+[06:30 - 06:36] string it carries a different building
+[06:33 - 06:38] when you use a plus it's concatenation
+[06:36 - 06:40] it's like adding two strings together
+[06:38 - 06:41] okay for example hollow
+[06:40 - 06:44] plus
+[06:41 - 06:46] word so hello is a string word is a
+[06:44 - 06:48] string when you place them together they
+[06:46 - 06:50] will form a new string called hello
+[06:48 - 06:50] world
+[06:50 - 06:54] whereas the multiplication side it is
+[06:53 - 06:57] being used
+[06:54 - 06:58] in the form of replications when you use
+[06:57 - 07:01] together with string so when you say
+[06:58 - 07:03] hollow multiplied by 3 what basically
+[07:01 - 07:06] you are doing is that you have hello
+[07:03 - 07:09] hello hollow all put together to form a
+[07:06 - 07:12] single string okay be careful with the
+[07:09 - 07:14] spacing right because uh as it
+[07:12 - 07:17] as it multiply
+[07:14 - 07:20] because your hello has a spacing hello
+[07:17 - 07:23] has a spacing here
+[07:20 - 07:27] and then this hello the second hello the
+[07:23 - 07:31] third hollow also has a spacing so that
+[07:27 - 07:31] is how you replicate that
+[07:33 - 07:39] other operations like bigger and smaller
+[07:36 - 07:40] bigger equal are smaller equal equal
+[07:39 - 07:44] equal so that is actually for
+[07:40 - 07:47] equivalence this is
+[07:44 - 07:50] all these can be used together with
+[07:47 - 07:54] string and they will also return a true
+[07:50 - 07:56] on force now take for example a head
+[07:54 - 08:00] bigger than one is it true
+[07:56 - 08:03] the answer is yes uh are we talk are we
+[08:00 - 08:05] asking whether 10 bigger than 1
+[08:03 - 08:08] okay now
+[08:05 - 08:10] how our python compare the 10 is called
+[08:08 - 08:14] by the alphabet t compared with the
+[08:10 - 08:16] alphabet o so uh if you is almost like
+[08:14 - 08:18] uh when you're referring to an english
+[08:16 - 08:21] dictionary uh t
+[08:18 - 08:23] comes later uh than o
+[08:21 - 08:26] right according to your abcd the 36
+[08:23 - 08:28] alphabet t comes later than o therefore
+[08:26 - 08:31] t is bigger than o
+[08:28 - 08:36] okay it is not a it is not that
+[08:31 - 08:38] the numeric 10 bigger than one in this
+[08:36 - 08:42] comparison
+[08:38 - 08:46] okay next when you try to compare
+[08:42 - 08:50] a five uh a string equal to a numeric
+[08:46 - 08:54] five it will return a a force
+[08:50 - 08:57] because they are not the same type
+[08:54 - 08:57] to begin with
+[09:00 - 09:04] okay now let's take a look at some
+[09:03 - 09:08] string operation
+[09:04 - 09:13] for example we are we assign the string
+[09:08 - 09:16] b a to the variable s is a variable t is
+[09:13 - 09:18] a variable these are variables
+[09:16 - 09:18] okay
+[09:20 - 09:25] these are variables okay they are not
+[09:22 - 09:28] string but you assign a string to the
+[09:25 - 09:32] variable so that is the s and the t
+[09:28 - 09:35] now if you add up the s and t so what
+[09:32 - 09:36] you are doing is actually uh
+[09:35 - 09:39] calculations
+[09:36 - 09:43] okay strings are concatenation
+[09:39 - 09:45] so b a c k okay all right
+[09:43 - 09:48] now now if you define t
+[09:45 - 09:51] okay you're trying to redefine t again
+[09:48 - 09:54] okay not originally t c k
+[09:51 - 09:58] but now if you define t as s
+[09:54 - 10:00] plus what is s s is b a so this is a
+[09:58 - 10:05] string b a
+[10:00 - 10:07] plus a uh b a but this and a uh i need
+[10:05 - 10:11] to multiply by two times so that will
+[10:07 - 10:12] give me a string of n a
+[10:11 - 10:15] and
+[10:12 - 10:18] a and then you concatenate these two
+[10:15 - 10:21] together it will become better so now
+[10:18 - 10:25] the t is defined as
+[10:21 - 10:26] being assigned to this value
+[10:25 - 10:30] okay
+[10:26 - 10:30] now um
+[10:46 - 10:52] so is there a z inside banana
+[10:49 - 10:52] the answer is four sir
+[10:53 - 10:58] now then you try to compare these two
+[10:55 - 11:00] strings now bear in mind that t is
+[10:58 - 11:01] better it has been assigned to this
+[11:00 - 11:02] value
+[11:01 - 11:04] right
+[11:02 - 11:06] so the first b compared with the first
+[11:04 - 11:09] media is equal second a compared to
+[11:06 - 11:10] second a the end compared to n so so far
+[11:09 - 11:12] the left and the right hand side are
+[11:10 - 11:15] equal the a
+[11:12 - 11:18] are competitive a the n competitor and
+[11:15 - 11:19] finally the b is bigger than the
+[11:18 - 11:21] a
+[11:19 - 11:22] if b is bigger than a then this would be
+[11:21 - 11:24] a true
+[11:22 - 11:29] right the left hand side string is
+[11:24 - 11:29] bigger than the right hand side string
+[11:30 - 11:36] right what do we have we have a pandara
+[11:33 - 11:36] here for t
+[11:37 - 11:42] right
+[11:38 - 11:44] so uh on the left hand side there is a
+[11:42 - 11:45] there's one letter
+[11:44 - 11:48] less
+[11:45 - 11:51] so in this case uh it is smaller than
+[11:48 - 11:54] the a uh uh smaller than the right hand
+[11:51 - 11:56] side where there is an extra a here
+[11:54 - 11:58] okay so the right hand side is bigger
+[11:56 - 12:00] than the left-hand side so the answer is
+[11:58 - 12:00] true
+[12:02 - 12:10] uh key he has a
+[12:05 - 12:10] is being assigned to beta
+[12:10 - 12:14] right and because there's the first
+[12:11 - 12:16] character now the first character
+[12:14 - 12:18] compared the first character
+[12:16 - 12:20] c is not
+[12:18 - 12:24] smaller than b c is bigger than b
+[12:20 - 12:26] right because c appear after b so c is
+[12:24 - 12:28] speaker so in this case it will be a
+[12:26 - 12:28] force
+[12:30 - 12:35] earlier on you have uh learned how to
+[12:32 - 12:36] use length now you can check on the
+[12:35 - 12:38] length of a particular string how many
+[12:36 - 12:40] characters there are now there are many
+[12:38 - 12:41] other uh
+[12:40 - 12:42] uh
+[12:41 - 12:45] useful
+[12:42 - 12:47] uh methods uh for strings you may want
+[12:45 - 12:49] to explore your own i will not touch
+[12:47 - 12:53] here uh
+[12:49 - 12:56] one useful one will be up upper
+[12:53 - 12:58] right user may input or in small letter
+[12:56 - 13:00] or mixture of small letter capital
+[12:58 - 13:02] letter you can change all of them into
+[13:00 - 13:04] capital letter
+[13:02 - 13:07] we will use split
+[13:04 - 13:10] and strip uh in future where we try to
+[13:07 - 13:14] read from a file
+[13:10 - 13:14] we will talk about this subsequently

@@ -1,0 +1,110 @@
+Title: LT10a Data Abstraction 2
+LT: LT 10a Data Abstraction (2) - Reading Data from Text File
+Linked label: Reading from a .csv or .txt text file
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=RLMzVuR9Hsk
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:08] Hi, in this lesson we will learn how to
+[00:05 - 00:12] read data from a text file.
+[00:08 - 00:15] Tabulated datas are often stored
+[00:12 - 00:18] and shared using text file either with
+[00:15 - 00:22] CSV or TXT file extensions.
+[00:18 - 00:25] This file can be opened with notepad or
+[00:22 - 00:30] Microsoft Excel.
+[00:25 - 00:32] CSV is known as commaepparated values.
+[00:30 - 00:36] So if you open the text file using a
+[00:32 - 00:39] notepad you will see the uh values for
+[00:36 - 00:42] like John comma m stand for the the
+[00:39 - 00:45] gender male comma and then 54 probably a
+[00:42 - 00:47] score whereas if you use an excel they
+[00:45 - 00:50] will be displayed in uh rows and
+[00:47 - 00:52] columns.
+[00:50 - 00:55] I will now walk you through the program
+[00:52 - 00:57] codes of uh reading the data from a text
+[00:55 - 00:59] file.
+[00:57 - 01:02] We will now write the program code to
+[00:59 - 01:06] read the data from a text file. And we
+[01:02 - 01:06] are using this file data cv.
+[01:08 - 01:13] Let's assign
+[01:10 - 01:14] to open the file
+[01:13 - 01:17] data
+[01:14 - 01:17] CSV.
+[01:20 - 01:26] Whenever you open a file, you must
+[01:22 - 01:29] always remember to close the file
+[01:26 - 01:29] at the end.
+[01:31 - 01:37] Now when we read from the files, we
+[01:34 - 01:40] expect to read lines
+[01:37 - 01:42] and lines are equal to the file dot read
+[01:40 - 01:45] lines
+[01:42 - 01:48] with a pro.
+[01:45 - 01:50] Now let's take a look. print
+[01:48 - 01:52] lines.
+[01:50 - 01:55] Let's see what we get.
+[01:52 - 01:58] See, so we are reading from the text
+[01:55 - 02:01] file already.
+[01:58 - 02:04] If you observe from the print lines, you
+[02:01 - 02:07] realize that there are many elements
+[02:04 - 02:10] within a list. So let's try to iterate
+[02:07 - 02:15] through the elements.
+[02:10 - 02:15] for lie in lines
+[02:15 - 02:20] print
+[02:17 - 02:20] line
+[02:20 - 02:25] and let's see what do we get for each
+[02:22 - 02:25] line.
+[02:26 - 02:30] See
+[02:27 - 02:32] now we are getting the individual line.
+[02:30 - 02:35] Do you realize that there's some spacing
+[02:32 - 02:38] in between the lines?
+[02:35 - 02:44] What we can do is to remove the extra
+[02:38 - 02:46] spacing using line equal to line dot
+[02:44 - 02:50] strip
+[02:46 - 02:53] away the empty new line
+[02:50 - 02:57] and let's print.
+[02:53 - 03:00] So now we have already stripped away the
+[02:57 - 03:00] extra new lines.
+[03:01 - 03:08] Now let's take a look at what is the
+[03:03 - 03:08] type for this line type
+[03:10 - 03:16] they are all string.
+[03:13 - 03:19] So when we look at the the value that's
+[03:16 - 03:21] printed out although it shows the the
+[03:19 - 03:24] name the gender and the score but
+[03:21 - 03:26] actually it is displaying as a single
+[03:24 - 03:28] string. So what we need to do is to
+[03:26 - 03:30] split them into their individual
+[03:28 - 03:35] component.
+[03:30 - 03:37] So line equal to line dot
+[03:35 - 03:40] split
+[03:37 - 03:44] and we split by using the comma.
+[03:40 - 03:46] Now let's take a look again.
+[03:44 - 03:50] Now you realize that we have split the
+[03:46 - 03:53] name, gender and score according to the
+[03:50 - 03:55] components.
+[03:53 - 03:57] Now the first line is actually the
+[03:55 - 04:00] header and that's not considered as a
+[03:57 - 04:04] data. So normally we want to skip off
+[04:00 - 04:06] the header. So lines we will start from
+[04:04 - 04:10] the second line onward which is index
+[04:06 - 04:12] number one all the way to the end.
+[04:10 - 04:16] Now you'll see that the header is no
+[04:12 - 04:16] longer displayed.
+[04:17 - 04:21] And you can see that we have the
+[04:18 - 04:22] individual component name, gender and
+[04:21 - 04:25] scores.
+[04:22 - 04:30] Now we can actually
+[04:25 - 04:32] associate them with a variable name,
+[04:30 - 04:36] gender
+[04:32 - 04:36] and score.
+[04:36 - 04:40] And let's try to just print the name.
+[04:41 - 04:48] We will only get the name or you may
+[04:44 - 04:52] want the name and the scores.
+[04:48 - 04:55] And you get the name and the score.
+[04:52 - 04:58] So in this manner we have read the data
+[04:55 - 05:01] from the text file. You can store this
+[04:58 - 05:04] information into a tapole on the list
+[05:01 - 05:07] for further computations.
+[05:04 - 05:10] That's all about reading data from a
+[05:07 - 05:10] text file.

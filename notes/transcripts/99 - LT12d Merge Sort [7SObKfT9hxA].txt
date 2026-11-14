@@ -1,0 +1,66 @@
+Title: LT12d Merge Sort
+Assessment(s): LT 12d Merge Sort
+Linked label(s): LT12 Merge Sort
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=7SObKfT9hxA
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:07] hi welcome back today we'll be dealing
+[00:04 - 00:07] with merge sort
+[00:09 - 00:14] the merson algorithm will first divide
+[00:12 - 00:16] the lease into half
+[00:14 - 00:19] over and over again
+[00:16 - 00:20] until each list contains only one
+[00:19 - 00:22] element
+[00:20 - 00:25] then it will merge the two lists
+[00:22 - 00:27] together into a sorted list
+[00:25 - 00:30] and do this repeatedly
+[00:27 - 00:35] until all the elements are combined
+[00:30 - 00:35] together into one single sorted list
+[00:36 - 00:41] so the basic skills
+[00:39 - 00:43] are required
+[00:41 - 00:45] is to know how to split a list
+[00:43 - 00:46] recursively
+[00:45 - 00:50] and then
+[00:46 - 00:50] merge the two lists together
+[00:51 - 00:55] step one
+[00:52 - 00:58] we start by dividing the array into two
+[00:55 - 01:00] and again and again until every array
+[00:58 - 01:03] contains only one element
+[01:00 - 01:06] in this example we have an array
+[01:03 - 01:10] containing five two one eight nine
+[01:06 - 01:12] and when we divide them into two lists
+[01:10 - 01:14] five and two will be one list
+[01:12 - 01:16] one eight and nine will be another
+[01:14 - 01:18] leaves then we further to sub divide
+[01:16 - 01:20] five and two
+[01:18 - 01:22] into two lists again
+[01:20 - 01:26] and likewise one eight and nine divide
+[01:22 - 01:29] into two lists and we sub divide again
+[01:26 - 01:31] so at this stage all the leads contain
+[01:29 - 01:33] only one element
+[01:31 - 01:35] then we start merging
+[01:33 - 01:36] comparing the two and the five we
+[01:35 - 01:38] merging back to become
+[01:36 - 01:40] two five
+[01:38 - 01:43] comparing the eight and nine
+[01:40 - 01:46] we merge back to become a and i
+[01:43 - 01:48] next we try to merge the one
+[01:46 - 01:51] and the least containing eight and nine
+[01:48 - 01:54] forming back the one eight nine
+[01:51 - 01:57] then we try to combine the two lists the
+[01:54 - 02:00] two five and one eight nine together and
+[01:57 - 02:04] form back a sorted list
+[02:00 - 02:04] so that's the idea of the merge sort
+[02:06 - 02:10] in the case of merge sort regardless of
+[02:09 - 02:15] whether
+[02:10 - 02:16] the original array is sorted or not
+[02:15 - 02:18] we will have to go through the same
+[02:16 - 02:20] process of splitting
+[02:18 - 02:22] and merging it back
+[02:20 - 02:24] so all of them will have the same order
+[02:22 - 02:28] of growth
+[02:24 - 02:28] namely n log n

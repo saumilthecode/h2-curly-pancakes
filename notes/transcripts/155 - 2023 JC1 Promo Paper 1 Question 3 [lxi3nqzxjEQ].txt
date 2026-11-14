@@ -1,0 +1,360 @@
+Title: 2023 JC1 Promo Paper 1 Question 3
+Assessment(s): Released assessment teacher walkthrough
+Uploader: David Tan Bang Choon
+YouTube: https://www.youtube.com/watch?v=lxi3nqzxjEQ
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88802
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:01 - 00:08] okay I'll be going through the uh 2023
+[00:04 - 00:10] uh jc1 promo exam paper one I'll be
+[00:08 - 00:14] going through question
+[00:10 - 00:16] three now for question three uh is
+[00:14 - 00:19] talking about a newly established
+[00:16 - 00:21] company and then uh originally all the
+[00:19 - 00:24] employees are using Standalone personal
+[00:21 - 00:27] computers to sh and to share their files
+[00:24 - 00:30] they have to use a removable storage
+[00:27 - 00:32] drive for example a Time drive so now
+[00:30 - 00:34] because of that uh the company is
+[00:32 - 00:37] considering to set up a local area
+[00:34 - 00:41] network with file server for the
+[00:37 - 00:45] employee now what are the two benefits
+[00:41 - 00:47] of having a file server in a land now
+[00:45 - 00:50] definitely this file server is meant for
+[00:47 - 00:53] sharing of files everybody will store
+[00:50 - 00:58] the files there okay so
+[00:53 - 01:00] uh uh some students talk about uh
+[00:58 - 01:04] keeping the file in the file server it
+[01:00 - 01:07] is not it is more secured it is
+[01:04 - 01:10] safer now uh if you just put a file into
+[01:07 - 01:14] a file server without implementing any
+[01:10 - 01:16] uh uh author uh authorization rights or
+[01:14 - 01:17] never assign rights to it anybody can
+[01:16 - 01:20] access it so it doesn't mean that it's
+[01:17 - 01:22] safer in fact it can be more risky
+[01:20 - 01:25] because all the files in the file server
+[01:22 - 01:27] can be copied and then transfer away so
+[01:25 - 01:30] if you don't Implement any kind of
+[01:27 - 01:31] security features into the file server
+[01:30 - 01:35] then uh it may not be
+[01:31 - 01:38] safe and uh student also says that uh
+[01:35 - 01:41] having the file server it is easier to
+[01:38 - 01:43] access right it's easier to access but
+[01:41 - 01:45] under what situation are we talking
+[01:43 - 01:48] about easier to access transferring of
+[01:45 - 01:52] files uh using th drive also quite easy
+[01:48 - 01:55] to to share right okay so uh you need to
+[01:52 - 01:57] substantiate uh the reason uh why it is
+[01:55 - 02:00] easier to share okay I'm going to show
+[01:57 - 02:03] you the uh the few
+[02:00 - 02:07] benefits uh having a file server sharing
+[02:03 - 02:07] the files in a file server
+[02:09 - 02:16] okay now in the event when a particular
+[02:13 - 02:18] employee uh is not in the
+[02:16 - 02:21] office right and then uh you want to
+[02:18 - 02:24] copy a file from uh this employee you
+[02:21 - 02:27] probably have to wait until you returns
+[02:24 - 02:30] back to the uh office now but then if
+[02:27 - 02:32] the files are store in the file server
+[02:30 - 02:36] uh given the uh access rights you will
+[02:32 - 02:38] be able to retrieve the fil right so
+[02:36 - 02:41] that would uh uh be better in terms of
+[02:38 - 02:44] collaboration of sharing of house okay
+[02:41 - 02:48] and then the other thing is that uh uh
+[02:44 - 02:52] if each individuals employee would keep
+[02:48 - 02:56] a copy of a document uh a created the
+[02:52 - 02:59] document B and uh edited it C edited it
+[02:56 - 03:01] so there'll be many versions of the file
+[02:59 - 03:03] you know for floating around in each of
+[03:01 - 03:05] this employees computer but if you were
+[03:03 - 03:09] to put them uh centrally in a file
+[03:05 - 03:11] server there will only be one copy okay
+[03:09 - 03:13] if let's say they were to do Amendment
+[03:11 - 03:15] they can put it as uh you know version
+[03:13 - 03:17] one version two version three or based
+[03:15 - 03:20] on the dates you can look at the
+[03:17 - 03:22] different versions it's fine but at the
+[03:20 - 03:24] end of the day everybody know which one
+[03:22 - 03:26] is the most updated copy and then they
+[03:24 - 03:30] can access it and use it okay so
+[03:26 - 03:33] centrally uh centrally uh uh
+[03:30 - 03:35] uh storing the file in the file server
+[03:33 - 03:38] uh will ensure that you know you don't
+[03:35 - 03:40] have duplicates okay of the same
+[03:38 - 03:44] document you know with slight Amendment
+[03:40 - 03:46] okay uh once you have all this file in a
+[03:44 - 03:48] file server it also allows you to do
+[03:46 - 03:50] routine
+[03:48 - 03:54] backup okay now some students have this
+[03:50 - 03:56] mistaken idea thinking that uh the
+[03:54 - 04:00] employee the working copy of the file is
+[03:56 - 04:03] still in the employee uh machine
+[04:00 - 04:05] and the one in the file server it is a
+[04:03 - 04:08] backup okay which is not true it should
+[04:05 - 04:10] be the other way around the one in the
+[04:08 - 04:13] file server that is being shared by
+[04:10 - 04:15] everybody should be the main working
+[04:13 - 04:17] copy and if you want to duplicate one
+[04:15 - 04:20] you keep another copy in your own laptop
+[04:17 - 04:21] that's that's the backup that you keep
+[04:20 - 04:25] okay but down here where we are saying
+[04:21 - 04:28] that uh centrally uh start uh file we
+[04:25 - 04:30] allow for routine backup okay so uh
+[04:28 - 04:33] individual uh user or the employee don't
+[04:30 - 04:35] have to worry about that it's you know
+[04:33 - 04:37] so long as they put their file in the
+[04:35 - 04:41] file server you know every day or every
+[04:37 - 04:43] week they will back it up okay so so
+[04:41 - 04:44] that will minimize the risk of losing
+[04:43 - 04:47] the
+[04:44 - 04:50] F now uh the other thing is that once
+[04:47 - 04:53] you put it into the uh file server you
+[04:50 - 04:55] can Implement some kind of access right
+[04:53 - 04:57] uh and you realize that only those
+[04:55 - 05:00] people with the given access right uh
+[04:57 - 05:03] can access the file
+[05:00 - 05:05] okay so uh the following is the markers
+[05:03 - 05:05] uh
+[05:12 - 05:18] command now for Part B besides file
+[05:16 - 05:21] sharing now that you have the land
+[05:18 - 05:25] available besides file sharing what are
+[05:21 - 05:28] additional two functions uh that can be
+[05:25 - 05:30] provided within the L okay bear in mind
+[05:28 - 05:32] down here we are not talking about
+[05:30 - 05:35] internet access at all right internet
+[05:32 - 05:40] access will only come in for part C and
+[05:35 - 05:42] D okay so what are the two additional
+[05:40 - 05:45] functions now one thing is that uh once
+[05:42 - 05:48] you have a l uh it makes sharing of a
+[05:45 - 05:52] resources a lot easier so you can
+[05:48 - 05:53] actually put in a a network device for
+[05:52 - 05:56] example a
+[05:53 - 05:58] printer everybody can just send it to
+[05:56 - 06:01] the network printer and get it printed
+[05:58 - 06:03] or you can have a a network scanner all
+[06:01 - 06:05] you need to do is just install one
+[06:03 - 06:08] network scanner and all the employee can
+[06:05 - 06:11] share because it's installed in the
+[06:08 - 06:15] land the other thing have to do with
+[06:11 - 06:17] software you can in uh within the uh
+[06:15 - 06:19] Network itself you can send you can push
+[06:17 - 06:22] down the uh installation of software to
+[06:19 - 06:24] all the employee machine for example
+[06:22 - 06:26] your Microsoft Office there's a latest
+[06:24 - 06:28] updates you don't have to wait uh you
+[06:26 - 06:30] don't have uh to request each employee
+[06:28 - 06:32] to update it
+[06:30 - 06:35] themsel so centrally you can actually
+[06:32 - 06:38] push down all the updates to all the
+[06:35 - 06:41] machines you can also install a
+[06:38 - 06:44] antivirus in the uh you create a
+[06:41 - 06:47] antivirus server and then uh that will
+[06:44 - 06:49] take care of the antivirus installations
+[06:47 - 06:51] uh within the network
+[06:49 - 06:56] itself there are other things that you
+[06:51 - 06:56] can do once uh the the land is
+[06:57 - 07:03] available now you can mention any of any
+[07:00 - 07:06] two of the following you can also have a
+[07:03 - 07:09] emailing or messaging services uh within
+[07:06 - 07:10] the land itself so you don't have to tap
+[07:09 - 07:12] on internet you know within the local
+[07:10 - 07:13] area network they're able to message
+[07:12 - 07:16] each
+[07:13 - 07:20] other you can also uh install uh some
+[07:16 - 07:23] kind of video uh conferencing or voice
+[07:20 - 07:26] uh call within the land
+[07:23 - 07:29] itself remote access within the land
+[07:26 - 07:30] what does it mean for example if the uh
+[07:29 - 07:33] compy
+[07:30 - 07:36] uh you know occupy office within a few
+[07:33 - 07:38] story right so when you're at a ground
+[07:36 - 07:41] floor you can use the computer at the
+[07:38 - 07:45] ground floor trying to access uh your
+[07:41 - 07:47] files uh uh or your machine uh up in the
+[07:45 - 07:50] third or fourth
+[07:47 - 07:52] floor okay so within the land itself you
+[07:50 - 07:54] can actually lock in and then as if you
+[07:52 - 07:57] are still uh in in your own office
+[07:54 - 08:01] itself okay so that is a remote access
+[07:57 - 08:01] within the land
+[08:03 - 08:08] okay for part C before that the the com
+[08:06 - 08:09] uh mentioned in the question is that the
+[08:08 - 08:12] company is also considering installing
+[08:09 - 08:16] router and modem uh to provide internet
+[08:12 - 08:18] access but the purpose uh is to allow
+[08:16 - 08:20] employee to access the land remotely
+[08:18 - 08:22] what do you mean by access the land
+[08:20 - 08:27] remotely that means they are not in the
+[08:22 - 08:28] office but yet they can lock in as if
+[08:27 - 08:30] they in the office they can access the
+[08:28 - 08:31] file as if they're in the office that's
+[08:30 - 08:34] called remote
+[08:31 - 08:40] access okay so describe one advantage
+[08:34 - 08:40] and one disadvantage of providing remote
+[08:49 - 08:55] access so with the remote access the
+[08:52 - 08:56] employee can actually work from home or
+[08:55 - 08:58] when they are
+[08:56 - 09:00] traveling right especially if they're
+[08:58 - 09:03] traveling to a country that is a
+[09:00 - 09:05] different time zone it could be in the
+[09:03 - 09:07] morning in the in when the employee
+[09:05 - 09:10] trying to access but it is night in the
+[09:07 - 09:13] office no one is in the office but yet
+[09:10 - 09:14] this remote access allow them to uh get
+[09:13 - 09:17] connected into the
+[09:14 - 09:17] land
+[09:17 - 09:24] okay now uh in the case of disadvantage
+[09:21 - 09:29] there are many uh first thing is that uh
+[09:24 - 09:32] uh unauthorized uh access uh what you
+[09:29 - 09:35] know like hacker so they they they try
+[09:32 - 09:38] to access into the network through the
+[09:35 - 09:40] internet okay so is more prone to
+[09:38 - 09:42] unauthorized access so you need to
+[09:40 - 09:45] implement you must put in place some
+[09:42 - 09:47] security features to block that uh and
+[09:45 - 09:50] lots of data since all the data are
+[09:47 - 09:52] centrally located so that is one risk
+[09:50 - 09:55] okay if you put that server and then you
+[09:52 - 09:56] have a remote access once people break
+[09:55 - 09:58] in break through your
+[09:56 - 09:59] security uh they will have access all to
+[09:58 - 10:03] the help
+[09:59 - 10:08] okay and then also uh when you create uh
+[10:03 - 10:11] the remote access using internet um
+[10:08 - 10:15] virus malware uh especially when people
+[10:11 - 10:18] send in through emails and then uh and
+[10:15 - 10:21] an employee unknowingly uh activates it
+[10:18 - 10:23] and then this virus is being installed
+[10:21 - 10:26] within the network itself so it is more
+[10:23 - 10:28] prone to virus and M uh wear attack
+[10:26 - 10:30] that's why it is important that you must
+[10:28 - 10:32] uh have antivirus software running in
+[10:30 - 10:37] the network
+[10:32 - 10:40] itself now uh the other uh disadvantage
+[10:37 - 10:45] now you realize that uh uh
+[10:40 - 10:48] the employee now uh heavily uh uh
+[10:45 - 10:51] depends on the local area network so in
+[10:48 - 10:54] the event when the local area network
+[10:51 - 10:57] fails they will have no access to the
+[10:54 - 10:59] server itself now uh what do you mean by
+[10:57 - 11:03] the network fail for example example the
+[10:59 - 11:06] router okay the router is 40 the modem
+[11:03 - 11:09] is 40 or some of the network switch is
+[11:06 - 11:11] 40 okay or even as simple as the cable
+[11:09 - 11:13] connecting to the file server is 40
+[11:11 - 11:17] right so the
+[11:13 - 11:19] L okay uh uh is is 40 then you cannot
+[11:17 - 11:22] access the server the other aspect is
+[11:19 - 11:25] that the file server itself can
+[11:22 - 11:27] fail okay so the file server fail means
+[11:25 - 11:30] that the the land can be working that
+[11:27 - 11:32] means all other uh all other um
+[11:30 - 11:35] functions that you have like sharing or
+[11:32 - 11:38] printer no problem you know uh emailing
+[11:35 - 11:39] no problem it's working voice uh call
+[11:38 - 11:41] and all it's all working but when you
+[11:39 - 11:43] want to access a file you can't because
+[11:41 - 11:46] why the file server
+[11:43 - 11:50] fails right so once you have either the
+[11:46 - 11:53] file server fail or the local AA Network
+[11:50 - 11:55] the network itself fail then uh they
+[11:53 - 11:57] can't work okay so that's where uh we
+[11:55 - 12:00] need to know put in place some kind of
+[11:57 - 12:02] backup to ensure sure that uh we take
+[12:00 - 12:06] care of uh such uh
+[12:02 - 12:08] incidents okay uh I'll show you the
+[12:06 - 12:08] marus
+[12:11 - 12:16] command now the question asked for
+[12:14 - 12:19] advantages and disadvantages of
+[12:16 - 12:25] providing uh remote
+[12:19 - 12:27] access uh it is not talking about uh
+[12:25 - 12:31] what are the disadvantages of of
+[12:27 - 12:33] providing the employee internet access
+[12:31 - 12:35] because quite a number of student uh
+[12:33 - 12:37] says that you know once you give the
+[12:35 - 12:40] employee uh access to the internet they
+[12:37 - 12:43] may misuse it during their work time
+[12:40 - 12:46] they they use the internet uh uh for
+[12:43 - 12:49] their own uh personal purpose instead of
+[12:46 - 12:51] doing that work now that is uh if you
+[12:49 - 12:54] read the question carefully it is the
+[12:51 - 12:56] disadvantage of providing remote access
+[12:54 - 12:58] to the employee is not the disadvantage
+[12:56 - 13:01] of providing internet access to the
+[12:58 - 13:03] employee so you need to read about that
+[13:01 - 13:06] uh some student also mention about
+[13:03 - 13:10] Wireless uh internet access now
+[13:06 - 13:12] providing having a modem and a router uh
+[13:10 - 13:15] doesn't automatically means that there
+[13:12 - 13:18] is a wireless internet access okay you
+[13:15 - 13:20] need to install a wireless access point
+[13:18 - 13:25] within the local area network then you
+[13:20 - 13:27] will have that wireless access
+[13:25 - 13:30] okay
+[13:27 - 13:33] uh whatever disadvantage that you
+[13:30 - 13:36] mention you must substantiate and
+[13:33 - 13:38] elaborate on uh uh on it so that we know
+[13:36 - 13:40] what under what circumstances you're
+[13:38 - 13:45] refering referring
+[13:40 - 13:50] to for Part D describe the function of a
+[13:45 - 13:55] router and a modem now uh we all know
+[13:50 - 13:58] that a router uses IP address okay for
+[13:55 - 14:00] transmitting the data that's how it
+[13:58 - 14:00] works
+[14:01 - 14:06] but what is the function of a router why
+[14:03 - 14:11] do we use a router in the first place
+[14:06 - 14:13] okay now a router connects a network to
+[14:11 - 14:16] another Network that means a router is
+[14:13 - 14:19] being used to connect
+[14:16 - 14:22] networks and how does he do it he make
+[14:19 - 14:24] use of the IP address to
+[14:22 - 14:28] communicate between
+[14:24 - 14:30] networks okay uh the question about uh
+[14:28 - 14:33] the function on the
+[14:30 - 14:37] modem now uh if if a student just simply
+[14:33 - 14:40] says that uh the modem allows the
+[14:37 - 14:42] employee or allows the computer to
+[14:40 - 14:42] connect to
+[14:43 - 14:49] internet now then in that case the
+[14:46 - 14:51] router also help the connect to
+[14:49 - 14:53] internet okay so connecting it to
+[14:51 - 14:57] internet is not
+[14:53 - 14:59] acceptable what is the function of a
+[14:57 - 15:01] modem
+[14:59 - 15:04] now in the past when people uses uh
+[15:01 - 15:08] telephone line for their internet access
+[15:04 - 15:11] then it is true that the modem converts
+[15:08 - 15:13] the digital signal to analog
+[15:11 - 15:17] signal it is
+[15:13 - 15:20] true okay but now a day uh we are using
+[15:17 - 15:20] fiber
+[15:20 - 15:28] optics our network is being uh is using
+[15:24 - 15:29] the fiber optics for uh transmission of
+[15:28 - 15:34] data
+[15:29 - 15:35] so uh when when the computer which is
+[15:34 - 15:38] digital uh
+[15:35 - 15:41] signal uh in order
+[15:38 - 15:44] to be sent to the internet over the uh
+[15:41 - 15:45] fiber optics then it must be converted
+[15:44 - 15:48] to
+[15:45 - 15:53] light now light is either on or off so
+[15:48 - 15:56] it's either one or a zero so again the
+[15:53 - 15:59] uh the data that's been sent in the
+[15:56 - 16:03] fiber optics it is also digital in
+[15:59 - 16:06] nature okay so if you were to say that a
+[16:03 - 16:09] modem uh converts digital signal to
+[16:06 - 16:11] analog signal this is kind of a outdated
+[16:09 - 16:14] kind of uh
+[16:11 - 16:17] answer okay now what happened is that in
+[16:14 - 16:20] uh current fiber modem it actually
+[16:17 - 16:24] converts the electrical signal which is
+[16:20 - 16:27] digital to light signal which is also
+[16:24 - 16:27] digital
+[16:27 - 16:30] okay
+[16:32 - 16:38] so that's all for question
+[16:35 - 16:38] three

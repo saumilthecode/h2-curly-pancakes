@@ -1,0 +1,284 @@
+Title: 2024 C4-3b Normalisation
+Assessment(s): Released Coursemology video catalog - C4-3b Normalisation
+Linked label(s): C4-3b Normalisation
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=7sw7WjAdtWg
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24773
+Published course start: 2026-10-18T08:01:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:01 - 00:07] hi welcome back let's continue our
+[00:04 - 00:10] lesson on relational database today
+[00:07 - 00:10] we'll be talking about
+[00:10 - 00:16] normalization now normalization is a
+[00:13 - 00:19] process of organizing the table uh in
+[00:16 - 00:21] the database to reduce the data
+[00:19 - 00:23] redundancy so that we can prevent
+[00:21 - 00:27] inconsistent
+[00:23 - 00:30] data for the GCA level syllabus we will
+[00:27 - 00:35] only focus on three normal form first
+[00:30 - 00:39] normal Form 1 NF second normal form 2 NF
+[00:35 - 00:39] and third normal form 3
+[00:40 - 00:47] NF for a table to be in one NF all the
+[00:44 - 00:51] column must be Atomic now take for
+[00:47 - 00:52] example in this table now pay attention
+[00:51 - 00:55] to the primary
+[00:52 - 00:57] key now we can use the matriculation
+[00:55 - 01:01] number to
+[00:57 - 01:02] identify each record
+[01:01 - 01:04] if we were to tell you a particular
+[01:02 - 01:07] matriculation number you will know
+[01:04 - 01:11] exactly which record we are referring to
+[01:07 - 01:14] but then when you look at the CCA info
+[01:11 - 01:18] you realize that it contains multiple
+[01:14 - 01:21] information for example the CCA is a
+[01:18 - 01:25] tennis CCA the teacher in charge is Mr
+[01:21 - 01:30] agent tan and then for the second
+[01:25 - 01:33] student Adan he take Parts in two CCA
+[01:30 - 01:35] choir and the student council and of
+[01:33 - 01:37] course each CCA there's respective CCA
+[01:35 - 01:40] teacher in
+[01:37 - 01:44] charge likewise for matriculation number
+[01:40 - 01:48] five bay uh she also takes part in two
+[01:44 - 01:51] CCA namely the choir and the chess club
+[01:48 - 01:53] so you realize that the information are
+[01:51 - 01:56] not Atomic so therefore this particular
+[01:53 - 02:01] table is not one
+[01:56 - 02:02] NF because the field CCA info contains
+[02:01 - 02:04] multiple
+[02:02 - 02:09] [Music]
+[02:04 - 02:12] values in order to make table to be 1 NF
+[02:09 - 02:15] the CCA info fueld must be split into
+[02:12 - 02:19] two single value fields which shall call
+[02:15 - 02:22] it CCA name and CCA teacher
+[02:19 - 02:25] IC now you realize that uh for the case
+[02:22 - 02:27] of uh agent the student with
+[02:25 - 02:30] matriculation number
+[02:27 - 02:32] two because he takes part in choire and
+[02:30 - 02:34] student
+[02:32 - 02:38] counsel and then there are respective uh
+[02:34 - 02:41] CCA teacher in charge for agent now we
+[02:38 - 02:44] need to record him into two records two
+[02:41 - 02:47] different row likewise same for the
+[02:44 - 02:51] matriculation number five bay we also
+[02:47 - 02:55] need to use two rows namely two records
+[02:51 - 02:58] to represent for each of the CCA so two
+[02:55 - 03:00] records for two CCA for a particular
+[02:58 - 03:02] student now you realize that the
+[03:00 - 03:06] matriculation number can no longer act
+[03:02 - 03:08] as a primary key because by just telling
+[03:06 - 03:12] you the matriculation number you will
+[03:08 - 03:15] not be able to identify exactly which
+[03:12 - 03:18] record we are referring to hence we need
+[03:15 - 03:23] to use a composite primary key
+[03:18 - 03:26] matriculation number and the CCA name
+[03:23 - 03:31] using these two pieces of info we can
+[03:26 - 03:31] identify a particular record
+[03:33 - 03:39] we shall use star to represent the
+[03:36 - 03:41] fields that's been chosen uh for the
+[03:39 - 03:46] composite primary
+[03:41 - 03:49] key now take a look all the values in
+[03:46 - 03:53] the record for all the fs they are
+[03:49 - 03:55] Atomic hence we can say that this table
+[03:53 - 03:55] is one
+[03:56 - 04:04] NF for a table to be two n f it must
+[04:00 - 04:06] satisfy two conditions the table should
+[04:04 - 04:10] be 1 and
+[04:06 - 04:13] F the second condition is every non-key
+[04:10 - 04:14] attributes what are non-key attributes
+[04:13 - 04:18] that means all the attributes that are
+[04:14 - 04:20] not the primary key so we have chosen
+[04:18 - 04:23] matriculation number and CCA name to be
+[04:20 - 04:26] the primary key which means the the rest
+[04:23 - 04:29] of the attributes name gender civics
+[04:26 - 04:32] class Civics stor home room and and the
+[04:29 - 04:36] CCA teacher in charge these are the
+[04:32 - 04:39] non-key attributes this every of these
+[04:36 - 04:42] non-key attributes must be fully
+[04:39 - 04:44] dependent on the entire primary key what
+[04:42 - 04:46] do you mean by entire primary key it
+[04:44 - 04:50] means that this
+[04:46 - 04:52] composite primary key that means it must
+[04:50 - 04:55] depend on both of them it must not
+[04:52 - 05:01] depend part of them no attribute Can
+[04:55 - 05:01] Depend only on part of the primary key
+[05:03 - 05:10] for a table to be 2 NF it must satisfy
+[05:07 - 05:12] this two
+[05:10 - 05:16] condition as from the previous part we
+[05:12 - 05:20] have already make all the values in the
+[05:16 - 05:25] table all the records and all the fs are
+[05:20 - 05:25] to be automic so it is now one and
+[05:26 - 05:33] F now looking at these two column
+[05:31 - 05:39] do you realize that the CCA teacher in
+[05:33 - 05:39] charge is actually dependent on the CCA
+[05:40 - 05:47] name and for this site of the
+[05:44 - 05:50] clayball the name the gender the civics
+[05:47 - 05:52] class and the Civics tutor and The Home
+[05:50 - 05:54] Room they are dependent on the
+[05:52 - 05:57] matriculation
+[05:54 - 06:01] number so you realize that this non key
+[05:57 - 06:02] attribute actually depends on part of
+[06:01 - 06:07] the primary
+[06:02 - 06:07] key part of the composite primary
+[06:09 - 06:14] key take note the primary key is
+[06:12 - 06:18] composing it comprises of the
+[06:14 - 06:21] matriculation number and a CCA name name
+[06:18 - 06:25] gender civics class Civics stor and The
+[06:21 - 06:28] Home Room these are all dependent only
+[06:25 - 06:31] on matriculation number whereas the case
+[06:28 - 06:34] of a CCA teacher in charge is dependent
+[06:31 - 06:38] only on CCA
+[06:34 - 06:40] name because these non-key attributes
+[06:38 - 06:44] are not fully
+[06:40 - 06:48] dependent on the primary key hence this
+[06:44 - 06:53] table is not 2
+[06:48 - 06:57] NF to change the table to 2nf we need to
+[06:53 - 07:00] decompose the table into three smaller
+[06:57 - 07:07] tables we shall call it student table
+[07:00 - 07:07] student CCA table and CCA info
+[07:08 - 07:15] table for the students table the primary
+[07:11 - 07:18] key shall be the matriculation number
+[07:15 - 07:21] and you realize that all the non-key
+[07:18 - 07:24] attributes they are dependent on the
+[07:21 - 07:24] matriculation
+[07:24 - 07:33] number for the case of student CCA the
+[07:28 - 07:33] CCA name is dependent on the mulation
+[07:35 - 07:42] number for us to identify a particular
+[07:38 - 07:45] row we need to use the composite primary
+[07:42 - 07:48] key namely the matriculation number and
+[07:45 - 07:50] the CCA name to be the primary key for
+[07:48 - 07:55] this
+[07:50 - 07:58] table for the CCA info table the CCA
+[07:55 - 08:00] teacher in charge is dependent on the
+[07:58 - 08:03] CCA name
+[08:00 - 08:06] since all the non-key attributes are
+[08:03 - 08:09] solely dependent on the primary key
+[08:06 - 08:13] therefore we can say that this table all
+[08:09 - 08:13] this table they are two
+[08:15 - 08:20] NF now I want to introduce to you this
+[08:18 - 08:25] term called foreign
+[08:20 - 08:30] key now if you refer to the student CCA
+[08:25 - 08:33] table the matriculation number
+[08:30 - 08:35] now each of this matriculation number
+[08:33 - 08:36] contains the information about the
+[08:35 - 08:38] particular
+[08:36 - 08:41] student and where do we get the
+[08:38 - 08:43] information of this student we need to
+[08:41 - 08:46] retrieve it from the table called
+[08:43 - 08:49] student the student
+[08:46 - 08:52] table so whatever the mulation number
+[08:49 - 08:55] that you have inside the student CCA
+[08:52 - 08:58] table all you need to do is to use the
+[08:55 - 09:00] metrication number and refer to the
+[08:58 - 09:03] student table you will be able to get
+[09:00 - 09:07] the information regarding this
+[09:03 - 09:11] student therefore the matriculation
+[09:07 - 09:16] number in the student CCA table is a
+[09:11 - 09:19] foreign key this foreign key refer or
+[09:16 - 09:22] reference to the brm b key of the
+[09:19 - 09:22] students
+[09:22 - 09:32] table for the case of the CCA name the
+[09:27 - 09:36] CCA name is also a for key because you
+[09:32 - 09:40] can use the value and refer to the CCA
+[09:36 - 09:42] field in the CCA info
+[09:40 - 09:44] table to
+[09:42 - 09:46] retrieve the information about the
+[09:44 - 09:51] teacher in
+[09:46 - 09:52] charge CCA name in the CCA info table is
+[09:51 - 09:56] the primary
+[09:52 - 10:00] key whereas the CCA name in the student
+[09:56 - 10:04] CCA is a foreign key
+[10:00 - 10:09] because in this student CCA
+[10:04 - 10:14] table using the CCA name we are able to
+[10:09 - 10:16] refer to the primary key in the CCA info
+[10:14 - 10:19] to retrieve the teachers
+[10:16 - 10:22] info now that you have understood about
+[10:19 - 10:24] the foreign key I would like to continue
+[10:22 - 10:30] to talk about the
+[10:24 - 10:33] 2nf these three tables are in their 2nf
+[10:30 - 10:38] How to Become Three
+[10:33 - 10:41] NF now let's consider the students table
+[10:38 - 10:46] now for a table to be three NF it must
+[10:41 - 10:50] satisfy two condition one the table
+[10:46 - 10:56] should be in 2 andf the student table is
+[10:50 - 11:01] in 2 andf all the non key attributes is
+[10:56 - 11:03] solely dependent on the primary key
+[11:01 - 11:09] now what is the second condition to be
+[11:03 - 11:09] 3nf the table should not have transitive
+[11:10 - 11:15] dependency now take a look at this
+[11:15 - 11:20] table Civic
+[11:18 - 11:26] tutor Home
+[11:20 - 11:29] Room these are dependent on the civics
+[11:26 - 11:32] class the civics class is the dependent
+[11:29 - 11:36] on the matriculation
+[11:32 - 11:40] number hence the Civic tutor and the
+[11:36 - 11:43] Civic room this has a transitive
+[11:40 - 11:46] dependency on the matriculation
+[11:43 - 11:50] number so there is a transitive
+[11:46 - 11:53] dependency here in this table therefore
+[11:50 - 11:56] this table is not three
+[11:53 - 11:58] andf this table is not three and half
+[11:56 - 12:01] and we're going to make it into three
+[11:58 - 12:04] and half we need to remove the
+[12:01 - 12:04] transitive
+[12:07 - 12:13] dependency to remove the transitive
+[12:09 - 12:14] dependency we decompose the table into
+[12:13 - 12:17] two more
+[12:14 - 12:21] tables and we call it remain to call it
+[12:17 - 12:26] as a student table and the Civics
+[12:21 - 12:29] table now in the students
+[12:26 - 12:32] table there will be four FS
+[12:29 - 12:34] name gender and civics class they are
+[12:32 - 12:38] all dependent on the matriculation
+[12:34 - 12:41] number so the primary key for this table
+[12:38 - 12:41] is the matriculation
+[12:42 - 12:49] number and then in the Civics
+[12:46 - 12:52] table we will have the civics class as
+[12:49 - 12:56] the primary key and then the Civics duor
+[12:52 - 12:57] is The Home Room will be dependent on
+[12:56 - 13:01] the primary
+[12:57 - 13:05] key now in this way the civics class in
+[13:01 - 13:08] the students table acts as a foreign key
+[13:05 - 13:11] referencing to the civics class in the
+[13:08 - 13:11] Civics
+[13:12 - 13:20] table there is no translative dependency
+[13:16 - 13:22] now within the students table and or the
+[13:20 - 13:26] Civics
+[13:22 - 13:26] table hence this is three
+[13:27 - 13:34] NF so in some
+[13:29 - 13:36] we have now uh split a single table into
+[13:34 - 13:36] four
+[13:37 - 13:43] tables we went through the first NF to
+[13:40 - 13:46] make all the records and all the fs
+[13:43 - 13:49] Atomic and then we make the table into
+[13:46 - 13:52] two NF and subsequently removing the
+[13:49 - 13:54] transitive dependency and then we have
+[13:52 - 13:55] all the four
+[13:54 - 13:59] [Music]
+[13:55 - 14:05] tables the table descriptions are such
+[13:59 - 14:09] we use esteric to denote the foreign
+[14:05 - 14:10] key in the students table civics class
+[14:09 - 14:14] is the foreign
+[14:10 - 14:17] key the value in the civics class we can
+[14:14 - 14:20] refer it to the Civics
+[14:17 - 14:23] table and then from the civics class
+[14:20 - 14:26] here we can retrieve the Civic theor and
+[14:23 - 14:26] The Home Room
+[14:27 - 14:36] information for the case of the student
+[14:30 - 14:40] CCA ha the CCA name is a foreign key
+[14:36 - 14:43] using the various CCA name we can refer
+[14:40 - 14:47] to the CCA info table to retrieve the
+[14:43 - 14:47] teachers in charge
+[14:48 - 14:58] info so this is a fully normalized
+[14:52 - 14:58] table there is no more data redundancy
+[14:59 - 15:04] an alternative way to denote the foreign
+[15:02 - 15:08] key besides using
+[15:04 - 15:13] esic we can also use the dotted
+[15:08 - 15:16] underline to denote the forign
+[15:13 - 15:19] key that's all for this lesson on
+[15:16 - 15:19] normalization

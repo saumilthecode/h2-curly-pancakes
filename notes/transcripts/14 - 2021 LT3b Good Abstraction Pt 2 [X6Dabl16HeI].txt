@@ -1,0 +1,336 @@
+Title: 2021 LT3b Good Abstraction Pt 2
+LT: LT 3b - Good Abstraction
+Linked label: Good Abstraction Pt 2
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=X6Dabl16HeI
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] okay in the previous video we talked
+[00:02 - 00:06] about what makes a good abstraction and
+[00:04 - 00:08] then we came up with this seven points
+[00:06 - 00:10] so right now we will see how we can
+[00:08 - 00:12] implement uh some of these ideas in a
+[00:10 - 00:15] sample question
+[00:12 - 00:16] right so before we do that as a reminder
+[00:15 - 00:18] this is something called we learned
+[00:16 - 00:20] before called wishful thinking top-down
+[00:18 - 00:24] approach pretend you have whatever you
+[00:20 - 00:25] need so this is uh one key idea when you
+[00:24 - 00:27] think about abstraction when you break
+[00:25 - 00:29] down the problem just assume that you
+[00:27 - 00:31] have the you have an existing function
+[00:29 - 00:34] to solve that smaller problem and then
+[00:31 - 00:36] just continue breaking down from there
+[00:34 - 00:37] okay then later you come back you start
+[00:36 - 00:40] to feel in the functions they actually
+[00:37 - 00:42] need okay so this is when you are
+[00:40 - 00:43] starting to write the
+[00:42 - 00:44] this is not when you are doing the
+[00:43 - 00:46] implementation
+[00:44 - 00:48] this is when you are trying you are
+[00:46 - 00:50] saying oh uh in order to solve this
+[00:48 - 00:52] problem i need this function so let's
+[00:50 - 00:53] just write this function let's just
+[00:52 - 00:55] keep it as a placeholder holder for now
+[00:53 - 00:57] and then we will come back to to write
+[00:55 - 01:00] the function later on
+[00:57 - 01:02] all right so let's look at this uh taxi
+[01:00 - 01:04] example in singapore a few years ago at
+[01:02 - 01:06] least i think the numbers are not
+[01:04 - 01:08] updated the taxi fare is based on
+[01:06 - 01:11] distance traveled as follows if you go
+[01:08 - 01:12] for less than one km or less you get
+[01:11 - 01:14] your first
+[01:12 - 01:17] three dollars then subsequently every
+[01:14 - 01:20] four meters there after or less up to 10
+[01:17 - 01:22] km is 22 cents per four meters and after
+[01:20 - 01:25] that every four meters thereafter or
+[01:22 - 01:27] less after 10 km is another 25 cents
+[01:25 - 01:29] okay so there are there are three tiers
+[01:27 - 01:31] you need to take care of
+[01:29 - 01:33] all right so this is your problem your
+[01:31 - 01:35] prop your problem is that you need to
+[01:33 - 01:37] write a pi the python function that
+[01:35 - 01:38] computes the travel fare from the
+[01:37 - 01:40] distance traveled okay so basically i
+[01:38 - 01:41] give you the distance and then you're
+[01:40 - 01:43] supposed to tell me that effect
+[01:41 - 01:45] okay so what do we need to do to solve
+[01:43 - 01:46] this problem okay let's approach this uh
+[01:45 - 01:48] step by step
+[01:46 - 01:50] first thing first we need to formulate
+[01:48 - 01:52] the problem okay we
+[01:50 - 01:55] need we need a function the function
+[01:52 - 01:57] needs a name okay so just you is you can
+[01:55 - 01:58] pick and you can pick any um you can
+[01:57 - 02:00] pick
+[01:58 - 02:02] from a variety of names you can create
+[02:00 - 02:04] your own uh names but try to pick one
+[02:02 - 02:06] that is appropriate and makes it easy
+[02:04 - 02:08] for people including yourself to
+[02:06 - 02:10] understand what you're doing okay so in
+[02:08 - 02:13] this case let's just call this function
+[02:10 - 02:15] taxi fare okay taxi fare is a black box
+[02:13 - 02:17] that takes in uh
+[02:15 - 02:21] an argument of distance and then it will
+[02:17 - 02:23] give you the output uh the total fair
+[02:21 - 02:26] all right so let's look at what would
+[02:23 - 02:28] you need for this what data do you need
+[02:26 - 02:30] where would you get it and the result
+[02:28 - 02:32] should be unambiguous that means the
+[02:30 - 02:34] result should like if you run the same
+[02:32 - 02:36] func you run the function on the same
+[02:34 - 02:38] number two times three times four times
+[02:36 - 02:39] you should give it the same outcome
+[02:38 - 02:41] all right there's something about what
+[02:39 - 02:44] other abstractions may be useful okay
+[02:41 - 02:45] then ask the same question for each
+[02:44 - 02:47] abstraction
+[02:45 - 02:49] okay so basically you're trying to break
+[02:47 - 02:51] it down step by step okay after even you
+[02:49 - 02:54] find one abstraction can you find more
+[02:51 - 02:56] abstractions to to to break down to
+[02:54 - 02:58] break it down and then for each
+[02:56 - 03:03] abstraction right you need to be able to
+[02:58 - 03:03] answer this this questions all right
+[03:03 - 03:07] okay so how can the result be computed
+[03:05 - 03:09] from data we will use simple examples to
+[03:07 - 03:11] try and then we will strategize them
+[03:09 - 03:14] step by step then we write our code down
+[03:11 - 03:16] then we refine it okay so let's try
+[03:14 - 03:17] okay let's sum let's answer some of
+[03:16 - 03:19] these questions first what to call the
+[03:17 - 03:22] function we call it taxi fare what data
+[03:19 - 03:24] is required the distance how to get the
+[03:22 - 03:27] data use an argument use an argument in
+[03:24 - 03:29] the function what's the result fair okay
+[03:27 - 03:31] we'll get a fair we'll get we'll get an
+[03:29 - 03:33] integer in this case
+[03:31 - 03:35] offload i think it could be it could be
+[03:33 - 03:36] a float because it uh the fare was in
+[03:35 - 03:38] sense as well
+[03:36 - 03:41] all right so let's try let's look at
+[03:38 - 03:44] some basic data if the first example if
+[03:41 - 03:46] my distance is 800 meters because it's
+[03:44 - 03:48] less than 1000 kilometers in the fair
+[03:46 - 03:50] with three dollars
+[03:48 - 03:52] if my distance is three thousand three
+[03:50 - 03:56] meters i will take three dollars because
+[03:52 - 03:57] i'll travel one km already then uh minus
+[03:56 - 04:00] of three thousand three minus one
+[03:57 - 04:03] thousand and then divide by 400 and i
+[04:00 - 04:06] round up round up because remember it's
+[04:03 - 04:08] uh four every four meters or less okay
+[04:06 - 04:10] then take the number multiply by 22
+[04:08 - 04:12] cents i get four dollars and 32 cents
+[04:10 - 04:14] the next example is a bit higher one
+[04:12 - 04:17] fourteen thousand parameters so this one
+[04:14 - 04:20] i will take this fare okay remember the
+[04:17 - 04:22] tier ring is there's a few of them
+[04:20 - 04:25] there's a 22 cent hearing
+[04:22 - 04:28] and then there's a 25 cent hearing okay
+[04:25 - 04:29] so same thing take thousand five minus
+[04:28 - 04:31] away
+[04:29 - 04:33] uh you need to
+[04:31 - 04:35] you need to break break it down nicely
+[04:33 - 04:38] so basically this one here you need the
+[04:35 - 04:40] minus of of the first 1000 km
+[04:38 - 04:42] then you minus of nine nine thousand on
+[04:40 - 04:44] one thousand meters then minus of the
+[04:42 - 04:46] nine thousand meters to form a total of
+[04:44 - 04:48] ten ten thousand meters then the
+[04:46 - 04:50] remainder will fall under the last price
+[04:48 - 04:52] category okay so these are the things we
+[04:50 - 04:55] have have to do okay so this is some
+[04:52 - 04:58] examples okay so let's look at how
+[04:55 - 05:00] we can do some pseudo code okay
+[04:58 - 05:04] pseudocode here essentially is that we
+[05:00 - 05:05] are just writing out the steps okay
+[05:04 - 05:07] uh in
+[05:05 - 05:09] in
+[05:07 - 05:11] human readable form that means it's
+[05:09 - 05:13] basically you see some symbols and see
+[05:11 - 05:15] english right we will talk a bit more
+[05:13 - 05:16] about pseudocode the next next time
+[05:15 - 05:18] around
+[05:16 - 05:21] okay so this uh sum this was what we got
+[05:18 - 05:24] from the previous one so we basically
+[05:21 - 05:26] use the term distance okay then we just
+[05:24 - 05:27] so for here for case one is quite
+[05:26 - 05:29] straightforward case two right uh
+[05:27 - 05:31] because distance is between one thousand
+[05:29 - 05:32] to ten ten thousand meters right i will
+[05:31 - 05:35] take the three three dollars for the
+[05:32 - 05:37] first one one thousand meters then i
+[05:35 - 05:40] take zero by two two cents multiply by
+[05:37 - 05:43] this value here distance minus 1000 then
+[05:40 - 05:46] divide by 400 roundup okay then for the
+[05:43 - 05:49] next one here i take 8.06 okay how do i
+[05:46 - 05:50] get 8.06 over here
+[05:49 - 05:53] all right what's this okay this is
+[05:50 - 05:54] essentially right the maximum value you
+[05:53 - 05:57] can get from case two
+[05:54 - 06:00] okay if case two is like basically ten
+[05:57 - 06:02] thousand okay if you sub if you sub this
+[06:00 - 06:04] this uh function these are steps here
+[06:02 - 06:06] you'll get eight point zero six
+[06:04 - 06:09] plus so it's three dollars plus y over
+[06:06 - 06:12] whatever that is from this portion here
+[06:09 - 06:14] this will give you 8.06 okay
+[06:12 - 06:16] yeah fair for 10km all right
+[06:14 - 06:19] okay so
+[06:16 - 06:21] yep so we have this function here math
+[06:19 - 06:23] dot that will help us later
+[06:21 - 06:26] all right okay so let's look at this
+[06:23 - 06:28] code now all right we have a taxi fare
+[06:26 - 06:29] that function that takes in the
+[06:28 - 06:32] detection the argument distance and
+[06:29 - 06:33] distance is always in meters if distance
+[06:32 - 06:35] is less than or equal to one thousand
+[06:33 - 06:37] just return three point zero l if
+[06:35 - 06:39] distance is less than or equal to ten
+[06:37 - 06:41] thousand return three point zero plus
+[06:39 - 06:43] zero point two two then multiplied by c
+[06:41 - 06:45] o distance by one thousand nine divided
+[06:43 - 06:48] by four etcetera etcetera so i think
+[06:45 - 06:50] these steps here are quite okay you can
+[06:48 - 06:53] it's basically if l if and else else
+[06:50 - 06:54] blocks okay then you can use uh use some
+[06:53 - 06:57] of the test cases that you have obtained
+[06:54 - 06:59] beforehand okay you need to test for
+[06:57 - 07:01] each of the condition make sure that it
+[06:59 - 07:03] is working correctly so we use the wire
+[07:01 - 07:04] that we have calculated earlier to go
+[07:03 - 07:05] and check
+[07:04 - 07:08] all right
+[07:05 - 07:10] so can this solution be further improved
+[07:08 - 07:11] all right let's see what we can do to
+[07:10 - 07:13] improve this solution
+[07:11 - 07:15] okay what if the starting facts increase
+[07:13 - 07:16] okay from
+[07:15 - 07:18] three dollars to 320 cents which
+[07:16 - 07:21] actually is is it the current starting
+[07:18 - 07:22] fair i'm not ratio okay
+[07:21 - 07:24] okay what if four meters is increased to
+[07:22 - 07:27] parameters can we
+[07:24 - 07:29] uh can our can our code make uh make
+[07:27 - 07:31] these changes or not okay
+[07:29 - 07:33] so basically what's happening here is
+[07:31 - 07:35] that you have this thing called magic
+[07:33 - 07:37] numbers okay let me go back two slides
+[07:35 - 07:37] to show you what the magic numbers are
+[07:37 - 07:40] okay
+[07:37 - 07:41] first i i think actually there are some
+[07:40 - 07:43] numbers that are hardcoded like for
+[07:41 - 07:46] example one thousand
+[07:43 - 07:49] uh 0.22 etc all these are hard coded
+[07:46 - 07:51] numbers okay so when you have hardcoded
+[07:49 - 07:53] constants right it's difficult to make
+[07:51 - 07:56] changes in future okay what do we mean
+[07:53 - 07:58] by that so numbers are this right if you
+[07:56 - 07:59] write if i return this function like uh
+[07:58 - 08:01] two years ago when the fare was still
+[07:59 - 08:03] correct and then now the fare is updated
+[08:01 - 08:05] right so for you to update this function
+[08:03 - 08:07] to make it work correctly you have to go
+[08:05 - 08:11] back into the function and go and hunt
+[08:07 - 08:13] for all these numbers 3.0 400 and 400
+[08:11 - 08:15] and make the necessary changes
+[08:13 - 08:17] okay so that will make it very tedious
+[08:15 - 08:19] and more importantly right is also very
+[08:17 - 08:21] prone to error if you miss out one of
+[08:19 - 08:23] the numbers right and you run it it will
+[08:21 - 08:26] seemingly work
+[08:23 - 08:28] but the output might not be correct okay
+[08:26 - 08:32] so how do we go about avoiding this
+[08:28 - 08:33] problem what we can do is to define two
+[08:32 - 08:36] uh
+[08:33 - 08:38] two global variables here because
+[08:36 - 08:41] we're just talking about this function
+[08:38 - 08:43] so we define two two globe uh two
+[08:41 - 08:45] variables here that could be used by
+[08:43 - 08:48] your the rest of your function so
+[08:45 - 08:50] instead of uh coding three three point
+[08:48 - 08:53] zero here i i assign to a variable
+[08:50 - 08:55] called start fair 3.0 and then the stage
+[08:53 - 08:57] here i play as 400 so then i can just uh
+[08:55 - 08:59] slash stage over here
+[08:57 - 09:01] so when i want to update this
+[08:59 - 09:05] function it's very easy i just need to
+[09:01 - 09:07] change these values on top 3.0 and 400.
+[09:05 - 09:10] okay yeah but there's also one more here
+[09:07 - 09:11] that says 8.06 at the bottom how do you
+[09:10 - 09:14] update this
+[09:11 - 09:17] this 8.06 remember is based on the
+[09:14 - 09:18] calculation of using a starting phase of
+[09:17 - 09:21] 3.0
+[09:18 - 09:23] and the stage of 400 okay so this one is
+[09:21 - 09:24] not so simple to remove okay but again
+[09:23 - 09:26] you can try
+[09:24 - 09:27] what i can do is that you can basically
+[09:26 - 09:28] just
+[09:27 - 09:30] if you think about it right this is just
+[09:28 - 09:32] a taxi fare at when it's when the
+[09:30 - 09:35] distance is 10 000 meters
+[09:32 - 09:36] so you can basically put this this call
+[09:35 - 09:38] of the funk function there and then that
+[09:36 - 09:40] will work as well
+[09:38 - 09:42] all right so after we modify this this
+[09:40 - 09:43] will become this way
+[09:42 - 09:45] then
+[09:43 - 09:47] the this one is the new one the else
+[09:45 - 09:49] return tax if i had that 10 000. so we
+[09:47 - 09:52] now can see that there's something new
+[09:49 - 09:54] to you within a function i can also make
+[09:52 - 09:57] use of a call to the same function okay
+[09:54 - 09:59] so if the code reaches this point here
+[09:57 - 10:01] you will call the same function one more
+[09:59 - 10:02] time okay you run this function within
+[10:01 - 10:04] this
+[10:02 - 10:06] current scope you run it within all
+[10:04 - 10:08] right
+[10:06 - 10:09] okay so right now you can see that we
+[10:08 - 10:11] can easily cope with changes uh we can
+[10:09 - 10:14] change the starting affair to 3.2 and
+[10:11 - 10:16] then decrease the block to parameters
+[10:14 - 10:18] all right so that's how we can work with
+[10:16 - 10:20] this okay you can update the numbers
+[10:18 - 10:23] very easily
+[10:20 - 10:25] okay so yeah and again we can try to
+[10:23 - 10:28] remove if we want to be really really
+[10:25 - 10:30] really flexible we can remove all the
+[10:28 - 10:32] magic numbers okay so if you go back to
+[10:30 - 10:35] the previous slide you can see that
+[10:32 - 10:38] there's still this 0.22 0.25
+[10:35 - 10:41] and maybe the 1000 and the 10 10 000 as
+[10:38 - 10:43] well okay so i can put a stage one stage
+[10:41 - 10:45] two and then the starting fair increment
+[10:43 - 10:48] one agreement two and block okay and
+[10:45 - 10:50] then you can do it this way okay
+[10:48 - 10:53] does it make sense is it good practice
+[10:50 - 10:56] to do it this way i would say yes and no
+[10:53 - 10:57] okay yes because it removes all the
+[10:56 - 10:59] magic numbers
+[10:57 - 11:02] okay and then subsequently your code
+[10:59 - 11:04] could be updated your your variables in
+[11:02 - 11:05] your in your code could be updated very
+[11:04 - 11:08] easily
+[11:05 - 11:09] however you need to also consider
+[11:08 - 11:11] how
+[11:09 - 11:13] regularly you're going to use this use
+[11:11 - 11:14] this function if it's going to be a once
+[11:13 - 11:16] or function and you're going to be used
+[11:14 - 11:18] like once and not gonna be used forever
+[11:16 - 11:20] right then it might not make so much
+[11:18 - 11:22] sense to spend so much time and effort
+[11:20 - 11:24] to update all the
+[11:22 - 11:27] all the magic numbers into into a
+[11:24 - 11:30] variable okay
+[11:27 - 11:32] okay so that's all for lte 3b you can go
+[11:30 - 11:34] ahead and complete the questions after
+[11:32 - 11:37] that you can proceed on to tutorial as
+[11:34 - 11:39] well that's all for functions for now
+[11:37 - 11:39] thank you

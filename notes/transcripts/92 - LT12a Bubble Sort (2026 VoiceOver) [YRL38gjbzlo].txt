@@ -1,0 +1,217 @@
+Title: LT12a Bubble Sort (2026 VoiceOver)
+Assessment(s): LT 12a Bubble Sort
+Linked label(s): Bubble Sort
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=YRL38gjbzlo
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] Hi students, this topic is about bubble
+[00:02 - 00:08] sort. Why is it named bubble sort? It is
+[00:06 - 00:12] because the data bubbles up to the top
+[00:08 - 00:14] of the data set. So what is bubble sort?
+[00:12 - 00:17] It is a simple sorting algorithm that
+[00:14 - 00:19] sorts elements in an unordered array.
+[00:17 - 00:23] First we pass through or iterate through
+[00:19 - 00:25] the unsorted array comparing adjacent
+[00:23 - 00:26] elements. If the adjacent elements are
+[00:25 - 00:29] in the wrong order, we swap them until
+[00:26 - 00:31] the end is reached. We will work on this
+[00:29 - 00:34] example for the first pass. For the
+[00:31 - 00:36] first pass, we compare the first two
+[00:34 - 00:40] elements. Since they are in the wrong
+[00:36 - 00:41] order, we swap them. Then we compare the
+[00:40 - 00:44] next two elements. Since they are in the
+[00:41 - 00:46] wrong handed order, we also swap them.
+[00:44 - 00:49] Then we move on to the next two. But
+[00:46 - 00:51] since they are in the correct order, we
+[00:49 - 00:55] do not swap. Then we move on to the next
+[00:51 - 00:57] two elements. Wrong order. Swap. At this
+[00:55 - 00:59] point of time, we reach the end. So we
+[00:57 - 01:01] can see that the
+[00:59 - 01:04] largest element is at the end of the
+[01:01 - 01:06] array and is considered sorted. We still
+[01:04 - 01:08] need to keep repeating passes or
+[01:06 - 01:10] repeating step one on the unsorted part
+[01:08 - 01:14] of the array until the entire array is
+[01:10 - 01:16] sorted. So for the second pass we will
+[01:14 - 01:18] compare the first two elements and see
+[01:16 - 01:21] that they are in a correct order.
+[01:18 - 01:22] There's no need to swap. Then we compare
+[01:21 - 01:25] the next two elements index one and two.
+[01:22 - 01:27] Correct order. No need to swap. Then we
+[01:25 - 01:29] compare the next two elements 8 and
+[01:27 - 01:31] five. We need to swap to five and 8. So
+[01:29 - 01:35] we stop comparison here. We do not need
+[01:31 - 01:36] to compare the next elements index 3 and
+[01:35 - 01:38] four because we know that index 4
+[01:36 - 01:41] contains the largest element already. So
+[01:38 - 01:44] we stop. 8 and 9 are in the correct
+[01:41 - 01:45] positions in the sorted array. On the
+[01:44 - 01:48] third pass we will compare index 0 and
+[01:45 - 01:50] one and not swap. We will compare index
+[01:48 - 01:54] one and two and swap. And then we have
+[01:50 - 01:55] built up the largest three elements. On
+[01:54 - 01:59] the fourth pass, we will compare index
+[01:55 - 02:00] zero and one and choose not to swap. And
+[01:59 - 02:02] we have built up the largest four
+[02:00 - 02:04] elements. This is where the sort is
+[02:02 - 02:07] complete. How can we implement it in
+[02:04 - 02:09] Python? First, we do the first pass. To
+[02:07 - 02:11] do
+[02:09 - 02:13] this, we can use a for loop. Let's call
+[02:11 - 02:16] it inner loop for now. It starts at
+[02:13 - 02:18] index zero.
+[02:16 - 02:21] Comparing 24 and 5. Here we swap. Then
+[02:18 - 02:24] we iterate to index 1. Comparing 24 and
+[02:21 - 02:27] 36,
+[02:24 - 02:29] we don't swap. Then we iterate to index
+[02:27 - 02:32] two. Comparing 36 and 18, we swap. Then
+[02:29 - 02:36] we
+[02:32 - 02:38] iterate to index 3. Comparing 36 and 12,
+[02:36 - 02:40] we swap. We stop iteration at three. One
+[02:38 - 02:42] less
+[02:40 - 02:45] the highest index of the array, index 4.
+[02:42 - 02:47] Because if we go on to index 4 and when
+[02:45 - 02:50] the algorithm compares element at index
+[02:47 - 02:52] four and five, we will have an indexing
+[02:50 - 02:54] error for going out of range. The
+[02:52 - 02:56] largest element will now be at the end
+[02:54 - 02:59] and the first pass or the first loop is
+[02:56 - 03:02] considered complete. So far, we only
+[02:59 - 03:04] demonstrated one pass. We need an outer
+[03:02 - 03:06] loop to control how many times the inner
+[03:04 - 03:08] loop is called. We can do this by
+[03:06 - 03:11] nesting the inner for loop inside an
+[03:08 - 03:13] outer for loop. On the first call on the
+[03:11 - 03:15] inner loop, the inner loop performs pass
+[03:13 - 03:18] one where the largest element is
+[03:15 - 03:20] correctly placed. On the second call on
+[03:18 - 03:21] the inner loop, the inner loop performs
+[03:20 - 03:24] pass two where the second largest
+[03:21 - 03:26] element is correctly placed until the
+[03:24 - 03:29] fourth call that performs the last pass
+[03:26 - 03:31] where the second
+[03:29 - 03:33] element 12 is correctly placed. In
+[03:31 - 03:35] general, a size n array will require n
+[03:33 - 03:38] minus one
+[03:35 - 03:40] passes. Optimized bubble sort is a
+[03:38 - 03:42] variation of the bubble sort. It works
+[03:40 - 03:43] the same way, but the boolean is used to
+[03:42 - 03:46] check whether there are any swaps or
+[03:43 - 03:48] not. In this example, on a size seven
+[03:46 - 03:51] array, the original plan was to do six
+[03:48 - 03:53] passes. Before every pass, we will set
+[03:51 - 03:56] the swap variable to false. When we do
+[03:53 - 03:58] the first pass and swaps are made, swap
+[03:56 - 04:01] variable is set to true. Here in the
+[03:58 - 04:03] second pass, swaps were made, so swap is
+[04:01 - 04:07] set to true. In the third pass, swaps
+[04:03 - 04:08] were made. So, swap is set to true.
+[04:07 - 04:11] After the fourth pass, since it's
+[04:08 - 04:13] already sorted, the inner loop will not
+[04:11 - 04:16] perform any swaps and the swap variable
+[04:13 - 04:18] remained false. So we can see that using
+[04:16 - 04:21] the swap variable, we can know whether
+[04:18 - 04:23] the array is sorted or not. We can stop
+[04:21 - 04:27] the sorting process to skip past five
+[04:23 - 04:29] and six. So is bubble sort in place.
+[04:27 - 04:32] What does it mean to be an in place
+[04:29 - 04:35] sort? It means that sorted items occupy
+[04:32 - 04:39] the same storage as the original items.
+[04:35 - 04:41] Bubble sort is in place because in the
+[04:39 - 04:44] algorithm we work on the array doing
+[04:41 - 04:46] mutual swaps within the elements inside.
+[04:44 - 04:49] The list is mutated or changed as we
+[04:46 - 04:52] sort. The original unsorted sequence can
+[04:49 - 04:55] no longer be found anywhere. No
+[04:52 - 04:57] additional memory or storage space was
+[04:55 - 04:59] needed. We did not create another new
+[04:57 - 05:01] list to assemble the sorted elements to
+[04:59 - 05:04] return it. Therefore, bubble sort is an
+[05:01 - 05:06] inplay sorting algorithm.
+[05:04 - 05:08] Next, we consider if bubble sort is
+[05:06 - 05:11] stable. To understand this, we consider
+[05:08 - 05:13] a case where there are repeated elements
+[05:11 - 05:15] because stability has to do with lists
+[05:13 - 05:17] with repeated elements. For example,
+[05:15 - 05:19] this list where three is being repeated
+[05:17 - 05:21] to
+[05:19 - 05:24] distinguish between the two trees, we
+[05:21 - 05:26] use color. Note that initially the red
+[05:24 - 05:28] tree comes before the blue tree. After
+[05:26 - 05:31] sorting is done, if the relative
+[05:28 - 05:33] position of the repeated elements remain
+[05:31 - 05:36] unchanged, it is a stable sort. For the
+[05:33 - 05:38] case of inpit unstable sort after the
+[05:36 - 05:40] sorting is done, the relative position
+[05:38 - 05:42] of the repeated elements is not
+[05:40 - 05:45] preserved. Note that here the blue tree
+[05:42 - 05:47] comes first before the red tree. To know
+[05:45 - 05:50] if this is a stable sort, it's hard to
+[05:47 - 05:52] tell from the sorted result. It depends
+[05:50 - 05:54] on the implementation of how it's coded,
+[05:52 - 05:57] not the type of sort. Did the code swap
+[05:54 - 05:59] even when two elements are equal? Now we
+[05:57 - 06:01] discuss the
+[05:59 - 06:03] order of growth of bubble sort for a
+[06:01 - 06:05] list of size n. The number of
+[06:03 - 06:07] comparisons can be used as a gauge for
+[06:05 - 06:09] how efficient the algorithm is. The
+[06:07 - 06:11] fewer the better. We will use the
+[06:09 - 06:13] average worst and best case scenario for
+[06:11 - 06:15] the
+[06:13 - 06:18] average case scenario. It uses nearly
+[06:15 - 06:20] all NIS1 passes and each pass performs a
+[06:18 - 06:23] certain number of comparisons. For
+[06:20 - 06:25] example, the first pass would do n1
+[06:23 - 06:28] comparisons. The total number of
+[06:25 - 06:31] comparisons would be the sum of an ap
+[06:28 - 06:36] n -1 + n -2 + n 3 all the way to 1.
+[06:31 - 06:36] Using math, the answer is n *
+[06:36 - 06:43] n -1 / 2 comparisons. It is quadratic.
+[06:40 - 06:44] Therefore, the time complexity is om.
+[06:43 - 06:47] You don't need to know the math behind
+[06:44 - 06:49] this. Just know that it is quadratic.
+[06:47 - 06:51] For the worst case, the list is arranged
+[06:49 - 06:54] in a reverse manner and swapping occurs
+[06:51 - 06:56] at every step. The constant reading and
+[06:54 - 06:59] writing to memory can slow down the
+[06:56 - 07:01] sorting process. It's still OM squared.
+[06:59 - 07:04] In the best case where
+[07:01 - 07:06] the list is nearly sorted and not much
+[07:04 - 07:07] swapping is needed, an optimized bubble
+[07:06 - 07:10] sort can be efficient. To confirm that
+[07:07 - 07:12] the list is sorted, the algorithm only
+[07:10 - 07:14] needs to go through a few passes down
+[07:12 - 07:16] the entire list only. Because of this,
+[07:14 - 07:18] the order of the growth is proportional
+[07:16 - 07:21] to the length of the list. So the best
+[07:18 - 07:23] case is om for unoptimized bubble sort.
+[07:21 - 07:25] This best case does not apply because it
+[07:23 - 07:27] does the not have any logic to stop
+[07:25 - 07:30] execution when it's already sorted. So
+[07:27 - 07:33] the best case for unoptimized bubble
+[07:30 - 07:35] sort is still om. For the last point, we
+[07:33 - 07:38] ask we'll just touch on the advantages
+[07:35 - 07:41] and disadvantages. For advantages,
+[07:38 - 07:43] bubble sort is memory efficient. You do
+[07:41 - 07:45] not need additional memory space like
+[07:43 - 07:47] creating another size end list to do the
+[07:45 - 07:50] sort. Stable sort can be easily achieved
+[07:47 - 07:52] by not swapping equal elements.
+[07:50 - 07:55] Optimized bubble sort can work well in O
+[07:52 - 08:00] time on nearly sorted data sets. For
+[07:55 - 08:03] disadvantages 2 performs badly on large
+[08:00 - 08:07] data sets. Imagine a list with n=000
+[08:03 - 08:09] elements. We may need n squared
+[08:07 - 08:12] which is 1 million comparisons to sort
+[08:09 - 08:14] it. Currently we have not touched on
+[08:12 - 08:17] other sorting algorithms so it is
+[08:14 - 08:18] difficult to compare but for now just
+[08:17 - 08:21] know that there are other better
+[08:18 - 08:23] performing algorithms. This ends the
+[08:21 - 08:27] video. You can start on the lecture
+[08:23 - 08:27] training questions now.

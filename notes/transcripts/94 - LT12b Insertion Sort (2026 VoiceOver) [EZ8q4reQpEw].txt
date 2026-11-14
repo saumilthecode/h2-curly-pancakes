@@ -1,0 +1,182 @@
+Title: LT12b Insertion Sort (2026 VoiceOver)
+Assessment(s): LT 12b Insertion Sort
+Linked label(s): Insertion Sort
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=EZ8q4reQpEw
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] Okay, today we are going to talk about
+[00:01 - 00:04] insertion sort.
+[00:07 - 00:11] Now, insertion sort is a simple sorting
+[00:09 - 00:13] algorithm that works very much the same
+[00:11 - 00:16] way as the way we played our cards just
+[00:13 - 00:16] now.
+[00:16 - 00:20] We first sort the first two cards, then
+[00:19 - 00:23] place in the third card in the
+[00:20 - 00:23] appropriate position.
+[00:25 - 00:29] Since the first two cards are already
+[00:27 - 00:32] sorted, we try to position the third
+[00:29 - 00:33] card such that all the three cards will
+[00:32 - 00:35] be sorted.
+[00:33 - 00:38] On our left hand, we have all three
+[00:35 - 00:40] sorted cards, then we try to include a
+[00:38 - 00:41] fourth card. And again, we try to
+[00:40 - 00:45] position the fourth card within the
+[00:41 - 00:45] three cards that are already sorted.
+[00:48 - 00:53] And then arrange it in such a way that
+[00:50 - 00:55] all the four cards are now sorted. We
+[00:53 - 00:57] keep on adding the cards until we have
+[00:55 - 00:59] all the cards on our left hand are
+[00:57 - 00:59] sorted.
+[01:00 - 01:04] Now, during an iteration, an element of
+[01:02 - 01:07] the list is inserted into the sorted
+[01:04 - 01:07] portion on
+[01:10 - 01:15] those cards that are carried in our left
+[01:11 - 01:17] hand. Those are the sorted portions.
+[01:15 - 01:19] So, basically, for each iteration, we
+[01:17 - 01:22] have an array of sorted elements on our
+[01:19 - 01:24] left hand.
+[01:22 - 01:26] And then an array of other elements that
+[01:24 - 01:29] are on the right that are yet to be
+[01:26 - 01:29] sorted.
+[01:31 - 01:36] So, we can picture that our left hand is
+[01:33 - 01:39] holding on to the sorted array,
+[01:36 - 01:41] and then those elements
+[01:39 - 01:45] that are yet to be inserted in,
+[01:41 - 01:45] these are the unsorted array.
+[01:49 - 01:54] Now, take for example, we are trying to
+[01:51 - 01:58] arrange this array of numbers 23, 78,
+[01:54 - 02:01] 45, 8, 32, and 8
+[01:58 - 02:04] 6. These are original lists. Now, first
+[02:01 - 02:06] we have the card. We have the number 23
+[02:04 - 02:09] on our left hand.
+[02:06 - 02:09] So, on its own, it is sorted.
+[02:11 - 02:16] And then the next we try to include 78
+[02:13 - 02:16] into it.
+[02:16 - 02:20] So, we put 78 into our left hand, and
+[02:19 - 02:24] then we take a look at the left hand. We
+[02:20 - 02:28] have 23 and 78, and they are sorted
+[02:24 - 02:31] because 23 is smaller than 78.
+[02:28 - 02:31] So, nothing much to be done.
+[02:32 - 02:37] Next, we consider putting in 45, and you
+[02:35 - 02:41] realize that 45 is not sorted when
+[02:37 - 02:41] trying to put into
+[02:45 - 02:50] the first two cards of pen three and 78.
+[02:48 - 02:53] So, what we need to do now is to compare
+[02:50 - 02:55] 45 to 78, and you realize that 45 is
+[02:53 - 02:57] smaller.
+[02:55 - 03:00] And then so, 45 needs to shift to the
+[02:57 - 03:03] left, and then when you compare 45 to
+[03:00 - 03:05] 23, you realize that 45 is bigger.
+[03:03 - 03:09] So, that's when we need to position 45
+[03:05 - 03:09] in between 23 and 78.
+[03:11 - 03:17] Then we have our left hand 23, 45, 78
+[03:14 - 03:17] sorted.
+[03:19 - 03:24] And now we try to include another card,
+[03:21 - 03:27] which is number 8.
+[03:24 - 03:30] Then again, we compare 8 with 78, 8 with
+[03:27 - 03:32] 45, 8 with 23, and we realize that 8 has
+[03:30 - 03:34] to come
+[03:32 - 03:36] right from the beginning. Bear in mind
+[03:34 - 03:37] that each time we can only compare two
+[03:36 - 03:42] cards.
+[03:37 - 03:42] 8 with 78, and then when 8 is positioned
+[03:42 - 03:49] between 45 and 78, 8 and 45, and then
+[03:46 - 03:52] swap between 8 and 45. Now, 23 and 8
+[03:49 - 03:55] swap again.
+[03:52 - 03:57] And become eight in front.
+[03:55 - 04:01] So now on our left hand, we have sorted
+[03:57 - 04:03] cards like 8 23 45 78, and we try to
+[04:01 - 04:06] include 32.
+[04:03 - 04:09] And similarly by comparing two cards at
+[04:06 - 04:11] a time, we realize that 32 has to be in
+[04:09 - 04:11] between
+[04:11 - 04:17] the number 23 and 45 and so on.
+[04:15 - 04:20] The last card that we are looking at is
+[04:17 - 04:22] our 56, and then to include it to the
+[04:20 - 04:24] proper position
+[04:22 - 04:26] so that it will have to come in between
+[04:24 - 04:28] 45 and 78.
+[04:26 - 04:31] And in doing so, we will arrive at a
+[04:28 - 04:36] left hand pool of sorted cards 8 23 32
+[04:31 - 04:36] 45 76 78 after five passing.
+[04:38 - 04:44] Now so to do insertion sort, we need to
+[04:40 - 04:44] have some basic skill.
+[04:47 - 04:52] So basic skill number one is that in a
+[04:50 - 04:54] list that contains only two elements,
+[04:52 - 04:56] that means on our left hand, we only
+[04:54 - 04:59] have two cards, we must be able to
+[04:56 - 05:02] compare them such that we
+[04:59 - 05:03] will swap the smaller card to the left
+[05:02 - 05:05] and then having the larger card on the
+[05:03 - 05:07] right.
+[05:05 - 05:10] So we must be able to do that swap to
+[05:07 - 05:12] have a smaller card on the left and
+[05:10 - 05:15] bigger card on the right. So that is
+[05:12 - 05:17] basic skill number one.
+[05:15 - 05:20] Basic skill number two is now that on
+[05:17 - 05:23] our left hand, we have a group of sorted
+[05:20 - 05:23] elements sorted
+[05:23 - 05:29] cards. It can be a few cards.
+[05:27 - 05:31] And then when we want to include another
+[05:29 - 05:34] element, so we put it right at the last
+[05:31 - 05:34] element of
+[05:35 - 05:39] this sorted card. So you have one whole
+[05:37 - 05:43] list of sorted numbers
+[05:39 - 05:45] and last element is not sorted.
+[05:43 - 05:47] By comparing two elements at a time, do
+[05:45 - 05:50] the necessary swapping until the element
+[05:47 - 05:52] that
+[05:50 - 05:54] we are trying to insert arrives at a
+[05:52 - 05:58] correct position.
+[05:54 - 06:00] So, that is basic skill number two.
+[05:58 - 06:01] And how do we use these two basic
+[06:00 - 06:04] skills?
+[06:01 - 06:06] If we have an unsorted list, then all we
+[06:04 - 06:09] need to do is to first perform basic
+[06:06 - 06:09] skill one, namely
+[06:12 - 06:16] get a first sublist of two elements that
+[06:14 - 06:18] are sorted.
+[06:16 - 06:20] So, we start off with two elements that
+[06:18 - 06:22] are sorted. Then we apply basic skill
+[06:20 - 06:24] number two, so that includes the third
+[06:22 - 06:27] card. So, we will have three elements
+[06:24 - 06:30] sorted, repeat basic skill two again.
+[06:27 - 06:32] That will include the fourth card and so
+[06:30 - 06:34] on and so forth.
+[06:32 - 06:36] So, we keep repeating basic skill two
+[06:34 - 06:39] until the whole list is sorted in an
+[06:36 - 06:39] ascending order.
+[06:40 - 06:44] Okay, this algorithm is very efficient
+[06:42 - 06:47] for small lists, but when the list gets
+[06:44 - 06:47] larger,
+[06:48 - 06:51] it becomes less efficient.
+[06:53 - 06:57] And it does not require additional
+[06:54 - 06:59] space. So, it basically just makes use
+[06:57 - 07:02] of the size
+[06:59 - 07:05] of the array, and then it performs the
+[07:02 - 07:05] insertion sort in place.
+[07:05 - 07:10] So, that's what I mean by it doesn't
+[07:07 - 07:12] require additional space. Okay,
+[07:10 - 07:14] regarding the order of growth. Now, for
+[07:12 - 07:16] every array, let's say you have 10
+[07:14 - 07:16] items,
+[07:18 - 07:23] or n items, let's say n items.
+[07:21 - 07:25] Now, in order to shift one element into
+[07:23 - 07:28] the correct position, you need to
+[07:25 - 07:28] perform checks
+[07:29 - 07:33] on n one items.
+[07:31 - 07:37] So, for every one item that you need to
+[07:33 - 07:39] shift, you need to check n minus one.
+[07:37 - 07:42] So, n minus one multiplied by n, so that
+[07:39 - 07:42] will be order of n squared.
+[07:43 - 07:48] So, that is the order of growth for this
+[07:45 - 07:48] insertion sort.
+[07:49 - 07:53] You may proceed on to do the lecture
+[07:51 - 07:55] training questions making use of the
+[07:53 - 07:57] basic skill one
+[07:55 - 08:00] and basic skill two to do the insertion
+[07:57 - 08:00] sort.

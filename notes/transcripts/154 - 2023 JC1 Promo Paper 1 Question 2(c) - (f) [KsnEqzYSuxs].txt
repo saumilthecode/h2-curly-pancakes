@@ -1,0 +1,256 @@
+Title: 2023 JC1 Promo Paper 1 Question 2(c) - (f)
+Assessment(s): Released assessment teacher walkthrough
+Uploader: David Tan Bang Choon
+YouTube: https://www.youtube.com/watch?v=KsnEqzYSuxs
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88802
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] okay so the second sting algorithm that
+[00:02 - 00:08] tested is the quick s algorithm part C
+[00:06 - 00:12] ask us to State the ideal pivot for this
+[00:08 - 00:14] quick s algorithm so I have two list
+[00:12 - 00:17] here they are the exact same list just
+[00:14 - 00:20] that I chosen different PS okay so let's
+[00:17 - 00:23] look at what happens after the first
+[00:20 - 00:27] partition so for the left side four is
+[00:23 - 00:30] chosen at a pivot so I will put a pivot
+[00:27 - 00:35] equals to okay a list containing four
+[00:30 - 00:37] then I have a left and I have a
+[00:35 - 00:39] right okay
+[00:37 - 00:42] so
+[00:39 - 00:43] uh okay whatever that is smaller than I
+[00:42 - 00:45] going to itate through this list and
+[00:43 - 00:47] whatever that is smaller than four I
+[00:45 - 00:49] will put it into left whatever that's
+[00:47 - 00:51] bigger than four I will put it into the
+[00:49 - 00:56] right okay so let's start four is
+[00:51 - 00:58] already in the P this two is smaller
+[00:56 - 01:01] than four so I'll put it into
+[00:58 - 01:04] left uh five is B bigger than four I put
+[01:01 - 01:07] it to the right one is smaller than four
+[01:04 - 01:10] to the left six is bigger so put to the
+[01:07 - 01:11] right three is smaller so I'll put to
+[01:10 - 01:14] the
+[01:11 - 01:16] left okay so this is what I will get
+[01:14 - 01:19] after the first
+[01:16 - 01:22] partition okay and after this you're
+[01:19 - 01:22] going to do the
+[01:23 - 01:29] recursive okay call of the function of
+[01:27 - 01:32] the quick s function to further separate
+[01:29 - 01:36] all this this into individual elements
+[01:32 - 01:39] after that okay but that is I'm just
+[01:36 - 01:42] showing you what happens after the first
+[01:39 - 01:46] partition okay so let's see uh if I the
+[01:42 - 01:50] same least but uh now I chose six as the
+[01:46 - 01:53] uh P what will happen Okay so P now is a
+[01:50 - 01:55] least containing six I still have the
+[01:53 - 01:58] left I still have the
+[01:55 - 02:00] right okay so whatever is smaller than
+[01:58 - 02:03] six output to left what ever is bigger
+[02:00 - 02:06] than six I'll put to the right okay so
+[02:03 - 02:09] uh itate show this four smaller than six
+[02:06 - 02:12] put it here two smaller than six here
+[02:09 - 02:15] five smaller than six one smaller than
+[02:12 - 02:17] six three smaller than six okay and then
+[02:15 - 02:21] right is
+[02:17 - 02:24] empty okay so what do you
+[02:21 - 02:27] realize okay you will actually see that
+[02:24 - 02:30] uh I have just only removed a value of
+[02:27 - 02:32] six okay the difference between left and
+[02:30 - 02:33] the original this is just I'm missing
+[02:32 - 02:36] one
+[02:33 - 02:39] second right so I will say that this is
+[02:36 - 02:39] not
+[02:40 - 02:46] efficient right whereas this is more
+[02:48 - 02:55] efficient course at least now I have a
+[02:51 - 02:57] left and a right this both of a similar
+[02:55 - 03:00] lengths okay and then after that when I
+[02:57 - 03:03] do a recursive call on it okay I will
+[03:00 - 03:06] require a fewer steps like compared to
+[03:03 - 03:08] if I have this I will need more steps in
+[03:06 - 03:11] the
+[03:08 - 03:15] subsequent okay so how do I choose the
+[03:11 - 03:19] pavot okay the pavot should be somewhere
+[03:15 - 03:24] in around the average right of the
+[03:19 - 03:27] Leist okay so uh the correct word to use
+[03:24 - 03:31] is the
+[03:27 - 03:34] median okay uh if you say
+[03:31 - 03:37] mean okay if you say
+[03:34 - 03:41] average uh it's not acceptable because
+[03:37 - 03:43] mean as you know from math okay if you
+[03:41 - 03:45] say mean right is the average of these
+[03:43 - 03:48] five numbers here if you add out all
+[03:45 - 03:51] these five numbers you divide by
+[03:48 - 03:53] six okay it may give you a number let's
+[03:51 - 03:56] say I uh
+[03:53 - 03:59] 3.5 3.5 when you look at this this
+[03:56 - 04:01] there's no 3.5 here right all these
+[03:59 - 04:03] numbers are not 3.5 so I cannot choose
+[04:01 - 04:06] any of them as the
+[04:03 - 04:11] P okay so this cannot 3.5 cannot be the
+[04:06 - 04:15] PT which means the mean cannot be the
+[04:11 - 04:18] P okay so the correct word to use is the
+[04:15 - 04:22] median of the data
+[04:18 - 04:25] sets okay and why is it so so that the
+[04:22 - 04:27] array can be divided into two roughly
+[04:25 - 04:29] equal sub arrays like okay and you can
+[04:27 - 04:32] minimize the number of recursive calls
+[04:29 - 04:32] after
+[04:32 - 04:37] that okay next you are given this uh
+[04:35 - 04:41] pseudo
+[04:37 - 04:43] code okay it's called the quick sort LSC
+[04:41 - 04:46] which supposed to return a list after
+[04:43 - 04:48] that okay so
+[04:46 - 04:51] uh anyway when you are given a pseudo
+[04:48 - 04:52] code please follow okay the instructions
+[04:51 - 04:55] of the pseudo code you don't go and
+[04:52 - 04:59] follow your own uh what you know from
+[04:55 - 05:01] your notes okay so this is
+[04:59 - 05:04] implementation of a recursive non in
+[05:01 - 05:05] place quick s that operates on the Leist
+[05:04 - 05:10] in ascending
+[05:05 - 05:14] order and the first element is selected
+[05:10 - 05:16] as the people this is very important
+[05:14 - 05:17] okay I going to select the first element
+[05:16 - 05:21] as the
+[05:17 - 05:25] people okay so if L list less than equal
+[05:21 - 05:28] one return LST okay otherwise how do I
+[05:25 - 05:31] select the pavot it must be the first
+[05:28 - 05:34] element and the index of the first
+[05:31 - 05:39] element is
+[05:34 - 05:44] zero okay and what is the pivot
+[05:39 - 05:48] value okay it will be calling
+[05:44 - 05:48] out okay LSD PT
+[05:49 - 05:55] index
+[05:51 - 05:57] okay okay so uh I will be
+[05:55 - 06:01] selecting okay the first
+[05:57 - 06:04] element as the p
+[06:01 - 06:06] okay then next I create three list okay
+[06:04 - 06:08] one left list one midd list and one
+[06:06 - 06:10] right list okay and I'm going to go
+[06:08 - 06:13] through the
+[06:10 - 06:16] iteration okay so I have a four here
+[06:13 - 06:20] right so it will be for
+[06:16 - 06:20] element in
+[06:20 - 06:26] LSC okay I'm going to iterate through
+[06:24 - 06:31] every element in
+[06:26 - 06:35] LST okay note that is wrong uh
+[06:31 - 06:37] uh wrong if you put uh
+[06:35 - 06:40] range
+[06:37 - 06:43] LSD okay because if you put for element
+[06:40 - 06:47] in range what you get will be 0 1 2 3 4
+[06:43 - 06:50] 5 okay but I want the values okay of the
+[06:47 - 06:52] elements is St okay so it should be for
+[06:50 - 06:55] elements in
+[06:52 - 06:58] LST Okay then if my element is smaller
+[06:55 - 07:01] than the prer value I append to the left
+[06:58 - 07:06] if my element is bigger I append it to
+[07:01 - 07:09] the right okay or else means that if
+[07:06 - 07:11] element equals to Pivot value okay
+[07:09 - 07:14] there's only one other
+[07:11 - 07:18] possibility that means it is the pivot
+[07:14 - 07:20] value right so I will put it into the
+[07:18 - 07:23] middle okay which correspond to the
+[07:20 - 07:28] three B over
+[07:23 - 07:30] here okay so this is doing the
+[07:28 - 07:34] partition
+[07:30 - 07:38] all right all right then after that uh
+[07:34 - 07:40] you have to do a recursive call to the
+[07:38 - 07:43] quick s
+[07:40 - 07:46] function okay so uh what does it return
+[07:43 - 07:46] you it will return
+[07:46 - 07:52] you quick sort
+[07:49 - 07:56] left plus
+[07:52 - 07:58] middle okay plus quick
+[07:56 - 08:00] s
+[07:58 - 08:04] right
+[08:00 - 08:09] okay so what does this quick sort left
+[08:04 - 08:12] do okay referring back to our this here
+[08:09 - 08:14] quick sort left will apply quick sort
+[08:12 - 08:17] another time to this
+[08:14 - 08:20] left okay so let's say now I select two
+[08:17 - 08:27] as a pivot okay and then I continue to
+[08:20 - 08:31] do a left pivot right to this new sub
+[08:27 - 08:33] list okay then plus middle middle is our
+[08:31 - 08:37] P plus
+[08:33 - 08:39] this okay then plus the quick s right
+[08:37 - 08:42] which means uh I'm going to do the
+[08:39 - 08:48] recursive call to quick sort this part
+[08:42 - 08:48] again okay so that is my end uh
+[08:49 - 08:54] results okay so this is the answer for
+[08:51 - 08:54] Part
+[08:57 - 09:04] D then for part
+[09:00 - 09:07] e okay State the index of the p and the
+[09:04 - 09:11] arrangement of ID numbers after
+[09:07 - 09:14] partitioning the least once okay so the
+[09:11 - 09:14] first element is selected as the
+[09:15 - 09:23] P okay I'm going to create a left
+[09:20 - 09:26] middle and
+[09:23 - 09:30] right okay so whatever is smaller than
+[09:26 - 09:32] 542 will be put into left which is 3
+[09:30 - 09:35] 91
+[09:32 - 09:38] 215 okay
+[09:35 - 09:42] 482 uh 3
+[09:38 - 09:44] 04 731 is bigger so put into right and
+[09:42 - 09:48] 629 is on the right as
+[09:44 - 09:53] well middle is
+[09:48 - 09:59] 542 okay and then I will return the
+[09:53 - 10:03] left 215 482 304 Plus
+[09:59 - 10:08] middle plus
+[10:03 - 10:08] right okay so this is my final
+[10:08 - 10:19] answer okay so uh and the index okay 0 1
+[10:14 - 10:23] 2 three 4 okay so 542 will be at index
+[10:19 - 10:27] four okay after partitioning the Le ones
+[10:23 - 10:31] okay so this is the answer here and
+[10:27 - 10:34] here okay but if you are using the list
+[10:31 - 10:36] that is on top don't worry you are not
+[10:34 - 10:39] penalized okay the list here is slightly
+[10:36 - 10:41] different okay but if you use this then
+[10:39 - 10:45] you will get
+[10:41 - 10:45] the uh second answer
+[10:46 - 10:51] here okay so yeah uh you can use either
+[10:49 - 10:53] Le course the question is a bit unclear
+[10:51 - 10:56] but you can use either Le and we will
+[10:53 - 11:00] accept uh both the
+[10:56 - 11:03] answers okay then Part F St one
+[11:00 - 11:05] advantage and one disadvantage of using
+[11:03 - 11:10] this nonin place quick s of goal
+[11:05 - 11:12] compared to Bubble s El go okay so uh
+[11:10 - 11:15] quick sort El go
+[11:12 - 11:18] Advantage is the time
+[11:15 - 11:20] efficiency okay generally quick sort is
+[11:18 - 11:23] more efficient than bubble
+[11:20 - 11:26] sort okay
+[11:23 - 11:30] uh the you have to State the order of
+[11:26 - 11:32] grow when answering such questions yeah
+[11:30 - 11:34] okay so if just say that uh quick is
+[11:32 - 11:37] more efficient then you are not awarded
+[11:34 - 11:40] amount because we need you to State down
+[11:37 - 11:43] what exactly is the order of growth okay
+[11:40 - 11:46] for these two uh
+[11:43 - 11:49] algorithms okay so quick s is n log n
+[11:46 - 11:51] okay because every time uh if you choose
+[11:49 - 11:53] the right P now okay after every
+[11:51 - 11:56] partition you will be separating the Le
+[11:53 - 11:59] into half roughly okay so after every
+[11:56 - 12:03] iteration you are having the least
+[11:59 - 12:05] so it's n not n whereas for bubble sort
+[12:03 - 12:08] uh there are two four Loops like okay so
+[12:05 - 12:12] it will be n
+[12:08 - 12:14] squ okay so more efficient you have to
+[12:12 - 12:17] State the order of
+[12:14 - 12:19] growth okay then the
+[12:17 - 12:22] disadvantage yeah we already tell you
+[12:19 - 12:25] that this is a nonin place quick sort
+[12:22 - 12:28] that it that just say mean that okay it
+[12:25 - 12:31] will require extra memory space because
+[12:28 - 12:35] it's not space okay we have to create
+[12:31 - 12:36] extra memory space to store the items
+[12:35 - 12:39] okay whereas for Bible s it does not
+[12:36 - 12:42] require that additional memory
+[12:39 - 12:42] space

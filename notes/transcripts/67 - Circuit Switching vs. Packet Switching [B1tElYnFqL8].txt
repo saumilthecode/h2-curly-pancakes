@@ -1,0 +1,89 @@
+Title: Circuit Switching vs. Packet Switching
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides); C3c Additional Resources
+Linked label(s): Embedded slide video; Circuit Switching vs Packet Switching
+Uploader: Sunny Classroom
+YouTube: https://www.youtube.com/watch?v=B1tElYnFqL8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:08] hello and this is sunny welcome back
+[00:04 - 00:10] today my topic is circuit switching and
+[00:08 - 00:13] packet
+[00:10 - 00:16] [Music]
+[00:13 - 00:19] switching circuit switching is a type of
+[00:16 - 00:22] switching in which a
+[00:19 - 00:26] dedicated Channel or circuit is
+[00:22 - 00:30] established for the duration of
+[00:26 - 00:34] communications a method used by old
+[00:30 - 00:39] uh traditional telephone call um carried
+[00:34 - 00:42] over um the public switched telephone
+[00:39 - 00:47] Network or
+[00:42 - 00:51] pstm also referred to as the plain old
+[00:47 - 00:55] telephone service or parts and let's see
+[00:51 - 00:59] how it works this is what a typical
+[00:55 - 01:03] traditional telephone networks look like
+[00:59 - 01:04] the p sta networks are connected through
+[01:03 - 01:08] Central
+[01:04 - 01:11] offices which act as a telephone
+[01:08 - 01:16] exchanges each serving a certain
+[01:11 - 01:19] geographical area we are person a calls
+[01:16 - 01:22] a person B for example the telephone
+[01:19 - 01:27] network is trying different circuits to
+[01:22 - 01:30] find an available Channel a connection
+[01:27 - 01:31] must be established before they start
+[01:30 - 01:34] their
+[01:31 - 01:37] conversations once the channel is
+[01:34 - 01:41] decided it guarantees the full band
+[01:37 - 01:45] width and remains connected for the
+[01:41 - 01:48] duration of the communication session
+[01:45 - 01:52] until users terminate their
+[01:48 - 01:56] connection when you are making pstn call
+[01:52 - 02:00] or traditional telephone call you are
+[01:56 - 02:02] actually renting the lines that that's
+[02:00 - 02:07] why International Telephone call or
+[02:02 - 02:10] longdistance telephone call was
+[02:07 - 02:11] expensive packet switching uses
+[02:10 - 02:14] different
+[02:11 - 02:17] methods package switching networks are
+[02:14 - 02:20] connected through many routers each
+[02:17 - 02:25] serving different segment of
+[02:20 - 02:27] networks data is broken into packets
+[02:25 - 02:30] before it is
+[02:27 - 02:33] transported in packet switching
+[02:30 - 02:36] packets can travel any path on the
+[02:33 - 02:40] network to their destination because
+[02:36 - 02:42] each packet contains an IP address and
+[02:40 - 02:45] sequencing
+[02:42 - 02:49] information therefore they don't need to
+[02:45 - 02:51] follow each other they can travel any
+[02:49 - 02:55] network path and they can find the
+[02:51 - 02:58] fastest channel available at any instant
+[02:55 - 03:02] they don't need to arrive in
+[02:58 - 03:04] sequence because they can reassemble
+[03:02 - 03:07] together at the
+[03:04 - 03:11] destination the internet is based on a
+[03:07 - 03:15] package switching protocol
+[03:11 - 03:18] tcpip the circuit switched networks and
+[03:15 - 03:22] package switch networks have
+[03:18 - 03:24] traditionally occupied different spaces
+[03:22 - 03:27] within
+[03:24 - 03:31] corporations the circuit switched
+[03:27 - 03:34] networks are ideal for or Communications
+[03:31 - 03:37] which require data to transmitt it in
+[03:34 - 03:40] real time while the package switched
+[03:37 - 03:45] networks are more flexible more
+[03:40 - 03:49] efficient if some amount of a delay is
+[03:45 - 03:54] acceptable the circuit switch networks
+[03:49 - 03:56] are normally used for telephone calls
+[03:54 - 04:00] traditional telephone calls while the
+[03:56 - 04:01] package switch networks normally handle
+[04:00 - 04:05] Digital
+[04:01 - 04:08] Data but nowadays you can get telephone
+[04:05 - 04:11] service over the
+[04:08 - 04:17] Internet this new technology is called
+[04:11 - 04:20] voice over IP or simply viip which is
+[04:17 - 04:25] another story in another video thank you
+[04:20 - 04:25] very much and see you next time
+[04:27 - 04:29] [Music]

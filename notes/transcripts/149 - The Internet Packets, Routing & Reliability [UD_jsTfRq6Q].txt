@@ -1,0 +1,184 @@
+Title: The Internet  Packets, Routing & Reliability
+Assessment(s): Released Coursemology video catalog - The Internet - Packets, Routing and Reliability
+Linked label(s): The Internet - Packets, Routing and Reliability
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=UD_jsTfRq6Q
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24713
+Published course start: 2026-06-24T08:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] seven six five four three two one
+[00:05 - 00:10] [Applause]
+[00:08 - 00:13] hi my name is Lynn root I am a software
+[00:10 - 00:14] engineer here at Spotify and I'll be the
+[00:13 - 00:17] first to admit that I often take for
+[00:14 - 00:19] granted the reliability of the internet
+[00:17 - 00:21] the sheer amount of information zooming
+[00:19 - 00:23] around the internet is astonishing how
+[00:21 - 00:26] is it possible for every piece of data
+[00:23 - 00:28] to be delivered to you reliably
+[00:26 - 00:30] say you want to play a song from Spotify
+[00:28 - 00:32] it seems like your computer connects
+[00:30 - 00:34] directly to Spotify servers and Spotify
+[00:32 - 00:36] sends you a song on a direct dedicated
+[00:34 - 00:38] line but actually that's not how the
+[00:36 - 00:40] internet works
+[00:38 - 00:42] if the internet were made of direct
+[00:40 - 00:44] dedicated connections it would be
+[00:42 - 00:46] impossible to keep things working as
+[00:44 - 00:47] millions of users join especially since
+[00:46 - 00:50] there is no guarantee that every wire
+[00:47 - 00:52] and computer is working all the time
+[00:50 - 00:55] instead data travels on the internet in
+[00:52 - 00:58] a much less direct fashion
+[00:55 - 01:01] many many years ago in the early 1970s
+[00:58 - 01:03] my partner Bob Khan and I began working
+[01:01 - 01:04] on the design of what we now call the
+[01:03 - 01:07] internet
+[01:04 - 01:10] Bob and I had the responsibility and the
+[01:07 - 01:13] opportunity to design the internet's
+[01:10 - 01:16] protocols and its architecture so we
+[01:13 - 01:18] persisted in participating in the
+[01:16 - 01:20] internet's growth and evolution for all
+[01:18 - 01:21] of this time up to and including the
+[01:20 - 01:24] present
+[01:21 - 01:26] the way information gets transferred
+[01:24 - 01:27] from one computer to another is pretty
+[01:26 - 01:29] interesting
+[01:27 - 01:32] it need not follow a fixed path in fact
+[01:29 - 01:33] your path may change in the midst of a
+[01:32 - 01:36] computer to computer conversation
+[01:33 - 01:38] information on the internet goes from
+[01:36 - 01:40] one to computer to another in what we
+[01:38 - 01:42] call a packet of information
+[01:40 - 01:44] and a packet travels one place to
+[01:42 - 01:46] another on the internet a lot like how
+[01:44 - 01:47] you might get from one place to another
+[01:46 - 01:49] in a car
+[01:47 - 01:52] depending on traffic congestion or road
+[01:49 - 01:54] conditions you might choose or be forced
+[01:52 - 01:58] to take a different route to get to the
+[01:54 - 02:00] same place each time you travel
+[01:58 - 02:03] and just as you can transport all sorts
+[02:00 - 02:05] of stuff inside a car many kinds of
+[02:03 - 02:08] digital information can be sent with IP
+[02:05 - 02:10] packets but there are some limits
+[02:08 - 02:12] what if for example you need to move a
+[02:10 - 02:14] space shuttle from where it was built to
+[02:12 - 02:16] where it will be launched the shuttle
+[02:14 - 02:18] won't fit in one truck so it needs to be
+[02:16 - 02:20] broken down into pieces transported
+[02:18 - 02:22] using a fleet of trucks they could all
+[02:20 - 02:24] take different routes and might get to
+[02:22 - 02:26] the destination at different times but
+[02:24 - 02:28] once all the pieces are there you can
+[02:26 - 02:31] reassemble the pieces into the complete
+[02:28 - 02:33] shuttle and it'll be ready for launch
+[02:31 - 02:35] on the internet the details work
+[02:33 - 02:37] similarly if you have a very large image
+[02:35 - 02:41] that you want to send to a friend or
+[02:37 - 02:42] upload to a website that image might be
+[02:41 - 02:45] made up of tens of billions of bits or
+[02:42 - 02:47] ones and zeros too many descend along in
+[02:45 - 02:49] one packet since it's data on a computer
+[02:47 - 02:51] the computer is sending the image can
+[02:49 - 02:52] quickly break it into hundreds or even
+[02:51 - 02:54] thousands of smaller parts called
+[02:52 - 02:57] packets
+[02:54 - 02:58] unlike cars or trucks these packets
+[02:57 - 03:01] don't have drivers and they don't choose
+[02:58 - 03:02] their route each packet has the internet
+[03:01 - 03:03] address of where it came from and where
+[03:02 - 03:05] it's going
+[03:03 - 03:08] special computers on the internet called
+[03:05 - 03:09] routers act like traffic managers to
+[03:08 - 03:11] keep the packets moving through the
+[03:09 - 03:13] networks smoothly
+[03:11 - 03:15] if one route is congested individual
+[03:13 - 03:17] packets May travel different routes
+[03:15 - 03:19] through the internet and they may arrive
+[03:17 - 03:23] at the destination at slightly different
+[03:19 - 03:25] times or even out of order
+[03:23 - 03:26] so let's talk about how this works as
+[03:25 - 03:29] part of the Internet Protocol every
+[03:26 - 03:30] router keeps track of multiple paths for
+[03:29 - 03:32] sending packets and it chooses the
+[03:30 - 03:34] cheapest available path for each piece
+[03:32 - 03:36] of data based on destination IP address
+[03:34 - 03:39] for the packet
+[03:36 - 03:41] cheapest in this case doesn't mean cost
+[03:39 - 03:43] but time and non-technical factors such
+[03:41 - 03:44] as politics and relationships between
+[03:43 - 03:46] companies
+[03:44 - 03:48] often the best route for data to travel
+[03:46 - 03:51] isn't necessarily the most direct
+[03:48 - 03:53] having options for paths makes the
+[03:51 - 03:55] network fault tolerant which means the
+[03:53 - 03:56] network can keep sending packets even if
+[03:55 - 03:59] something goes horribly horribly wrong
+[03:56 - 04:03] this is the basis for a key principle of
+[03:59 - 04:03] the internet reliability
+[04:03 - 04:08] now what if you want to request some
+[04:05 - 04:10] data and not everything is delivered say
+[04:08 - 04:12] you want to listen to a song how can you
+[04:10 - 04:14] be 100 sure all the data will be
+[04:12 - 04:17] delivered so the song plays perfectly
+[04:14 - 04:19] introducing your new best friend TCP
+[04:17 - 04:22] transmission control protocol
+[04:19 - 04:24] TCP manages the sending and receiving of
+[04:22 - 04:27] all your data as packets think of it
+[04:24 - 04:28] like a guaranteed mail service when you
+[04:27 - 04:32] request a song on your device Spotify
+[04:28 - 04:35] sends a song broken up into many packets
+[04:32 - 04:37] when your packets arrive TCP does a full
+[04:35 - 04:39] inventory and sends back acknowledgments
+[04:37 - 04:42] of each packet received
+[04:39 - 04:43] if all packets are there TCP signs for
+[04:42 - 04:45] your delivery and you're done
+[04:43 - 04:48] [Music]
+[04:45 - 04:50] thank you
+[04:48 - 04:50] foreign
+[04:51 - 04:55] some packets are missing it won't sign
+[04:53 - 04:57] otherwise your song wouldn't sound as
+[04:55 - 04:58] good or portions of the song could be
+[04:57 - 05:01] missing
+[04:58 - 05:03] for each missing or incomplete packet
+[05:01 - 05:05] Spotify will resend them once TCP
+[05:03 - 05:08] verifies the delivery of many packets
+[05:05 - 05:10] for that one song request your song will
+[05:08 - 05:10] start to play
+[05:11 - 05:15] what's great about the TCP and router
+[05:13 - 05:17] systems is they're scalable they can
+[05:15 - 05:19] work with eight devices or 8 billion
+[05:17 - 05:21] devices in fact because of these
+[05:19 - 05:23] principles of fault tolerance and
+[05:21 - 05:25] redundancy the more routers we add the
+[05:23 - 05:27] more reliable the internet becomes
+[05:25 - 05:29] what's also great is we can grow and
+[05:27 - 05:31] scale the internet without interrupting
+[05:29 - 05:33] service for anybody using it
+[05:31 - 05:35] the internet is made of hundreds of
+[05:33 - 05:37] thousands of networks and billions of
+[05:35 - 05:38] computers and devices connected
+[05:37 - 05:40] physically
+[05:38 - 05:42] these different systems that make up the
+[05:40 - 05:44] internet connect to each other
+[05:42 - 05:46] communicate with each other and work
+[05:44 - 05:49] together because of agreed upon
+[05:46 - 05:50] standards for how data is sent around on
+[05:49 - 05:53] the internet
+[05:50 - 05:55] Computing devices or routers along the
+[05:53 - 05:57] internet help all the packets make their
+[05:55 - 06:01] way to the destination where they're
+[05:57 - 06:03] reassembled if necessary in order
+[06:01 - 06:06] this happens billions of times a day
+[06:03 - 06:09] whether you and others are sending an
+[06:06 - 06:12] email visiting a web page doing a video
+[06:09 - 06:14] chat using a mobile app or when sensors
+[06:12 - 06:16] or devices on the internet talk to each
+[06:14 - 06:16] other

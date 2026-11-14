@@ -1,0 +1,90 @@
+Title: 2023 JC1 Promo Paper 1 Question 1
+Assessment(s): Released assessment teacher walkthrough
+Uploader: David Tan Bang Choon
+YouTube: https://www.youtube.com/watch?v=BJhYLBqJ-Ew
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88802
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:01 - 00:05] okay so this is Theory question one
+[00:03 - 00:07] paper one question one so we have a data
+[00:05 - 00:09] R question so we start with by telling
+[00:07 - 00:11] you about all network devices have a
+[00:09 - 00:12] unique media Access Control address
+[00:11 - 00:15] encoded into it Hardware it consists of
+[00:12 - 00:18] 12 exm digits example shown below so you
+[00:15 - 00:22] should cluster them in six uh six pairs
+[00:18 - 00:24] six pairs of six pairs of Beats six pair
+[00:22 - 00:26] hexar Beats okay first three bites of
+[00:24 - 00:28] the main address is known as the oi
+[00:26 - 00:29] which is used to identify the device
+[00:28 - 00:31] manufacturer so it means let's say for
+[00:29 - 00:33] example a brand like uh let's say apple
+[00:31 - 00:36] right all the devices made by Apple at
+[00:33 - 00:37] the first first same first three bites
+[00:36 - 00:39] okay then the remaining bites of the
+[00:37 - 00:42] address are unique and us to identify
+[00:39 - 00:44] each device okay so okay first one state
+[00:42 - 00:46] the total number of bites used for a MAC
+[00:44 - 00:49] address so remember that every hexar be
+[00:46 - 00:51] right is equivalent to four binary bites
+[00:49 - 00:53] right uh four binary beats okay so you
+[00:51 - 00:56] have 12 hexa beats there that will
+[00:53 - 01:00] convert to 12 * 4 beats so this is 48
+[00:56 - 01:03] binary bats okay so remember one b
+[01:00 - 01:05] contains eight bits okay so 48 bits
+[01:03 - 01:07] divide by eight this will give you six
+[01:05 - 01:10] spikes right so this question is not
+[01:07 - 01:11] very well done because L you not uh you
+[01:10 - 01:15] will confus between bites and beats okay
+[01:11 - 01:17] so do take not of this issue okay then
+[01:15 - 01:19] next convert the oui portion of the MAC
+[01:17 - 01:22] address into a binary number okay so
+[01:19 - 01:25] this question I'm testing whether you
+[01:22 - 01:27] know how to pick up you know how to
+[01:25 - 01:30] identify the first three bites know all
+[01:27 - 01:31] right so because this one remember this
+[01:30 - 01:33] home address is six bites right so that
+[01:31 - 01:36] means basically the first three bites is
+[01:33 - 01:38] over here the first three sets Okay then
+[01:36 - 01:42] follow then this is the next three bites
+[01:38 - 01:46] okay so you need to convert 1 f83 98 1
+[01:42 - 01:48] f83 98 into into B number so you look on
+[01:46 - 01:50] the right hand side now so if I take one
+[01:48 - 01:53] and F and a and three and 8 so one is
+[01:50 - 01:57] just one f is basically 15 so 15 cover
+[01:53 - 02:01] to Binary just 1111 a is 10 so 1 Z 1 0
+[01:57 - 02:04] three is three z0 1 1 9 is one 1 eight
+[02:01 - 02:06] is 1,00 1 z z okay so it's good for you
+[02:04 - 02:10] to just write it in terms of four bits
+[02:06 - 02:14] four bits four bits all right okay then
+[02:10 - 02:15] next so um next you have you asked to
+[02:14 - 02:17] calculate the maximum number of unique
+[02:15 - 02:20] back addresses which can be generated
+[02:17 - 02:24] for each oi so this one I just okay each
+[02:20 - 02:26] oi remember each oui is the first six
+[02:24 - 02:29] bytes all right sorry first three bytes
+[02:26 - 02:31] here all right then the back here you
+[02:29 - 02:34] have this uh the numbers that can be
+[02:31 - 02:36] generated for one oui so basically there
+[02:34 - 02:41] are three bytes here which will give you
+[02:36 - 02:44] 24 bits so because each B is eight bits
+[02:41 - 02:46] so each B is 8 Bits so you have total 24
+[02:44 - 02:51] bits so basically just two power 24 so
+[02:46 - 02:53] 1677 216 right so yeah uh if you had
+[02:51 - 02:55] made mistake in the previous part they
+[02:53 - 02:57] you could not you could not identify the
+[02:55 - 02:59] first six bites I I gave credit for this
+[02:57 - 03:02] year first three bites S I need to
+[02:59 - 03:05] change this one right here those three B
+[03:02 - 03:07] okay so they um so this this one is
+[03:05 - 03:09] quite barely done because I think your
+[03:07 - 03:10] basically they revise this part very
+[03:09 - 03:12] well so remember all these are quite
+[03:10 - 03:14] basic knowledge you need to know how to
+[03:12 - 03:17] do this cor right and this is end for
+[03:14 - 03:17] question one

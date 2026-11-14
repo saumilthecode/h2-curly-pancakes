@@ -1,0 +1,514 @@
+Title: Hashing Part 3 Updated 2022
+Assessment(s): Released Coursemology video catalog - LT10d About Hashing (Part 3)
+Linked label(s): LT10d About Hashing (Part 3)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=43Qod8a5xQU
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24852
+Published course start: 2026-08-27T08:15:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:01 - 00:05] uh welcome back
+[00:02 - 00:08] uh in this part three uh we will be
+[00:05 - 00:11] talking about collision resolution uh
+[00:08 - 00:15] we'll be going through two methods of
+[00:11 - 00:15] these are collision resolutions
+[00:16 - 00:22] okay um what is a collision a collision
+[00:20 - 00:25] occurs when two or more elements are
+[00:22 - 00:26] hashed to the same value
+[00:25 - 00:28] okay
+[00:26 - 00:29] let's consider the
+[00:28 - 00:30] data
+[00:29 - 00:33] or
+[00:30 - 00:36] we have five
+[00:33 - 00:36] strings as data
+[00:36 - 00:42] and same we have created a
+[00:40 - 00:46] empty hash table we have created empty
+[00:42 - 00:48] hash table and these are all the data's
+[00:46 - 00:50] that we want to store into the hash
+[00:48 - 00:51] table
+[00:50 - 00:52] we work out the hash value of each one
+[00:51 - 00:55] of them
+[00:52 - 00:57] and then modulo 5
+[00:55 - 00:58] and we work out the remainder now you
+[00:57 - 01:00] take a look here
+[00:58 - 01:02] right immediately you realize that there
+[01:00 - 01:05] are two elements
+[01:02 - 01:07] having the same remainder
+[01:05 - 01:10] okay so what will happen when we try to
+[01:07 - 01:14] populate the hash table
+[01:10 - 01:17] now taking the first data
+[01:14 - 01:20] the first data we work out the
+[01:17 - 01:22] remainder to be 2 and we use this hash
+[01:20 - 01:25] value 2 to be the index position
+[01:22 - 01:27] we put in the data
+[01:25 - 01:29] taking the second data
+[01:27 - 01:32] we work out the remainder
+[01:29 - 01:35] 3 the hash value 3 and we use it as an
+[01:32 - 01:37] index position we populate 3.
+[01:35 - 01:41] same thing the third data
+[01:37 - 01:42] we populate the index position four
+[01:41 - 01:45] and then the
+[01:42 - 01:47] fourth data we populate the index
+[01:45 - 01:51] position zero
+[01:47 - 01:54] now here comes the last data
+[01:51 - 01:58] okay uh when you work out the hash value
+[01:54 - 02:00] it is 3 you go to the index position 3
+[01:58 - 02:03] you realize that it is occupied
+[02:00 - 02:04] therefore there is a collision occurring
+[02:03 - 02:08] here
+[02:04 - 02:10] so you cannot just put in the data here
+[02:08 - 02:12] because if we put in the data it will
+[02:10 - 02:14] replace the existing
+[02:12 - 02:17] the earlier data
+[02:14 - 02:19] so there must be a a
+[02:17 - 02:21] resolution here you must use a method a
+[02:19 - 02:23] way to
+[02:21 - 02:25] resolve this issue
+[02:23 - 02:28] okay
+[02:25 - 02:30] so the first resolution method we call
+[02:28 - 02:32] this the separate chain
+[02:30 - 02:34] now basically what we do is that we
+[02:32 - 02:38] create a separate list
+[02:34 - 02:38] at that particular index position
+[02:38 - 02:42] so for every element in a given list we
+[02:41 - 02:44] work out the uh
+[02:42 - 02:46] hash value
+[02:44 - 02:49] right we fill in the uh into the hash
+[02:46 - 02:51] table if it is empty
+[02:49 - 02:54] if it is not empty
+[02:51 - 02:58] and there is a list
+[02:54 - 03:01] then add the element into the list
+[02:58 - 03:03] okay if it's not empty and there is a
+[03:01 - 03:06] list already existing there
+[03:03 - 03:06] add the element into the list
+[03:07 - 03:12] the other possible scenario is it is not
+[03:11 - 03:15] empty
+[03:12 - 03:16] and there is no list so if there is no
+[03:15 - 03:20] list it is not empty what do you have
+[03:16 - 03:21] there you have one single
+[03:20 - 03:24] element
+[03:21 - 03:27] a single data that stock index position
+[03:24 - 03:28] so what you do is that you replace it
+[03:27 - 03:31] with a list
+[03:28 - 03:34] take the existing data and put into the
+[03:31 - 03:37] list the new data put into the list so
+[03:34 - 03:40] now you have two elements in that list
+[03:37 - 03:43] at that position so in the table form
+[03:40 - 03:46] this is how it will look like
+[03:43 - 03:47] existing data which is the dbhc
+[03:46 - 03:49] right
+[03:47 - 03:52] you find that there's a already existing
+[03:49 - 03:55] data there you create a list put the
+[03:52 - 03:58] existing data put in the new data so now
+[03:55 - 04:02] you have two elements two data and
+[03:58 - 04:04] occupying the same index position
+[04:02 - 04:04] okay
+[04:05 - 04:09] so uh this is the
+[04:07 - 04:11] collision resolution one using a
+[04:09 - 04:14] separate chain
+[04:11 - 04:15] okay method okay the algorithm
+[04:14 - 04:19] is
+[04:15 - 04:19] outlined for you here
+[04:23 - 04:27] now this uh
+[04:25 - 04:28] function the code for the function hash
+[04:27 - 04:31] table
+[04:28 - 04:34] is what have been given to you in the
+[04:31 - 04:36] previous part part two so you initialize
+[04:34 - 04:38] the table
+[04:36 - 04:39] uh go through every single element in
+[04:38 - 04:42] the sequence
+[04:39 - 04:45] uh work out the hash value if
+[04:42 - 04:46] at the index position is empty you fill
+[04:45 - 04:49] in the value
+[04:46 - 04:51] now if it's not empty
+[04:49 - 04:53] which means that it is occupied now you
+[04:51 - 04:55] are supposed to execute
+[04:53 - 04:58] the
+[04:55 - 05:00] separate chain uh method okay as your
+[04:58 - 05:02] these are collision resolutions so
+[05:00 - 05:03] you're supposed to write down the code
+[05:02 - 05:04] here
+[05:03 - 05:07] uh
+[05:04 - 05:10] what happened if at that particular
+[05:07 - 05:13] position it is not empty okay what are
+[05:10 - 05:14] you going to do over here okay so you
+[05:13 - 05:17] can
+[05:14 - 05:17] write out the code
+[05:17 - 05:20] and then using the code
+[05:19 - 05:21] uh
+[05:20 - 05:23] test it
+[05:21 - 05:26] okay
+[05:23 - 05:30] press it against uh the example that we
+[05:26 - 05:33] have and you see whether uh you have two
+[05:30 - 05:36] element that is stored as a list into
+[05:33 - 05:38] the index position three okay you may
+[05:36 - 05:41] create other test cases for yourself to
+[05:38 - 05:43] check that your this algorithm is
+[05:41 - 05:43] correct
+[05:44 - 05:47] okay
+[05:45 - 05:50] next we want to talk about searching an
+[05:47 - 05:51] item in a hash table
+[05:50 - 05:53] which you have created using this
+[05:51 - 05:54] separate chain method
+[05:53 - 05:56] okay
+[05:54 - 06:00] now
+[05:56 - 06:02] first uh you find the hash value of the
+[06:00 - 06:04] item that you want to search
+[06:02 - 06:06] okay
+[06:04 - 06:08] and then
+[06:06 - 06:10] you use that hash value as your index
+[06:08 - 06:12] position
+[06:10 - 06:16] okay and then you go to that particular
+[06:12 - 06:18] index position now if it is empty
+[06:16 - 06:20] then it simply tells you that this
+[06:18 - 06:21] particular item doesn't exist in the
+[06:20 - 06:23] table
+[06:21 - 06:23] okay
+[06:24 - 06:28] if it ex it exists if let's say that is
+[06:26 - 06:30] what you'll find so you let's say you
+[06:28 - 06:33] work out the index position to be zero
+[06:30 - 06:35] and what you want to find is abcd and
+[06:33 - 06:36] it's really abcd then well you have
+[06:35 - 06:38] found it
+[06:36 - 06:40] at the correct position okay
+[06:38 - 06:42] it exists
+[06:40 - 06:43] if the hash table
+[06:42 - 06:44] at index
+[06:43 - 06:46] i
+[06:44 - 06:47] is not empty and it is what you want to
+[06:46 - 06:50] find
+[06:47 - 06:52] okay now the problem is when you go to
+[06:50 - 06:54] that index position
+[06:52 - 06:55] all right
+[06:54 - 06:58] and it's not empty and it's not what you
+[06:55 - 07:00] find let's say you want to find uh
+[06:58 - 07:02] something else okay and then you realize
+[07:00 - 07:05] it's c d a b
+[07:02 - 07:07] or maybe you want to find a d c b a
+[07:05 - 07:09] right and then you look at it it's not
+[07:07 - 07:10] exactly what you find then of course it
+[07:09 - 07:13] doesn't exist
+[07:10 - 07:16] okay now uh for the
+[07:13 - 07:19] hash table that uses the separate chain
+[07:16 - 07:21] one concern is that what happened if you
+[07:19 - 07:24] try to look at index position three and
+[07:21 - 07:26] you found that it is a list
+[07:24 - 07:28] okay now you are not sure whether the
+[07:26 - 07:31] element that you want to find is it in
+[07:28 - 07:34] the list or not so what you do you can
+[07:31 - 07:36] perform a linear search in the list okay
+[07:34 - 07:39] do a linear search into a list that
+[07:36 - 07:40] means you search through every single
+[07:39 - 07:42] element
+[07:40 - 07:45] in the list okay i'm going to give you a
+[07:42 - 07:46] hint here now you can make use of this
+[07:45 - 07:48] in operation
+[07:46 - 07:50] right just
+[07:48 - 07:52] check for this item
+[07:50 - 07:54] in the table
+[07:52 - 07:58] at that position now this operation will
+[07:54 - 08:00] return you a boolean true or false now
+[07:58 - 08:03] this is actually a linear search
+[08:00 - 08:06] operation uh for python to he will
+[08:03 - 08:07] compare
+[08:06 - 08:12] the uh
+[08:07 - 08:13] the item uh uh to every single element
+[08:12 - 08:16] okay
+[08:13 - 08:18] inside the list at this index position
+[08:16 - 08:20] okay so this is a linear search so this
+[08:18 - 08:23] is an algorithm that you can write that
+[08:20 - 08:24] you can use to write the code for the
+[08:23 - 08:27] search
+[08:24 - 08:27] okay
+[08:29 - 08:35] right so uh same thing you have the
+[08:32 - 08:38] define a function search then the table
+[08:35 - 08:41] now what is the table the table is the
+[08:38 - 08:44] uh all the data that is being used to
+[08:41 - 08:45] populate your hash table
+[08:44 - 08:47] okay
+[08:45 - 08:49] and then you write the functions the
+[08:47 - 08:52] search function after you have written
+[08:49 - 08:55] the search function use it to check for
+[08:52 - 08:56] the following cases check whether c b c
+[08:55 - 08:59] d a b
+[08:56 - 09:02] that is your index two okay uh to check
+[08:59 - 09:05] whether is it uh uh existing
+[09:02 - 09:06] uh adcb you realize that that is for
+[09:05 - 09:07] this case
+[09:06 - 09:10] okay
+[09:07 - 09:13] and then uh you have db
+[09:10 - 09:14] ac that is within dbac is within the
+[09:13 - 09:20] list itself
+[09:14 - 09:21] bcda again uh it is uh bd bcda is does
+[09:20 - 09:23] not exist
+[09:21 - 09:24] in the uh
+[09:23 - 09:25] in the
+[09:24 - 09:28] hash table
+[09:25 - 09:31] okay so you write down the code using
+[09:28 - 09:33] the uh algorithm that outlined on the
+[09:31 - 09:33] previous slide
+[09:34 - 09:38] next we want to talk about the
+[09:37 - 09:40] second method for the collision
+[09:38 - 09:43] resolution
+[09:40 - 09:45] this is what we call closed hashing
+[09:43 - 09:47] now basically what happened is that
+[09:45 - 09:51] in our earlier example
+[09:47 - 09:53] when we try to fill in the next
+[09:51 - 09:55] next data and the hash value happen to
+[09:53 - 09:57] be 3
+[09:55 - 09:58] and you look at index position 3 it is
+[09:57 - 10:01] occupied
+[09:58 - 10:05] okay so what you do is that from the
+[10:01 - 10:06] index position 3 you look at the next
+[10:05 - 10:08] position
+[10:06 - 10:10] starting from index position 3 you look
+[10:08 - 10:13] for the next position to see whether is
+[10:10 - 10:17] it empty or not sorry index position 4
+[10:13 - 10:19] is not empty then you reach the end of
+[10:17 - 10:20] the index on the hash table you have
+[10:19 - 10:22] already reached the end of the hash
+[10:20 - 10:24] table so what you do you start from
+[10:22 - 10:26] beginning
+[10:24 - 10:28] of the hash table and take a look now
+[10:26 - 10:31] from the beginning of the hash table it
+[10:28 - 10:32] is not empty so what you do you look for
+[10:31 - 10:35] the next
+[10:32 - 10:37] position and the next position happen to
+[10:35 - 10:40] be empty so what you do
+[10:37 - 10:43] you populate it with your data
+[10:40 - 10:44] so this method is called the open
+[10:43 - 10:46] hashing
+[10:44 - 10:49] basically starting from your
+[10:46 - 10:52] assigned location in this case our
+[10:49 - 10:53] assigned location is at index position
+[10:52 - 10:55] 3.
+[10:53 - 10:59] look for index position 4 hits the end
+[10:55 - 10:59] go from the next position 0 go to
+[10:59 - 11:03] and 1
+[10:59 - 11:05] on so forth okay now
+[11:03 - 11:07] uh the algorithm goes this way starting
+[11:05 - 11:10] from index position three check that the
+[11:07 - 11:12] table at index four
+[11:10 - 11:15] when it reaches the end start from index
+[11:12 - 11:18] position zero one and two after checking
+[11:15 - 11:21] to stop because basically you start from
+[11:18 - 11:23] three and if you return back to checking
+[11:21 - 11:26] up to two you have gone through the
+[11:23 - 11:29] whole table once
+[11:26 - 11:32] okay and if there is no empty location
+[11:29 - 11:34] then there is no empty location no need
+[11:32 - 11:34] to search further
+[11:34 - 11:37] okay
+[11:34 - 11:38] but because we have created the hash
+[11:37 - 11:41] table
+[11:38 - 11:43] according to the number of data
+[11:41 - 11:45] you have five data you have a hash table
+[11:43 - 11:48] of size five
+[11:45 - 11:50] sure there must be an empty location
+[11:48 - 11:52] okay
+[11:50 - 11:55] so all you need to do is search through
+[11:52 - 11:58] the hash table once you will find an
+[11:55 - 12:00] empty location
+[11:58 - 12:02] so what is the core skill required the
+[12:00 - 12:05] core skill required is to iterate
+[12:02 - 12:06] through every single element
+[12:05 - 12:08] in the list
+[12:06 - 12:11] once
+[12:08 - 12:12] okay uh when we specify a starting
+[12:11 - 12:15] position
+[12:12 - 12:19] okay so if you are able to write a code
+[12:15 - 12:22] that starts from any index position
+[12:19 - 12:24] goes all the way to the end
+[12:22 - 12:26] when you hit to the end of the list
+[12:24 - 12:28] go back to the front
+[12:26 - 12:29] and then
+[12:28 - 12:30] iterate through
+[12:29 - 12:31] okay
+[12:30 - 12:33] so
+[12:31 - 12:36] this is the core skill uh i'm going to
+[12:33 - 12:36] require you to write the function called
+[12:36 - 12:39] browse
+[12:36 - 12:41] browse through a particular sequence
+[12:39 - 12:42] uh starting from a position
+[12:41 - 12:45] okay
+[12:42 - 12:47] and basically this uh this uh function
+[12:45 - 12:48] doesn't give any output so you just
+[12:47 - 12:49] return none
+[12:48 - 12:52] so uh
+[12:49 - 12:56] let's say you have a list and the list
+[12:52 - 12:59] contain a e i o u the vowel
+[12:56 - 13:01] if i were to browse the least starting
+[12:59 - 13:03] from index position two
+[13:01 - 13:05] so what will happen
+[13:03 - 13:09] a is the index position zero
+[13:05 - 13:10] what is a position 1 and 2 starting from
+[13:09 - 13:14] i starting from i
+[13:10 - 13:15] okay so it will go from i
+[13:14 - 13:17] o
+[13:15 - 13:18] u it hits the
+[13:17 - 13:21] last
+[13:18 - 13:22] position and then it must go back to the
+[13:21 - 13:25] front
+[13:22 - 13:28] okay the first element which is a
+[13:25 - 13:31] and e and stop
+[13:28 - 13:33] so you're supposed to write the code for
+[13:31 - 13:36] this function that is able to allow you
+[13:33 - 13:39] to start from the position two
+[13:36 - 13:41] go to three go to four when you hit the
+[13:39 - 13:42] end start from zero
+[13:41 - 13:44] one
+[13:42 - 13:46] stop
+[13:44 - 13:49] that is the core skill
+[13:46 - 13:51] okay so you must be able to write this
+[13:49 - 13:54] code
+[13:51 - 13:56] so that you can use this for your open
+[13:54 - 13:58] hashing
+[13:56 - 13:58] okay
+[13:58 - 14:02] now assume that you are able to write
+[14:00 - 14:05] this i i think you are capable of doing
+[14:02 - 14:07] that submit that to
+[14:05 - 14:10] the cosmology questions okay one of the
+[14:07 - 14:13] questions requires you to write the
+[14:10 - 14:13] browse function
+[14:17 - 14:20] okay let's recap
+[14:21 - 14:24] now um
+[14:22 - 14:29] to populate a
+[14:24 - 14:31] a hash table using the closed hatching
+[14:29 - 14:35] okay you go through every element in a
+[14:31 - 14:37] given list work out the hash value
+[14:35 - 14:39] fill in the uh
+[14:37 - 14:44] the value into the hash table at the
+[14:39 - 14:46] position x up position i if it is empty
+[14:44 - 14:50] if it is not empty
+[14:46 - 14:53] iterate through the hash table
+[14:50 - 14:55] to find the next nearest empty position
+[14:53 - 14:58] when it reaches the end of the table
+[14:55 - 15:00] start finding from the beginning of the
+[14:58 - 15:02] table
+[15:00 - 15:06] okay so this is the algorithm
+[15:02 - 15:08] that you can use to write your code for
+[15:06 - 15:10] the uh
+[15:08 - 15:13] hash table okay
+[15:10 - 15:13] to populate the hash table
+[15:21 - 15:25] i have a question for you will there be
+[15:23 - 15:26] a situation where
+[15:25 - 15:27] you know
+[15:26 - 15:30] you uh
+[15:27 - 15:32] start from your assigned location go to
+[15:30 - 15:33] next it's not empty go to the next one
+[15:32 - 15:35] it's not empty go to the next one now
+[15:33 - 15:37] empty heat to the end go to the front
+[15:35 - 15:39] and search the next center and you just
+[15:37 - 15:41] go on and on and on
+[15:39 - 15:44] and result in an infinite loop
+[15:41 - 15:46] and still can't find an empty position
+[15:44 - 15:50] so i leave this question for you to
+[15:46 - 15:50] answer will there be such a situation
+[15:53 - 16:00] okay so what is required of you um
+[15:56 - 16:02] you are required to write the hash table
+[16:00 - 16:03] functions now this is very much the same
+[16:02 - 16:06] as
+[16:03 - 16:08] what we have used in our part
+[16:06 - 16:10] two uh
+[16:08 - 16:11] you basically
+[16:10 - 16:14] go through every single element in the
+[16:11 - 16:16] sequence itself work out the hash value
+[16:14 - 16:18] uh look at the table at the index
+[16:16 - 16:21] position if it is empty fill in the
+[16:18 - 16:22] value else
+[16:21 - 16:24] if it's not empty
+[16:22 - 16:26] okay what are you going to do so you're
+[16:24 - 16:29] going to apply this
+[16:26 - 16:31] collision resolution number two
+[16:29 - 16:33] open hashing so you are required to
+[16:31 - 16:35] write the code over here
+[16:33 - 16:38] uh to fill in the elements so that it's
+[16:35 - 16:42] basically uh searching for
+[16:38 - 16:44] next nearest next uh free empty uh
+[16:42 - 16:47] locations to fill in the data and after
+[16:44 - 16:50] you have done that return the table that
+[16:47 - 16:52] will be the field uh uh
+[16:50 - 16:54] hash table
+[16:52 - 16:57] okay so that's what tasks are left for
+[16:54 - 16:57] you to do
+[16:57 - 17:02] okay next we'll be talking about uh
+[16:59 - 17:06] searching a hash table
+[17:02 - 17:08] that is uh populated with uh using this
+[17:06 - 17:11] open hash
+[17:08 - 17:11] method
+[17:11 - 17:17] now you are required to write the
+[17:14 - 17:19] function for search searching the table
+[17:17 - 17:20] for a particular item
+[17:19 - 17:22] okay
+[17:20 - 17:24] now uh the table is actually your data
+[17:22 - 17:25] table which has been populated with the
+[17:24 - 17:28] data
+[17:25 - 17:30] now first you work out the hash value of
+[17:28 - 17:32] the item
+[17:30 - 17:34] right then you check
+[17:32 - 17:35] at the table at this particular index
+[17:34 - 17:38] position
+[17:35 - 17:40] if it is empty
+[17:38 - 17:42] then of course the element that you want
+[17:40 - 17:46] to find is not in the table
+[17:42 - 17:48] uh if the table at the index position is
+[17:46 - 17:50] the element the item that you want to
+[17:48 - 17:52] find then you return true
+[17:50 - 17:54] else
+[17:52 - 17:56] okay else what do you do
+[17:54 - 17:57] now what happened is that if you are
+[17:56 - 17:58] looking for
+[17:57 - 17:59] c
+[17:58 - 18:02] a d
+[17:59 - 18:04] c sorry b a d c
+[18:02 - 18:08] you will automatically come to index
+[18:04 - 18:11] position 3 and you look for it
+[18:08 - 18:11] right now when you look for it it is not
+[18:11 - 18:15] there
+[18:11 - 18:19] now when it is not there it doesn't mean
+[18:15 - 18:22] that badc doesn't exist
+[18:19 - 18:24] it may exist but it's being stored at
+[18:22 - 18:25] another position
+[18:24 - 18:28] so what do you need to do
+[18:25 - 18:29] you need to go to the next element
+[18:28 - 18:32] check
+[18:29 - 18:33] whether is that what you want to find
+[18:32 - 18:34] if it's not
+[18:33 - 18:36] go to the front
+[18:34 - 18:37] check again
+[18:36 - 18:38] if it's not
+[18:37 - 18:41] check the next one
+[18:38 - 18:45] if you follow it good you have found it
+[18:41 - 18:48] okay but if it's not again then you will
+[18:45 - 18:50] go to the next element
+[18:48 - 18:53] but you will understand now that if you
+[18:50 - 18:54] go on and on and on it will end up as an
+[18:53 - 18:56] infinite loop
+[18:54 - 18:58] so all you need to do is that if you
+[18:56 - 19:01] start from position three
+[18:58 - 19:02] all you need to do is to go to four
+[19:01 - 19:04] zero
+[19:02 - 19:04] one
+[19:04 - 19:07] two
+[19:04 - 19:12] if you have completed one row of the
+[19:07 - 19:16] data table stop searching and declare
+[19:12 - 19:17] that this item is not found in the data
+[19:16 - 19:19] table
+[19:17 - 19:21] okay i hope you understand that so you
+[19:19 - 19:23] need to implement that inside your this
+[19:21 - 19:25] search function
+[19:23 - 19:28] okay
+[19:25 - 19:30] so if you want to search the data table
+[19:28 - 19:32] for this particular element
+[19:30 - 19:33] so these are some of the test cases that
+[19:32 - 19:34] you can use
+[19:33 - 19:36] to
+[19:34 - 19:37] check that your search function is
+[19:36 - 19:39] written
+[19:37 - 19:42] correctly
+[19:39 - 19:42] okay that's all for this

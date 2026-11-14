@@ -1,0 +1,192 @@
+Title: 2023 JC1 Promo Paper 1 Question 2(a), (b)
+Assessment(s): Released assessment teacher walkthrough
+Uploader: David Tan Bang Choon
+YouTube: https://www.youtube.com/watch?v=lEMNGo2xTk4
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88802
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] okay I'll be going through question two
+[00:02 - 00:08] of the theory paper the question two
+[00:05 - 00:11] says that Library wants to arrange books
+[00:08 - 00:14] according to the books ID numbers okay
+[00:11 - 00:17] and you are given a list of ID numbers
+[00:14 - 00:20] part A describe the bubble algorithm
+[00:17 - 00:22] actually there's no need to use the this
+[00:20 - 00:27] given if you do not want to okay you can
+[00:22 - 00:29] describe it uh with words okay so I'm
+[00:27 - 00:31] going to demonstrate with simple numbers
+[00:29 - 00:35] first like how bubble Sal actually works
+[00:31 - 00:37] so uh the main idea of bubble Sal is to
+[00:35 - 00:40] compare adjacent elements from the start
+[00:37 - 00:43] to the end so starting from the first
+[00:40 - 00:46] element compare with the next element
+[00:43 - 00:49] okay is four greater than two yes okay
+[00:46 - 00:52] so we have to do a sort to four and
+[00:49 - 00:56] two okay then after that we'll continue
+[00:52 - 01:01] to compare four and five is four greater
+[00:56 - 01:03] than five no no s happen okay do nothing
+[01:01 - 01:07] okay then next we do five and one five
+[01:03 - 01:12] is greater than one so we have to do a
+[01:07 - 01:15] Sol okay then next find six five is not
+[01:12 - 01:18] greater than six so we don't Sol and
+[01:15 - 01:19] then compare six and three six is
+[01:18 - 01:24] greater than three we
+[01:19 - 01:28] do six 3 six okay that is nend of first
+[01:24 - 01:30] part and I am certain
+[01:28 - 01:35] that okay
+[01:30 - 01:38] the last element is the biggest
+[01:35 - 01:42] element okay so in my second part I will
+[01:38 - 01:45] only be considering the first to the
+[01:42 - 01:48] fifth uh elements okay because I'm
+[01:45 - 01:49] already certain that the last number is
+[01:48 - 01:52] the biggest
+[01:49 - 01:54] number okay so let's continue with a
+[01:52 - 01:57] second pass second
+[01:54 - 02:00] pass we will start from the start again
+[01:57 - 02:03] so two four two is not not greater than
+[02:00 - 02:06] four we don't swap next
+[02:03 - 02:07] 41 uh four is greater than one so we
+[02:06 - 02:11] have to
+[02:07 - 02:15] swap okay then next four five no uh four
+[02:11 - 02:17] is not greater than five no swap 53 five
+[02:15 - 02:21] is greater than three so we have to
+[02:17 - 02:23] solve three five and at the end of the
+[02:21 - 02:26] second
+[02:23 - 02:28] pa okay I am sure that five and six are
+[02:26 - 02:31] at the correct
+[02:28 - 02:31] position
+[02:32 - 02:37] okay which means that at the third part
+[02:35 - 02:41] we will only consider the four one first
+[02:37 - 02:44] to the fourth and so on and so forth
+[02:41 - 02:47] okay and how many uh passes do we need
+[02:44 - 02:48] in general observe here there are six
+[02:47 - 02:52] numbers
+[02:48 - 02:55] right how many passes do we actually
+[02:52 - 02:58] need okay at the end of the third pass
+[02:55 - 03:01] by right your four should come to the
+[02:58 - 03:04] correct position
+[03:01 - 03:08] okay at the end of the fourth pass the
+[03:04 - 03:08] tree should be at the correct
+[03:08 - 03:13] position fourth okay at the end of the
+[03:11 - 03:15] fif pass the twool should be at the
+[03:13 - 03:15] correct
+[03:16 - 03:20] position which means what there's only
+[03:18 - 03:22] one number left here right the rest are
+[03:20 - 03:25] correct means that this one is
+[03:22 - 03:28] definitely correct okay so that means
+[03:25 - 03:31] the whole array is already sorted after
+[03:28 - 03:35] five passes okay okay so six numbers we
+[03:31 - 03:39] need five passes in general for a size n
+[03:35 - 03:39] we need a n minus one number of
+[03:40 - 03:49] passes okay so how do I describe this in
+[03:44 - 03:52] words okay so for size n array I need n
+[03:49 - 03:54] minus one passes okay so I will start
+[03:52 - 03:56] describing what happen what do I do in
+[03:54 - 03:59] the first pass in the first pass We
+[03:56 - 04:00] compare adjacent elements from the start
+[03:59 - 04:04] to the
+[04:00 - 04:07] end okay and what do I do if they are
+[04:04 - 04:11] not in the correct order we have to do a
+[04:07 - 04:14] S okay and at the end of this first part
+[04:11 - 04:17] the biggest element will be at the end
+[04:14 - 04:19] of the array okay which means that the
+[04:17 - 04:22] number six is at the correct
+[04:19 - 04:26] place okay which means that well for the
+[04:22 - 04:28] second P I will only consider the first
+[04:26 - 04:30] to The Fifth
+[04:28 - 04:31] Element okay in the second pass we
+[04:30 - 04:35] repeat the same step so compare adjacent
+[04:31 - 04:38] elements until the second last element
+[04:35 - 04:40] of the array which will then bring the
+[04:38 - 04:42] second biggest element to the second
+[04:40 - 04:46] last position means that after the
+[04:42 - 04:50] second pass Five is correct and six is
+[04:46 - 04:52] correct okay third pass you'll bring the
+[04:50 - 04:55] third largest element to the third last
+[04:52 - 04:58] position repeat this until the N minus
+[04:55 - 05:00] one passes or until the whole array is
+[04:58 - 05:04] sorted
+[05:00 - 05:07] okay so uh what are the marking points
+[05:04 - 05:10] basically I need to see that okay you
+[05:07 - 05:11] are describing what you are doing on the
+[05:10 - 05:14] first
+[05:11 - 05:15] pass okay so in the first pass what are
+[05:14 - 05:18] you
+[05:15 - 05:21] doing okay then I also need to see the
+[05:18 - 05:23] idea of repeating the
+[05:21 - 05:27] passes okay so I need to see some form
+[05:23 - 05:30] of repetition of this okay until the N
+[05:27 - 05:31] minus one pass or until the whole array
+[05:30 - 05:35] is
+[05:31 - 05:38] sorted okay so that's for part A okay
+[05:35 - 05:42] Part B explain how bubes algorithm can
+[05:38 - 05:48] be optimized okay so let's do the same
+[05:42 - 05:48] example okay so just now was four 2 5 1
+[05:48 - 05:52] 6
+[05:48 - 05:56] 3 okay so after the first pass let me
+[05:52 - 06:00] just pass forward a little bit
+[05:56 - 06:06] okay okay two four so four five don't
+[06:00 - 06:11] swap 5 one swap okay five six don't swap
+[06:06 - 06:14] uh three six three will s okay so six is
+[06:11 - 06:18] correct okay after two
+[06:14 - 06:22] pass two four don't swap one 4 One swap
+[06:18 - 06:25] four five don't swap uh 53
+[06:22 - 06:28] swap okay so after second pass this is
+[06:25 - 06:29] correct after third
+[06:28 - 06:31] pass
+[06:29 - 06:34] one two
+[06:31 - 06:38] swap uh one four sorry two four don't
+[06:34 - 06:41] swap 4 three will
+[06:38 - 06:44] swap okay four is
+[06:41 - 06:47] correct okay then after four
+[06:44 - 06:51] pass one two don't swap two three don't
+[06:47 - 06:52] swap four five six is correct okay so
+[06:51 - 06:56] three is
+[06:52 - 06:59] correct okay but what do you realize
+[06:56 - 07:02] from the third to the fourth Parts okay
+[06:59 - 07:05] basic basically third to the fourth part
+[07:02 - 07:07] if you try to do it there is actually no
+[07:05 - 07:10] swap that have
+[07:07 - 07:13] happened and why is it the case because
+[07:10 - 07:15] after the third pass you realize that
+[07:13 - 07:20] the array is already sorted after the
+[07:15 - 07:21] third part so when you do the four parts
+[07:20 - 07:24] because everything else is in order
+[07:21 - 07:27] already every one two Tre is already in
+[07:24 - 07:30] order there's no s that would happen
+[07:27 - 07:33] during the fourth parts
+[07:30 - 07:36] okay so by right right there are six
+[07:33 - 07:38] numbers by right we need to do by right
+[07:36 - 07:41] we need to do five
+[07:38 - 07:44] passes okay but you you see here is
+[07:41 - 07:47] there a need for me to do the fif
+[07:44 - 07:49] pass no right because if you look at
+[07:47 - 07:50] this it's already sorted why do I need
+[07:49 - 07:53] to go through another
+[07:50 - 07:56] round okay so actually we don't need to
+[07:53 - 08:00] do this we can terminate the process
+[07:56 - 08:03] early and how do we detect this how do
+[08:00 - 08:06] we know that we can terminate early okay
+[08:03 - 08:09] when we see that no swap can
+[08:06 - 08:13] happen Okay this will just means that
+[08:09 - 08:16] the array is already
+[08:13 - 08:17] sorted since the array is already sorted
+[08:16 - 08:21] there is no need for me to do the
+[08:17 - 08:25] subsequent passes anymore we just stop
+[08:21 - 08:28] the process okay so this is how Bubbles
+[08:25 - 08:31] can be
+[08:28 - 08:33] optimized okay okay so how do I write it
+[08:31 - 08:37] in
+[08:33 - 08:39] words okay so if there are no swaps in
+[08:37 - 08:42] the current pass it implies that this
+[08:39 - 08:44] array is already sorted there is no need
+[08:42 - 08:47] to carry up subsequent passes which
+[08:44 - 08:50] means that if they are fif or even six
+[08:47 - 08:54] all this we can don't do them anymore we
+[08:50 - 08:57] just end the process
+[08:54 - 08:57] earlier

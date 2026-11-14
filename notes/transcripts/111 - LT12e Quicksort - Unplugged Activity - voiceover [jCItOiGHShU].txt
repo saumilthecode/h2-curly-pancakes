@@ -1,0 +1,103 @@
+Title: LT12e Quicksort - Unplugged Activity - voiceover
+Assessment(s): LT 12e Quicksort
+Linked label(s): Unplugged activity for Quicksort
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=jCItOiGHShU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Hi, today we will be going through the
+[00:02 - 00:05] quicksort algorithm.
+[00:06 - 00:11] First, let's start by going through an
+[00:08 - 00:13] unplugged antiquity.
+[00:11 - 00:17] Now, you will be given a stack of cards,
+[00:13 - 00:19] 10 cards, showing all the values.
+[00:17 - 00:21] Now, you do not arrange the cards in any
+[00:19 - 00:21] order.
+[00:21 - 00:26] It could be just one group of cards.
+[00:26 - 00:30] Pick a pivot.
+[00:28 - 00:33] You can pick any card with any value as
+[00:30 - 00:33] a pivot.
+[00:33 - 00:38] Put that at the center.
+[00:36 - 00:41] Now, without any arrangement, put all
+[00:38 - 00:42] the cards that are of smaller value on
+[00:41 - 00:44] the left hand
+[00:42 - 00:47] side.
+[00:44 - 00:50] And all the cards of larger values, put
+[00:47 - 00:50] it on the right hand side.
+[00:50 - 00:55] Then you repeat doing this on the left
+[00:52 - 00:55] half and the right half.
+[00:56 - 01:00] Keep doing so until all the cards are
+[00:58 - 01:03] sorted.
+[01:00 - 01:07] Let's take a look at this animation.
+[01:03 - 01:11] You start off with a group of 10 cards.
+[01:07 - 01:11] Assuming that I pick five as my pivot.
+[01:13 - 01:17] I put five at the middle.
+[01:16 - 01:20] And all the cards that are smaller
+[01:17 - 01:22] values is on the left.
+[01:20 - 01:25] And all the cards which are larger value
+[01:22 - 01:25] will be on the right.
+[01:26 - 01:31] On the left half, I pick three as my
+[01:28 - 01:31] next pivot.
+[01:31 - 01:36] Again, and on the right, I pick seven as
+[01:33 - 01:36] my pivot.
+[01:38 - 01:42] I put three in the middle and seven in
+[01:40 - 01:45] the middle of both the left and the
+[01:42 - 01:45] right half.
+[01:46 - 01:49] Now, put all the cards that are smaller
+[01:47 - 01:51] than three on the left.
+[01:49 - 01:55] And put four as the only card that is
+[01:51 - 01:55] bigger than three on the right.
+[01:56 - 02:00] Six will be the only card on the left of
+[01:58 - 02:03] seven.
+[02:00 - 02:05] And both eight and nine is on the right.
+[02:03 - 02:07] Next, pick another pivot, say one and
+[02:05 - 02:07] eight.
+[02:10 - 02:16] Do the same thing again, putting one at
+[02:13 - 02:18] the middle and eight at the middle.
+[02:16 - 02:20] Zero will be on the left, two will be on
+[02:18 - 02:20] the right.
+[02:22 - 02:26] There will be no card on the left of
+[02:24 - 02:28] eight, and nine will be on the right of
+[02:26 - 02:28] eight.
+[02:30 - 02:33] Now,
+[02:31 - 02:35] take a look at the whole collection of
+[02:33 - 02:37] all the 10 cards.
+[02:35 - 02:39] They are now arranged in increasing
+[02:37 - 02:39] order.
+[02:40 - 02:43] Now, the array has been sorted.
+[02:47 - 02:53] So, basically, quicksort is an in-place
+[02:49 - 02:53] divide and conquer sorting algorithm.
+[02:56 - 03:01] First, we pick the pivot to partition
+[02:58 - 03:01] the array into two halves.
+[03:02 - 03:05] One half containing numbers that are
+[03:03 - 03:07] smaller, and the other half containing
+[03:05 - 03:09] elements that are bigger. It doesn't
+[03:07 - 03:14] matter about the value that is equal to
+[03:09 - 03:14] the pivot. It can remain in either
+[03:14 - 03:19] side of the pivot.
+[03:17 - 03:22] Repeat this process on each half until
+[03:19 - 03:22] you obtain the sorted array.
+[03:24 - 03:28] So, the algorithm for quicksort is a
+[03:25 - 03:31] repeatedly pick a pivot to partition the
+[03:28 - 03:31] list.
+[03:31 - 03:37] I have also attached a video to explain
+[03:34 - 03:37] the quicksort.
+[03:39 - 03:43] In the video itself, it will be
+[03:40 - 03:46] mentioned about the order of growth.
+[03:43 - 03:48] So, the worst-case scenario, the order
+[03:46 - 03:51] of growth will be n squared, where every
+[03:48 - 03:51] pivot pick
+[03:51 - 03:55] is either the largest or the smallest
+[03:53 - 03:56] element.
+[03:55 - 04:00] So, you have to go through the whole
+[03:56 - 04:00] process visiting all the elements.
+[04:02 - 04:06] So, that is the worst-case scenario.
+[04:04 - 04:09] Now, the best-case scenario will be n
+[04:06 - 04:12] log n about equal size of the tree on
+[04:09 - 04:12] the left and
+[04:14 - 04:22] the right side of the partition.
+[04:18 - 04:22] So, averagely it is a n log n.
+[04:24 - 04:28] That's all on the quicksort algorithm.

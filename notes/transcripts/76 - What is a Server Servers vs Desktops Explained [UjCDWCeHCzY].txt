@@ -1,0 +1,76 @@
+Title: What is a Server?  Servers vs Desktops Explained
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=UjCDWCeHCzY
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] What is a server? So that is a topic of this video. Now a server is basically a dedicated
+[00:07 - 00:13] computer that provides services on behalf of clients, such as ordinary desktop computers
+[00:13 - 00:20] or workstations. So it's a centralized machine where multiple clients connect to, either over
+[00:20 - 00:26] the Internet or in a local area network, and they connect to a server for a specific service. So
+[00:26 - 00:33] for example, that service could be to retrieve a website, to access data, or email, and so on. Now
+[00:33 - 00:39] a server could be dedicated to handle one of these services only, where you would have one server
+[00:39 - 00:45] it dedicated for a website, one server for data storage, and a server for email. And this model is
+[00:45 - 00:52] what larger organizations use. Or you can also set up a server to handle each of these services on
+[00:52 - 00:58] the same machine which is what typically happens in smaller organizations. So depending upon which
+[00:58 - 01:05] setup is used it all depends on the needs of an organization. Now when people talk about a server
+[01:05 - 01:11] generally they are referring to a powerful centralized computer that clients connect to
+[01:11 - 01:18] over a network, and they would be correct on that. However a server is not just a physical computer.
+[01:18 - 01:25] A server is actually a role that a computer takes. Because any ordinary desktop computer can be set
+[01:25 - 01:32] up as a server and it doesn't necessarily have to be a powerful computer. So for example you can set
+[01:32 - 01:38] up a network in your home where you can have an ordinary desktop computer serve as a file server.
+[01:38 - 01:44] The computer would have those files in a shared folder and then other computers can connect to
+[01:44 - 01:51] it to access those files. Or you can also use a desktop computer to serve as a web server,
+[01:51 - 01:57] where you would install the website data on that computer and then the other computers can connect
+[01:57 - 02:04] to it and retrieve the webpage. However desktop computers do have their limitations because they
+[02:04 - 02:10] are not designed to handle a large workload and they can't handle a lot of incoming connections
+[02:10 - 02:16] from users. And this is not only because of their inferior hardware, but it's also because of software.
+[02:16 - 02:22] Because desktop operating systems are only able to handle a limited amount of concurrent connections.
+[02:22 - 02:31] Now servers need to be up and running 24/7 because they are vital to an organization. And if a server
+[02:31 - 02:38] does go down then that could jeopardize a business or an organization. So this is why servers need to
+[02:38 - 02:45] be more reliable. They need to be built with robust hardware that's able to run non-stop with little
+[02:45 - 02:53] to no downtime. So for example, a desktop would use a processor that's designed obviously for
+[02:53 - 03:00] desktops, such as the Intel core series processors. And a server would use a processor designed for
+[03:00 - 03:07] servers such as the Intel Xeon processor. A server processor needs to be fast and had the ability to
+[03:07 - 03:14] perform a lot of tasks simultaneously. Now both of these processors are powerful but there are
+[03:14 - 03:21] some differences. So for example, Xeon processors support a multi processing environment. So they
+[03:21 - 03:28] are designed to work with other processors. Which means you can put two or more Xeon processors on
+[03:28 - 03:34] a motherboard designed for servers, which is what a lot of servers need to handle a large workload.
+[03:34 - 03:41] But desktop processors do not support this, they are only designed to work by themselves and not
+[03:41 - 03:49] with other processors. And another difference is that Xeon processors support ECC RAM, which
+[03:49 - 03:55] is error code correcting memory. And this type of memory is what's mainly used in servers. Now
+[03:55 - 04:01] servers need to be up and running at all times and memory errors could bring down a server and
+[04:01 - 04:08] what ECC does is that it detects if the data was correctly processed by the RAM module and it makes
+[04:08 - 04:15] a correction if it needs to to prevent memory errors. So using ECC memory in servers is just
+[04:15 - 04:22] an extra precaution to guard against any errors to prevent a server from shutting down and Intel Core
+[04:22 - 04:31] processors do not support ECC Ram, however AMD processors do so support it. Xeon processors can also
+[04:31 - 04:37] support a larger amount of RAM. They would have a larger cache memory. And they would also have
+[04:37 - 04:44] a higher core count than desktop processors. And a server should also have hot swappable hard drives
+[04:44 - 04:51] in a RAID configuration because if a hard drive were to fail then no data loss what happened and
+[04:51 - 04:57] the server would still be up and running because of RAID. RAID is what copies that data on multiple
+[04:57 - 05:03] disks and if a hard drive were to fail then it can be removed and replaced without shutting
+[05:03 - 05:08] down the server. And then RAID would rebuild the data on the new hard drive automatically.
+[05:10 - 05:14] And a server should also have redundant power supplies to
+[05:14 - 05:18] keep the server up and running in case of a power supply failure.
+[05:21 - 05:30] And a server also needs to use a server operating system, such as Linux, Windows Server, mac OS server
+[05:30 - 05:38] and so on. Server operating systems are robust and stable and they are designed to run non-stop and
+[05:38 - 05:44] are able to handle thousands of concurrent connections. Now there are many different
+[05:44 - 05:49] types of servers and when I mean types I'm talking about the type of service that the
+[05:49 - 05:56] server provides. So for example, a web server. A web server is what hosts a website. So any
+[05:56 - 06:02] website that you go to with your web browser, you are connecting over the Internet to that
+[06:02 - 06:07] web server to pull up the web site you want. The web server will contain all of the website's
+[06:07 - 06:13] data, including the HTML code and graphics and it will also be running the web server software.
+[06:13 - 06:20] another type of server is an email server an email server is what facilitates the sending
+[06:20 - 06:26] And receiving of email and you would access the email using your web browser or you can use an
+[06:26 - 06:33] email client such as Outlook or Thunderbird using email protocols such as IMAP,, POP, and
+[06:33 - 06:40] SMTP. And a database server is another type of server. This type of server stores data
+[06:40 - 06:45] on the backend and then it's retrieved from computers on the front end, for example using
+[06:45 - 06:53] queries such as SQL. So these are just a few examples of what servers do but there is a lot
+[06:53 - 06:58] more. So thank you everyone for watching this video on servers and the difference between
+[06:58 - 07:05] servers and desktop computers. Please subscribe, follow me on Twitter, and thank you for watching.

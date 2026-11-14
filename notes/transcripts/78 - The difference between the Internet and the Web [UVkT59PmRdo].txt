@@ -1,0 +1,41 @@
+Title: The difference between the Internet and the Web
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: MIT Museum
+YouTube: https://www.youtube.com/watch?v=UVkT59PmRdo
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:04] hi my name is Serena and I'm going to
+[00:03 - 00:07] tell you about the difference between
+[00:04 - 00:09] the internet and the web as you know one
+[00:07 - 00:11] of the marvels of modern technology is
+[00:09 - 00:14] the internet something you probably use
+[00:11 - 00:16] every day maybe all day you go on the
+[00:14 - 00:18] Internet or you serf the web a lot of
+[00:16 - 00:20] people use these terms the internet and
+[00:18 - 00:22] the web interchangeably but they
+[00:20 - 00:24] actually mean different things the
+[00:22 - 00:27] internet is the network of Machinery
+[00:24 - 00:29] that allows access to the web the web is
+[00:27 - 00:32] just a collection of pages that may have
+[00:29 - 00:35] text or images on them basically the web
+[00:32 - 00:37] is a subset of internet traffic to
+[00:35 - 00:39] visualize this you can imagine a highway
+[00:37 - 00:41] the physical Highway are the paths
+[00:39 - 00:44] between the computers on the internet
+[00:41 - 00:46] Network the moving vehicles are the
+[00:44 - 00:48] packets of information that travel
+[00:46 - 00:51] through these internet paths there are
+[00:48 - 00:53] many types of vehicles cars trucks and
+[00:51 - 00:54] motorcycles they correspond to the
+[00:53 - 00:57] different types of traffic on the
+[00:54 - 01:00] internet the cars are analogous to the
+[00:57 - 01:02] web traffic the trucks are to the email
+[01:00 - 01:05] traffic and the motorcycles are to the
+[01:02 - 01:07] media traffic so as you can see there is
+[01:05 - 01:10] a difference between the internet and
+[01:07 - 01:15] the web being that the internet contains
+[01:10 - 01:15] the web but the web is not the internet

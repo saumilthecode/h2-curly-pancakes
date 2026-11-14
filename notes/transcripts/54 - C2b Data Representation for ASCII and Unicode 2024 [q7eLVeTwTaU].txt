@@ -1,0 +1,172 @@
+Title: C2b Data Representation for ASCII and Unicode 2024
+Assessment(s): C2b Data Representation (Representing ASCII and Unicode)
+Linked label(s): C2b : Data Representation for ASCII and Unicode
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=q7eLVeTwTaU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] hi today we'll be covering on data
+[00:03 - 00:09] representation for ask key and uni
+[00:06 - 00:13] code now uh let's talk about the bit and
+[00:09 - 00:15] bites now how big is a bite uh in
+[00:13 - 00:18] today's uh computer uh we are talking
+[00:15 - 00:21] about 8 bit being a bite or 16 bit or
+[00:18 - 00:23] 32bit bite uh bite size will determine
+[00:21 - 00:26] the maximum number of possible values
+[00:23 - 00:28] that can be St so in the case of a 8 bit
+[00:26 - 00:31] uh the number of values that you can
+[00:28 - 00:33] store is 2 to the^ 8 that's 256 values
+[00:31 - 00:37] for 16 bit that would be 2 to the power
+[00:33 - 00:39] of 16 so it's about 65,000 uh 32 bit
+[00:37 - 00:42] that would be 2 to the power of 32
+[00:39 - 00:45] that's easily uh uh
+[00:42 - 00:48] 4,294 millions
+[00:45 - 00:51] value now let's talk about the asky
+[00:48 - 00:52] character set uh two computer cannot
+[00:51 - 00:55] communicate each other if they are using
+[00:52 - 00:57] a different uh character representations
+[00:55 - 01:00] okay as if like they're talking
+[00:57 - 01:02] different language okay in 1960 uh they
+[01:00 - 01:05] agreed upon a standard set of code and
+[01:02 - 01:08] that's the asky aski stand for the
+[01:05 - 01:11] American Standard code for information
+[01:08 - 01:14] interchange uh you read it as asky now
+[01:11 - 01:17] asky uses seven bit not the 8 bit seven
+[01:14 - 01:20] bit to represent 128 characters of which
+[01:17 - 01:23] 95 are printable characters and 33
+[01:20 - 01:26] non-printable control uh codes uh non
+[01:23 - 01:30] printable characters like your spacebar
+[01:26 - 01:32] your uh your insert key your delete key
+[01:30 - 01:36] or even your new line where you hit the
+[01:32 - 01:41] enter so those are the uh non printable
+[01:36 - 01:42] uh codes uh so uh 128 characters is
+[01:41 - 01:45] sufficient to represent all the
+[01:42 - 01:47] characters on a standard keyboard do you
+[01:45 - 01:49] know how many uh keys are there on the
+[01:47 - 01:49] standard
+[01:49 - 01:55] keyboard now uh seven bits uh you can
+[01:52 - 01:58] retrieve this ask key table uh using
+[01:55 - 02:00] this uh link okay so they all together
+[01:58 - 02:04] you can read for yourself
+[02:00 - 02:06] uh the uh from zero all the way to 127
+[02:04 - 02:09] and it can be represented in binary uh
+[02:06 - 02:11] that's how the computer communicate uh
+[02:09 - 02:13] to make things simpler we sometime write
+[02:11 - 02:16] it in hexa decimal so later we will be
+[02:13 - 02:20] dealing with hexa decimal okay and then
+[02:16 - 02:20] also the uh symbols or the
+[02:20 - 02:26] characters so take for example uh when
+[02:23 - 02:30] we use uh python uh in your python uh
+[02:26 - 02:33] Jupiter you can use the o to conver the
+[02:30 - 02:36] number uh the character four uh and then
+[02:33 - 02:40] you find the asky value to be
+[02:36 - 02:43] 52 okay and then we have the uh A to Z
+[02:40 - 02:46] the capital letter A to Z uh character a
+[02:43 - 02:49] capital letter is uh asky value of
+[02:46 - 02:52] 65 and then we have the small letter A
+[02:49 - 02:57] to Z uh
+[02:52 - 02:58] the the uh small letter uh a has a asky
+[02:57 - 03:01] value of
+[02:58 - 03:05] 97 Okay so please take note that uh when
+[03:01 - 03:08] we talk about the uh number 0 to 9 uh
+[03:05 - 03:10] the asky value is not 0 to 9 the asky
+[03:08 - 03:16] value you have to use the o to convert
+[03:10 - 03:16] so 0 is 48 1 is 49 and so on so
+[03:17 - 03:22] forth okay at a time when they
+[03:19 - 03:26] standardize uh to use uh 8 bit as a bite
+[03:22 - 03:29] for computer and pereral um uh the first
+[03:26 - 03:33] so uh 8 bit means that there will be 250
+[03:29 - 03:36] six values available so only the first
+[03:33 - 03:40] 128 was used to represent the asy
+[03:36 - 03:43] characters the remaining 128 uh were
+[03:40 - 03:46] unused but even if we use it this 128 is
+[03:43 - 03:48] quite uh insufficient to represent the
+[03:46 - 03:51] characters from all other
+[03:48 - 03:54] languages okay because of that uh we
+[03:51 - 03:57] have this uh uni code now Unicode was
+[03:54 - 04:00] originally designed in 1980 to use 16
+[03:57 - 04:03] bit per character okay so the problem
+[04:00 - 04:05] now is that for all those asky character
+[04:03 - 04:09] uh you have to put uh eight zeros in
+[04:05 - 04:12] front followed by the uh asy uh uh
+[04:09 - 04:15] characters so uh to make up the 16 bit
+[04:12 - 04:17] so it's very wasteful but nonetheless uh
+[04:15 - 04:19] they have decided to use 16 bit per
+[04:17 - 04:22] character uh the first version of unic
+[04:19 - 04:25] code uh contains about 7,000 uh
+[04:22 - 04:26] characters from 24 languages by the time
+[04:25 - 04:29] you hit the third version in
+[04:26 - 04:30] 1999 uh the total number of character
+[04:29 - 04:34] represent is about
+[04:30 - 04:37] 59,000 so you realize that 59,000 uh
+[04:34 - 04:40] from 38 languages uh is very near to the
+[04:37 - 04:41] limit to the 16 bit 16 bit can only
+[04:40 - 04:44] handle
+[04:41 - 04:47] 65,000 so they soon realize that the 16
+[04:44 - 04:50] bit is not enough okay so they are
+[04:47 - 04:52] looking for a better way to uh uh
+[04:50 - 04:54] represent all the characters so from
+[04:52 - 04:57] 1996 onward uni code no longer
+[04:54 - 04:59] restricted to 16 bit uh the increase in
+[04:57 - 05:01] capacity represent allows us to
+[04:59 - 05:06] represent all existing
+[05:01 - 05:09] languages and also uh historical scripts
+[05:06 - 05:10] historical languages archaeologist when
+[05:09 - 05:13] they uh retrieve some uh Egyptian
+[05:10 - 05:17] symbols and they can represent it using
+[05:13 - 05:19] uni code uh the most recent uh uh one
+[05:17 - 05:22] that we have is uh in Wikipedia we can
+[05:19 - 05:26] find uh year 2023 so that's version 15
+[05:22 - 05:32] of the uni code there's a uh around
+[05:26 - 05:32] 300,000 characters represented from 61
+[05:32 - 05:38] languages so uni code uh initially start
+[05:35 - 05:40] off with two uh two bytes 16 bit and can
+[05:38 - 05:42] represent only 65,000 which is not
+[05:40 - 05:45] enough and then uh the Revis the new
+[05:42 - 05:48] version now no longer restrict to two
+[05:45 - 05:52] by okay uh the next slides this slides
+[05:48 - 05:56] we have uh the different languages uh uh
+[05:52 - 05:58] uh for the word love now uh in Chinese
+[05:56 - 06:01] character you realize it's only a single
+[05:58 - 06:03] character and then it it requires to use
+[06:01 - 06:06] uh uh this is represented in the hexad
+[06:03 - 06:10] deal
+[06:06 - 06:13] 7231 uh each uh Char uh each number is
+[06:10 - 06:17] four bit four bit four bit four bit so
+[06:13 - 06:20] four uh hexadecimal uh number digits is
+[06:17 - 06:23] equivalent to 16 bit so we use 16 bit to
+[06:20 - 06:25] represent a Chinese word I uh which
+[06:23 - 06:29] stand for L now if you look at the
+[06:25 - 06:32] Korean uh is actually two character so
+[06:29 - 06:35] you have a 16bit and another 16 bit so
+[06:32 - 06:38] two 16 bit to represent two character uh
+[06:35 - 06:38] in uni code
+[06:40 - 06:46] okay you can try this on your
+[06:43 - 06:49] jupo uh and then you print it and then
+[06:46 - 06:51] if you need the tools to convert uh uh
+[06:49 - 06:53] the character to unic code or you need
+[06:51 - 06:56] to use Google Translate you may use this
+[06:53 - 06:56] link and give it a
+[06:56 - 07:02] try so uh let me dive a little bit
+[06:59 - 07:06] deeper into how this hexadecimal uh used
+[07:02 - 07:10] to represent the uh characters okay so
+[07:06 - 07:13] uh the first character c0 a c this is
+[07:10 - 07:16] hexad decimal so it comprises of a 8 bit
+[07:13 - 07:19] 8 bit two character two digits two
+[07:16 - 07:23] hexadecimal digit is called 8 bit so the
+[07:19 - 07:25] first four bit for C is 1 one0 0 in
+[07:23 - 07:27] binary and the zero will be all four
+[07:25 - 07:33] zeros
+[07:27 - 07:38] a a will be one 0 1 0 c will be 1 1 0 0
+[07:33 - 07:41] so uh this uh eight uh these 16 bits uh
+[07:38 - 07:45] in binary represent the first uh Korean
+[07:41 - 07:50] character okay similarly for the other
+[07:45 - 07:52] character uh B7 91 okay you can also uh
+[07:50 - 07:54] convert them into the binary
+[07:52 - 07:57] representations and then you have
+[07:54 - 08:00] another 16 uh two bites of uh binary
+[07:57 - 08:05] digits to represent the second character
+[08:00 - 08:05] for the uh Korean word love

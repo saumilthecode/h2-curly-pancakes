@@ -1,0 +1,110 @@
+Title: Circuit Switching vs  Packet Switching
+Assessment(s): Released Coursemology video catalog - Circuit Switching vs Packet Switching
+Linked label(s): Circuit Switching vs Packet Switching
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=-WtAgL9HRnE
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24711
+Published course start: 2026-06-24T08:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] hello
+[00:02 - 00:06] and this is sunny welcome back
+[00:04 - 00:08] today my topic is
+[00:06 - 00:10] circuit switching
+[00:08 - 00:14] and packet switching
+[00:10 - 00:14] [Music]
+[00:14 - 00:20] circuit switching is a type of switching
+[00:17 - 00:22] in which a dedicated
+[00:20 - 00:25] channel or circuit
+[00:22 - 00:27] is established for the duration of
+[00:25 - 00:30] communications
+[00:27 - 00:34] a method used by old
+[00:30 - 00:36] traditional telephone call
+[00:34 - 00:40] carried over
+[00:36 - 00:43] the public switched telephone network
+[00:40 - 00:45] or pstm
+[00:43 - 00:50] also referred to as
+[00:45 - 00:53] the plain old telephone service or parts
+[00:50 - 00:56] and let's see how it works
+[00:53 - 00:59] this is what a typical traditional
+[00:56 - 01:03] telephone networks look like
+[00:59 - 01:05] the psta networks are connected through
+[01:03 - 01:09] central offices
+[01:05 - 01:13] which act as a telephone exchanges
+[01:09 - 01:15] each serving a certain geographical area
+[01:13 - 01:18] when a person a
+[01:15 - 01:20] calls a person b for example
+[01:18 - 01:22] the telephone network is trying
+[01:20 - 01:23] different circuits
+[01:22 - 01:27] to find
+[01:23 - 01:30] an available channel a connection must
+[01:27 - 01:32] be established before they start their
+[01:30 - 01:35] conversations
+[01:32 - 01:38] once the channel is decided
+[01:35 - 01:42] it guarantees the full bandwidth
+[01:38 - 01:45] and remains connected for the duration
+[01:42 - 01:49] of the communication session
+[01:45 - 01:53] until users terminate their connection
+[01:49 - 01:56] when you are making pstn call or
+[01:53 - 01:57] traditional telephone call you are
+[01:56 - 01:59] actually
+[01:57 - 02:02] renting the lines
+[01:59 - 02:05] that's why international telephone call
+[02:02 - 02:07] or long distance telephone call was
+[02:05 - 02:10] expensive
+[02:07 - 02:12] the package switching uses different
+[02:10 - 02:15] methods
+[02:12 - 02:17] package switching networks are connected
+[02:15 - 02:20] through many routers
+[02:17 - 02:21] each serving different segment of
+[02:20 - 02:23] networks
+[02:21 - 02:28] data is broken
+[02:23 - 02:30] into packets before it is transported
+[02:28 - 02:34] in packet switching
+[02:30 - 02:37] packets can travel any path on a network
+[02:34 - 02:40] to their destination because each packet
+[02:37 - 02:43] contains an ip address and a sequencing
+[02:40 - 02:46] information
+[02:43 - 02:47] therefore they don't need to follow each
+[02:46 - 02:50] other
+[02:47 - 02:52] they can travel any network path
+[02:50 - 02:55] and they can find the fastest channel
+[02:52 - 02:59] available at any instant
+[02:55 - 03:02] they don't need to arrive in sequence
+[02:59 - 03:05] because they can reassemble together
+[03:02 - 03:08] at the destination
+[03:05 - 03:12] the internet is based on a packet
+[03:08 - 03:14] switching protocol tcpip
+[03:12 - 03:18] the circuit switch the networks
+[03:14 - 03:20] and packet switch networks have
+[03:18 - 03:25] traditionally occupied
+[03:20 - 03:28] different spaces within corporations
+[03:25 - 03:31] the circuit switched networks
+[03:28 - 03:35] are ideal for communications which
+[03:31 - 03:37] require data to transmit it in real time
+[03:35 - 03:40] while the packet switched
+[03:37 - 03:44] networks are more flexible more
+[03:40 - 03:46] efficient if some amount of delay is
+[03:44 - 03:49] acceptable
+[03:46 - 03:50] the circuit switch networks
+[03:49 - 03:52] are
+[03:50 - 03:55] normally used for
+[03:52 - 03:56] telephone calls traditional telephone
+[03:55 - 03:59] calls
+[03:56 - 04:02] while the packet switch networks
+[03:59 - 04:05] normally handle digital data
+[04:02 - 04:08] but nowadays you can get telephone
+[04:05 - 04:12] service over the internet
+[04:08 - 04:13] this new technology is called voice over
+[04:12 - 04:15] ip
+[04:13 - 04:16] or simply
+[04:15 - 04:20] voip
+[04:16 - 04:21] which is another story in another video
+[04:20 - 04:23] thank you very much
+[04:21 - 04:29] and see you next time
+[04:23 - 04:29] [Music]

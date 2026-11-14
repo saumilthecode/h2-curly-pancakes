@@ -1,0 +1,81 @@
+Title: 1b 3  How do we use the slice operator with Step   for String
+LT: LT 1b - Basic Python - About Strings
+Linked label: 3. How do we use the slice operator with Step - for String
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=KHBHunYLVJk
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] how do we use the slice operator with a
+[00:03 - 00:06] step
+[00:04 - 00:09] in the previous video we learned how to
+[00:06 - 00:13] use a slice operator to extract a subset
+[00:09 - 00:13] of items from a list or string
+[00:13 - 00:18] what do we do if we want to extract only
+[00:16 - 00:20] the items spaced at particular intervals
+[00:18 - 00:23] within this subset of items
+[00:20 - 00:25] [Music]
+[00:23 - 00:27] this is what the slice operator with a
+[00:25 - 00:30] step looks like
+[00:27 - 00:32] [Music]
+[00:30 - 00:34] the syntax for a slice operator with a
+[00:32 - 00:36] step is similar to that for the normal
+[00:34 - 00:39] slice operator
+[00:36 - 00:41] however there is now an additional step
+[00:39 - 00:44] the step denotes the difference in index
+[00:41 - 00:46] between each item within the extracted
+[00:44 - 00:51] subset
+[00:46 - 00:54] [Music]
+[00:51 - 00:58] recall that digits 0 colon 7 extracts
+[00:54 - 01:01] the first seven integers of digits
+[00:58 - 01:04] and subject 0 colon 7 extracts the first
+[01:01 - 01:06] 7 characters of subject
+[01:04 - 01:09] we can obtain the same result if we use
+[01:06 - 01:11] the slice operator with a step of 1.
+[01:09 - 01:13] this means that the difference in index
+[01:11 - 01:16] between the extracted items or
+[01:13 - 01:18] characters is one
+[01:16 - 01:20] in other words the items with the
+[01:18 - 01:21] indices 0
+[01:20 - 01:24] 1
+[01:21 - 01:27] 2 3 4
+[01:24 - 01:29] 5 and 6 will be extracted
+[01:27 - 01:30] [Music]
+[01:29 - 01:33] we can obtain the same result for a
+[01:30 - 01:33] string
+[01:36 - 01:40] [Music]
+[01:38 - 01:42] if the step is increased to 2
+[01:40 - 01:44] the difference in index between the
+[01:42 - 01:46] extracted items increases to 2
+[01:44 - 01:48] accordingly
+[01:46 - 01:51] in other words the items with the
+[01:48 - 01:52] indices 0 2
+[01:51 - 01:55] 4
+[01:52 - 01:57] and 6 will be extracted
+[01:55 - 01:58] notice that fewer items have been
+[01:57 - 02:00] extracted
+[01:58 - 02:02] [Music]
+[02:00 - 02:05] similarly if the step is increased to 3
+[02:02 - 02:06] the items with the indices 0
+[02:05 - 02:10] 3
+[02:06 - 02:13] and 6 will be extracted
+[02:10 - 02:16] finally if the step is increased to 4
+[02:13 - 02:19] the items with the indices of 0 and 4
+[02:16 - 02:19] will be extracted
+[02:20 - 02:26] if the step is omitted it will be
+[02:22 - 02:26] treated as 1 by default
+[02:29 - 02:34] as with the normal slice operator
+[02:31 - 02:36] changing the start and stop indices
+[02:34 - 02:38] changes the range from which items are
+[02:36 - 02:38] extracted
+[02:38 - 02:44] observe how the extracted items change
+[02:41 - 02:47] as the start index is increased
+[02:44 - 02:47] [Music]
+[02:51 - 02:54] [Music]
+[02:56 - 03:04] and now observe how the extracted items
+[02:59 - 03:04] change as the stop index is decreased
+[03:05 - 03:17] [Music]
+[03:21 - 03:25] [Music]
+[03:32 - 03:34] you

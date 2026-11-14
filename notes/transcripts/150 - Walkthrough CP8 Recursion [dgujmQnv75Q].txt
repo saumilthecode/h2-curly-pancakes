@@ -1,0 +1,470 @@
+Title: Walkthrough CP8   Recursion
+Assessment(s): Released assessment teacher walkthrough
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=dgujmQnv75Q
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88754
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] okay i'll be going through the first
+[00:02 - 00:08] question of this uh checkpoint okay so
+[00:06 - 00:10] in this uh first question you're given a
+[00:08 - 00:14] chat okay so you just need to study the
+[00:10 - 00:17] chat understand what this function fx is
+[00:14 - 00:19] going to do right so you start off by
+[00:17 - 00:22] getting the argument x which means this
+[00:19 - 00:24] parameter x and then what it says is
+[00:22 - 00:26] that you need to check if the value is
+[00:24 - 00:29] less than 2 you'll just return the value
+[00:26 - 00:31] of x itself and you escape the function
+[00:29 - 00:34] so you can think of it like this um you
+[00:31 - 00:36] know x less than 2 since we are doing
+[00:34 - 00:38] doing recursion this is what we define
+[00:36 - 00:40] as the base case
+[00:38 - 00:41] so if it is the base case we'll just
+[00:40 - 00:44] escape the function right and then we
+[00:41 - 00:46] just return the value otherwise you're
+[00:44 - 00:49] actually going to check whether is it an
+[00:46 - 00:50] even number right even number by now you
+[00:49 - 00:53] should be you should know how to check
+[00:50 - 00:55] right so if it is even you'll return
+[00:53 - 00:58] the function you call the function again
+[00:55 - 01:00] but instead of x now you call uh the
+[00:58 - 01:03] function with x over two if it is c but
+[01:00 - 01:05] otherwise right that means this is when
+[01:03 - 01:08] it is odd you actually just return this
+[01:05 - 01:09] one plus the function call it with x
+[01:08 - 01:11] minus one
+[01:09 - 01:15] okay so um
+[01:11 - 01:18] how to code this basically
+[01:15 - 01:20] we just define f x
+[01:18 - 01:23] and then uh we put in the base case so
+[01:20 - 01:24] we check if the x is actually less than
+[01:23 - 01:28] two
+[01:24 - 01:32] we'll just return the value of x itself
+[01:28 - 01:34] okay and otherwise okay if it is not i
+[01:32 - 01:36] need to check whether is it even
+[01:34 - 01:40] so to check for even right so this time
+[01:36 - 01:43] around i will be checking for keyboard
+[01:40 - 01:43] [Music]
+[01:45 - 01:50] and if it is even the remainder should
+[01:47 - 01:51] be zero so
+[01:50 - 01:53] zero
+[01:51 - 01:55] and then i will just return follow
+[01:53 - 01:57] whatever is given in the flowchart i
+[01:55 - 01:59] will just return f
+[01:57 - 02:00] of x over 2
+[01:59 - 02:02] okay
+[02:00 - 02:04] of course i must return this uh
+[02:02 - 02:06] i think uh yeah this is important
+[02:04 - 02:08] whenever you
+[02:06 - 02:10] do a recursive call make sure that for
+[02:08 - 02:12] every um conditional check or this thing
+[02:10 - 02:14] you must return something
+[02:12 - 02:15] right and you you should return using
+[02:14 - 02:18] the
+[02:15 - 02:20] function the recursive function again
+[02:18 - 02:22] okay so that it can be
+[02:20 - 02:24] you know can be done recursively
+[02:22 - 02:26] okay and for the final part all right
+[02:24 - 02:29] because they mentioned here if it is not
+[02:26 - 02:30] even i should just return one plus this
+[02:29 - 02:33] f
+[02:30 - 02:35] x minus one so i'm just going to
+[02:33 - 02:38] do it here so that will be an
+[02:35 - 02:38] [Music]
+[02:44 - 02:50] okay so
+[02:46 - 02:51] we can try this out
+[02:50 - 02:53] of course
+[02:51 - 02:54] there's some test cases here
+[02:53 - 02:55] but this is something quite
+[02:54 - 02:58] straightforward so i'm just going to
+[02:55 - 03:00] just submit clearly
+[02:58 - 03:02] okay so you can check with these values
+[03:00 - 03:04] indeed those are the outputs
+[03:02 - 03:07] okay not to worry about the dot zero
+[03:04 - 03:09] because uh i think when a is two you're
+[03:07 - 03:11] dealing with some division so you end up
+[03:09 - 03:13] with some floating point but one integer
+[03:11 - 03:15] one and floating number one point three
+[03:13 - 03:16] actually the same thing
+[03:15 - 03:19] okay so with that i'm done with
+[03:16 - 03:21] expression one
+[03:19 - 03:23] okay i will now start going through
+[03:21 - 03:26] question two
+[03:23 - 03:28] which is on this conversion of
+[03:26 - 03:30] scientific notation okay scientific
+[03:28 - 03:32] notation i think uh
+[03:30 - 03:34] all of you should be familiar with right
+[03:32 - 03:37] since you use it in your i guess physics
+[03:34 - 03:39] or maybe sciences
+[03:37 - 03:42] okay so the whole idea is i want to be
+[03:39 - 03:45] able to find out right what is the power
+[03:42 - 03:46] of 10 for a certain
+[03:45 - 03:49] um you know
+[03:46 - 03:52] like for example 123 right it can be
+[03:49 - 03:54] written as 1.23 times 10 to the power of
+[03:52 - 03:56] 2 right in terms of the scientific
+[03:54 - 03:58] notation so i want to be able to find
+[03:56 - 04:00] out what is the power of that in this
+[03:58 - 04:02] case states this number two
+[04:00 - 04:04] okay so uh there are two tasks here one
+[04:02 - 04:06] is to write this power
+[04:04 - 04:08] power ten right the other one is to get
+[04:06 - 04:10] the significant the significance here
+[04:08 - 04:13] refers to
+[04:10 - 04:15] okay if you refer to this instruction
+[04:13 - 04:18] significant a is the real number between
+[04:15 - 04:21] 1 and 10 that is found right before the
+[04:18 - 04:24] power of 10 which in this case is 1.23
+[04:21 - 04:26] okay so i am now going to start writing
+[04:24 - 04:29] the power of 10
+[04:26 - 04:31] function first see so in this case how
+[04:29 - 04:34] do we get the power of 10 okay of course
+[04:31 - 04:36] uh you must look at the output that is
+[04:34 - 04:40] required huh power of 10 of 5 you return
+[04:36 - 04:43] 0 because it's just 5 times 10 to 1 0
+[04:40 - 04:45] so notice that from here you can tell
+[04:43 - 04:47] that any number that is uh you know
+[04:45 - 04:48] smaller than 10
+[04:47 - 04:50] right can
+[04:48 - 04:51] uh there is no need for you to have a
+[04:50 - 04:54] power of 10 you just need to multiply it
+[04:51 - 04:56] by 10 power 0 which is 1 okay so that
+[04:54 - 04:59] could be our base case like we just
+[04:56 - 05:01] checked if let's say the k is a number
+[04:59 - 05:04] that is less than 10
+[05:01 - 05:06] you will just return
+[05:04 - 05:09] the number itself right so return k
+[05:06 - 05:12] so we are done with the
+[05:09 - 05:12] okay return zero okay because the power
+[05:12 - 05:14] is
+[05:12 - 05:16] zero
+[05:14 - 05:18] now what happened is when
+[05:16 - 05:20] it is not like in this case let's say
+[05:18 - 05:21] one two and three so over here you can
+[05:20 - 05:25] check uh
+[05:21 - 05:26] that if i have power of ten 5
+[05:25 - 05:29] okay
+[05:26 - 05:31] this one will give me a zero
+[05:29 - 05:32] so what happened if it is not let's say
+[05:31 - 05:33] i have
+[05:32 - 05:36] 15
+[05:33 - 05:38] so notice that to get the
+[05:36 - 05:41] power of 10 i simply need to keep on
+[05:38 - 05:43] dividing right this number until
+[05:41 - 05:45] i reach a number that's between uh one
+[05:43 - 05:48] and ten right so in this case actually
+[05:45 - 05:49] 15 i expect this answer to be one okay
+[05:48 - 05:51] and where does that one actually come
+[05:49 - 05:54] from it's actually obtained by dividing
+[05:51 - 05:57] this 15 by 10 one time
+[05:54 - 05:58] and then you realize that i get 1.5
+[05:57 - 06:01] okay and that means
+[05:58 - 06:04] i already managed to get a significant
+[06:01 - 06:06] number right just by doing it one time
+[06:04 - 06:08] so actually in this case i need to
+[06:06 - 06:10] [Music]
+[06:08 - 06:11] do a division so i need to divide this
+[06:10 - 06:13] uh
+[06:11 - 06:16] 10
+[06:13 - 06:18] i'll divide this k by 10 right but since
+[06:16 - 06:21] i
+[06:18 - 06:23] actually i can just divide by 10 right
+[06:21 - 06:25] but then right i need to call this
+[06:23 - 06:27] function again
+[06:25 - 06:28] [Music]
+[06:27 - 06:31] okay
+[06:28 - 06:33] so that recursively right i'm going to
+[06:31 - 06:36] keep dividing by 10 but as i divide by
+[06:33 - 06:38] 10 right the more i divide by 10 one
+[06:36 - 06:40] times by right i should increase my
+[06:38 - 06:42] power of 10 by 1 and so i need to have a
+[06:40 - 06:45] plus one
+[06:42 - 06:48] okay one plus this okay and this will be
+[06:45 - 06:50] my output
+[06:48 - 06:52] okay so let's try run this thing okay
+[06:50 - 06:53] true enough when i divide
+[06:52 - 06:56] uh
+[06:53 - 06:59] this 15 one time right it should give me
+[06:56 - 07:01] 1.5 right and then it will return me the
+[06:59 - 07:03] power of 10 p1 so
+[07:01 - 07:05] just now we have this sample also one
+[07:03 - 07:08] two three
+[07:05 - 07:10] okay so you should return so i think we
+[07:08 - 07:13] can say that this would be a cool
+[07:10 - 07:15] for me to put over here
+[07:13 - 07:17] okay but of course you are not done yet
+[07:15 - 07:19] right because we also need to write the
+[07:17 - 07:21] code for significance right and what is
+[07:19 - 07:23] significant
+[07:21 - 07:26] significant is just getting the number
+[07:23 - 07:30] like meaning this uh for example one two
+[07:26 - 07:33] three i should be getting 1.23 okay so
+[07:30 - 07:33] how do i get that
+[07:34 - 07:38] [Music]
+[07:36 - 07:39] okay once you get the idea it's quite
+[07:38 - 07:40] straightforward you just need to divide
+[07:39 - 07:44] that
+[07:40 - 07:47] 123 how many times right by 10 and we
+[07:44 - 07:49] have actually calculated using this
+[07:47 - 07:51] power of that right so what i need to do
+[07:49 - 07:53] is just
+[07:51 - 07:56] use this k
+[07:53 - 07:56] so i will return
+[07:57 - 08:02] okay divided by
+[07:59 - 08:04] power of 10 okay how many times but
+[08:02 - 08:08] because it's a division i need to divide
+[08:04 - 08:11] it how many times is 10 to the power of
+[08:08 - 08:13] a power so it's double x raised to the
+[08:11 - 08:15] power of
+[08:13 - 08:15] this
+[08:16 - 08:20] okay
+[08:17 - 08:22] so let's see our y again because power
+[08:20 - 08:25] of 10 of this number will give me how
+[08:22 - 08:27] many power of 10 does it have in the
+[08:25 - 08:29] scientific notation okay i'm going to
+[08:27 - 08:32] divide that number
+[08:29 - 08:33] 10 times that num the power
+[08:32 - 08:36] right
+[08:33 - 08:38] and the question also say that i need to
+[08:36 - 08:41] correct this to two decimal place so i
+[08:38 - 08:41] need to do a
+[08:43 - 08:47] [Music]
+[08:44 - 08:48] so we check whether if i put this
+[08:47 - 08:52] significant
+[08:48 - 08:52] [Music]
+[08:54 - 08:56] one
+[08:54 - 08:59] one two three
+[08:56 - 09:01] yep i get one point two three so again
+[08:59 - 09:03] if let's say it's a bigger number two
+[09:01 - 09:06] three four five six seven
+[09:03 - 09:09] okay i should get the 1.23 because the
+[09:06 - 09:11] significant bit is only 1.23 this is
+[09:09 - 09:12] actually times 10 to the power of how
+[09:11 - 09:15] many
+[09:12 - 09:17] six right so i divide by 10 six times
+[09:15 - 09:20] and get 1.23 since i only want to
+[09:17 - 09:22] decimal so this will be the code
+[09:20 - 09:25] that i'll copy
+[09:22 - 09:25] [Music]
+[09:27 - 09:30] okay
+[09:28 - 09:32] next question two okay
+[09:30 - 09:34] now question three is where you're
+[09:32 - 09:37] supposed to implement another recursive
+[09:34 - 09:40] function and then it actually takes in a
+[09:37 - 09:42] positive integer n okay
+[09:40 - 09:44] such as is smaller than zero and then
+[09:42 - 09:47] we'll consider all the number from one
+[09:44 - 09:50] all the way to the n in the input and
+[09:47 - 09:52] you check if the number is divisible by
+[09:50 - 09:54] two or three okay division by two or
+[09:52 - 09:56] three then you actually include in the
+[09:54 - 09:57] sum otherwise you leave it out so this
+[09:56 - 10:00] is an example
+[09:57 - 10:04] so seven so you come from one two three
+[10:00 - 10:06] four five six right and all the
+[10:04 - 10:09] odd number of these you don't want so
+[10:06 - 10:10] you remove it okay so you only add sorry
+[10:09 - 10:12] not odd number
+[10:10 - 10:15] whether the number is divisible by two
+[10:12 - 10:17] or three so uh one definitely not
+[10:15 - 10:20] included because one is not divisible by
+[10:17 - 10:21] two or three two and three are included
+[10:20 - 10:23] four is included because four can be
+[10:21 - 10:26] divided by two
+[10:23 - 10:29] five is excluded right because it's not
+[10:26 - 10:31] divisible six yes included seven not
+[10:29 - 10:33] included so
+[10:31 - 10:34] i think this one it should be quite
+[10:33 - 10:36] straightforward you just need to do some
+[10:34 - 10:37] conditional check
+[10:36 - 10:39] but as
+[10:37 - 10:40] for any recursive function you need to
+[10:39 - 10:42] have a base case
+[10:40 - 10:44] so what would be a suitable base case
+[10:42 - 10:45] here
+[10:44 - 10:47] they say that it takes in positive
+[10:45 - 10:49] integers so the smallest positive
+[10:47 - 10:51] integer will be
+[10:49 - 10:54] n is equals to
+[10:51 - 10:56] one right so if it is one
+[10:54 - 10:59] what should be the output if you want to
+[10:56 - 11:00] add if the number is divisible by two or
+[10:59 - 11:02] three one just like we mentioned it's
+[11:00 - 11:04] not divisible by two or three so i'll
+[11:02 - 11:06] just return
+[11:04 - 11:08] zero
+[11:06 - 11:09] okay
+[11:08 - 11:11] then
+[11:09 - 11:13] uh we need to check right this is where
+[11:11 - 11:16] the condition comes in check whether or
+[11:13 - 11:18] not this n can it be divided by two
+[11:16 - 11:20] okay divided by two that means this
+[11:18 - 11:22] gives me a zero
+[11:20 - 11:24] but i also can allow it to be divisible
+[11:22 - 11:27] by three so
+[11:24 - 11:29] i can allow this to happen okay for this
+[11:27 - 11:32] thing i must do something
+[11:29 - 11:33] and then else if
+[11:32 - 11:35] they are not divisible then i must do
+[11:33 - 11:37] something so what would be the function
+[11:35 - 11:39] that i put in here definitely i need to
+[11:37 - 11:40] call this function
+[11:39 - 11:43] okay so
+[11:40 - 11:45] uh i think
+[11:43 - 11:48] from one the next one should be two left
+[11:45 - 11:50] so we know that two needs to be counted
+[11:48 - 11:52] by sum right so i definitely need to add
+[11:50 - 11:56] the two and the two that means my n
+[11:52 - 11:56] equals two so i need to actually return
+[11:56 - 11:58] okay
+[11:56 - 12:00] [Music]
+[11:58 - 12:02] turn the number two which is in this
+[12:00 - 12:04] case is the end right and what do i do
+[12:02 - 12:07] next well i need to process it with the
+[12:04 - 12:09] smaller
+[12:07 - 12:11] uh input right because that is what
+[12:09 - 12:13] recursive is all about i need to
+[12:11 - 12:14] um
+[12:13 - 12:16] divide it into a sub problem which is
+[12:14 - 12:18] smaller than the original problem so i
+[12:16 - 12:20] need to reduce it i need to call the
+[12:18 - 12:23] function one more time by reduce the
+[12:20 - 12:25] size so in this case from n because he's
+[12:23 - 12:27] talking about sum i need to plus
+[12:25 - 12:28] okay and then it must be a smaller
+[12:27 - 12:31] problem
+[12:28 - 12:33] n minus one so from two
+[12:31 - 12:34] right if some number is two so less than
+[12:33 - 12:36] two plus
+[12:34 - 12:38] when i put uh
+[12:36 - 12:40] some number of
+[12:38 - 12:42] one which in this case is zero sorry
+[12:40 - 12:44] two plus zero okay and then next time
+[12:42 - 12:46] when you move on to three you know this
+[12:44 - 12:49] one is going to do you add a three then
+[12:46 - 12:51] sum num two which was two so three plus
+[12:49 - 12:54] two then after that move on you plus
+[12:51 - 12:56] some num one which is zero again okay
+[12:54 - 12:58] and then the moment you hit a number
+[12:56 - 13:00] that is not divisible like for example
+[12:58 - 13:02] just now is the five right if not
+[13:00 - 13:06] divisible basically you're just going to
+[13:02 - 13:07] um skip that number so you actually just
+[13:06 - 13:08] return
+[13:07 - 13:09] [Music]
+[13:08 - 13:12] zero plus
+[13:09 - 13:14] [Music]
+[13:12 - 13:16] some numbers basically you just add zero
+[13:14 - 13:17] to your total sum
+[13:16 - 13:19] but of course
+[13:17 - 13:20] since it's just zero i can just remove
+[13:19 - 13:24] this
+[13:20 - 13:29] okay and then we can check out some num7
+[13:24 - 13:29] [Music]
+[13:32 - 13:38] so this will be my code this question
+[13:35 - 13:38] [Music]
+[13:40 - 13:42] any questions
+[13:45 - 13:50] okay question four is uh interesting
+[13:50 - 13:53] this question
+[13:51 - 13:55] okay um
+[13:53 - 13:57] it's an interesting question because uh
+[13:55 - 13:59] he has something to do with the movie
+[13:57 - 14:01] inception not sure how many of you
+[13:59 - 14:03] actually have watched that okay but
+[14:01 - 14:05] basically it's about dreaming
+[14:03 - 14:06] okay and that's why in this case they
+[14:05 - 14:09] say that um
+[14:06 - 14:11] basically you must always have this
+[14:09 - 14:13] word dream appearing and then it must
+[14:11 - 14:16] appear as many times as the number n
+[14:13 - 14:21] okay so you're supposed to do recursive
+[14:16 - 14:23] all right function to do so and then um
+[14:21 - 14:26] there's some catch here that
+[14:23 - 14:28] the dream is not just um you know just
+[14:26 - 14:31] dream dream dream all that you must
+[14:28 - 14:34] add this uh phrase within a dream
+[14:31 - 14:36] somewhere in between okay so i think um
+[14:34 - 14:38] as usual we start off with a base case
+[14:36 - 14:41] first
+[14:38 - 14:42] okay in fact they print out some
+[14:41 - 14:44] uh
+[14:42 - 14:48] output here so i think that this one
+[14:44 - 14:49] very clear now when n is zero so if n is
+[14:48 - 14:52] zero
+[14:49 - 14:56] i just need to return an empty string
+[14:52 - 15:03] based on that uh instruction
+[14:56 - 15:03] [Music]
+[15:06 - 15:11] and then if it is a one what happened
+[15:08 - 15:13] it must return just dream on its own
+[15:11 - 15:15] without this within a dream because
+[15:13 - 15:16] stays the only dream you have all right
+[15:15 - 15:18] so
+[15:16 - 15:21] if
+[15:18 - 15:21] one
+[15:23 - 15:27] [Music]
+[15:32 - 15:37] okay it's not as simple as adding
+[15:35 - 15:40] uh
+[15:37 - 15:42] dream to dream right i need to have this
+[15:40 - 15:44] phrase made in a dream so how do i do
+[15:42 - 15:47] that right and because it's recursive so
+[15:44 - 15:51] it's actually i need to call this one
+[15:47 - 15:51] more time okay so this is
+[15:54 - 15:57] but then
+[15:55 - 16:00] if i never change or never update this
+[15:57 - 16:02] end it will forever i will forever be
+[16:00 - 16:05] trapped in the dreamland basically right
+[16:02 - 16:08] okay so i need to reduce it right and
+[16:05 - 16:11] reduce it by one okay
+[16:08 - 16:13] so there is one layer up from the dream
+[16:11 - 16:15] and then i need to actually return the
+[16:13 - 16:17] dream within a trip so how do i do that
+[16:15 - 16:19] if i simply do this
+[16:17 - 16:20] [Music]
+[16:19 - 16:23] plus
+[16:20 - 16:25] is right guess what i'm going to get
+[16:23 - 16:27] well
+[16:25 - 16:29] okay just get a dream dream right but
+[16:27 - 16:34] what i want is needing a dream of
+[16:29 - 16:34] yesterday so how to solve this
+[16:38 - 16:43] nobody want to say anything
+[16:40 - 16:45] okay actually it's rather simple
+[16:43 - 16:47] laughing you just need to add this
+[16:45 - 16:50] within a dream
+[16:47 - 16:54] within a right right here
+[16:50 - 16:56] okay such that if it is two right
+[16:54 - 16:58] i will start of dream within the right
+[16:56 - 17:00] and then i reduce it by one so now it's
+[16:58 - 17:03] inception one and then it will just
+[17:00 - 17:05] return a dream so i'll get dream
+[17:03 - 17:08] within a trip
+[17:05 - 17:09] okay so when you have okay they can use
+[17:08 - 17:11] a five so
+[17:09 - 17:14] let's go here so it's stream within a
+[17:11 - 17:15] train within a train within three weeks
+[17:14 - 17:18] five times
+[17:15 - 17:20] okay and that's all uh
+[17:18 - 17:22] what the question was
+[17:20 - 17:25] should be quite simple hopefully as i go
+[17:22 - 17:25] through today's um
+[17:26 - 17:32] today's question on this
+[17:29 - 17:34] uh checkpoint right you'll learn thing
+[17:32 - 17:37] or do right about reversion okay and
+[17:34 - 17:39] then um you need to practice basically
+[17:37 - 17:41] right remember the important part of a
+[17:39 - 17:44] recursive call is that you must have
+[17:41 - 17:46] base case right so in this case this was
+[17:44 - 17:46] my base case in
+[17:47 - 17:51] right and then after that
+[17:49 - 17:53] you need to call the function one more
+[17:51 - 17:55] time that's the second
+[17:53 - 17:57] or important aspect and lastly you must
+[17:55 - 17:59] reduce
+[17:57 - 18:03] the problem from n become n minus one
+[17:59 - 18:07] okay so uh with that i think i'll just
+[18:03 - 18:07] end the session for today

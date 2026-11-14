@@ -1,0 +1,191 @@
+Title: C5b Python with SQLite Part 1 and 2 - voiceover
+Assessment(s): C5a current assessment 88865, Parts 1-2 wrapper /courses/3257/videos/24731; wrapper verified live 14 November 2026
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=k6naPhG3KhA
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] Hi, welcome back. Today we'll be going
+[00:02 - 00:07] through the lesson on Python with SQL
+[00:04 - 00:09] part 1 a. You will be going through a
+[00:07 - 00:12] series of guided tasks to learn how to
+[00:09 - 00:13] create a table, how to insert
+[00:12 - 00:16] data into the table, and then how to
+[00:13 - 00:18] update, delete, and so on. Now at the
+[00:16 - 00:20] end of this lesson,
+[00:18 - 00:23] you are required to zip all the 13
+[00:20 - 00:24] Python files into a single zip file for
+[00:23 - 00:27] submission.
+[00:24 - 00:29] In Cosmology part 1, you will learn how
+[00:27 - 00:31] to create database and tables. Now for
+[00:29 - 00:34] this task, we will be using the
+[00:31 - 00:36] database.db provided in your cosmology.
+[00:34 - 00:39] Save your work using the
+[00:36 - 00:41] file name 1 create db.py. Now in this
+[00:39 - 00:43] particular Python file, there are only
+[00:41 - 00:46] four lines of code. First line from
+[00:43 - 00:48] sqlite3 import asterisk. We are using
+[00:46 - 00:50] the Python built-in module to help us
+[00:48 - 00:52] work with database.
+[00:50 - 00:55] When you open a database with a write
+[00:52 - 00:57] option and then close it immediately,
+[00:55 - 01:00] this will actually overwrite any
+[00:57 - 01:02] existing database that you have.
+[01:00 - 01:05] In sqlite, it does not support the drop
+[01:02 - 01:08] database. So this is the most convenient
+[01:05 - 01:11] way to overwrite any existing file.
+[01:08 - 01:12] When you try to connect to database.db,
+[01:11 - 01:15] if it already exists, then it will
+[01:12 - 01:17] connect to the existing file.
+[01:15 - 01:19] But if this file does not exist, then it
+[01:17 - 01:21] will create a new one
+[01:19 - 01:24] and will assign this connected db to
+[01:21 - 01:26] this variable called db.
+[01:24 - 01:27] Now whenever you connect to a database,
+[01:26 - 01:29] you must always remember to close the
+[01:27 - 01:31] database.
+[01:29 - 01:34] Otherwise, the memory will remain
+[01:31 - 01:36] occupied and then subsequently you may
+[01:34 - 01:39] encounter problems because the database
+[01:36 - 01:41] is not closed. Now let's recap about the
+[01:39 - 01:44] entity relation diagram,
+[01:41 - 01:46] the ER diagram. Now the task that we are
+[01:44 - 01:48] doing in this lesson involves the
+[01:46 - 01:49] products,
+[01:48 - 01:51] the customer, and then the order that
+[01:49 - 01:54] they make.
+[01:51 - 01:56] I've provided here the table description
+[01:54 - 01:59] for each of this table. Do take note on
+[01:56 - 02:00] the primary key and the foreign key
+[01:59 - 02:03] and the foreign to see how they are
+[02:00 - 02:05] related.
+[02:03 - 02:07] If you recall, in our C5 A, we learned
+[02:05 - 02:09] how to use the SQL command to create
+[02:07 - 02:10] tables.
+[02:09 - 02:13] And this is the schema for the three
+[02:10 - 02:15] tables that we intend to create.
+[02:13 - 02:18] Save your following lesson to the Python
+[02:15 - 02:20] file to create table-products.py.
+[02:18 - 02:23] After connecting to the database, which
+[02:20 - 02:25] has already been connected,
+[02:23 - 02:26] we will now assign a cursor and name it
+[02:25 - 02:28] C.
+[02:26 - 02:30] We will now assign a cursor and name it
+[02:28 - 02:31] C.
+[02:30 - 02:33] Now we will use execute to help us
+[02:31 - 02:35] execute all the SQL command that we
+[02:33 - 02:37] intend to use
+[02:35 - 02:39] to create the tables.
+[02:37 - 02:41] The triple quotes here basically means
+[02:39 - 02:43] that whatever the SQL command is a
+[02:41 - 02:45] string.
+[02:43 - 02:47] Do note that Python will ignore all the
+[02:45 - 02:50] backslash because it simply indicates
+[02:47 - 02:51] the new line we have in our code. After
+[02:50 - 02:55] executing the command to create the
+[02:51 - 02:57] table, you must always use this
+[02:55 - 02:59] db.commit to save all the changes before
+[02:57 - 03:01] you close the DB.
+[02:59 - 03:02] Before you close the DB.
+[03:01 - 03:04] Now after learning how to create the
+[03:02 - 03:06] products table,
+[03:04 - 03:08] you should go ahead and create the
+[03:06 - 03:10] customer and the orders table using a
+[03:08 - 03:12] similar code.
+[03:10 - 03:15] Part two. We will continue to use the
+[03:12 - 03:17] database.db file that you have created.
+[03:15 - 03:19] Now we will learn how to insert data
+[03:17 - 03:21] into the tables.
+[03:19 - 03:24] If you recall the SQL command that we
+[03:21 - 03:27] used to insert into the products table,
+[03:24 - 03:29] which have the product name, unit price,
+[03:27 - 03:30] package, supplier name, supplier
+[03:29 - 03:31] country,
+[03:30 - 03:34] and then if we just want to insert a
+[03:31 - 03:36] single record, we can do so using this
+[03:34 - 03:38] SQL command.
+[03:36 - 03:40] Please note that the ID will be auto
+[03:38 - 03:42] increased and it will be generated by
+[03:40 - 03:44] the SQL database.
+[03:42 - 03:45] This is the third Python file that you
+[03:44 - 03:47] are saving.
+[03:45 - 03:50] In this Python file, we will name it as
+[03:47 - 03:53] insert one record using a tuple.
+[03:50 - 03:56] Take a closer look into the command line
+[03:53 - 03:58] that we use to insert a single record.
+[03:56 - 04:02] We involves using a single record and we
+[03:58 - 04:04] call it insert one record using a tuple.
+[04:02 - 04:06] Five question marks and each of these
+[04:04 - 04:08] question mark will correspond to a value
+[04:06 - 04:11] in the tuple.
+[04:08 - 04:13] The first question mark will be chai,
+[04:11 - 04:16] second question mark will be 18, third
+[04:13 - 04:18] will be 10 boxes * 20 bags, and the
+[04:16 - 04:21] fourth question mark will be exotic
+[04:18 - 04:23] liquids, and the fifth question mark UK,
+[04:21 - 04:24] and it will correspond to each of the
+[04:23 - 04:27] field.
+[04:24 - 04:29] Take note of all the brackets and the
+[04:27 - 04:31] comma so that you will not end up in a
+[04:29 - 04:33] syntax error.
+[04:31 - 04:35] Next, we will learn how to insert
+[04:33 - 04:37] multiple rows of data into table.
+[04:35 - 04:39] If you recall, this will be the SQL
+[04:37 - 04:41] command line.
+[04:39 - 04:43] Do take note of all the double quote and
+[04:41 - 04:45] single quotes.
+[04:43 - 04:48] Do take note of all the double quote and
+[04:45 - 04:50] single quotes. We use double quote here
+[04:48 - 04:52] because the value itself, the string
+[04:50 - 04:54] contains a single quote.
+[04:52 - 04:56] In your fourth Python file, we will
+[04:54 - 04:58] learn how to insert multiple data from a
+[04:56 - 05:00] list.
+[04:58 - 05:03] So you create a data list using a Python
+[05:00 - 05:05] list and insert all the tuples of data
+[05:03 - 05:07] that you intend to
+[05:05 - 05:09] be inserted into the products table and
+[05:07 - 05:11] then use iterations for data in data
+[05:09 - 05:13] list.
+[05:11 - 05:15] Execute the command according to the
+[05:13 - 05:17] number of data that you intend to insert
+[05:15 - 05:18] into the table.
+[05:17 - 05:21] In this particular slide, I have omitted
+[05:18 - 05:23] the five necessary lines of code
+[05:21 - 05:26] because these are very repetitive for
+[05:23 - 05:29] all the lessons that we will be doing.
+[05:26 - 05:32] We can also insert data from a CSV file.
+[05:29 - 05:33] Now a CSV file is basically a comma
+[05:32 - 05:36] delimited text file.
+[05:33 - 05:38] So in order to use CSV file, we must
+[05:36 - 05:40] make use of the Python module.
+[05:38 - 05:43] So you need to include this line of code
+[05:40 - 05:45] from CSV import asterisk.
+[05:43 - 05:48] Now with that, you will learn how to
+[05:45 - 05:51] open a product.csv file
+[05:48 - 05:53] and then learn how to skip the header.
+[05:51 - 05:55] And then learn how to skip the header.
+[05:53 - 05:57] Iterate through all the data within the
+[05:55 - 05:59] list and then insert them into the
+[05:57 - 06:01] table.
+[05:59 - 06:03] After inserting all the data into table,
+[06:01 - 06:05] you must commit the changes before you
+[06:03 - 06:07] close the database.
+[06:05 - 06:09] You may your DB browser to open your
+[06:07 - 06:11] database.db
+[06:09 - 06:13] to check that all the records have been
+[06:11 - 06:15] added successfully.
+[06:13 - 06:18] Besides adding all the records from the
+[06:15 - 06:20] CSV file into the product tables,
+[06:18 - 06:22] you should also insert all the customer
+[06:20 - 06:24] and the order data into their respective
+[06:22 - 06:26] tables.
+[06:24 - 06:28] I will leave it to you to continue from
+[06:26 - 06:30] here following the instruction given in
+[06:28 - 06:32] the slides.
+[06:30 - 06:34] Do approach the teacher for help or use
+[06:32 - 06:37] the command in cosmology to seek
+[06:34 - 06:37] clarifications.

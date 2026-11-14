@@ -1,0 +1,233 @@
+Title: What does what in your computer? Computer parts Explained
+Assessment(s): Released Coursemology video catalog - What does what in your computer?
+Linked label(s): What does what in your computer?
+Uploader: Basics Explained, H3Vtux
+YouTube: https://www.youtube.com/watch?v=ExxFxD4OSZ0
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24788
+Published course start: 2026-04-21T00:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] if you work with computers you've likely
+[00:02 - 00:06] heard terms like ram hard drive and
+[00:04 - 00:08] processor mentioned by tech support or
+[00:06 - 00:10] others who are more interested in what
+[00:08 - 00:12] goes on inside of a computer's case
+[00:10 - 00:13] if you've always wondered what the
+[00:12 - 00:15] various components of your computer are
+[00:13 - 00:17] for but have never really had the time
+[00:15 - 00:19] to look into it then this video is just
+[00:17 - 00:21] for you while each one of these
+[00:19 - 00:23] components is complex enough to spend a
+[00:21 - 00:26] lifetime learning about i'm gonna give a
+[00:23 - 00:28] very broad and general overview
+[00:26 - 00:30] a typical desktop computer comes down to
+[00:28 - 00:34] these seven essential parts
+[00:30 - 00:37] case power supply motherboard cpu
+[00:34 - 00:39] ram hard drive and graphics cards
+[00:37 - 00:42] these are the fundamental parts of any
+[00:39 - 00:44] desktop computer it may seem daunting at
+[00:42 - 00:45] first so let's separate these into two
+[00:44 - 00:48] categories
+[00:45 - 00:51] simple ones and the more complex ones
+[00:48 - 00:52] for starters let's look at the case
+[00:51 - 00:55] the case is nothing more than a big hunk
+[00:52 - 00:57] of plastic that houses everything else
+[00:55 - 00:59] some of them have more or less physical
+[00:57 - 01:01] space some of them have different parts
+[00:59 - 01:03] where you can put screws in or this or
+[01:01 - 01:06] that but at the end of the day all the
+[01:03 - 01:09] case really does is provide a nice
+[01:06 - 01:11] enclosed system for everything else
+[01:09 - 01:13] next up we have the power supply this
+[01:11 - 01:15] part of your computer almost always
+[01:13 - 01:17] located on the bottom is the part that
+[01:15 - 01:19] plugs into the wall and provides all of
+[01:17 - 01:20] the other parts with the electricity
+[01:19 - 01:22] needed to do their thing
+[01:20 - 01:25] you can think of it as an extremely
+[01:22 - 01:27] advanced ac adapter
+[01:25 - 01:29] the last of the simple parts to mention
+[01:27 - 01:31] is the motherboard the motherboard is a
+[01:29 - 01:33] wide and flat circuit board that all of
+[01:31 - 01:35] the other components plug into it's the
+[01:33 - 01:38] part that lets all of these components
+[01:35 - 01:39] send electrical currents composing data
+[01:38 - 01:41] between each other
+[01:39 - 01:43] while not particularly expensive the
+[01:41 - 01:45] motherboard is arguably the most
+[01:43 - 01:47] important component because without it
+[01:45 - 01:49] you'd have nowhere to put anything else
+[01:47 - 01:50] so that's it for the simple components
+[01:49 - 01:53] now let's move on to the more complex
+[01:50 - 01:55] parts the ones that deal with data
+[01:53 - 01:58] the four main components to keep in mind
+[01:55 - 01:59] here are cpu ram hard drive and graphics
+[01:58 - 02:01] card
+[01:59 - 02:03] now first things first i'm going to
+[02:01 - 02:05] establish some terminology
+[02:03 - 02:09] keep in mind that cpu is also known as
+[02:05 - 02:11] the central processing unit or processor
+[02:09 - 02:13] these terms all refer to the same thing
+[02:11 - 02:16] they are completely interchangeable
+[02:13 - 02:19] ram stands for random access memory and
+[02:16 - 02:21] is often referred to as just memory a
+[02:19 - 02:24] hard drive is often referred to as a
+[02:21 - 02:26] disk drive or storage
+[02:24 - 02:29] and a graphics card is also known as a
+[02:26 - 02:31] gpu or graphics processing unit
+[02:29 - 02:35] for this explanation i'll be using the
+[02:31 - 02:36] terms cpu ram hard drive and graphics
+[02:35 - 02:39] card
+[02:36 - 02:42] so let's start with the cpu the cpu is
+[02:39 - 02:44] where your computer does things it isn't
+[02:42 - 02:46] really capable of storing very much data
+[02:44 - 02:48] at all but it's very good at doing
+[02:46 - 02:50] things with data quickly reading it
+[02:48 - 02:52] arranging it doing the type of quick and
+[02:50 - 02:54] massive calculations needed to run your
+[02:52 - 02:56] programs
+[02:54 - 02:58] this is where most of your programs are
+[02:56 - 03:00] essentially run from
+[02:58 - 03:02] it's often referred to as the brain of
+[03:00 - 03:04] the computer i personally don't like
+[03:02 - 03:07] this description because really your
+[03:04 - 03:09] entire computer is just a brain it's
+[03:07 - 03:11] just the center part of your computer's
+[03:09 - 03:14] brain basically everything that happens
+[03:11 - 03:15] in your computer goes through your cpu
+[03:14 - 03:18] at some point
+[03:15 - 03:19] now let's talk about ram and hard drive
+[03:18 - 03:21] at the same time because they have a
+[03:19 - 03:23] very unique relationship which is
+[03:21 - 03:24] probably why people often confuse the
+[03:23 - 03:26] two
+[03:24 - 03:28] your hard drive is where all of your
+[03:26 - 03:30] data is stored when your computer tells
+[03:28 - 03:33] you you're running low on space it's
+[03:30 - 03:34] because your hard drive is almost full
+[03:33 - 03:37] all of the data that makes up your
+[03:34 - 03:40] videos pictures documents project files
+[03:37 - 03:42] or the 3d worlds and models that make up
+[03:40 - 03:45] a game are all stored here
+[03:42 - 03:46] while hard drives can store lots of data
+[03:45 - 03:48] they're relatively bad at accessing that
+[03:46 - 03:49] data quickly
+[03:48 - 03:52] everything is accessed through a tiny
+[03:49 - 03:54] little wire here and because most hard
+[03:52 - 03:55] drives are made up of spinning disks
+[03:54 - 03:57] your hard drive isn't going to be able
+[03:55 - 03:59] to constantly give your cpu the
+[03:57 - 04:02] information it needs to run certain
+[03:59 - 04:05] programs that's where ram comes in
+[04:02 - 04:07] ram is another form of storage it stores
+[04:05 - 04:10] the exact same kind of data as your hard
+[04:07 - 04:12] drive but ram sacrifices storage space
+[04:10 - 04:14] for nearly instant accessibility
+[04:12 - 04:16] unlike your hard drive which sends all
+[04:14 - 04:19] of its data through a tiny little thin
+[04:16 - 04:20] wire your ram is arranged in these long
+[04:19 - 04:23] thin sticks that insert into your
+[04:20 - 04:25] motherboard think about a storage unit
+[04:23 - 04:27] if you have a massive warehouse with
+[04:25 - 04:29] only a thin doorway it's going to be
+[04:27 - 04:31] difficult to get in find what you need
+[04:29 - 04:33] and get out if it's kind of spread all
+[04:31 - 04:34] over the place you'll have to go through
+[04:33 - 04:37] a tiny door
+[04:34 - 04:39] but if you have a long wide storage shed
+[04:37 - 04:41] that's got a big massive garage
+[04:39 - 04:43] composing an entire side of it you won't
+[04:41 - 04:46] be able to store as much but things are
+[04:43 - 04:47] significantly easier to get to typically
+[04:46 - 04:50] if your computer has a thousand
+[04:47 - 04:52] gigabytes of storage space in your hard
+[04:50 - 04:54] drive it's likely got about 16 gigabytes
+[04:52 - 04:56] worth of ram here's where you put the
+[04:54 - 04:59] stuff you own but you aren't currently
+[04:56 - 05:01] using and this smaller one is where you
+[04:59 - 05:03] put the stuff that you are using and
+[05:01 - 05:04] need to be able to get in and out of
+[05:03 - 05:06] quickly
+[05:04 - 05:09] when you run a program or a project file
+[05:06 - 05:11] your cpu identifies what parts of data
+[05:09 - 05:13] are needed for that program to run
+[05:11 - 05:15] it pulls them from your hard drive and
+[05:13 - 05:17] then it stores them in your ram sticks
+[05:15 - 05:19] for quick accessibility this is why when
+[05:17 - 05:22] you start a new level of a game for
+[05:19 - 05:24] instance it has to load anytime you see
+[05:22 - 05:26] loading it's loading the data that
+[05:24 - 05:29] composes that level from your bulky hard
+[05:26 - 05:31] drive into your ram from a user's
+[05:29 - 05:31] perspective just follow this rule of
+[05:31 - 05:34] thumb
+[05:31 - 05:36] ram allows you to run intensive programs
+[05:34 - 05:39] while disk space allows you to have more
+[05:36 - 05:40] of these in programs installed
+[05:39 - 05:42] it also allows you to have more of the
+[05:40 - 05:45] data they're referencing whether it be
+[05:42 - 05:47] pictures videos or mods
+[05:45 - 05:49] and finally we get to the graphics card
+[05:47 - 05:52] with all of the calculations going on in
+[05:49 - 05:53] your computer to turn a bunch of numbers
+[05:52 - 05:55] that basically come down to ones and
+[05:53 - 05:57] zeros into a constantly updated
+[05:55 - 05:59] three-dimensional world
+[05:57 - 06:02] the final and most important and
+[05:59 - 06:04] arguably most difficult step is to
+[06:02 - 06:06] display that on your monitor
+[06:04 - 06:08] it's possible for your motherboard to do
+[06:06 - 06:09] this alone but it's not going to look
+[06:08 - 06:11] good and it's certainly not going to be
+[06:09 - 06:12] able to do much
+[06:11 - 06:15] your graphics card is essentially an
+[06:12 - 06:17] entire computer in and of itself
+[06:15 - 06:19] dedicated to the sole task of figuring
+[06:17 - 06:21] out what pixels need to light up on your
+[06:19 - 06:23] screen in what color and at what time if
+[06:21 - 06:25] you were playing a game that had a very
+[06:23 - 06:28] busy and high texture world with lots of
+[06:25 - 06:30] models and different angles and colors
+[06:28 - 06:33] your cpu is the thing that creates that
+[06:30 - 06:35] world it knows where the stuff is and it
+[06:33 - 06:37] does so with data that's been stored in
+[06:35 - 06:40] your ram which was loaded out of your
+[06:37 - 06:42] hard drive but it's your graphics card
+[06:40 - 06:44] that figures out what it's supposed to
+[06:42 - 06:46] look like based on where you're standing
+[06:44 - 06:48] in the world without getting too off
+[06:46 - 06:51] topic here if you're somebody who likes
+[06:48 - 06:52] math i highly recommend you look up fast
+[06:51 - 06:54] inverse square root which is directly
+[06:52 - 06:56] related to how three-dimensional worlds
+[06:54 - 06:58] calculate perspectives
+[06:56 - 07:00] so that pretty much sums it up there are
+[06:58 - 07:02] other components worth mentioning such
+[07:00 - 07:05] as cooling systems or internal wireless
+[07:02 - 07:07] cards but really those are extras
+[07:05 - 07:09] so to summarize what i talked about so
+[07:07 - 07:12] far the case stores everything in a
+[07:09 - 07:14] physical box the power supply gives
+[07:12 - 07:16] electricity to what needs it the
+[07:14 - 07:19] motherboard is the body that everything
+[07:16 - 07:21] plugs into the cpu does everything
+[07:19 - 07:22] ram stores data that is needed for quick
+[07:21 - 07:24] access
+[07:22 - 07:26] hard drives store everything that you
+[07:24 - 07:27] have installed and the data that goes
+[07:26 - 07:29] along with those programs
+[07:27 - 07:31] well the graphics card figures out how
+[07:29 - 07:33] it's all supposed to look on your
+[07:31 - 07:35] monitor well thank you very much for
+[07:33 - 07:36] watching i hope i helped and if you have
+[07:35 - 07:38] any questions feel free to leave a
+[07:36 - 07:41] comment and i'll do my best to answer
+[07:38 - 07:42] them liking and subscribing is always a
+[07:41 - 07:45] big help and i plan to put out many more
+[07:42 - 07:48] videos explaining technical concepts
+[07:45 - 07:48] such as this one

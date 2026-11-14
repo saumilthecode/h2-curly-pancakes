@@ -1,0 +1,585 @@
+Title: Complete Beginner's Guide to Big O Notation
+Assessment(s): Released Coursemology video catalog - Complete Beginner's Guide to Big O Notation
+Linked label(s): Complete Beginner's Guide to Big O Notation
+Uploader: Colt Steele
+YouTube: https://www.youtube.com/watch?v=kS_gr2_-ws8
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24752
+Published course start: 2026-04-16T13:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] everyone it's cold I'm back from my not
+[00:02 - 00:07] so short break I was supposed to be like
+[00:04 - 00:08] a week it turned into two weeks life got
+[00:07 - 00:10] in the way
+[00:08 - 00:12] I moved my studio is sort of set up it's
+[00:10 - 00:14] like the only thing currently unpacked
+[00:12 - 00:17] but it's good enough so I have a video
+[00:14 - 00:17] here on big o-notation this is a very
+[00:17 - 00:19] important topic
+[00:17 - 00:21] I get asked about it a lot I use
+[00:19 - 00:23] JavaScript as the language for some of
+[00:21 - 00:24] the code snippets in this video but
+[00:23 - 00:26] there's nothing really JavaScript
+[00:24 - 00:29] specific about this topic in other news
+[00:26 - 00:31] I have a new video coming out most
+[00:29 - 00:33] likely next week on webpack something I
+[00:31 - 00:35] get asked about a lot something I see in
+[00:33 - 00:37] the comments and the polls oh and I'm
+[00:35 - 00:39] very excited to say that I'm almost done
+[00:37 - 00:41] with my react course a very big react
+[00:39 - 00:43] course it won't be on YouTube but there
+[00:41 - 00:44] will be lots of react content on my
+[00:43 - 00:46] youtube channel in the next few weeks
+[00:44 - 00:48] and months I'll have more information
+[00:46 - 00:50] about the course as I finish editing and
+[00:48 - 00:52] launch it so you'll know and while I
+[00:50 - 00:54] have you here please subscribe to the
+[00:52 - 00:57] channel turn on notifications comment
+[00:54 - 00:58] share with everyone and your family your
+[00:57 - 01:01] friends your school your church your job
+[00:58 - 01:03] your world I do spend most nights just
+[01:01 - 01:05] compulsively refreshing my youtube
+[01:03 - 01:07] channel seeing if my subscribers go up
+[01:05 - 01:09] or down I like to go up and down it's
+[01:07 - 01:11] the only way I derive my self-worth so
+[01:09 - 01:13] please like and subscribe alright I'm
+[01:11 - 01:14] just kidding but it does make a big
+[01:13 - 01:17] difference enough of the chitchat let's
+[01:14 - 01:20] get on to the notorious b.i.g o notation
+[01:17 - 01:22] Big O notation so where's a good place
+[01:20 - 01:24] to start well imagine that we have
+[01:22 - 01:26] multiple implementations of the same
+[01:24 - 01:28] function ten different variations they
+[01:26 - 01:30] all work and they're all different how
+[01:28 - 01:31] do we know which one is best here's a
+[01:30 - 01:33] more concrete example write a function
+[01:31 - 01:36] that accepts a string and returns a
+[01:33 - 01:38] reversed copy of that string there are
+[01:36 - 01:40] many many approaches to doing this in
+[01:38 - 01:43] doing some googling here's a Stack
+[01:40 - 01:45] Overflow post I found with 10 unique
+[01:43 - 01:46] implementations all different so I'm not
+[01:45 - 01:48] talking about you know switching out a
+[01:46 - 01:50] four loop for a while loop changing
+[01:48 - 01:52] variable names these are completely
+[01:50 - 01:54] different approaches how do we compare
+[01:52 - 01:57] these how do we know which one is best
+[01:54 - 01:59] what does best even mean it would be
+[01:57 - 02:00] nice if we had a little scale a chart on
+[01:59 - 02:03] the wall when I'm teaching that I could
+[02:00 - 02:03] point to and say you scored green for
+[02:03 - 02:06] greats
+[02:03 - 02:09] you scored orange for that sort of thing
+[02:06 - 02:10] but we don't quite have that but it's
+[02:09 - 02:12] kind of what Big O notation is going to
+[02:10 - 02:13] help us do it's going to help us talk
+[02:12 - 02:15] about our code and
+[02:13 - 02:17] compare our code so why should you care
+[02:15 - 02:19] well it's important to have a good
+[02:17 - 02:21] vocabulary to talk about how your code
+[02:19 - 02:22] performs especially when you're talking
+[02:21 - 02:23] about trade-offs between different
+[02:22 - 02:25] approaches and you're trying to make
+[02:23 - 02:28] decisions about which road to go down
+[02:25 - 02:30] also if you have an understanding of
+[02:28 - 02:32] what makes your code perform well what
+[02:30 - 02:34] speeds things up which makes it slow it
+[02:32 - 02:35] will also help you a lot when you're
+[02:34 - 02:38] trying to debug things you'll be able to
+[02:35 - 02:40] find bottlenecks and pain points finally
+[02:38 - 02:42] and this is probably one a lot of you
+[02:40 - 02:44] who are watching this care about big
+[02:42 - 02:46] o-notation comes up a lot in interviews
+[02:44 - 02:48] it's not my favorite topic personally
+[02:46 - 02:50] but that doesn't stop a million people
+[02:48 - 02:52] from asking it all the time alright
+[02:50 - 02:54] let's look at some simple code two
+[02:52 - 02:56] functions that calculate the sum of all
+[02:54 - 03:00] numbers from 1 up to and including some
+[02:56 - 03:03] number n so here's our first one it uses
+[03:00 - 03:05] a loop we loop n times and we have a
+[03:03 - 03:07] total variable starts at 0 each time
+[03:05 - 03:10] through we add whatever our loop number
+[03:07 - 03:12] is to that total so it starts at 0 then
+[03:10 - 03:15] we add one two three four all the way up
+[03:12 - 03:18] until we hit N and we return total the
+[03:15 - 03:20] second version is shorter a lot shorter
+[03:18 - 03:22] and it uses some magic mathematical
+[03:20 - 03:24] formula I had a slide on how you derive
+[03:22 - 03:27] this and I ended up removing it just to
+[03:24 - 03:29] keep this video nice and brief but trust
+[03:27 - 03:30] me this works we take n whatever it is
+[03:29 - 03:34] let's say it's three we're going to
+[03:30 - 03:36] multiply 3 times 4 which is 12 divided
+[03:34 - 03:39] by 2 that gives us 6 the same answer we
+[03:36 - 03:41] get over here 3 plus 2 plus 1 is 6 ok so
+[03:39 - 03:44] they both work you can trust me how do
+[03:41 - 03:45] we know which one is better well it's
+[03:44 - 03:48] sort of complicated because what does
+[03:45 - 03:50] better mean is it the faster algorithm
+[03:48 - 03:52] whichever one finishes first is it the
+[03:50 - 03:55] one that takes up less space less memory
+[03:52 - 03:57] on our machine is it one that's more
+[03:55 - 03:58] readable is it one that is shorter the
+[03:57 - 04:00] number of lines does that matter
+[03:58 - 04:03] for this video we're gonna be focusing
+[04:00 - 04:05] on speed what we'll call time complexity
+[04:03 - 04:07] I'll touch a little bit on space
+[04:05 - 04:09] complexity at the end but we're really
+[04:07 - 04:11] focusing on speed so it seems like a
+[04:09 - 04:15] good place to start would be using
+[04:11 - 04:17] timers we could simply grab the current
+[04:15 - 04:19] time performance now and then call add
+[04:17 - 04:21] up to and then grab the current time
+[04:19 - 04:24] after it finishes immediately after and
+[04:21 - 04:26] then subtract the two and we should be
+[04:24 - 04:26] able to tell how long it took and then
+[04:26 - 04:29] we could try that
+[04:26 - 04:31] on the other version and compare them
+[04:29 - 04:33] however it doesn't really work that well
+[04:31 - 04:36] the problem with time
+[04:33 - 04:38] sounds like a title of an album an aging
+[04:36 - 04:39] rocker would come out with at the end of
+[04:38 - 04:41] their career but really there are some
+[04:39 - 04:43] problems with timing our code first is
+[04:41 - 04:46] that different machines will record
+[04:43 - 04:47] different times second the same machine
+[04:46 - 04:49] will sometimes record different times
+[04:47 - 04:49] I'm going to show you this in just a
+[04:49 - 04:51] moment
+[04:49 - 04:54] also sometimes your algorithms are so
+[04:51 - 04:56] fast that testing them with a timer is
+[04:54 - 04:58] not going to be precise enough so here's
+[04:56 - 04:59] a nice little tool some of my friends at
+[04:58 - 05:02] a boot camp called rhythm school made
+[04:59 - 05:04] that's not an ad I promise so this tool
+[05:02 - 05:06] allows you to select one of those
+[05:04 - 05:08] methods so here is our first add up to
+[05:06 - 05:10] that uses the loop and here's the second
+[05:08 - 05:12] one we're talking about with the magical
+[05:10 - 05:15] mathematical formula and what we can do
+[05:12 - 05:17] is pass in a number n and it will time
+[05:15 - 05:19] it and plot how much time it takes on a
+[05:17 - 05:22] chart so let's start simple let's plot
+[05:19 - 05:27] one and then what about when we pass two
+[05:22 - 05:30] three four five whoa what happened to
+[05:27 - 05:32] five why did it go down six why is this
+[05:30 - 05:34] getting slower as we go and then coming
+[05:32 - 05:37] back up it just doesn't make a lot of
+[05:34 - 05:39] sense it seems highly unpredictable and
+[05:37 - 05:41] that's mainly because this is happening
+[05:39 - 05:43] so quickly our JavaScript timer is just
+[05:41 - 05:46] not precise enough in addition if I try
+[05:43 - 05:49] 10 again so 10 was apparently very quick
+[05:46 - 05:52] the first time if I try it again this
+[05:49 - 05:55] time it was like a lot faster one more
+[05:52 - 05:57] time it keeps moving up wow that was way
+[05:55 - 05:59] faster so my point here is that it's
+[05:57 - 06:02] highly unpredictable and now if we add
+[05:59 - 06:04] in our second version let's see if it's
+[06:02 - 06:07] any better so I'm going to speed through
+[06:04 - 06:10] this plot two and three okay so I fast
+[06:07 - 06:12] forwarded just a bit I plotted all the
+[06:10 - 06:14] first ten numbers on this other one add
+[06:12 - 06:17] up to second you can see it's just as
+[06:14 - 06:19] unpredictable it's up and down it's hot
+[06:17 - 06:21] and cold it's yes and no it's changing
+[06:19 - 06:23] all the time and it doesn't really give
+[06:21 - 06:26] us a good idea of which one it's better
+[06:23 - 06:29] however we can get a much better idea if
+[06:26 - 06:32] we zoom way out and we make our numbers
+[06:29 - 06:36] way way larger so let's go back to the
+[06:32 - 06:38] first one and test 100 and then 1000 and
+[06:36 - 06:41] then 10,000
+[06:38 - 06:43] and let's just keep adding zeroes I will
+[06:41 - 06:45] warn you if you play with this tool and
+[06:43 - 06:47] you start using really large numbers on
+[06:45 - 06:48] some of these other examples your
+[06:47 - 06:51] browsers are not going to have a good
+[06:48 - 06:52] time so just be careful you can see it's
+[06:51 - 06:54] starting to take a lot longer and I'm
+[06:52 - 06:56] going to stop here because the next one
+[06:54 - 06:58] will take a couple of seconds at least
+[06:56 - 07:02] now let's go to our second version with
+[06:58 - 07:04] the fancy math and do the same thing so
+[07:02 - 07:06] we're really just looking at a much
+[07:04 - 07:09] further zoomed out much bigger picture
+[07:06 - 07:11] view to try and get an idea of how they
+[07:09 - 07:13] perform and this is not at all practical
+[07:11 - 07:15] to actually test your code this way but
+[07:13 - 07:18] I don't know if you can see the gray
+[07:15 - 07:20] down at the bottom it's way way way down
+[07:18 - 07:22] there and at this point we can see
+[07:20 - 07:25] there's a clear trend this gray one is
+[07:22 - 07:27] way faster overall when we zoomed in to
+[07:25 - 07:29] the first couple of digits it was really
+[07:27 - 07:31] unpredictable up and down it didn't make
+[07:29 - 07:33] a lot of sense we couldn't really decide
+[07:31 - 07:35] which was better but now that we're way
+[07:33 - 07:38] in doubt we can tell definitively this
+[07:35 - 07:41] one is much faster overall as we make n
+[07:38 - 07:43] way bigger as we approach infinity and
+[07:41 - 07:46] that's the approach we're going to take
+[07:43 - 07:48] in evaluating our code we're going to
+[07:46 - 07:51] think about how it performs as it gets
+[07:48 - 07:53] towards infinity as the input n grows to
+[07:51 - 07:55] an insane and sane level but of course
+[07:53 - 07:58] we're not going to make a graph and
+[07:55 - 07:59] chart our code every single time we want
+[07:58 - 08:02] to understand how it performs relative
+[07:59 - 08:04] to other code so instead of working with
+[08:02 - 08:07] time what we're going to do is work with
+[08:04 - 08:10] the number of operations we'll be able
+[08:07 - 08:11] to determine how something performs just
+[08:10 - 08:14] by looking at it without actually having
+[08:11 - 08:16] to run the code without having to print
+[08:14 - 08:19] a graph or a chart we'll be able to look
+[08:16 - 08:21] at it and roughly approximate what that
+[08:19 - 08:24] chart will look like if we were to plot
+[08:21 - 08:26] it so we count the number of operations
+[08:24 - 08:27] with a very simplified way of counting
+[08:26 - 08:29] as you'll see in a moment
+[08:27 - 08:31] so our first or the second example
+[08:29 - 08:33] excuse me the simpler one that was much
+[08:31 - 08:36] better on the chart only has a couple of
+[08:33 - 08:38] operations one multiplication one
+[08:36 - 08:41] addition one division and it doesn't
+[08:38 - 08:43] matter how large n is if n is a million
+[08:41 - 08:45] or if n is five we have the same number
+[08:43 - 08:48] of additions multiplications and
+[08:45 - 08:50] divisions it doesn't change so we would
+[08:48 - 08:52] say three simple operations regardless
+[08:50 - 08:55] of the size of n if we compare that to
+[08:52 - 08:58] this example as engross we have a loop
+[08:55 - 09:01] and this loop is dependent on the value
+[08:58 - 09:03] of n so we have n additions inside of
+[09:01 - 09:06] that loop if N is a million were adding
+[09:03 - 09:08] a million times we have n assignments we
+[09:06 - 09:09] have n additions and assignments up here
+[09:08 - 09:11] in the loop we have one assignment at
+[09:09 - 09:13] the beginning it doesn't really matter
+[09:11 - 09:16] what the exact number is we're looking
+[09:13 - 09:19] at big-picture trends but you can see
+[09:16 - 09:22] that as n grows towards some large large
+[09:19 - 09:23] number approaching infinity this number
+[09:22 - 09:25] of operations we're going to have to do
+[09:23 - 09:27] is going to grow at least in proportion
+[09:25 - 09:30] with n so on the last slide the number
+[09:27 - 09:33] of operations was somewhere between 2 n
+[09:30 - 09:35] + 5 n + 2 if you were trying to be exact
+[09:33 - 09:37] but it doesn't matter because as we've
+[09:35 - 09:40] already discussed it's just about what
+[09:37 - 09:42] that big picture graph looks like and as
+[09:40 - 09:44] n increases the number of operations we
+[09:42 - 09:46] have to do is going to increase roughly
+[09:44 - 09:48] in proportion with n so now it's time to
+[09:46 - 09:51] officially introduce the definition of
+[09:48 - 09:53] Big O Big O notation is a fuzzy way of
+[09:51 - 09:55] formalized counting so we say fuzzy
+[09:53 - 09:57] because we're not being very specific
+[09:55 - 09:59] we're just zooming way out and we're
+[09:57 - 10:01] imagining what the number of operations
+[09:59 - 10:04] looks like what that chart looks like as
+[10:01 - 10:07] n gets way larger and it's just a nice
+[10:04 - 10:08] way of describing sort of pointing to
+[10:07 - 10:10] that chart that I showed you at the
+[10:08 - 10:12] beginning saying this is good this is
+[10:10 - 10:14] mediocre this is F this is terrible
+[10:12 - 10:17] except instead of saying you know green
+[10:14 - 10:18] for good and orange for meth instead we
+[10:17 - 10:21] actually describe it with a mathematical
+[10:18 - 10:23] function so here's the actual definition
+[10:21 - 10:25] we say that an algorithm is o of a
+[10:23 - 10:27] function f of n if the number of simple
+[10:25 - 10:29] operations the computer has to do is
+[10:27 - 10:31] eventually less than a constant times f
+[10:29 - 10:33] of n the function as n increases what
+[10:31 - 10:35] this is really saying is that there's
+[10:33 - 10:37] some function it could be a linear
+[10:35 - 10:39] function of n it could be a quadratic
+[10:37 - 10:42] function N squared it could be a
+[10:39 - 10:43] constant function of just one whatever
+[10:42 - 10:47] this function is when we say something
+[10:43 - 10:50] an algorithm has o of n or oh of N
+[10:47 - 10:53] squared all of that function we mean
+[10:50 - 10:55] that as n grows the amount of operations
+[10:53 - 10:58] the time it takes is going to grow
+[10:55 - 10:59] roughly in proportion with this function
+[10:58 - 11:01] and I should mention there are many
+[10:59 - 11:03] other options this can be pretty much
+[11:01 - 11:05] anything but there are some common
+[11:03 - 11:06] things you'll see like the ones I've
+[11:05 - 11:08] listed and all
+[11:06 - 11:11] over them at the end okay so let's talk
+[11:08 - 11:13] about this example the add up to n we
+[11:11 - 11:15] saw that there was three operations no
+[11:13 - 11:17] matter what the size of n is but
+[11:15 - 11:19] remember we want fuzzy counting we just
+[11:17 - 11:23] want the big picture so we would call
+[11:19 - 11:26] this o of 1 what this means is that as n
+[11:23 - 11:28] grows if n is 10 if n is a million if n
+[11:26 - 11:30] is a trillion trillion whatever comes
+[11:28 - 11:32] after a trillion it doesn't matter
+[11:30 - 11:35] the number of operations we have to do
+[11:32 - 11:36] stays the same and if we were to plot
+[11:35 - 11:39] that on a chart it would look like a
+[11:36 - 11:40] completely flat line there is no
+[11:39 - 11:43] increase in the amount of time it takes
+[11:40 - 11:45] the number of operations as we move
+[11:43 - 11:47] towards a larger n now if we compare
+[11:45 - 11:50] that with this one add up to n where we
+[11:47 - 11:52] have a loop based off of n we know that
+[11:50 - 11:55] the number of operations is going to
+[11:52 - 11:58] grow in proportion with n some multiple
+[11:55 - 12:01] of n it doesn't matter if it's 10 n 1 n
+[11:58 - 12:03] or 50,000 n it doesn't matter we just
+[12:01 - 12:05] want the general trend so as n grows
+[12:03 - 12:08] larger so does the number of operations
+[12:05 - 12:11] so this is called linear time where the
+[12:08 - 12:14] line looks something like this a sort of
+[12:11 - 12:17] diagonal line not sort of a diagonal
+[12:14 - 12:19] line where as n grows over here the
+[12:17 - 12:21] number of operations it takes to
+[12:19 - 12:23] calculate the result is also going to
+[12:21 - 12:26] grow in proportion versus our first one
+[12:23 - 12:29] we saw which is constant time is always
+[12:26 - 12:31] the same roughly we saw the reality of
+[12:29 - 12:33] it it was not exactly the same it was
+[12:31 - 12:34] different every time but when we look at
+[12:33 - 12:38] the trend the function we would use to
+[12:34 - 12:40] describe this chart this this line is f
+[12:38 - 12:43] of n so here's another example count up
+[12:40 - 12:45] and down it takes number n and it prints
+[12:43 - 12:48] all of the numbers from 0 until N and
+[12:45 - 12:50] then it does the opposite going down so
+[12:48 - 12:52] it goes from n down to 0 and it prints
+[12:50 - 12:54] all the numbers in this case we have two
+[12:52 - 12:57] loops the first one is going to be o of
+[12:54 - 12:59] n the second one is o of n so you might
+[12:57 - 13:03] think we would say this has a time
+[12:59 - 13:05] complexity of oh of 2 n but we only care
+[13:03 - 13:08] about the big picture and we simplify it
+[13:05 - 13:10] down to o of n it doesn't matter once
+[13:08 - 13:11] again if it's 2 n or a thousand n it
+[13:10 - 13:13] doesn't matter in the grand scheme of
+[13:11 - 13:15] things because as n grows towards
+[13:13 - 13:18] infinity this coefficient in front
+[13:15 - 13:19] whether it's 10 or a million is so small
+[13:18 - 13:22] and significant we just
+[13:19 - 13:23] describe it as event finally another
+[13:22 - 13:26] example a little bit different we have a
+[13:23 - 13:29] nested loop never a good thing to see if
+[13:26 - 13:31] you're trying to write fast code so we
+[13:29 - 13:32] have print all pairs which is just going
+[13:31 - 13:36] to print all the pairs of numbers
+[13:32 - 13:39] between 0 and n like 0 1 0 2 0 3 and
+[13:36 - 13:41] then 1 2 1 anyway we have our first loop
+[13:39 - 13:43] that runs n times and each time through
+[13:41 - 13:46] that loop we have another loop that runs
+[13:43 - 13:48] n times so this means for every end that
+[13:46 - 13:52] we put in we're going to have to run N
+[13:48 - 13:54] squared operations roughly so when you
+[13:52 - 13:56] have an O of n inside of an O of n when
+[13:54 - 13:58] you have a nested loop we're talking
+[13:56 - 14:00] about o of N squared which is called
+[13:58 - 14:02] quadratic time and if you can think back
+[14:00 - 14:04] to like I guess algebra is when we
+[14:02 - 14:07] learned that trigonometry or something
+[14:04 - 14:08] very very steep line is what o of N
+[14:07 - 14:11] squared looks like so I'm going to
+[14:08 - 14:13] refresh the page here and I'm gonna
+[14:11 - 14:15] start by printing all pairs this is the
+[14:13 - 14:18] one that just showed you that had oh of
+[14:15 - 14:21] N squared and let's try doing 10 and
+[14:18 - 14:21] then 50 you got to be very careful with
+[14:21 - 14:24] this one
+[14:21 - 14:26] because N squared grows very very
+[14:24 - 14:32] quickly so so far it looks like it's
+[14:26 - 14:35] linear but as I start adding larger ends
+[14:32 - 14:39] you can see what's happening let's go up
+[14:35 - 14:42] to maybe 250 you see how much time it's
+[14:39 - 14:44] taking already 280 I don't even want to
+[14:42 - 14:47] go to 300 my computer is not going to be
+[14:44 - 14:50] happy okay so if we look at this chart
+[14:47 - 14:53] it doesn't look that steep but now let's
+[14:50 - 14:56] also add in our first example add up to
+[14:53 - 14:58] first which was oh of n this is linear
+[14:56 - 15:00] time so as n grows the number of
+[14:58 - 15:03] operation grows roughly in proportion
+[15:00 - 15:08] with n so let's try 10 and then we'll
+[15:03 - 15:15] try 20 and now let's try 50 okay how
+[15:08 - 15:18] about 100 1000 10,000 take a look at how
+[15:15 - 15:20] much faster this is compared to N
+[15:18 - 15:23] squared N squared is this one up here
+[15:20 - 15:23] that looks almost like a straight line
+[15:23 - 15:25] at this point
+[15:23 - 15:28] N squared is going to grow extremely
+[15:25 - 15:30] fast so here's a chart that shows some
+[15:28 - 15:33] of the most common Big O functions some
+[15:30 - 15:35] of the bit most common time complexities
+[15:33 - 15:37] so this first one down here is constant
+[15:35 - 15:39] time o of one that's great if you can
+[15:37 - 15:41] write a function that takes the same
+[15:39 - 15:43] number of operations no matter what n is
+[15:41 - 15:46] and it works then you should absolutely
+[15:43 - 15:48] use it but most of the time we can't
+[15:46 - 15:52] sometimes you can but it's often very
+[15:48 - 15:53] difficult so this one here o of log n we
+[15:52 - 15:56] haven't talked about logs in this video
+[15:53 - 15:58] but log N and another one called n log n
+[15:56 - 16:00] come up often when we're dealing with
+[15:58 - 16:03] more advanced data structures like trees
+[16:00 - 16:04] and sorting algorithms so I'm not gonna
+[16:03 - 16:06] go into it here but I just want to show
+[16:04 - 16:08] you what it looks like it's good as well
+[16:06 - 16:12] if you can have a time complexity of log
+[16:08 - 16:14] n it's almost ideal here is linear time
+[16:12 - 16:17] o of n so as n grows to 50 the number of
+[16:14 - 16:19] operations roughly grows to 50 as well
+[16:17 - 16:22] we get that a nice 45-degree angle line
+[16:19 - 16:24] then we have n log n again this comes up
+[16:22 - 16:26] in more advanced data structures and
+[16:24 - 16:29] sorting algorithms and then our worst
+[16:26 - 16:32] nightmare quadratic time N squared this
+[16:29 - 16:33] is going to grow extremely quickly and
+[16:32 - 16:35] you want to avoid writing algorithms as
+[16:33 - 16:38] much as you can that have a time
+[16:35 - 16:40] complexity of N squared it's not good
+[16:38 - 16:41] there are some helpful rules that you
+[16:40 - 16:43] can keep in mind when you're trying to
+[16:41 - 16:46] determine the time complexity of an
+[16:43 - 16:47] algorithm so first one is that constants
+[16:46 - 16:52] don't matter
+[16:47 - 16:55] o of 2n it's just o of n over 500 that's
+[16:52 - 16:58] just how of one o of 13 N squared that's
+[16:55 - 17:00] just oh of N squared remember that these
+[16:58 - 17:03] numbers are inconsequential when n is
+[17:00 - 17:05] getting massively huge massively huge
+[17:03 - 17:09] and is skyrocketing 500 doesn't mean
+[17:05 - 17:11] much compared to 1 especially if N is a
+[17:09 - 17:12] million or trillion trillion trillion
+[17:11 - 17:15] even though that's not a real number
+[17:12 - 17:20] similarly smaller terms don't matter o
+[17:15 - 17:24] of n plus 10 that's just of n o of 1000
+[17:20 - 17:27] n plus 50 just o of n o of n squared
+[17:24 - 17:30] plus 5n plus 8 getting tricky here it's
+[17:27 - 17:33] only o of N squared smaller terms don't
+[17:30 - 17:35] matter and 5n is way way smaller than N
+[17:33 - 17:37] squared if you ever have any doubt in
+[17:35 - 17:39] your mind try plugging in a very large
+[17:37 - 17:41] number for N and just compare the
+[17:39 - 17:44] difference between N squared and then 5
+[17:41 - 17:46] times n the general trend is just oh of
+[17:44 - 17:48] N squared there are a few more rule
+[17:46 - 17:49] or short hands you can keep in mind when
+[17:48 - 17:51] you're trying to determine time
+[17:49 - 17:53] complexity I am going to breeze through
+[17:51 - 17:56] them pretty quickly it is just a short
+[17:53 - 17:58] YouTube video the first is that
+[17:56 - 17:59] arithmetic operations are constant time
+[17:58 - 18:01] so if you're adding something or
+[17:59 - 18:03] subtracting something you can assume or
+[18:01 - 18:06] multiplying or dividing it doesn't
+[18:03 - 18:09] matter what n is if N is a thousand if N
+[18:06 - 18:10] is a million or if n is five just assume
+[18:09 - 18:13] it takes the same amount of time
+[18:10 - 18:15] same thing with variable assignment also
+[18:13 - 18:18] the same thing with accessing elements
+[18:15 - 18:20] in an array or in an object it's
+[18:18 - 18:22] constant time that's the way those
+[18:20 - 18:25] objects work they give you very quick
+[18:22 - 18:27] lookup same thing with arrays now in a
+[18:25 - 18:29] loop the complexity is the length of the
+[18:27 - 18:32] loop times the complexity of whatever
+[18:29 - 18:34] happens inside of that loop so if a loop
+[18:32 - 18:36] happens n times we're gonna call it o
+[18:34 - 18:39] event but if there's something nested
+[18:36 - 18:40] inside of it that happens n times then
+[18:39 - 18:44] all of a sudden we're talking about N
+[18:40 - 18:46] squared as we've seen all right pop quiz
+[18:44 - 18:49] here a couple examples I'd like for you
+[18:46 - 18:52] to try and think about how this function
+[18:49 - 18:54] works as n grows what's that line going
+[18:52 - 18:56] to look like on a chart what are we
+[18:54 - 18:58] talking about here remember fuzzy big
+[18:56 - 19:01] picture counting zoom away out this one
+[18:58 - 19:04] is called log at least five so you pass
+[19:01 - 19:08] a number in n and all that it does is it
+[19:04 - 19:11] loops at least five times and more if n
+[19:08 - 19:14] is larger than five so we take the max
+[19:11 - 19:16] of five and n so if n is ten we'll be
+[19:14 - 19:18] looping ten times if N is a thousand we
+[19:16 - 19:21] loop a thousand times but if n is two
+[19:18 - 19:23] we're gonna loop five times so how would
+[19:21 - 19:26] we simplify the Big O what is the answer
+[19:23 - 19:29] it's just o of n it doesn't matter that
+[19:26 - 19:31] we are looping five times when N is 1
+[19:29 - 19:33] when n is two when n is 3 because that's
+[19:31 - 19:37] so inconsequential compared to the grand
+[19:33 - 19:41] giant scheme of things alright pop quiz
+[19:37 - 19:43] part two log at most 5 how does this one
+[19:41 - 19:47] work it's going to take the minimum of 5
+[19:43 - 19:49] and n so if n is 10 we're going to loop
+[19:47 - 19:52] five times if N is a thousand we loop
+[19:49 - 19:55] five times if n is two then we're going
+[19:52 - 19:58] to loop two times so how would we
+[19:55 - 20:00] describe the Big O of this function o of
+[19:58 - 20:03] one it's constant time
+[20:00 - 20:06] we loop end times if n is less than five
+[20:03 - 20:07] but after we hit five if n is six seven
+[20:06 - 20:10] eight all the way up to a million
+[20:07 - 20:13] anything higher than that we're going to
+[20:10 - 20:15] be looping five times every time but we
+[20:13 - 20:17] don't say o of five remember we just
+[20:15 - 20:20] simplified down ho of one constant time
+[20:17 - 20:22] this will generally take this exact same
+[20:20 - 20:24] number of operations no matter how large
+[20:22 - 20:26] n is so this has been a very quick
+[20:24 - 20:28] introduction I have a whole course on
+[20:26 - 20:29] algorithms and I spend probably ten
+[20:28 - 20:32] videos just talking about Big O notation
+[20:29 - 20:33] time complexity something called space
+[20:32 - 20:35] complexity which I'll touch on in a
+[20:33 - 20:37] moment but I just want to recap what
+[20:35 - 20:39] this shows us here these are some of the
+[20:37 - 20:42] most common functions in Big O notation
+[20:39 - 20:44] but it's not limited to these here but
+[20:42 - 20:47] as we write code and we think about how
+[20:44 - 20:49] it performs as n grows to some insanely
+[20:47 - 20:52] huge number if we can extract that and
+[20:49 - 20:54] assign it a general fuzzy value like
+[20:52 - 20:56] okay this one is going to be o of 1 and
+[20:54 - 20:59] this other solution we have is oh of n
+[20:56 - 21:01] we can tell that this one is always
+[20:59 - 21:03] going to be or almost always going to be
+[21:01 - 21:05] faster this is the better algorithm if
+[21:03 - 21:07] we're talking about time complexity
+[21:05 - 21:09] compared to an algorithm that has linear
+[21:07 - 21:12] time for example an especially quadratic
+[21:09 - 21:15] time so I'll touch on space complexity
+[21:12 - 21:17] briefly it's the same idea except we're
+[21:15 - 21:19] focusing rather than on the run time
+[21:17 - 21:22] rather than the number of operations
+[21:19 - 21:24] we're talking about the size the amount
+[21:22 - 21:27] of memory we have to allocate as n grows
+[21:24 - 21:30] and that's all I'm gonna do here on
+[21:27 - 21:32] space complexity it's the same idea we
+[21:30 - 21:34] think about and growing to a massive
+[21:32 - 21:36] number towards infinity and we tried to
+[21:34 - 21:38] assign it a function that describes how
+[21:36 - 21:41] the amount of space the amount of memory
+[21:38 - 21:43] that it uses is going to grow alrighty
+[21:41 - 21:45] thanks for watching everyone I hope that
+[21:43 - 21:47] made some sense I know it's a lot to
+[21:45 - 21:49] cram into a single video if you enjoyed
+[21:47 - 21:51] it please like the video subscribe do
+[21:49 - 21:53] all of that I really appreciate it and
+[21:51 - 21:55] next week I should have a video out on
+[21:53 - 21:57] webpack so you can look forward to that
+[21:55 - 21:59] if you care about it and that's it for
+[21:57 - 21:59] me

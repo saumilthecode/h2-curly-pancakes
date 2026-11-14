@@ -1,0 +1,132 @@
+Title: LT8 Lists   Part 6
+LT: LT 7 - Lists
+Linked label: Part 6 : Is it mutated?
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=oefv3E41IWE
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:03 - 00:08] okay uh beyond here we want to look at
+[00:05 - 00:10] different scenario uh uh whether the
+[00:08 - 00:13] list has been mutated so you'll be very
+[00:10 - 00:15] careful to know
+[00:13 - 00:17] about this mutation okay take a look you
+[00:15 - 00:20] have an original list one two three four
+[00:17 - 00:22] one two three and you add another
+[00:20 - 00:24] release to it you concatenate another
+[00:22 - 00:25] list of containing element four five and
+[00:24 - 00:27] six
+[00:25 - 00:31] now the list will contain one two three
+[00:27 - 00:34] four five six have you mutated the ic
+[00:31 - 00:36] the answer is yes right now you have
+[00:34 - 00:37] more element in list
+[00:36 - 00:38] okay
+[00:37 - 00:40] now let's take a look at another
+[00:38 - 00:42] scenario
+[00:40 - 00:45] right you have a list
+[00:42 - 00:48] and you create a you assign this list to
+[00:45 - 00:51] another list called ls2 lst 2
+[00:48 - 00:53] so this is by assignment
+[00:51 - 00:56] and then when you check whether uh the
+[00:53 - 00:59] is list equal to list answer is true
+[00:56 - 01:01] they both contain the same element but
+[00:59 - 01:02] uh is
+[01:01 - 01:05] uh
+[01:02 - 01:09] so we are checking for this uh identity
+[01:05 - 01:12] now list is these two again it is true
+[01:09 - 01:15] one so for both equality and identity
+[01:12 - 01:15] they are true
+[01:18 - 01:22] now let's say now you are at least two
+[01:21 - 01:24] four five six
+[01:22 - 01:26] what will happen
+[01:24 - 01:28] okay you are mutating the least
+[01:26 - 01:30] so everything down contains element one
+[01:28 - 01:34] two three four five six
+[01:30 - 01:37] okay how about lst what do you think uh
+[01:34 - 01:37] lc will contain
+[01:39 - 01:43] lst still also contain one two three
+[01:41 - 01:45] four five six but we have not done
+[01:43 - 01:48] anything to lsc2
+[01:45 - 01:51] okay the reason being that you have or
+[01:48 - 01:53] originally assigned lsc2 to be equal to
+[01:51 - 01:56] lst
+[01:53 - 01:59] so whatever thing that happened to lst
+[01:56 - 02:03] is duplicated lst2 will take on will
+[01:59 - 02:07] point to the same reason since uh you
+[02:03 - 02:10] check again now it's st2 equal to ls
+[02:07 - 02:12] for equality yes it is true they both
+[02:10 - 02:15] contain the same element the same value
+[02:12 - 02:19] but is it the same again they are the
+[02:15 - 02:24] same because lsc2 is pointing to lst
+[02:19 - 02:24] okay so without identity it is also true
+[02:25 - 02:29] now we take a look at the in the case of
+[02:27 - 02:32] double we try to do the same thing in
+[02:29 - 02:35] purple and we
+[02:32 - 02:37] we create a tuple and say one two three
+[02:35 - 02:40] right and you have a top of two pointing
+[02:37 - 02:40] to double
+[02:40 - 02:47] right and then we check uh is tuple
+[02:44 - 02:50] equal to double two for equality yes it
+[02:47 - 02:52] is true how about for identity okay
+[02:50 - 02:54] pointing you think yes it's true because
+[02:52 - 02:57] you do it by assignment
+[02:54 - 02:59] right
+[02:57 - 03:01] now if you add
+[02:59 - 03:04] some element okay
+[03:01 - 03:07] uh into the tupperware itself
+[03:04 - 03:10] now you must note that when you add
+[03:07 - 03:13] element into the couple which you double
+[03:10 - 03:15] is uh immutable uh you are actually
+[03:13 - 03:18] creating a new table
+[03:15 - 03:20] okay so this new tuple will contain
+[03:18 - 03:22] element one two three four five six
+[03:20 - 03:24] okay
+[03:22 - 03:26] and then uh if you have topper two
+[03:24 - 03:28] originally you say double equal to
+[03:26 - 03:31] double two equal to topple so a tapper
+[03:28 - 03:32] two is created but you have not done
+[03:31 - 03:35] anything to double two
+[03:32 - 03:36] okay so tapa2 will still remain as one
+[03:35 - 03:39] two three
+[03:36 - 03:42] okay now we can do this check at uh
+[03:39 - 03:44] uh python shell okay uh what you need to
+[03:42 - 03:45] do is just say it's okay double equal to
+[03:44 - 03:48] one two three
+[03:45 - 03:51] assign double to double two check on the
+[03:48 - 03:53] id of tuple check on the id of double
+[03:51 - 03:54] two and you realize that they are the
+[03:53 - 03:56] same
+[03:54 - 03:57] the moment you add a new couple to
+[03:56 - 04:00] double
+[03:57 - 04:01] a a new tuple four by six into upper two
+[04:00 - 04:03] pe
+[04:01 - 04:05] then double will contain one two three
+[04:03 - 04:08] four by six but now
+[04:05 - 04:10] uh if you look at the id for tempo it is
+[04:08 - 04:13] a new couple
+[04:10 - 04:16] why is that so it's a new id because a
+[04:13 - 04:18] new couple is created but whereas the
+[04:16 - 04:21] doppler 2 will still be using the same
+[04:18 - 04:23] id so because of that in terms of
+[04:21 - 04:25] identity
+[04:23 - 04:28] it is false
+[04:25 - 04:30] okay equality is also false because now
+[04:28 - 04:33] both elements are both tuples contain
+[04:30 - 04:35] different number of elements
+[04:33 - 04:35] okay
+[04:35 - 04:41] so in summary uh lisa is just one of the
+[04:39 - 04:44] sequence just like string
+[04:41 - 04:44] and purple
+[04:44 - 04:47] so you can use all in sequence
+[04:46 - 04:50] operations
+[04:47 - 04:53] uh the main difference is that a lease
+[04:50 - 04:56] is mutable and because it's mutable
+[04:53 - 04:58] all those operations that will result in
+[04:56 - 05:01] mutating the least i can be used but
+[04:58 - 05:04] then you can't use this operation in a
+[05:01 - 05:07] tuple or string okay so right let's
+[05:04 - 05:09] answer today's lesson on this
+[05:07 - 05:13] you may proceed on your lesson training
+[05:09 - 05:13] uh let's elect your training now

@@ -1,0 +1,93 @@
+Title: How exactly does binary code work? - José Américo N L F de Freitas
+Assessment(s): Released Coursemology video catalog - C2 Data Representation - How exactly does binary code work? (by TED-Ed)
+Linked label(s): C2 Data Representation - How exactly does binary code work? (by TED-Ed)
+Uploader: TED-Ed
+YouTube: https://www.youtube.com/watch?v=wgbV6DLVezo
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24813
+Published course start: 2026-04-18T15:45:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:06 - 00:11] Imagine trying to use words to describe every scene in a film,
+[00:11 - 00:13] every note in your favorite song,
+[00:13 - 00:16] or every street in your town.
+[00:16 - 00:20] Now imagine trying to do it using only the numbers 1 and 0.
+[00:20 - 00:23] Every time you use the Internet to watch a movie,
+[00:23 - 00:24] listen to music,
+[00:24 - 00:26] or check directions,
+[00:26 - 00:28] that’s exactly what your device is doing,
+[00:28 - 00:31] using the language of binary code.
+[00:31 - 00:36] Computers use binary because it's a reliable way of storing data.
+[00:36 - 00:40] For example, a computer's main memory is made of transistors
+[00:40 - 00:44] that switch between either high or low voltage levels,
+[00:44 - 00:47] such as 5 volts and 0 volts.
+[00:47 - 00:51] Voltages sometimes oscillate, but since there are only two options,
+[00:51 - 00:55] a value of 1 volt would still be read as "low."
+[00:55 - 00:58] That reading is done by the computer’s processor,
+[00:58 - 01:02] which uses the transistors’ states to control other computer devices
+[01:02 - 01:04] according to software instructions.
+[01:04 - 01:08] The genius of this system is that a given binary sequence
+[01:08 - 01:11] doesn't have a pre-determined meaning on its own.
+[01:11 - 01:15] Instead, each type of data is encoded in binary
+[01:15 - 01:18] according to a separate set of rules.
+[01:18 - 01:19] Let’s take numbers.
+[01:19 - 01:21] In normal decimal notation,
+[01:21 - 01:26] each digit is multiplied by 10 raised to the value of its position,
+[01:26 - 01:28] starting from zero on the right.
+[01:28 - 01:35] So 84 in decimal form is 4x10⁰ + 8x10¹.
+[01:35 - 01:37] Binary number notation works similarly,
+[01:37 - 01:41] but with each position based on 2 raised to some power.
+[01:41 - 01:45] So 84 would be written as follows:
+[01:45 - 01:50] Meanwhile, letters are interpreted based on standard rules like UTF-8,
+[01:50 - 01:55] which assigns each character to a specific group of 8-digit binary strings.
+[01:55 - 02:02] In this case, 01010100 corresponds to the letter T.
+[02:02 - 02:06] So, how can you know whether a given instance of this sequence
+[02:06 - 02:08] is supposed to mean T or 84?
+[02:08 - 02:11] Well, you can’t from seeing the string alone
+[02:11 - 02:16] – just as you can’t tell what the sound "da" means from hearing it in isolation.
+[02:16 - 02:21] You need context to tell whether you're hearing Russian, Spanish, or English.
+[02:21 - 02:22] And you need similar context
+[02:22 - 02:26] to tell whether you’re looking at binary numbers or binary text.
+[02:26 - 02:31] Binary code is also used for far more complex types of data.
+[02:31 - 02:33] Each frame of this video, for instance,
+[02:33 - 02:35] is made of hundreds of thousands of pixels.
+[02:35 - 02:37] In color images,
+[02:37 - 02:41] every pixel is represented by three binary sequences
+[02:41 - 02:43] that correspond to the primary colors.
+[02:43 - 02:45] Each sequence encodes a number
+[02:45 - 02:48] that determines the intensity of that particular color.
+[02:48 - 02:52] Then, a video driver program transmits this information
+[02:52 - 02:55] to the millions of liquid crystals in your screen
+[02:55 - 02:58] to make all the different hues you see now.
+[02:58 - 03:01] The sound in this video is also stored in binary,
+[03:01 - 03:04] with the help of a technique called pulse code modulation.
+[03:04 - 03:07] Continuous sound waves are digitized
+[03:07 - 03:11] by taking "snapshots" of their amplitudes every few milliseconds.
+[03:11 - 03:15] These are recorded as numbers in the form of binary strings,
+[03:15 - 03:19] with as many as 44,000 for every second of sound.
+[03:19 - 03:21] When they’re read by your computer’s audio software,
+[03:21 - 03:26] the numbers determine how quickly the coils in your speakers should vibrate
+[03:26 - 03:28] to create sounds of different frequencies.
+[03:28 - 03:32] All of this requires billions and billions of bits.
+[03:32 - 03:36] But that amount can be reduced through clever compression formats.
+[03:36 - 03:41] For example, if a picture has 30 adjacent pixels of green space,
+[03:41 - 03:46] they can be recorded as "30 green" instead of coding each pixel separately -
+[03:46 - 03:49] a process known as run-length encoding.
+[03:49 - 03:54] These compressed formats are themselves written in binary code.
+[03:54 - 03:57] So is binary the end-all-be-all of computing?
+[03:57 - 03:58] Not necessarily.
+[03:58 - 04:00] There’s been research into ternary computers,
+[04:00 - 04:03] with circuits in three possible states,
+[04:03 - 04:05] and even quantum computers,
+[04:05 - 04:08] whose circuits can be in multiple states simultaneously.
+[04:08 - 04:11] But so far, none of these has provided
+[04:11 - 04:14] as much physical stability for data storage and transmission.
+[04:14 - 04:17] So for now, everything you see,
+[04:17 - 17:06] hear,
+[04:17 - 04:19] and read through your screen
+[04:19 - 04:23] comes to you as the result of a simple "true" or "false" choice,
+[04:23 - 04:25] made billions of times over.

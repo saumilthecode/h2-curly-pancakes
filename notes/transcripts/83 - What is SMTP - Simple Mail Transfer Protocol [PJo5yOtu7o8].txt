@@ -1,0 +1,37 @@
+Title: What is SMTP - Simple Mail Transfer Protocol
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=PJo5yOtu7o8
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] Hello everyone, in this video we're going to talk about SMTP. SMTP stands for a Simple Mail Transfer
+[00:07 - 00:15] Protocol. Now I previously did a video on POP and IMAP which those are the protocols that are used
+[00:15 - 00:23] for retrieving email and now I'm doing a video on SMTP which is a protocol that is used for sending
+[00:23 - 00:31] email. SMTP is basically a set of commands that authenticates and directs the transfer of email.
+[00:31 - 00:41] Now a good way to remember what SMTP does is by looking at the acronym SMTP and associating it
+[00:41 - 00:49] with 'Sending Mail To People'. So as an example when you write an email using an email client
+[00:49 - 00:56] such as Microsoft Outlook and then when you hit send, the email travels from your computer to
+[00:56 - 01:04] your email server using the SMTP protocol. Now this server is also known as the SMTP server
+[01:04 - 01:10] and this is what's configured in your email client. So for example if you're using Gmail,
+[01:10 - 01:20] the SMTP server address would be smtp.gmail.com and then your SMTP server will send the message
+[01:20 - 01:28] to the recipients email server also using SMTP. Then the email will stay on the recipient's email
+[01:28 - 01:36] server until the recipient logs into their email account and downloads the email using POP or IMAP,
+[01:36 - 01:45] or they can just view the email on the server by using webmail. Now SMTP uses the TCP protocol,
+[01:45 - 01:52] and if you're not familiar with what TCP does, well TCP is a connection-oriented protocol and
+[01:52 - 01:58] it guarantees the delivery of the email. Now this is assuming that the destination
+[01:58 - 02:04] email address is correct and still exists, but if for some reason that the email that
+[02:04 - 02:10] you sent does not reach its destination. So for example, maybe you misspelled the email address,
+[02:10 - 02:17] or the email address no longer exists. So if this happens you'll get that familiar mail delivery
+[02:17 - 02:25] error in your mailbox informing you that the email you sent failed. And just like POP and IMAP,
+[02:25 - 02:31] SMTP is also configured in your email client such as Microsoft Outlook, Mozilla Thunderbird,
+[02:31 - 02:40] or your mobile device. So for example, if you're using Gmail you would use smtp.gmail.com in the
+[02:40 - 02:47] outgoing server settings in your email client and this is also known as the SMTP server setting.
+[02:47 - 02:54] This setting tells your email client where it can send the email to. So in conclusion,
+[02:54 - 03:01] basically SMTP is similar to a mailman. The mailman picks up the mail from your mailbox
+[03:01 - 03:08] at your home and then finds the correct route and then delivers it to the destination mailbox.

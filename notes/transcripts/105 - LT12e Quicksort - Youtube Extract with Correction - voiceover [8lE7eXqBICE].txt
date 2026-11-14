@@ -1,0 +1,159 @@
+Title: LT12e Quicksort - Youtube Extract with Correction - voiceover
+Assessment(s): LT 12e Quicksort
+Linked label(s): Quick Sort Explained (extract)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=8lE7eXqBICE
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] Hi. In this video, I'm going to explain
+[00:01 - 00:06] the quick sort algorithm.
+[00:04 - 00:08] Given an array of items, we want to sort
+[00:06 - 00:09] them in ascending order.
+[00:08 - 00:11] And that's what
+[00:09 - 00:14] quick sort does. In this video, we're
+[00:11 - 00:15] simply going to use integers for our
+[00:14 - 00:17] items to keep it simple, but you could
+[00:15 - 00:19] actually sort any item that's
+[00:17 - 00:22] comparable. So, here we have an array of
+[00:19 - 00:24] nine items. First, we need to explain
+[00:22 - 00:24] some
+[00:25 - 00:29] terminology. We have a pivot. A pivot is
+[00:27 - 00:31] an item that we're going to compare
+[00:29 - 00:34] every other item to. We're going to move
+[00:31 - 00:36] items that are smaller than the pivot to
+[00:34 - 00:38] the left of the pivot and items that are
+[00:36 - 00:39] greater than the pivot to the right of
+[00:38 - 00:41] the pivot.
+[00:39 - 00:43] After we've done that, we're going to
+[00:41 - 00:45] have a left partition and a
+[00:43 - 00:47] right partition. So, let's go ahead and
+[00:45 - 00:50] sort this list. We'll apply quick sort
+[00:47 - 00:53] to this list of nine items. First, we
+[00:50 - 00:54] select a pivot. We've chosen 13 as our
+[00:53 - 00:56] pivot.
+[00:54 - 01:00] That's item number eight. So, we'll
+[00:56 - 01:02] start from the left and we'll say is 17
+[01:00 - 01:04] greater than our pivot? Yes, it is. Now,
+[01:02 - 01:05] we'll start on the right. Is three less
+[01:04 - 01:07] than
+[01:05 - 01:09] the pivot? Yes, it is. So, we'll swap
+[01:07 - 01:12] those two items. We do a swap. We're
+[01:09 - 01:12] going to
+[01:12 - 01:16] move both pointers in.
+[01:14 - 01:19] We'll start at the left again. Is 41
+[01:16 - 01:21] greater than the pivot?
+[01:19 - 01:23] Yes, it is. Is 29 less than the pivot?
+[01:21 - 01:26] No. So, we move that pointer over. Is
+[01:23 - 01:27] six less than the pivot? Yes.
+[01:26 - 01:31] So, now we know that we can swap these
+[01:27 - 01:31] two items. We'll move
+[01:31 - 01:35] both pointers in again.
+[01:33 - 01:38] Is five greater than the pivot? No, it's
+[01:35 - 01:40] not. Is 22 greater than the pivot? Yes.
+[01:38 - 01:43] Is 24 less than the pivot? No.
+[01:40 - 01:45] So, we move that pointer over and look.
+[01:43 - 01:48] The two pointers meet in the middle.
+[01:45 - 01:50] Now, is the high pivot pointing at 22,
+[01:48 - 01:50] but is
+[01:50 - 01:58] 22 smaller than the pivot value 13? No.
+[01:53 - 01:58] So, we continue to move the pivot to the
+[01:58 - 02:02] left, and then we have five. Is five
+[02:00 - 02:05] lesser than 13? Yes. So, we stop. What
+[02:02 - 02:05] we can do
+[02:06 - 02:12] is simply swap the pivot in for the
+[02:08 - 02:15] lower index. So, we want to swap the 22
+[02:12 - 02:16] with our pivot value, the 13.
+[02:15 - 02:18] Now, we know that all the items to the
+[02:16 - 02:21] left of the 13
+[02:18 - 02:25] are lower than 13. All of the items to
+[02:21 - 02:27] the right of 13 are greater than 13. So,
+[02:25 - 02:30] 13 is in the correct position now. So,
+[02:27 - 02:32] we have a left partition and a right
+[02:30 - 02:34] partition. And we're going to call quick
+[02:32 - 02:36] sort on each of those two partitions.
+[02:34 - 02:39] So, on the left partition, we'll choose
+[02:36 - 02:42] a pivot value. We'll choose five. We're
+[02:39 - 02:44] going to compare. Is three greater than
+[02:42 - 02:46] the pivot? No. And our indices have met
+[02:44 - 02:48] already in
+[02:46 - 02:52] the middle. So, we can swap the five in
+[02:48 - 02:52] with the six. And now the five is in its
+[02:54 - 02:58] correct position. And we have a left and
+[02:56 - 03:00] a right partition that consists of only
+[02:58 - 03:01] one item. So, we have to assume those
+[03:00 - 03:03] are already sorted.
+[03:01 - 03:06] So, now the left
+[03:03 - 03:08] partition from the 13 is fully sorted.
+[03:06 - 03:10] Now, we have a right partition with five
+[03:08 - 03:14] items in it. First, let's choose a
+[03:10 - 03:16] pivot, 22. We'll compare 54 to 22. Is 54
+[03:14 - 03:19] greater
+[03:16 - 03:21] than the pivot? Yes, it is. Is 17 less
+[03:19 - 03:23] than the pivot? Yes. So, we can swap the
+[03:21 - 03:26] 54. Now, we can move both pointers in.
+[03:23 - 03:29] Is 41 greater than the pivot? Yes. Is 29
+[03:26 - 03:31] less
+[03:29 - 03:33] than the pivot? No. We move that pointer
+[03:31 - 03:35] down, and both pointers meet in the the
+[03:33 - 03:36] middle.
+[03:35 - 03:40] Now, we want to swap our pivot value
+[03:36 - 03:42] with the 41. Now, we know the 22 is
+[03:40 - 03:44] in its correct position. We have a left
+[03:42 - 03:46] partition that consists of only one
+[03:44 - 03:48] item. So, that's sorted. And we have a
+[03:46 - 03:50] right partition that we need to call
+[03:48 - 03:53] quick sort on. So, we'll choose a
+[03:50 - 03:55] partition, 41. Is 29 greater than our
+[03:53 - 03:57] pivot? No, it's not. And our indices
+[03:55 - 04:01] have met in the middle. So now we can
+[03:57 - 04:03] swap 41 into the position with the 54.
+[04:01 - 04:06] Now our pivot 41 is in the correct
+[04:03 - 04:08] position and its left and right
+[04:06 - 04:10] partitions are both already sorted
+[04:08 - 04:12] because they only consist of one item a
+[04:10 - 04:16] piece. So the list is fully sorted. That
+[04:12 - 04:18] is how quick sort works. Quick sort is a
+[04:16 - 04:20] recursive method. It's a method that
+[04:18 - 04:22] calls itself because it continues to
+[04:20 - 04:25] call quick sort on a smaller and smaller
+[04:22 - 04:27] subset of the items. It's also called a
+[04:25 - 04:31] divide and conquer algorithm. It's very
+[04:27 - 04:33] efficient for very large data sets. The
+[04:31 - 04:37] worst case for the quick sort algorithm
+[04:33 - 04:39] is big O of n squared and the average
+[04:37 - 04:41] case is big O of n log n. The
+[04:39 - 04:43] performance of the quick sort algorithm
+[04:41 - 04:44] depends largely on how you select the
+[04:43 - 04:46] pivot.
+[04:44 - 04:49] If you get a well-selected pivot, you
+[04:46 - 04:51] can get big O of n log n performance. A
+[04:49 - 04:52] very poorly worst-case performance pivot
+[04:51 - 04:54] is
+[04:52 - 04:56] going to result in big O of n squared
+[04:54 - 04:59] performance. So how do we select a
+[04:56 - 05:00] pivot? Well, you can choose the first
+[04:59 - 05:03] item in the list, which may not be the
+[05:00 - 05:05] best choice, or the last item in the
+[05:03 - 05:06] list, which also may not be the best
+[05:05 - 05:08] choice.
+[05:06 - 05:10] Those are bad choices because if you
+[05:08 - 05:13] want to either forward sort or reverse
+[05:10 - 05:14] sort a list that is already in sorted
+[05:13 - 05:16] order, you could get worst-case
+[05:14 - 05:18] performance by choosing the first or
+[05:16 - 05:21] last item in the list. You could also
+[05:18 - 05:22] choose the middle item in the list. That
+[05:21 - 05:24] will usually give pretty good
+[05:22 - 05:26] performance or you could choose middle
+[05:24 - 05:28] of three.
+[05:26 - 05:30] So you could look at the first, last,
+[05:28 - 05:33] and middle items and choose the middle,
+[05:30 - 05:35] the median of those three, but
+[05:33 - 05:37] randomly chosen pivots ensure big O of n
+[05:35 - 05:39] log n performance at least for large
+[05:37 - 05:41] banded lists. So in our Java
+[05:39 - 05:45] implementation, we're going to use a
+[05:41 - 05:45] randomly chosen pivot.

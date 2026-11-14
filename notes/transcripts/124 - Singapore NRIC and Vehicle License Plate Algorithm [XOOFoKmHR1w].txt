@@ -1,0 +1,79 @@
+Title: Singapore NRIC and Vehicle License Plate Algorithm
+Assessment(s): LT10d About Hashing Part 1 slides, embedded YouTube link
+Uploader: The Geekosphere
+YouTube: https://www.youtube.com/watch?v=XOOFoKmHR1w
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Caption limitation: Original caption [00:05 - 16:45] exceeds the 04:30 video duration. Original source timing is preserved verbatim.
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] In Singapore, the last letter of NRIC numbers or vehicle license plates act as a checksum
+[00:05 - 16:45] letter.
+[00:06 - 00:11] That is, while this letter is not required to uniquely identify a person or a vehicle,
+[00:11 - 00:15] it serves the purpose of providing a means to check the validity of a number provided.
+[00:15 - 00:19] In this video, I will be demonstrating to you how the algorithms works.
+[00:19 - 00:24] Before proceeding, one needs to understand the modulo operation, or mod for short.
+[00:24 - 00:30] If we take two numbers A and B, the operation A mod B returns the remainder when A is divided
+[00:30 - 00:34] by B. For example, let's try to compute 10 mod 3.
+[00:34 - 00:40] 10 divided by 3 gives 3, with a remainder of 1, hence 10 mod 3 is 1.
+[00:40 - 00:44] For another example, let's try to compute 1234 mod 11.
+[00:44 - 00:49] 1234 divided by 11 gives 112, with a remainder of 2.
+[00:49 - 00:52] Hence, 1234 mod 11 is 2.
+[00:52 - 00:56] Right, now let's get on to the real stuff.
+[00:56 - 00:57] We will start with the NRIC numbers.
+[00:57 - 01:01] We'll call the first letter the prefix, and the last letter the suffix.
+[01:01 - 01:03] Between them are 7 digits.
+[01:03 - 01:08] The prefix can take values of S, T, F or G, depending on when the person was born and
+[01:08 - 01:11] whether the person is a Singapore citizen.
+[01:11 - 01:14] Let's see how we can compute the suffix based on the rest of the characters.
+[01:14 - 01:18] We will put the prefix aside for now and work with the seven digits.
+[01:18 - 01:20] Here's what we do with them.
+[01:20 - 01:25] We multiply the first digit by 9, the second by 4, the third by 5, the forth by 6, the
+[01:25 - 01:29] fifth by 7, the sixth by 8, and the seventh by 9.
+[01:29 - 01:33] Now we add them all together, and take mod 11 of the sum.
+[01:33 - 01:37] The result is a number between 0 and 10, which we will call the checksum.
+[01:37 - 01:41] Now, using this table, you look for the row corresponding to the prefix, and the column
+[01:41 - 01:43] corresponding to the checksum obtained.
+[01:43 - 01:46] The letter you arrive at is then the suffix.
+[01:46 - 01:48] Let's try an example.
+[01:48 - 01:55] Suppose we want to find the suffix associated with the NRIC number S7654321.
+[01:55 - 01:59] We multiply each digit by the numbers mentioned earlier, and add them all up, which gives
+[01:59 - 18:39] 182.
+[02:00 - 02:09] 182 divided by 11 gives 16 remainder 6, hence 182 mod 11 equals 6, which will be our checksum.
+[02:09 - 02:15] Referring to the table, we find that prefix S and checksum 6 gives the letter F, hence
+[02:15 - 02:19] the last letter of the NRIC number S7654321 is F.
+[02:19 - 02:23] Now let's move on to vehicle license plate numbers.
+[02:23 - 02:27] These are slightly more complicated, but nothing we can't handle.
+[02:27 - 02:31] The first thing to note is the variable number of prefix characters and number of digits.
+[02:31 - 02:33] Let's start with the prefix.
+[02:33 - 02:37] Most cars and public buses have 3 prefix letters, while other vehicles like lorries and motorbikes
+[02:37 - 19:17] have 2.
+[02:38 - 02:44] For vehicles with 3 prefix letters, drop the first, which is usually an S, or T for the
+[02:44 - 02:47] old SMRT buses which begin with TIB.
+[02:47 - 02:50] This leaves us with 2 prefix letters.
+[02:50 - 02:55] As for the digits, most cars have 4 digits, although some have 1, 2 or 3.
+[02:55 - 02:59] If we have less than 4 digits, we add zeroes to the front until we have 4.
+[02:59 - 03:02] Our prefix and digits now total 6 characters.
+[03:02 - 03:06] We then convert the prefix letters into numbers using this conversion table.
+[03:06 - 03:08] What we have now is a set of 6 numbers.
+[03:08 - 03:14] We multiply the first by 10, the second by 15, the third by 14, the forth by 15, the
+[03:14 - 03:18] fifth by 16 and the sixth by 17.
+[03:18 - 03:21] Now we add them all together, and take mod 19 of the sum.
+[03:21 - 03:25] The result is a number between 0 and 18, which is our checksum.
+[03:25 - 03:29] Using our checksum, we obtain the suffix from this table.
+[03:29 - 03:31] Let's try an example.
+[03:31 - 03:36] Let's say we have a car with number SXY321, and we want to determine the suffix letter.
+[03:36 - 03:41] Since there are 3 prefix letters, we drop the first, which is the S. Next, since we
+[03:41 - 03:46] have only 3 digits, we will add a zero in front, so we have 0321.
+[03:46 - 03:52] Now, we convert the prefix letters X and Y using the table to get 24 and 25.
+[03:52 - 03:58] We now have 6 numbers, being 24, 25, 0, 3, 2 and 1.
+[03:58 - 04:04] We multiply them by the factors mentioned earlier, and sum them together, which gives
+[04:04 - 20:44] 709.
+[04:05 - 04:10] 709 mod 19 gives 6, which we compare against the table to find that the suffix letter is
+[04:10 - 04:16] H. Hence, the car number SXY321 will have last letter being H.
+[04:16 - 04:21] I have included a link in the description to download the tables used in this video,
+[04:21 - 04:24] try it yourself and let me know in the comments how it went for you.
+[04:24 - 04:27] Thanks for watching, remember to like and subscribe for more.
+[04:27 - 04:29] I hope you got something out of this, take care.

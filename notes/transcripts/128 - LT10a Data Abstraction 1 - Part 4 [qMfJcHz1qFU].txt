@@ -1,0 +1,61 @@
+Title: LT10a Data Abstraction 1 - Part 4
+Assessment(s): Released Coursemology video catalog - LT10a Data Abstraction (Part 4)
+Linked label(s): LT10a Data Abstraction (Part 4)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=qMfJcHz1qFU
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24706
+Published course start: 2026-08-04T09:15:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] The next ADT example is a rational
+[00:04 - 00:10] number add.
+[00:06 - 00:13] A rational number add contains a integer
+[00:10 - 00:15] numerator and a nonzero integer
+[00:13 - 00:20] denominator to represent a rational
+[00:15 - 00:23] number or commonly known as fraction.
+[00:20 - 00:26] The constructor make red uses the
+[00:23 - 00:30] numerator and denominator to create the
+[00:26 - 00:30] rational number add.
+[00:30 - 00:35] There are two accessessor or getters
+[00:32 - 00:40] method to retrieve the numerator and the
+[00:35 - 00:43] denominator values namely get numer
+[00:40 - 00:47] and get the nom for the rest which is
+[00:43 - 00:48] the rational number.
+[00:47 - 00:51] There are number of utility methods
+[00:48 - 00:54] here. You can add two rational number,
+[00:51 - 00:57] subtract two rational number, multiply
+[00:54 - 01:00] two rational number or divide two
+[00:57 - 01:03] rational number. And each of these
+[01:00 - 01:05] method will return a rational number
+[01:03 - 01:09] addt.
+[01:05 - 01:12] We also have a print red to display the
+[01:09 - 01:15] rational number as a string uh in the
+[01:12 - 01:18] form of the numerator/
+[01:15 - 01:18] denominator.
+[01:18 - 01:23] You may consider this arithmetic
+[01:21 - 01:25] operations when you are writing the
+[01:23 - 01:30] program code for addition, subtraction,
+[01:25 - 01:30] multiplication and divisions.
+[01:32 - 01:39] The rational number add also have two
+[01:35 - 01:41] predicates methods namely the is equal
+[01:39 - 01:43] is whole.
+[01:41 - 01:46] Now is equal method is to check whether
+[01:43 - 01:49] two rational number reds one and rats
+[01:46 - 01:51] two are they equal
+[01:49 - 01:53] and it will return a boolean true and
+[01:51 - 01:56] false value.
+[01:53 - 01:59] Similarly, when you have a rational
+[01:56 - 02:02] number is whole will check whether is
+[01:59 - 02:05] this a whole number. That means the
+[02:02 - 02:08] numerator is the multiple of uh the
+[02:05 - 02:11] denominator. And if it is a whole number
+[02:08 - 02:12] then it will return a boolean true or
+[02:11 - 02:14] false.
+[02:12 - 02:16] You may consider in the next two slides
+[02:14 - 02:21] when you're writing the program code for
+[02:16 - 02:21] is equal and or is whole.

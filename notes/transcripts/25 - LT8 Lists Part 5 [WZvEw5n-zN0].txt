@@ -1,0 +1,143 @@
+Title: LT8 Lists   Part 5
+LT: LT 7 - Lists
+Linked label: Part 5 : Removing element from a list
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=WZvEw5n-zN0
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] we are talking about our adding elements
+[00:03 - 00:08] into the list how about trying to remove
+[00:06 - 00:11] element from the list okay
+[00:08 - 00:13] we can use remove the method
+[00:11 - 00:15] okay so let's say we have a list that
+[00:13 - 00:17] contains zero to nine
+[00:15 - 00:20] and then if i try to remove
+[00:17 - 00:22] a 4
+[00:20 - 00:24] now 4 will be removed
+[00:22 - 00:27] and if i will try to remove 14 and then
+[00:24 - 00:29] there's no 40 within the list itself
+[00:27 - 00:31] python will trigger an error and say
+[00:29 - 00:33] that there's no such element now uh in
+[00:31 - 00:37] the process of trying to remove the
+[00:33 - 00:40] element you realize that
+[00:37 - 00:42] there will be no outputs uh to tell you
+[00:40 - 00:45] again what is the element that is being
+[00:42 - 00:48] removed from that list itself
+[00:45 - 00:52] okay another method to remove an element
+[00:48 - 00:54] from at least is using this pop method
+[00:52 - 00:55] okay one one thing to take note of is
+[00:54 - 00:57] that at least
+[00:55 - 00:59] using the pop method you must specify
+[00:57 - 01:01] the index
+[00:59 - 01:04] now let's say we have a list
+[01:01 - 01:07] containing alphabet abcdef
+[01:04 - 01:08] now if we do not specify
+[01:07 - 01:10] the uh
+[01:08 - 01:14] index then what will happen is that this
+[01:10 - 01:16] method will pop away the last element
+[01:14 - 01:20] and then it will return
+[01:16 - 01:23] the uh remove element to uh
+[01:20 - 01:25] the side item for example in this case
+[01:23 - 01:27] okay so item will now take on the f so
+[01:25 - 01:28] you know exactly what element is being
+[01:27 - 01:30] removed
+[01:28 - 01:33] okay what is left behind inside list
+[01:30 - 01:35] will be just a b c d e so this list is
+[01:33 - 01:37] mutated
+[01:35 - 01:40] now let's take a look at another example
+[01:37 - 01:42] we try to uh pop away the element at
+[01:40 - 01:45] index three
+[01:42 - 01:48] now uh index three zero one two three
+[01:45 - 01:51] three is actually the alphabet d
+[01:48 - 01:52] so what happened is that uh the pop away
+[01:51 - 01:55] element which is d
+[01:52 - 01:57] will be assigned to item
+[01:55 - 02:00] okay so item will now be d and what's
+[01:57 - 02:03] left in the list will be just a b c
+[02:00 - 02:06] and e okay so one thing to make note of
+[02:03 - 02:08] is that top the method proper will
+[02:06 - 02:10] outputs the deleted item and you can
+[02:08 - 02:12] assign it to some variable and use it
+[02:10 - 02:14] for in your
+[02:12 - 02:14] computation
+[02:18 - 02:21] okay
+[02:19 - 02:23] we can also use delete but please take
+[02:21 - 02:26] note on the syntax
+[02:23 - 02:27] when you delete something when you want
+[02:26 - 02:31] to delete uh
+[02:27 - 02:34] from at least you can specify using the
+[02:31 - 02:36] indexing okay so you have the start the
+[02:34 - 02:38] stop and the step okay so let's say we
+[02:36 - 02:40] have at least at zero to nine
+[02:38 - 02:43] okay if you specify that you wanna start
+[02:40 - 02:45] from one so start from one all the way
+[02:43 - 02:46] up to not nine doesn't include like up
+[02:45 - 02:50] to eight
+[02:46 - 02:52] one two eight and you jump two steps so
+[02:50 - 02:54] you you remove the three you remove the
+[02:52 - 02:57] one you remove the three you remove the
+[02:54 - 02:58] five you remove the seven
+[02:57 - 03:01] so all these will be gone and then so
+[02:58 - 03:03] the new list will not have one three
+[03:01 - 03:04] five seven and you continue zero two
+[03:03 - 03:05] four six eight
+[03:04 - 03:09] nine
+[03:05 - 03:11] okay so go on the syntax for start stop
+[03:09 - 03:13] and step
+[03:11 - 03:15] you uh for indexing you can also take
+[03:13 - 03:19] negative index so negative one will
+[03:15 - 03:19] refer to the last element so time will
+[03:20 - 03:24] uh if you don't specify the start and
+[03:22 - 03:27] then stop you will assume the all the
+[03:24 - 03:29] elements so you would delete elements so
+[03:27 - 03:31] it's similar to delete.clear
+[03:29 - 03:34] so you are clearing the list but the
+[03:31 - 03:35] list is still exist it's just in the
+[03:34 - 03:38] empty list
+[03:35 - 03:39] whereas if you try to do a delete piece
+[03:38 - 03:42] then the
+[03:39 - 03:44] the list will disappear okay so there's
+[03:42 - 03:46] a distinction between trying to delete
+[03:44 - 03:49] all the elements within the list or to
+[03:46 - 03:50] delete the list itself
+[03:49 - 03:52] uh
+[03:50 - 03:55] same thing is that when you use delete
+[03:52 - 03:56] the element that you deleted will not be
+[03:55 - 03:58] output
+[03:56 - 04:00] you don't have the value you don't know
+[03:58 - 04:02] what are the value that you have deleted
+[04:00 - 04:02] okay
+[04:03 - 04:07] um
+[04:05 - 04:09] when you put element within a list
+[04:07 - 04:13] itself but sometimes you need you want
+[04:09 - 04:17] to source them so one way to do it is
+[04:13 - 04:19] okay use this sorted the list so you may
+[04:17 - 04:22] want to define a assign it to a new list
+[04:19 - 04:24] and say that it is sorted of this lst so
+[04:22 - 04:25] when you sort this
+[04:24 - 04:27] okay
+[04:25 - 04:30] uh the optional list
+[04:27 - 04:32] four seven two and the new list after
+[04:30 - 04:34] assigning it to a sorted list it becomes
+[04:32 - 04:36] one two three four seven
+[04:34 - 04:40] okay so this is one way to sort a piece
+[04:36 - 04:42] another way is use a list dot sort so
+[04:40 - 04:44] the list will become one two three four
+[04:42 - 04:46] what is the difference between these two
+[04:44 - 04:50] methods you realize that in the first
+[04:46 - 04:52] method uh the sorting
+[04:50 - 04:54] you have to assign the sorted list to a
+[04:52 - 04:56] new list but the original list remains
+[04:54 - 05:00] the same okay
+[04:56 - 05:01] whereas in the case of list dot sort the
+[05:00 - 05:04] list now become one two three four which
+[05:01 - 05:07] is sorted so what you actually do is
+[05:04 - 05:10] that you actually mutate the list in the
+[05:07 - 05:10] second method
+[05:10 - 05:14] so you have to be very careful that the
+[05:12 - 05:16] question allows you to mutate the least
+[05:14 - 05:20] a lot to decide
+[05:16 - 05:20] which method to use

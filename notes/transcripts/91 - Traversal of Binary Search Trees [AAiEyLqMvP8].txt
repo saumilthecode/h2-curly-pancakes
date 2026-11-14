@@ -1,0 +1,163 @@
+Title: Traversal of Binary Search Trees
+Assessment(s): LT 11b Binary Tree (Part 3)
+Linked label(s): LT11b Binary Tree (Part 3)
+Uploader: Jingkai
+YouTube: https://www.youtube.com/watch?v=AAiEyLqMvP8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:02] Okay. So, I'm going to show you how to
+[00:01 - 00:04] do traversal. We're going to do
+[00:02 - 00:07] pre-order, in order, post order, and
+[00:04 - 00:09] BFS. Right. So, make sure you click the
+[00:07 - 00:11] practice button on the right hand side.
+[00:09 - 00:13] Okay. You can for that already generated
+[00:11 - 00:15] uh standard tree. You can choose any
+[00:13 - 00:17] tree you want. Right. So, now you can
+[00:15 - 00:18] click start practice. Okay. So, single
+[00:17 - 00:20] click to visit and then double click to
+[00:18 - 00:22] select. So, we always start from the
+[00:20 - 00:26] root note 75. Come here. Since this is
+[00:22 - 00:28] the note, we can visit it and select it.
+[00:26 - 00:31] Okay. Double click select. Okay. Then we
+[00:28 - 00:34] come to the next the left sub tree. So
+[00:31 - 00:37] left sub tree this is again a the note
+[00:34 - 00:40] of a note as well. So I can select it.
+[00:37 - 00:42] Okay. Then after that I go to left.
+[00:40 - 00:44] Okay. So left. Now I come to three
+[00:42 - 00:48] again. Now I can visit three first.
+[00:44 - 00:51] Okay. Now this three has no has no left
+[00:48 - 00:53] sub tree. So I go to the right sub tree.
+[00:51 - 00:55] I click it visit and then select. Okay.
+[00:53 - 00:58] So now once I've done this I've seted
+[00:55 - 01:00] this portion. I come back up to here and
+[00:58 - 01:03] then come back to here. So right now
+[01:00 - 01:05] this is again going back to 17 over
+[01:03 - 01:08] here. Just now I visited the left. Now I
+[01:05 - 01:10] go to the right. So I select this one.
+[01:08 - 01:12] So again this is the note. So I select
+[01:10 - 01:16] it. Then I visit the right left hand
+[01:12 - 01:19] side first. 26. Select. Then 73. Select.
+[01:16 - 01:22] Okay. Then come back up. Come back up to
+[01:19 - 01:25] 62. Back to 17. Back to 75. Select the
+[01:22 - 01:28] right node now. Okay. And then since 80
+[01:25 - 01:30] has no left note, I go straight to 97 on
+[01:28 - 01:33] the right hand side. Select it. Okay.
+[01:30 - 01:35] Then go down to 96 which is the which is
+[01:33 - 01:39] the left node. Okay. Select it because
+[01:35 - 01:42] it's the note. Then down to 89. Okay. So
+[01:39 - 01:44] this is the pre-order traversal. Okay.
+[01:42 - 01:46] Moving on. We can do in order traversal.
+[01:44 - 01:48] So in order is quite simple. We will
+[01:46 - 01:50] return the list that is actually in
+[01:48 - 01:53] ascending order. Okay. Same thing. Click
+[01:50 - 01:55] practice and then we start practice. So
+[01:53 - 01:57] now we will traverse the left sub tree
+[01:55 - 01:59] before we visit the node and then we
+[01:57 - 02:00] traverse right sub tree. So basically
+[01:59 - 02:02] this means go left and left and left and
+[02:00 - 02:05] left until we have nowhere else to go.
+[02:02 - 02:08] Right? So we start by visiting the root
+[02:05 - 02:10] node. Okay. Now we don't select it first
+[02:08 - 02:12] because there's a left node left sub
+[02:10 - 02:15] tree. We go to it again. We don't select
+[02:12 - 02:18] first because there is a left sub tree.
+[02:15 - 02:21] Okay. So now once I'm here uh there's no
+[02:18 - 02:24] left sub tree for this. So I can select
+[02:21 - 02:26] the root note now which is over here.
+[02:24 - 02:29] Okay. Then after that I go to the right
+[02:26 - 02:30] sub tree. Okay. So come down to here.
+[02:29 - 02:32] Come down to eight over here. Right.
+[02:30 - 02:34] There's no more left and right. So I can
+[02:32 - 02:37] select it. Then come back up. Come back
+[02:34 - 02:40] to tier three. Okay. Once then from here
+[02:37 - 02:43] I can go back up to 17 which is the note
+[02:40 - 02:47] here. Okay. Then after that I come down
+[02:43 - 02:49] to 62 which is the right sub tree of 17.
+[02:47 - 02:52] Okay. Don't select the8 because there's
+[02:49 - 02:56] a left sub tree and a right sub tree. So
+[02:52 - 03:01] come to 26 first select. Okay. Then back
+[02:56 - 03:04] to the note 62 and then back down to the
+[03:01 - 03:09] right sub tree. Okay. Then go back up to
+[03:04 - 03:14] 62 17 and then go back up to the root
+[03:09 - 03:16] 75. Select it. Now 80 we 80. We visited
+[03:14 - 03:18] 80. There's no left node. So we can
+[03:16 - 03:21] select left sub tree. I mean that we can
+[03:18 - 03:26] select 80 now. Okay. After that we go
+[03:21 - 03:29] right to 97. 97 has a left sub tree.
+[03:26 - 03:31] Okay. 96 has a left sub tree. So 89. So
+[03:29 - 03:33] we select 89 first. Then come back up to
+[03:31 - 03:36] the note. Then come back up to the node.
+[03:33 - 03:39] Okay. So this is your in order
+[03:36 - 03:42] traversal. Okay. Next we do post order.
+[03:39 - 03:44] Let's just restart this. Okay. Post
+[03:42 - 03:46] order. We visit the two sub trees first.
+[03:44 - 03:49] Left right. Then we visit the node. So
+[03:46 - 03:51] now we start at 75. We visit. We don't
+[03:49 - 03:54] select. We come to the left node first.
+[03:51 - 03:56] All right. 17. 17 has a left and right
+[03:54 - 03:58] sub tree. So we don't select it first.
+[03:56 - 04:00] We come down to three. Three has no left
+[03:58 - 04:02] sub tree, but has it has a right sub
+[04:00 - 04:04] tree. So I select the right visit the
+[04:02 - 04:06] right sub tree. Select the right sub
+[04:04 - 04:11] tree. Then come back up to the note
+[04:06 - 04:15] which is three. Okay. Then from here the
+[04:11 - 04:17] root of of three is 17. So it has a
+[04:15 - 04:20] right sub tree as well. So we come to
+[04:17 - 04:22] here but we don't select it first
+[04:20 - 04:24] because it's a left and right sub tree.
+[04:22 - 04:28] So we go down to 26 left sub tree.
+[04:24 - 04:31] Select it. Go to the right sub tree. 73.
+[04:28 - 04:33] Okay. Then come back up to 62. Okay. So
+[04:31 - 04:35] now we've selected both left and right
+[04:33 - 04:37] sub trees of three and 62. We can select
+[04:35 - 04:40] 17.
+[04:37 - 04:43] Okay. Next we come to the right sub tree
+[04:40 - 04:45] of 75 which is 80. We visit it. Okay.
+[04:43 - 04:46] Okay. Again, we don't select because you
+[04:45 - 04:48] check for left and right first. Okay.
+[04:46 - 04:53] So, there's no left note. That's a right
+[04:48 - 04:56] note 97. But 97 has a left sub tree 96.
+[04:53 - 04:59] And then 96 as a left sub tree 89. Okay.
+[04:56 - 05:01] So, we select 89 as a left sub tree of
+[04:59 - 05:02] 96.
+[05:01 - 05:06] There's no right sub tree. So, we can
+[05:02 - 05:09] select 96 right now. Okay. And now we
+[05:06 - 05:12] have since now 96 is the left sub tree
+[05:09 - 05:15] of 97 and there's no right sub tree of
+[05:12 - 05:17] 97 we can select 97 now. Okay. After
+[05:15 - 05:20] that we can come back up because we have
+[05:17 - 05:22] selected the right sub tree of 97 of 80
+[05:20 - 05:24] we can now select 80. Okay. And since
+[05:22 - 05:29] both 17 and 80 have been selected we can
+[05:24 - 05:33] choose 75 now. Okay. Last one is our
+[05:29 - 05:35] BFS. Okay. BFS is quite straightforward.
+[05:33 - 05:37] BFS we just need to go by level. All
+[05:35 - 05:39] right. So again we start practice. So
+[05:37 - 05:42] now you can see the the traces on this
+[05:39 - 05:44] way. So first thing first we select 75.
+[05:42 - 05:47] This is the highest level at the root
+[05:44 - 05:49] level. We select it. Okay. And then you
+[05:47 - 05:52] see it's added into the queue. All
+[05:49 - 05:54] right. And then after so once I select
+[05:52 - 05:58] it is DQ and then but then before DQ it
+[05:54 - 06:00] adds the it has two two children inside.
+[05:58 - 06:03] Okay. So now the next one to go for
+[06:00 - 06:05] based on my Q is 17. So it's over here.
+[06:03 - 06:08] Okay. So again I can select this. I
+[06:05 - 06:12] select I EQ it. And then now it has
+[06:08 - 06:14] added uh the two sub trees three and 62.
+[06:12 - 06:17] But anyway you can continue from here.
+[06:14 - 06:19] 17 will be 80. Always go level by level
+[06:17 - 06:22] left to right. Okay. So next is three
+[06:19 - 06:29] then 62 97
+[06:22 - 06:30] 8 26 73 96 and 89. Okay. So you can see
+[06:29 - 06:32] over here this is on the right hand
+[06:30 - 06:35] side. You can see clearly how how it
+[06:32 - 06:40] works. Every time you select you are
+[06:35 - 06:43] every time you select a a note you are
+[06:40 - 06:48] dqing it and then you also encuing the
+[06:43 - 06:48] any left or right child that he has.

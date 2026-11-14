@@ -1,0 +1,179 @@
+Title: BTB3 Print Format
+Assessment(s): BTB 3 - Print Format
+Linked label(s): Print Format
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=oNUV9UN3im8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:04] hi
+[00:02 - 00:06] for this part of the back to basics
+[00:04 - 00:08] series we will be talking about the
+[00:06 - 00:11] print format
+[00:08 - 00:13] now in python there are many ways that
+[00:11 - 00:17] you can format your printout but we will
+[00:13 - 00:19] be focusing on the following two firstly
+[00:17 - 00:24] using the print function
+[00:19 - 00:24] secondly using the string format method
+[00:25 - 00:28] now the print function is something that
+[00:27 - 00:30] you are familiar with
+[00:28 - 00:32] except that you may not be aware that
+[00:30 - 00:33] there are some parameter that you can
+[00:32 - 00:36] use
+[00:33 - 00:38] by default the separation is
+[00:36 - 00:40] empty space
+[00:38 - 00:41] and at the end of the printout it will
+[00:40 - 00:44] always introduce
+[00:41 - 00:47] a new a new line
+[00:44 - 00:49] the print will also be only to the
+[00:47 - 00:52] display
+[00:49 - 00:55] and flash is by default that you will
+[00:52 - 00:55] send out the print immediately
+[00:56 - 01:02] now let's take this as our example
+[00:58 - 01:06] if we want to print the value 3.564
+[01:02 - 01:08] uh after printing the a value
+[01:06 - 01:09] by default there will be a new line
+[01:08 - 01:12] introduced
+[01:09 - 01:14] so the value for b will be printed on
+[01:12 - 01:17] the new line
+[01:14 - 01:19] and when you print two values
+[01:17 - 01:23] by default the separation between these
+[01:19 - 01:25] two values there will be empty space
+[01:23 - 01:27] so how do we overcome this if we want to
+[01:25 - 01:28] remove the empty space between the two
+[01:27 - 01:31] values
+[01:28 - 01:33] you can make use of the parameter
+[01:31 - 01:36] separation equal to an empty string
+[01:33 - 01:38] in that way a and b will be printed
+[01:36 - 01:41] together
+[01:38 - 01:45] instead of putting an empty string as a
+[01:41 - 01:47] separator you can also use a full stop
+[01:45 - 01:48] uh as a separator
+[01:47 - 01:51] for example when you want to print the
+[01:48 - 01:54] ip address you can actually introduce it
+[01:51 - 01:54] as 192.168.1
+[01:56 - 02:01] or you can put any separator you can
+[01:59 - 02:04] even put a emoji here
+[02:01 - 02:06] by default a print call will always end
+[02:04 - 02:08] with a new line
+[02:06 - 02:11] so for example when we try to print a
+[02:08 - 02:14] range of values from 0 to 3
+[02:11 - 02:17] each of the print will actually be in
+[02:14 - 02:17] the new line
+[02:18 - 02:23] but we can override using the parameter
+[02:22 - 02:25] n
+[02:23 - 02:27] and if we use the n with uh
+[02:25 - 02:29] uh empty space
+[02:27 - 02:32] then what will happen is that the value
+[02:29 - 02:37] between 0 to 3 will be printed
+[02:32 - 02:40] horizontally separated by weaver spacing
+[02:37 - 02:41] but if you use a n with an arrow sign
+[02:40 - 02:43] then it will
+[02:41 - 02:46] set the values will be separated with an
+[02:43 - 02:46] arrow
+[02:48 - 02:53] by default the print state print will go
+[02:50 - 02:53] to the display
+[02:54 - 02:58] we can also direct the printout to a
+[02:57 - 03:01] file instead
+[02:58 - 03:03] now if you remember how to uh
+[03:01 - 03:06] create a data text file
+[03:03 - 03:09] using the right part right parameter
+[03:06 - 03:11] and then the printer will be written
+[03:09 - 03:14] into this text file
+[03:11 - 03:19] give it a try to see that a text file
+[03:14 - 03:19] data.txt will be created
+[03:22 - 03:28] the second method we are going to use is
+[03:24 - 03:28] a string format method
+[03:28 - 03:33] now this string format method if you
+[03:30 - 03:35] look at the syntax
+[03:33 - 03:38] you have a string and within this string
+[03:35 - 03:40] itself there are placeholder i will talk
+[03:38 - 03:41] a little bit more about the placeholder
+[03:40 - 03:44] later on
+[03:41 - 03:46] and you have format it for the values
+[03:44 - 03:49] that you're going to print out
+[03:46 - 03:52] so all these value will be replaced into
+[03:49 - 03:55] the placeholder and print according to
+[03:52 - 03:55] the format that we want
+[03:56 - 04:02] let's take a look at the first example
+[04:00 - 04:04] in the placeholder itself we can specify
+[04:02 - 04:06] the variable
+[04:04 - 04:08] and the width
+[04:06 - 04:11] so we have variable one
+[04:08 - 04:15] with one a variable two with two for the
+[04:11 - 04:15] values one and value 2.
+[04:15 - 04:21] take the example of a list
+[04:18 - 04:22] we have a list of names
+[04:21 - 04:24] and then when we want to print them out
+[04:22 - 04:27] in a tabulated form
+[04:24 - 04:29] specifying the first variable as 0
+[04:27 - 04:31] second variable as a one
+[04:29 - 04:34] the variable zero is for the index the
+[04:31 - 04:38] variable one is for the name
+[04:34 - 04:38] and eight and fifteen are the width
+[04:38 - 04:43] now when we iterate through the list we
+[04:40 - 04:45] will be able to print out the index and
+[04:43 - 04:45] the name
+[04:47 - 04:51] by default
+[04:48 - 04:54] all the strings will be left aligned
+[04:51 - 04:56] and all the float integers will be right
+[04:54 - 04:59] aligned that's why i need to convert the
+[04:56 - 05:01] i which is an integer
+[04:59 - 05:03] to a string so that it will be left
+[05:01 - 05:03] aligned
+[05:04 - 05:08] you can try without using the string and
+[05:06 - 05:10] print i instead
+[05:08 - 05:12] you will see for yourself that it will
+[05:10 - 05:15] be right align
+[05:12 - 05:15] at the very last column
+[05:16 - 05:20] there are other way that you can also
+[05:17 - 05:22] specify the uh
+[05:20 - 05:26] formatting uh whether you want it to
+[05:22 - 05:29] align left align right or center align
+[05:26 - 05:29] give it a try
+[05:34 - 05:40] the second way that we want to highlight
+[05:36 - 05:44] is this uh specifying the designer place
+[05:40 - 05:47] for a float within the placeholder
+[05:44 - 05:49] so for variable one with one
+[05:47 - 05:51] if you use the dot two f
+[05:49 - 05:54] dot two f will specify that you want to
+[05:51 - 05:56] print it to two decimal place
+[05:54 - 05:59] and of course the value that you want to
+[05:56 - 06:02] print is a float
+[05:59 - 06:05] now take the example of a list
+[06:02 - 06:07] containing tuples of items
+[06:05 - 06:09] the shirt is selling for twelve dollars
+[06:07 - 06:13] without the dot zero zero
+[06:09 - 06:15] a pen is being sold at 150 without 1.50
+[06:13 - 06:19] without a zero
+[06:15 - 06:20] a piece of cake is being sold at 4.56789
+[06:19 - 06:21] so there are more than two decimal
+[06:20 - 06:24] places
+[06:21 - 06:28] so how we can use dot two f to force
+[06:24 - 06:30] every one of this to become two decimal
+[06:28 - 06:32] places
+[06:30 - 06:34] so we iterate through now we have three
+[06:32 - 06:36] columns so we have three variables zero
+[06:34 - 06:38] one and two
+[06:36 - 06:40] um the first column is eight character
+[06:38 - 06:43] width uh second column then character
+[06:40 - 06:44] width the third column is six character
+[06:43 - 06:47] width
+[06:44 - 06:50] now uh for the price i want to print it
+[06:47 - 06:54] on the right align
+[06:50 - 06:56] and uh when i go through the data for
+[06:54 - 06:57] the prices the prices are actually in
+[06:56 - 07:00] floats
+[06:57 - 07:02] so i specify that i want a dot 2f that
+[07:00 - 07:05] means two decimal places
+[07:02 - 07:08] and because it is a float it will be
+[07:05 - 07:11] right a line that's why the shader for
+[07:08 - 07:13] price i uh specified with a bigger
+[07:11 - 07:14] density to specify that the price is
+[07:13 - 07:17] also right alive
+[07:14 - 07:20] give it a try so that you are familiar
+[07:17 - 07:23] with all this formatting and you can
+[07:20 - 07:26] tabulate all the data in a presentable
+[07:23 - 07:26] way

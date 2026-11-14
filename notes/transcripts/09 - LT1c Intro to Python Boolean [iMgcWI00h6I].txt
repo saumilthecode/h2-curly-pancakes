@@ -1,0 +1,111 @@
+Title: LT1c Intro to Python   Boolean
+LT: LT 1c - Basic Python - Boolean Truth Values
+Linked label: Basic Python : Boolean Truth Values
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=iMgcWI00h6I
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:05] okay in this lecture we are going to
+[00:03 - 00:07] talk about this uh boolean true value
+[00:05 - 00:08] you know really not these are basic
+[00:07 - 00:11] python
+[00:08 - 00:13] okay uh bullet data type is named after
+[00:11 - 00:14] the mathematician george bull
+[00:13 - 00:18] uh
+[00:14 - 00:21] this data type only has uh two values
+[00:18 - 00:23] namely the true and the force okay be
+[00:21 - 00:25] very careful the way we write true is
+[00:23 - 00:26] with a capital letter
+[00:25 - 00:28] uh for
+[00:26 - 00:32] first capital letter and then
+[00:28 - 00:34] uh false also first capital letter f
+[00:32 - 00:37] now do not put a double quote to either
+[00:34 - 00:40] that will convert that into a string
+[00:37 - 00:42] okay uh where do we get the uh
+[00:40 - 00:43] boolean uh
+[00:42 - 00:46] value
+[00:43 - 00:48] okay when we try to compare
+[00:46 - 00:51] our two items uh whether they are equal
+[00:48 - 00:54] or not okay if it's equal that you
+[00:51 - 00:55] return a true but if it's not equal then
+[00:54 - 00:57] you return the force
+[00:55 - 01:00] now or we want to check whether are they
+[00:57 - 01:03] not equal are they less than are they
+[01:00 - 01:05] bigger than or less equal
+[01:03 - 01:11] so all these operations
+[01:05 - 01:11] will return a true or false value
+[01:12 - 01:16] now uh at this point i want to uh
+[01:15 - 01:19] uh
+[01:16 - 01:22] emphasize the difference between the
+[01:19 - 01:25] double equal which means uh
+[01:22 - 01:28] equivalence to check whether two items
+[01:25 - 01:31] are are they the same are they equal
+[01:28 - 01:35] whereas a single equal sign this is used
+[01:31 - 01:39] for assignment that means you want to uh
+[01:35 - 01:42] assign a value of 5 to this
+[01:39 - 01:44] variable distance okay so
+[01:42 - 01:46] single equal is for assignment double
+[01:44 - 01:49] equal is for
+[01:46 - 01:49] equivalence comparison
+[01:53 - 01:58] now there are some boolean operators
+[01:56 - 01:59] namely the n
+[01:58 - 02:01] or or not
+[01:59 - 02:04] okay um
+[02:01 - 02:07] when will n be true or it will be true
+[02:04 - 02:07] when both
+[02:07 - 02:13] two when both two boolean values are
+[02:10 - 02:15] true true and true would be true
+[02:13 - 02:16] okay whereas for the o
+[02:15 - 02:18] uh
+[02:16 - 02:19] either one of the two boolean value
+[02:18 - 02:22] values
+[02:19 - 02:24] need to be true so a true or false will
+[02:22 - 02:25] return true
+[02:24 - 02:28] uh
+[02:25 - 02:31] false or true will also return true
+[02:28 - 02:33] the only time when uh you will return a
+[02:31 - 02:38] force is when both are false force of
+[02:33 - 02:41] force will return false okay not so not
+[02:38 - 02:43] is uh to uh the opposite
+[02:41 - 02:46] of the boolean value so not true is
+[02:43 - 02:49] actually false
+[02:46 - 02:52] okay so let's recap again for the end
+[02:49 - 02:53] operator a true and the true will return
+[02:52 - 02:56] true
+[02:53 - 02:58] okay true and false false and true
+[02:56 - 03:00] and false and false all these will
+[02:58 - 03:03] return false so you can remember it says
+[03:00 - 03:06] that okay once you see a
+[03:03 - 03:07] force it must be false okay you may use
+[03:06 - 03:11] n
+[03:07 - 03:14] now in the case of the or operator uh
+[03:11 - 03:17] either one of the two uh
+[03:14 - 03:19] boolean value is a true uh it will
+[03:17 - 03:21] return true so true and true true and
+[03:19 - 03:23] false false and true all these will
+[03:21 - 03:26] return true the only time will return
+[03:23 - 03:26] force is both of them are false
+[03:27 - 03:32] okay not true is false not false is true
+[03:33 - 03:39] okay in python 3
+[03:35 - 03:41] 2 is equivalent to 1 and 4 is equivalent
+[03:39 - 03:44] to 0.
+[03:41 - 03:46] now anything that is not 0 so anything
+[03:44 - 03:48] is not 0 for example two
+[03:46 - 03:52] three four five
+[03:48 - 03:54] uh they will be taken as a true
+[03:52 - 03:56] uh so that's one thing to take note of
+[03:54 - 03:59] uh what if you define something to be
+[03:56 - 04:01] zero then that will be a force or
+[03:59 - 04:02] something that is not empty for example
+[04:01 - 04:04] a string
+[04:02 - 04:07] is installed empty string then it will
+[04:04 - 04:10] also be evaluated as a true so when you
+[04:07 - 04:12] have an empty string it will be a force
+[04:10 - 04:14] uh if later on you will learn about
+[04:12 - 04:17] least and tuple so if the list or the
+[04:14 - 04:20] tuple is not empty then that would be a
+[04:17 - 04:23] true but when it's empty there will be a
+[04:20 - 04:23] force

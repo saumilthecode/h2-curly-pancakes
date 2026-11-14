@@ -1,0 +1,341 @@
+Title: Lesson 7: Demystifying the Internet (Part 2)
+Assessment(s): C3c Additional Resources
+Linked label(s): (Lesson 7) Demystifying Internet Part 2 of 3
+Uploader: Center for Cybersecurity Innovation & Outreach
+YouTube: https://www.youtube.com/watch?v=DeKA47QA1R8
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] Welcome to this course, Introduction to
+[00:02 - 00:07] Cyber Security Literacy. This is lesson
+[00:05 - 00:09] seven, demystifying the internet, part
+[00:07 - 00:11] two of three. In this lesson, we will
+[00:09 - 00:13] examine some illustrations that will
+[00:11 - 00:15] help us to see the internet in greater
+[00:13 - 00:17] detail. Some of you may be watching this
+[00:15 - 00:20] video as part of a course that uses this
+[00:17 - 00:21] textbook. If you are, you should know
+[00:20 - 00:24] that the illustrations in this video are
+[00:21 - 00:25] from chapter 2 of the book. If you
+[00:24 - 00:27] aren't using this book, don't worry
+[00:25 - 00:29] about it. Just follow along with the
+[00:27 - 00:32] video. This first illustration models
+[00:29 - 00:34] the mysterious cloud view of the
+[00:32 - 00:37] internet. Casual users see information
+[00:34 - 00:38] go into and come out of the internet and
+[00:37 - 00:41] they understand what kinds of
+[00:38 - 00:43] information and services are available.
+[00:41 - 00:45] Email services, web pages, online
+[00:43 - 00:47] retailers, banking institutions and
+[00:45 - 00:50] more. But they may not understand how
+[00:47 - 00:51] that information isworked together.
+[00:50 - 00:53] Let's take a closer look at the
+[00:51 - 00:56] structure of the internet so that the
+[00:53 - 00:58] cloud is not so mysterious. This next
+[00:56 - 01:00] illustration begins to show how the
+[00:58 - 01:02] internet isworked together in a little
+[01:00 - 01:05] more detail. It shows how the internet
+[01:02 - 01:07] is arranged loosely into a hierarchy. At
+[01:05 - 01:09] the top of the hierarchy is what is
+[01:07 - 01:11] referred to as the backbone of the
+[01:09 - 01:14] internet. The backbone of the internet
+[01:11 - 01:16] consists of the largest set of internet
+[01:14 - 01:19] service providers or ISPs as they're
+[01:16 - 01:22] called. An ISP is an organization that
+[01:19 - 01:24] owns, controls, and maintains a large
+[01:22 - 01:26] number of the computer networking cables
+[01:24 - 01:28] and networking devices that make the
+[01:26 - 01:31] internet possible. These largest ISPs
+[01:28 - 01:33] include corporations, governments, and
+[01:31 - 01:35] in some cases, large academic
+[01:33 - 01:38] organizations. The connections linking
+[01:35 - 01:40] the biggest ISPs together are modeled by
+[01:38 - 01:42] red arrows in this illustration. These
+[01:40 - 01:44] arrows represent the network cables that
+[01:42 - 01:46] carry the most information. Most
+[01:44 - 01:48] internet traffic must travel through one
+[01:46 - 01:51] of these backbone connections at some
+[01:48 - 01:53] point as it travels across the net. As
+[01:51 - 01:55] we work our way down the hierarchy, we
+[01:53 - 01:58] see that there is a tier of medium-sized
+[01:55 - 02:00] ISPs. These medium-sized ISPs are
+[01:58 - 02:02] responsible for considerably less
+[02:00 - 02:04] internet traffic and considerably fewer
+[02:02 - 02:07] cables and networking devices than the
+[02:04 - 02:08] backbone ISPs are, but they are still
+[02:07 - 02:11] responsible for a huge amount of
+[02:08 - 02:13] traffic. In this illustration, the blue
+[02:11 - 02:15] arrows represent the internet traffic
+[02:13 - 02:18] between these medium ISPs and the
+[02:15 - 02:20] backbone ISPs above them. The green
+[02:18 - 02:22] arrows represent the connection between
+[02:20 - 02:24] the medium ISPs and an organization
+[02:22 - 02:26] further down the hierarchy. As we can
+[02:24 - 02:29] see in the illustration, a business with
+[02:26 - 02:31] its own private internal network might
+[02:29 - 02:34] connect its many users directly to one
+[02:31 - 02:36] of these blue medium-sized ISPs.
+[02:34 - 02:38] However, a residential user might
+[02:36 - 02:41] connect to the medium ISPs through an
+[02:38 - 02:44] even smaller local ISP. These small
+[02:41 - 02:46] local ISPs that connect residents to the
+[02:44 - 02:48] internet are often controlled by a local
+[02:46 - 02:50] cable company or a local phone company.
+[02:48 - 02:53] The connection between the smallest tier
+[02:50 - 02:55] of ISPs and an individual residents is
+[02:53 - 02:56] represented here by a purple arrow. The
+[02:55 - 02:59] connection represented by the purple
+[02:56 - 03:01] arrow might carry a lot of information,
+[02:59 - 03:04] streaming video, file downloads, or
+[03:01 - 03:06] maybe online games. But that quantity of
+[03:04 - 03:07] information is just nothing compared to
+[03:06 - 03:10] the quantity represented by the arrows
+[03:07 - 03:12] higher up on the hierarchy. So there it
+[03:10 - 03:14] is. This illustration shows us how
+[03:12 - 03:17] internet service providers are organized
+[03:14 - 03:19] into a hierarchy with the ISPs on the
+[03:17 - 03:22] top handling the most data and the ISPs
+[03:19 - 03:24] and residents on the bottom handling the
+[03:22 - 03:27] least data. This next illustration shows
+[03:24 - 03:29] something else. As you may already know,
+[03:27 - 03:31] every device that is connected to the
+[03:29 - 03:34] internet has a unique address called an
+[03:31 - 03:35] IP address. This illustration shows a
+[03:34 - 03:38] couple different ways that IP addresses
+[03:35 - 03:41] get assigned to devices. This diagram
+[03:38 - 03:45] includes three fictional networks. The
+[03:41 - 03:47] XYZ office network, the ABC office
+[03:45 - 03:49] network, and the Joe's Coffee Shop
+[03:47 - 03:51] network. To keep the diagram relatively
+[03:49 - 03:53] simple, the rest of the internet has
+[03:51 - 03:56] been condensed down into a cloud in the
+[03:53 - 03:58] middle of the illustration. First, let's
+[03:56 - 04:01] take a look at the XYZ office network on
+[03:58 - 04:03] the left side of the illustration. Those
+[04:01 - 04:06] red numbers are the IP addresses for the
+[04:03 - 04:08] whole network. Every IP address is
+[04:06 - 04:10] numerical like that. They are always
+[04:08 - 04:12] written as four sets of digits, each
+[04:10 - 04:14] separated by a period. Each of these
+[04:12 - 04:17] four sets of digits can be any number
+[04:14 - 04:19] from 0 to 255.
+[04:17 - 04:24] So, take a look at the IP address of the
+[04:19 - 04:24] XYZ network. It's 1 197.12.15.0.
+[04:27 - 04:32] All of the devices connected to the XYZ
+[04:29 - 04:34] network will be assigned IP addresses
+[04:32 - 04:38] that begin with the first three sets of
+[04:34 - 04:38] digits 197.12.15.
+[04:38 - 04:43] Device IP addresses ending in zero are
+[04:41 - 04:47] restricted and device IP addresses
+[04:43 - 04:48] ending in 255 are also reserved. So in
+[04:47 - 04:50] practice, the range of possible IP
+[04:48 - 04:55] addresses for devices on this network
+[04:50 - 04:57] are 0.1 to 254. As we can see in the
+[04:55 - 04:59] illustration, the router at the XYZ
+[04:57 - 05:02] office network has been assigned the IP
+[04:59 - 05:04] address ending in.254.
+[05:02 - 05:06] Meanwhile, Carol's desktop computer has
+[05:04 - 05:10] been assigned the IP address ending in
+[05:06 - 05:13] 10. There are 252 IP addresses remaining
+[05:10 - 05:16] in the available range for this network.
+[05:13 - 05:18] The XYZ office network uses static IP
+[05:16 - 05:21] address assignments.
+[05:18 - 05:23] Static IP addresses are unchanging. That
+[05:21 - 05:26] means that for the foreseeable future,
+[05:23 - 05:28] Carol's desktop has been permanently
+[05:26 - 05:31] assigned this particular IP address. 1
+[05:28 - 05:31] 197.12.1510
+[05:32 - 05:37] is permanently reserved for her
+[05:34 - 05:39] computer. The opposite of static IP
+[05:37 - 05:42] address assignment is dynamic IP address
+[05:39 - 05:44] assignment. For an example of dynamic IP
+[05:42 - 05:46] address assignment, let's take a look at
+[05:44 - 05:49] the ABC office network over on the right
+[05:46 - 05:54] side of the illustration. The ABC office
+[05:49 - 05:54] network is at the IP address 207.10.2.0.
+[05:55 - 05:59] Just like in the case of the XYZ office
+[05:58 - 06:01] network, devices connecting to the
+[05:59 - 06:03] network can use any IP address starting
+[06:01 - 06:07] with those first three numbers and
+[06:03 - 06:09] ending with any number from 1 to 254.
+[06:07 - 06:12] For example, on this network, the router
+[06:09 - 06:15] took the IP address ending in 254. Bob's
+[06:12 - 06:16] computer took the address ending in5.
+[06:15 - 06:19] And Alice's computer took the address
+[06:16 - 06:22] ending in five. But unlike the XYZ
+[06:19 - 06:25] network, the ABC office network uses
+[06:22 - 06:27] dynamic IP addresses instead of static
+[06:25 - 06:29] IP addresses. This means that some of
+[06:27 - 06:32] these IP addresses are subject to
+[06:29 - 06:34] change. You see, the ABC office network
+[06:32 - 06:36] has a special piece of hardware called a
+[06:34 - 06:40] dynamic host configuration protocol
+[06:36 - 06:42] server, or a DHCP server, as it's often
+[06:40 - 06:44] abbreviated. The dynamic host
+[06:42 - 06:48] configuration protocol server assigns a
+[06:44 - 06:50] device one of the 254 possible network
+[06:48 - 06:53] IP addresses. Each time a device begins
+[06:50 - 06:55] a new internet session, the DHCP server
+[06:53 - 06:57] will lease each IP address for a set
+[06:55 - 06:59] period of time. And after that time
+[06:57 - 07:02] passes, then the device will have to
+[06:59 - 07:03] renew its lease. I know that I'm
+[07:02 - 07:05] throwing a lot of new information at
+[07:03 - 07:07] you, but I promised that the underlying
+[07:05 - 07:09] concept isn't very difficult. All we're
+[07:07 - 07:11] saying is that, for example, Bob's
+[07:09 - 07:14] computer has the IP address ending in
+[07:11 - 07:17] 0.15 for now, but it might be assigned a
+[07:14 - 07:19] new IP address once the hour is up. What
+[07:17 - 07:22] are the advantages and disadvantages of
+[07:19 - 07:24] dynamic IP addresses versus static IP
+[07:22 - 07:26] addresses? Well, the advantage of a
+[07:24 - 07:29] static IP address like Carol has on her
+[07:26 - 07:31] computer is that her IP address is
+[07:29 - 07:33] always available to her. She has a
+[07:31 - 07:36] reserved place on the router. When IP
+[07:33 - 07:38] addresses are assigned dynamically, as
+[07:36 - 07:39] they are for Bob's computer over here,
+[07:38 - 07:41] then there's a chance that there won't
+[07:39 - 07:43] be any room for him when he tries to
+[07:41 - 07:45] connect to the network. If the DHCP
+[07:43 - 07:47] server has already assigned all the IP
+[07:45 - 07:49] addresses available to it, then there
+[07:47 - 07:51] won't be any left for Bob. The advantage
+[07:49 - 07:53] of dynamic IP address assignment is that
+[07:51 - 07:55] dynamic assignments are more flexible.
+[07:53 - 07:57] Thousands of different devices could
+[07:55 - 07:59] connect to the ABC network, and as long
+[07:57 - 08:01] as they don't all try to connect at the
+[07:59 - 08:04] same time, the DHCP server can assign
+[08:01 - 08:05] them all an IP address on the network.
+[08:04 - 08:07] Let's look down at the bottom of this
+[08:05 - 08:10] illustration to see one more network
+[08:07 - 08:12] configuration that also uses dynamic IP
+[08:10 - 08:17] address assignments. Joe's coffee shop
+[08:12 - 08:17] network is at IP address 207.10.3.0.
+[08:18 - 08:22] This means that devices connected to it
+[08:20 - 08:24] can take the IP addresses beginning with
+[08:22 - 08:27] those three numbers and ending with a
+[08:24 - 08:29] number between 1 and 254. Over the
+[08:27 - 08:31] course of say a month, a coffee shop
+[08:29 - 08:34] could probably expect to have many more
+[08:31 - 08:36] than just 254 devices connect to their
+[08:34 - 08:38] wireless connection. But at any given
+[08:36 - 08:39] time throughout the day, they would
+[08:38 - 08:42] probably have only a few devices
+[08:39 - 08:45] connected. uh maybe 50 or so. This is a
+[08:42 - 08:48] perfect situation for dynamic IP address
+[08:45 - 08:51] assignments. The network only has 254 IP
+[08:48 - 08:53] addresses that it can assign, but it can
+[08:51 - 08:55] easily accommodate all of its users by
+[08:53 - 08:57] assigning these addresses on a temporary
+[08:55 - 08:59] basis only to the users who are active
+[08:57 - 09:01] on the network. But remember when we
+[08:59 - 09:04] were examining the ABC office network
+[09:01 - 09:06] connection, we saw that a network needs
+[09:04 - 09:08] a dynamic host configuration protocol
+[09:06 - 09:11] server in order to accommodate dynamic
+[09:08 - 09:14] IP addressing. Where is the DHCP server
+[09:11 - 09:16] at Joe's Coffee Shop? The answer is that
+[09:14 - 09:19] at Joe's coffee shop, the DHCP server is
+[09:16 - 09:20] combined with the internet router.
+[09:19 - 09:23] Instead of the router and the DHCP
+[09:20 - 09:24] server being two separate devices,
+[09:23 - 09:27] they're integrated together into a
+[09:24 - 09:29] single device. This is pretty common.
+[09:27 - 09:32] Most home internet routers also have
+[09:29 - 09:34] DHCP servers built into them, and so
+[09:32 - 09:37] most home networks can accommodate
+[09:34 - 09:39] dynamic IP address assignments. So, what
+[09:37 - 09:42] are the big takeaways from this
+[09:39 - 09:44] illustration? I want you to see that a
+[09:42 - 09:46] computer's IP address usually depends on
+[09:44 - 09:49] a router's IP address. I also want you
+[09:46 - 09:51] to see that your devices IP address can
+[09:49 - 09:53] change depending on what network it's on
+[09:51 - 09:55] and depending on whether the network
+[09:53 - 09:58] uses dynamic or static IP address
+[09:55 - 10:01] assignment. Finally, I want you to note
+[09:58 - 10:04] the structure of an IP address that it's
+[10:01 - 10:05] four numbers separated by periods.
+[10:04 - 10:07] The last illustration that we will
+[10:05 - 10:10] examine in this lecture models the
+[10:07 - 10:12] difference between a public IP address
+[10:10 - 10:14] and a private IP address. In our
+[10:12 - 10:16] discussion of IP addresses so far, we
+[10:14 - 10:18] have not been making the distinction
+[10:16 - 10:20] between public and private IP addresses.
+[10:18 - 10:22] I've been speaking as if all IP
+[10:20 - 10:24] addresses are the same, but there is a
+[10:22 - 10:28] significant difference between public IP
+[10:24 - 10:29] addresses and private IP addresses. This
+[10:28 - 10:30] illustration shows two different
+[10:29 - 10:33] networks that are connected to the
+[10:30 - 10:36] internet. Alice's home network and Bob's
+[10:33 - 10:39] home network. Alice's home network is
+[10:36 - 10:42] composed of two devices, a router and
+[10:39 - 10:44] Alice's computer. Bob's home network is
+[10:42 - 10:47] composed of four devices, a router,
+[10:44 - 10:50] Bob's computer, Carol's computer, and a
+[10:47 - 10:51] printer. Let's take a look at Bob's home
+[10:50 - 10:53] network on the right side of this
+[10:51 - 10:55] illustration. Bob's local internet
+[10:53 - 10:57] service provider has only assigned him
+[10:55 - 10:59] one IP address, but he would like to
+[10:57 - 11:01] connect two computers to the internet,
+[10:59 - 11:02] his and Carol's. and furthermore, he'd
+[11:01 - 11:05] like to connect his wireless printer to
+[11:02 - 11:08] his home network. The rules of IP
+[11:05 - 11:09] require that every device has its own IP
+[11:08 - 11:11] address, but Bob's internet service
+[11:09 - 11:14] provider has only given him one IP
+[11:11 - 11:17] address to work with. So, what does Bob
+[11:14 - 11:19] do? He will use his router to create a
+[11:17 - 11:21] private home network to connect his four
+[11:19 - 11:23] devices together. And then he'll connect
+[11:21 - 11:24] his entire home network to the public
+[11:23 - 11:26] internet through the IP address that his
+[11:24 - 11:29] internet service provider has assigned
+[11:26 - 11:31] him. From the perspective of somebody
+[11:29 - 11:33] outside on the public internet, Bob
+[11:31 - 11:34] appears to have only one device
+[11:33 - 11:36] connected to the internet, and that's
+[11:34 - 11:38] his router. But Bob's router can
+[11:36 - 11:40] coordinate Bob's public internet
+[11:38 - 11:43] connection with multiple devices on his
+[11:40 - 11:45] private network. So from within the
+[11:43 - 11:47] private network, we can see that there
+[11:45 - 11:49] are really three more devices connected
+[11:47 - 11:51] to the public internet through Bob's
+[11:49 - 11:53] router. Now, let's compare Bob's home
+[11:51 - 11:56] network to Alice's home network. on the
+[11:53 - 11:59] bottom left portion of the illustration.
+[11:56 - 12:00] Both networks have a public IP address
+[11:59 - 12:04] and those public IP addresses are
+[12:00 - 12:06] unique. Indeed, every public IP address
+[12:04 - 12:08] must be unique. However, Bob's and
+[12:06 - 12:10] Alice's routers help them to create
+[12:08 - 12:12] private networks, and these private
+[12:10 - 12:15] networks can reuse the same IP
+[12:12 - 12:17] addresses. For example, we can see that
+[12:15 - 12:20] Alice's computer's private IP address is
+[12:17 - 12:22] identical to Bob's computer's private IP
+[12:20 - 12:24] address. This repetition is possible
+[12:22 - 12:27] because of the distinction between their
+[12:24 - 12:30] private IP addresses and their public IP
+[12:27 - 12:32] addresses. It's kind of like how every
+[12:30 - 12:34] apartment building in a city must have a
+[12:32 - 12:36] unique street address for the post
+[12:34 - 12:38] office to deliver mail to. But at each
+[12:36 - 12:40] unique street address, the apartment
+[12:38 - 12:43] buildings can reuse the same apartment
+[12:40 - 12:44] numbers. Okay, I know that we've covered
+[12:43 - 12:47] a lot of ground here with these
+[12:44 - 12:49] illustrations, so let's take a break. In
+[12:47 - 12:51] the next video, we'll examine a few more
+[12:49 - 12:53] illustrations that will help us to see
+[12:51 - 12:56] how information is routed through the
+[12:53 - 12:56] internet.

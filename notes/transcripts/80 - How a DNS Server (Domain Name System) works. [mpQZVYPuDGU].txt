@@ -1,0 +1,76 @@
+Title: How a DNS Server (Domain Name System) works.
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: PowerCert Animated Videos
+YouTube: https://www.youtube.com/watch?v=mpQZVYPuDGU
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] In the world of networking, computers don't go by names like humans do, they go
+[00:05 - 00:10] by numbers, because that's how computers and other similar devices talk and
+[00:10 - 00:16] identify with each other over a network, which is by using numbers such as IP
+[00:16 - 00:22] addresses. Humans on the other hand are accustomed to using names instead of
+[00:22 - 00:24] numbers,
+[00:24 - 00:28] whether is talking directly to another person or identifying a country,
+[00:28 - 00:35] place, or thing, humans identify with names instead of numbers. So in order to
+[00:35 - 00:39] bridge the communication gap between computers and humans and make the
+[00:39 - 00:41] communication of a lot easier,
+[00:41 - 00:48] networking engineers developed DNS, and DNS stands for a domain name system. And DNS
+[00:48 - 00:53] resolves names to numbers, to be more specific
+[00:53 - 01:00] it resolves domain names to IP addresses. So if you type in a web address in your
+[01:00 - 01:05] web browser, DNS will resolve the name to a number because the only thing
+[01:05 - 01:10] computers know are numbers. So for example if you wanted to go to a certain
+[01:10 - 01:16] website you would open up your web browser and type in the domain name of
+[01:16 - 01:22] that website, so for example let's use yahoo.com. Now technically you really
+[01:22 - 01:27] don't have to type in yahoo.com to retrieve the Yahoo web page, you can just
+[01:27 - 01:34] type in the IP address instead if you already knew what the IP address was, but
+[01:34 - 01:38] since we are not accustomed to memorizing and dealing with numbers,
+[01:38 - 01:43] especially when there are millions of websites on the internet, we can just
+[01:43 - 01:49] type in the domain name instead and let DNS convert it to an IP address for us.
+[01:49 - 01:54] So back to our example, when you type in yahoo.com your web browser
+[01:55 - 02:00] the DNS server with search through its database to find a matching IP address
+[02:00 - 02:05] for that domain name, and when it finds it it will resolve that domain name to
+[02:05 - 02:11] the IP address of the Yahoo web site, and once that is done then your computer is
+[02:11 - 02:18] able to communicate with a Yahoo web server and retrieve the webpage. So DNS
+[02:18 - 02:22] basically works like a phone book, when you want to find a number, you don't look
+[02:22 - 02:27] up the number first, you look up the name first, then it will give you the number.
+[02:30 - 02:35] So to break this down into further detail let's examine the steps that DNS
+[02:35 - 02:36] takes.
+[02:36 - 02:41] So when you type in yahoo.com in your web browser and if your web browser
+[02:41 - 02:47] or operating system can't find the IP address in its own cache memory, it will
+[02:47 - 02:52] send the query to the next level to what is called the resolver server. The resolver
+[02:52 - 02:58] server is basically your ISP or Internet service provider, so when the resolver
+[02:58 - 03:03] receives the query, it will check its own cache memory to find an IP
+[03:03 - 03:09] address for yahoo.com, and if it can't find it it will send the query to the
+[03:09 - 03:12] next level which is the root server.
+[03:12 - 03:19] The root servers are the top or the root of a DNS hierarchy. There are 13 sets of
+[03:19 - 03:23] these root servers and they are strategically placed around the world,
+[03:23 - 03:29] and they are operated by 12 different organizations and each set of these root
+[03:29 - 03:35] servers has their own unique IP address. So when the root server receives the
+[03:35 - 03:40] query for the IP address for yahoo.com, the root server is not going to know
+[03:40 - 03:45] what the IP address is, but the root server does know where to send the
+[03:45 - 03:50] resolver to help it find the IP address. So the root server will direct the
+[03:50 - 03:58] resolver to the TLD or top level domain server for the dot com domain. So the
+[03:58 - 04:03] resolver will now ask the TLD server for the IP address for yahoo.com.
+[04:05 - 04:10] The top level domain server stores the address information for a top level
+[04:10 - 04:19] domains, such as .com, .net, .org and so on. This particular TLD server manages
+[04:19 - 04:24] the dot-com domain which yahoo.com is a part of.
+[04:25 - 04:30] So when a TLD server receives the query for the IP address for yahoo.com, the
+[04:30 - 04:36] TLD server is not going to know what the IP addresses for yahoo.com. So
+[04:36 - 04:41] the TLD will direct the resolver to the next and final level, which are the
+[04:41 - 04:44] authoritative name servers.
+[04:46 - 04:51] So once again the resolver will now ask the authoritative name server for the IP
+[04:51 - 04:54] address for yahoo.com.
+[04:54 - 04:59] The authoritative name server or servers are responsible for knowing everything
+[04:59 - 05:06] about the domain which includes the IP address. They are the final authority. So
+[05:06 - 05:11] when the authoritative name server receives the query from the resolver, the
+[05:11 - 05:18] name server will respond with the IP address for yahoo.com. And finally the
+[05:18 - 05:23] resolver will tell your computer the IP address for yahoo.com and then your
+[05:23 - 05:26] computer can now retrieve the Yahoo web page.
+[05:27 - 05:32] It's important to note that once the resolver receives the IP address, it will
+[05:32 - 05:38] store it in its cache memory in case it receives another query for yahoo.com so
+[05:38 - 05:41] it doesn't have to go through all those steps again.

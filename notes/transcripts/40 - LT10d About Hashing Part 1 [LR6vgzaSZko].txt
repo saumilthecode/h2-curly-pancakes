@@ -1,0 +1,313 @@
+Title: LT10d About Hashing Part 1
+LT: LT10d About Hashing (Part 1)
+Linked label: Part 1 : About the Hash Value (or Checksum)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=LR6vgzaSZko
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:05] now in this lt10d
+[00:03 - 00:09] uh we will be talking about these
+[00:05 - 00:11] abstract data type or hash table
+[00:09 - 00:15] now for part one we will be talking
+[00:11 - 00:18] about the hash value or sometimes we
+[00:15 - 00:18] call it as the check sum
+[00:21 - 00:26] okay
+[00:23 - 00:28] hash function or algorithms
+[00:26 - 00:29] creates a
+[00:28 - 00:32] digital
+[00:29 - 00:34] fingerprint of the data
+[00:32 - 00:35] and in some literature they call it
+[00:34 - 00:37] digest
+[00:35 - 00:41] or sometimes they just simply call it
+[00:37 - 00:44] the hash value or the check sum
+[00:41 - 00:47] a hash algorithm is primarily used for
+[00:44 - 00:49] comparison purpose
+[00:47 - 00:52] i want to emphasize here it is not
+[00:49 - 00:55] for encryption
+[00:52 - 00:58] uh many secured or hash algorithm have
+[00:55 - 01:00] three basic characteristics
+[00:58 - 01:02] it is secured
+[01:00 - 01:04] what it means is that it is not
+[01:02 - 01:06] reversible that means if i were to give
+[01:04 - 01:09] you the hash value
+[01:06 - 01:12] you will not be able to
+[01:09 - 01:13] reverse engineer to find out what is the
+[01:12 - 01:15] data
+[01:13 - 01:18] so it is not reversible
+[01:15 - 01:22] second thing is that it has a fixed size
+[01:18 - 01:26] now the the long and short of the data
+[01:22 - 01:28] will produce the same fixed size digest
+[01:26 - 01:29] which we can determine we can decide
+[01:28 - 01:31] beforehand
+[01:29 - 01:33] what is the digest or what is the
+[01:31 - 01:36] checksum
+[01:33 - 01:40] value that we want okay
+[01:36 - 01:41] lastly about this uniqueness now ideally
+[01:40 - 01:43] speaking
+[01:41 - 01:44] two different sets of data cannot
+[01:43 - 01:46] produce
+[01:44 - 01:48] the same
+[01:46 - 01:51] uh digest or the same checksum value
+[01:48 - 01:53] that is ideally speaking but in the case
+[01:51 - 01:55] of a
+[01:53 - 01:59] that's happening in reality
+[01:55 - 02:01] then this unique or hash value
+[01:59 - 02:03] of
+[02:01 - 02:05] may not be feasible
+[02:03 - 02:07] or in the subsequent part we'll be
+[02:05 - 02:08] talking about
+[02:07 - 02:11] some
+[02:08 - 02:15] collision resolution submethod okay that
+[02:11 - 02:15] one will leave it to part three
+[02:17 - 02:21] now let's talk about the hashing
+[02:19 - 02:24] algorithm
+[02:21 - 02:26] now one way we can use is the ascii
+[02:24 - 02:29] value of individual character
+[02:26 - 02:31] or in python we can use the ordinance
+[02:29 - 02:33] ord the method
+[02:31 - 02:34] that is
+[02:33 - 02:38] act on the
+[02:34 - 02:40] string now for example uh the alphabet a
+[02:38 - 02:43] small letter a
+[02:40 - 02:46] or the ascii value of it is 97. so
+[02:43 - 02:48] different character different as uh
+[02:46 - 02:49] different uh letters
+[02:48 - 02:52] in the string
+[02:49 - 02:54] has a ascii value and you can use the
+[02:52 - 02:56] python ordinance method to
+[02:54 - 02:59] find out each value
+[02:56 - 03:01] now if we can uh
+[02:59 - 03:04] use the ascii value
+[03:01 - 03:06] of a character then within a string
+[03:04 - 03:07] itself when you make ups of many
+[03:06 - 03:09] characters
+[03:07 - 03:12] we for the different position of the
+[03:09 - 03:15] character we put a width to it
+[03:12 - 03:17] okay after uh putting the weights to the
+[03:15 - 03:20] ascii value
+[03:17 - 03:22] we can sum up all these uh the total
+[03:20 - 03:23] hash value
+[03:22 - 03:25] uh
+[03:23 - 03:28] number three we apply a modulo
+[03:25 - 03:30] uh in computing quite modulo in
+[03:28 - 03:32] mathematics is known as modulus
+[03:30 - 03:34] of
+[03:32 - 03:36] basically what it does is that the
+[03:34 - 03:39] modulo uh uh
+[03:36 - 03:40] operations uh when the number a which is
+[03:39 - 03:43] the
+[03:40 - 03:45] divided uh dividend uh is divided by
+[03:43 - 03:48] another number n which is called the
+[03:45 - 03:50] divisor so a divided by n
+[03:48 - 03:52] has a remainder
+[03:50 - 03:53] so the modulo will work out the
+[03:52 - 03:56] remainder
+[03:53 - 03:57] okay so uh these these are the key
+[03:56 - 04:01] features
+[03:57 - 04:01] of a hashing algorithm
+[04:02 - 04:08] let's take a look at a simple hashing
+[04:05 - 04:08] algorithm
+[04:08 - 04:12] okay let's say i define a function
+[04:10 - 04:16] called hash and then
+[04:12 - 04:18] the input is a string
+[04:16 - 04:19] we start by initializing the total to be
+[04:18 - 04:22] zero
+[04:19 - 04:24] now for i in range of the length of the
+[04:22 - 04:28] string that will allow us to go through
+[04:24 - 04:29] every single character within the string
+[04:28 - 04:30] now
+[04:29 - 04:33] total
+[04:30 - 04:35] equal to total plus the ordinance of the
+[04:33 - 04:36] string basically means that you are
+[04:35 - 04:40] trying to add up
+[04:36 - 04:43] all the ascii value of the character
+[04:40 - 04:45] but there is a problem here uh this
+[04:43 - 04:49] particular algorithm
+[04:45 - 04:51] uh adds up all the ascii value
+[04:49 - 04:54] now uh
+[04:51 - 04:58] for example or a string that is a b c
+[04:54 - 05:01] a is 97 b is 98 c is 99
+[04:58 - 05:05] but if i were to change the order of it
+[05:01 - 05:07] a b c or b c a they will all add up to
+[05:05 - 05:09] the same total
+[05:07 - 05:11] so what happened here is that in this
+[05:09 - 05:13] algorithm it did not take care of the
+[05:11 - 05:15] position
+[05:13 - 05:17] of the alphabet itself
+[05:15 - 05:20] so this is no good this is not a good
+[05:17 - 05:23] algorithm a good algorithm have to take
+[05:20 - 05:25] into consideration the position of it so
+[05:23 - 05:27] we apply a weight to it
+[05:25 - 05:30] okay how do we do that
+[05:27 - 05:32] now for each of the ascii each of the
+[05:30 - 05:35] ascii value of the character you
+[05:32 - 05:40] multiply by the position of it
+[05:35 - 05:42] so for the first character i is 0 but we
+[05:40 - 05:45] plus 1 so it becomes 1 so the first
+[05:42 - 05:46] character will have a weightage of 1.
+[05:45 - 05:48] second character will have a weightage
+[05:46 - 05:50] of 2 the third character will have a
+[05:48 - 05:53] weightage of 3.
+[05:50 - 05:56] okay in that case when you switch the
+[05:53 - 05:59] order around uh
+[05:56 - 06:01] it will be uh the total that the total
+[05:59 - 06:04] of the ascii value will be noticeable
+[06:01 - 06:06] because when you switch the order around
+[06:04 - 06:08] the sum of this hash value will be
+[06:06 - 06:12] different
+[06:08 - 06:14] okay so we we use uh this uh multiplied
+[06:12 - 06:16] by this uh i
+[06:14 - 06:19] uh
+[06:16 - 06:22] uh we use this i plus one
+[06:19 - 06:26] and you multiply this is the weight that
+[06:22 - 06:26] you apply on the ascii value okay
+[06:26 - 06:32] now let's take uh because uh
+[06:28 - 06:35] for example of uh we have a five uh
+[06:32 - 06:39] letter a b c d for example
+[06:35 - 06:42] okay i mentioned before a is uh 97 ascii
+[06:39 - 06:45] value is 97 and if it's multiplied by
+[06:42 - 06:47] the position 1 so this a will take on a
+[06:45 - 06:49] value of 97
+[06:47 - 06:52] whereas a b
+[06:49 - 06:54] will have a value of 98 but because of
+[06:52 - 06:57] its position we have to multiply by 2
+[06:54 - 07:01] and so on and so forth c
+[06:57 - 07:03] d and e so each character
+[07:01 - 07:04] in that position of that string
+[07:03 - 07:07] carries
+[07:04 - 07:09] a weightage it has a value
+[07:07 - 07:13] and we add up all this value and it
+[07:09 - 07:14] total up to 1495.
+[07:13 - 07:16] okay
+[07:14 - 07:19] next what we do is that we apply the
+[07:16 - 07:22] modulo to it uh arbitrary i just take
+[07:19 - 07:25] this modular value to be n
+[07:22 - 07:28] okay taking the n value to be uh 10
+[07:25 - 07:32] so basically uh you take 1 495 divided
+[07:28 - 07:34] by 10 and see what is the remainder
+[07:32 - 07:35] the remainder is 5.
+[07:34 - 07:39] so therefore
+[07:35 - 07:42] this hashing algorithm will produce a
+[07:39 - 07:45] hash value of 5.
+[07:42 - 07:48] and we call that the checksum value
+[07:45 - 07:50] so when we send a message out
+[07:48 - 07:53] okay let's say we send a message uh that
+[07:50 - 07:56] is a b c d okay that's our message uh we
+[07:53 - 07:58] attach a checksum to it okay
+[07:56 - 08:01] at the end of the data
+[07:58 - 08:03] so our message will be abcd
+[08:01 - 08:06] okay which is our data what we want to
+[08:03 - 08:08] set and then after computing the hash
+[08:06 - 08:09] value uh the checksum value we attach to
+[08:08 - 08:11] it
+[08:09 - 08:14] okay so all together when we send out a
+[08:11 - 08:16] message we send abcd5
+[08:14 - 08:19] abcde5
+[08:16 - 08:21] now on the receiving end
+[08:19 - 08:22] when they receive the message
+[08:21 - 08:26] they will
+[08:22 - 08:28] they will take the data portion and then
+[08:26 - 08:30] go through the hash
+[08:28 - 08:32] hash algorithm
+[08:30 - 08:35] and then work out the checksum
+[08:32 - 08:36] and then compare the two checksum to see
+[08:35 - 08:38] whether are they the same
+[08:36 - 08:41] if let's say both the checksum are the
+[08:38 - 08:44] same they confirm that the data has been
+[08:41 - 08:47] transmitted across correctly
+[08:44 - 08:48] so this is one use of the checksum value
+[08:47 - 08:53] to ensure that the data has been
+[08:48 - 08:53] transmitted across correctly
+[08:54 - 08:59] next i'm going to show you another
+[08:56 - 09:01] example this is another checksum scheme
+[08:59 - 09:05] so let's say i'm going to send a five
+[09:01 - 09:07] digit data okay five digit data
+[09:05 - 09:09] and i assign a weight to each digit the
+[09:07 - 09:11] first digit i assign a weight of three
+[09:09 - 09:13] second dj i assign a weight of five
+[09:11 - 09:16] third digit weight of seven
+[09:13 - 09:17] four five is a digi uh the weight of
+[09:16 - 09:19] nine
+[09:17 - 09:20] and the fifth digit we have a weight of
+[09:19 - 09:22] eleven
+[09:20 - 09:24] right unlike previously we have one two
+[09:22 - 09:26] three four five but now i have three
+[09:24 - 09:29] five seven nine eleven
+[09:26 - 09:33] okay then they'll sum up this
+[09:29 - 09:36] value okay the the total hash value and
+[09:33 - 09:39] apply a modulus to it so arbitrary i
+[09:36 - 09:41] just decide to have it as 10
+[09:39 - 09:44] and then work out the checksum value and
+[09:41 - 09:46] then transmit the data across
+[09:44 - 09:48] okay let's use an example i want to
+[09:46 - 09:50] transm if i want to transmit a data of
+[09:48 - 09:53] one two three four five
+[09:50 - 09:54] applying the weightage i get a total of
+[09:53 - 09:57] 125
+[09:54 - 09:59] and if i were to apply the modulus sum
+[09:57 - 10:00] uh modulus 10 to it i will have a
+[09:59 - 10:03] remainder of five
+[10:00 - 10:05] so my transmitted data will be one two
+[10:03 - 10:07] three four five
+[10:05 - 10:10] and a five
+[10:07 - 10:11] okay so whoever received my transmitted
+[10:10 - 10:13] data
+[10:11 - 10:16] will take the data portion put back into
+[10:13 - 10:19] the hashing algorithm and see whether it
+[10:16 - 10:21] generates the same checksum
+[10:19 - 10:24] if the checksum is the same then
+[10:21 - 10:26] it confirms that the data is correct has
+[10:24 - 10:30] been transmitted correct
+[10:26 - 10:30] uh transmitted across correctly
+[10:30 - 10:35] okay in cosmology i left with are you a
+[10:32 - 10:39] question now if i if you receive a
+[10:35 - 10:39] transmitted data of 739428
+[10:39 - 10:44] do you know whether this has been
+[10:41 - 10:46] transmitted to you correctly are you
+[10:44 - 10:50] able to validate this
+[10:46 - 10:52] okay so in the cosmology questions uh
+[10:50 - 10:55] you need to do your calculations taking
+[10:52 - 10:57] the data portion put into the hash the
+[10:55 - 11:00] checksum scheme and work out your
+[10:57 - 11:03] checksum value and compare the checksum
+[11:00 - 11:05] value to see whether is it eight if yes
+[11:03 - 11:07] then the data has been transmitted to
+[11:05 - 11:10] you correctly if no then this
+[11:07 - 11:15] transmitted data is uh is incorrect
+[11:10 - 11:15] okay you will answer that in cosmology
+[11:15 - 11:20] now uh checksum is also is is used to
+[11:18 - 11:22] validate the uh
+[11:20 - 11:26] various number uh the the one that is
+[11:22 - 11:28] most familiar to us is the nrc number
+[11:26 - 11:31] okay you can look at the websites here
+[11:28 - 11:34] uh how to validate your nic uh
+[11:31 - 11:37] and then uh the corporate number we also
+[11:34 - 11:39] can validate the card plate number isbn
+[11:37 - 11:41] these are the library books or the books
+[11:39 - 11:43] that are
+[11:41 - 11:46] selling online okay uh there's a check
+[11:43 - 11:50] digit for the isbn 13 and or the isbn
+[11:46 - 11:52] 10. uh credit card numbers uh
+[11:50 - 11:54] well whether it is a 16 digits or is it
+[11:52 - 11:58] the uh
+[11:54 - 12:01] the american express card okay they uses
+[11:58 - 12:02] the uh algorithm to uh work out the
+[12:01 - 12:03] checksum value
+[12:02 - 12:05] okay yeah if you're interested you can
+[12:03 - 12:08] look at this video uh
+[12:05 - 12:08] youtube video
+[12:08 - 12:16] okay last thing to bear in mind checksum
+[12:12 - 12:18] is used for validation of the data it is
+[12:16 - 12:19] not for encryption
+[12:18 - 12:21] okay
+[12:19 - 12:24] now uh this is the end of the part one
+[12:21 - 12:28] video now our next uh there is another
+[12:24 - 12:32] youtube video that uh uh explain to you
+[12:28 - 12:35] how the password uh is being stored uh
+[12:32 - 12:37] uh and using the hash function and the
+[12:35 - 12:40] hash value how they store
+[12:37 - 12:43] actually store the passwords
+[12:40 - 12:43] okay that's all for now

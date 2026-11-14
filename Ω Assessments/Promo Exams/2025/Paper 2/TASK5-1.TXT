@@ -1,0 +1,17 @@
+﻿FUNCTION Partition(Seq, Start, End)   
+  PivotValue ← Seq[Start]
+  Lo ← Start + 1
+  Hi ← End   
+  WHILE Lo <= Hi     	 // Search upwards for an element bigger or equal to PivotValue
+     WHILE Lo <= Hi AND Seq[Lo] < PivotValue
+        Lo ← Lo + 1
+     ENDWHILE 	 // Search downwards for an element smaller than PivotValue 
+     WHILE Lo <= Hi AND Seq[Hi] >= PivotValue        Hi ← ____( A )______  
+     ENDWHILE	
+     IF Lo < Hi
+       THEN	     < Code to Swap Seq[Lo] with Seq[Hi] >		 _______( B )______     ENDIF
+  ENDWHILE  
+  // Swap the pivot to the correct index
+  < Code to Swap Seq[Start] with Seq[Hi] >  _______( C )______  
+  RETURN Hi
+ENDFUNCTION

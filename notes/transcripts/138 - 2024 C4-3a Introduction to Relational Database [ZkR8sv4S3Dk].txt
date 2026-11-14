@@ -1,0 +1,291 @@
+Title: 2024 C4-3a Introduction to Relational Database
+Assessment(s): Released Coursemology video catalog - C4-3a Introduction to Relational Database
+Linked label(s): C4-3a Introduction to Relational Database
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=ZkR8sv4S3Dk
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24772
+Published course start: 2026-10-18T13:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:01 - 00:08] hi welcome back today we will learn
+[00:04 - 00:08] about the relational
+[00:09 - 00:14] database let's watch a video to get a
+[00:12 - 00:18] high level understanding on why we need
+[00:14 - 00:20] to use a relational
+[00:18 - 00:21] database hi my name's Taylor and I'm
+[00:20 - 00:23] going to give you a highlevel overview
+[00:21 - 00:24] of database
+[00:23 - 00:26] architecture understanding the big
+[00:24 - 00:28] picture and principles of database
+[00:26 - 00:29] management will help you as you're
+[00:28 - 00:32] getting into the more technical con
+[00:29 - 00:34] Concepts like er further down the road
+[00:32 - 00:35] so let's say you're opening your own
+[00:34 - 00:36] online store for something like
+[00:35 - 00:38] specialty cat accessories and you want
+[00:36 - 00:41] to be able to keep track of all sorts of
+[00:38 - 00:42] information surrounding your sales most
+[00:41 - 00:44] people would just open a spreadsheet and
+[00:42 - 00:46] start putting in things as orders come
+[00:44 - 00:48] in maybe it look like this Mary's our
+[00:46 - 00:50] customer she buys a cat leash and you
+[00:48 - 00:52] capture all this information and you
+[00:50 - 00:55] just record this information for each of
+[00:52 - 00:57] your customers that trickle in but maybe
+[00:55 - 00:58] later Mary buy something else like three
+[00:57 - 01:00] cat leashes and at this point she's
+[00:58 - 01:02] moved to a bigger place to have room for
+[01:00 - 01:04] all their cats so our address is
+[01:02 - 01:06] different now you've got redundant
+[01:04 - 01:08] information some contradicting values
+[01:06 - 01:09] for your customer's address and if your
+[01:08 - 01:12] specialty cat store got enormously
+[01:09 - 01:14] popular these issues would just escalate
+[01:12 - 01:15] Mary calls to ask about one of her
+[01:14 - 01:17] orders and when you pull up her
+[01:15 - 01:19] information you get three different
+[01:17 - 01:20] addresses all these disorganized orders
+[01:19 - 01:22] and you're not even sure you're looking
+[01:20 - 01:23] at the correct Customer because there
+[01:22 - 01:25] are three different Mary Johnson's in
+[01:23 - 01:27] your spreadsheet you could see how this
+[01:25 - 01:29] might lead to a messy situation
+[01:27 - 01:31] shipments could get sent to the wrong
+[01:29 - 01:33] place customers might get mixed up and
+[01:31 - 01:35] the wrong products could get sent to the
+[01:33 - 01:38] wrong people so how would you resolve
+[01:35 - 01:39] this instead of having just one massive
+[01:38 - 01:41] spreadsheet you'd separate the
+[01:39 - 01:43] information into different bite-sized
+[01:41 - 01:45] tables so with our cat store for example
+[01:43 - 01:47] you might start by creating a table that
+[01:45 - 01:48] lists all of your customers and then a
+[01:47 - 01:50] separate table that lists out all your
+[01:48 - 01:53] products and then another table that
+[01:50 - 01:54] records each of your orders this
+[01:53 - 01:57] separates the data you're pulling in a
+[01:54 - 01:59] much more efficient way so here's what
+[01:57 - 02:01] your customer table might look like you
+[01:59 - 02:03] can see we've got Mary again but now she
+[02:01 - 02:05] won't be repeated into several different
+[02:03 - 02:08] rows any change to her address contact
+[02:05 - 02:11] info or even name can be updated in this
+[02:08 - 02:13] one Consolidated place the product table
+[02:11 - 02:15] would have all your cat accessory
+[02:13 - 02:17] inventory as you add or remove items
+[02:15 - 02:19] this would be the one place where you'd
+[02:17 - 02:21] make those changes and orders would keep
+[02:19 - 02:23] track of every single sale you make now
+[02:21 - 02:25] these tables although separate have
+[02:23 - 02:27] connections to one another and it's
+[02:25 - 02:29] these connections that form the database
+[02:27 - 02:31] let's dive in and take a closer look to
+[02:29 - 02:34] see what these interactions look like
+[02:31 - 02:35] we'll start in the customer table let's
+[02:34 - 02:38] say someone goes to our online store and
+[02:35 - 02:39] makes a purchase it's a guy named Ronald
+[02:38 - 02:42] and he's in the market for a cat costume
+[02:39 - 02:44] and buys one from our store when he
+[02:42 - 02:46] checked out he entered all his contact
+[02:44 - 02:48] info and we've recorded it in this
+[02:46 - 02:50] customer table and assigned him a
+[02:48 - 02:52] customer ID let's move over to the
+[02:50 - 02:54] product table this lists all our
+[02:52 - 02:57] inventory and here's the cat costume he
+[02:54 - 02:59] wanted we keep track of it with a few
+[02:57 - 03:02] Fields here like product ID quantity and
+[02:59 - 03:04] in stock and product type and then when
+[03:02 - 03:06] Ronald actually ordered the cat costume
+[03:04 - 03:09] rrecord that specific purchase
+[03:06 - 03:11] information in the order table here you
+[03:09 - 03:13] can see we pulled in the customer ID
+[03:11 - 03:16] from the customer table so we know it's
+[03:13 - 03:18] Ronald we also pulled in the product ID
+[03:16 - 03:20] from the product table so we know that
+[03:18 - 03:21] he purchased this cat costume and
+[03:20 - 03:23] there's other data in here that tells us
+[03:21 - 03:26] about the date of the sale shipping
+[03:23 - 03:27] address quantity Etc it's pretty obvious
+[03:26 - 03:29] that this system we're using now is far
+[03:27 - 03:30] more organized than our single
+[03:29 - 03:32] spreadsheet from earlier not to mention
+[03:30 - 03:34] it's far more robust in handling large
+[03:32 - 03:37] amounts of data and
+[03:34 - 03:39] information now in database data
+[03:37 - 03:42] Integrity refers to the accuracy
+[03:39 - 03:45] consistency and reliability of the data
+[03:42 - 03:49] sto in a database it ensures that the
+[03:45 - 03:52] data remains correct and unored during
+[03:49 - 03:53] various operation such as storage
+[03:52 - 03:57] retrieval and
+[03:53 - 03:59] processing now accuracy data Integrity
+[03:57 - 04:01] ensures that the data enter into the
+[03:59 - 04:05] database is accurate and free from
+[04:01 - 04:08] errors so we employ validation rules
+[04:05 - 04:12] during data entry to ensure that the
+[04:08 - 04:12] data is reasonable and within
+[04:12 - 04:17] expectation consistency this means that
+[04:15 - 04:20] the data remains
+[04:17 - 04:23] consistent across the database if the
+[04:20 - 04:25] same data appear in multiple places all
+[04:23 - 04:28] instances should be updated
+[04:25 - 04:30] simultaneously the constraint rules like
+[04:28 - 04:34] primary key and foreign key key are
+[04:30 - 04:36] enforced to ensure data Integrity across
+[04:34 - 04:36] various
+[04:40 - 04:46] table redundancy in database is having
+[04:43 - 04:49] several copy of the same data within or
+[04:46 - 04:53] across several table it not only
+[04:49 - 04:57] increases the storage space and cost but
+[04:53 - 04:59] it also cause inconsistency in data when
+[04:57 - 05:02] they are not updated properly
+[04:59 - 05:08] there are three types of anomalies
+[05:02 - 05:08] namely updates deletions and insertion
+[05:08 - 05:14] anomalies in this table you can see that
+[05:11 - 05:16] the data regarding the Civic
+[05:14 - 05:20] tutor for example Peter Tan has been
+[05:16 - 05:24] repeated for numerous uh records and
+[05:20 - 05:27] also for Mary now this could be reduced
+[05:24 - 05:31] uh to save storage space and cost and
+[05:27 - 05:35] also to prevent uh the anomalies from
+[05:31 - 05:38] happening let's go through each of these
+[05:35 - 05:40] anomalies update anomalies update
+[05:38 - 05:43] anomalies is a data inconsistency that
+[05:40 - 05:46] result from data
+[05:43 - 05:49] redundancy uh and a partial update if a
+[05:46 - 05:52] user perform the update does not realize
+[05:49 - 05:54] that the same data is STO elsewhere then
+[05:52 - 05:58] the updates will not be done properly
+[05:54 - 06:00] for example the Civic tutor for class uh
+[05:58 - 06:05] 222
+[06:00 - 06:08] S01 has been changed to Mr John Lim but
+[06:05 - 06:11] because the user is not aware that uh
+[06:08 - 06:14] the Civic tutor the data for the Civic
+[06:11 - 06:16] tutor is also existing in other records
+[06:14 - 06:19] and only one records has been updated
+[06:16 - 06:22] but not the rest then you realize that
+[06:19 - 06:24] there is a inconsistency here on the
+[06:22 - 06:27] Civic tter now we do not know whether
+[06:24 - 06:28] the Civic tutor is Mr John Lim or Mr
+[06:27 - 06:32] Peter
+[06:28 - 06:36] Tan so this is known as update
+[06:32 - 06:38] anomalies next let's talk about deletion
+[06:36 - 06:41] anomaly a deltion anomaly is an
+[06:38 - 06:44] unintended loss of data due to a
+[06:41 - 06:46] deletion of some other data the result
+[06:44 - 06:50] in the database inconsistency and is
+[06:46 - 06:52] example of how combining information
+[06:50 - 06:55] that does not really belong together
+[06:52 - 06:57] into one table can cause problem now
+[06:55 - 07:00] take for example in this particular
+[06:57 - 07:03] table uh not only we have the data for
+[07:00 - 07:06] the students we also have the data about
+[07:03 - 07:10] the Civic tutor now in this case we have
+[07:06 - 07:12] only uh one students record uh from the
+[07:10 - 07:16] class
+[07:12 - 07:18] 225 and when we remove this student we
+[07:16 - 07:21] realize that the information about the
+[07:18 - 07:24] Civic tutor has also been removed
+[07:21 - 07:27] removed from here onward we will no
+[07:24 - 07:31] longer know who is the Civic tutor of
+[07:27 - 07:31] the class 2205
+[07:31 - 07:38] in this example the intention to delete
+[07:34 - 07:41] the student from this table resulted in
+[07:38 - 07:43] an unintended deletion of the
+[07:41 - 07:46] information about the Civic tutor from
+[07:43 - 07:46] the class
+[07:48 - 07:54] 225 next let's talk about insertion
+[07:52 - 07:58] anomaly and insertion anomaly is the
+[07:54 - 08:01] inability to add data into the database
+[07:58 - 08:04] due to the absence of other data for
+[08:01 - 08:06] example in this case we have a new
+[08:04 - 08:09] student Yen link is to be added into
+[08:06 - 08:11] this table but she has not yet been
+[08:09 - 08:14] assigned to a class hence the
+[08:11 - 08:17] information about a civics class and the
+[08:14 - 08:21] Civics tutor will be omitted now this
+[08:17 - 08:24] Omission results in a database
+[08:21 - 08:27] inconsistency and we call this insertion
+[08:24 - 08:27] anomaly
+[08:32 - 08:38] now redundancy in ra uh relational
+[08:35 - 08:40] database can be avoided by performing
+[08:38 - 08:43] what we call database
+[08:40 - 08:44] normalization but before we could learn
+[08:43 - 08:47] about
+[08:44 - 08:49] normalization we need to First
+[08:47 - 08:52] understand about data
+[08:49 - 08:56] dependency specifically there are two
+[08:52 - 08:58] functional dependencies and transitive
+[08:56 - 08:59] dependencies dependency is a
+[08:58 - 09:04] relationship
+[08:59 - 09:05] between attributes of a table related to
+[09:04 - 09:08] each
+[09:05 - 09:11] other let's talk about functional
+[09:08 - 09:12] dependency now you need to watch out on
+[09:11 - 09:16] the
+[09:12 - 09:19] Arrow if attribute Y is functionally
+[09:16 - 09:24] dependent on the attribute
+[09:19 - 09:28] X the value of x uniquely determines the
+[09:24 - 09:32] value of y so y functionally dependent
+[09:28 - 09:36] on X we write X Arrow
+[09:32 - 09:40] y so when you see X Arrow y we interpret
+[09:36 - 09:44] that Y is dependent on
+[09:40 - 09:49] X so in this case the matriculation
+[09:44 - 09:51] number uniquely identifies the name
+[09:49 - 09:54] because if we know the matriculation
+[09:51 - 09:58] number we can know the name associated
+[09:54 - 10:01] with it therefore we can say name is
+[09:58 - 10:07] functionally dependent on matriculation
+[10:01 - 10:12] number and we write metric number Arrow
+[10:07 - 10:12] name this is called functional
+[10:13 - 10:18] dependency transitive dependency
+[10:16 - 10:21] involves three
+[10:18 - 10:25] attributes a transitive dependency is
+[10:21 - 10:28] formed uh by two functional
+[10:25 - 10:29] dependencies Z is transitively dependent
+[10:28 - 10:34] on x
+[10:29 - 10:38] if Y is functionally dependent on X but
+[10:34 - 10:42] X is not functionally dependent on Y and
+[10:38 - 10:46] Z is functionally dependent on Y in
+[10:42 - 10:50] another word X Arrow Z is a transitive
+[10:46 - 10:53] dependence if the following holes now
+[10:50 - 10:57] this is a very mouthful so let's look at
+[10:53 - 10:57] it part by
+[10:57 - 11:05] part why depends on X the civics class
+[11:03 - 11:09] depends on the
+[11:05 - 11:12] metrication meaning if I tell you the
+[11:09 - 11:15] mulation number you would identify the
+[11:12 - 11:17] students if you're able to identify the
+[11:15 - 11:20] student you will know which class he
+[11:17 - 11:24] belongs to hence we say that the civics
+[11:20 - 11:24] class depends on
+[11:25 - 11:34] X X does not depends on y if I tell you
+[11:30 - 11:35] the class would you be able to identify
+[11:34 - 11:38] the metrication
+[11:35 - 11:40] number when I say oh this person is from
+[11:38 - 11:42] 22
+[11:40 - 11:45] S01 will you be able to know which
+[11:42 - 11:51] student am I referring to the answer is
+[11:45 - 11:54] no so therefore X is not dependent on y
+[11:51 - 11:57] okay so you get the first two pointer y
+[11:54 - 12:00] depend on X but X doesn't depend on y so
+[11:57 - 12:05] this is the first condition
+[12:00 - 12:09] second condition Z depends on y z is the
+[12:05 - 12:12] Civic Tor Civic duor depends on the
+[12:09 - 12:15] civics class so for different civics
+[12:12 - 12:17] class there is a assigned Civic tutor so
+[12:15 - 12:23] in this
+[12:17 - 12:29] case z depends on Y and we write y Arrow
+[12:23 - 12:34] Z in another word we have y depends on x
+[12:29 - 12:39] and Z depends on y therefore we can say
+[12:34 - 12:44] that Z is transitively dependent on
+[12:39 - 12:47] X the Civic tutor depends transitively
+[12:44 - 12:51] on the matriculation
+[12:47 - 12:54] number this is known as transitive
+[12:51 - 12:57] dependency now we are ready to learn
+[12:54 - 12:57] about normalizations

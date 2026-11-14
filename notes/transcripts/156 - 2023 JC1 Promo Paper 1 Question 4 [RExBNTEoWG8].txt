@@ -1,0 +1,167 @@
+Title: 2023 JC1 Promo Paper 1 Question 4
+Assessment(s): Released assessment teacher walkthrough
+Uploader: David Tan Bang Choon
+YouTube: https://www.youtube.com/watch?v=RExBNTEoWG8
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88802
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:00 - 00:03] all right next we're going to talk about
+[00:01 - 00:05] paper one question four question four is
+[00:03 - 00:08] about binary search tree so we have
+[00:05 - 00:09] given a table of names and metrication
+[00:08 - 00:12] number of eight students okay they are
+[00:09 - 00:14] not red in any order okay so they come
+[00:12 - 00:18] in basically you have see that the
+[00:14 - 00:20] number start from 3 71 4 2 5 6 8 okay so
+[00:18 - 00:22] a binary search BSD the matriculation
+[00:20 - 00:24] number is a key you be used to store the
+[00:22 - 00:27] students data okay so I gave you an
+[00:24 - 00:29] incomplete BSC diagram showing the first
+[00:27 - 00:30] student Julie okay so Julie is the first
+[00:29 - 00:33] one that you're supposed to to insert
+[00:30 - 00:35] the rest of them uh accordingly let me
+[00:33 - 00:37] just blow up the diagram on the right
+[00:35 - 00:40] hand side so next one after Julie have
+[00:37 - 00:42] to insert Canta so Canta is number seven
+[00:40 - 00:44] seven is larger than three so CA should
+[00:42 - 00:47] go to the right hand side of Judy next
+[00:44 - 00:50] is Xavier Xavier is one one at this
+[00:47 - 00:51] point one is smaller than three so go to
+[00:50 - 00:55] the left and it's empty so just insert
+[00:51 - 00:57] it here right next you have b p is
+[00:55 - 00:59] number four four is bigger than three go
+[00:57 - 01:02] to the right hand side right hand side
+[00:59 - 01:04] is already OCC P so four is smaller than
+[01:02 - 01:07] seven so B3 will come to the left over
+[01:04 - 01:10] here this is empty so B3 will SL in here
+[01:07 - 01:11] okay next we have Peter Peter is at two
+[01:10 - 01:13] uh two is smaller than three so go to
+[01:11 - 01:15] the left it's already occupied two
+[01:13 - 01:17] compared to one two is bigger so go to
+[01:15 - 01:19] the right hand side this is empty so P
+[01:17 - 01:22] will go here five is Alfred Alfred
+[01:19 - 01:25] number five uh five is bigger three go
+[01:22 - 01:27] to the right hand side occupy the seven
+[01:25 - 01:30] uh five is smaller so go to the left
+[01:27 - 01:32] occupy ear four is uh five is bigger
+[01:30 - 01:34] than four so go to the right hand side
+[01:32 - 01:36] this is empty here so few here okay next
+[01:34 - 01:39] you have three six six is bigger than
+[01:36 - 01:41] three go to the right hand side occupied
+[01:39 - 01:43] six is smaller than seven go to the left
+[01:41 - 01:45] hand side it's already occupied six is
+[01:43 - 01:47] bigger than four come to right hand side
+[01:45 - 01:49] occupied six is bigger than five so go
+[01:47 - 01:51] to the right hand side is NP so put
+[01:49 - 01:53] there last person John John is number
+[01:51 - 01:55] eight so three eight is bigger than
+[01:53 - 01:58] three go to the right hand side occupy
+[01:55 - 02:00] already eight is bigger than seven go to
+[01:58 - 02:02] right hand side not occupied so f have
+[02:00 - 02:03] few join there okay so that's it so you
+[02:02 - 02:06] lose marks if you have some wrong
+[02:03 - 02:07] entries all right so generally quite
+[02:06 - 02:10] well done I think this one help help to
+[02:07 - 02:11] put up some of your scores uh mostly if
+[02:10 - 02:14] mistakes is usually just careless
+[02:11 - 02:15] mistake all right okay then you are
+[02:14 - 02:18] asked to describe the algorithm to
+[02:15 - 02:20] search for a particular student's data
+[02:18 - 02:24] in the PSD okay so this one right uh you
+[02:20 - 02:26] have to be clear okay you have to write
+[02:24 - 02:28] in a way okay you may you do not need to
+[02:26 - 02:30] follow a standard uh answer but you need
+[02:28 - 02:32] to make sure that the whatever you write
+[02:30 - 02:33] is the same meaning okay so always start
+[02:32 - 02:35] from the root Noe start from root note
+[02:33 - 02:39] check this value measures the data be
+[02:35 - 02:41] found okay if if if not right then if
+[02:39 - 02:43] root note values be data go to the left
+[02:41 - 02:46] CH okay so let's say for example I'm
+[02:43 - 02:48] searching for Xavier right and zav is
+[02:46 - 02:50] not here so but zavier is smaller than
+[02:48 - 02:51] Julie in terms of the metric number
+[02:50 - 02:54] right that go to the left hand side okay
+[02:51 - 02:56] then go to the right childwise okay so
+[02:54 - 02:57] then we update our current note so just
+[02:56 - 02:59] now we start with current note here so
+[02:57 - 03:01] now this becomes the current note okay
+[02:59 - 03:03] repeat steps one and two okay stop the
+[03:01 - 03:07] process when you when your current Note
+[03:03 - 03:10] data measures the data to be found or
+[03:07 - 03:12] you progress until you reach mt3 okay so
+[03:10 - 03:14] mt3 leave is not found so one of the
+[03:12 - 03:16] common mistakes okay let's see what's
+[03:14 - 03:17] the common error so you were able to
+[03:16 - 03:20] State clearly how to go left and right
+[03:17 - 03:22] so I think this one you could do okay
+[03:20 - 03:24] but a lot of you miss out on what if the
+[03:22 - 03:25] root nodee is right the key Ed let me
+[03:24 - 03:28] say for example you're searching for
+[03:25 - 03:30] Julie O3 right you don't have to go left
+[03:28 - 03:33] or go right all right then again you
+[03:30 - 03:37] also uh then the second issue was that
+[03:33 - 03:39] you did not say clearly how to
+[03:37 - 03:42] stop okay how do you know that it's not
+[03:39 - 03:45] in the not in the bstd you most of will
+[03:42 - 03:47] just write oh uh keep on going until you
+[03:45 - 03:50] until you don't find the data something
+[03:47 - 03:52] on that line which is which yes I get
+[03:50 - 03:54] what I mean but then you need to explain
+[03:52 - 03:56] in terms of this PSD this this BSD has
+[03:54 - 03:57] rules they have to follow okay you know
+[03:56 - 04:00] that you stop when you come to a Le
+[03:57 - 04:02] ready okay then also bstd some confus
+[04:00 - 04:04] bstd binary search not the same thing so
+[04:02 - 04:08] don't okay was given B search is the
+[04:04 - 04:10] next question all right so have for
+[04:08 - 04:13] answer this as an insertion Alo question
+[04:10 - 04:17] you basically misunderstood the question
+[04:13 - 04:19] right okay then next part see uh compare
+[04:17 - 04:21] the time complexities so performing
+[04:19 - 04:24] search for data using a bstd and
+[04:21 - 04:27] unsorted Le okay just o log n and o n
+[04:24 - 04:30] that's just all I want okay some you
+[04:27 - 04:32] went on to talk about uh
+[04:30 - 04:33] went on to explain long for how bstd is
+[04:32 - 04:36] linear search there's no way you do that
+[04:33 - 04:39] because I just asked you to compare the
+[04:36 - 04:42] state okay then one common mistake BSD
+[04:39 - 04:45] is not o l n just o l n right last one
+[04:42 - 04:47] part D describe traversal of BSD to
+[04:45 - 04:50] obtain a least of St data range in
+[04:47 - 04:54] ascending order so this one you are
+[04:50 - 04:58] basically asking to do uh in in place
+[04:54 - 05:00] traverser in in order traversal okay so
+[04:58 - 05:03] start from the root note if there's a
+[05:00 - 05:05] left note left tree visit it first and
+[05:03 - 05:07] retrieve the data there followed by root
+[05:05 - 05:09] note then right okay so basically just
+[05:07 - 05:11] keep on going left until you you reach
+[05:09 - 05:13] the last the last left most note you can
+[05:11 - 05:16] have then retrieve the data there come
+[05:13 - 05:18] back to the come back to the it's root
+[05:16 - 05:20] then collect from there again then go to
+[05:18 - 05:22] right hand side okay so basically this
+[05:20 - 05:23] one I mark it quite LLY because I
+[05:22 - 05:26] realize it's very hard to write it
+[05:23 - 05:28] clearly okay so as long you can you can
+[05:26 - 05:30] tell me that you visit the left Branch
+[05:28 - 05:33] not that right branch right yeah so as
+[05:30 - 05:36] long as the order of is correct right I
+[05:33 - 05:38] I give it the full full credit so you
+[05:36 - 05:39] can try to write the way that is clear
+[05:38 - 05:41] for people to understand that's that's
+[05:39 - 05:46] the most important thing it's it's hard
+[05:41 - 05:49] to say that oh uh visit LS then if then
+[05:46 - 05:53] how then you need to say oh visit the
+[05:49 - 05:55] visit the left notes uh root root note
+[05:53 - 05:57] ETA it gets a bit confusing after the
+[05:55 - 05:59] time right so as long as the order is
+[05:57 - 06:03] clear that's the most important left
+[05:59 - 06:03] right okay that's all for question four

@@ -1,0 +1,79 @@
+Title: LT11a Part 1 Linear Search
+LT: LT 11a Linear and Binary Search
+Linked label: Lecture video (Part 1) - Linear Search
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=qwMthCimEP4
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:08] hi for the search algorithms we'll start
+[00:05 - 00:11] with our linear and binary search now
+[00:08 - 00:14] let's start with python string and list
+[00:11 - 00:16] methods okay let's say we have a string
+[00:14 - 00:20] on Mississippi
+[00:16 - 00:22] or a list that contains uh the alphabets
+[00:20 - 00:24] of Mississippi
+[00:22 - 00:27] we can use count
+[00:24 - 00:30] for both string and least to count the
+[00:27 - 00:32] number of characters or number of
+[00:30 - 00:35] elements in the list
+[00:32 - 00:40] or we can use file and index
+[00:35 - 00:42] to locate the uh index position of the
+[00:40 - 00:45] first occurrent of the alphabet
+[00:42 - 00:49] so for example when we work for index of
+[00:45 - 00:52] I in string when it first encounter I in
+[00:49 - 00:55] the index position one it will stop and
+[00:52 - 00:57] return the value as one it will not look
+[00:55 - 01:02] for the second or the third or the
+[00:57 - 01:05] fourth uh eyes we can also use in
+[01:02 - 01:07] to check whether it's K in the string or
+[01:05 - 01:09] whether K is in the least amount and
+[01:07 - 01:12] this will be a Boolean operation it will
+[01:09 - 01:15] return a force if it does not exist
+[01:12 - 01:19] now without using Python's built-in
+[01:15 - 01:21] method how else can we search the
+[01:19 - 01:25] element in the sequence
+[01:21 - 01:25] well we can use linear search
+[01:26 - 01:32] linear search is a sequential search
+[01:29 - 01:34] algorithm it basically go through every
+[01:32 - 01:38] single of the element in the sequence
+[01:34 - 01:41] now the order of growth is a big O and
+[01:38 - 01:45] that means the the larger the number of
+[01:41 - 01:46] n the more time it will take to complete
+[01:45 - 01:50] the search
+[01:46 - 01:53] in the worst case scenario you will have
+[01:50 - 01:57] to search through every element in the
+[01:53 - 01:59] sequence to find whether it exists or it
+[01:57 - 02:01] does not exist now I'm going to go
+[01:59 - 02:06] through review all the iterative
+[02:01 - 02:09] algorithm for fine index and count now
+[02:06 - 02:13] the function find here
+[02:09 - 02:15] recurs a Boolean or unlike the file in
+[02:13 - 02:17] Python which Returns the index position
+[02:15 - 02:19] so for every element in the sequence
+[02:17 - 02:22] check whether this element is the item
+[02:19 - 02:25] that you want to find if yes written
+[02:22 - 02:28] through else written false I'll leave it
+[02:25 - 02:31] to you to write the recursive code for
+[02:28 - 02:35] this uh same algorithm now in the case
+[02:31 - 02:37] of index for I in the range of the
+[02:35 - 02:41] length okay that means you check to
+[02:37 - 02:43] every single index uh in the sequence if
+[02:41 - 02:45] the element at that index position uh is
+[02:43 - 02:49] the same as the item that you're
+[02:45 - 02:50] searching for return that index if not
+[02:49 - 02:54] after searching through the whole
+[02:50 - 02:58] sequence return none for count
+[02:54 - 03:00] we initialize a counter c equal to zero
+[02:58 - 03:03] search through every element in the
+[03:00 - 03:05] sequence if the element corresponds to
+[03:03 - 03:08] the item that you are searching for
+[03:05 - 03:12] counter increased by one after going
+[03:08 - 03:14] through every single element return C so
+[03:12 - 03:16] that what gives you the total accounts
+[03:14 - 03:18] for the item that you're searching for
+[03:16 - 03:21] you will pause here to go to your
+[03:18 - 03:27] cosmology question one to write the
+[03:21 - 03:27] recursive code for all these algorithm

@@ -1,0 +1,143 @@
+Title: How the Internet Works in 5 Minutes
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: Aaron
+YouTube: https://www.youtube.com/watch?v=7_LPdttKXPc
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] so how does the internet work most of us
+[00:05 - 00:09] know how to use the internet without
+[00:06 - 00:11] actually understanding how it works sort
+[00:09 - 00:13] of like electricity in your home you use
+[00:11 - 00:14] it every day but may not understand the
+[00:13 - 00:16] mechanics behind it
+[00:14 - 00:18] and if the electric grid is difficult to
+[00:16 - 00:19] understand then the internet must be
+[00:18 - 00:21] impossible right
+[00:19 - 00:23] wrong
+[00:21 - 00:24] in the next few minutes I'll put you in
+[00:23 - 00:25] the top 10 percent of people who
+[00:24 - 00:29] understand how the internet actually
+[00:25 - 00:31] works for security catalyst.com I'm
+[00:29 - 00:33] Aaron Titus
+[00:31 - 00:35] whenever most people think of the
+[00:33 - 00:38] internet this is what comes to mind
+[00:35 - 00:40] the internet is not a bubble Cloud even
+[00:38 - 00:43] in the new age of cloud computing the
+[00:40 - 00:44] whole fuzzy Cloud picture was created by
+[00:43 - 00:46] people more concerned about job security
+[00:44 - 00:49] than education
+[00:46 - 00:51] this is the internet
+[00:49 - 00:53] the internet is a wire a actually buried
+[00:51 - 00:55] in the ground it might be fiber optics
+[00:53 - 00:57] copper or occasionally beam to
+[00:55 - 00:59] satellites or through cell phone
+[00:57 - 01:01] networks but the internet is simply a
+[00:59 - 01:02] wire
+[01:01 - 01:04] the internet is useful because two
+[01:02 - 01:07] computers connected directly to this
+[01:04 - 01:09] wire can communicate a server is a
+[01:07 - 01:11] special computer connected directly to
+[01:09 - 01:14] the internet and web pages or files on
+[01:11 - 01:15] that server's hard drive
+[01:14 - 01:18] every server has a unique Internet
+[01:15 - 01:21] Protocol address or IP address just like
+[01:18 - 01:22] a postal address IP addresses help
+[01:21 - 01:25] computers find each other
+[01:22 - 01:25] but since
+[01:25 - 01:30] 72.14.205.100 it doesn't exactly roll
+[01:28 - 01:33] off the tongue we also give them names
+[01:30 - 01:35] like google.com facebook.com or security
+[01:33 - 01:38] catalyst.com
+[01:35 - 01:40] so this is how it works your computer at
+[01:38 - 01:42] home is not a server because it's not
+[01:40 - 01:44] connected directly to the internet
+[01:42 - 01:46] computers you and I use every day are
+[01:44 - 01:48] called clients because they're connected
+[01:46 - 01:50] indirectly to the internet through an
+[01:48 - 01:52] internet service provider
+[01:50 - 01:54] here we'll pretend that this is my home
+[01:52 - 01:56] laptop and I'm using DSL
+[01:54 - 01:59] now let's pretend that I want to visit
+[01:56 - 02:01] aol.com which is coincidentally both a
+[01:59 - 02:04] server and an ISP
+[02:01 - 02:07] I hop onto my laptop with DSL go through
+[02:04 - 02:09] my ISP onto the internet and look at
+[02:07 - 02:12] AOL.com my computer connects with
+[02:09 - 02:15] aol.com and I can look at its web pages
+[02:12 - 02:16] now let's say that I want to send an
+[02:15 - 02:19] email to Aunt Ruth
+[02:16 - 02:22] and Ruth has AOL dial up from home and
+[02:19 - 02:25] I've got a Gmail account
+[02:22 - 02:27] I log onto gmail.com and compose a
+[02:25 - 02:29] message to Aunt Ruth's email address and
+[02:27 - 02:32] Ruth aol.com
+[02:29 - 02:36] once I click Send gmail.com sends the
+[02:32 - 02:39] email to aol.com the next day Aunt Ruth
+[02:36 - 02:40] dials into AOL servers and retrieves the
+[02:39 - 02:43] email
+[02:40 - 02:45] whenever an email picture or web page
+[02:43 - 02:46] travels across the internet computers
+[02:45 - 02:48] break the information into smaller
+[02:46 - 02:50] pieces called packets
+[02:48 - 02:52] when information reaches its destination
+[02:50 - 02:54] the packets are reassembled in their
+[02:52 - 02:58] original order to make a picture email
+[02:54 - 02:58] web page or tweet
+[02:58 - 03:02] okay so imagine you're at work sitting
+[03:01 - 03:03] next to your boss and you're both
+[03:02 - 03:06] surfing online
+[03:03 - 03:08] your boss is doing market research and
+[03:06 - 03:10] you're updating your Facebook profile
+[03:08 - 03:12] you're both sending packets back and
+[03:10 - 03:14] forth over the internet
+[03:12 - 03:16] but what's to keep your packets from
+[03:14 - 03:18] accidentally ending up on your boss's
+[03:16 - 03:21] screen that could be embarrassing
+[03:18 - 03:23] the solution to that problem is IP
+[03:21 - 03:25] addresses and routers
+[03:23 - 03:27] everything connected directly or
+[03:25 - 03:29] indirectly to the internet has an IP
+[03:27 - 03:31] address everything
+[03:29 - 03:33] that includes your computer servers cell
+[03:31 - 03:34] phones and all of the equipment in
+[03:33 - 03:36] between
+[03:34 - 03:38] anywhere two or more parts of the
+[03:36 - 03:40] internet intersect there's a piece of
+[03:38 - 03:42] equipment called a router
+[03:40 - 03:44] routers direct your packets around the
+[03:42 - 03:46] internet helping each packet get one
+[03:44 - 03:48] step closer to its destination
+[03:46 - 03:50] every time you visit a website upwards
+[03:48 - 03:53] of 10 to 15 routers may help your
+[03:50 - 03:53] packets find their way to and from your
+[03:53 - 03:56] computer
+[03:53 - 03:58] imagine each packet as a piece of candy
+[03:56 - 04:01] wrapped in several layers the first
+[03:58 - 04:03] layer is your computer's IP address
+[04:01 - 04:05] your computer sends the packet to the
+[04:03 - 04:06] first router which adds its own IP
+[04:05 - 04:08] address
+[04:06 - 04:10] each time the packet reaches a new
+[04:08 - 04:13] router another layer is added until it
+[04:10 - 04:15] reaches the server then when the server
+[04:13 - 04:17] sends back information it creates
+[04:15 - 04:18] packets with an identical wrapping as
+[04:17 - 04:20] the packet makes its way over the
+[04:18 - 04:23] internet back to your computer each
+[04:20 - 04:25] router unwraps a layer to discover where
+[04:23 - 04:28] to send the packet next until it reaches
+[04:25 - 04:30] your computer and not your bosses
+[04:28 - 04:32] and that's how the internet works in
+[04:30 - 04:34] five minutes or less and you're now
+[04:32 - 04:35] easily in the top 10 percent of people
+[04:34 - 04:36] who understand the basics of the
+[04:35 - 04:38] internet
+[04:36 - 04:40] if you found this video helpful check
+[04:38 - 04:42] out security catalyst.com for all kinds
+[04:40 - 04:43] of ideas on how to protect your
+[04:42 - 04:46] information
+[04:43 - 04:46] I'm Aaron Titus

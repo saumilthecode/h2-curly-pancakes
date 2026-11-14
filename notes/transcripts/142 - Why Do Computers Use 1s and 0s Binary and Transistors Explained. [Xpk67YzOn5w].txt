@@ -1,0 +1,192 @@
+Title: Why Do Computers Use 1s and 0s? Binary and Transistors Explained.
+Assessment(s): Released Coursemology video catalog - C2 Data Representation - Why do computers use 1s and 0s?
+Linked label(s): C2 Data Representation - Why do computers use 1s and 0s?
+Uploader: Basics Explained, H3Vtux
+YouTube: https://www.youtube.com/watch?v=Xpk67YzOn5w
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24812
+Published course start: 2026-04-17T15:46:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:02] it's a common theme throughout the
+[00:01 - 00:04] modern world that everything in a
+[00:02 - 00:07] computer's brain comes down to ones and
+[00:04 - 00:08] zeros you've most likely heard that this
+[00:07 - 00:10] code of ones and zeros is what's
+[00:08 - 00:12] referred to as binary and while almost
+[00:10 - 00:15] everybody knows that this is somehow
+[00:12 - 00:17] related to what computers do very few of
+[00:15 - 00:19] us seem to understand what binary is or
+[00:17 - 00:21] why computers use it if you want to know
+[00:19 - 00:23] then this video is for you because it's
+[00:21 - 00:25] actually a very simple concept and still
+[00:23 - 00:27] quite fascinating before we get to
+[00:25 - 00:29] computers let's talk about what binary
+[00:27 - 00:31] itself is as it existed long before
+[00:29 - 00:34] computers did binary is nothing more
+[00:31 - 00:35] than a system of counting to understand
+[00:34 - 00:38] how it works let's look at two other
+[00:35 - 00:39] systems of counting cally marks and the
+[00:38 - 00:41] glourious based and positional that we
+[00:39 - 00:43] all know and love today tally marks are
+[00:41 - 00:45] the simplest counting system imaginable
+[00:43 - 00:48] however many things you have you put
+[00:45 - 00:51] down that mini marks easy as pie but not
+[00:48 - 00:52] very efficient meanwhile based in
+[00:51 - 00:55] positional which is what we use today
+[00:52 - 00:57] uses a different symbol to represent
+[00:55 - 01:00] different amounts of things with the
+[00:57 - 01:01] numbers 0 through 9 we can recognize
+[01:00 - 01:04] that each symbol indicates a different
+[01:01 - 01:06] amount of things if we need to represent
+[01:04 - 01:08] something higher than nine we add a
+[01:06 - 01:11] digit to the left world its first digit
+[01:08 - 01:12] back to zero and start over the system
+[01:11 - 01:15] is very efficient compared to tally
+[01:12 - 01:17] marks because each digit we add
+[01:15 - 01:19] exponentially increases the amount of
+[01:17 - 01:21] things we can represent because in this
+[01:19 - 01:23] system we add a new digit every ten
+[01:21 - 01:26] things each digit represents an
+[01:23 - 01:29] increasing power of ten this is a number
+[01:26 - 01:30] of ones we have the number of tens the
+[01:29 - 01:33] number of hundreds the number of
+[01:30 - 01:35] thousands and so on now this is probably
+[01:33 - 01:36] something you already know but it's very
+[01:35 - 01:39] important to keep it in mind when we
+[01:36 - 01:41] talk about binary now binary works the
+[01:39 - 01:43] exact same way is based in positional
+[01:41 - 01:47] but instead of each digit going from 0
+[01:43 - 01:50] to 9 it goes from 0 to 1 counting
+[01:47 - 01:58] upwards and binary sounds like this 0 1
+[01:50 - 02:00] 1011 100 101 110 111 and 1000 because
+[01:58 - 02:01] each digit of binary has only two values
+[02:00 - 02:04] and not
+[02:01 - 02:06] and each additional digit represents an
+[02:04 - 02:08] increasing power of two rather than an
+[02:06 - 02:10] increasing power of 10 so this is the
+[02:08 - 02:19] number of ones we have the number of
+[02:10 - 02:21] twos fours 8 16 32 64 128 and so on not
+[02:19 - 02:23] nearly as efficient is based in but
+[02:21 - 02:25] exponentially more efficient than tally
+[02:23 - 02:28] marks literally so now that we know how
+[02:25 - 02:30] binary works let's talk about computers
+[02:28 - 02:32] why did the first computer creators as
+[02:30 - 02:33] wise and intelligent as they are waste
+[02:32 - 02:36] their time with such an ineffective
+[02:33 - 02:38] system of counting well it's because of
+[02:36 - 02:41] a physical limitation on how computers
+[02:38 - 02:43] work everything a computer does comes
+[02:41 - 02:46] down to what's known as micro
+[02:43 - 02:48] transistors simple tiny ain't CBSE
+[02:46 - 02:50] little switches that can either be on or
+[02:48 - 02:53] off and can be flipped on or off with a
+[02:50 - 02:55] very weak electrical charge the first
+[02:53 - 02:57] goal is to get computers to count and to
+[02:55 - 02:59] get them to count by using these
+[02:57 - 03:02] switches we could use the tally system
+[02:59 - 03:05] meaning the number of on switches equals
+[03:02 - 03:06] the number of things we have or we could
+[03:05 - 03:08] use the much more efficient system of
+[03:06 - 03:11] binary where each switch represents a
+[03:08 - 03:13] digit of binary a transistors using the
+[03:11 - 03:15] tally system could represent a number as
+[03:13 - 03:18] large as eight by turning all of them on
+[03:15 - 03:23] with binary we can represent a number as
+[03:18 - 03:26] high as 255 a nonce which means a 1 and
+[03:23 - 03:28] an off switch means a zero now is a good
+[03:26 - 03:30] time to mention that a single transistor
+[03:28 - 03:33] is what's known as a bit which stands
+[03:30 - 03:36] for binary digit a byte is eight of
+[03:33 - 03:38] these bits in a row which means any
+[03:36 - 03:40] number between 0 and 255
+[03:38 - 03:42] so if binary is just a system of
+[03:40 - 03:44] counting what do people mean when they
+[03:42 - 03:46] explain how to spell things in binary
+[03:44 - 03:49] well what they really mean is how to
+[03:46 - 03:50] spell things with ASCII the American
+[03:49 - 03:52] Standard Code for information
+[03:50 - 03:54] interchange is a way to convert a
+[03:52 - 03:56] computer's data which can only be in
+[03:54 - 03:58] numbers and turn it into letters for
+[03:56 - 04:01] humans to have an easier time to work
+[03:58 - 04:03] with ASCII simply assigns a character to
+[04:01 - 04:06] each value represented by a byte of
+[04:03 - 04:08] binary because a byte has eight digits
+[04:06 - 04:11] of binary to work with and eight digits
+[04:08 - 04:14] of binary can represent up to 255 values
+[04:11 - 04:17] ASCII had 255 letters
+[04:14 - 04:18] symbols to choose from more than enough
+[04:17 - 04:21] for the entire alphabet punctuation
+[04:18 - 04:23] marks and other senses for example the
+[04:21 - 04:28] corresponding ASCII number for an
+[04:23 - 04:31] uppercase a is 65 a 65 in base 10 is
+[04:28 - 04:34] equal to 1 million in 1 in binary so
+[04:31 - 04:36] whenever you type in an uppercase a in a
+[04:34 - 04:39] word program a coding program or a
+[04:36 - 04:40] scripting program or whatever somewhere
+[04:39 - 04:42] there's a little tiny row of eight
+[04:40 - 04:48] transistors arranged in the pattern of
+[04:42 - 04:52] off on off off off off off on which
+[04:48 - 04:55] represents zero one zero zero zero zero
+[04:52 - 04:58] zero one and binary which is interpreted
+[04:55 - 05:02] as 65 and base 10 which is converted by
+[04:58 - 05:03] ASCII into an uppercase a you're likely
+[05:02 - 05:05] starting to get a feel for the
+[05:03 - 05:07] staggering amount of transistors
+[05:05 - 05:09] required to write something as simple as
+[05:07 - 05:10] a facebook status let alone all the
+[05:09 - 05:12] different coding that your computer has
+[05:10 - 05:15] to do to make the screen light up play
+[05:12 - 05:17] games calculate massive values and so on
+[05:15 - 05:18] well long before we got to the point
+[05:17 - 05:21] where your phone can play
+[05:18 - 05:24] three-dimensional games it became clear
+[05:21 - 05:27] that numbers as high as 255 just weren't
+[05:24 - 05:29] going to cut it regardless of how many
+[05:27 - 05:32] bytes we had and it was a lot even
+[05:29 - 05:35] adding four fully active bytes together
+[05:32 - 05:38] could only get a number as high as 1020
+[05:35 - 05:41] to solve this problem new computers were
+[05:38 - 05:43] designed to recognize two bytes as one
+[05:41 - 05:45] single number so now instead of
+[05:43 - 05:47] referencing one line of eight
+[05:45 - 05:50] transistors computers could reference
+[05:47 - 05:53] two lines giving 16 digits worth of
+[05:50 - 05:55] binary this was a huge help because it
+[05:53 - 06:01] increased the amount of representable
+[05:55 - 06:01] numbers exponentially from 255 up to
+[06:01 - 06:07] 65535 when you hear people talking about
+[06:04 - 06:09] the difference between 8-bit and 16-bit
+[06:07 - 06:11] this is more or less it but that doesn't
+[06:09 - 06:13] mean that a 16-bit system is
+[06:11 - 06:15] exponentially that much more powerful
+[06:13 - 06:17] because your program isn't always gonna
+[06:15 - 06:20] be utilizing all of these numbers in
+[06:17 - 06:22] each byte that it represents it just has
+[06:20 - 06:24] the option to which opens up lots of
+[06:22 - 06:26] doors well this could go on for ages and
+[06:24 - 06:26] ages but I want to end this particular
+[06:26 - 06:27] video
+[06:26 - 06:30] right here so it's not to be
+[06:27 - 06:32] overwhelming in future videos I will
+[06:30 - 06:34] explain how computers use these numbers
+[06:32 - 06:36] to decide which pixel is what color on
+[06:34 - 06:38] your monitor with the different
+[06:36 - 06:40] components of your computer r4 and how
+[06:38 - 06:42] hard drives store binary digits on a
+[06:40 - 06:44] spinning disk rather than in transistors
+[06:42 - 06:45] thank you for watching and if you
+[06:44 - 06:47] enjoyed this video liking and
+[06:45 - 06:48] subscribing is always a huge help well
+[06:47 - 06:50] I've been enjoying making these
+[06:48 - 06:52] instructional videos I might move into a
+[06:50 - 06:54] different channel soon and continue
+[06:52 - 06:55] doing comedic gaming related things on
+[06:54 - 06:58] this channel so as not to confuse
+[06:55 - 07:00] YouTube's search algorithm which I think
+[06:58 - 07:00] I am

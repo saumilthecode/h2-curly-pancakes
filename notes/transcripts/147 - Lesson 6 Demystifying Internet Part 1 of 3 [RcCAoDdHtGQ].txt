@@ -1,0 +1,204 @@
+Title: Lesson 6   Demystifying Internet Part 1 of 3
+Assessment(s): Released Coursemology video catalog - Lesson 6 - Demystifying Internet (Part 1 of 3)
+Linked label(s): Lesson 6 - Demystifying Internet (Part 1 of 3)
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=RcCAoDdHtGQ
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24743
+Published course start: 2026-06-24T08:00:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:01 - 00:06] welcome to this course introduction to
+[00:03 - 00:09] cyber security literacy this is lesson
+[00:06 - 00:10] six demystifying the internet part one
+[00:09 - 00:12] of three
+[00:10 - 00:13] what is the internet really and how does
+[00:12 - 00:15] it work
+[00:13 - 00:17] addressing these questions now will help
+[00:15 - 00:19] you to understand some of the security
+[00:17 - 00:21] vulnerabilities that we will discuss in
+[00:19 - 00:23] later lessons
+[00:21 - 00:26] to begin imagine for a moment that you
+[00:23 - 00:28] live in a world with computers but
+[00:26 - 00:31] without the internet
+[00:28 - 00:33] imagine that you are say a physicist and
+[00:31 - 00:35] imagine that you use your laboratory
+[00:33 - 00:38] computer to collect and store data from
+[00:35 - 00:39] your physics experiments
+[00:38 - 00:42] now imagine that several of your
+[00:39 - 00:44] co-workers fellow physicists and lab
+[00:42 - 00:45] assistants require access to your data
+[00:44 - 00:47] as well
+[00:45 - 00:50] now one way to grant your co-workers
+[00:47 - 00:51] access to this data is to let them use
+[00:50 - 00:53] your computer
+[00:51 - 00:56] sharing computers is nice as far as it
+[00:53 - 00:58] goes but it has some obvious limitations
+[00:56 - 00:59] for example what could happen if
+[00:58 - 01:01] everybody needed to use the computer at
+[00:59 - 01:03] the same time
+[01:01 - 01:05] because it's not always practical to
+[01:03 - 01:06] share computers you and your co-workers
+[01:05 - 01:09] would probably look for some way to
+[01:06 - 01:11] share the data itself instead
+[01:09 - 01:13] you could copy the data onto disks or
+[01:11 - 01:15] flash drives and walk it over to your
+[01:13 - 01:17] co-workers workstations but that too
+[01:15 - 01:19] would have some obvious limitations
+[01:17 - 01:21] especially if some of your co-workers
+[01:19 - 01:23] work stations were on another floor of
+[01:21 - 01:25] your building or maybe even in a
+[01:23 - 01:26] different building altogether
+[01:25 - 01:28] another way to share data would be to
+[01:26 - 01:31] network your computers together allowing
+[01:28 - 01:33] them to share data directly such a
+[01:31 - 01:35] method could allow thousands of users to
+[01:33 - 01:37] share huge stores of information almost
+[01:35 - 01:39] immediately across a large number of
+[01:37 - 01:41] individual workstations
+[01:39 - 01:43] indeed this is what countless
+[01:41 - 01:45] organizations have chosen to do most
+[01:43 - 01:47] companies and large organizations have
+[01:45 - 01:49] some kind of computer network an
+[01:47 - 01:51] organization with a computer network
+[01:49 - 01:54] enjoys many advantages over an
+[01:51 - 01:56] organization with unconnected computers
+[01:54 - 01:59] for example networked computers make it
+[01:56 - 02:01] easier to access distribute and back up
+[01:59 - 02:03] important information
+[02:01 - 02:05] they can provide users the flexibility
+[02:03 - 02:07] to log into their workstation or into
+[02:05 - 02:08] their network account from multiple
+[02:07 - 02:10] locations
+[02:08 - 02:12] and networks allow users to connect
+[02:10 - 02:15] individual workstations to some kind of
+[02:12 - 02:18] central work hub such as a printer and
+[02:15 - 02:19] copy center or a conference room
+[02:18 - 02:21] so now let's imagine that you and your
+[02:19 - 02:23] physicist co-workers have developed a
+[02:21 - 02:25] computer network that allows you to
+[02:23 - 02:26] share important data with users across
+[02:25 - 02:28] your organization
+[02:26 - 02:30] furthermore let's imagine that another
+[02:28 - 02:33] group of physicists on the other side of
+[02:30 - 02:35] town also works on their own network of
+[02:33 - 02:37] computers it's easy to imagine that
+[02:35 - 02:39] these two groups of physicists would
+[02:37 - 02:41] know each other and they might naturally
+[02:39 - 02:43] be interested in each other's research
+[02:41 - 02:44] so maybe they would get together and
+[02:43 - 02:47] maybe they would decide that it would be
+[02:44 - 02:49] mutually beneficial if they could join
+[02:47 - 02:51] their networks together into one big
+[02:49 - 02:53] data sharing network
+[02:51 - 02:55] when multiple networks join together
+[02:53 - 02:58] like this into a network of networks
+[02:55 - 03:01] that is called internetworking
+[02:58 - 03:04] the internet is one giant piece of
+[03:01 - 03:06] internetworking it's a network of many
+[03:04 - 03:07] computer networks all internet worked
+[03:06 - 03:09] together
+[03:07 - 03:11] the internet is not the only example of
+[03:09 - 03:13] internet working but it's the biggest
+[03:11 - 03:15] example in the world and as you know
+[03:13 - 03:18] it's the one that you are most likely to
+[03:15 - 03:20] interact with on a daily basis when you
+[03:18 - 03:22] begin to network large numbers of
+[03:20 - 03:24] computers together you need increasingly
+[03:22 - 03:26] complex systems of cables and data
+[03:24 - 03:28] transfer devices to keep this network
+[03:26 - 03:30] connected together
+[03:28 - 03:32] when these networks connect diverse
+[03:30 - 03:34] people organizations and business
+[03:32 - 03:37] interests over a large geographic area a
+[03:34 - 03:40] few important questions naturally arise
+[03:37 - 03:42] one is who owns the networking devices
+[03:40 - 03:43] that make the internet possible and who
+[03:42 - 03:45] is responsible for fixing them when they
+[03:43 - 03:47] break the short answer is that
+[03:45 - 03:50] organizations called internet service
+[03:47 - 03:52] providers or isps own and maintain the
+[03:50 - 03:55] physical networking cables and
+[03:52 - 03:57] networking devices that facilitate the
+[03:55 - 03:59] internet and who are the internet
+[03:57 - 04:02] service providers you might ask there
+[03:59 - 04:05] are mostly big private companies such as
+[04:02 - 04:07] time warner or comcast while some others
+[04:05 - 04:08] are government agencies
+[04:07 - 04:09] another question that's useful to answer
+[04:08 - 04:12] is this
+[04:09 - 04:14] how do computers communicate across the
+[04:12 - 04:16] network for computers to communicate
+[04:14 - 04:19] with each other they need a well-defined
+[04:16 - 04:21] set of communication rules that's
+[04:19 - 04:23] because computer messages have precise
+[04:21 - 04:25] unambiguous meaning
+[04:23 - 04:27] we humans are used to dealing with
+[04:25 - 04:29] ambiguity if we hear an ambiguous
+[04:27 - 04:31] sentence from another human we can ask
+[04:29 - 04:34] for clarification or we might make an
+[04:31 - 04:36] educated guess at what the person meant
+[04:34 - 04:39] to say but computers don't work this way
+[04:36 - 04:41] computers need precise unchanging and
+[04:39 - 04:43] unambiguous rules in order to
+[04:41 - 04:46] communicate well with each other
+[04:43 - 04:48] any strict fixed set of communications
+[04:46 - 04:50] rules is called a communications
+[04:48 - 04:52] protocol in order to network computers
+[04:50 - 04:55] together the computers on the network
+[04:52 - 04:57] must share a common protocol and as you
+[04:55 - 04:59] could probably guess in order to
+[04:57 - 05:02] internetwork multiple networks together
+[04:59 - 05:05] these networks must also agree on a
+[05:02 - 05:06] common internetworking protocol
+[05:05 - 05:08] every device that is networked together
+[05:06 - 05:10] on the internet uses a particular
+[05:08 - 05:13] protocol called internet protocol which
+[05:10 - 05:15] is usually abbreviated ip one of the
+[05:13 - 05:17] features of internet protocol which will
+[05:15 - 05:19] come up later in this course is the
+[05:17 - 05:22] internet protocol requires a unique
+[05:19 - 05:24] address called an ip address for every
+[05:22 - 05:27] device that is connected to the internet
+[05:24 - 05:29] all of the web pages files and software
+[05:27 - 05:31] that is accessible on the internet has
+[05:29 - 05:33] to be stored on some kind of device
+[05:31 - 05:35] that's connected to the network every
+[05:33 - 05:37] time one device requests a file from
+[05:35 - 05:40] another device on the internet it needs
+[05:37 - 05:43] to specify where the file is stored now
+[05:40 - 05:45] ip addresses allow devices to do that
+[05:43 - 05:47] and whenever that data request is
+[05:45 - 05:49] fulfilled the device providing the data
+[05:47 - 05:51] needs to know which other device it's
+[05:49 - 05:53] supposed to deliver the data to
+[05:51 - 05:55] again ip addresses allow devices to do
+[05:53 - 05:57] that running the internet without ip
+[05:55 - 05:59] addresses would be a little like running
+[05:57 - 06:00] the postal service without mailing
+[05:59 - 06:03] addresses
+[06:00 - 06:06] so in summary the internet is a vast
+[06:03 - 06:07] network of other networks all networked
+[06:06 - 06:09] together
+[06:07 - 06:11] internet service providers or isps are
+[06:09 - 06:13] the organizations that own the cables
+[06:11 - 06:14] and networking devices that the internet
+[06:13 - 06:16] runs on
+[06:14 - 06:19] computers need strict sets of
+[06:16 - 06:21] communication rules called protocols in
+[06:19 - 06:22] order to communicate with each other and
+[06:21 - 06:25] the communications protocol of the
+[06:22 - 06:26] internet is called internet protocol or
+[06:25 - 06:28] ip
+[06:26 - 06:31] finally every device on the internet
+[06:28 - 06:33] gets its own ip address
+[06:31 - 06:34] that's all for now in the next lesson
+[06:33 - 06:37] we'll discuss how the internet is
+[06:34 - 06:39] structured and how i p addresses get
+[06:37 - 06:42] assigned to all those devices on the
+[06:39 - 06:42] internet
+[06:53 - 06:55] you

@@ -1,0 +1,245 @@
+Title: LT11a Q1 Linear Search Recursive - Walkthrough
+Assessment(s): LT11a Coursemology Complete Questions.md, question walkthrough link
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=ufPfvgME4A4
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:06] i think all of you have no problem
+[00:04 - 00:08] writing these uh functions uh
+[00:06 - 00:10] iteratively but recursively that would
+[00:08 - 00:11] be something that uh can be quite a
+[00:10 - 00:14] challenge
+[00:11 - 00:18] okay so we want to find something
+[00:14 - 00:21] um a recursive function will call itself
+[00:18 - 00:23] and then it will reduce uh in terms of
+[00:21 - 00:25] length okay so the string or the
+[00:23 - 00:27] sequence when we say sequence it could
+[00:25 - 00:28] be at least it could be a tuple it could
+[00:27 - 00:29] be a string
+[00:28 - 00:30] okay
+[00:29 - 00:31] so uh
+[00:30 - 00:35] if we
+[00:31 - 00:39] uh search all the way to the end uh if
+[00:35 - 00:42] the sequence become empty zero
+[00:39 - 00:45] then that is our base case so obviously
+[00:42 - 00:47] you can't find the thing so return false
+[00:45 - 00:47] okay
+[00:49 - 00:55] and then if you look at the
+[00:52 - 00:59] sequence itself or the string itself and
+[00:55 - 01:04] if you manage to find the first element
+[00:59 - 01:04] okay correspond to what you want to find
+[01:04 - 01:08] then you return
+[01:06 - 01:10] true
+[01:08 - 01:14] okay
+[01:10 - 01:17] so uh then what left we is uh to
+[01:14 - 01:18] recursively call the function
+[01:17 - 01:21] uh
+[01:18 - 01:23] called the phi
+[01:21 - 01:24] uh but of a shorter length so it's a
+[01:23 - 01:26] sequence
+[01:24 - 01:28] uh starting from index one that means we
+[01:26 - 01:30] omit off the first
+[01:28 - 01:32] element and we just look for the rest of
+[01:30 - 01:34] the element and then searching for the
+[01:32 - 01:36] same item
+[01:34 - 01:38] okay so that will help you so let's go
+[01:36 - 01:41] through the the whole code again
+[01:38 - 01:42] uh you take the original length
+[01:41 - 01:43] right
+[01:42 - 01:44] check whether the first element is in
+[01:43 - 01:47] the item
+[01:44 - 01:49] if yes return true case close
+[01:47 - 01:51] if it's not
+[01:49 - 01:53] then you cut by one element that means
+[01:51 - 01:55] the first element throw away look at the
+[01:53 - 01:56] subsequent one
+[01:55 - 01:58] and search for the item
+[01:56 - 02:01] again you look at the first item whether
+[01:58 - 02:02] is it what you want yes written true
+[02:01 - 02:05] if not then you cut away the first
+[02:02 - 02:06] element and you look at the rest
+[02:05 - 02:08] and you keep doing that
+[02:06 - 02:10] until eventually
+[02:08 - 02:11] when you cut the last element you become
+[02:10 - 02:13] zero length
+[02:11 - 02:15] and since zero length you can't find
+[02:13 - 02:18] anything that will return false
+[02:15 - 02:20] okay so let's test our test case we have
+[02:18 - 02:22] this uh string mississippi and we try to
+[02:20 - 02:25] look for let's say
+[02:22 - 02:28] a p right we try to look for p
+[02:25 - 02:28] and then let's run
+[02:32 - 02:36] okay
+[02:33 - 02:38] we manage to fire p so that is true we
+[02:36 - 02:41] try to look for i
+[02:38 - 02:41] okay and then
+[02:42 - 02:45] okay so the first moment
+[02:44 - 02:47] if find the first i it will return true
+[02:45 - 02:50] already and then if i find something
+[02:47 - 02:52] that's not there let's say okay then it
+[02:50 - 02:53] should return
+[02:52 - 02:56] a force
+[02:53 - 02:56] okay so that is the fine
+[02:57 - 03:01] second one is to look for the index of a
+[02:59 - 03:02] particular item
+[03:01 - 03:05] if the
+[03:02 - 03:08] if the item is not filed then you want
+[03:05 - 03:10] to print whatever the word is print item
+[03:08 - 03:12] not file return the length of the
+[03:10 - 03:14] sequence so you're supposed to return
+[03:12 - 03:16] the length
+[03:14 - 03:18] okay so we make use of a very similar
+[03:16 - 03:22] idea here
+[03:18 - 03:22] okay let me copy this
+[03:26 - 03:30] okay if
+[03:29 - 03:32] if you reach to the last
+[03:30 - 03:34] item last
+[03:32 - 03:38] the length equal to zero and you still
+[03:34 - 03:41] can't find it then you have to print
+[03:38 - 03:41] item not file
+[03:44 - 03:48] okay
+[03:45 - 03:50] and then uh return what do we need to
+[03:48 - 03:52] return okay i don't know what dweller
+[03:50 - 03:53] returner so i'm not going to return
+[03:52 - 03:54] false because you want to return the
+[03:53 - 03:56] length
+[03:54 - 04:00] okay let me leave it blank first
+[03:56 - 04:02] and then uh if the item is what you want
+[04:00 - 04:03] to find again your return
+[04:02 - 04:04] okay
+[04:03 - 04:07] now
+[04:04 - 04:10] over here you are going to call the
+[04:07 - 04:14] index function recursively so it's index
+[04:10 - 04:16] and the same idea you shorten it by one
+[04:14 - 04:18] now the index position so now we come to
+[04:16 - 04:20] talk about the index position let's say
+[04:18 - 04:21] when you try to look for m when you try
+[04:20 - 04:25] to look for m
+[04:21 - 04:26] m is index zero so if the first element
+[04:25 - 04:28] is the item that you want to find it you
+[04:26 - 04:29] return a zero
+[04:28 - 04:30] okay
+[04:29 - 04:32] right
+[04:30 - 04:33] and then if let's say you're looking for
+[04:32 - 04:34] i
+[04:33 - 04:36] you would have thrown away the m and
+[04:34 - 04:37] then look for the i so this will be
+[04:36 - 04:38] actually a
+[04:37 - 04:39] one
+[04:38 - 04:42] plus
+[04:39 - 04:43] right one plus whatever
+[04:42 - 04:46] uh you
+[04:43 - 04:46] you know you find so so that would be
+[04:46 - 04:50] the
+[04:46 - 04:52] uh index position for the i
+[04:50 - 04:54] okay because you already thrown away
+[04:52 - 04:56] uh the down here you already thrown away
+[04:54 - 04:57] the first letter
+[04:56 - 05:00] okay
+[04:57 - 05:01] and then if you go all the way to the
+[05:00 - 05:02] end
+[05:01 - 05:04] and you still can't find the item that
+[05:02 - 05:07] one will not contribute any addition to
+[05:04 - 05:09] the index so that would be a zero
+[05:07 - 05:12] okay you probably need to think through
+[05:09 - 05:16] again why why we one plus uh to get the
+[05:12 - 05:17] index and then why we add zero uh in the
+[05:16 - 05:20] other two cases
+[05:17 - 05:22] okay let's try to run this if i were to
+[05:20 - 05:24] run the m that's our first test case
+[05:22 - 05:26] uh it should return me a zero i should
+[05:24 - 05:28] be running the
+[05:26 - 05:31] uh index
+[05:28 - 05:31] okay let's run
+[05:32 - 05:37] okay so it returned me a zero
+[05:35 - 05:40] if i look for i
+[05:37 - 05:41] right so when it comes to i
+[05:40 - 05:42] uh the
+[05:41 - 05:44] the first element is not what we want
+[05:42 - 05:46] because it's the m
+[05:44 - 05:47] then you look you throw away the m so
+[05:46 - 05:49] you look for the remaining
+[05:47 - 05:50] right and then you one plus the
+[05:49 - 05:52] remaining
+[05:50 - 05:54] right so when you come to the remaining
+[05:52 - 05:57] the first element is zero one plus zero
+[05:54 - 05:58] so that should be a one okay so i look
+[05:57 - 06:00] for the
+[05:58 - 06:02] i okay
+[06:00 - 06:02] and then let's run
+[06:03 - 06:06] so there's a one
+[06:05 - 06:07] okay so
+[06:06 - 06:09] uh
+[06:07 - 06:12] and then the s
+[06:09 - 06:12] that would be a two
+[06:14 - 06:21] okay and if i try to look for something
+[06:16 - 06:21] that is not inside okay
+[06:21 - 06:27] that 11 is actually the length of the
+[06:24 - 06:30] string okay let's say let's check the
+[06:27 - 06:30] length of the string
+[06:32 - 06:36] okay it's 11.
+[06:33 - 06:39] now uh the last index is 10 this is
+[06:36 - 06:40] index 10 so 11 is outside the string so
+[06:39 - 06:42] it's it means that
+[06:40 - 06:45] the the letter that you're looking for
+[06:42 - 06:47] the k doesn't even exist and anyway you
+[06:45 - 06:50] have a print statement item not found
+[06:47 - 06:51] okay so that is the recursive functions
+[06:50 - 06:54] for our recursive way of writing for the
+[06:51 - 06:56] functions index
+[06:54 - 06:59] uh next we want to do the count
+[06:56 - 07:01] we want to do the call is similar to
+[06:59 - 07:04] whatever we've been doing here so let me
+[07:01 - 07:04] copy this
+[07:05 - 07:10] count
+[07:07 - 07:11] if the uh first you come in you do the
+[07:10 - 07:13] clouds
+[07:11 - 07:16] and if the first element
+[07:13 - 07:17] is what you want to find okay is the
+[07:16 - 07:19] first element is what you want to find
+[07:17 - 07:22] that will give me a one
+[07:19 - 07:24] and then you still need to go on and try
+[07:22 - 07:28] to count the remaining of the string so
+[07:24 - 07:28] we need to call the cow again
+[07:28 - 07:32] okay and then the string i need to cut
+[07:32 - 07:35] it
+[07:32 - 07:37] cut the first element out
+[07:35 - 07:38] so that will count one plus the
+[07:37 - 07:42] remaining on the string
+[07:38 - 07:44] okay but if it's not what you want then
+[07:42 - 07:46] literally it will be zero plus right
+[07:44 - 07:48] because the first
+[07:46 - 07:50] letter that you throw away
+[07:48 - 07:52] is not what you want so it's a zero plus
+[07:50 - 07:55] you can omit the zero of course
+[07:52 - 07:57] uh and then if you go all the way to the
+[07:55 - 07:59] end of the
+[07:57 - 08:02] the the sequence that means no more no
+[07:59 - 08:03] more element around then it should just
+[08:02 - 08:06] simply return a zero because you won't
+[08:03 - 08:09] be able to find anything from there
+[08:06 - 08:11] okay so let's try to run our codes
+[08:09 - 08:15] here
+[08:11 - 08:19] and uh which one how about let's call i
+[08:15 - 08:19] okay they're all together for i
+[08:22 - 08:28] there is a syntax error what
+[08:25 - 08:31] sorry a comma missing
+[08:28 - 08:31] okay done
+[08:32 - 08:39] okay so that ought to get 4i how about s
+[08:35 - 08:39] s also should have 4s
+[08:43 - 08:47] okay uh how about p p there should be a
+[08:45 - 08:47] two
+[08:50 - 08:54] and then there's a case of a one so that
+[08:52 - 08:57] will be the m
+[08:54 - 08:57] okay
+[08:58 - 09:02] okay and then if you uh don't have
+[09:00 - 09:05] anything let's say k then it should
+[09:02 - 09:05] return me a zero
+[09:05 - 09:10] so more or less the structure for the uh
+[09:08 - 09:14] the three functions they are similar
+[09:10 - 09:17] it depends on what you want to add
+[09:14 - 09:17] okay

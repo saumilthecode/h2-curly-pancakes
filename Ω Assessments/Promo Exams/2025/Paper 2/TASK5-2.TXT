@@ -1,0 +1,14 @@
+﻿FUNCTION QuickSort(Seq)   
+  QuickSortHelper(Seq, 0, LENGTH(Seq) - 1)
+  RETURN Seq  
+ENDFUNCTION
+
+FUNCTION QuickSortHelper(Seq, Start, End)   
+  IF Start < End 
+    THEN
+      Mid ← Partition(Seq, Start, End)
+      __________( A )_________
+      __________( B )_________   
+  ENDIF 
+ENDFUNCTION
+

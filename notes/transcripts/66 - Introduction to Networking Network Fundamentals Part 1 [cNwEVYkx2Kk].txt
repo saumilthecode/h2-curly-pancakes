@@ -1,0 +1,141 @@
+Title: Introduction to Networking | Network Fundamentals Part 1
+Assessment(s): C3a: Using ChatGPT to Aid Learning
+Linked label(s): Introduction to Networking
+Uploader: Network Direction
+YouTube: https://www.youtube.com/watch?v=cNwEVYkx2Kk
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Format: Full timestamped transcript
+
+Language: English (en)
+
+TRANSCRIPT
+==========
+[00:19 - 00:24] Hello and welcome to the Network Direction video channel. What you've found
+[00:24 - 00:28] here is the start of a new group of videos designed to help you understand
+[00:28 - 00:33] the foundations of Networking. If you're new to networking or studying for a
+[00:33 - 00:37] certification like CCNA, Network + or JNCIA
+[00:37 - 00:42] this is a great place to start. For the first few videos I'm going to assume
+[00:42 - 00:47] that you have no networking experience. My goal is to create a solid foundation
+[00:47 - 00:53] for you to build on. In this video we're going to start with understanding what a
+[00:53 - 00:57] network actually is and some of the network types you'll see. We will follow up
+[00:57 - 01:02] in part two with a look at how a network may be cabled and get an overview of
+[01:02 - 01:04] addresses.
+[01:05 - 01:10] If you like this video please, let me know with the like button.
+[01:10 - 01:13] It's important to me to know if I'm on the right track with my videos so a
+[01:13 - 01:19] comment would be helpful too. If you want to see more, please use the subscribe and
+[01:19 - 01:25] notification buttons. Now if you're ready let's start right at the beginning.
+[01:25 - 01:28] What is a Network?
+[01:35 - 01:39] So maybe you already know what a network is.
+[01:39 - 01:40] Maybe you've built your own network
+[01:40 - 01:45] at home or help someone to run the network at school or at your job. That's
+[01:45 - 01:50] okay I don't want to bore you so if this applies to you I would like to give you
+[01:50 - 01:54] this challenge pause the video and think of a good description of what a network
+[01:54 - 02:00] is if you've come up with something you're happy with well done feel free to
+[02:00 - 02:04] skip ahead otherwise stay with me and I'll see if I can come up with something
+[02:04 - 02:11] for you. At work or home you have a bunch of devices; Computers, printers, TVs, and so
+[02:11 - 02:17] on. You connect these by means of a network. When the devices are connected
+[02:17 - 02:23] they're able to share data. This could be sending a print job to a printer, sending
+[02:23 - 02:28] an email or streaming video. This can also be used for sharing an internet
+[02:28 - 02:32] connection. Mostly network users are unaware of the
+[02:32 - 02:37] network they're using as long as they can browse the Internet do their job
+[02:37 - 02:43] browse YouTube they're usually fine. For all of these devices to communicate they
+[02:43 - 02:48] need to be connected together somehow. One way is to plug cables into the devices
+[02:48 - 02:53] and connect them to another device called a switch. An example is in a
+[02:53 - 02:58] school's computer lab in this case a computer in the lab connects to a wall
+[02:58 - 03:03] socket with a cable. Another cable runs through the wall which comes out at a
+[03:03 - 03:08] patch panel. This may be in a cabinet on the wall somewhere in the room or in
+[03:08 - 03:15] another room entirely. The port on the patch panel then connects to the switch
+[03:15 - 03:20] you might have a switch at home too most homes don't have wall sockets so devices
+[03:20 - 03:24] are connected directly to the switch we'll talk more about how switches work
+[03:24 - 03:31] later. We can also connect devices wirelessly a common way to do this is to
+[03:31 - 03:37] use a wireless access point a wireless network like this is also called Wi-Fi
+[03:37 - 03:42] an example of this is if you have a tablet. It is impractical to cable it in
+[03:42 - 03:47] so Wireless is a good option. The access point is like a switch without cables
+[03:47 - 03:51] more than one device can connect to the access point over time but without the
+[03:51 - 03:57] messy cabling. The access point can also be connected to the switch with a cable
+[03:57 - 04:03] this way wired and wireless devices can all be part of the same network. Having
+[04:03 - 04:08] both wired switches and wireless access points, gives you more connection options
+[04:08 - 04:13] imagine you have a laptop in an office you may connect it to the network with a
+[04:13 - 04:18] cable when you're at your desk when you have a meeting in the conference room
+[04:18 - 04:23] you remove the cable and connect to Wi-Fi. Whether the wired or wireless, the
+[04:23 - 04:28] goal of the network is to move information from one device to another
+[04:28 - 04:33] for this to work the sender and the receiver must understand each other. They
+[04:33 - 04:40] need to speak the same language. In the network speaking the same language means
+[04:40 - 04:47] that devices agree on how data is sent, received, organized, and handled. Basically
+[04:47 - 04:51] they agree on a process that they all follow. It's a bit like filling out
+[04:51 - 04:57] paperwork. This is called a protocol. A lot of different protocols are used
+[04:57 - 05:03] depending on what's needed at the time. Network software and hardware are
+[05:03 - 05:08] designed with these protocols in mind. You will hear of protocols like Ethernet
+[05:08 - 05:13] and TCP which are used for sending and receiving data. You may also hear of
+[05:13 - 05:19] protocols like HTTP which is used for accessing the web and SMTP which is used
+[05:19 - 05:25] for email usually several protocols are used together to achieve a task. We'll look
+[05:25 - 05:29] at protocols further in future videos
+[05:29 - 05:36] in summary networks are used to connect devices together. Devices use the network
+[05:36 - 05:41] to communicate and to share information. To share information, devices need to
+[05:41 - 05:46] speak the same language. This language is called a protocol which is a set of
+[05:46 - 05:50] instructions of how to handle the information
+[05:50 - 05:54] we're going to start with some simple questions to get the brain working
+[05:54 - 05:59] firstly what are the two ways computers can connect to the network to follow on
+[05:59 - 06:06] from that what devices do they usually connect to and finally how many
+[06:06 - 06:12] protocols are used when one computer accesses another computer. When you're
+[06:12 - 06:16] ready to see the answers follow the link at the bottom of the screen.
+[06:27 - 06:33] Networks connect devices. You could call devices on the network nodes. Nodes may include
+[06:33 - 06:38] devices that help control the traffic flowing through a network like switches
+[06:38 - 06:45] and routers. Nodes also include end points or hosts. These are devices that
+[06:45 - 06:51] send and receive the bulk of the traffic this includes workstations servers
+[06:51 - 06:57] printers and so on. Networks come in different sizes a network at home is an
+[06:57 - 07:02] example of a small network these networks usually only have a few nodes
+[07:02 - 07:10] this is called a SOHO Network. SOHO means Small Office Home Office these networks
+[07:10 - 07:16] typically have a couple of computers a printer a few phones and tablets some
+[07:16 - 07:21] devices will be wireless and some are connected to a switch this might be a
+[07:21 - 07:26] good time to mention that people often say hub when they mean switch you can
+[07:26 - 07:32] see why of course as the switch looks like a central hub in a Soho Network but
+[07:32 - 07:37] please keep in mind that switches and hubs are very different things
+[07:37 - 07:43] hubs are really old technology that you generally don't see anymore outside of a
+[07:43 - 07:48] museum while switches are modern and commonly used they look very similar so
+[07:48 - 07:53] it's easy to mix them up have a look at the model number to see if it gives you
+[07:53 - 07:59] any clues about what the device really is. In a Soho Network a router is used to
+[07:59 - 08:04] connect to the internet you might find that the router switch
+[08:04 - 08:08] access point are all integrated into one device
+[08:08 - 08:13] While a SOHO network will only have a few devices a corporation for example the
+[08:13 - 08:19] bank will have many devices this is called an enterprise network
+[08:19 - 08:24] the enterprise network may cover several floors in a building. They may also have
+[08:24 - 08:27] several office buildings in different cities or even across different
+[08:27 - 08:33] countries. An internet provider has a very large network this is called a
+[08:33 - 08:37] service provider network. Not only do they provide Internet access
+[08:37 - 08:43] they also offer services to connect their customers together. Consider the
+[08:43 - 08:48] bank with offices all around the country the service provider uses part of their
+[08:48 - 08:54] network to join these officers together when devices are collected into a local
+[08:54 - 09:01] area we call this a local area network or LAN. The LAN may be a small network
+[09:01 - 09:08] in a SOHO Network the LAN is the switch with the handful of devices connected or
+[09:08 - 09:13] the LAN may be part of a bigger network like an enterprise network. This network
+[09:13 - 09:17] may have many switches routers and access points depending on their needs
+[09:17 - 09:24] think of the bank from before they have an office with several floors you could
+[09:24 - 09:29] consider the whole building as a LAN or more likely the network is broken up
+[09:29 - 09:35] into smaller parts. Perhaps there is a separate network on each floor each of
+[09:35 - 09:39] these could also be called the LAN. These separate LANs may be connected together
+[09:39 - 09:46] but we'll talk more about that later. But a banks network is going to be larger
+[09:46 - 09:50] than just one building. Banks have offices all over the country and all
+[09:50 - 09:55] over the world even though they are far apart these networks can be joined
+[09:55 - 10:02] together. This is called a WAN or Wide Area Network. Imagine for a moment that
+[10:02 - 10:07] you work for a company with an office in Sydney and an office in Melbourne you
+[10:07 - 10:11] could contact a service provider and they can connect these officers for you
+[10:11 - 10:15] WANs are a topic all of their own, so we'll cover them in detail in a later
+[10:15 - 10:18] video
+[10:18 - 10:22] let's take a moment for a quick summary all networks are different and this
+[10:22 - 10:26] includes their size a Soho Network is very small
+[10:26 - 10:32] while an enterprise network may be very large. Of course your network could fit
+[10:32 - 10:39] in anywhere in between. A LAN or local area network is a collection of network
+[10:39 - 10:45] devices in a local area like a single building. A WAN or wide area network
+[10:45 - 10:51] connects networks that are far apart. And once again it's time to get the brain
+[10:51 - 10:55] working. Here's something to think about you work for a company that has a
+[10:55 - 11:01] finance division an engineering division and an admin division each group have
+[11:01 - 11:07] their own network and the networks are joined together is this network still a
+[11:07 - 11:14] LAN or is it something else entirely the company grows and adds a retail division
+[11:14 - 11:20] in addition to the head office there is now six branch offices what type of
+[11:20 - 11:27] network is this as before go to the link below to see the answers
+[11:27 - 11:33] I hope you've enjoyed part one of this series join me in part two where we'll
+[11:33 - 11:37] have a look at different types of cabling the Ethernet protocol and a bit
+[11:37 - 11:40] of an introduction into network addressing if you found this helpful
+[11:40 - 11:46] subscribe and click the notification button also if you liked it please click
+[11:46 - 11:50] the like button and tell me what you thought in the comments

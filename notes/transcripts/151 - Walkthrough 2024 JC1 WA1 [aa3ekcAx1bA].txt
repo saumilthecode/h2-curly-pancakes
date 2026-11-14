@@ -1,0 +1,1084 @@
+Title: Walkthrough 2024 JC1 WA1
+Assessment(s): Released assessment teacher walkthrough
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=aa3ekcAx1bA
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88787
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] session will be recorded uh and then uh
+[00:03 - 00:08] uh be and then shared with uh the
+[00:06 - 00:11] students so that you can uh in future
+[00:08 - 00:15] refer to
+[00:11 - 00:15] it okay if we all good then uh we can
+[00:22 - 00:26] start okay yeah so uh please take out
+[00:25 - 00:29] your
+[00:26 - 00:30] wa1 okay so we are going through the
+[00:29 - 00:32] question
+[00:30 - 00:36] from question
+[00:32 - 00:38] one okay so question one uh company
+[00:36 - 00:41] generates this employer ID based on the
+[00:38 - 00:43] birth year and the last name so
+[00:41 - 00:46] employees are required to key in their
+[00:43 - 00:48] personal information okay so uh you're
+[00:46 - 00:51] supposed to write a program code to do
+[00:48 - 00:53] two things okay the first one to promt
+[00:51 - 00:58] the user to enter their birth
+[00:53 - 01:00] here okay so um let's do that first okay
+[00:58 - 01:03] we need to ask for input
+[01:00 - 01:07] right so I will call my name birth year
+[01:03 - 01:10] okay and then I ask for a input to enter
+[01:07 - 01:10] their birth
+[01:15 - 01:20] here okay and then the next part is to
+[01:18 - 01:23] Output a message to say invalid birth
+[01:20 - 01:31] year if the birth year is not between n
+[01:23 - 01:33] uh one90 and 2020 so uh if the bir year
+[01:31 - 01:37] okay it's not
+[01:33 - 01:41] within uh 1900 and 2020 okay meaning
+[01:37 - 01:45] that it's less than 1900 or more than
+[01:41 - 01:49] 2020 okay so if birth year is less than
+[01:45 - 01:55] 1900 or birth year is more
+[01:49 - 01:59] than 2020 I need to uh output a message
+[01:55 - 02:02] saying invalid bir year so uh you cannot
+[01:59 - 02:06] do a written here because this is not a
+[02:02 - 02:09] function okay so you can only print the
+[02:06 - 02:09] invaluable
+[02:14 - 02:19] here all right so uh notice that there
+[02:18 - 02:23] is this invalid
+[02:19 - 02:25] syntax uh all right because now we are
+[02:23 - 02:28] comparing this is a
+[02:25 - 02:31] integer okay and when we ask for the
+[02:28 - 02:34] output sorry when we ask for input here
+[02:31 - 02:35] okay by default it is in string so if
+[02:34 - 02:39] you are doing this line you are
+[02:35 - 02:41] comparing a string with uh integer okay
+[02:39 - 02:45] so that's why it is a invalid syx here
+[02:41 - 02:48] all right so to overcome this problem
+[02:45 - 02:51] okay we need to convert the ver here to
+[02:48 - 02:51] integer
+[02:57 - 03:00] [Music]
+[03:03 - 03:09] oh sorry this one
+[03:05 - 03:13] is okay so uh let's try
+[03:09 - 03:18] 1,000 okay so it will give me a in inval
+[03:13 - 03:21] here okay and let's if I try
+[03:18 - 03:23] 1900 okay there's no
+[03:21 - 03:26] error all right so uh the main issue
+[03:23 - 03:31] here is you need to convert the input
+[03:26 - 03:33] okay into a integer before you do the
+[03:31 - 03:35] comparison all right that is for
+[03:33 - 03:35] question
+[03:37 - 03:43] one okay then question
+[03:40 - 03:46] two okay so write a program code to
+[03:43 - 03:49] prompt the user to enter their last
+[03:46 - 03:50] name right so I will do that first I
+[03:49 - 03:53] call it last
+[03:50 - 03:57] name okay
+[03:53 - 03:57] input enter your last
+[03:58 - 04:05] name okay then verify that the input is
+[04:02 - 04:07] at least three characters long okay if
+[04:05 - 04:09] it's less than three characters long
+[04:07 - 04:12] prints invalid
+[04:09 - 04:15] input okay so I want to check the number
+[04:12 - 04:18] of characters inside the input so I use
+[04:15 - 04:20] the length uh function to help me check
+[04:18 - 04:25] the length of the uh
+[04:20 - 04:29] input okay so E length of the last
+[04:25 - 04:30] name okay is less than three I will need
+[04:29 - 04:35] to
+[04:30 - 04:35] print invalid
+[04:36 - 04:42] input okay then uh
+[04:39 - 04:46] otherwise okay so if is more at least
+[04:42 - 04:48] three so else I will need to print the
+[04:46 - 04:53] last name in upper
+[04:48 - 04:58] case all right so uh there is a example
+[04:53 - 05:01] for you in the question okay so if if
+[04:58 - 05:05] it's all string go to small cap small
+[05:01 - 05:09] letter ABC okay if I do a old string Dot
+[05:05 - 05:12] Upper okay you will return me a capital
+[05:09 - 05:14] ABC all right so I will just need to do
+[05:12 - 05:17] a
+[05:14 - 05:20] PR last
+[05:17 - 05:20] name okay do
+[05:20 - 05:25] upper okay then it by right should
+[05:23 - 05:27] return me the last name in uppercase
+[05:25 - 05:31] okay so let's try to test out the
+[05:27 - 05:34] code okay so uh I will try a last name
+[05:31 - 05:36] that is less than three characters first
+[05:34 - 05:40] okay so maybe I
+[05:36 - 05:42] try r d okay so you will print invalid
+[05:40 - 05:44] input because the length is less than
+[05:42 - 05:47] three
+[05:44 - 05:51] okay then uh if it's more than three
+[05:47 - 05:55] let's say uh and P byra it should return
+[05:51 - 05:59] me the last name in upper case which
+[05:55 - 05:59] is okay
+[06:01 - 06:06] okay so that is question one and two for
+[06:04 - 06:06] those who just came
+[06:11 - 06:16] in all right so I give you some time to
+[06:13 - 06:19] take down the solutions for question one
+[06:16 - 06:19] and two
+[06:43 - 06:46] okay then moving on to question
+[06:47 - 06:54] three okay so modify the program code in
+[06:50 - 06:57] task 1.2 to repeatedly prompt the
+[06:54 - 07:00] user okay until they enter a very last
+[06:57 - 07:01] name of any three character song so
+[07:00 - 07:04] keyword here is repeatedly promp the
+[07:01 - 07:08] user okay so uh bar you should be using
+[07:04 - 07:11] a loop okay to repeat this several times
+[07:08 - 07:15] okay but uh you don't really know how
+[07:11 - 07:17] many times you need to prompt the user
+[07:15 - 07:20] okay it can be like the first time they
+[07:17 - 07:21] enter okay it's okay but maybe it's only
+[07:20 - 07:23] until the 10th time they enter then it's
+[07:21 - 07:26] okay so you don't know how many times
+[07:23 - 07:31] you want to from the user okay so this
+[07:26 - 07:33] should be a w Loop okay so B is used if
+[07:31 - 07:35] you don't know how many times you need
+[07:33 - 07:38] to repeat the
+[07:35 - 07:41] root okay so then it says modify the
+[07:38 - 07:45] program code in pass 1.2 okay so I will
+[07:41 - 07:45] try to copy the code in my
+[07:48 - 07:55] 1.2 okay so repeatedly prom the user so
+[07:51 - 07:57] means that I need to use a wow Loop so
+[07:55 - 07:58] what is the condition for me to repeat
+[07:57 - 08:02] the
+[07:58 - 08:04] loop okay I will only stop if they enter
+[08:02 - 08:07] uh last name of L three characters right
+[08:04 - 08:10] so as long as they enter last name that
+[08:07 - 08:11] is less than three character I need to
+[08:10 - 08:14] repeat the
+[08:11 - 08:17] loop all right so as long as their
+[08:14 - 08:20] length is less than three I need to
+[08:17 - 08:22] repeat the loop so it's a
+[08:20 - 08:26] w last name less than
+[08:22 - 08:27] three I need to continuously prom for
+[08:26 - 08:31] new
+[08:27 - 08:34] input okay so I need to ask them again
+[08:31 - 08:34] for their
+[08:42 - 08:48] input okay so let's try this first okay
+[08:46 - 08:51] so last
+[08:48 - 08:53] name okay just one character okay inv
+[08:51 - 08:56] valid input two
+[08:53 - 08:59] character inval input three
+[08:56 - 09:03] character okay yeah it works ready okay
+[08:59 - 09:07] but uh just remove the else okay because
+[09:03 - 09:10] uh else should only go with if if else
+[09:07 - 09:14] you cannot have wow else okay so I need
+[09:10 - 09:16] to remove this else and inem back this
+[09:14 - 09:20] okay
+[09:16 - 09:20] print okay so let's try
+[09:22 - 09:28] again okay so yeah is correct so you
+[09:25 - 09:29] will repeatedly prompts until the user
+[09:28 - 09:30] enter last name of at Le
+[09:29 - 09:33] three
+[09:30 - 09:36] characters then you will bring back the
+[09:33 - 09:36] last name in
+[09:38 - 09:43] uppercase okay so uh sometimes to take
+[09:40 - 09:43] down your quote for question
+[09:50 - 09:54] three you have any questions
+[10:16 - 10:19] okay so moving on to
+[10:22 - 10:29] four okay so this uh question so uh
+[10:26 - 10:32] employees birth year and last name okay
+[10:29 - 10:34] use to generate the employer ID so it
+[10:32 - 10:37] consist the last two digits of the B
+[10:34 - 10:40] year okay followed by
+[10:37 - 10:42] hyen and the first three characters of
+[10:40 - 10:46] the last name okay so if he born in
+[10:42 - 10:49] 1995 then ver okay then it should be 95
+[10:46 - 10:51] Das
+[10:49 - 10:55] DN okay so by right if I have this
+[10:51 - 10:58] example here it should print me uh 89
+[10:55 - 11:02] Dash then
+[10:58 - 11:05] SMI okay so we are using this example
+[11:02 - 11:10] to uh illustrate that
+[11:05 - 11:13] L okay so I want
+[11:10 - 11:17] the this one you can just directly print
+[11:13 - 11:20] it okay so I'll just print I want the
+[11:17 - 11:23] last two digits of the bir year okay so
+[11:20 - 11:26] I just do birth year all right so this
+[11:23 - 11:30] is about your string
+[11:26 - 11:33] slicing okay so uh I want I want
+[11:30 - 11:35] the okay zero index first index I want
+[11:33 - 11:39] the second and the third
+[11:35 - 11:41] index okay second index on words I can
+[11:39 - 11:46] do
+[11:41 - 11:48] two okay po so get this will give me uh
+[11:46 - 11:51] the second index
+[11:48 - 11:53] onwards okay and then
+[11:51 - 11:56] plus okay uh
+[11:53 - 12:00] Dash Okay and
+[11:56 - 12:04] plus the name
+[12:00 - 12:07] okay and I want the first first three
+[12:04 - 12:10] characters okay so 0o 1
+[12:07 - 12:14] two okay so
+[12:10 - 12:17] uh okay I can start from zero okay and
+[12:14 - 12:19] then uh this one is excluding three that
+[12:17 - 12:22] means I will stop at the second
+[12:19 - 12:25] index okay so let's try
+[12:22 - 12:26] this okay so say integer object is not
+[12:25 - 12:30] uh
+[12:26 - 12:33] subscriptable okay so the problem lies
+[12:30 - 12:36] here okay so your birth year is an
+[12:33 - 12:37] integer you cannot do a string slicing
+[12:36 - 12:40] on a
+[12:37 - 12:43] iner okay and of course you cannot uh
+[12:40 - 12:46] concatenate integer with string okay so
+[12:43 - 12:49] that is the issue so to resolve that you
+[12:46 - 12:51] need to put the string convert this ver
+[12:49 - 12:51] here into string
+[12:57 - 13:01] first uh to birth year to string without
+[13:00 - 13:07] the
+[13:01 - 13:07] index bir year oh yeah sorry
+[13:08 - 13:13] yeah yeah so convert the birth year to
+[13:11 - 13:16] shing first okay before you do the Shing
+[13:13 - 13:16] slicing
+[13:24 - 13:29] okay okay then uh question five
+[13:30 - 13:36] okay so uh this one is quite simple okay
+[13:33 - 13:41] you want to count the number of vs in a
+[13:36 - 13:43] given string message okay so um this one
+[13:41 - 13:46] I know how many times I want to repeat
+[13:43 - 13:49] right because if the message contains uh
+[13:46 - 13:51] 10 letters I will repeat it 10 times to
+[13:49 - 13:53] check for in each
+[13:51 - 13:55] character all right so this one I know
+[13:53 - 13:57] how many times I want to repeat so I use
+[13:55 - 14:00] uh four
+[13:57 - 14:03] root all right four
+[14:00 - 14:07] ear in
+[14:03 - 14:14] message okay so
+[14:07 - 14:14] uh okay if my L is in a e i
+[14:15 - 14:22] oou okay so I want to count the number
+[14:20 - 14:24] of bowels right so I need a counter
+[14:22 - 14:29] first okay so counter equals to
+[14:24 - 14:35] zero okay so if it is in aou that means
+[14:29 - 14:35] is a b then the counter should last
+[14:35 - 14:41] one okay then you should return the
+[14:39 - 14:44] counter at the
+[14:41 - 14:48] end okay so this one is quite
+[14:44 - 14:51] straightforward okay so check
+[14:48 - 14:56] okay okay so vowels number of vowels is
+[14:51 - 14:59] three okay e o and O Okay so correct
+[14:56 - 15:02] okay so if I remove one o here okay then
+[14:59 - 15:04] it should be two vowel so
+[15:02 - 15:08] it's all right so yeah please check your
+[15:04 - 15:08] code for question four and five
+[15:23 - 15:32] first uh if I pass back to Mr we or Mr T
+[15:29 - 15:32] so we'll continue with question
+[15:38 - 15:46] six uh it's me let me share my screen
+[15:42 - 15:46] okay sure
+[15:59 - 16:06] okay I'm
+[16:01 - 16:09] on okay uh for next question um
+[16:06 - 16:13] converting the uh grades to the GPA
+[16:09 - 16:15] score okay so uh easy way to do is just
+[16:13 - 16:20] to use the if else so we have a function
+[16:15 - 16:24] GPA with a grade now if grade are equal
+[16:20 - 16:24] to let's say
+[16:24 - 16:30] a some student write it this way H
+[16:27 - 16:38] return uh
+[16:30 - 16:38] 5. and then uh else if uh gr equal
+[16:40 - 16:47] to A+ so let's me do the first one okay
+[16:44 - 16:47] so this is so
+[16:47 - 16:53] A+ and then
+[16:50 - 16:53] return
+[16:54 - 17:02] 5. okay and then else e so on so forth
+[16:58 - 17:05] okay so this is one way that you can do
+[17:02 - 17:06] okay uh another way you can make use of
+[17:05 - 17:10] the
+[17:06 - 17:10] all so
+[17:17 - 17:27] or great a is equal to a or great a is
+[17:23 - 17:31] equal to a plus they both return
+[17:27 - 17:34] 5. okay so this is the correct way of
+[17:31 - 17:38] doing now the wrong way of doing which
+[17:34 - 17:43] some student did
+[17:38 - 17:43] was this this is
+[17:46 - 17:49] wrong
+[17:51 - 17:56] okay so uh be careful when you want to
+[17:54 - 18:00] compare you want to make two comparison
+[17:56 - 18:04] using the All You must must remember to
+[18:00 - 18:07] have uh both comparison instead of doing
+[18:04 - 18:13] this way so you must have this
+[18:07 - 18:17] great equal equal to A+ and so so forth
+[18:13 - 18:23] okay can and uh the last one after
+[18:17 - 18:29] checking let's say else if um else if uh
+[18:23 - 18:33] great a equal equal to uh D and and then
+[18:29 - 18:37] the last one I'm going to the F later
+[18:33 - 18:41] on return uh
+[18:37 - 18:45] 1.0 some student went on to say
+[18:41 - 18:49] else return
+[18:45 - 18:52] zero okay the problem with using a else
+[18:49 - 18:55] it means that uh any other entry that
+[18:52 - 18:58] means any other grade it could be a g h
+[18:55 - 19:02] i j k or all the way up to Z will still
+[18:58 - 19:05] remain zero uh although it is true but
+[19:02 - 19:08] according to the um to the question
+[19:05 - 19:11] itself uh is specifically says that zero
+[19:08 - 19:15] is assigned for the great F not any
+[19:11 - 19:18] other character so the use of Ls is not
+[19:15 - 19:20] that good I but I didn't penalize you
+[19:18 - 19:23] for student who uses else I did not
+[19:20 - 19:26] penalize but I thought a better choice a
+[19:23 - 19:30] better choice will be else if okay a
+[19:26 - 19:32] better choice will be else if case so a
+[19:30 - 19:35] better choice will be a else
+[19:32 - 19:40] if okay and continue to check that the
+[19:35 - 19:43] grd is indeed equal to F before you
+[19:40 - 19:46] assign it to zero okay so although else
+[19:43 - 19:46] works
+[19:47 - 19:53] but so that is the concern that that I
+[19:51 - 19:55] have
+[19:53 - 19:58] okay now uh I'm going to copy the grid
+[19:55 - 20:02] for uh I'm going to copy this and paste
+[19:58 - 20:02] it here let's say the solutions
+[20:09 - 20:14] for okay so that is the full
+[20:17 - 20:23] code okay I'm going to run this
+[20:20 - 20:26] code leave it there okay now the next
+[20:23 - 20:31] question we want to do is uh to compute
+[20:26 - 20:34] the average GPA score in the result okay
+[20:31 - 20:38] compute the GPA score for the
+[20:34 - 20:40] results uh the scores are all in uh
+[20:38 - 20:43] floats these are not string some of you
+[20:40 - 20:47] are give uh the the score as a
+[20:43 - 20:50] string okay so let's do the
+[20:47 - 20:53] average and after we have written the
+[20:50 - 20:56] function for average uh we will use the
+[20:53 - 20:59] score uh uh from the result one and also
+[20:56 - 21:02] result two to try to work out what is
+[20:59 - 21:02] the average score
+[21:03 - 21:11] okay so what we need to do is to iterate
+[21:06 - 21:14] through all the GDs inside GDs okay for
+[21:11 - 21:16] Grid in
+[21:14 - 21:20] GDs
+[21:16 - 21:20] okay now what is the
+[21:21 - 21:27] uh what is the GPA score uh for this
+[21:25 - 21:31] particular Gade I need to use the
+[21:27 - 21:34] function GPA a and then uh input the
+[21:31 - 21:37] grid and that will give me the score now
+[21:34 - 21:40] I want to uh find the average which
+[21:37 - 21:43] means I need to total up the scores okay
+[21:40 - 21:45] let me use the
+[21:43 - 21:49] scores assign to
+[21:45 - 21:53] zero and then now I can add this GPA
+[21:49 - 21:53] score score equal to
+[21:53 - 22:02] score plus the GPA score for this grade
+[21:58 - 22:06] and then if I complete the four
+[22:02 - 22:08] Loops okay uh I will be able to get the
+[22:06 - 22:11] total score so actually I know the total
+[22:08 - 22:13] score already so what is the average
+[22:11 - 22:16] score the average
+[22:13 - 22:19] score will be equal to the total
+[22:16 - 22:23] score which is the
+[22:19 - 22:26] score divide by the number of grades
+[22:23 - 22:27] right the number of grades right okay so
+[22:26 - 22:29] do we know what is the number of the
+[22:27 - 22:32] grades
+[22:29 - 22:35] we can use the length of this
+[22:32 - 22:40] tle to know how many gdes are there all
+[22:35 - 22:43] together and then after that return okay
+[22:40 - 22:43] return the uh average
+[22:45 - 22:52] score okay now there is a requirement
+[22:48 - 22:56] for the score to be returned uh rounded
+[22:52 - 23:00] to two decimal place okay so we should
+[22:56 - 23:00] return and to round this
+[23:01 - 23:08] score to two decimal
+[23:05 - 23:08] place
+[23:10 - 23:17] okay so now we have it uh we are going
+[23:13 - 23:21] to test the first one uh for result
+[23:17 - 23:21] one so Result One there are three
+[23:22 - 23:28] scores I'll get the average GPA scores
+[23:25 - 23:30] of 3.5 and for result two there are four
+[23:28 - 23:33] our
+[23:30 - 23:33] grads that will be
+[23:35 - 23:39] 3.12 okay
+[24:01 - 24:04] I'm going to pause here for a
+[24:14 - 24:17] while okay next
+[24:18 - 24:25] question uh some student don't read the
+[24:21 - 24:27] question carefully yeah okay um write a
+[24:25 - 24:31] program for the function called check
+[24:27 - 24:34] out and then to enter the name end item
+[24:31 - 24:37] name and the cost for end item okay now
+[24:34 - 24:39] this end item is a generic is a general
+[24:37 - 24:41] end item it could be four it could be
+[24:39 - 24:43] one it could be five it could be 10
+[24:41 - 24:44] depending on how many item this
+[24:43 - 24:48] housewife
+[24:44 - 24:51] purchase okay running check out one will
+[24:48 - 24:54] prompt the user to enter the item name
+[24:51 - 24:58] and the cost so you are supposed to
+[24:54 - 25:01] enter the name and the cost okay and
+[24:58 - 25:04] then it will return now and this item
+[25:01 - 25:07] right for example if the item enter is a
+[25:04 - 25:09] bread then uh the tle that will be
+[25:07 - 25:13] returned will be bread which at whatever
+[25:09 - 25:17] cost now if let's say item uh the the
+[25:13 - 25:19] the lady buy one item and is uh uh a
+[25:17 - 25:21] burger then it will be a burger it will
+[25:19 - 25:23] not be bread it will not be fish it will
+[25:21 - 25:27] not be meat it will not be milk so some
+[25:23 - 25:29] of you are are are hardcoded that uh the
+[25:27 - 25:31] the housewife can only buy this four
+[25:29 - 25:35] item but actually the housewife can buy
+[25:31 - 25:40] any other item okay can buy cheese can
+[25:35 - 25:44] buy praw can buy uh uh uh vegetable okay
+[25:40 - 25:46] so uh there's a lot of heart coding as
+[25:44 - 25:50] far as the uh item name and also the
+[25:46 - 25:53] price when I Mark uh uh Your solution
+[25:50 - 25:56] okay and then if uh the uh you run check
+[25:53 - 25:59] out four then you'll prompt the user
+[25:56 - 26:03] four times to key in the name and the
+[25:59 - 26:04] cost of four items okay I said before it
+[26:03 - 26:06] could be check out five it could be
+[26:04 - 26:12] check out six okay so not restricted to
+[26:06 - 26:15] just four okay so um the other problem
+[26:12 - 26:18] is that student uses uh a least to do a
+[26:15 - 26:18] Topper
+[26:19 - 26:24] question to do a uh a tle question
+[26:22 - 26:30] you'll be penalized no marks will be
+[26:24 - 26:33] awarded okay so let's start uh uh for uh
+[26:30 - 26:35] I in range because we are going to
+[26:33 - 26:39] repeat this number of time end
+[26:35 - 26:43] time right and then we will prompt the
+[26:39 - 26:46] user to key in uh uh something okay so
+[26:43 - 26:49] when we prompt the user we must give him
+[26:46 - 26:54] a meaningful instruction so what is the
+[26:49 - 26:57] meaningful instruction enter the uh item
+[26:54 - 27:01] name okay so the user know what to
+[26:57 - 27:04] create but if you just say
+[27:01 - 27:06] input if you just say input then the
+[27:04 - 27:09] user will not know what you want him to
+[27:06 - 27:12] input is it 1 2 3 4 5 is it his IC
+[27:09 - 27:17] number or what so you need to give him a
+[27:12 - 27:20] proper prompt okay and uh the name uh
+[27:17 - 27:21] item name and the cost should be
+[27:20 - 27:23] prompted
+[27:21 - 27:25] separately
+[27:23 - 27:29] okay because uh you won't be able to
+[27:25 - 27:30] capture uh two information in one promt
+[27:29 - 27:32] you won't be able to do that even if you
+[27:30 - 27:35] do that uh you will have hard time
+[27:32 - 27:39] trying to separate them okay to capture
+[27:35 - 27:44] the item and the cost okay so now that
+[27:39 - 27:48] we have uh the item and the cost uh we
+[27:44 - 27:52] are going to put this item and the cost
+[27:48 - 27:55] into a tle so this is a tle right and
+[27:52 - 28:00] this tle if you take a look it will be
+[27:55 - 28:05] something like that a bread and
+[28:00 - 28:08] 2.50 okay followed by the fish at 8.25
+[28:05 - 28:11] so it will be a TPP of
+[28:08 - 28:12] tles okay so let me start with a empty
+[28:11 - 28:15] TPP
+[28:12 - 28:19] first equal to a empty
+[28:15 - 28:22] tle and then tle you cannot append
+[28:19 - 28:24] there's no way to append a tle only Lee
+[28:22 - 28:27] can a pen okay so for those student who
+[28:24 - 28:29] use Lisa at a pen it goes to show that
+[28:27 - 28:33] you also do not you may not know how to
+[28:29 - 28:37] use uh adding tle into a tle so that's
+[28:33 - 28:38] why you penalized okay so tle is equal
+[28:37 - 28:41] to the old
+[28:38 - 28:44] tle plus okay I'm going to show it to
+[28:41 - 28:50] you later on uh what happened if you do
+[28:44 - 28:53] this okay and then uh I
+[28:50 - 28:56] return the tle okay I'm going to show
+[28:53 - 29:00] you there's some error in my code and
+[28:56 - 29:02] I'm going to run this is uh check out uh
+[29:00 - 29:04] I'm going to run two okay I'm going to
+[29:02 - 29:06] check out two
+[29:04 - 29:09] items let's run this
+[29:06 - 29:12] code okay I'm promted to enter the name
+[29:09 - 29:16] like I said before it need not be bread
+[29:12 - 29:20] but uh for uh example now I just C
+[29:16 - 29:24] bread okay and then the cost is uh
+[29:20 - 29:27] 2.50 okay and I enter and then it ask me
+[29:24 - 29:30] for another one which is fish and then
+[29:27 - 29:30] the
+[29:30 - 29:39] 8.25 okay now take a look at here there
+[29:35 - 29:41] are if you compare this TPP the output
+[29:39 - 29:44] tle and the TPP that we
+[29:41 - 29:49] expect there are two error one is that
+[29:44 - 29:52] the cost should be 2.50 a float and not
+[29:49 - 29:55] a string that's one second thing this is
+[29:52 - 29:59] a single tle of Four Element we are
+[29:55 - 30:01] expecting a tle with two two tapos
+[29:59 - 30:05] inside okay so I'm going to correct this
+[30:01 - 30:08] two error first thing is that the ca we
+[30:05 - 30:08] will capture the
+[30:09 - 30:16] float of the cost okay so that will
+[30:12 - 30:20] convert the cost from a string to a to a
+[30:16 - 30:23] float okay now second thing is that uh
+[30:20 - 30:26] how to make it as a t of tles now you
+[30:23 - 30:29] have to add this as a tle now uh you you
+[30:26 - 30:32] can just simply put a
+[30:29 - 30:35] cormer outside to show that this is a
+[30:32 - 30:37] single tle or you can add one more
+[30:35 - 30:38] bracket outside here and that will make
+[30:37 - 30:41] it a
+[30:38 - 30:44] tle okay so this is the topple that you
+[30:41 - 30:49] want to add it in and then now let's run
+[30:44 - 30:52] this two times and I have the
+[30:49 - 30:55] bread and then it's
+[30:52 - 30:59] 2.50 and then I have fish maybe I don't
+[30:55 - 31:02] want to buy fish now I want to buy
+[30:59 - 31:02] mute and then it is
+[31:03 - 31:08] 4.80 there it
+[31:05 - 31:10] goes okay you will get the bread and
+[31:08 - 31:14] then the fish
+[31:10 - 31:18] okay not to worry about the 2.50 or 2.5
+[31:14 - 31:20] 4.80 or 4.58 not to worry about that
+[31:18 - 31:23] okay we are not very uh uh stringent
+[31:20 - 31:26] about this decimal place kind of thing
+[31:23 - 31:29] okay or displaying of the decimal place
+[31:26 - 31:29] okay
+[31:29 - 31:36] so this uh uh function allows us to uh
+[31:32 - 31:38] check out more than four items 500
+[31:36 - 31:41] there's no restriction on the number of
+[31:38 - 31:44] items that you can check out okay so uh
+[31:41 - 31:47] watch out on this uh how to add a tle
+[31:44 - 31:51] into a tle so that you can return a tle
+[31:47 - 31:51] of tles
+[31:51 - 31:59] okay I will pause here for a
+[31:54 - 31:59] while so they cap capture the code
+[32:15 - 32:21] okay next question we are going to find
+[32:18 - 32:25] the total cost okay total cost for this
+[32:21 - 32:28] uh grocery list now then again uh the
+[32:25 - 32:32] same problem now uh uh if happens that
+[32:28 - 32:34] we have four item in this list but the
+[32:32 - 32:37] housewife can actually purchase more
+[32:34 - 32:40] than this and the housewife can actually
+[32:37 - 32:43] buy items that other than fish meat uh
+[32:40 - 32:45] bread and uh milk okay so that is
+[32:43 - 32:48] something that uh uh this is just one
+[32:45 - 32:50] example of a list okay uh one one one
+[32:48 - 32:53] example of the grocery list that the
+[32:50 - 32:55] housewi purchased okay we want to find
+[32:53 - 32:58] the total so uh let me start off with a
+[32:55 - 33:00] total initiated at zero first
+[32:58 - 33:03] okay and I'm going to go through the
+[33:00 - 33:07] element in
+[33:03 - 33:09] items okay let me go to all the elements
+[33:07 - 33:13] in the item so if I go to the element it
+[33:09 - 33:16] would be a a tle like this bread and the
+[33:13 - 33:21] cost okay so in order to capture the
+[33:16 - 33:24] cost uh the cost is in the element index
+[33:21 - 33:26] one okay and then I need to use the
+[33:24 - 33:28] total equal to
+[33:26 - 33:32] Total Plus
+[33:28 - 33:33] the element okay and then I have the
+[33:32 - 33:39] total
+[33:33 - 33:41] cost and I need to return the total cost
+[33:39 - 33:46] okay not only just the total cost I must
+[33:41 - 33:49] remember that there is a 9% GST so it is
+[33:46 - 33:52] the total cost times
+[33:49 - 33:56] 1.09 that will gives me the uh uh total
+[33:52 - 33:59] cost with uh GST now uh and then I need
+[33:56 - 34:02] to uh return and round it off to two
+[33:59 - 34:05] decimal place so that will be uh
+[34:02 - 34:08] corrected to two decimal place okay so
+[34:05 - 34:13] it's a very simple code
+[34:08 - 34:15] here okay so if I to run it
+[34:13 - 34:18] 22.40 now there it says that this
+[34:15 - 34:20] function called total uh for a list of
+[34:18 - 34:23] items uh I can instead of going to buy
+[34:20 - 34:25] grocery I can buy handphones right I
+[34:23 - 34:28] have some iPhone Samsung phone and uh my
+[34:25 - 34:31] Oppo right and then and with GST it
+[34:28 - 34:33] total up to $
+[34:31 - 34:37] 3,911 including a
+[34:33 - 34:40] GST okay so some students make mistake
+[34:37 - 34:42] instead of going through the item they
+[34:40 - 34:45] actually went through the
+[34:42 - 34:47] grocery so that will be a problem
+[34:45 - 34:50] because for grocery not a problem but
+[34:47 - 34:51] when it come to iPhone or the phones it
+[34:50 - 34:55] will still return the total cost for the
+[34:51 - 34:58] grocery because your function is going
+[34:55 - 35:00] to the grocery
+[34:58 - 35:04] okay so you must always be careful you
+[35:00 - 35:06] should be iterating true the element or
+[35:04 - 35:10] the items inside the
+[35:06 - 35:12] items okay not the grocery so this is a
+[35:10 - 35:12] very common
+[35:14 - 35:19] error okay I'm going to pause here for a
+[35:17 - 35:24] while before I hand the time to uh Mr wi
+[35:19 - 35:24] to go through the remaining questions
+[35:34 - 35:38] okay I'll stop share uh Mr we can take
+[35:36 - 35:42] over from
+[35:38 - 35:42] here yeah
+[35:49 - 35:55] okay can youall share my can you see my
+[35:52 - 35:58] screen
+[35:55 - 36:01] okay uh some common mistakes
+[35:58 - 36:02] uh that yall make is yall don't read the
+[36:01 - 36:04] question
+[36:02 - 36:08] requirement some of you put your input
+[36:04 - 36:12] outside the function but the instruction
+[36:08 - 36:14] is your function should perform all this
+[36:12 - 36:17] but if it's not in your function then
+[36:14 - 36:19] you wouldn't be fulfilling the question
+[36:17 - 36:22] requirement okay so that's mistake one
+[36:19 - 36:25] uh another mistake is wrong comparison
+[36:22 - 36:28] after you input you get a string right
+[36:25 - 36:30] you get a string but you compare string
+[36:28 - 36:32] with integer so you run into an error
+[36:30 - 36:35] here so if you really test your code you
+[36:32 - 36:37] run it right it will not
+[36:35 - 36:38] work uh I think this is not a common
+[36:37 - 36:41] mistake most of you got the logic
+[36:38 - 36:43] correct if the year is three or more the
+[36:41 - 36:49] interest rate is 3% else the interest
+[36:43 - 36:53] rate is 2% your the other mistake is 2dp
+[36:49 - 36:56] you all forget to uh use 2dp around uh
+[36:53 - 36:58] value comma two and the last mistake is
+[36:56 - 37:02] you didn't read the question requirement
+[36:58 - 37:06] you just print your final
+[37:02 - 37:10] value so your final value would be the
+[37:06 - 37:12] amount you print out 112 5.51 right okay
+[37:10 - 37:13] but actually we want you to print a
+[37:12 - 37:16] statement okay this is the entire
+[37:13 - 37:18] statement we want you to print out okay
+[37:16 - 37:20] and when we ask you to print out right
+[37:18 - 37:22] we don't ask you to print out X
+[37:20 - 37:25] nnnnnn okay these are placeholders you
+[37:22 - 37:29] replace x with the number of years you
+[37:25 - 37:31] replace nnn do and end with a number
+[37:29 - 37:34] which is the final
+[37:31 - 37:37] amount okay so then you still have to
+[37:34 - 37:40] return the final amount okay so this is
+[37:37 - 37:43] a some example of a wrong code okay the
+[37:40 - 37:44] correct code would be this so usually we
+[37:43 - 37:46] phras the question clearly there are
+[37:44 - 37:50] five bullet points please fulfill the
+[37:46 - 37:54] five bullet points so we enter uh we
+[37:50 - 37:56] write code to from the customer that
+[37:54 - 37:58] store in the varable called money okay
+[37:56 - 38:02] equals to
+[37:58 - 38:04] uh please enter the
+[38:02 - 38:06] amount
+[38:04 - 38:08] deposited okay so we give it a
+[38:06 - 38:09] meaningful prompt with a meaningful
+[38:08 - 38:13] variable
+[38:09 - 38:19] name uh then the number of years
+[38:13 - 38:22] okay uh input please uh input the
+[38:19 - 38:26] number of years
+[38:22 - 38:28] okay so that fulfills the first bullet
+[38:26 - 38:30] point now the second bullet point print
+[38:28 - 38:30] the
+[38:30 - 38:38] statement so if the interest rate is 2%
+[38:34 - 38:41] right one and two-ear deposit is 2% okay
+[38:38 - 38:44] so uh some of you may like to do this
+[38:41 - 38:47] years is equals to integer
+[38:44 - 38:50] years so that your next code wouldn't
+[38:47 - 38:56] run into error so if
+[38:50 - 38:59] years is less than three right so my
+[38:56 - 38:59] interest
+[38:59 - 39:04] rate would be equal to uh okay I call it
+[39:02 - 39:06] multiplier since I going to multiply by
+[39:04 - 39:10] 1.03 so uh
+[39:06 - 39:15] multiplier is equal to 1.02 okay
+[39:10 - 39:18] else multiplier is equals to 1.03 okay I
+[39:15 - 39:20] have to reprint the statement also so I
+[39:18 - 39:23] I have to
+[39:20 - 39:24] print I'll just copy and paste okay if
+[39:23 - 39:27] you are working in cosmology you can
+[39:24 - 39:27] copy and paste
+[39:29 - 39:35] copy paste so this is uh industry
+[39:38 - 39:42] is
+[39:40 - 39:45] is
+[39:42 - 39:48] 2% this one
+[39:45 - 39:48] is
+[39:50 - 39:54] 3% okay then now let's do the third
+[39:52 - 39:57] bullet
+[39:54 - 39:59] point the final amount compute the final
+[39:57 - 40:01] amount with interest we give you the
+[39:59 - 40:03] formula some more okay don't make up
+[40:01 - 40:06] your own formula okay actually I can
+[40:03 - 40:06] just copy this at paste
+[40:06 - 40:12] right so compute the final amount okay
+[40:10 - 40:14] my variable names cannot have a space so
+[40:12 - 40:18] I can just maybe
+[40:14 - 40:19] AMT I cannot hard code to 1,000 Time 1
+[40:18 - 40:24] uh times
+[40:19 - 40:28] 1.03 so I'll put money the money times
+[40:24 - 40:28] the multiplier
+[40:29 - 40:36] to the power of
+[40:33 - 40:38] years so now at this point let me think
+[40:36 - 40:40] okay this is string string but I convert
+[40:38 - 40:44] your to integer already so I have to
+[40:40 - 40:47] convert my money to uh integer or float
+[40:44 - 40:49] okay so it's okay to convert to integer
+[40:47 - 40:52] uh here because usually people don't
+[40:49 - 40:57] deposit send right okay so I can I must
+[40:52 - 40:57] remember to do this money equals integer
+[40:58 - 41:06] okay so this will avoid an error
+[41:03 - 41:08] here okay so now let me double check
+[41:06 - 41:10] integer
+[41:08 - 41:12] times uh float which is defined here
+[41:10 - 41:16] right is defined here multiplier to the
+[41:12 - 41:18] power of uh integer so this wouldn't uh
+[41:16 - 41:21] cause an
+[41:18 - 41:23] error fourth bullet point I must print a
+[41:21 - 41:26] statement the final amount at the end
+[41:23 - 41:30] okay so I can
+[41:26 - 41:33] say c B base
+[41:30 - 41:36] okay Mr we your multiplication should be
+[41:33 - 41:39] AIC should be a esic oh yeah you're
+[41:36 - 41:43] right
+[41:39 - 41:45] thanks so the final amount at the end of
+[41:43 - 41:47] X you all forgot that you must replace
+[41:45 - 41:49] the X with something
+[41:47 - 41:51] right so
+[41:49 - 41:57] plus
+[41:51 - 41:58] yes okay and this is actually a straight
+[41:57 - 42:02] Str
+[41:58 - 42:05] string plus oh no this is a integer
+[42:02 - 42:07] string plus integer your code will bom
+[42:05 - 42:10] okay so you have to Recon convert it to
+[42:07 - 42:14] a string again string plus string Works
+[42:10 - 42:14] string plus integer will not work
+[42:15 - 42:23] okay let me press the enter
+[42:18 - 42:24] here will be dollars nnnn do NN okay I
+[42:23 - 42:27] don't want
+[42:24 - 42:31] this I want to
+[42:27 - 42:34] plus string my amount
+[42:31 - 42:38] okay then my fifth bullet point return
+[42:34 - 42:40] the final amount return
+[42:38 - 42:45] amount I broke it up into bullet points
+[42:40 - 42:46] for you I hope that you understand how
+[42:45 - 42:49] you should write your
+[42:46 - 42:51] code so that you maximize the amount of
+[42:49 - 42:55] marks you get
+[42:51 - 42:58] okay so let's run this and let's run
+[42:55 - 43:00] this we test with 1, and4 years because
+[42:58 - 43:03] it's something you can check against in
+[43:00 - 43:05] your question right so don't test with
+[43:03 - 43:07] anything else yet maybe first time okay
+[43:05 - 43:11] 1,000 four
+[43:07 - 43:14] years okay looks nearly there but I
+[43:11 - 43:17] don't want I don't have my 2dp right so
+[43:14 - 43:22] I have to convert it into a 2dp before I
+[43:17 - 43:27] get the F answer so I have to round my
+[43:22 - 43:29] amount to 2dp here but actually I I need
+[43:27 - 43:32] to return the amount as 2dp right
+[43:29 - 43:34] otherwise I I I shouldn't change it here
+[43:32 - 43:37] I
+[43:34 - 43:41] should update my amount amount equals to
+[43:37 - 43:44] round amount okay so this would be
+[43:41 - 43:46] better so I have I don't have to round
+[43:44 - 43:51] two everywhere I just round to one
+[43:46 - 43:51] time okay let's test it again
+[43:52 - 44:00] 1,004 does it look like exactly what I
+[43:55 - 44:00] want yes okay so this checks
+[44:01 - 44:06] out can you compare your code with mine
+[44:03 - 44:06] and do your Corrections if
+[44:12 - 44:16] necessary okay I'll move on to question
+[44:19 - 44:27] 11 oh yeah one more thing I use this if
+[44:23 - 44:29] else uh statement to initialize the
+[44:27 - 44:31] interest rate okay so you can see how I
+[44:29 - 44:35] did it perhaps in future you want to do
+[44:31 - 44:36] it this way then uh it will reduce a
+[44:35 - 44:38] number of lines of code otherwise you
+[44:36 - 44:41] have to duplicate these two lines of
+[44:38 - 44:44] code inside both your if and else
+[44:41 - 44:44] statements correct or
+[44:46 - 44:50] not you know what I'm talking
+[44:52 - 44:57] about very quiet
+[44:59 - 45:05] yes okay oh yes okay thanks okay uh
+[45:03 - 45:08] let's go on to question 11 so question
+[45:05 - 45:10] 11 talks about writing the program code
+[45:08 - 45:13] for a statement amount number of years
+[45:10 - 45:15] so you have two input arguments amount
+[45:13 - 45:17] and number of years okay to generate the
+[45:15 - 45:19] annual bank statement your function
+[45:17 - 45:21] should print a statement similar to the
+[45:19 - 45:25] following so you should print out all
+[45:21 - 45:27] this is guided you supposed to print out
+[45:25 - 45:29] all this okay
+[45:27 - 45:32] don't uh do something
+[45:29 - 45:34] else okay I'll just show you some common
+[45:32 - 45:38] mistakes for question
+[45:34 - 45:40] 11 so some of you write this kind of
+[45:38 - 45:43] code
+[45:40 - 45:46] so when we ask you to write a function
+[45:43 - 45:48] with input uh parameters amount and
+[45:46 - 45:49] number of years when you run the
+[45:48 - 45:52] function right you will run the function
+[45:49 - 45:54] like this you will tell the function my
+[45:52 - 45:56] input is 1,000 already the number of
+[45:54 - 46:00] years is three already there is no need
+[45:56 - 46:03] to write code to input you understand so
+[46:00 - 46:05] don't don't ask for user input okay the
+[46:03 - 46:09] we didn't say that in the question that
+[46:05 - 46:12] you are to write code for user input if
+[46:09 - 46:14] we did we would have explicitly said so
+[46:12 - 46:17] from the customer to enter the amount
+[46:14 - 46:19] okay in question 10 question 11 we don't
+[46:17 - 46:21] have that so don't write C like this
+[46:19 - 46:23] okay that's one mistake another mistake
+[46:21 - 46:26] is same thing quite repetitive in string
+[46:23 - 46:28] and indal comparison Daniel is a string
+[46:26 - 46:29] two is IND if you made a mistake here
+[46:28 - 46:32] you make a mistake
+[46:29 - 46:34] here uh mistake number three you hard
+[46:32 - 46:36] coding three years without looping some
+[46:34 - 46:38] of you print at the end of year one at
+[46:36 - 46:40] the end of year two at the end of year
+[46:38 - 46:42] three you all did not even do a for Loop
+[46:40 - 46:45] okay so in this case you should do a for
+[46:42 - 46:48] Loop if there are three years you should
+[46:45 - 46:50] print three times you agree or not if
+[46:48 - 46:52] there are seven years you should print
+[46:50 - 46:54] seven times at the end of year 1 2 three
+[46:52 - 46:57] four 5 six seven okay so that's why you
+[46:54 - 46:59] should do a loop so this is important
+[46:57 - 47:00] you must do this okay some of you didn't
+[46:59 - 47:03] do
+[47:00 - 47:05] this um possible mistake after
+[47:03 - 47:08] correction so
+[47:05 - 47:10] sometimes uh in your Loop right you
+[47:08 - 47:13] calculate your
+[47:10 - 47:16] balance but then you notice I is the one
+[47:13 - 47:18] that is changing from 0 1 2 3 4 5 six
+[47:16 - 47:22] right but you
+[47:18 - 47:24] always power the number of year which is
+[47:22 - 47:27] power tree power Tre power three power
+[47:24 - 47:32] tree we are going to print the same
+[47:27 - 47:33] value all the time okay so uh you should
+[47:32 - 47:35] run your code to test it okay so so
+[47:33 - 47:38] let's say I run this code I run
+[47:35 - 47:42] this so
+[47:38 - 47:44] 1,003 there a error Daniel not Define
+[47:42 - 47:48] okay let's call this
+[47:44 - 47:52] Dan okay let's fix some code so if a
+[47:48 - 47:57] integer of Danel and fixing the right
+[47:52 - 47:57] now I just show you why
+[47:59 - 48:04] this code you can't
+[48:01 - 48:07] multiply non integer of type
+[48:04 - 48:12] float so this is line
+[48:07 - 48:14] 13 amount was an A String so this should
+[48:12 - 48:19] be a
+[48:14 - 48:19] integer so now I run this and run
+[48:20 - 48:23] this four errors
+[48:24 - 48:33] right must be string not float at
+[48:28 - 48:33] 95 string the balance
+[48:35 - 48:40] okay
+[48:38 - 48:43] now close
+[48:40 - 48:45] bracket run this and
+[48:43 - 48:48] run I shouldn't even be typing this out
+[48:45 - 48:51] it should be in parameter okay so at the
+[48:48 - 48:54] end of the year one the amount is always
+[48:51 - 48:56] the same okay actually your amount
+[48:54 - 48:58] should grow right year one is one year
+[48:56 - 49:00] interest two year interest three year
+[48:58 - 49:03] interest so I should change this to I
+[49:00 - 49:06] that's how you deop your
+[49:03 - 49:06] code run
+[49:06 - 49:12] this I shouldn't even need to input
+[49:09 - 49:17] because amount and number of
+[49:12 - 49:17] year 10 year should be
+[49:18 - 49:24] defined number of years sorry should be
+[49:28 - 49:32] okay then your number should change as
+[49:29 - 49:36] you increase
+[49:32 - 49:38] okay so if you didn't know that and you
+[49:36 - 49:41] power
+[49:38 - 49:43] the number of
+[49:41 - 49:45] years and you see something like this
+[49:43 - 49:47] then you know your calculation and your
+[49:45 - 49:51] look is wrong okay why are you showing
+[49:47 - 49:55] the same uh n of year value okay it
+[49:51 - 49:57] should change as you iterate so I change
+[49:55 - 50:00] this then youe that at the end of year
+[49:57 - 50:03] one how come I didn't get any interest
+[50:00 - 50:06] right so you are off by one if I range
+[50:03 - 50:09] 10 year Tri years right this will Loop 0
+[50:06 - 50:11] one and two three times in a loop okay
+[50:09 - 50:13] but I don't want 0 one two and two so
+[50:11 - 50:16] maybe you modify this add a one here I
+[50:13 - 50:19] want one two and three so when I is zero
+[50:16 - 50:23] I get a one here when I is one I get a
+[50:19 - 50:28] two here okay so you off by one error
+[50:23 - 50:28] right you get a correct number
+[50:30 - 50:34] okay so you've got to constantly test
+[50:33 - 50:37] your
+[50:34 - 50:41] quote okay so I remove
+[50:37 - 50:42] this and this will be the answer but
+[50:41 - 50:43] it's not really the answer because you
+[50:42 - 50:46] realize
+[50:43 - 50:49] that I'm I'm displaying year one year
+[50:46 - 50:52] one year one right okay so that's not
+[50:49 - 50:56] the correct string I want I want to
+[50:52 - 50:56] print here
+[50:57 - 51:04] uh
+[50:58 - 51:08] plus string of uh I I + one not
+[51:04 - 51:13] I okay then I need to plus the colon
+[51:08 - 51:15] okay so I run this I run this okay now
+[51:13 - 51:19] my year is correct now I need a dollar
+[51:15 - 51:22] sign so I put a dollar sign test test
+[51:19 - 51:24] okay looks better now I have my interest
+[51:22 - 51:25] rate but I don't have amount deposited
+[51:24 - 51:28] in 10 year three years I need to print
+[51:25 - 51:31] these two so at the start even before I
+[51:28 - 51:34] print all this so I got to
+[51:31 - 51:40] print amount
+[51:34 - 51:42] deposited dolls plus string the
+[51:40 - 51:45] am and
+[51:42 - 51:45] print
+[51:47 - 51:52] Dan plus string
+[51:53 - 52:01] the yes plus yes just to match the
+[51:59 - 52:04] question
+[52:01 - 52:07] requirement okay I control enter to run
+[52:04 - 52:08] this and run this okay does it look like
+[52:07 - 52:12] what I have
+[52:08 - 52:15] here correct correct
+[52:12 - 52:17] correct correct okay so whether there's
+[52:15 - 52:21] a space or not we won't analize you but
+[52:17 - 52:21] if you want the space you can put a
+[52:22 - 52:28] PR yeah this will print empty line
+[52:29 - 52:34] for any questions on this I'll just
+[52:31 - 52:34] leave this here for a
+[52:37 - 52:42] while okay otherwise I'll go on to the
+[52:39 - 52:42] last question question
+[52:49 - 52:54] 12 fever flow chart
+[52:59 - 53:03] okay let's run through some common
+[53:01 - 53:06] mistakes that you all make for fever
+[53:03 - 53:09] flow chart okay some of you yes uh some
+[53:06 - 53:11] of you put a true uh question do you
+[53:09 - 53:13] have fever if question equal equal to
+[53:11 - 53:15] true so the mistake is you're comparing
+[53:13 - 53:16] string and buan a string will never be
+[53:15 - 53:20] equal to a
+[53:16 - 53:21] buan okay unless maybe you you put this
+[53:20 - 53:25] true as a string then maybe there's a
+[53:21 - 53:28] chance that it will be equal okay okay
+[53:25 - 53:30] but but a string will never be equal to
+[53:28 - 53:32] mistake number two string with decimal
+[53:30 - 53:35] place does not cast to an integer okay
+[53:32 - 53:38] so if you integer your temperature or
+[53:35 - 53:40] right let's say you he in
+[53:38 - 53:43] 37.8 then
+[53:40 - 53:45] uh when you integer you got okay let's
+[53:43 - 53:48] show you what I mean I run this uh I run
+[53:45 - 53:52] this flock code okay do you have
+[53:48 - 53:54] fever uh yes so if I have fever right it
+[53:52 - 53:56] should be true I should go inside here
+[53:54 - 53:58] right
+[53:56 - 54:01] but it did not print anything
+[53:58 - 54:02] okay so this one should I should change
+[54:01 - 54:06] this
+[54:02 - 54:08] to if question equals to yes right so
+[54:06 - 54:10] that I go into this code okay so you
+[54:08 - 54:12] shouldn't compare string with bu you
+[54:10 - 54:14] should compare string with string then I
+[54:12 - 54:17] guide the person hey you should really
+[54:14 - 54:19] enter why or no you shouldn't you
+[54:17 - 54:20] shouldn't anyhow from otherwise I cannot
+[54:19 - 54:22] understand your
+[54:20 - 54:26] input so I run this do you have fever
+[54:22 - 54:28] yes or no so I can say yes okay then put
+[54:26 - 54:29] a current temperature 38.5 I WR into an
+[54:28 - 54:31] error
+[54:29 - 54:34] because look at this
+[54:31 - 54:36] line why is it complaining about this
+[54:34 - 54:38] line is because you can't integer
+[54:36 - 54:43] something with a decimal place so if I
+[54:38 - 54:48] integer 38.5 right I I I will get error
+[54:43 - 54:48] integer 38 the string sorry the string
+[54:50 - 54:54] fine okay I'll run the error okay you
+[54:53 - 54:56] you can't do that but if you float you
+[54:54 - 55:00] can
+[54:56 - 55:03] if you float you can okay it works so
+[55:00 - 55:05] you should convert this to a float not
+[55:03 - 55:09] int
+[55:05 - 55:11] okay now let's test my code do you have
+[55:09 - 55:13] fever
+[55:11 - 55:16] no hey if I I don't have fever I should
+[55:13 - 55:20] print you can go to school right but I I
+[55:16 - 55:20] didn't do that why is that
+[55:20 - 55:25] so because if it's true then I do this
+[55:22 - 55:29] chunk of code correct but if it's not
+[55:25 - 55:32] true then I I will continue onwards in
+[55:29 - 55:36] the next line which is blank so actually
+[55:32 - 55:36] I need the else here okay
+[55:36 - 55:43] lse I need to print you can go to school
+[55:41 - 55:45] okay some of you left this up some of
+[55:43 - 55:48] you left this up okay so missing
+[55:45 - 55:48] implementation this your
+[55:51 - 55:58] mistake okay so if I if I indent my code
+[55:55 - 56:00] properly then this is the true case if
+[55:58 - 56:02] true I'll do all this code if it's false
+[56:00 - 56:04] I'll do this code okay make sure that
+[56:02 - 56:06] you write your code clearly so now I
+[56:04 - 56:08] test it control enter do you have fever
+[56:06 - 56:11] no I should still print something okay
+[56:08 - 56:13] so you must test it I tested the no it
+[56:11 - 56:15] works really okay now I'm that's a yes
+[56:13 - 56:20] so after I input temperature I convert
+[56:15 - 56:22] it to a float right yes 38.5 okay
+[56:20 - 56:26] perform at test if your test result
+[56:22 - 56:28] positive or positive yes
+[56:26 - 56:32] stay at home for two
+[56:28 - 56:33] weeks okay so now let's run the I test
+[56:32 - 56:35] it
+[56:33 - 56:40] again yes inut temperature
+[56:35 - 56:45] 38.5 my art test is a result positive
+[56:40 - 56:47] no if my test is not positive I
+[56:45 - 56:48] should I should see a doctor for
+[56:47 - 56:51] medication right based on this part of
+[56:48 - 56:55] the flowchart right
+[56:51 - 56:57] so my if statement here is not working
+[56:55 - 57:00] it keeps on telling me to to stay at
+[56:57 - 57:01] home for two weeks so this is your third
+[57:00 - 57:04] mistake wrong logic please use brackets
+[57:01 - 57:06] to clarify so let's put a bracket here
+[57:04 - 57:09] you realize that it's easier to see your
+[57:06 - 57:11] logic if you put
+[57:09 - 57:14] brackets
+[57:11 - 57:17] okay if this or
+[57:14 - 57:19] this do you know that a non- anti string
+[57:17 - 57:22] always evaluates to
+[57:19 - 57:24] true so this will always be true I
+[57:22 - 57:27] always do this I will never do this okay
+[57:24 - 57:29] so I've got to the code here so if
+[57:27 - 57:31] result equals to y or result equals to Y
+[57:29 - 57:36] okay capital
+[57:31 - 57:41] Y then it will fix this uh fix the logic
+[57:36 - 57:44] so I run this do you have fever uh yes
+[57:41 - 57:46] 38.5 but what if I my test is negative I
+[57:44 - 57:49] should go and see a doctor right okay
+[57:46 - 57:52] now it's correct so it really went here
+[57:49 - 57:52] to see a doctor
+[57:53 - 57:59] foration okay so what I did was I I
+[57:57 - 58:02] created some common mistakes you make I
+[57:59 - 58:05] corrected it okay I hope this helps this
+[58:02 - 58:06] is the solution that a full Mark
+[58:05 - 58:11] solution okay I'll just leave it here
+[58:06 - 58:16] for you to refer to any questions Mr wi
+[58:11 - 58:20] can you try to run uh integer int
+[58:16 - 58:22] 38.5 uh outside yes integer and integer
+[58:20 - 58:26] no uh no no it's not a string integer
+[58:22 - 58:28] the 38.5 oh you can integer the uh 30.5
+[58:26 - 58:30] it would't have a problem it will not
+[58:28 - 58:32] give a problem but it will give a value
+[58:30 - 58:35] that is 38 so you must be careful with
+[58:32 - 58:37] that so uh when someone give you a float
+[58:35 - 58:41] and you convert that into an integer it
+[58:37 - 58:41] will be routed down
+[58:44 - 58:51] okay okay uh that's it if you have any
+[58:48 - 58:55] question please ask uh if not I
+[58:51 - 58:56] think we can end this session okay so uh
+[58:55 - 59:00] when uh the video
+[58:56 - 59:02] uh available I will attach it to uh the
+[59:00 - 59:05] I'll attach it in our cosmology uh
+[59:02 - 59:08] announcement page and also the reattempt
+[59:05 - 59:11] so that uh in future you can refer to it
+[59:08 - 59:14] uh if you if you are revising on uh this
+[59:11 - 59:16] uh paper okay uh if not uh that we are
+[59:14 - 59:19] all good remember to turn on your mic to
+[59:16 - 59:21] thank the teacher for today's lesson and
+[59:19 - 59:26] say goodbye to your
+[59:21 - 59:26] friends yeah you may do that now
+[59:26 - 59:32] byebye bye bye everyone thank you bye
+[59:28 - 59:37] bye byebye thank
+[59:32 - 59:37] you bye bye bye
+[59:41 - 59:46] byebye byebye byebye byebye

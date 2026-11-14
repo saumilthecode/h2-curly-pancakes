@@ -1,0 +1,190 @@
+Title: LT10a Data Abstraction Part 4 - read from csv file
+LT: LT 10a Data Abstraction (1) - Abstract Data Type ADT
+Linked label: Part 4: Example 3 - Rational Number ADT
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=neDx6Jn-5jU
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] okay uh for question 10 we are
+[00:03 - 00:08] transferring data from a csv file
+[00:06 - 00:11] into a tuple
+[00:08 - 00:13] now the file is given to you
+[00:11 - 00:15] abc
+[00:13 - 00:17] is a csv file
+[00:15 - 00:19] now when you open up a folder you may
+[00:17 - 00:20] not see the extension
+[00:19 - 00:22] you need to go to view
+[00:20 - 00:23] and then
+[00:22 - 00:25] select
+[00:23 - 00:28] file name extension
+[00:25 - 00:32] so in this way you can see that the file
+[00:28 - 00:33] given to you is abc dot csv file csv
+[00:32 - 00:35] stands for comma
+[00:33 - 00:37] delimited
+[00:35 - 00:39] uh basically it uses comma to separate a
+[00:37 - 00:41] different field
+[00:39 - 00:44] uh if you were to launch this file
+[00:41 - 00:48] usually a laptop or the computer
+[00:44 - 00:50] will open with the excel
+[00:48 - 00:53] so it looks in a table form where you
+[00:50 - 00:54] have three fields the name general and
+[00:53 - 00:57] the score
+[00:54 - 00:59] but essentially a csv file is also a
+[00:57 - 01:01] text file
+[00:59 - 01:02] which means that you can use
+[01:01 - 01:04] the
+[01:02 - 01:07] open with
+[01:04 - 01:08] a notepad you can use a notepad to open
+[01:07 - 01:11] and see what's the
+[01:08 - 01:14] what's the data inside the file
+[01:11 - 01:17] so a text file will show that it uses
+[01:14 - 01:18] the comma to separate the different
+[01:17 - 01:19] field
+[01:18 - 01:23] now in this
+[01:19 - 01:24] abc.csv file there is a header telling
+[01:23 - 01:27] you that the first view is the name
+[01:24 - 01:28] second field is the general
+[01:27 - 01:32] third view is the score
+[01:28 - 01:34] and then followed by a few lines of data
+[01:32 - 01:37] of our various students
+[01:34 - 01:41] okay now let's go to the coding part to
+[01:37 - 01:45] read from this csv file
+[01:41 - 01:45] i will use python idle to
+[01:45 - 01:49] read the file
+[01:47 - 01:50] okay
+[01:49 - 01:52] from
+[01:50 - 01:54] csv
+[01:52 - 01:57] import asterisk so we are going to use
+[01:54 - 01:59] the python build in csv module
+[01:57 - 02:02] to read the file
+[01:59 - 02:05] let's say i define a function
+[02:02 - 02:05] called read csv
+[02:06 - 02:13] and then i'm allowed to open any file
+[02:10 - 02:13] okay any csv file
+[02:13 - 02:17] all i need to do is to input the file
+[02:15 - 02:20] name
+[02:17 - 02:22] let's call let's assign handler to it
+[02:20 - 02:23] csv file equal to
+[02:22 - 02:25] open
+[02:23 - 02:28] open which file
+[02:25 - 02:29] whatever the file name csv
+[02:28 - 02:32] file name
+[02:29 - 02:33] and once you assign a handler to this
+[02:32 - 02:36] file
+[02:33 - 02:39] you can actually look into the contents
+[02:36 - 02:39] using the reader
+[02:45 - 02:50] that will help us look into the content
+[02:48 - 02:52] now at this point i just want to print
+[02:50 - 02:53] and see what kind of contents are we
+[02:52 - 02:55] getting
+[02:53 - 02:58] okay
+[02:55 - 03:01] so let's run this uh
+[02:58 - 03:06] function read csv
+[03:01 - 03:06] uh to open our file abc.csv
+[03:08 - 03:12] okay
+[03:09 - 03:12] let's run
+[03:12 - 03:18] okay you realize that this is actually
+[03:14 - 03:21] the address of all the content okay so
+[03:18 - 03:23] we have successfully uh sort of logged
+[03:21 - 03:25] into the file itself just that we are
+[03:23 - 03:28] not able to see the content
+[03:25 - 03:30] okay now the contents are comprised of
+[03:28 - 03:32] various rows
+[03:30 - 03:34] so let's use iteration for row
+[03:32 - 03:39] in content
+[03:34 - 03:39] and let's try to print each of the row
+[03:42 - 03:46] and then we run this program
+[03:48 - 03:53] now you can see that they are all in
+[03:50 - 03:55] given in list form and each of the list
+[03:53 - 03:57] there are
+[03:55 - 03:58] the three views
+[03:57 - 04:00] okay
+[03:58 - 04:03] so first thing first when we read data
+[04:00 - 04:06] from the csv file we would not want to
+[04:03 - 04:07] have the header we just want the data so
+[04:06 - 04:09] what do we do
+[04:07 - 04:10] uh we can make use of this thing called
+[04:09 - 04:12] nyx
+[04:10 - 04:16] okay the next method
+[04:12 - 04:16] next content
+[04:17 - 04:21] now basically this will do what you will
+[04:19 - 04:22] do is that you will skip over the first
+[04:21 - 04:24] row
+[04:22 - 04:26] uh the header and then read the data
+[04:24 - 04:29] from the subsequent row i will now print
+[04:26 - 04:29] the rows of the data
+[04:32 - 04:37] you see
+[04:33 - 04:37] you no longer retrieve the header row
+[04:38 - 04:42] now uh what what you're given now this
+[04:40 - 04:45] is in list form
+[04:42 - 04:47] and the question require you to put this
+[04:45 - 04:48] into a tuple
+[04:47 - 04:50] so
+[04:48 - 04:54] you will need to initialize a empty
+[04:50 - 04:58] tuple let me call this the rows
+[04:54 - 04:58] equal to empty tuple
+[04:58 - 05:02] okay we can uh
+[05:00 - 05:05] easily convert each of these lists
+[05:02 - 05:08] into a typo by using
+[05:05 - 05:11] typo methods
+[05:08 - 05:11] and let's try to print
+[05:13 - 05:18] so instead of getting them at least now
+[05:15 - 05:20] you're getting them as taboo
+[05:18 - 05:22] okay so next what we want to do is that
+[05:20 - 05:25] we want to add all this tuple
+[05:22 - 05:28] into the
+[05:25 - 05:29] the rows the empty rows the empty tuples
+[05:28 - 05:32] that we have created
+[05:29 - 05:32] okay
+[05:34 - 05:37] so rows
+[05:35 - 05:38] equal to rows
+[05:37 - 05:41] plus
+[05:38 - 05:41] the tuple
+[05:46 - 05:53] i will print the rows
+[05:48 - 05:53] after adding all the tuples
+[05:54 - 05:58] and then you see what's the outcome okay
+[06:04 - 06:09] now what you will see is a single tuple
+[06:07 - 06:12] uh three fields
+[06:09 - 06:15] for one one student another three field
+[06:12 - 06:18] for another student but they are all are
+[06:15 - 06:21] integrated into a single tuple
+[06:18 - 06:24] whereas we want them to be uh separately
+[06:21 - 06:27] uh uh each of the data to be contained
+[06:24 - 06:29] within one tuple so basically we want
+[06:27 - 06:32] couple of tuples
+[06:29 - 06:33] okay so this way of adding the couple of
+[06:32 - 06:35] row
+[06:33 - 06:36] will not give you that
+[06:35 - 06:38] output
+[06:36 - 06:41] but instead you have to convert this
+[06:38 - 06:42] into a tuple
+[06:41 - 06:44] of single element
+[06:42 - 06:47] and that's why you use a comma
+[06:44 - 06:50] to indicate that this is a typo
+[06:47 - 06:53] consisting of one element now take a
+[06:50 - 06:53] look and see what's the output now
+[06:55 - 06:58] there you go
+[06:56 - 07:01] you have
+[06:58 - 07:03] a tuple containing tuple of a student
+[07:01 - 07:05] type of another student and top of the
+[07:03 - 07:07] third student and so on so forth so you
+[07:05 - 07:11] get a couple of tuples
+[07:07 - 07:11] okay and once you've done that
+[07:11 - 07:19] we would like to outputs the rows
+[07:16 - 07:19] so let's return
+[07:20 - 07:23] rows
+[07:21 - 07:26] before you return rows you must always
+[07:23 - 07:28] remember to close the file that you have
+[07:26 - 07:30] opened and once the file that is open
+[07:28 - 07:34] csv file
+[07:30 - 07:36] dot close okay we must close this file
+[07:34 - 07:36] okay
+[07:41 - 07:46] so we assign
+[07:42 - 07:49] the csv or the abc.csv file after
+[07:46 - 07:52] reading it it will output as a tuple and
+[07:49 - 07:57] let me call this as a table
+[07:52 - 07:57] and then i will print the table
+[08:02 - 08:06] okay there you go

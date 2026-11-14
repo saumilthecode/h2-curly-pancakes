@@ -1,0 +1,151 @@
+Title: Filius   Part 1b
+Assessment(s): C3a Hands-on with Filius Network Simulator
+Linked label(s): Part 1b : Network devices - Switch and Router
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=dnvR3yUqmxQ
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:02 - 00:07] hi welcome back
+[00:04 - 00:08] in this part 1b
+[00:07 - 00:12] we will be talking about the network
+[00:08 - 00:12] device i call the switch
+[00:14 - 00:19] a switch is a layer two network devices
+[00:17 - 00:21] that connects
+[00:19 - 00:24] and allow a group of device to
+[00:21 - 00:28] communicate using their mac address mac
+[00:24 - 00:31] stand for media access control
+[00:28 - 00:35] now you should watch this youtube video
+[00:31 - 00:36] to understand more about what is a mac
+[00:35 - 00:40] address
+[00:36 - 00:42] a mac address essentially is a 48-bit
+[00:40 - 00:44] hexa decimal
+[00:42 - 00:49] unique mac address for every single
+[00:44 - 00:51] device that is connected in the network
+[00:49 - 00:52] now how does the switch know who to
+[00:51 - 00:55] connect to who
+[00:52 - 00:58] the switch maintains a table of mac
+[00:55 - 01:00] address of the devices that's connected
+[00:58 - 01:05] to its ports
+[01:00 - 01:09] we have 4 8 16 24 or 48 ports
+[01:05 - 01:12] copper ethernet or the optical fiber
+[01:09 - 01:12] switches
+[01:13 - 01:18] you also need to learn about how to
+[01:16 - 01:20] connect a group of devices
+[01:18 - 01:21] the way we connect it is known as the
+[01:20 - 01:23] topology
+[01:21 - 01:26] now it is important for you to watch
+[01:23 - 01:28] this video to understand the seven
+[01:26 - 01:30] different lan local area network
+[01:28 - 01:32] topologies
+[01:30 - 01:35] the star topology is the most commonly
+[01:32 - 01:38] used in a network where each nodes the
+[01:35 - 01:41] network interface card is connected
+[01:38 - 01:41] directly to a network switch
+[01:42 - 01:46] in our hands-on tool we will try to
+[01:44 - 01:49] construct
+[01:46 - 01:51] a local area network
+[01:49 - 01:56] we will use a switch
+[01:51 - 01:56] connecting the server and two clients
+[02:02 - 02:08] now in a switch itself there is a source
+[02:05 - 02:11] address cable that is maintained so that
+[02:08 - 02:14] the switch knows which are the
+[02:11 - 02:16] network devices connected to its ports
+[02:14 - 02:19] you should watch this
+[02:16 - 02:22] youtube video to understand how the
+[02:19 - 02:25] source address table is updated
+[02:22 - 02:25] dynamically
+[02:28 - 02:34] after installing the server and the
+[02:31 - 02:37] client in a local area network
+[02:34 - 02:39] now how do we know that this client is
+[02:37 - 02:43] able to connect to the server
+[02:39 - 02:44] we need to install the echo server
+[02:43 - 02:47] in the server
+[02:44 - 02:48] so that when the client try to connect
+[02:47 - 02:50] to the server
+[02:48 - 02:53] it will echo back
+[02:50 - 02:56] to simulate that it receive the message
+[02:53 - 02:56] from the client
+[02:58 - 03:03] you should also look into these
+[03:00 - 03:06] advantages and the disadvantages of this
+[03:03 - 03:08] kind of server client network
+[03:06 - 03:11] now when you put the server and the
+[03:08 - 03:14] client in the network all the files can
+[03:11 - 03:16] be stored in a central location
+[03:14 - 03:19] or the network peripherals for example
+[03:16 - 03:22] your scanners your printers
+[03:19 - 03:24] can be controlled centrally
+[03:22 - 03:26] you can also backup all the
+[03:24 - 03:28] uh files
+[03:26 - 03:30] in the server centrally
+[03:28 - 03:33] you can also maintain the security by
+[03:30 - 03:34] installing antivirus or firewall
+[03:33 - 03:38] centrally
+[03:34 - 03:41] a user can access all the shared data
+[03:38 - 03:43] which is located in the file server
+[03:41 - 03:46] now the disadvantage
+[03:43 - 03:49] you will need to install a special
+[03:46 - 03:52] network operating system
+[03:49 - 03:54] the server is also expensive it is not
+[03:52 - 03:57] an ordinary computer
+[03:54 - 04:00] you also need to hire specialized staff
+[03:57 - 04:03] to maintain the network
+[04:00 - 04:05] it will be disruptive if any parts of
+[04:03 - 04:05] the network fail
+[04:08 - 04:13] hi welcome back
+[04:10 - 04:15] in this part 1b
+[04:13 - 04:19] we'll be talking about another network
+[04:15 - 04:19] device called the router
+[04:19 - 04:26] a router is a layer 3 network device
+[04:23 - 04:29] layer 3 remains that it uses the
+[04:26 - 04:32] internet protocol the ip addresses to
+[04:29 - 04:35] communicate between the
+[04:32 - 04:38] devices in the network
+[04:35 - 04:39] a router essentially is a gateway of the
+[04:38 - 04:43] network
+[04:39 - 04:46] it maintains a routing table of known ip
+[04:43 - 04:49] addresses and also all the possible path
+[04:46 - 04:50] to connect between the devices in the
+[04:49 - 04:52] network
+[04:50 - 04:55] down here when we talk about the
+[04:52 - 04:57] router we are talking about a single
+[04:55 - 04:59] isolated
+[04:57 - 05:02] routing device
+[04:59 - 05:04] it is not the hybrid router that we see
+[05:02 - 05:07] commonly at home
+[05:04 - 05:09] the one that we have at home is a hybrid
+[05:07 - 05:10] router which includes a four ports
+[05:09 - 05:15] switch
+[05:10 - 05:17] and a wi-fi access point
+[05:15 - 05:20] in the industry where there is a higher
+[05:17 - 05:22] demands in the network
+[05:20 - 05:25] they will need to employ
+[05:22 - 05:26] a enterprise router to manage the
+[05:25 - 05:28] network
+[05:26 - 05:31] communications
+[05:28 - 05:33] it is important for you to watch these
+[05:31 - 05:34] youtube videos on the differences
+[05:33 - 05:38] between hub
+[05:34 - 05:38] switch and router
+[05:43 - 05:50] for hands-on tree we will try to connect
+[05:47 - 05:52] two local aerial networks
+[05:50 - 05:55] in your previous hands-on you have
+[05:52 - 05:58] already learned how to create a network
+[05:55 - 06:00] uh land and we call it lan one using a
+[05:58 - 06:03] single switch
+[06:00 - 06:06] we can also connect another lens
+[06:03 - 06:08] called land2 using a switch now can we
+[06:06 - 06:12] just connect the two switches
+[06:08 - 06:15] and allow the the client to communicate
+[06:12 - 06:17] to each other
+[06:15 - 06:19] when you try to check for collectivity
+[06:17 - 06:23] by pimping each other
+[06:19 - 06:26] you will understand that it doesn't work
+[06:23 - 06:29] so what do we need we need a router we
+[06:26 - 06:32] need a router to connect the two network
+[06:29 - 06:32] together
+[06:32 - 06:38] be careful to observe the configuration
+[06:36 - 06:42] and the steps so that you can get a
+[06:38 - 06:42] successful connection

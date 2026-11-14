@@ -1,0 +1,110 @@
+Title: How a switch builds Source Address Table dynamically?
+Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
+Linked label(s): Embedded slide video
+Uploader: Sunny Classroom
+YouTube: https://www.youtube.com/watch?v=DukuFSZH9Qw
+Source: YouTube captions
+Format: Full timestamped transcript
+
+TRANSCRIPT
+==========
+[00:00 - 00:07] hello and this is sunny welcome back
+[00:04 - 00:11] today my topic is how a switch
+[00:07 - 00:15] dynamically builds sauce addressed table
+[00:11 - 00:18] in this video I will talk about a
+[00:15 - 00:21] general layer 2 switch not including
+[00:18 - 00:24] layer 3 or multi-layer switch here are
+[00:21 - 00:28] some common features of the layer 2
+[00:24 - 00:32] switch 1 a switch separates clearing
+[00:28 - 00:37] dummy when node a sends a frame to be
+[00:32 - 00:40] only is receiver B can get the frame we
+[00:37 - 00:44] notice it talks to D only the receiver D
+[00:40 - 00:47] can hear communications on a local
+[00:44 - 00:50] switched Network become one-to-one
+[00:47 - 00:53] conversations and a switch it gives
+[00:50 - 00:59] every conversation of full bandwidth of
+[00:53 - 01:02] the network to a switch creates a
+[00:59 - 01:06] broadcast Adame a broadcast domain is a
+[01:02 - 01:11] switched local area network specifically
+[01:06 - 01:15] any node using 12 FS as a destination
+[01:11 - 01:19] MAC address is a broadcasting any other
+[01:15 - 01:23] nodes in the same broadcast domain can
+[01:19 - 01:26] hear the message 3 a switch forwards of
+[01:23 - 01:30] frames based on MAC addresses
+[01:26 - 01:32] specifically based on source address
+[01:30 - 01:36] table
+[01:32 - 01:39] what is a source address table source
+[01:36 - 01:43] address table of sometimes called MAC
+[01:39 - 01:45] address table is used on switches to
+[01:43 - 01:50] determine where to forward the traffic
+[01:45 - 01:55] on a switched LAN we simply call it set
+[01:50 - 01:58] table how does a switch built and expand
+[01:55 - 02:02] is a set table dynamically
+[01:58 - 02:05] when a switch is first turn on the
+[02:02 - 02:09] switch copies the source MAC addresses
+[02:05 - 02:12] and builds a table of all connected
+[02:09 - 02:17] devices and their associated ports this
+[02:12 - 02:19] table is a source address table when
+[02:17 - 02:23] computer age sends a frame to computer
+[02:19 - 02:26] say the switch would forward the frame
+[02:23 - 02:30] to port 4 where the computer say is
+[02:26 - 02:33] attached the same is true when computer
+[02:30 - 02:38] D sends a frame to computer B the switch
+[02:33 - 02:41] would forward the frame to port 3 let's
+[02:38 - 02:41] see how the switch expands the set T
+[02:41 - 02:46] board
+[02:41 - 02:50] dynamically as a new devices are added
+[02:46 - 02:54] suppose two new computers E and F are
+[02:50 - 02:55] plugged into port 8 and port 9
+[02:54 - 02:59] respectively
+[02:55 - 03:03] notice that SATA table does not a change
+[02:59 - 03:06] the reason is that a switch learns MAC
+[03:03 - 03:10] address of a newly connected device only
+[03:06 - 03:14] after the switch receives a frame from
+[03:10 - 03:18] that new device in other words the
+[03:14 - 03:21] switch does not update is a set table
+[03:18 - 03:25] until it receives a frame from a new
+[03:21 - 03:28] device let us see an example suppose the
+[03:25 - 03:31] computer East sends a frame to computer
+[03:28 - 03:34] F when the switch receives the frame it
+[03:31 - 03:38] ejects source MAC address first the
+[03:34 - 03:42] switch does not say computers is method
+[03:38 - 03:45] s in a set table then the switch updates
+[03:42 - 03:50] the table by adding computer East MAC
+[03:45 - 03:53] address and associated port 8 then the
+[03:50 - 03:57] switch checks the destination MAC
+[03:53 - 04:01] address which is FS MAC address and
+[03:57 - 04:05] again the switch does notice it FS MAC
+[04:01 - 04:09] address in the table and it has no idea
+[04:05 - 04:11] of which port is connected to the
+[04:09 - 04:15] computer F
+[04:11 - 04:18] how to find computer f the best method
+[04:15 - 04:21] is a broadcasting the sweetie
+[04:18 - 04:24] broadcasted the frame to all other ports
+[04:21 - 04:27] except a port eight because the
+[04:24 - 04:31] broadcast cannot go back to the source
+[04:27 - 04:35] when computer F gets the broadcast a
+[04:31 - 04:38] message it replies normal ease when the
+[04:35 - 04:41] switch gets the frame it checks the
+[04:38 - 04:44] source MAC address again and it does not
+[04:41 - 04:48] see it in the SATA table then the switch
+[04:44 - 04:51] updates the table by adding computers F
+[04:48 - 04:55] the marriages and is associated to port
+[04:51 - 04:59] nine in this way the switch learns MAC
+[04:55 - 05:03] address and is associated port of every
+[04:59 - 05:06] transmitting device with a set table at
+[05:03 - 05:09] hand a switch can improve is a switching
+[05:06 - 05:12] performance at a network speed in
+[05:09 - 05:15] general in next several videos I will
+[05:12 - 05:19] talk about some other functions of layer
+[05:15 - 05:23] two and multi-layer switches such as
+[05:19 - 05:27] spanning tree protocol port mirroring
+[05:23 - 05:32] Villas VLAN trunking protocol and some
+[05:27 - 05:35] other related topics please stay tuned I
+[05:32 - 05:39] hope this video is helpful if you want
+[05:35 - 05:41] to learn networks systematically please
+[05:39 - 05:45] check out my playlists they are
+[05:41 - 05:47] organized by topics thank you very much
+[05:45 - 05:50] and see you next time
+[05:47 - 05:52] [Music]
+[05:50 - 05:52] you

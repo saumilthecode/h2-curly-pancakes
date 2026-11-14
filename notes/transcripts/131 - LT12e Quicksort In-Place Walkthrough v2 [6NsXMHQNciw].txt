@@ -1,0 +1,408 @@
+Title: LT12e Quicksort In-Place Walkthrough v2
+Assessment(s): Released Coursemology video catalog - LT12e Quicksort - Walkthrough in-place algorithm
+Linked label(s): LT12e Quicksort - Walkthrough in-place algorithm
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=6NsXMHQNciw
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24769
+Published course start: 2026-09-01T08:15:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:04] Okay, we will be going through the quick
+[00:01 - 00:06] sort in place algorithm.
+[00:04 - 00:08] Now, in order to do so, we will be going
+[00:06 - 00:11] through three core scales and then walk
+[00:08 - 00:13] through the step one, two, and three for
+[00:11 - 00:16] the whole algorithm.
+[00:13 - 00:18] Now, just a recap, a quick sort, we will
+[00:16 - 00:20] use the last element as our pivot so
+[00:18 - 00:23] that we can partition the array into two
+[00:20 - 00:26] halves, the left and the right.
+[00:23 - 00:27] Now, the left half will contain all the
+[00:26 - 00:30] elements with value lesser than the
+[00:27 - 00:32] pivot and the right half will contain
+[00:30 - 00:35] all the elements with values greater
+[00:32 - 00:36] than or equal to the pivot.
+[00:35 - 00:38] Then, we will repeatedly call the
+[00:36 - 00:40] partition, partition is a function,
+[00:38 - 00:42] repeatedly call this partition
+[00:40 - 00:45] recursively until it contains only one
+[00:42 - 00:48] or no elements, then the result will be
+[00:45 - 00:50] a sorted array. Let's go through our
+[00:48 - 00:52] core scale number one, that is swapping
+[00:50 - 00:54] two elements in a list.
+[00:52 - 00:56] Now, traditionally in other programming
+[00:54 - 00:59] language, we will have to make use of a
+[00:56 - 01:01] temporary variable to store the value of
+[00:59 - 01:05] one of the element in the array and then
+[01:01 - 01:07] assign the index three element to index
+[01:05 - 01:09] one and then assign back the temporary
+[01:07 - 01:11] variable to the index three.
+[01:09 - 01:13] But, in Python, we can actually do the
+[01:11 - 01:16] direct assignment by exchanging the
+[01:13 - 01:17] value of this element in index one and
+[01:16 - 01:19] index three.
+[01:17 - 01:22] And this will do the job. So, you can
+[01:19 - 01:24] see that the index one, which is a three
+[01:22 - 01:26] and index three is a two, three and two,
+[01:24 - 01:28] will swap its position.
+[01:26 - 01:30] The three and the two has indeed swapped
+[01:28 - 01:33] its position. So, that is our core scale
+[01:30 - 01:34] zero. To execute quick sort sorting
+[01:33 - 01:37] algorithm, we need to define some
+[01:34 - 01:39] variables, the sequence, of course, the
+[01:37 - 01:42] array itself and then the start. The
+[01:39 - 01:44] start will always form the zero index
+[01:42 - 01:47] and the end, that will be the last
+[01:44 - 01:49] element. So, that will be the length of
+[01:47 - 01:52] the sequence minus one. We'll be using
+[01:49 - 01:54] the last element as our pivot. So, hence
+[01:52 - 01:56] the value of the pivot will be the
+[01:54 - 01:58] sequence at this end.
+[01:56 - 02:01] The low index, we will start from the
+[01:58 - 02:03] start, and then the high index, we will
+[02:01 - 02:05] start from the right-hand side,
+[02:03 - 02:08] excluding the pivot itself. So, that
+[02:05 - 02:10] will be the end minus one.
+[02:08 - 02:12] We have defined the variables.
+[02:10 - 02:14] The first important core scale is to be
+[02:12 - 02:17] able to move the low index starting from
+[02:14 - 02:19] the zero towards the right.
+[02:17 - 02:21] That means that we want to have the low
+[02:19 - 02:23] equal to low plus one, and that will
+[02:21 - 02:25] move it towards
+[02:23 - 02:28] the right. And when do we execute that?
+[02:25 - 02:31] We will do so when the value at all
+[02:28 - 02:33] these indices are actually smaller than
+[02:31 - 02:35] pivot. So, the moment it comes across
+[02:33 - 02:36] something that is bigger or equal than
+[02:35 - 02:39] the pivot,
+[02:36 - 02:41] it will stop. So, take a look starting
+[02:39 - 02:45] from the left.
+[02:41 - 02:47] We have the sequence 1 3 7 2 8 9 0 6 4
+[02:45 - 02:49] 5. Starting from the left, which is a
+[02:47 - 02:52] zero, the pivot is five, so the next
+[02:49 - 02:54] will be a three and seven.
+[02:52 - 02:56] Seven is bigger than the pivot, so
+[02:54 - 02:57] that's where it stops. So, the low index
+[02:56 - 03:00] will be two.
+[02:57 - 03:02] Similarly, we also want to move the high
+[03:00 - 03:05] index from the right-hand side towards
+[03:02 - 03:07] the left. And in order to move the high
+[03:05 - 03:10] index towards the left, high will have
+[03:07 - 03:13] to be high minus one. And when do we
+[03:10 - 03:15] stop? We stop until when we see a value
+[03:13 - 03:17] at the high index to be bigger or equal
+[03:15 - 03:19] to the pivot.
+[03:17 - 03:21] Let's run. Starting from the right,
+[03:19 - 03:24] excluding the pivot, we start from the
+[03:21 - 03:25] value four, and four is indeed smaller
+[03:24 - 03:27] than pivot value.
+[03:25 - 03:29] So, the high value will be at the index
+[03:27 - 03:31] position eight.
+[03:29 - 03:33] Now, once we have done that, we want to
+[03:31 - 03:36] be able to swap the two elements, the
+[03:33 - 03:37] low and the high element. And how do we
+[03:36 - 03:39] do that?
+[03:37 - 03:42] Sequence the low, sequence the high, and
+[03:39 - 03:44] we do that by direct assignment. So, the
+[03:42 - 03:46] low will now become the high, and the
+[03:44 - 03:49] high will become the low.
+[03:46 - 03:50] Okay, I'm going to run the code.
+[03:49 - 03:53] So, before swapping, what we have is the
+[03:50 - 03:56] low index. Low index is a value seven
+[03:53 - 03:58] and then the high index is value four
+[03:56 - 04:01] and after swapping the value seven and
+[03:58 - 04:03] the value four exchange position.
+[04:01 - 04:05] So for core skill number one
+[04:03 - 04:08] we define all the variables and then we
+[04:05 - 04:11] move the low index starting from zero
+[04:08 - 04:14] towards the right and we move the high
+[04:11 - 04:16] index starting from the right. Hand side
+[04:14 - 04:18] towards the left and then we swap the
+[04:16 - 04:21] two elements of low and high and then
+[04:18 - 04:23] after the swapping let's take a look.
+[04:21 - 04:25] So before swapping we have the seven and
+[04:23 - 04:28] the four and after swapping the seven
+[04:25 - 04:30] and the four exchange place. Okay, let's
+[04:28 - 04:33] copy our code from the core skill number
+[04:30 - 04:34] one and paste it over here.
+[04:33 - 04:36] Now what we want to do now is to
+[04:34 - 04:39] repeatedly move the low and the high
+[04:36 - 04:41] index for the condition where low is
+[04:39 - 04:43] less than or equal to high.
+[04:41 - 04:45] We will put a while loop here
+[04:43 - 04:48] after defining the variables while low
+[04:45 - 04:50] is less than or equal to high and we
+[04:48 - 04:53] want to repeat the following code for
+[04:50 - 04:55] the condition where low is less than
+[04:53 - 04:57] or equal to high. Now in order to shift
+[04:55 - 04:59] we also need to check for the condition
+[04:57 - 05:00] that low remains smaller or equal to
+[04:59 - 05:02] high
+[05:00 - 05:05] and now you must remember to include
+[05:02 - 05:07] this condition before checking the value
+[05:05 - 05:10] whether it is smaller than the pivot or
+[05:07 - 05:12] not. Otherwise, check for this condition
+[05:10 - 05:14] before you check for the value of the
+[05:12 - 05:16] high index
+[05:14 - 05:18] element with the pivot.
+[05:16 - 05:20] Before you do the swap we will also need
+[05:18 - 05:21] to check that if low is less than or
+[05:20 - 05:23] equal
+[05:21 - 05:26] to the high index, okay? And then we do
+[05:23 - 05:29] the swap. Let's run the code.
+[05:26 - 05:31] The low index is at 5012345
+[05:29 - 05:33] and that's the value nine.
+[05:31 - 05:35] Now bear in mind that our pivot is
+[05:33 - 05:37] actually five at the end, the last
+[05:35 - 05:41] element. So you take a look at from the
+[05:37 - 05:42] left the left from zero index to four,
+[05:41 - 05:44] these are all the values that are
+[05:42 - 05:45] smaller than the pivot
+[05:44 - 05:48] and the remaining values they're
+[05:45 - 05:49] actually larger than the pivot.
+[05:48 - 05:52] So, by right, the pivot should stand in
+[05:49 - 05:54] between the zero and the nine.
+[05:52 - 05:56] Okay? So, now we will move on to swap
+[05:54 - 05:57] the position of the pivot and the low
+[05:56 - 05:58] index.
+[05:57 - 06:00] Okay?
+[05:58 - 06:03] Let's copy the code, paste it over here
+[06:00 - 06:05] for our core skill tree. Now, after
+[06:03 - 06:08] iterating through, now we are going to
+[06:05 - 06:10] swap the low and the pivot. Okay? The
+[06:08 - 06:11] value of the element at the low and the
+[06:10 - 06:13] pivot.
+[06:11 - 06:14] The low and the pivot, pivot is at the
+[06:13 - 06:15] end.
+[06:14 - 06:17] And then now the low will become the
+[06:15 - 06:19] end.
+[06:17 - 06:21] And the end will become the low.
+[06:19 - 06:23] Let's run our code.
+[06:21 - 06:25] Okay, you can see that now the pivot is
+[06:23 - 06:27] actually at index five. So, this is the
+[06:25 - 06:29] element. And everything that is from the
+[06:27 - 06:32] left, these are all smaller than the
+[06:29 - 06:33] pivot. Everything that is on the right,
+[06:32 - 06:35] these are larger than the pivot. So,
+[06:33 - 06:39] there you go. We have completed all the
+[06:35 - 06:40] three core skills. Okay, we are now into
+[06:39 - 06:42] step number one to write the function
+[06:40 - 06:44] partition.
+[06:42 - 06:47] Okay, let's define our pivot. Our pivot
+[06:44 - 06:49] will be the last value, last element.
+[06:47 - 06:52] So, that is the sequence at the end.
+[06:49 - 06:54] And then our low index, that will be
+[06:52 - 06:56] from the start, and our high index, that
+[06:54 - 06:58] will be one element away from the end,
+[06:56 - 07:00] which is away from the pivot. So, that
+[06:58 - 07:03] will be n minus one.
+[07:00 - 07:05] Let's copy from our core skill tree, the
+[07:03 - 07:07] algorithm that we have developed so far.
+[07:05 - 07:10] The while loop. So, let's watch out the
+[07:07 - 07:11] indentation to cast it inside a
+[07:10 - 07:13] function.
+[07:11 - 07:16] So, while low is less than or equal to
+[07:13 - 07:18] high, we repeat edly shift the low to
+[07:16 - 07:20] the right. We shift the high towards the
+[07:18 - 07:23] left. And if low is smaller than high,
+[07:20 - 07:25] we swap the low and the high value. And
+[07:23 - 07:28] then eventually after one round of
+[07:25 - 07:30] checking through all the elements,
+[07:28 - 07:32] we swap the low and the pivot value.
+[07:30 - 07:35] And then the partition function will
+[07:32 - 07:36] return the low as the pivot index. So,
+[07:35 - 07:38] return low.
+[07:36 - 07:40] So, let's test our code with the
+[07:38 - 07:42] following sequence, and then it will
+[07:40 - 07:43] show us what happens after one pass of
+[07:42 - 07:46] the partition.
+[07:43 - 07:48] After one partition, our pivot is at
+[07:46 - 07:50] five index five or on the left, they are
+[07:48 - 07:51] all smaller than
+[07:50 - 07:53] the pivot
+[07:51 - 07:55] and everything that is on the right is
+[07:53 - 07:56] larger than the pivot.
+[07:55 - 07:58] So, with this in mind, if you take a
+[07:56 - 08:01] look at the right partition, namely the
+[07:58 - 08:04] 8 6 7 9
+[08:01 - 08:05] and then these are from index 6 to 9.
+[08:04 - 08:08] If we try to partition the right side
+[08:05 - 08:11] again, namely try to partition from
+[08:08 - 08:12] starting from 6 to 9. Let's see what
+[08:11 - 08:15] happens.
+[08:12 - 08:17] When we try to partition from 6 to 9, 9
+[08:15 - 08:20] will be taken as the pivot. And now,
+[08:17 - 08:22] since 9 is the largest number, it
+[08:20 - 08:25] remains as the pivot and everything that
+[08:22 - 08:26] is on the left side is still smaller
+[08:25 - 08:28] than the pivot.
+[08:26 - 08:30] So, now we focus on these three values,
+[08:28 - 08:33] 8 6 and 7. So, namely that will be the
+[08:30 - 08:35] index 6 to 8.
+[08:33 - 08:37] So, we try to partition this portion the
+[08:35 - 08:40] left of the pivot 9, we try to partition
+[08:37 - 08:43] this from index 6 to 8. Now, the index
+[08:40 - 08:46] position is 7, which is this element.
+[08:43 - 08:48] And you realize that the left and the
+[08:46 - 08:50] right these are smaller and larger than
+[08:48 - 08:51] the pivot itself.
+[08:50 - 08:55] Now, you realize that the right
+[08:51 - 08:56] partition is already fully sorted.
+[08:55 - 08:57] Now, let's take a look at the left
+[08:56 - 09:01] partition.
+[08:57 - 09:04] The left partition 1 3 4 2, these are
+[09:01 - 09:05] from index 0 to 4.
+[09:04 - 09:08] And let's try to partition this again
+[09:05 - 09:11] from zero starting index and the end
+[09:08 - 09:13] index 0 to 4. After the swap, zero is
+[09:11 - 09:16] still the pivot and everything that is
+[09:13 - 09:19] on the right of it, they are all larger
+[09:16 - 09:22] than the pivot. So, we concentrate on
+[09:19 - 09:25] these four values, 3 4 2 1 and these are
+[09:22 - 09:28] the index 1 to 4 and let's partition
+[09:25 - 09:31] this further from index 1 to 4 and after
+[09:28 - 09:33] the swap, the index position now is at
+[09:31 - 09:36] one and everything that is on the right
+[09:33 - 09:38] hand side is actually bigger than one.
+[09:36 - 09:41] So, next we concentrate on this three
+[09:38 - 09:44] value 4 2 3. Three will be taken as the
+[09:41 - 09:46] pivot. So, we will partition from index
+[09:44 - 09:47] two to index four.
+[09:46 - 09:49] And then let's run.
+[09:47 - 09:51] Our pivot now resides at index position
+[09:49 - 09:53] three. And on the left-hand side it is
+[09:51 - 09:54] smaller than the pivot. On the
+[09:53 - 09:57] right-hand side it is bigger than the
+[09:54 - 09:59] pivot. So, all in all, after a few
+[09:57 - 10:01] rounds of partitioning, we actually get
+[09:59 - 10:03] a sorted array.
+[10:01 - 10:05] So, for step number two, we want to be
+[10:03 - 10:07] able to partition the sequence
+[10:05 - 10:08] recursively. Now, what we're going to do
+[10:07 - 10:12] is that we're going to define define
+[10:08 - 10:13] mid. Mid is actually the pivot index.
+[10:12 - 10:15] And then we have the left segment
+[10:13 - 10:18] starting from the start to the mid minus
+[10:15 - 10:20] one. And then the right segment from mid
+[10:18 - 10:23] plus one all the way to the end.
+[10:20 - 10:25] So, we will call this function Q sort.
+[10:23 - 10:27] So, if we are doing a start lesser than
+[10:25 - 10:29] end, which rightfully be the case,
+[10:27 - 10:31] define our mid
+[10:29 - 10:34] to be the pivot index. And how do we get
+[10:31 - 10:35] the pivot index? We can get it from the
+[10:34 - 10:37] partition function.
+[10:35 - 10:38] So, we are defining the partition
+[10:37 - 10:41] function on the sequence with the start
+[10:38 - 10:44] value and the end value. So, now we have
+[10:41 - 10:47] the mid, which is the pivot. We will
+[10:44 - 10:48] have a left segment and a right segment.
+[10:47 - 10:51] The left segment will be the sequence
+[10:48 - 10:53] starting from the start all the way to
+[10:51 - 10:55] the mid minus one.
+[10:53 - 10:57] So, this is the left segment. And then
+[10:55 - 11:00] the right segment will start from the
+[10:57 - 11:02] mid plus one all the way to the end.
+[11:00 - 11:03] So, we have the left and the right. And
+[11:02 - 11:06] what we are going to do about it? We
+[11:03 - 11:08] want to call on this Q sort. Q sort is
+[11:06 - 11:11] actually our partition. Now, we want to
+[11:08 - 11:13] recursively call it Q sort. And after
+[11:11 - 11:15] repeatedly doing the partitioning,
+[11:13 - 11:16] eventually we will obtain a sorted
+[11:15 - 11:18] algorithm.
+[11:16 - 11:20] Let's return the sequence.
+[11:18 - 11:21] We are going to try with this sequence,
+[11:20 - 11:24] and then we are going to start from zero
+[11:21 - 11:25] all the way to the last element. There
+[11:24 - 11:27] it goes.
+[11:25 - 11:30] By recursively calling on the partition,
+[11:27 - 11:32] now we actually have a sorted array.
+[11:30 - 11:34] Now, whenever we try to sort a sequence,
+[11:32 - 11:35] we will just call Q sort on the
+[11:34 - 11:37] sequence.
+[11:35 - 11:40] We do not want to specify the starting
+[11:37 - 11:41] index and the ending index.
+[11:40 - 11:43] So, hence we are going to write a
+[11:41 - 11:44] wrapper function to help us call the Q
+[11:43 - 11:46] sort.
+[11:44 - 11:49] So, when we do a quick sort, we will
+[11:46 - 11:52] define the start variable to be zero and
+[11:49 - 11:54] then the end variable to be the length
+[11:52 - 11:56] of the sequence minus one and then we
+[11:54 - 11:59] call the Q sort. For the sequence, we
+[11:56 - 12:01] are using the start and the end. After
+[11:59 - 12:03] which we will return the sequence.
+[12:01 - 12:05] Okay, so we're just going to call the Q
+[12:03 - 12:08] sort on the sequence.
+[12:05 - 12:09] And straight away we will get a sorted
+[12:08 - 12:10] array.
+[12:09 - 12:12] You may now want to put the three
+[12:10 - 12:14] functions together, the partition, the Q
+[12:12 - 12:16] sort, and the
+[12:14 - 12:19] quick sort. There it goes.
+[12:16 - 12:20] You have the quick sort algorithm. Now,
+[12:19 - 12:23] we're going to generate a unique and
+[12:20 - 12:24] random number and let's check after
+[12:23 - 12:27] executing the
+[12:24 - 12:29] quick sort, it is sorted in an ascending
+[12:27 - 12:32] order. So far, we have been using the
+[12:29 - 12:34] last element as our pivot. We are going
+[12:32 - 12:37] to try to modify our existing partition
+[12:34 - 12:39] functions and see whether we can use the
+[12:37 - 12:41] first element as the pivot.
+[12:39 - 12:43] So, this is the partition that we have
+[12:41 - 12:45] written in our previous task.
+[12:43 - 12:48] The pivot is defined as the last
+[12:45 - 12:50] element. Let's change this to the start.
+[12:48 - 12:52] So, that will be the first element. And
+[12:50 - 12:54] then since we used the first element as
+[12:52 - 12:57] our pivot, our low will have to start
+[12:54 - 12:58] one index after that so that we have the
+[12:57 - 13:01] plus one.
+[12:58 - 13:02] And for our high index, we will start
+[13:01 - 13:04] right from the end.
+[13:02 - 13:06] The condition to continue with the loop,
+[13:04 - 13:08] low less than or equal to high, remains
+[13:06 - 13:10] the same.
+[13:08 - 13:12] Swapping of the low index, shifting of
+[13:10 - 13:14] the high index towards the left, remains
+[13:12 - 13:18] the same. Swapping of the low and the
+[13:14 - 13:20] high index elements remains the same.
+[13:18 - 13:21] Lastly, when we want to swap the pivot,
+[13:20 - 13:25] which is our start, and instead of
+[13:21 - 13:26] swapping with the low index element, we
+[13:25 - 13:28] are actually swapping with the high
+[13:26 - 13:30] index element.
+[13:28 - 13:32] So, the pivot will now be the high
+[13:30 - 13:36] and then the high index element will now
+[13:32 - 13:37] be the pivot, which is at the start.
+[13:36 - 13:40] Previously, the low index is actually
+[13:37 - 13:41] the pivot position, but now the high is
+[13:40 - 13:44] actually the
+[13:41 - 13:45] pivot index position. Now, let's take a
+[13:44 - 13:47] look. Let's run our code.
+[13:45 - 13:50] So, when we have a sequence one and we
+[13:47 - 13:52] are using the first index as the pivot,
+[13:50 - 13:54] so six will be
+[13:52 - 13:56] our pivot. And after calling the
+[13:54 - 14:00] partition once, our pivot is now at six
+[13:56 - 14:02] index 6 0 1 2 3 4 4 5 6.
+[14:00 - 14:04] So, this is the pivot. Everything that's
+[14:02 - 14:06] on the left is smaller than the pivot.
+[14:04 - 14:09] Everything that's on the right is bigger
+[14:06 - 14:11] than the pivot. So, we have successfully
+[14:09 - 14:14] modified our partition function to use
+[14:11 - 14:15] the first element as the pivot. You may
+[14:14 - 14:18] want to test this code with your quick
+[14:15 - 14:20] sort and the Q sort
+[14:18 - 14:21] and see whether it will sort the random
+[14:20 - 14:22] sequence.
+[14:21 - 14:25] Okay?
+[14:22 - 14:25] There you go.

@@ -1,0 +1,229 @@
+Title: 2023 JC1 Promo Paper 1 Question 5
+Assessment(s): Released assessment teacher walkthrough
+Uploader: David Tan Bang Choon
+YouTube: https://www.youtube.com/watch?v=spnDXxnujc4
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88802
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Content boundary: Teacher-published explanation, not the student's personal answers or feedback.
+
+TRANSCRIPT
+==========
+[00:01 - 00:08] for question five this is a question
+[00:05 - 00:10] about the use of a hash table so that
+[00:08 - 00:13] comes later part of the
+[00:10 - 00:17] question uh there is a scenario here
+[00:13 - 00:22] about a vehicle Workshop um keeping the
+[00:17 - 00:25] customers record card uh in a filing
+[00:22 - 00:28] cabinet okay so it's a physical card and
+[00:25 - 00:31] then uh they sorts it in sending order
+[00:28 - 00:31] of the vehicle registration
+[00:32 - 00:38] number so now uh it says that it is
+[00:36 - 00:41] difficult and time consuming to do
+[00:38 - 00:44] linear search through the records in the
+[00:41 - 00:46] file cabinets so they ask uh to state
+[00:44 - 00:50] and describe a method of retrieving the
+[00:46 - 00:53] record cards now obviously the way to uh
+[00:50 - 00:55] uh retrieve the record cards cannot be
+[00:53 - 00:58] linearly search because it is difficult
+[00:55 - 01:00] so they ask you to to State and describe
+[00:58 - 01:05] a method Okay so so that is actually
+[01:00 - 01:05] slightly better than uh linear
+[01:05 - 01:13] search so since the record cards are
+[01:09 - 01:15] sorted in uh alphabetical order
+[01:13 - 01:18] according to the vehicle registration
+[01:15 - 01:22] number so since they sorted we can make
+[01:18 - 01:26] use of binary search so for for 5A what
+[01:22 - 01:27] we are looking at is the binary search
+[01:26 - 01:30] and then you're going to describe the
+[01:27 - 01:33] method now many students when they
+[01:30 - 01:36] describe the method they are actually
+[01:33 - 01:39] describing the algorithm so they talk
+[01:36 - 01:41] about the index they talk about you know
+[01:39 - 01:44] but bear in mind in this uh context of
+[01:41 - 01:49] this question we are dealing with the
+[01:44 - 01:53] physical record cards you open up a file
+[01:49 - 01:55] cabinet filing cabinet or file cabinets
+[01:53 - 01:57] okay and then you see you know one whole
+[01:55 - 01:59] stacks of
+[01:57 - 02:02] cards a lot of students uh talk about
+[01:59 - 02:04] about you know taking the the first
+[02:02 - 02:06] index and the last index and average it
+[02:04 - 02:08] and find the meter index it just make no
+[02:06 - 02:11] sense in the real world because now you
+[02:08 - 02:15] have a falling cabinet all you need to
+[02:11 - 02:17] do is just look at the middle or around
+[02:15 - 02:20] the middle of the stack of
+[02:17 - 02:22] cuts okay you don't really need to be
+[02:20 - 02:24] exactly at the middle because you would
+[02:22 - 02:25] know where exactly unless you fiscally
+[02:24 - 02:27] can count the number of cuts inside the
+[02:25 - 02:30] following
+[02:27 - 02:31] cabinetes so at at around the middle of
+[02:30 - 02:33] the cards itself you take it up and you
+[02:31 - 02:35] take a look and compare that with the
+[02:33 - 02:36] vehicle registration number that you're
+[02:35 - 02:40] looking
+[02:36 - 02:42] for if it's not the one that you want
+[02:40 - 02:44] then you will have to decide whether the
+[02:42 - 02:47] the vehicle registration card uh the
+[02:44 - 02:48] vehicle uh record card is in the upper
+[02:47 - 02:51] stack or the lower
+[02:48 - 02:54] stack okay so by comparing whether is it
+[02:51 - 02:56] bigger or smaller you will look through
+[02:54 - 02:59] the lower or the upper
+[02:56 - 03:00] stack and again within the lower stack
+[02:59 - 03:03] for example but you choose somewhere
+[03:00 - 03:05] around the middle and then you try to
+[03:03 - 03:09] compare that
+[03:05 - 03:13] again so you continue this process until
+[03:09 - 03:16] the uh Vehicle Record card is found or
+[03:13 - 03:18] until the the stack become only one card
+[03:16 - 03:20] and by looking at the last one card you
+[03:18 - 03:21] look at it you know whether it is what
+[03:20 - 03:23] you're looking for or not what you're
+[03:21 - 03:26] looking for then you can you can decide
+[03:23 - 03:29] whether uh the particular vehicle record
+[03:26 - 03:32] card has been found or not okay so you
+[03:29 - 03:35] have to describe your binary search in
+[03:32 - 03:35] the context of this
+[03:40 - 03:46] question now coming down to Part B and C
+[03:43 - 03:46] we are dealing with
+[03:50 - 03:56] hashing now the question
+[03:53 - 03:59] ask uh ask you to describe how the
+[03:56 - 04:01] record card for different vehicle with
+[03:59 - 04:04] the same hash value can be
+[04:01 - 04:06] managed now let's go back to the
+[04:04 - 04:08] scenario of the question
+[04:06 - 04:12] now instead of sorting them in
+[04:08 - 04:14] alphabetical order now they put in a uh
+[04:12 - 04:17] hashing algorithm they make use of a
+[04:14 - 04:20] hashing algorithm which will generate
+[04:17 - 04:24] the hash value between one to
+[04:20 - 04:28] 100 and within the following cabinet
+[04:24 - 04:30] there are 100 files to each label with a
+[04:28 - 04:35] number one to 100
+[04:30 - 04:36] so the hash value correspond to the file
+[04:35 - 04:38] in the filing
+[04:36 - 04:41] cabinet now this file we are talking
+[04:38 - 04:43] about is a physical file it's a physical
+[04:41 - 04:45] file it's not a document a a digital
+[04:43 - 04:47] document that you transfer using th
+[04:45 - 04:51] Drive no not that that file it is a
+[04:47 - 04:53] physical file okay a lot of student U
+[04:51 - 04:56] miss out on this context of the question
+[04:53 - 04:59] uh start talking about index there isn't
+[04:56 - 05:01] an index number it's a file number the
+[04:59 - 05:03] file number number is from 1 to 100 and
+[05:01 - 05:07] that correspond to the hash value
+[05:03 - 05:07] generated using the vehicle registration
+[05:08 - 05:13] number okay so describe how the record
+[05:11 - 05:14] cut of different vehicle with the same
+[05:13 - 05:19] hash
+[05:14 - 05:23] value now if your answer contain both
+[05:19 - 05:25] the separate chain and linear probing
+[05:23 - 05:27] then you will be awarded zero marks
+[05:25 - 05:28] because these are the two methods is
+[05:27 - 05:31] either one of these method will be the
+[05:28 - 05:31] correct answer
+[05:32 - 05:40] okay so for that particular uh vehicle
+[05:37 - 05:43] uh number when you generate the hash
+[05:40 - 05:45] value and then you go to the respective
+[05:43 - 05:47] file and you found that there is another
+[05:45 - 05:49] record card already there meaning that
+[05:47 - 05:51] these two vehicle number have the same
+[05:49 - 05:53] hash
+[05:51 - 05:54] value a lot of student go on and says
+[05:53 - 05:57] create a
+[05:54 - 06:01] list and put these two vehicle card into
+[05:57 - 06:04] that list now a list list as in a python
+[06:01 - 06:08] list is not a physical thing what do you
+[06:04 - 06:11] mean by put a list into a
+[06:08 - 06:13] file okay so now the thing is that when
+[06:11 - 06:17] you try to put the cut into a file where
+[06:13 - 06:19] there's already existing uh a cut you
+[06:17 - 06:21] either put it in front or you put it
+[06:19 - 06:26] behind
+[06:21 - 06:28] right so why when do you so uh uh you
+[06:26 - 06:29] you have to decide the standard
+[06:28 - 06:32] procedure whether you you put it in
+[06:29 - 06:34] front or you put it behind then when you
+[06:32 - 06:35] have a third cut coming in you put it in
+[06:34 - 06:38] front or
+[06:35 - 06:41] behind Okay this way of uh inserting the
+[06:38 - 06:44] record card into the file will result in
+[06:41 - 06:45] all the cards in within that file itself
+[06:44 - 06:49] not
+[06:45 - 06:51] sorted okay not sorted it is quite fine
+[06:49 - 06:53] in a sense where in future when you want
+[06:51 - 06:54] to search for record card within a file
+[06:53 - 06:57] it happens that there are a few cards
+[06:54 - 06:59] inside you can just perform a linear
+[06:57 - 07:00] search within the file that's perfectly
+[06:59 - 07:03] okay
+[07:00 - 07:06] but if you want to suggest that all the
+[07:03 - 07:07] cuts within a file to be sorted it is
+[07:06 - 07:09] also
+[07:07 - 07:11] fine so that in future when you go into
+[07:09 - 07:14] the file and there are quite a number of
+[07:11 - 07:15] cards inside all you need to remember is
+[07:14 - 07:18] that the cards are
+[07:15 - 07:21] sorted okay and you can conduct your
+[07:18 - 07:23] binary search within that file so either
+[07:21 - 07:25] a linear search or a binary search
+[07:23 - 07:30] within the file is fine because we are
+[07:25 - 07:33] now searching through a small amount of
+[07:30 - 07:35] Cuts okay a small amount of cuts
+[07:33 - 07:38] within a
+[07:35 - 07:38] file
+[07:42 - 07:48] okay so many students suggest creating a
+[07:45 - 07:50] Leist to keep all the vehicle card uh
+[07:48 - 07:53] with the same hash
+[07:50 - 07:56] value now you need to apply that to the
+[07:53 - 08:00] context of the question what is a list
+[07:56 - 08:04] in this context there isn't a list
+[08:00 - 08:06] okay so uh whether we are talking about
+[08:04 - 08:10] heighten list already a physical A4
+[08:06 - 08:13] paper know where you fill in a list of
+[08:10 - 08:16] items a list of vehicle number cards so
+[08:13 - 08:19] so the student need to be clear with
+[08:16 - 08:22] that for part
+[08:19 - 08:25] C explain the
+[08:22 - 08:28] advantage uh of using a hash uh
+[08:25 - 08:31] algorithm uh in this improved filing
+[08:28 - 08:31] system
+[08:34 - 08:38] so what happen is that when you want to
+[08:36 - 08:39] locate a particular vehicle card you
+[08:38 - 08:42] just take the vehicle registration
+[08:39 - 08:45] number and you generate the hash value
+[08:42 - 08:47] straight away you go to the file uh
+[08:45 - 08:49] number a particular file number that
+[08:47 - 08:51] correspond to the hash value the record
+[08:49 - 08:54] card if exists will definitely have to
+[08:51 - 08:57] be inside the file so this kind of
+[08:54 - 09:01] search okay it is uh
+[08:57 - 09:01] 01 uh
+[09:01 - 09:08] order of complex uh uh time complexity
+[09:05 - 09:10] for the time complexity it is O big O
+[09:08 - 09:11] one because it's direct once you
+[09:10 - 09:14] generate the hash value you go to the
+[09:11 - 09:17] file you can retrieve that immediately
+[09:14 - 09:21] but you need also to mention once you go
+[09:17 - 09:24] to the file uh within the file how do
+[09:21 - 09:28] you conduct your search within the
+[09:24 - 09:29] file okay so depending on your suggested
+[09:28 - 09:34] uh
+[09:29 - 09:36] method in Part B whether you do a linear
+[09:34 - 09:39] search or you do a binary search that
+[09:36 - 09:42] would be sufficient so uh student uh
+[09:39 - 09:45] most of most of you are able to say that
+[09:42 - 09:47] use a hash value find the record card
+[09:45 - 09:49] with the file most of you can say that
+[09:47 - 09:51] but what you did not go into detail is
+[09:49 - 09:52] once you get into the file itself there
+[09:51 - 09:56] are quite a number of cards with the
+[09:52 - 09:59] same hash value what do you do
+[09:56 - 10:02] okay so that's all for the uh solution
+[09:59 - 10:05] for question
+[10:02 - 10:05] five

@@ -1,0 +1,214 @@
+Title: 2024 C4-3c ER Diagram
+Assessment(s): Released Coursemology video catalog - C4-3c ER Diagram
+Linked label(s): C4-3c ER Diagram
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=dj-fFRh_1C8
+Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24721
+Published course start: 2026-10-20T08:02:00.000+08:00
+Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
+Language: English (en)
+Format: Full timestamped transcript
+Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
+
+TRANSCRIPT
+==========
+[00:00 - 00:06] hi welcome back let's continue our
+[00:03 - 00:09] lesson on relational database we're
+[00:06 - 00:13] going to learn more about the ER diagram
+[00:09 - 00:16] entity relation
+[00:13 - 00:18] diagram first let's talk about entities
+[00:16 - 00:21] and their attributes now an entity is a
+[00:18 - 00:22] real world object or concept that can be
+[00:21 - 00:24] distinctly
+[00:22 - 00:26] identified uh it has attributes that
+[00:24 - 00:31] describe the property let me give you
+[00:26 - 00:33] some example student student can be an
+[00:31 - 00:36] entity now for the case of student
+[00:33 - 00:39] entity some of the possible attributes
+[00:36 - 00:42] are like student ID the name the date of
+[00:39 - 00:46] birth or the email
+[00:42 - 00:49] address teachers can also be another
+[00:46 - 00:52] entity so the teacher will have teaching
+[00:49 - 00:54] subject their name their contact number
+[00:52 - 00:56] their email
+[00:54 - 01:01] address course can be an
+[00:56 - 01:05] entity the start and the end date
+[01:01 - 01:07] the course code the course name and the
+[01:05 - 01:08] number of student that you can take
+[01:07 - 01:12] within this
+[01:08 - 01:13] course library book library book can be
+[01:12 - 01:17] also an
+[01:13 - 01:20] entity the book title the author the
+[01:17 - 01:23] publisher the ISBN number the cost of
+[01:20 - 01:25] the book and the year of Publications
+[01:23 - 01:29] all these are the attributes of a
+[01:25 - 01:29] library book
+[01:30 - 01:36] between entity there could be
+[01:34 - 01:38] relationship and there are three
+[01:36 - 01:42] possible relationship between two
+[01:38 - 01:46] entities the one to one relation one to
+[01:42 - 01:49] many relation and the many to many
+[01:46 - 01:52] relation we will go through each of
+[01:49 - 01:52] these in
+[01:52 - 01:58] detail for the case of a onetoone
+[01:55 - 02:00] relation we represent by drawing The
+[01:58 - 02:06] Entity the two entities and Link it with
+[02:00 - 02:06] a line now this is a one to one
+[02:07 - 02:16] relation take for example The Entity
+[02:12 - 02:18] car now for the case of car you can have
+[02:16 - 02:22] attributes like the carate number the
+[02:18 - 02:24] color the model the year of make and the
+[02:22 - 02:26] manufacturer all these are
+[02:24 - 02:30] attributes
+[02:26 - 02:33] insurance insurance is also an entity
+[02:30 - 02:34] it could be the uh insurance company the
+[02:33 - 02:39] policy
+[02:34 - 02:41] number um and also the price the
+[02:39 - 02:44] coverage period from when to when so all
+[02:41 - 02:47] these are the attributes of the
+[02:44 - 02:50] insurance policy itself now between
+[02:47 - 02:53] these two entity the car and the
+[02:50 - 02:56] insurance entity there is a onetoone
+[02:53 - 02:58] relation why is it a onetoone relation
+[02:56 - 03:02] now you take a look at from the car from
+[02:58 - 03:06] the point of view of the car car one car
+[03:02 - 03:08] can only have one insurance
+[03:06 - 03:10] policy and then if you look from the
+[03:08 - 03:15] side of the
+[03:10 - 03:18] insurance one policy belongs to one car
+[03:15 - 03:22] so this is a one toone
+[03:18 - 03:24] relation now in our syllabus one to one
+[03:22 - 03:28] relation is not very
+[03:24 - 03:31] meaningful so we will not dwell deeper
+[03:28 - 03:31] into the onet to one Rel
+[03:33 - 03:38] next we go on to the one to many
+[03:36 - 03:41] relation it can be
+[03:38 - 03:45] represented with a line joining the two
+[03:41 - 03:49] entities and then with a craw Feit
+[03:45 - 03:49] joining to one of the
+[03:49 - 03:53] entity we shall use the example that we
+[03:51 - 03:56] are familiar
+[03:53 - 03:57] with we have come across this one to
+[03:56 - 04:00] many
+[03:57 - 04:02] relation the civics
+[04:00 - 04:05] and the students
+[04:02 - 04:07] entity in the case of civics what are
+[04:05 - 04:09] the
+[04:07 - 04:13] attributes the civics class the Civics
+[04:09 - 04:18] tutor even The Home Room these are the
+[04:13 - 04:20] attribute of the Civics entity in the
+[04:18 - 04:24] case of a student the matriculation the
+[04:20 - 04:26] name the gender these are the attributes
+[04:24 - 04:29] of the students
+[04:26 - 04:31] entity now why do we say that there is a
+[04:29 - 04:34] one to many
+[04:31 - 04:36] relation now you look from the point of
+[04:34 - 04:39] view from the Civics
+[04:36 - 04:43] entity one civics
+[04:39 - 04:43] class can have many
+[04:43 - 04:47] student but if you look from the point
+[04:45 - 04:51] of a
+[04:47 - 04:56] student one student can belong to only
+[04:51 - 05:00] one civics class therefore this is a one
+[04:56 - 05:00] to many relation
+[05:01 - 05:06] lastly we're going to talk about the
+[05:02 - 05:08] many to many relation and it can be
+[05:06 - 05:12] represented by drawing a line joining
+[05:08 - 05:17] the two entities and craw it on both
+[05:12 - 05:17] sides to represent the many to many
+[05:19 - 05:27] relation let's take a look at a familiar
+[05:23 - 05:30] example the students entity and the CCA
+[05:27 - 05:30] entities
+[05:30 - 05:35] now for the case of the CCA entities we
+[05:32 - 05:37] only concerned about the CCA name and
+[05:35 - 05:40] the CCA teacher in charge these are the
+[05:37 - 05:42] attributes for the CCA entities for the
+[05:40 - 05:45] case of the student we have the
+[05:42 - 05:49] matriculation number name gender the
+[05:45 - 05:49] civics class Civics tutor and The Home
+[05:50 - 05:57] Room now why do we say that the student
+[05:53 - 05:58] entity and the CC entities is a many to
+[05:57 - 06:00] many
+[05:58 - 06:01] relation we look from the point of view
+[06:00 - 06:06] of a
+[06:01 - 06:06] student one student can join many
+[06:07 - 06:11] CCA take a look at Adrian matriculation
+[06:10 - 06:14] number
+[06:11 - 06:16] two he has
+[06:14 - 06:21] two
+[06:16 - 06:26] CCA Bay matriculation number five also
+[06:21 - 06:29] has two CCA so one student can join many
+[06:26 - 06:30] CCA now take a look from the CCA point
+[06:29 - 06:37] of
+[06:30 - 06:39] view one CCA can be joined by many
+[06:37 - 06:44] student take for example the
+[06:39 - 06:49] choir the choir CCA one CCA can join by
+[06:44 - 06:49] many student for example Adan and
+[06:49 - 06:55] Bay so this is a many to many
+[06:57 - 07:03] relation unfortunately
+[07:00 - 07:07] the relational database that we are
+[07:03 - 07:10] learning cannot handle many to many
+[07:07 - 07:13] relation and because of that we need to
+[07:10 - 07:13] introduce a link
+[07:14 - 07:18] entity the link entity will come in
+[07:16 - 07:21] between the two
+[07:18 - 07:26] entities and then it will be a one to
+[07:21 - 07:29] many and then a many to one
+[07:26 - 07:33] relation our relational database is able
+[07:29 - 07:33] to handle the one to many
+[07:34 - 07:40] relation let's go back to our
+[07:37 - 07:43] example in our case of a student and the
+[07:40 - 07:46] CCA many to many
+[07:43 - 07:50] relation we will introduce the linked
+[07:46 - 07:53] entity we have the student CCA and we
+[07:50 - 07:56] will call the CCA entity now as CCA
+[07:53 - 08:00] info the relation between student and
+[07:56 - 08:03] student CCA is a one to many relation
+[08:00 - 08:08] the relation between CCA info and the
+[08:03 - 08:11] student CCA is also a one to many
+[08:08 - 08:12] relation you have seen the table in our
+[08:11 - 08:15] earlier
+[08:12 - 08:18] slides are you able to explain the one
+[08:15 - 08:20] to many relation between the three
+[08:18 - 08:22] tables or between the three
+[08:20 - 08:27] entities now let's take a look at the
+[08:22 - 08:30] student and the student CCA these two
+[08:27 - 08:31] table if you were to look from the point
+[08:30 - 08:35] of view of a
+[08:31 - 08:40] student one student record can have many
+[08:35 - 08:44] records in the student CCA table take
+[08:40 - 08:47] for example Adrian and Bay there are two
+[08:44 - 08:52] records for this St
+[08:47 - 08:52] students so this is a one to many
+[08:53 - 09:01] relation looking at the relation between
+[08:56 - 09:02] student CCA and CCA info
+[09:01 - 09:04] if you were to look from the point of
+[09:02 - 09:06] view of the
+[09:04 - 09:11] CCA
+[09:06 - 09:15] choir one one record on choir can have
+[09:11 - 09:17] many records in the student CCA so this
+[09:15 - 09:21] is one to
+[09:17 - 09:24] many in the case for tennis one record
+[09:21 - 09:28] in the student CCA there can only be one
+[09:24 - 09:31] record in the CCA info so in this
+[09:28 - 09:34] direction it is a one but in this
+[09:31 - 09:37] direction it is to many hence this is a
+[09:34 - 09:40] one to many
+[09:37 - 09:44] relation so for this case of a fully
+[09:40 - 09:46] normalized database we can actually draw
+[09:44 - 09:48] out all the entities
+[09:46 - 09:51] relation
+[09:48 - 09:54] diagram originally we start off with
+[09:51 - 09:57] Civics student and
+[09:54 - 10:01] CCA but because there is a many to many
+[09:57 - 10:03] relation between student and and CCA we
+[10:01 - 10:04] have to introduce a link entity called
+[10:03 - 10:08] student
+[10:04 - 10:09] CCA hence now we have three entities and
+[10:08 - 10:13] a link
+[10:09 - 10:16] entity and they are all linked by a one
+[10:13 - 10:18] to many one to many and one to many
+[10:16 - 10:22] relation and all these can be
+[10:18 - 10:24] represented using our relational
+[10:22 - 10:28] database that's all for this lesson on
+[10:24 - 10:28] the ER diagram
