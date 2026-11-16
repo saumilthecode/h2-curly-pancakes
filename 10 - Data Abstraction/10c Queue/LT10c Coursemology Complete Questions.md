@@ -1,7 +1,6 @@
 # LT 10c - Queue ADT (for 2026)
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88736
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes and core skills
 
@@ -63,10 +62,7 @@ There are two important operations that a queue must support: enqueue and dequeu
 
 To add items to the queue, we enqueue them at the back (tail) of the queue, and to get the first element from the queue, we dequeue it from the front (head) of the queue.
 
-
-
 Which sequence(s) of enqueue and dequeue operations will result in the following queue (H: head, T: tail)?
-
 
                                             1   2   3   4
 
@@ -90,9 +86,7 @@ Now, let us implement the queue ADT.
 
 A queue can be implemented using a list, where the first element in the list is at the front/head of the queue and the last element is at the tail of the queue.
 
-
 Define a constructor make_empty_queue() that takes no arguments and returns an empty queue.
-
 
 Define another constructor make_queue(seq) that takes in a sequence seq and returns a queue representation of the sequence where the first element is at the front of the queue and the last element in the sequence is at the end of the queue.
 
@@ -100,7 +94,7 @@ Define another constructor make_queue(seq) that takes in a sequence seq and retu
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -178,16 +172,13 @@ dequeue(queue) removes the first item from the queue and returns the removed ite
 
 Note: enqueue() and dequeue() will modify the queue, they should not return a new queue.
 
-
-
-
 The following constructors and predicate are provided:
 
 make_empty_queue(), make_queue(seq) and is_empty(queue).
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -237,15 +228,13 @@ accessor front(queue) returns the first element from a queue. It does not remove
 accessor size(queue) returns the number of elements in the queue.
 modifier clear(queue) removes all elements in the queue. It does not return a new empty queue.
 
-
-
 The following constructors and predicate are provided:
 
 make_empty_queue(), make_queue(seq) and is_empty(queue).
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -310,8 +299,6 @@ size(q): returns the size of the queue q
 clear(q): clears all elements in the queue q
 Note: is_empty(q) is not provided in the Queue ADT
 
-
-
 Write program codes, using the given functions above, to create a queue to monitor the customers in the queue at a cafe outlet:
 
 1) construct an empty queue, my_queue
@@ -352,13 +339,11 @@ Write program codes, using the given functions above, to create a queue to monit
 
 19) the manager asked for the no. of customers in the queue; assign it to size2
 
-
-
 Note: You must use the methods given in the Queue ADT and do not break the abstraction!
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -405,18 +390,13 @@ size(q): returns the size of the queue q
 clear(q): clears all elements in the queue q
 is_empty(q) returns True if the queue is empty, and False otherwise
 
-
-
 A network printer uses a queue data structure to manage the printing jobs sent to the printer.
-
 
 Write program codes to implement the Printer Queue ADT using the functions provided in the Queue ADT:
 
 1) Constructor:
 
 make_print_queue(): returns an empty print queue
-
-
 
 2) Modifiers:
 
@@ -425,20 +405,17 @@ print_job(printq): prints the first job, removes it from the print queue printq 
 cancel_job(printq, job): removes a particular print job job from the queue; returns None if the print job is not found. (Note: If the same print job appears more than once in the print queue, the modifier cancel_job() will only remove the first one found in the print queue.)
 clear_all(printq): that removes all the print jobs in the print queue printq.
 
-
-
 3) Accessors:
 
 next_job(printq): returns the print job at the front of printq without removing it from the print queue
 num_jobs(printq): returns the number of print jobs in the print queue printq
 is_pq_empty(printq): returns True if print queue is empty; Otherwise, returns False.
 
-
 A printer job is represented by the filename of the document to be printed, e.g. "phys quiz.doc".
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -494,8 +471,6 @@ size(q): returns the size of the queue q
 clear(q): clears all elements in the queue q
 is_empty(q) returns True if the queue is empty, and False otherwise
 
-
-
 This question is an extension of the previous question for the Print Queue ADT.
 
 For this question, the ink level of the printer is being monitored with a counter; it is initialised as 100 at the start when the ink cartridge is full. The counter will decrease by 1 unit for each print job.
@@ -518,24 +493,18 @@ Note: The following codes will send two print jobs to the printer:
 
 #output:  [["phys quiz.doc","maths quiz.doc"], 100]
 
-
-
 modify print_job(printq) to handle the following 3 cases:
 1. if the print queue printq is empty, return None.
 2. if the counter in printq is 0,  display a message 'Please replace the empty ink cartridge.' to prompt the user to replace the ink cartridge and returns False. No print job will be dequeued.
 3. if the counter is more than 0, print the first job, remove it from the print queue printq, return the filename of the printed document and decrease the counter by 1.
 
-
-
 write program code for the additional modifier replace_cart(printq) to mimic the replacement of the ink cartridge by resetting the counter to 100.
-
-
 
 modify/create the other assessors : send_job(printq, job), cancel_job(printq, job), clear_all(printq), next_job(printq), num_jobs(printq), is_pq_empty(printq) to work with the new definition of the print queue.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -644,8 +613,6 @@ When the playlist is played in a loop, the songs will be played in the following
 
 The song playing at 22-min will be 'rainbow'.
 
-
-
 The following constructors, accessors and modifiers for the Queue ADT are provided:
 (You do not need to submit code for these functions.)
 
@@ -658,8 +625,6 @@ size(q): returns the size of the queue q
 clear(q): clears all elements in the queue q
 Note: is_empty(q) is not provided in the Queue ADT
 
-
-
 Note:
 
 Do not modify the playlist jay_chou.
@@ -667,7 +632,7 @@ Do not run the test cases consecutively, run one at a time.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -748,13 +713,9 @@ The game continues with Player4 and Player5 getting the bomb without exploding a
 The game continues with Player7 and subsequently explodes with Player9, ...
 The last surviving player will be declared the winner.
 
-
-
-
 Using the Queue ADT provided, write program code for the function who_wins(tup,n) that returns the last surviving player in the tuple of players tup for the Pass-the-Bomb game with the parameter n.
 
 You should start by using the input tuple tup to populate a queue first.
-
 
 The following constructors, accessors and modifiers for the Queue ADT are provided:
 (You do not need to submit code for these functions.)
@@ -774,7 +735,7 @@ is_empty(q) returns True if queue is empty and False otherwise
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -797,3 +758,4 @@ who_wins(players2, 4)
 
 'Player3'
 ```
+

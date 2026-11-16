@@ -111,7 +111,7 @@
 ### LT 12b Insertion Sort
 - [LT12b Insertion Sort (2026 VoiceOver)](https://www.youtube.com/watch?v=EZ8q4reQpEw) | YIJC Computing | transcript available
 - [LT12b Insertion Sort (2026 VoiceOver) - unplugged activity](https://www.youtube.com/watch?v=QTh2RMHH-T0) | YIJC Computing | transcript available
-- [Insert-sort with Romanian folk dance](https://www.youtube.com/watch?v=ROalU379l3U) | AlgoRythmics | Russian-only caption preserved; no English track; one interjection only
+- [Insert-sort with Romanian folk dance](https://www.youtube.com/watch?v=ROalU379l3U) | AlgoRythmics | video link only; no useful teaching captions
 
 ### [OPTIONAL] LT 12c Selection Sort
 - [12c Selection Sort (2020)](https://www.youtube.com/watch?v=KVXk2byimrE) | Kuang Jingkai [Staff] | transcript available
@@ -233,35 +233,35 @@
 - [C5b Python with SQLite Part 1 and 2 - voiceover](https://www.youtube.com/watch?v=k6naPhG3KhA) | English (en) | C5a current assessment 88865, Parts 1-2 wrapper /courses/3257/videos/24731; wrapper verified live 14 November 2026
 
 
-## Distinct released Coursemology catalog versions added on 14 November 2026
+## Released Coursemology upload links and retained note sources
 
 - [LT10a Data Abstraction 1 - Part 4](https://www.youtube.com/watch?v=qMfJcHz1qFU) | YIJC Computing | English timestamped transcript available | [LT10a Data Abstraction (Part 4)](https://yijc.coursemology.org/courses/3257/videos/24706)
-- [Hashing Part 3 Updated 2022](https://www.youtube.com/watch?v=43Qod8a5xQU) | YIJC Computing | English timestamped transcript available | [LT10d About Hashing (Part 3)](https://yijc.coursemology.org/courses/3257/videos/24852)
-- [LT12e Quicksort In-Place 2026 v2](https://www.youtube.com/watch?v=8wVUlcIhctI) | YIJC Computing | English timestamped transcript available | [LT12e Quick Sort Explained (extract)](https://yijc.coursemology.org/courses/3257/videos/24834)
-- [LT12e Quicksort In-Place Walkthrough v2](https://www.youtube.com/watch?v=6NsXMHQNciw) | YIJC Computing | English timestamped transcript available | [LT12e Quicksort - Walkthrough in-place algorithm](https://yijc.coursemology.org/courses/3257/videos/24769)
-- [LT12e Quicksort - Unplugged Activity v2](https://www.youtube.com/watch?v=8xYjWUFzo1I) | YIJC Computing | English timestamped transcript available | [LT12e Unplugged Activity for Quicksort](https://yijc.coursemology.org/courses/3257/videos/24860)
-- [C4-1 Introduction to Database](https://www.youtube.com/watch?v=xPFmoJwNpn8) | YIJC Computing | English timestamped transcript available | [C4-1 Introduction to Database](https://yijc.coursemology.org/courses/3257/videos/24771)
-- [C4-2a Basic SQL - create tables](https://www.youtube.com/watch?v=D5zt2ytRHt8) | YIJC Computing | English timestamped transcript available | [C4-2a Basic SQL - create tables](https://yijc.coursemology.org/courses/3257/videos/24836)
-- [C4-2b Basic SQL - insert data into tables](https://www.youtube.com/watch?v=-F5iFtn9u7A) | YIJC Computing | English timestamped transcript available | [C4-2b Basic SQL - insert data into tables](https://yijc.coursemology.org/courses/3257/videos/24837)
-- [C4-2d and 2e Basic SQL - Update and Delete Records and Tables](https://www.youtube.com/watch?v=py0QIVHqYEk) | YIJC Computing | English timestamped transcript available | [C4-2d and 2e Basic SQL - Update and Delete Records and Tables](https://yijc.coursemology.org/courses/3257/videos/24861)
-- [2024 C4-3b Normalisation](https://www.youtube.com/watch?v=7sw7WjAdtWg) | YIJC Computing | English timestamped transcript available | [C4-3b Normalisation](https://yijc.coursemology.org/courses/3257/videos/24773)
-- [2024 C4-3a Introduction to Relational Database](https://www.youtube.com/watch?v=ZkR8sv4S3Dk) | YIJC Computing | English timestamped transcript available | [C4-3a Introduction to Relational Database](https://yijc.coursemology.org/courses/3257/videos/24772)
-- [2024 C4-3c ER Diagram](https://www.youtube.com/watch?v=dj-fFRh_1C8) | YIJC Computing | English timestamped transcript available | [C4-3c ER Diagram](https://yijc.coursemology.org/courses/3257/videos/24721)
-- [2024 C4-4 Advanced SQL](https://www.youtube.com/watch?v=-NwSgorQAOw) | YIJC Computing | English timestamped transcript available | [C4-4 Advanced SQL](https://yijc.coursemology.org/courses/3257/videos/24838)
+- [Hashing Part 3 Updated 2022](https://www.youtube.com/watch?v=43Qod8a5xQU) | YIJC Computing | Repeated teaching; use transcript 42 + 43 | [LT10d About Hashing (Part 3)](https://yijc.coursemology.org/courses/3257/videos/24852)
+- [LT12e Quicksort In-Place 2026 v2](https://www.youtube.com/watch?v=8wVUlcIhctI) | YIJC Computing | Repeated teaching; use transcript 105 | [LT12e Quick Sort Explained (extract)](https://yijc.coursemology.org/courses/3257/videos/24834)
+- [LT12e Quicksort In-Place Walkthrough v2](https://www.youtube.com/watch?v=6NsXMHQNciw) | YIJC Computing | Repeated teaching; use transcript 112 | [LT12e Quicksort - Walkthrough in-place algorithm](https://yijc.coursemology.org/courses/3257/videos/24769)
+- [LT12e Quicksort - Unplugged Activity v2](https://www.youtube.com/watch?v=8xYjWUFzo1I) | YIJC Computing | Repeated teaching; use transcript 111 | [LT12e Unplugged Activity for Quicksort](https://yijc.coursemology.org/courses/3257/videos/24860)
+- [C4-1 Introduction to Database](https://www.youtube.com/watch?v=xPFmoJwNpn8) | YIJC Computing | Repeated teaching; use transcript 113 | [C4-1 Introduction to Database](https://yijc.coursemology.org/courses/3257/videos/24771)
+- [C4-2a Basic SQL - create tables](https://www.youtube.com/watch?v=D5zt2ytRHt8) | YIJC Computing | Repeated teaching; use transcript 114 | [C4-2a Basic SQL - create tables](https://yijc.coursemology.org/courses/3257/videos/24836)
+- [C4-2b Basic SQL - insert data into tables](https://www.youtube.com/watch?v=-F5iFtn9u7A) | YIJC Computing | Repeated teaching; use transcript 115 | [C4-2b Basic SQL - insert data into tables](https://yijc.coursemology.org/courses/3257/videos/24837)
+- [C4-2d and 2e Basic SQL - Update and Delete Records and Tables](https://www.youtube.com/watch?v=py0QIVHqYEk) | YIJC Computing | Repeated teaching; use transcript 116 | [C4-2d and 2e Basic SQL - Update and Delete Records and Tables](https://yijc.coursemology.org/courses/3257/videos/24861)
+- [2024 C4-3b Normalisation](https://www.youtube.com/watch?v=7sw7WjAdtWg) | YIJC Computing | Repeated teaching; use transcript 118 | [C4-3b Normalisation](https://yijc.coursemology.org/courses/3257/videos/24773)
+- [2024 C4-3a Introduction to Relational Database](https://www.youtube.com/watch?v=ZkR8sv4S3Dk) | YIJC Computing | Repeated teaching; use transcript 117 | [C4-3a Introduction to Relational Database](https://yijc.coursemology.org/courses/3257/videos/24772)
+- [2024 C4-3c ER Diagram](https://www.youtube.com/watch?v=dj-fFRh_1C8) | YIJC Computing | Repeated teaching; use transcript 119 | [C4-3c ER Diagram](https://yijc.coursemology.org/courses/3257/videos/24721)
+- [2024 C4-4 Advanced SQL](https://www.youtube.com/watch?v=-NwSgorQAOw) | YIJC Computing | Repeated teaching; use transcript 120 | [C4-4 Advanced SQL](https://yijc.coursemology.org/courses/3257/videos/24838)
 - [Complete Beginner's Guide to Big O Notation](https://www.youtube.com/watch?v=kS_gr2_-ws8) | Colt Steele | English timestamped transcript available | [Complete Beginner's Guide to Big O Notation](https://yijc.coursemology.org/courses/3257/videos/24752)
-- [Why Do Computers Use 1s and 0s? Binary and Transistors Explained.](https://www.youtube.com/watch?v=Xpk67YzOn5w) | Basics Explained, H3Vtux | English timestamped transcript available | [C2 Data Representation - Why do computers use 1s and 0s?](https://yijc.coursemology.org/courses/3257/videos/24812)
+- [Why Do Computers Use 1s and 0s? Binary and Transistors Explained.](https://www.youtube.com/watch?v=Xpk67YzOn5w) | Basics Explained, H3Vtux | Not retained as a note source: inaccurate bit/ASCII claims | [C2 Data Representation - Why do computers use 1s and 0s?](https://yijc.coursemology.org/courses/3257/videos/24812)
 - [How exactly does binary code work? - José Américo N L F de Freitas](https://www.youtube.com/watch?v=wgbV6DLVezo) | TED-Ed | English timestamped transcript available | [C2 Data Representation - How exactly does binary code work? (by TED-Ed)](https://yijc.coursemology.org/courses/3257/videos/24813)
 - [What does what in your computer? Computer parts Explained](https://www.youtube.com/watch?v=ExxFxD4OSZ0) | Basics Explained, H3Vtux | English timestamped transcript available | [What does what in your computer?](https://yijc.coursemology.org/courses/3257/videos/24788)
 - [The History of Intel Processors](https://www.youtube.com/watch?v=Qu2njWY3Hjk) | Unverified uploader | captions disabled | [The History of Intel Processors](https://yijc.coursemology.org/courses/3257/videos/24789)
-- [Circuit Switching vs  Packet Switching](https://www.youtube.com/watch?v=-WtAgL9HRnE) | YIJC Computing | English timestamped transcript available | [Circuit Switching vs Packet Switching](https://yijc.coursemology.org/courses/3257/videos/24711)
-- [How TCP starts and close session](https://www.youtube.com/watch?v=th92KTnfRZw) | YIJC Computing | English timestamped transcript available | [How TCP starts and close session](https://yijc.coursemology.org/courses/3257/videos/24712)
-- [Lesson 6   Demystifying Internet Part 1 of 3](https://www.youtube.com/watch?v=RcCAoDdHtGQ) | YIJC Computing | English timestamped transcript available | [Lesson 6 - Demystifying Internet (Part 1 of 3)](https://yijc.coursemology.org/courses/3257/videos/24743)
-- [Lesson 7   Demystifying Internet Part 2 of 3](https://www.youtube.com/watch?v=4ckFCfWXjG0) | YIJC Computing | English timestamped transcript available | [Lesson 7 - Demystifying Internet (Part 2 of 3)](https://yijc.coursemology.org/courses/3257/videos/24744)
-- [The Internet  Packets, Routing & Reliability](https://www.youtube.com/watch?v=UD_jsTfRq6Q) | YIJC Computing | English timestamped transcript available | [The Internet - Packets, Routing and Reliability](https://yijc.coursemology.org/courses/3257/videos/24713)
+- [Circuit Switching vs  Packet Switching](https://www.youtube.com/watch?v=-WtAgL9HRnE) | YIJC Computing | Repeated teaching; use transcript 67 | [Circuit Switching vs Packet Switching](https://yijc.coursemology.org/courses/3257/videos/24711)
+- [How TCP starts and close session](https://www.youtube.com/watch?v=th92KTnfRZw) | YIJC Computing | Repeated teaching; use transcript 88 | [How TCP starts and close session](https://yijc.coursemology.org/courses/3257/videos/24712)
+- [Lesson 6   Demystifying Internet Part 1 of 3](https://www.youtube.com/watch?v=RcCAoDdHtGQ) | YIJC Computing | Repeated teaching; use transcript 84 | [Lesson 6 - Demystifying Internet (Part 1 of 3)](https://yijc.coursemology.org/courses/3257/videos/24743)
+- [Lesson 7   Demystifying Internet Part 2 of 3](https://www.youtube.com/watch?v=4ckFCfWXjG0) | YIJC Computing | Repeated teaching; use transcript 85 | [Lesson 7 - Demystifying Internet (Part 2 of 3)](https://yijc.coursemology.org/courses/3257/videos/24744)
+- [The Internet  Packets, Routing & Reliability](https://www.youtube.com/watch?v=UD_jsTfRq6Q) | YIJC Computing | Repeated teaching; use transcript 87 | [The Internet - Packets, Routing and Reliability](https://yijc.coursemology.org/courses/3257/videos/24713)
 
-Audit status: 157 saved timestamped caption files (156 English, including 3 music/sound-only; 1 Russian-only interjection), 11 captions-disabled videos. Ten incorrect default-language files repaired to English on 14 November 2026. See `00 - Transcript Index.md` for limitations and per-file records.
+Current sources: 138 English caption files (including 2 selected theory excerpts and 3 pre-existing music/sound-only), 11 captions-disabled videos. Ten incorrect default-language files repaired to English on 14 November 2026. See `00 - Transcript Index.md` for limitations and per-file records.
 
-## VEX VR teacher-PDF videos checked on 14 November 2026
+## VEX VR videos
 
 - [VEX VR   Draw Square   Lesson1unit2](https://www.youtube.com/watch?v=Aa_GSeELi2Y) | YIJC Computing | captions disabled; no published caption language tracks | Ω Missions/VEX VR Robotic/Source Resources/VEX VR Package v4a - Coursemology.pdf, page 11 (Coursemology file 190454)
 - [VEX VR   Maze Challenge   Lesson2unit1](https://www.youtube.com/watch?v=FfYxID9rcGY) | YIJC Computing | captions disabled; no published caption language tracks | Ω Missions/VEX VR Robotic/Source Resources/VEX VR Package v4a - Coursemology.pdf, page 20 (Coursemology file 190454)
@@ -271,8 +271,8 @@ Audit status: 157 saved timestamped caption files (156 English, including 3 musi
 
 ## Released assessment walkthrough videos added on 14 November 2026
 
-- [Walkthrough CP8   Recursion](https://www.youtube.com/watch?v=dgujmQnv75Q) | YIJC Computing | English timestamped teacher walkthrough transcript | https://yijc.coursemology.org/courses/3257/assessments/88754
-- [Walkthrough 2024 JC1 WA1](https://www.youtube.com/watch?v=aa3ekcAx1bA) | YIJC Computing | English timestamped teacher walkthrough transcript | https://yijc.coursemology.org/courses/3257/assessments/88787
+- [Walkthrough CP8   Recursion](https://www.youtube.com/watch?v=dgujmQnv75Q) | YIJC Computing | Selected English theory excerpts; coding-only stretches omitted | https://yijc.coursemology.org/courses/3257/assessments/88754
+- [Walkthrough 2024 JC1 WA1](https://www.youtube.com/watch?v=aa3ekcAx1bA) | YIJC Computing | Selected English theory excerpts; coding-only stretches omitted | https://yijc.coursemology.org/courses/3257/assessments/88787
 - [2023 JC1 Promo Paper 1 Question 1](https://www.youtube.com/watch?v=BJhYLBqJ-Ew) | David Tan Bang Choon | English timestamped teacher walkthrough transcript | https://yijc.coursemology.org/courses/3257/assessments/88802
 - [2023 JC1 Promo Paper 1 Question 2(a), (b)](https://www.youtube.com/watch?v=lEMNGo2xTk4) | David Tan Bang Choon | English timestamped teacher walkthrough transcript | https://yijc.coursemology.org/courses/3257/assessments/88802
 - [2023 JC1 Promo Paper 1 Question 2(c) - (f)](https://www.youtube.com/watch?v=KsnEqzYSuxs) | David Tan Bang Choon | English timestamped teacher walkthrough transcript | https://yijc.coursemology.org/courses/3257/assessments/88802

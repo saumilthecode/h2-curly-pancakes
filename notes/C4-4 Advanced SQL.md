@@ -4,8 +4,8 @@
 > Syllabus 3.3.8. Single-table SQL is in [[C4-2 Basic SQL]].
 
 > [!important] What the Paper 2 Reference Guide prints
-> ```text
-> SELECT … FROM table1, table2 WHERE …;                    <- the one this course uses
+> ```sql
+> SELECT … FROM table1, table2 WHERE …;                -- the one this course uses
 > SELECT … FROM table1 INNER JOIN table2 ON …;
 > SELECT … FROM table1 LEFT OUTER JOIN table2 ON …;
 > ```
@@ -155,6 +155,18 @@ WHERE OrderDate LIKE '%Feb%2013%' AND ProductName = 'Lakkalik ri';
 Same two rows. The link moves from `WHERE` to `ON`. A `LEFT OUTER JOIN` also keeps rows with no match, such as the two customers who never ordered.
 
 ## Exam
+
+> [!important] Specimen 2027 P1 Q4(c): lockers not assigned to a student `[4]`
+> Tables from [[C4-3c ER Diagram#Exam|C4-3c]]: Locker (<u>LockerNo</u>, Combination), and `Student` holds <u class="fk">LockerNo</u>.
+>
+> A comma join can't do this: it only returns lockers that **match** a student. Use the Reference Guide's `LEFT OUTER JOIN`. It keeps **every** locker, fills the `Student` columns with `NULL` where no student matches, and the `WHERE` keeps those:
+>
+> ```sql
+> SELECT Locker.LockerNo, Combination
+> FROM Locker LEFT OUTER JOIN Student ON Locker.LockerNo = Student.LockerNo
+> WHERE Student.StudentID IS NULL;
+> ```
+
 
 > [!important] Writing any multi-table query
 > 1. Put every table you **show** or **filter** on in `FROM`. Include `Orders` even if you show nothing from it: it is the only path between `Customers` and `Products`.

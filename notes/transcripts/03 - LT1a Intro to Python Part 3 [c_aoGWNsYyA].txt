@@ -3,8 +3,6 @@ LT: LT 1a - Introduction to Python
 Linked label: Introduction to Python - Part 3
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=c_aoGWNsYyA
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

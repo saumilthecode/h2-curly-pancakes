@@ -3,8 +3,6 @@ LT: LT 10a Data Abstraction (2) - Reading Data from Text File
 Linked label: Reading from a .csv or .txt text file
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=RLMzVuR9Hsk
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

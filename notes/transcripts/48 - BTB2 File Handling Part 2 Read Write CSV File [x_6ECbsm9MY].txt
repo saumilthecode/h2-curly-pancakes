@@ -3,8 +3,6 @@ Assessment(s): BTB 2 - File Handling
 Linked label(s): Part 2 - File Handling : CSV File
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=x_6ECbsm9MY
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -3,8 +3,6 @@ LT: LT 2 - Conditional
 Linked label: IF-ELSE Conditional
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=nX_-BXuIE2w
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

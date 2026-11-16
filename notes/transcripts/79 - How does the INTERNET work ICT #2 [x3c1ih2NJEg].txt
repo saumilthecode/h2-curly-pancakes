@@ -3,8 +3,6 @@ Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
 Linked label(s): Embedded slide video
 Uploader: Sabin Civil Engineering
 YouTube: https://www.youtube.com/watch?v=x3c1ih2NJEg
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

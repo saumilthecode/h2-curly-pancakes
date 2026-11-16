@@ -2,7 +2,6 @@
 
 - **Assessment:** LT 9b - Recursion (Application)
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88733
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes
 
@@ -283,3 +282,4 @@ def choose(n, r):
 | `choose(6, 6)` | `1` |
 | `choose(7, 4)` | `35` |
 | `choose(18, 8)` | `43758` |
+

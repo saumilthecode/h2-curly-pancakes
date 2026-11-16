@@ -1,7 +1,6 @@
 # LT 12e Quicksort - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88737
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 14
 - **Learning outcomes:** 1.2 Fundamental Algorithms1.2.1 Implement sort algorithms (insertion sort, bubble sort, quicksort, merge sort)1.2.2 Use examples to explain sort algorithms1.2.5 Compare and describe the efficiencies of the sort and search algorithms using Big-O notation for time complexity (worst case).
 
@@ -75,7 +74,6 @@ Which of the following statement(s) about Quicksort is/are True?
 
 - **Type:** MultipleChoice
 
-
 #### Choices
 
 - O(1), because it takes the same amount of time regardless of the size of the array.
@@ -87,7 +85,6 @@ Which of the following statement(s) about Quicksort is/are True?
 ### Question 3: The worst case Time Complexity for Quicksort
 
 - **Type:** MultipleResponse
-
 
 #### Choices
 
@@ -272,8 +269,6 @@ Describe how the Quick Sort algorithm works to sort an array in ascending order.
 Use keywords : **pivot**, **partition**, **repeat**
 
 ## Linked code template notebook cells
-
-Starter-code cells copied read-only from the assessment-linked local template notebook(s). Notebook outputs and walkthrough-solution notebooks are excluded.
 
 ### LT12e-non-inplace.ipynb
 
@@ -596,3 +591,4 @@ shuffle(random_seq)
 
 quicksort(random_seq)
 ```
+

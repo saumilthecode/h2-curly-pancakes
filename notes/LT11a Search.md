@@ -87,12 +87,10 @@ On return, `index` adds `1` per level; `count` adds `1` per match.
 
 Divide and conquer: compare the middle element to the **key**, then throw away the half it cannot be in. Repeat until found, or until the range is empty.
 
-```text
-seq   5   9  12  18  25  34  85 100 123 345
-idx   0   1   2   3   4   5   6   7   8   9
-      ^               ^                   ^
-     lo              mid                 hi
-```
+| idx | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| --- | - | - | - | - | - | - | - | - | - | - |
+| seq | 5 | 9 | 12 | 18 | 25 | 34 | 85 | 100 | 123 | 345 |
+| | `lo` | | | | `mid` | | | | | `hi` |
 
 ### The Algorithm
 
@@ -108,16 +106,15 @@ idx   0   1   2   3   4   5   6   7   8   9
 | --------------- | ---------- |
 | Why | each step halves the remaining elements |
 
-```text
-what is left to search, worst case
+Worst case, each comparison halves what is left: $10 \to 5 \to 2 \to 1 \to 0$, so 4 comparisons for 10 elements.
 
- 10  ->  5  ->  2  ->  1  ->  0      4 comparisons for 10 elements
-    /2     /2     /2     /2
+| Elements | Binary, worst case | Linear, worst case |
+| -------- | ------------------ | ------------------ |
+| 10 | 4 | 10 |
+| 1,000 | 10 | 1,000 |
+| 1,000,000 | 20 | 1,000,000 |
 
- 1,000 elements need 10, and 1,000,000 need 20.
- Doubling the list adds one comparison. That is O(log n).
- Linear search on the same lists needs 1,000 and 1,000,000.
-```
+Doubling the list adds **one** comparison to binary search. That is $O(\log n)$.
 
 ### Trace Table
 
@@ -227,52 +224,15 @@ degrade to `O(n)`.
 
 ## Exam
 
-> [!important] 2024 Promo P1 Q1: find `42` in `[33, 37, 42, 51, 62, 71, 80, 83]` `[2+3+4]`
-> **(a) Linear.** Start at index 0. 42 isn't there, so move to index 1, then index 2, where it is found. Stop.
-> 1m start at the beginning · 1m search in sequence, found at index 2.
->
-> **(b) Binary.**
->
-> | Range | `mid` | Value | Then |
-> | ----- | ----- | ----- | ---- |
-> | 0–7 | `(0 + 7) // 2 = 3` | 51 | 51 > 42, search 0–2 |
-> | 0–2 | `(0 + 2) // 2 = 1` | 37 | 37 < 42, search 2–2 |
-> | 2–2 | 2 | 42 | found, stop |
->
-> 1m start with indices 0 to 7 · 1m calculate the middle index · 1m eliminate half.
->
-> **(c) "Both take the same number of steps, so they're equally efficient." True?** No. They match here only because of where 42 sits (1m). Linear search is `O(n)`, removing one element per step (1m). Binary search is `O(log n)` (1m), halving the search space each step (1m).
->
-> 2026 Mastery P1 Q1 repeated (b) and (c) as its (a) and (b), with the same scheme.
+> [!important] "Describe how a binary search finds an item"
+> 1. The list must be **sorted**.
+> 2. Compare the item with the **middle** element.
+> 3. If they match, the item is **found**.
+> 4. If the item is **smaller**, repeat on the **left half**. If **larger**, the **right half**.
+> 5. Stop when it is found, or when the half left to search is **empty**: the item isn't there.
 
-> [!important] 2023 Promo P1 Q5(a): find one record card, sorted by registration number `[2]`
-> **Binary search.** Open the cabinet at the middle card and compare registration numbers. If the target is smaller, discard the back half. If larger, the front half. Repeat on what's left until the card is found or no cards remain.
-
-> [!example]- 2025 Promo P2 Task 6: iterative binary search `[4]`
-> 1m loop while `start <= end` · 1m check the value at `mid = (start + end) // 2` · 1m update the pointers · 1m `return False` after the loop.
-
-> [!important] 2026 Mock Promo P1 Q4(a): linear search for `392` in `[417, 203, 586, 144, 392, 251]` `[3]`
-> Compared in order: `417`, `203`, `586` (1m), then `144`, then `392`, and stop (1m). Returns index **4** (1m).
-
-> [!important] 2026 Mock Promo P2 Task 7: binary search that counts comparisons `[5+1]`
-> ```python
-> def find_box(codes, target):
->     low = 0
->     high = len(codes) - 1
->     comparisons = 0                      # 1m bounds and counter
->     while low <= high:                   # 1m loop and midpoint
->         middle = (low + high) // 2
->         comparisons += 1
->         if codes[middle] == target:
->             return middle, comparisons   # 1m found
->         if codes[middle] < target:
->             low = middle + 1             # 1m
->         else:
->             high = middle - 1            # 1m
->     return -1, comparisons
-> ```
->
-> Count one comparison per midpoint checked. On the 15 sorted box codes, `"B412"` gives `(5, 3)` and `"D200"` gives `(-1, 4)`. Testing both earns the last mark.
+> [!important] "When would you use a linear search instead?"
+> When the data is **unsorted**, since sorting first costs more than one linear search. When the list is **small**, so the saving is tiny. When items are added often, because binary search needs the list kept in order.
 
 ## Common Mistakes
 

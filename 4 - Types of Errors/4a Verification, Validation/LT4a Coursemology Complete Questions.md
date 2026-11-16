@@ -1,7 +1,6 @@
 # LT 4a - Data Verification and Validation: Complete Coursemology Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88712
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 13
 
 ## Learning outcomes and assessment context
@@ -160,4 +159,3 @@ Feel free to consult any of the teachers using the comments feature if you have 
 
 ---
 
-*Archive scope: complete prompts, choices, prompt code, diagrams/alt text, linked starter templates where supplied, and public tests. Submitted answers, grades, feedback/comments, statistics, and correct-answer markings are excluded.*

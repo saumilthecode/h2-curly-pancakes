@@ -1,7 +1,6 @@
 # LT 6 - Tuples: Complete Coursemology Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88727
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 14
 
 ## Learning outcomes and assessment context
@@ -348,4 +347,3 @@ Two samples of the output are given as follows:
 
 ---
 
-*Archive scope: complete prompts, choices, prompt code, diagrams/alt text, linked starter templates where supplied, and public tests. Submitted answers, grades, feedback/comments, statistics, and correct-answer markings are excluded.*

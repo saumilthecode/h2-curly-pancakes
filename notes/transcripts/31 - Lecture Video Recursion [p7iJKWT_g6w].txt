@@ -3,8 +3,6 @@ LT: LT 9a - Recursion
 Linked label: Recursion (9:55)
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=p7iJKWT_g6w
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

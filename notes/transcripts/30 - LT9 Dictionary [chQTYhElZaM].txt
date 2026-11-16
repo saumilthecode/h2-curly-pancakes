@@ -3,8 +3,6 @@ LT: LT 8 - Dictionary
 Linked label: Dictionary
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=chQTYhElZaM
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

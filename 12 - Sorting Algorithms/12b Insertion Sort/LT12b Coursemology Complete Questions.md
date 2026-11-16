@@ -1,7 +1,6 @@
 # LT 12b Insertion Sort - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88722
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 6
 - **Learning outcomes:** 1.2 Fundamental Algorithms1.2.1 Implement sort algorithms (insertion sort, bubble sort, quicksort, merge sort)1.2.2 Use examples to explain sort algorithms1.2.5 Compare and describe the efficiencies of the sort and search algorithms using Big-O notation for time complexity (worst case).
 
@@ -118,8 +117,6 @@ Write program code for the functions `insertion_sort_comparison(seq)` using the 
 
 ## Linked code template notebook cells
 
-Starter-code cells copied read-only from the assessment-linked local template notebook(s). Notebook outputs and walkthrough-solution notebooks are excluded.
-
 ### LT12b.ipynb
 
 #### Code cell 1
@@ -218,3 +215,4 @@ print(insertion_sort_comparison([8,7,5,4,3,1]))
 print(insertion_sort_comparison([7,1,3,5,8,4]))
 print(insertion_sort_comparison([1,3,5,4,8,7]))
 ```
+

@@ -3,8 +3,6 @@ LT: LT 1c - Basic Python - Boolean Truth Values
 Linked label: Basic Python : Boolean Truth Values
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=iMgcWI00h6I
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

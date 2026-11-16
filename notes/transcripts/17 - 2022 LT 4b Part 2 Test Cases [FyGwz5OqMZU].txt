@@ -3,8 +3,6 @@ LT: LT 4b - Types of Error and Test Cases
 Linked label: 2. Test Cases
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=FyGwz5OqMZU
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

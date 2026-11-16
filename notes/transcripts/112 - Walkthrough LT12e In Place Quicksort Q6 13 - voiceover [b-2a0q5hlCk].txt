@@ -3,8 +3,6 @@ Assessment(s): LT 12e Quicksort
 Linked label(s): Walkthrough Question 6-13: in-place Quicksort algorithm
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=b-2a0q5hlCk
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -6,10 +6,10 @@
 > 2.2.1 names only insertion, bubble, quicksort and merge. The assessment is marked *[OPTIONAL]*. Its own preamble warns it *"may be tested during the A Level exam if the pseudocode/algorithm is given in a question"*, so learn to read the pseudocode below.
 > Learn it for the contrast: the only `O(n²)` sort here that is **unstable**, and the only one whose **best case is still `O(n²)`**.
 
-```text
-[ 1  2 | 6  4  7  3 ]      smallest of 6 4 7 3 is 3, swap with 6
-[ 1  2  3 | 4  7  6 ]      boundary moves right
-```
+| | `[0]` | `[1]` | `[2]` | `[3]` | `[4]` | `[5]` | |
+| - | ----- | ----- | ----- | ----- | ----- | ----- | - |
+| before | **1** | **2** | ==6== | 4 | 7 | ==3== | smallest of `6 4 7 3` is `3`: swap it with `6` |
+| after | **1** | **2** | **3** | 4 | 7 | 6 | the sorted part (**bold**) grows by one |
 
 ## Four Core Skills
 
@@ -76,9 +76,10 @@ Every case runs `n - 1` passes and `n(n-1)/2` comparisons.
 > [!example]- Why it is unstable
 > `5, 3, 6, 5, 9, 2, 7`: the smallest is `2`, so it swaps with the **first** `5`, which lands at index 5, behind the second `5`.
 >
-> ```text
-> 5a  3  6  5b  9  2  7   ->   2  3  6  5b  9  5a  7
-> ```
+> | | | | | | | | |
+> | - | - | - | - | - | - | - | - |
+> | before | ==5a== | 3 | 6 | 5b | 9 | ==2== | 7 |
+> | after | 2 | 3 | 6 | 5b | 9 | ==5a== | 7 |
 >
 > Long-range swaps break stability; [[LT12a Bubble Sort|bubble]] and [[LT12b Insertion Sort|insertion]] only swap neighbours.
 

@@ -3,8 +3,6 @@ LT: LT 7 - Lists
 Linked label: How do we use the slice operator with a step - List & String
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=VH6NNKkO_JM
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -3,8 +3,6 @@ Assessment(s): [OPTIONAL] LT 12c Selection Sort
 Linked label(s): Selection Sort
 Uploader: Kuang Jingkai [Staff]
 YouTube: https://www.youtube.com/watch?v=KVXk2byimrE
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

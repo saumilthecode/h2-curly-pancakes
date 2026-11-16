@@ -3,8 +3,6 @@ LT: LT 3a - Functional Abstraction (for 2026)
 Linked label: Functional Abstraction Part 2
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=u1NfcxbuSpI
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

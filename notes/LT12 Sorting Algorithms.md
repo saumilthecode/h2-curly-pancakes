@@ -1,6 +1,8 @@
 > [!summary] Quick View
 > The five sorts and how to choose between them:
 > [[LT12a Bubble Sort]] · [[LT12b Insertion Sort]] · [[LT12c Selection Sort]] · [[LT12d Merge Sort]] · [[LT12e Quick Sort]]
+> **Worst case:** merge `O(n log n)`, every other sort `O(n²)`. **Best case `O(n)`:** insertion and optimised bubble on sorted data.
+> Paper 1: describe each sort with its keywords, show the passes, compare Big-O. Paper 2: code insertion, bubble, merge and quicksort.
 
 > [!important] Syllabus scope
 > | Ref | Outcome |
@@ -74,9 +76,6 @@ No sort here is `O(log n)`. The last cell is the bubble sort warning: *"1 millio
 | | [[LT12a Bubble Sort\|Bubble]] (optimised) | compare **adjacent** pairs and swap any out of order, so the largest bubbles to the right end. Stop after a pass with no swaps | `O(n)` | `O(n²)` | `O(n²)` | yes | yes |
 | Recursive | [[LT12d Merge Sort\|Merge]] | halve until each piece has one element, then **merge** pairs back in order | `O(n log n)` | `O(n log n)` | `O(n log n)` | **no** | yes |
 | | [[LT12e Quick Sort\|Quicksort]] | pick a **pivot**, put smaller values left and larger right, repeat on each side | `O(n log n)` | `O(n log n)` | **`O(n²)`** | yes (two-pointer), no (new lists) | no, except the three-list version |
-| Gambling | Bogosort | shuffle at random until sorted | `O(n)` | `O(n·n!)` | unbounded | yes | no |
-
-Bogosort isn't in the syllabus.
 
 Nearly sorted → insertion or optimised bubble. Guaranteed performance → merge, the only `O(n log n)` worst case. Tight memory → not merge, and not the `left`/`right` quicksort. Order of equal items matters → not selection, not two-pointer quicksort.
 
@@ -92,9 +91,6 @@ The comparative questions. Single-algorithm ones sit in each sort's own note.
 
 > [!important] 2022 Q4(e): merge over quicksort in a fixed-capacity array `[2]`
 > Merge is `O(n log n)` in every case. Quicksort degrades to `O(n²)` on bad splits. A fixed array of **ordered** data is exactly quicksort's worst case.
-
-> [!important] 2025 Promo P1 Q1(b): insertion vs merge for large unsorted arrays `[2]`
-> 1m insertion `O(n²)`, merge `O(n log n)` · 1m so **merge** suits large unsorted arrays.
 
 ## Common Mistakes
 

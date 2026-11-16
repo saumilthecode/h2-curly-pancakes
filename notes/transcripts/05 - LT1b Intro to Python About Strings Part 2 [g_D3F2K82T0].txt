@@ -3,8 +3,6 @@ LT: LT 1b - Basic Python - About Strings
 Linked label: Basic Python - About Strings (Part 2)
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=g_D3F2K82T0
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

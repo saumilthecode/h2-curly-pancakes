@@ -1,13 +1,9 @@
 # C4 Database and Basic SQL: Complete SLS Questions and Resources
 
 - **Source:** Singapore Student Learning Space, assignment “C4 Database and Basic SQL”
-- **Extracted:** 1 September 2026
 - **Sections covered:** C4-1 and C4-2a to C4-2e
 - **Question count:** 14
-- **Live package rechecked:** 12 November 2026, current title “C4-1 Database and C4-2 Basic SQL”. All five sections and 14 prompts remain covered.
 - **Full C4 coverage and availability:** [C4 Resource Index](../C4%20Resource%20Index.md)
-
-This is a prompt-only archive. It excludes the student’s answers, submission status, marks and correctness feedback.
 
 ## Resource index
 
@@ -188,3 +184,4 @@ Use the provided `Databases/dummy.db` database.
 1. Write an SQL command to list the unit prices of all products under `$20`.
 2. Write an SQL command to increase the unit prices of all products under `$20` by `$1`.
 3. Check that the command successfully increased every unit price that was originally below `$20`.
+

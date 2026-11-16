@@ -1,7 +1,6 @@
 # LT1b Coursemology Complete Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88708
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 11
 
 ## Learning outcomes
@@ -24,7 +23,6 @@ Please do not write guns_fired="Bang!Boom!" as it defeats the purpose of the que
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -62,7 +60,6 @@ Try to generate the four greetings for the four friends in each of their languag
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -86,7 +83,6 @@ Then, fill in the answer `fire_21_times` such that it repeats `gunshot_single` f
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -112,7 +108,6 @@ Note: Do not mix it up with the assignment operator `=`.
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -128,7 +123,6 @@ As an exercise, assign the length of `super_long_string` to `my_length`.
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -146,7 +140,6 @@ Please do not hard code the expected results.
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -165,7 +158,6 @@ As an exercise, assign the value of the position of `'dog'` in the given `long_s
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -192,7 +184,6 @@ As an exercise, assign the string consisting of the index 5 to index 17 (inclusi
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -231,7 +222,6 @@ Please do not hard code the answers.
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -242,4 +232,3 @@ Please do not hard code the answers.
 
 ---
 
-*Archive scope: complete question-facing prompts, choices, diagrams/alt text, and public test cases visible on the authenticated assessment pages. Student submissions, grades, comments, statistics, feedback, and correctness markings are excluded.*

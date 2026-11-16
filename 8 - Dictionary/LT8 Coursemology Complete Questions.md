@@ -2,7 +2,6 @@
 
 - **Assessment:** LT 8 - Dictionary
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88714
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes
 
@@ -401,3 +400,4 @@ studentB_CT2 = {'H1GP': 62, 'H2MA': 73, 'H2EC': 45, 'H2PH': 61, 'H2CH': 57}
 |---|---|
 | `average(studentA_CT1, studentA_CT2)` | `{'H1GP': 60.0, 'H2MA': 69.5, 'H2CP': 73.5, 'H2PH': 58.0, 'H1EC': 46.0}` |
 | `average(studentB_CT1, studentB_CT2)` | `{'H1GP': 61.0, 'H2MA': 74.5, 'H2EC': 49.0, 'H2PH': 63.5, 'H2CH': 58.0}` |
+

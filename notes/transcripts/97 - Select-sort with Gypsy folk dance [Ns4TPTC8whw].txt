@@ -3,8 +3,6 @@ Assessment(s): [OPTIONAL] LT 12c Selection Sort
 Linked label(s): Selection Sort with Gypsy folk dance
 Uploader: AlgoRythmics
 YouTube: https://www.youtube.com/watch?v=Ns4TPTC8whw
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

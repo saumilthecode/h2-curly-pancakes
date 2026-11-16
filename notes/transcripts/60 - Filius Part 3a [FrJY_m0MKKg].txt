@@ -3,8 +3,6 @@ Assessment(s): C3a Hands-on with Filius Network Simulator
 Linked label(s): Part 3a : About Servers - Web Server
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=FrJY_m0MKKg
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

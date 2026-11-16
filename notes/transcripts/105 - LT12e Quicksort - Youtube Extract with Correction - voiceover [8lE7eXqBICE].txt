@@ -3,8 +3,6 @@ Assessment(s): LT 12e Quicksort
 Linked label(s): Quick Sort Explained (extract)
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=8lE7eXqBICE
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

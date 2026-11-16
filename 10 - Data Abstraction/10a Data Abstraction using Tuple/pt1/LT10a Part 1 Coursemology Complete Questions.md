@@ -1,7 +1,6 @@
 # LT 10a Data Abstraction (1) - Abstract Data Type ADT
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88735
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes and core skills
 
@@ -24,8 +23,6 @@ A student record ADT can be created using the following constructor provided in 
 
 make_student(name,gender,score)
 
-
-
 from module import *
 
 Student1 = make_student("John", "M", 54)
@@ -40,8 +37,6 @@ class101 = (Student1, Student2, Student3, Student4, Student5, Student6, Student7
 
 The group class101 is a tuple containing all the 7 Student ADTs.
 
-
-
 Write program code for the function average_score(group) to compute and return the average score, round to 2 decimal places.
 
 You may use the following methods provided in the module:
@@ -53,7 +48,7 @@ size(group)
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -81,7 +76,7 @@ size(group)
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -103,8 +98,6 @@ The constructor method uses a tuple to store the name, gender and score when cre
 def make_student(name, gender, score):
    return (name, gender, score)
 
-
-
 As a programmer, write the program codes for the following methods:
 
 get_name(student)
@@ -114,7 +107,7 @@ size(group)
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -163,8 +156,6 @@ The constructor method to create a Position ADT uses a tuple to store the x- and
 def make_point(xcoord, ycoord):
    return (xcoord, ycoord)
 
-
-
 As a programmer, write the program codes for the following methods:
 
 get_x(point) to return the x-coordinate value
@@ -179,7 +170,7 @@ For this question, you can assume that one of the points in the pair is at the o
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -255,8 +246,6 @@ The constructor method to create a Rational Number ADT uses a tuple to store the
 def make_rat(numer, denom):
    return (numer, denom)
 
-
-
 As a programmer, write the program codes for the following methods:
 
 get_numer(rat) to return the numerator of the Rational Number
@@ -271,7 +260,7 @@ is_whole(rat) to return a Boolean
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -371,14 +360,11 @@ True
 
 In the previous question, we observed that some of the rational numbers are not in their lowest terms; usually instead of , we would prefer to have it as .
 
-
 We can use the gcd(n,d) (greatest common divisor) function in the Python's built-in math module by including the following in our code:
 
        from math import gcd
 
 Write a new Constructor make_rat(n,d) by including the use of gcd(n,d) function to reduce a rational number to its lowest term.
-
-
 
 Note :
 
@@ -392,7 +378,7 @@ The methods add(rat1,rat2), sub(rat1,rat2), mul(rat1,rat2) and div(rat1,rat2) ha
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -447,16 +433,11 @@ div(x,y)
 
 Write program code for the function sumfrac(tup) to compute the sum of all the rational numbers in the tuple tup and return the total as a Rational Number ADT.
 
-
 Hint: To find the sum of all the rational numbers in a tuple, you may initialize a variable total as a "zero" rational number * and then iteratively add all the other rational numbers to it to get the sum.
 
 * A "zero" rational number has a 0 as the numerator and 1 as the denominator.
 
-
-
 The function sumfrac(tup) will be used to find the sum of all the fractions in the tuple tuplefrac.
-
-
 
 The following methods for the Rational Number ADT are available to use here in Coursemology without coding them:
 
@@ -465,7 +446,7 @@ the add(rat1,rat2) method to sum two rational numbers, rat1 and rat2.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -479,3 +460,4 @@ sumfrac(tuplefrac)
 
 (485, 252)
 ```
+

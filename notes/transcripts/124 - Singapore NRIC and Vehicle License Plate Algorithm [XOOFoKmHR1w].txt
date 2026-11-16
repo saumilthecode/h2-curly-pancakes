@@ -2,15 +2,11 @@ Title: Singapore NRIC and Vehicle License Plate Algorithm
 Assessment(s): LT10d About Hashing Part 1 slides, embedded YouTube link
 Uploader: The Geekosphere
 YouTube: https://www.youtube.com/watch?v=XOOFoKmHR1w
-Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
-Language: English (en)
-Format: Full timestamped transcript
-Caption limitation: Original caption [00:05 - 16:45] exceeds the 04:30 video duration. Original source timing is preserved verbatim.
 
 TRANSCRIPT
 ==========
 [00:00 - 00:05] In Singapore, the last letter of NRIC numbers or vehicle license plates act as a checksum
-[00:05 - 16:45] letter.
+[00:05] letter.
 [00:06 - 00:11] That is, while this letter is not required to uniquely identify a person or a vehicle,
 [00:11 - 00:15] it serves the purpose of providing a means to check the validity of a number provided.
 [00:15 - 00:19] In this video, I will be demonstrating to you how the algorithms works.
@@ -40,7 +36,7 @@ TRANSCRIPT
 [01:46 - 01:48] Let's try an example.
 [01:48 - 01:55] Suppose we want to find the suffix associated with the NRIC number S7654321.
 [01:55 - 01:59] We multiply each digit by the numbers mentioned earlier, and add them all up, which gives
-[01:59 - 18:39] 182.
+[01:59] 182.
 [02:00 - 02:09] 182 divided by 11 gives 16 remainder 6, hence 182 mod 11 equals 6, which will be our checksum.
 [02:09 - 02:15] Referring to the table, we find that prefix S and checksum 6 gives the letter F, hence
 [02:15 - 02:19] the last letter of the NRIC number S7654321 is F.
@@ -49,7 +45,7 @@ TRANSCRIPT
 [02:27 - 02:31] The first thing to note is the variable number of prefix characters and number of digits.
 [02:31 - 02:33] Let's start with the prefix.
 [02:33 - 02:37] Most cars and public buses have 3 prefix letters, while other vehicles like lorries and motorbikes
-[02:37 - 19:17] have 2.
+[02:37] have 2.
 [02:38 - 02:44] For vehicles with 3 prefix letters, drop the first, which is usually an S, or T for the
 [02:44 - 02:47] old SMRT buses which begin with TIB.
 [02:47 - 02:50] This leaves us with 2 prefix letters.
@@ -70,7 +66,7 @@ TRANSCRIPT
 [03:46 - 03:52] Now, we convert the prefix letters X and Y using the table to get 24 and 25.
 [03:52 - 03:58] We now have 6 numbers, being 24, 25, 0, 3, 2 and 1.
 [03:58 - 04:04] We multiply them by the factors mentioned earlier, and sum them together, which gives
-[04:04 - 20:44] 709.
+[04:04] 709.
 [04:05 - 04:10] 709 mod 19 gives 6, which we compare against the table to find that the suffix letter is
 [04:10 - 04:16] H. Hence, the car number SXY321 will have last letter being H.
 [04:16 - 04:21] I have included a link in the description to download the tables used in this video,

@@ -1,7 +1,6 @@
 # LT10d About Hashing (Part 2)
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88705
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes and core skills
 
@@ -43,7 +42,7 @@ using the computed hash value, i, as the index, store the data in the Hash Table
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -64,13 +63,11 @@ Refer to LT10d About Hashing (slide 9)
 
 Write the Python code for the Search function for Hash Table (without Collision Resolution).
 
-
-
 Note : The codes for the Hash Function and Table are provided in this question.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -100,8 +97,6 @@ False
 - You should start from scratch with no prior code provided. Coursemology will not have code from previous questions.
 - Answer this question with these in mind.
 
-
-
 [2018 YIJC Promo Exam Task 3.1 & 3.2]
 
 In a supermarket, the grocery inventory database stores the item names in a hash table for easy search and retrieval.
@@ -112,13 +107,7 @@ The following is an example of the computation:
 
 ord('i')= 105           ord('n')= 110          ord('o')= 111
 
-
-
 Task 3.1: Write a program code for this hash function.
-
-
-
-
 
 keys1  provided is a sequence containing the name of the items.
 
@@ -128,11 +117,7 @@ Task 3.2: Write a program code hash_table(seq) to:
 
 ·       return the hash table
 
-
-
 You may assume that there is no collision and the hash function will generate different values for different item names.
-
-
 
 Note : An empty string '' is used to denote a empty cell in the hash table.
 
@@ -142,7 +127,7 @@ Note : An empty string '' is used to denote a empty cell in the hash table.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -183,3 +168,4 @@ table1
 
 ['okra', 'onion', '', '', 'cabbage', '', 'mushroom', 'salt', '', 'cucumber', 'tomato', 'banana', 'orange']
 ```
+

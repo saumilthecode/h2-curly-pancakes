@@ -1,19 +1,9 @@
 # C4-4 Advanced SQL: Answers and Checks
 
-Checked locally on 11 November 2026 using the current Coursemology slides and fresh source database downloads.
-
 Source: https://yijc.coursemology.org/courses/3257/assessments/88878/submissions/2918269/edit
-
-## Browser status
-
-- Question 1: Database.db is attached but not submitted.
-- Questions 2–7: answers entered and rechecked by returning to each question.
-- No Check Answer, Save Draft, or Submit button was clicked. Site automatic saving was allowed by the user.
-- Every question still showed Past Answers (0); none was sent for marking.
 
 ## Files
 
-- The current C4-4 slides are in [Slides](../Slides/C4-4_Advanced_SQL.pdf). The existing file was byte-for-byte identical to the current Coursemology download.
 - Database.db is the empty three-table database for Question 1. It is separate from the C4-2 walkthrough database.
 - Create Tables.sql recreates its schema, with Customers and Products created before Orders.
 - Question N.sql contains each query.
@@ -128,3 +118,4 @@ AND Orders.ProductID = Products.Id
 ```
 
 Without the linking conditions, unrelated rows are combined and totals become wrong.
+

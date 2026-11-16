@@ -3,8 +3,6 @@ LT: LT 7 - Lists
 Linked label: How do we use the index operator - List & String
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=p6o9X5_JWG8
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

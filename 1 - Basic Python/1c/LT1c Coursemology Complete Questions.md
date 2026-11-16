@@ -1,7 +1,6 @@
 # LT1c Coursemology Complete Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88709
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 8
 
 ## Learning outcomes
@@ -65,4 +64,3 @@ In Python 3.x True and False will always be equal to 1 and 0 respectively. Anyth
 
 ---
 
-*Archive scope: complete question-facing prompts, choices, diagrams/alt text, and public test cases visible on the authenticated assessment pages. Student submissions, grades, comments, statistics, feedback, and correctness markings are excluded.*

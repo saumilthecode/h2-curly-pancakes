@@ -3,8 +3,6 @@ LT: LT 11a Linear and Binary Search
 Linked label: Lecture video (Part 1) - Linear Search
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=qwMthCimEP4
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

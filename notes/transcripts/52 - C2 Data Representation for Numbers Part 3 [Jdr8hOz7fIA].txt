@@ -3,8 +3,6 @@ Assessment(s): C2a Data Representation of Numbers (Theory Questions)
 Linked label(s): C2a Data Representation of Numbers (Part 2)
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=Jdr8hOz7fIA
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

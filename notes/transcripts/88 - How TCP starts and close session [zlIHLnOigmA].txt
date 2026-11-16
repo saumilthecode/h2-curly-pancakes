@@ -3,8 +3,6 @@ Assessment(s): C3c Additional Resources
 Linked label(s): How TCP starts and closes session
 Uploader: Sunny Classroom
 YouTube: https://www.youtube.com/watch?v=zlIHLnOigmA
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

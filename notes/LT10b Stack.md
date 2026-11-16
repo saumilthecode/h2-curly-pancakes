@@ -1,16 +1,11 @@
 > [!summary] Quick View
 > Stack = **LIFO**, Last In First Out. Everything happens at the top.
 
-```text
-      push v    ^ pop         both act on the TOP
-         +-------+
-  top >  |   C   |  < s[-1]   last in, first out
-         +-------+
-         |   B   |
-         +-------+
-bottom > |   A   |  < s[0]    first in, last out
-         +-------+
-```
+| | Stack | Python list |
+| - | :---: | ----------- |
+| **top** | ==C== | `s[-1]`: `push` and `pop` both act here. Last in, first out |
+| | B | |
+| **bottom** | A | `s[0]`: first in, last out |
 
 ## Core Operations
 
@@ -60,11 +55,11 @@ def peek(s):
 
 ## Application: Reverse a Sequence
 
-```text
-input:  a b c d
-stack:  [a, b, c, d]
-pop:    d c b a
-```
+| | |
+| - | - |
+| push each of | `a b c d` |
+| stack | `[a, b, c, d]`, `d` on top |
+| pop until empty | `d c b a` |
 
 ## Application: Denary to Binary
 
@@ -108,17 +103,17 @@ A count of `(` and `)` passes `)(`. The stack catches the order.
 
 Evaluate left to right: push operands. For operators, pop two, combine, push result. Tuple input: `(7, 6, 2, '/', '+')` = `7 + 6 / 2 = 10`.
 
-```text
-3 4 * 5 +          (infix: 3 * 4 + 5)
+`3 4 * 5 +`, which is `3 * 4 + 5` in infix:
 
-push 3                    [3]
-push 4                    [3, 4]
-*  -> pop 4, pop 3, push 12   [12]
-push 5                    [12, 5]
-+  -> pop 5, pop 12, push 17  [17]
+| Token | Action | Stack |
+| ----- | ------ | ----- |
+| `3` | push | `[3]` |
+| `4` | push | `[3, 4]` |
+| `*` | pop `4`, pop `3`, push `3 * 4` | `[12]` |
+| `5` | push | `[12, 5]` |
+| `+` | pop `5`, pop `12`, push `12 + 5` | `[17]` |
 
-answer = 17
-```
+The one value left is the answer: `17`.
 
 > [!warning]
 > For `-` and `/` the order matters. `A B -` means `A - B`. The **first** value popped is the right-hand operand.
@@ -127,37 +122,13 @@ Symbol order fixes evaluation order: **no brackets or precedence rules**. `3 4 5
 
 ## Exam
 
-> [!important] 2026 Mock Promo P2 Task 6: trail backtracking with a stack `[3+2+3]`
-> `module.py` gives `make_empty_stack()` and `is_empty_stack(stack)`. You write the rest.
->
-> ```python
-> def push(stack, checkpoint):
->     stack.append(checkpoint)           # 1m
->     return stack                       # the question asks for the stack back
->
-> def pop(stack):
->     if is_empty_stack(stack):          # 1m
->         return None
->     return stack.pop()                 # 1m
->
-> def peek(stack):
->     if is_empty_stack(stack):          # 1m
->         return None
->     return stack[-1]                   # 1m
->
-> def backtrack(stack):
->     route = []                         # 1m
->     while not is_empty_stack(stack):   # 1m
->         route.append(pop(stack))
->     return route                       # 1m
-> ```
->
-> After pushing `("ENTRANCE", "PINE", "RIDGE", "LAKE")`, `peek(trail)` is `'LAKE'` and `backtrack(trail)` is `['LAKE', 'RIDGE', 'PINE', 'ENTRANCE']`.
+> [!important] "Describe a stack"
+> A stack is a **last in, first out** (LIFO) structure. Items are added (**push**) and removed (**pop**) at the **same end**, the top, so the last item pushed is the first one popped. `pop` must check the stack **isn't empty**, and on a fixed-size stack `push` must check it **isn't full**.
 
 ## Common Mistakes
 
 - Using `pop(0)`: that's a [[LT10c Queue|Queue]], not a stack.
-- Returning `s.append(x)` from `push`: `.append()` returns `None`. If the question wants the stack back (Mock Promo Task 6.1), append first, then `return s`.
+- Returning `s.append(x)` from `push`: `.append()` returns `None`. If the question wants the stack back, append first, then `return s`.
 - Iterating the list (`for item in s:`) instead of calling `pop()`: it loses the ADT marks in *application of stack* questions and doesn't reverse.
 - Treating `peek()` as if it removes the item.
 - Popping an empty stack instead of returning `None`.

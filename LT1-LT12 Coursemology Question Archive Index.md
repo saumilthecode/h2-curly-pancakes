@@ -1,16 +1,6 @@
 # LT1-LT12 Coursemology Question Archive
 
-Updated: 14 November 2026
-
-This index points to the 30 pre-existing prompt-only Lecture Training archives from LT1a through LT12e. Student answers, grades, feedback, comments, statistics and correctness markings are excluded.
-
-## Coverage summary
-
-- Assessment archives: **30**
-- Archived question prompts: **285**
-- Local question-diagram files: **30** covering **31** Markdown references
-- Original LT video subset: **75** links. The 14 November audit also found supplementary slide links, a question walkthrough and five additional distinct live-catalog LT uploads. All are in `notes/transcripts`; see its current index for per-video caption/language limits.
-- Current released Lecture Training runs through **LT12e Quicksort**. LT10d Part 3 retains its existing notebook/PDF coverage. LT13a only opens on **20 November 2026, 08:00**; it was not attempted.
+The Coursemology lecture-training questions for LT1a to LT12e, one file per lesson.
 
 ## Question archive files
 
@@ -44,25 +34,3 @@ This index points to the 30 pre-existing prompt-only Lecture Training archives f
 - **11 questions**: [LT12c Coursemology Complete Questions.md](<12 - Sorting Algorithms/12c Selection Sort/LT12c Coursemology Complete Questions.md>)
 - **8 questions**: [LT12d Coursemology Complete Questions.md](<12 - Sorting Algorithms/12d Merge Sort/LT12d Coursemology Complete Questions.md>)
 - **14 questions**: [LT12e Coursemology Complete Questions.md](<12 - Sorting Algorithms/12e Quick Sort/LT12e Coursemology Complete Questions.md>)
-
-## Transcript status
-
-Every indexed LT video with available captions has a full timestamped transcript in `notes/transcripts`. The following four LT videos have captions disabled (rechecked 14 November 2026):
-
-- LT11a: Linear Search with Flamenco dance
-- LT11a: Binary Search with Flamenco dance
-- LT12d: Merge-sort with Transylvanian-Saxon folk dance
-- LT12e: Quick-sort with Hungarian folk dance
-
-The insertion-sort dance now has one Russian caption interjection only, with no English track; it is saved as a limited record, not a useful teaching transcript. The C3a ARP and Intel-history supplementary videos also have captions disabled. All limitations are documented in the central transcript index.
-
-## Legacy link notes
-
-The following stale Coursemology wrappers point to inaccessible legacy courses. Their nearby current-course replacements or matching videos are already covered where available, but the exact old YouTube IDs cannot be verified and were not invented:
-
-- LT1a Part 1: `https://yijc.coursemology.org/courses/2950/videos/20903`
-- LT4b Types of Error: `https://yijc.coursemology.org/courses/2950/videos/20877`
-- LT7 Lists Part 1: `https://yijc.coursemology.org/courses/2380/videos/12465`
-- LT12e non-in-place Quicksort walkthrough: `https://yijc.coursemology.org/courses/2950/videos/20764`
-- LT12e unlabelled old extract link: `https://yijc.coursemology.org/courses/2380/videos/12530`
-- LT11a “Unplugged Activity - Guessing Game - obfuscated.py”: `https://yijc.coursemology.org/courses/2950/materials/folders/98357/files/160817` is forbidden, and no local copy was found. The associated question prompts and video coverage are preserved.

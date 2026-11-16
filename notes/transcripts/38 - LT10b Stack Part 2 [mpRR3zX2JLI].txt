@@ -3,8 +3,6 @@ LT: LT 10b - Stack ADT
 Linked label: Stack ADT - Part 2
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=mpRR3zX2JLI
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

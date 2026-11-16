@@ -3,8 +3,6 @@ Assessment(s): C2c About UTF-8 Encoding for Transmission
 Linked label(s): Walkthrough "About UTF-8" using an example
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=cBYYNTtnaXM
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

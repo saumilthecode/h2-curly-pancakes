@@ -1,6 +1,7 @@
 > [!summary] Quick View
 > A **binary tree** is non-linear: nodes joined by edges in a hierarchy, each node with **at most two** children.
 > A **binary search tree (BST)** adds ordering: everything left of a node is smaller, everything right is larger. Search is `O(log n)` **if the tree is balanced**.
+> Traversals: **pre-order** node, left, right · **in-order** left, node, right (sorted for a BST) · **post-order** left, right, node · **breadth-first** level by level.
 
 > [!important] Syllabus scope: and it's examined nearly every year
 > | Ref | Outcome |
@@ -105,14 +106,14 @@ Read the tree above **left, node, right** and you get `1 2 3 4 5 6 7 8 9`. That 
 
 Python for all of it, `contains`, `insert_tree`, the traversals and BFS, is in [[LT11b Lesson Code (List ADT)]].
 
-> [!important] Describe searching a BST: 2023 Promo Q4(b) `[3]`, 2025 Promo Q5(c) `[5]`
+> [!important] "Describe how to search a BST"
 > 1. Start at the **root** as the current node.
 > 2. If the item **matches** the current node, return `True`.
 > 3. If it is **smaller**, move to the left child. If **larger**, the right child.
 > 4. Repeat from step 2.
 > 5. When the current node is **empty**, the item isn't in the tree. Return `False`.
 >
-> 2025: 1m per step. 2023 markers: most answers skipped checking the root and never said how to detect **absence**. Array binary search or insertion scored 0.
+> The two steps people skip: checking the **root** first, and saying how you know the item is **absent**. Don't describe an array binary search: that's a different algorithm.
 
 Insert as a **new leaf**: follow the search path to an empty branch.
 
@@ -205,11 +206,11 @@ Searching, inserting: one comparison per level, so the cost is the **height**, n
 
 For a tree of height `h` with **every level full**:
 
-```text
-n = 1 + 2 + 4 + ... + 2^h = 2^(h+1) - 1      [sum of a GP]
+$$n = 1 + 2 + 4 + \dots + 2^h = 2^{h+1} - 1 \qquad \text{(sum of a GP)}$$
 
-making h the subject:   h = log2(n + 1) - 1
-```
+Making $h$ the subject:
+
+$$h = \log_2(n + 1) - 1$$
 
 | Shape | Height | Search |
 | ----- | ------ | ------ |
@@ -402,65 +403,6 @@ flowchart TD
 >   Sg ~~~ w4:::hid
 >   classDef hid fill:none,stroke:none,color:transparent
 > ```
-
-> [!example]- 2023, 2024 and 2025 promo tree questions
-> **2024 Q2(b)** insert `[5, 2, 7, 1, 3, 8, 6, 4]` in index order `[3+2]`:
->
-> ```mermaid
-> flowchart TD
->   q5["5"] --> q2["2"]
->   q5 --> q7["7"]
->   q2 --> q1["1"]
->   q2 --> q3["3"]
->   q3 ~~~ h6:::hid
->   q3 --> q4["4"]
->   q7 --> q6["6"]
->   q7 --> q8["8"]
->   classDef hid fill:none,stroke:none,color:transparent
-> ```
->
-> 1m root `5` · 1m left subtree · 1m right subtree. **(ii)** Ascending order: **in-order** traversal. From the root, visit the left subtree, then the node, then the right subtree (1m in-order, 1m left → node → right). 2026 Mastery P1 Q2(b) repeats (i).
->
-> **2023 Q4(a)** insert `23_03, 23_07, 23_01, 23_04, 23_02, 23_05, 23_06, 23_08` in that order `[3]`, −1 per wrong node:
->
-> ```mermaid
-> flowchart TD
->   a3["23_03 Julie"] --> a1["23_01 Xavier"]
->   a3 --> a7["23_07 Samantha"]
->   a1 ~~~ h1:::hid
->   a1 --> a2["23_02 Peter"]
->   a7 --> a4["23_04 Beatrice"]
->   a7 --> a8["23_08 John"]
->   a4 ~~~ h2:::hid
->   a4 --> a5["23_05 Alfred"]
->   a5 ~~~ h3:::hid
->   a5 --> a6["23_06 Teresa"]
->   classDef hid fill:none,stroke:none,color:transparent
-> ```
->
-> Re-sorting the list before inserting lost marks.
->
-> **2023 Q4(c)** search a BST `O(log n)`, an unsorted list `O(n)` `[2]`. Common error: `O(n log n)` for the BST. No explanation needed.
->
-> **2023 Q4(d)** ascending order by matriculation number: **in-order**. Visit the left subtree, then the node, then the right subtree `[2]`.
->
-> **2025 Q5** on this tree:
->
-> ```mermaid
-> flowchart TD
->   p["PLUM"] --> b["BANANA"]
->   p --> t["TOMATO"]
->   b --> ap["APPLE"]
->   b --> o["ORANGE"]
->   o ~~~ h4:::hid
->   o --> pe["PEACH"]
->   t --> r["RAISIN"]
->   t ~~~ h5:::hid
->   classDef hid fill:none,stroke:none,color:transparent
-> ```
->
-> **(a)** post-order: `APPLE, PEACH, ORANGE, BANANA, RAISIN, TOMATO, PLUM` `[2]`, −1 per error.
-> **(b)** in-order gives **alphabetical order** `[1]`.
 
 ## Common Mistakes
 

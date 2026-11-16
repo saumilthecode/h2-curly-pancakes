@@ -1,7 +1,6 @@
 # LT 12a Bubble Sort - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88731
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 11
 - **Learning outcomes:** 1.2 Fundamental Algorithms1.2.1 Implement sort algorithms (bubble sort, insertion sort, merge sort, quicksort)1.2.2 Use examples to explain sort algorithms1.2.5 Compare and describe the efficiencies of the sort and search algorithms using Big-O notation for time complexity (worst case).
 
@@ -256,8 +255,6 @@ Write program code for the functions `simple_comparison(seq)`, `improved_compari
 
 ## Linked code template notebook cells
 
-Starter-code cells copied read-only from the assessment-linked local template notebook(s). Notebook outputs and walkthrough-solution notebooks are excluded.
-
 ### LT12a.ipynb
 
 #### Code cell 1
@@ -397,3 +394,4 @@ def optimised_comparison(seq):
 lst1=[5, 4, 3, 2, 1, 0]
 lst2=[5, 4, 0, 1, 2, 3]
 ```
+

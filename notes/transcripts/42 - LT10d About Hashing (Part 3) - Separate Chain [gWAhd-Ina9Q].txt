@@ -3,8 +3,6 @@ LT: LT10d About Hashing (Part 3)
 Linked label: Part 3: Open Hashing - Separate Chain
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=gWAhd-Ina9Q
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

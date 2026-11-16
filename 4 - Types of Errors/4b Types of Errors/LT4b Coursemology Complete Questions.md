@@ -1,7 +1,6 @@
 # LT 4b - Types of Error and Test Cases: Complete Coursemology Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88713
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 8
 
 ## Learning outcomes and assessment context
@@ -263,4 +262,3 @@ def quadratic (a, b, c):
 
 ---
 
-*Archive scope: complete prompts, choices, prompt code, diagrams/alt text, linked starter templates where supplied, and public tests. Submitted answers, grades, feedback/comments, statistics, and correct-answer markings are excluded.*

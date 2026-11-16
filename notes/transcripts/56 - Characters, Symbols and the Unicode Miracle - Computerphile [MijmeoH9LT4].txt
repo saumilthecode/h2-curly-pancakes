@@ -3,8 +3,6 @@ Assessment(s): C2c About UTF-8 Encoding for Transmission
 Linked label(s): YouTube: More about ASCII, Unicode and UTF-8
 Uploader: Computerphile
 YouTube: https://www.youtube.com/watch?v=MijmeoH9LT4
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

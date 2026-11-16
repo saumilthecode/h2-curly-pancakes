@@ -5,5 +5,8 @@
   "cssTheme": "Cupertino",
   "interfaceFontFamily": "Papyrus",
   "monospaceFontFamily": "SF Pro Text",
-  "showRibbon": true
+  "showRibbon": true,
+  "enabledCssSnippets": [
+    "h2-notes"
+  ]
 }

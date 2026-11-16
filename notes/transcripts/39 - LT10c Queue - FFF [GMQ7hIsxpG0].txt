@@ -3,8 +3,6 @@ LT: LT 10c - Queue ADT (for 2026)
 Linked label: Queue ADT
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=GMQ7hIsxpG0
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

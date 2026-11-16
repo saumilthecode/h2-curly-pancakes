@@ -153,25 +153,15 @@ ORDER BY COUNT(Id) DESC;
 > [!warning] `WHERE` cannot use an aggregate
 > `WHERE` filters **rows** before grouping; `HAVING` filters **groups** after. `WHERE COUNT(Id) > 5` fails with *misuse of aggregate*.
 
-```text
-the order the database works in, which is not the order you write
+The order the database works in, which is not the order you write:
 
- FROM Customers              all the rows
-      |
-      v
- WHERE Country <> 'USA'      drop rows          no COUNT here, nothing is grouped yet
-      |
-      v
- GROUP BY Country            rows collapse to one row per country
-      |
-      v
- HAVING COUNT(Id) > 5        drop whole groups
-      |
-      v
- SELECT COUNT(Id), Country   keep these columns
-      |
-      v
- ORDER BY COUNT(Id) DESC     sort what is left
+```mermaid
+flowchart TD
+  F["FROM Customers<br>all the rows"] --> W["WHERE Country #lt;#gt; 'USA'<br>drop rows: nothing is grouped yet, so no COUNT"]
+  W --> G["GROUP BY Country<br>one row per country"]
+  G --> H["HAVING COUNT(Id) #gt; 5<br>drop whole groups"]
+  H --> S["SELECT COUNT(Id), Country<br>keep these columns"]
+  S --> O["ORDER BY COUNT(Id) DESC<br>sort what is left"]
 ```
 
 ## C4-2d Update
@@ -208,42 +198,6 @@ DROP TABLE Customers;                                  -- the table itself is go
 > Preview affected rows with `SELECT` using the **same `WHERE`**.
 
 ## Exam
-
-> [!important] 2025 Promo P2 Task 9: `bakery.db`, table `products (Name, Description, UnitPrice, Quantity)` `[8]`
-> ```sql
-> SELECT Name, Description FROM products;                      -- 9.1
->
-> SELECT Name, UnitPrice FROM products WHERE UnitPrice >= 5.00; -- 9.2
->
-> SELECT SUM(UnitPrice * Quantity) FROM products;              -- 9.3
->
-> INSERT INTO products (Name, Description, UnitPrice, Quantity) -- 9.4
-> VALUES ('Sourdough Loaf',
->         'A rustic, tangy bread with a chewy inside and a thick, crunchy crust.',
->         7.00, 30);
-> ```
->
-> | Task | 1m | 1m |
-> | ---- | -- | -- |
-> | 9.1 | `SELECT … FROM …` | both fields |
-> | 9.2 | `UnitPrice >= 5.00` | `SELECT … FROM … WHERE …` |
-> | 9.3 | `UnitPrice * Quantity` | `SUM()` |
-> | 9.4 | `INSERT INTO … VALUES …` | 4 fields and 4 values |
->
-> 9.3 is revenue **if everything sells**. Multiply inside `SUM`, per row.
-
-> [!important] 2024 Promo P2 Task 8: table `books (Id, Title, Author, Publisher, Year, UnitPrice, Quantity)` `[10]`
-> ```sql
-> SELECT Title, Publisher FROM books;                        -- 8.1
-> SELECT Title, Year FROM books WHERE Year > 2000;           -- 8.2
-> SELECT DISTINCT Publisher FROM books ORDER BY Publisher;   -- 8.3
-> SELECT SUM(UnitPrice * Quantity) FROM books;               -- 8.4
-> INSERT INTO books (Title, Author, Publisher, Year, UnitPrice, Quantity)
-> VALUES ('The Hidden Language of Computer Hardware and Software',
->         'Charles Petzold', 'Microsoft Press', 2000, 34.99, 2);   -- 8.5
-> ```
->
-> Same marks as 2025, plus **8.3**: 1m `SELECT … FROM … ORDER BY …`, 1m `DISTINCT` **and** sorted by `Publisher`. `DISTINCT` isn't in the Reference Guide.
 
 > [!example]- 2024 A-Level P1 Q4(a)(iii): create the property table `[4]`
 > Each property has a reference code, address, price in dollars and number of bedrooms.

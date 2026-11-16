@@ -63,6 +63,8 @@ The `% n` is kept **outside** the hash function, because `n` depends on the size
 
 Append a check value so the receiver can detect transmission errors.
 
+The lesson's real-world examples, the NRIC check letter and the credit-card Luhn check, are worked in [[LT4a Data validation and verification#Check Digits|LT4a]].
+
 ```text
 message =  abcde  5
            +-+-+  +- checksum
@@ -164,13 +166,13 @@ hash("badc") = 988  ->  988 % 5 = 3
 
 ### Separate Chaining
 
-```text
- 0  'bdac'
- 1  ''
- 2  'cdab'
- 3  ['dbac', 'badc']   < both live here
- 4  'dabc'
-```
+| Index | Slot |
+| ----- | ---- |
+| 0 | `'bdac'` |
+| 1 | `''` |
+| 2 | `'cdab'` |
+| 3 | `['dbac', 'badc']` ← both live here |
+| 4 | `'dabc'` |
 
 ```python
 if tbl[i] == '':
@@ -247,66 +249,61 @@ def search_probe(table, item):
     return False
 ```
 
-> [!important] 2025 Promo P1 Q2: linear probing, digit-sum hash `% 10` `[2+3]`
-> | Key | Hash | Stored at |
-> | --- | ---- | --------- |
-> | `6201` | 9 | **0** (9 taken, wrapped round) |
-> | `2352` | 2 | 2 |
-> | `3857` | 3 | 3 |
-> | `8131` | 3 | **4** (3 taken) |
-> | `5731` | 6 | 6 |
-> | `4249` | 9 | 9 |
->
-> **(a)** Insert `2725`: `2+7+2+5 = 16`, `16 % 10 = 6` (1m). Index 6 holds `5731`, so probe to 7, which is free (1m).
->
-> **(b)** A possible order: `2352`, `3857`, `5731`, `4249` (any order, all at their own hash), then `8131`, `6201`. Marks: the hashes (1m); `8131` after `3857` (1m); `6201` after `4249`, wrapping 9 → 0 (1m).
+## Exam
 
-> [!important] 2023 Promo P1 Q5(b)(c): record cards in 100 files by hash value `[2+2]`
-> **(b)** Cards whose registration numbers give the **same hash value** are all kept in that file. To find one, go to the file, then look through its few cards. This is separate chaining.
->
-> **(c)** Advantage: the hash of the registration number gives the **file directly**, so there is no search through the rest of the cabinet (`O(1)` on average). A new card goes straight into its file, with no re-sorting.
-
-> [!important] Promo P2 tasks: hash tables `[8–16]`
-> **2024 Task 6**: hash = sum of `ord()` over the username before `@`, `% 20` `[3]`:
-> 1m slice before `@` · 1m loop and total · 1m `ord()` and `% 20`.
->
-> Then insert with **linear probing** `[6]`: 1m table `[''] * 20` · 1m index from the hash · 1m store if empty · 1m else try `i + 1` · 1m loop over the other slots · 1m wrap with `% 20`. The four emails land at 8, 11, 9, 12.
->
-> **2025 Task 7** (**separate chaining**, `[6]`): 1m create and iterate · 1m compute the hash · 1m **empty** slot: store the string · 1m slot already a **list**: append · 1m slot holds **one string**: turn it into a list of both · 1m return and display.
->
-> **2023 Task 6.3** (`query(num)`, `[4]` on the paper, though the scheme lists five points): 1m hash · 1m check the slot is empty · 1m check it holds **that** vehicle · 1m return its status · 1m *"Vehicle not found."* Then `ready(num)` `[2]`: update the status, print *"Data updated"*.
-
-> [!important] 2026 Mock Promo P2 Task 8: linear probing in steps of 2 `[2+4+2]`
-> 11 cells, unused ones hold `None`, and `hash_locker(code, size)` is given. On a collision, move on with `(index + 2) % 11`. Since 11 is odd, this visits every cell once: from 8 it goes `8, 10, 1, 3, 5, 7, 9, 0, 2, 4, 6`.
+> [!example]- Specimen 2027 Paper 2 Task 1: a hash table of records `[3+7+5+6+3+1]`
+> 1000 slots, each starting as `-1`. Records are `key, data_1, data_2` with keys 1 to 9999, read from `hashdata.txt` (first line `8222,23,2039`). Hash = **key % 1000**. On a collision, the record is appended at the same index, making a **nested list**.
 >
 > ```python
-> def probe_sequence(initial_index, table_size):
->     sequence = [initial_index]                               # 1m
->     current = (initial_index + 2) % table_size
->     while current != initial_index:                          # 1m add 2, wrap, stop before repeating
->         sequence.append(current)
->         current = (current + 2) % table_size
->     return sequence
+> # Task 1.1
+> class Record:
+>     def __init__(self, key, data_1, data_2):
+>         self.key = key
+>         self.data_1 = data_1
+>         self.data_2 = data_2
 >
-> def insert_parcel(table, record):
->     initial_index = hash_locker(record[0], len(table))        # 1m
->     for index in probe_sequence(initial_index, len(table)):   # 1m
->         if table[index] is None:
->             table[index] = record                             # 1m
->             return True
->     return False                                              # 1m table full
+> # Task 1.2
+> class HashTable:
+>     def __init__(self):
+>         self.the_hash_table = [-1] * 1000
 >
-> def find_parcel(table, locker_code):
->     initial_index = hash_locker(locker_code, len(table))
->     for index in probe_sequence(initial_index, len(table)):   # 1m same path, valid stops
->         if table[index] is None:
->             return None
->         if table[index][0] == locker_code:
->             return table[index]                               # 1m
->     return None
+>     def insert_data(self, record):
+>         index = record.key % 1000
+>         slot = self.the_hash_table[index]
+>         if slot == -1:
+>             self.the_hash_table[index] = record
+>         elif type(slot) != list:
+>             self.the_hash_table[index] = [slot, record]   # collision: nest
+>         else:
+>             slot.append(record)
+>
+>     def get_data(self, key):
+>         slot = self.the_hash_table[key % 1000]
+>         if slot == -1:
+>             return False
+>         if type(slot) != list:
+>             slot = [slot]
+>         for record in slot:            # linear search inside the slot
+>             if record.key == key:
+>                 return record
+>         return False
+>
+> # Task 1.3
+> table = HashTable()
+> with open("hashdata.txt") as f:
+>     for line in f:
+>         key, data_1, data_2 = line.strip().split(",")
+>         table.insert_data(Record(int(key), int(data_1), int(data_2)))
+>
+> # Task 1.4
+> result = table.get_data(8222)
+> if result == False:
+>     print("No record")
+> else:
+>     print(result.key, result.data_1, result.data_2)     # 8222 23 2039
 > ```
 >
-> Create the table with `parcel_table = [None] * 11`.
+> It is the promote-to-a-list pattern from [[#Separate Chaining]] inside a class. `8222`, `3222` and `9222` all land in slot `222`, so `get_data` must compare **keys**, not just look at the slot. Convert the file's strings with `int()`, or `% 1000` fails.
 
 ## Common Mistakes
 

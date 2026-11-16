@@ -3,8 +3,6 @@ Assessment(s): LT 12a Bubble Sort
 Linked label(s): Bubble Sort
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=YRL38gjbzlo
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

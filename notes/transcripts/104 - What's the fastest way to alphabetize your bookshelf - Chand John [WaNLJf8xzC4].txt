@@ -3,10 +3,6 @@ Assessment(s): LT 12e Quicksort
 Linked label(s): What's the fastest way to alphabetize your bookshelf?
 Uploader: TED-Ed
 YouTube: https://www.youtube.com/watch?v=WaNLJf8xzC4
-Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
-Format: Full timestamped transcript
-
-Language: English (en)
 
 TRANSCRIPT
 ==========

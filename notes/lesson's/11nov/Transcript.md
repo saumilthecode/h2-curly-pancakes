@@ -4,8 +4,6 @@ Date: 11 November 2026
 
 Recorded: 15:08:05–19:01:11 SGT
 
-Source: Hyprnote Recovery export. Word timestamps were not stored.
-
 students answer. Do you agree? In what part you don't agree, it will improve. How will you improve? Every single one of these answers students submit thinking that you get the marks. You may be the one who has written that. You may think that this is good enough answer, but then when you submit that in exam, you come back and you don't get the mark. Because that answer is not good enough. So every single one of these submitted answers is not good enough. You need to know why is it not good enough.
 
 So having the knowledge is one thing, but facing it is another thing. In fact, of all these people who submitted, maybe a lot of them knows what is going on, but when they come out of their mouth, they come out of their pen, they write it out. They don't get the marks. You see the thing? So other than knowing the style, you need to know how to phrase it. And these are the things that we cannot exhaust it into teaching you. Because one of the ways that they act if I would answer it this way, is it complete or not?
@@ -139,3 +137,4 @@ No other great tables, no other. Oh. A few small details like you realize that c
 Oh, I'm lost. Follow that line. Follow that line. So let's say you want to display your data ordered by the age decrease. So it's half older person, half younger person. So you can use order by which field? So if you use a table name without the s, you can use a table name without the s, that will add up. And now, let's take a look at all the few names. The first one is the one that is not the same as the first one. There was one here, a student, his database keep flashing, don't know why.
 
 Finally, I realized he's able to get the database in. This is the last thing that we pay attention to, because we always assume that no one will be solved. We can create a table with using the same database. We can create a table with using the same database. Oh! They were far away about this to me. So, that is all. Okay. What's up, Alex? How's it going? I'm just going to go home. I'm going to go home. This is the side for the VIP.
+

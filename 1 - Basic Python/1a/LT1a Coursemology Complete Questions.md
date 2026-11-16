@@ -1,7 +1,6 @@
 # LT1a Coursemology Complete Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88707
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 18
 
 ## Learning outcomes
@@ -32,7 +31,6 @@ As an exercise:
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -142,7 +140,6 @@ Hint: Similar to numbers, you can also store types as values into variables.
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -237,4 +234,3 @@ Which of the following is False?
 
 ---
 
-*Archive scope: complete question-facing prompts, choices, diagrams/alt text, and public test cases visible on the authenticated assessment pages. Student submissions, grades, comments, statistics, feedback, and correctness markings are excluded.*

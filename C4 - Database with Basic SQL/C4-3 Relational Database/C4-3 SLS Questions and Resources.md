@@ -1,10 +1,7 @@
 # C4-3 Relational Database: SLS Questions and Resources
 
 - Source: https://vle.learning.moe.edu.sg/class-group/assignment/attempt/5365af90-5a04-4bbf-a877-6fbcb285e14b
-- Archived and verified: 12 November 2026
-- Prompt-only questions: 20 (C4-3a: 5; C4-3b: 6; C4-3c Library: 6; C4-3c Online Shopping: 3)
-
-This archive excludes personal answers, uploaded student work, marks, submission state, suggested answers and feedback. All multiple-choice options are preserved without indicating selections or correctness.
+- Questions: 20 (C4-3a: 5; C4-3b: 6; C4-3c Library: 6; C4-3c Online Shopping: 3)
 
 C4-4 SLS contains no activities and links to [C4-4 Coursemology](https://yijc.coursemology.org/courses/3257/assessments/88878); its seven prompts are saved separately in `../C4-4 Advanced SQL/C4-4 Coursemology Questions.md`.
 
@@ -12,11 +9,11 @@ C4-4 SLS contains no activities and links to [C4-4 Coursemology](https://yijc.co
 
 - C4-3a slides: [C4-3a_Introduction_to_Relational_Database.pdf](Slides/C4-3a_Introduction_to_Relational_Database.pdf)
 - C4-3b slides: [C4-3b_Normalisation.pdf](Slides/C4-3b_Normalisation.pdf)
-- C4-3c ER Diagram: the live SLS overview says to download slides, but it contains no slide attachment. No C4-3 resource folder was found in the inspected Coursemology Trainings material folder. This slide file is not available in the verified sources.
+- C4-3c ER Diagram: no slides were given. The lecture video is the source.
 - C4-4 slides: [C4-4_Advanced_SQL.pdf](../C4-4%20Advanced%20SQL/Slides/C4-4_Advanced_SQL.pdf)
 - All four lecture videos and their English timestamped transcripts: [Video index](../Shared%20Resources/C4-3%20and%20C4-4%20Video%20Transcript%20Index.md).
 - Supplementary video linked in C4-3a slides, p. 2: https://www.youtube.com/watch?v=znw_rnnnWjY, transcript saved in `../../notes/transcripts`.
-- C4-3b Q6 source normalisation worksheet: [local original XLSX export](C4-3b%20Normalisation%20source%20worksheet.xlsx), with [source and integrity checks](Source%20Resources/C4-3b%20Normalisation%20source%20worksheet%20-%20Source.md). Online source: https://docs.google.com/spreadsheets/d/12YvEdui-ni-GEARH-qEYN9BPN18Z5FaC/edit .
+- C4-3b Q6 source normalisation worksheet: [local original XLSX export](C4-3b%20Normalisation%20source%20worksheet.xlsx). Online source: https://docs.google.com/spreadsheets/d/12YvEdui-ni-GEARH-qEYN9BPN18Z5FaC/edit .
 
 ## C4-3a Introduction to Relational Database
 

@@ -3,8 +3,6 @@ Assessment(s): LT 11a Linear and Binary Search
 Linked label(s): Big-O Notation in 100 Seconds
 Uploader: Fireship
 YouTube: https://www.youtube.com/watch?v=g2o22C3CRfU
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

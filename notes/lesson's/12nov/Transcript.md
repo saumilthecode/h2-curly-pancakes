@@ -4,8 +4,6 @@ Date: 12 November 2026
 
 Recorded: 13:27:52–14:47:51 SGT
 
-Source: Hyprnote. Paragraph breaks added for readability; word timestamps were not stored.
-
 Good. Good. So, it was interesting to find out. That's how it begins. So, without you just choose and write, copy down. And then, you can write the text. And then, you can write the text. What's coming? This way, please. You're so neat. What? It's not always a control. ID, anyone, ID. Oh, I'll just increment. I can't. Yeah, we'll once after October. Don't forget about the ice cream. I know it's going to be a good one. I'm all rested. I'm all rested. So that it stays up when you close your TV browser whenever you need. You open and close before you run the game.
 
 Now the other part, this is what they added in, what's this button? Hit. And then what is this? Extrudejection. We will refine out. So there's two mentioning about the pyrotechnic rising. And then also create the order. Create orders first. Order must MLS. Why must MLS? Why must it exist? The red doesn't matter right? Customers are not allowed to use S1 without S1. The order is the order right? Okay? Okay? Okay? Okay? Okay? Do you know what is a gravity? Do you know what is a gravity? If I were asking you to feel the gravity, gravity key is a...
@@ -127,3 +125,4 @@ Why do we need to do that? Why do we need to do that? You cannot have duplicated
 The backslash if you don't know how to put it at certain places, sometimes you create problem. For us, it's more of a presentation, that's why we put it like that. The same practice is you run the code, you go to DB browser check, you run the code, you go to DB browser check. You do something, you check, you do something, you check, you do something, you check. Not like I try to run. By that time, there's multiple errors, you don't know where the error comes from. Some of you can hold up because your table was created properly, hence your data can go in.
 
 Um
+

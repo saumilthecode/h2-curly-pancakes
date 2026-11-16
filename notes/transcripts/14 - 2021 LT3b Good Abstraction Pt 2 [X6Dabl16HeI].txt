@@ -3,8 +3,6 @@ LT: LT 3b - Good Abstraction
 Linked label: Good Abstraction Pt 2
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=X6Dabl16HeI
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

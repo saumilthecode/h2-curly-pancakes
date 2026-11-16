@@ -3,10 +3,6 @@ Assessment(s): C4 Database (supplementary video embedded in slides)
 Section: C4-1 Introduction to Database slides, page 4
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=wvcatnesYcw
-Source: YouTube captions
-Caption language: English (en), auto-generated
-Format: Full timestamped transcript
-Archived: 12 November 2026
 
 [00:05 - 00:09] recently i was on vacation to the center
 [00:08 - 00:13] of the united states you might think

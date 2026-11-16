@@ -3,8 +3,6 @@ LT: LT 10a Data Abstraction (1) - Abstract Data Type ADT
 Linked label: Part 2: Demo 1 & 2 with Student Record ADT
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=uf__ufKfsAI
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

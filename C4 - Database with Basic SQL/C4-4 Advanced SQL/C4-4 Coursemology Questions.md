@@ -2,8 +2,6 @@
 
 Source: https://yijc.coursemology.org/courses/3257/assessments/88878
 
-Audited: 12 November 2026. Complete prompt-only archive: 7 questions. Personal answers, feedback, grades, submission state and comments are excluded. Original source wording is retained, including unusual database spellings.
-
 ## Question 1: Create database tables
 
 Follow the slides from 1 to 8 closely to create the 3 tables in Database.db: 
@@ -176,7 +174,3 @@ SELECT which attribute(s) FROM which table(s) and necessary condition(s)
 ans1
 Expected: {('Geitost', 189), ('Gorgonzola Telino', 144), ('R ssle Sauerkraut', 124), ('C te de Blaye', 149), ("Chef Anton's Cajun Seasoning", 134)}
 ```
-
-## Source and resource notes
-
-See [Resource audit](Source%20Resources/Resource%20audit.md) for original download links, file comparisons and image provenance. Templates were recovered from the existing source-capture JSON, not from personal answer code; whitespace display markers were normalised. All descriptions and displayed expected outputs were checked against the live assessment.

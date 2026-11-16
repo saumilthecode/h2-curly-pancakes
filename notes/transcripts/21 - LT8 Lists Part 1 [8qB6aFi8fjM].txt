@@ -3,8 +3,6 @@ LT: LT 7 - Lists
 Linked label: Part 1 : Introduction and create a list
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=8qB6aFi8fjM
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

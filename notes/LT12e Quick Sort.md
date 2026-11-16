@@ -39,21 +39,14 @@ def qsort(seq):
 
 `low` walks right past everything **smaller** than the pivot, `high` walks left past everything **`>=`** it. When both stop, swap. Finally swap the pivot into the gap.
 
-```text
-pivot = 5, the last element. low walks right while values are < 5,
-high walks left while values are >= 5. When both stop, swap.
+Pivot `5`, the last element. Highlighted: where `low` and `high` stopped.
 
-index   0  1  2  3  4  5  6  7  8  9
-        1  3  7  2  8  9  0  6  4  5
-              L                 H  P    swap 7 and 4
-        1  3  4  2  8  9  0  6  7  5
-                    L     H        P    swap 8 and 0
-        1  3  4  2  0  9  8  6  7  5
-                    H  L           P    crossed, so swap 9 with the pivot
-        1  3  4  2  0  5  8  6  7  9
-        \___ < 5 ___/  ^  \___ >= 5 __/
-                    index 5, final spot
-```
+| | `[0]` | `[1]` | `[2]` | `[3]` | `[4]` | `[5]` | `[6]` | `[7]` | `[8]` | `[9]` | |
+| - | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | - |
+| 1st stop | 1 | 3 | ==7== | 2 | 8 | 9 | 0 | 6 | ==4== | **5** | `low` at 7, `high` at 4: swap |
+| 2nd stop | 1 | 3 | 4 | 2 | ==8== | 9 | ==0== | 6 | 7 | **5** | `low` at 8, `high` at 0: swap |
+| crossed | 1 | 3 | 4 | 2 | 0 | ==9== | 8 | 6 | 7 | ==**5**== | `low` passed `high`: swap 9 with the pivot |
+| result | 1 | 3 | 4 | 2 | 0 | **5** | 8 | 6 | 7 | 9 | `< 5` left of index 5, `>= 5` right |
 
 ```python
 def partition(seq, start, end):
@@ -102,8 +95,6 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 > ```
 >
 > `[6, 3, 7, 2, 8, 9, 0, 1, 4, 5]` returns `6` and gives `[0, 3, 5, 2, 4, 1, 6, 9, 8, 7]`. Either pivot choice has the same worst case: sorted input.
->
-> 2025 Promo P2 Task 5 gives this exact function as pseudocode, with `Hi ← Hi - 1`, the swap inside the loop, and the pivot swap blanked out.
 
 > [!important]
 > Guard **both** inner loops with `low <= high` to stay within the segment. Exclude the placed pivot using `mid - 1` and `mid + 1` so recursion shrinks.
@@ -136,61 +127,11 @@ One call on `[1, 3, 7, 2, 8, 9, 0, 6, 4, 5]` returns `5` and gives `[1, 3, 4, 2,
 > [!important] 2020 Q2(b): random pivot vs first/last `[2]`
 > First/last hits the worst case `O(n²)` on already-sorted or reversed data, which is common. Random makes a lopsided split unlikely whatever the input order.
 
-> [!important] 2023 Promo P1 Q2(c)–(f): non-in-place, first-element pivot `[1+3+2+2]`
-> **(c)** The **median**: roughly equal halves, fewest recursive calls. Rejected: *average* (the mean may not be in the list), and *middle element* unless of the **sorted** array.
->
-> **(d)** Fill the blanks:
->
-> ```text
-> PivotIndex = 0                                  A
-> PivotValue = lst[PivotIndex]                    B
-> FOR element in lst:                             C
->     IF element < PivotValue  THEN APPEND element TO Left
->     ELSE IF element > PivotValue THEN APPEND element TO Right
->     ELSE APPEND element TO Middle
-> RETURN QUICKSORT(Left) + Middle + QUICKSORT(Right)   D
-> ```
->
-> `len(lst)//2` for A ignores *"first element"*. `element in range(lst)` for C lost the mark: `element` is a value, not an index.
->
-> **(e)** `[542, 391, 215, 482, 304, 731, 629]` partitioned once: pivot `542` at **index 4**, giving `[391, 215, 482, 304, 542, 731, 629]`.
->
-> **(f)** Advantage: `O(n log n)` against bubble sort's `O(n²)`. State **both**. Disadvantage: the non-in-place version builds new lists and needs extra memory. Bubble sort does not.
->
-> Scheme error: it labels `n log n` the *worst case*. Quicksort is `O(n log n)` **average**, `O(n²)` **worst**.
-
-> [!important] 2026 Mock Promo P2 Task 9: out-of-place quicksort on `(species, number_sighted)` `[3+5]`
-> ```python
-> def partition(records):
->     pivot = records[0][1]                         # 1m first record's count
->     less = []
->     equal = []
->     greater = []                                  # 1m three new lists
->     for record in records:
->         if record[1] < pivot:
->             less.append(record)
->         elif record[1] == pivot:
->             equal.append(record)
->         else:
->             greater.append(record)                # 1m every record placed
->     return less, equal, greater
->
-> def quick_sort(records):
->     if len(records) <= 1:
->         return records.copy()                     # 1m a new list
->     less, equal, greater = partition(records)     # 1m
->     sorted_less = quick_sort(less)                # 1m
->     sorted_greater = quick_sort(greater)          # 1m
->     return sorted_less + equal + sorted_greater   # 1m
-> ```
->
-> The pivot record lands in `equal`, so looping over every record is correct here. `records` itself never changes. The sightings sort to Pangolin 3, Otter 7, Monitor Lizard 7, Kingfisher 12, Civet 12, Wild Boar 15, Hornbill 18, Macaque 24.
-
 ## Common Mistakes
 
 - Giving the worst case as `O(n log n)`. It is `O(n²)`.
 - Calling the `left`/`right` version in-place.
-- Iterating the whole sequence in the two-list (`left`/`right`) version: the pivot duplicates. The three-list version with `Middle` (2023 Promo, Mock Promo) loops over everything on purpose.
+- Iterating the whole sequence in the two-list (`left`/`right`) version: the pivot duplicates. The three-list version (`less`, `equal`, `greater`) loops over everything on purpose.
 
 ## Related
 
