@@ -2,6 +2,7 @@
 > **Validation**: is the data *sensible, reasonable and allowable*? It follows the rules.
 > **Verification**: does the data *match the original source*? It was copied correctly.
 > Neither proves the data is true. Syllabus 1.5.1–1.5.2.
+> Validation checks: **presence, range, length, type, format, existence, check digit**. Verification: **double entry**, **visual check**.
 
 Validation does **not** check whether data is accurate. `age = 35` is valid even if you are 17.
 

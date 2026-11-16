@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > Three error categories: **syntax**, **runtime**, **logic**. Test data covers **normal**, **boundary** and **erroneous** values.
+> **Syntax**: breaks Python's grammar, so it won't run. **Runtime**: crashes part-way, e.g. dividing by zero. **Logic**: runs, but the output is wrong. **Boundary** data sits exactly on the edge of the valid range.
 
 ## Error Categories
 

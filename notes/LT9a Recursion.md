@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > Solve a problem by solving a **smaller version of the same problem**.
+> Three features: a **base case**, a **call to itself**, and each call **closer to the base case**. Every call pushes a **stack frame**, so with no base case Python hits the maximum recursion depth.
 
 ## Three Essential Features
 

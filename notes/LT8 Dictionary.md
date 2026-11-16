@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > A dictionary is a mutable **key → value** lookup table. Access is by key, never by index.
+> Keys are **unique** and **immutable** (`str`, `int`, `tuple`). `d[k]` raises `KeyError` when `k` is missing, so check `k in d` first. `for k in d` loops over the keys.
 
 ## Basics
 

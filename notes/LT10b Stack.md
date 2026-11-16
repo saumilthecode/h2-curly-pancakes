@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > Stack = **LIFO**, Last In First Out. Everything happens at the top.
+> Operations: `push`, `pop`, `peek`, `is_empty`. `pop` on an empty stack is an error. Uses: reversing, denary to binary, balanced brackets, postfix.
 
 | | Stack | Python list |
 | - | :---: | ----------- |
