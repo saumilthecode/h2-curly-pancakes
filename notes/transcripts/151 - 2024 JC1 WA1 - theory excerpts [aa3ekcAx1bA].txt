@@ -1,0 +1,167 @@
+Title: Walkthrough 2024 JC1 WA1
+Assessment(s): Released assessment teacher walkthrough
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=aa3ekcAx1bA
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88787
+
+THEORY EXCERPTS
+===============
+EXCERPT 24:18 to 26:12
+[24:18 - 24:25] question uh some student don't read the
+[24:21 - 24:27] question carefully yeah okay um write a
+[24:25 - 24:31] program for the function called check
+[24:27 - 24:34] out and then to enter the name end item
+[24:31 - 24:37] name and the cost for end item okay now
+[24:34 - 24:39] this end item is a generic is a general
+[24:37 - 24:41] end item it could be four it could be
+[24:39 - 24:43] one it could be five it could be 10
+[24:41 - 24:44] depending on how many item this
+[24:43 - 24:48] housewife
+[24:44 - 24:51] purchase okay running check out one will
+[24:48 - 24:54] prompt the user to enter the item name
+[24:51 - 24:58] and the cost so you are supposed to
+[24:54 - 25:01] enter the name and the cost okay and
+[24:58 - 25:04] then it will return now and this item
+[25:01 - 25:07] right for example if the item enter is a
+[25:04 - 25:09] bread then uh the tle that will be
+[25:07 - 25:13] returned will be bread which at whatever
+[25:09 - 25:17] cost now if let's say item uh the the
+[25:13 - 25:19] the lady buy one item and is uh uh a
+[25:17 - 25:21] burger then it will be a burger it will
+[25:19 - 25:23] not be bread it will not be fish it will
+[25:21 - 25:27] not be meat it will not be milk so some
+[25:23 - 25:29] of you are are are hardcoded that uh the
+[25:27 - 25:31] the housewife can only buy this four
+[25:29 - 25:35] item but actually the housewife can buy
+[25:31 - 25:40] any other item okay can buy cheese can
+[25:35 - 25:44] buy praw can buy uh uh uh vegetable okay
+[25:40 - 25:46] so uh there's a lot of heart coding as
+[25:44 - 25:50] far as the uh item name and also the
+[25:46 - 25:53] price when I Mark uh uh Your solution
+[25:50 - 25:56] okay and then if uh the uh you run check
+[25:53 - 25:59] out four then you'll prompt the user
+[25:56 - 26:03] four times to key in the name and the
+[25:59 - 26:04] cost of four items okay I said before it
+[26:03 - 26:06] could be check out five it could be
+[26:04 - 26:12] check out six okay so not restricted to
+[26:06 - 26:15] just four okay so um the other problem
+[26:12 - 26:18] is that student uses uh a least to do a
+[26:15 - 26:18] Topper
+
+EXCERPT 28:12 to 28:39
+[28:11 - 28:15] TPP
+[28:12 - 28:19] first equal to a empty
+[28:15 - 28:22] tle and then tle you cannot append
+[28:19 - 28:24] there's no way to append a tle only Lee
+[28:22 - 28:27] can a pen okay so for those student who
+[28:24 - 28:29] use Lisa at a pen it goes to show that
+[28:27 - 28:33] you also do not you may not know how to
+[28:29 - 28:37] use uh adding tle into a tle so that's
+[28:33 - 28:38] why you penalized okay so tle is equal
+[28:37 - 28:41] to the old
+[28:38 - 28:44] tle plus okay I'm going to show it to
+[28:41 - 28:50] you later on uh what happened if you do
+
+EXCERPT 29:30 to 30:38
+[29:27 - 29:30] the
+[29:30 - 29:39] 8.25 okay now take a look at here there
+[29:35 - 29:41] are if you compare this TPP the output
+[29:39 - 29:44] tle and the TPP that we
+[29:41 - 29:49] expect there are two error one is that
+[29:44 - 29:52] the cost should be 2.50 a float and not
+[29:49 - 29:55] a string that's one second thing this is
+[29:52 - 29:59] a single tle of Four Element we are
+[29:55 - 30:01] expecting a tle with two two tapos
+[29:59 - 30:05] inside okay so I'm going to correct this
+[30:01 - 30:08] two error first thing is that the ca we
+[30:05 - 30:08] will capture the
+[30:09 - 30:16] float of the cost okay so that will
+[30:12 - 30:20] convert the cost from a string to a to a
+[30:16 - 30:23] float okay now second thing is that uh
+[30:20 - 30:26] how to make it as a t of tles now you
+[30:23 - 30:29] have to add this as a tle now uh you you
+[30:26 - 30:32] can just simply put a
+[30:29 - 30:35] cormer outside to show that this is a
+[30:32 - 30:37] single tle or you can add one more
+[30:35 - 30:38] bracket outside here and that will make
+[30:37 - 30:41] it a
+[30:38 - 30:44] tle okay so this is the topple that you
+[30:41 - 30:49] want to add it in and then now let's run
+
+EXCERPT 31:29 to 31:51
+[31:26 - 31:29] okay
+[31:29 - 31:36] so this uh uh function allows us to uh
+[31:32 - 31:38] check out more than four items 500
+[31:36 - 31:41] there's no restriction on the number of
+[31:38 - 31:44] items that you can check out okay so uh
+[31:41 - 31:47] watch out on this uh how to add a tle
+[31:44 - 31:51] into a tle so that you can return a tle
+[31:47 - 31:51] of tles
+[31:51 - 31:59] okay I will pause here for a
+[31:54 - 31:59] while so they cap capture the code
+
+EXCERPT 34:33 to 35:12
+[34:31 - 34:37] 3,911 including a
+[34:33 - 34:40] GST okay so some students make mistake
+[34:37 - 34:42] instead of going through the item they
+[34:40 - 34:45] actually went through the
+[34:42 - 34:47] grocery so that will be a problem
+[34:45 - 34:50] because for grocery not a problem but
+[34:47 - 34:51] when it come to iPhone or the phones it
+[34:50 - 34:55] will still return the total cost for the
+[34:51 - 34:58] grocery because your function is going
+[34:55 - 35:00] to the grocery
+[34:58 - 35:04] okay so you must always be careful you
+[35:00 - 35:06] should be iterating true the element or
+[35:04 - 35:10] the items inside the
+[35:06 - 35:12] items okay not the grocery so this is a
+[35:10 - 35:12] very common
+[35:14 - 35:19] error okay I'm going to pause here for a
+
+EXCERPT 45:40 to 46:19
+[45:38 - 45:43] code
+[45:40 - 45:46] so when we ask you to write a function
+[45:43 - 45:48] with input uh parameters amount and
+[45:46 - 45:49] number of years when you run the
+[45:48 - 45:52] function right you will run the function
+[45:49 - 45:54] like this you will tell the function my
+[45:52 - 45:56] input is 1,000 already the number of
+[45:54 - 46:00] years is three already there is no need
+[45:56 - 46:03] to write code to input you understand so
+[46:00 - 46:05] don't don't ask for user input okay the
+[46:03 - 46:09] we didn't say that in the question that
+[46:05 - 46:12] you are to write code for user input if
+[46:09 - 46:14] we did we would have explicitly said so
+[46:12 - 46:17] from the customer to enter the amount
+[46:14 - 46:19] okay in question 10 question 11 we don't
+[46:17 - 46:21] have that so don't write C like this
+[46:19 - 46:23] okay that's one mistake another mistake
+[46:21 - 46:26] is same thing quite repetitive in string
+
+EXCERPT 49:51 to 50:28
+[49:51 - 49:57] should change as you iterate so I change
+[49:55 - 50:00] this then youe that at the end of year
+[49:57 - 50:03] one how come I didn't get any interest
+[50:00 - 50:06] right so you are off by one if I range
+[50:03 - 50:09] 10 year Tri years right this will Loop 0
+[50:06 - 50:11] one and two three times in a loop okay
+[50:09 - 50:13] but I don't want 0 one two and two so
+[50:11 - 50:16] maybe you modify this add a one here I
+[50:13 - 50:19] want one two and three so when I is zero
+[50:16 - 50:23] I get a one here when I is one I get a
+[50:19 - 50:28] two here okay so you off by one error
+[50:23 - 50:28] right you get a correct number
+[50:30 - 50:34] okay so you've got to constantly test
+
+EXCERPT 57:11 to 57:36
+[57:09 - 57:14] brackets
+[57:11 - 57:17] okay if this or
+[57:14 - 57:19] this do you know that a non- anti string
+[57:17 - 57:22] always evaluates to
+[57:19 - 57:24] true so this will always be true I
+[57:22 - 57:27] always do this I will never do this okay
+[57:24 - 57:29] so I've got to the code here so if
+[57:27 - 57:31] result equals to y or result equals to Y
+[57:29 - 57:36] okay capital
+[57:31 - 57:41] Y then it will fix this uh fix the logic
+[57:36 - 57:44] so I run this do you have fever uh yes
