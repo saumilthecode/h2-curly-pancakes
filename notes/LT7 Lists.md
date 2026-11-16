@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > A list is an **ordered, mutable** collection that allows duplicates.
+> `.append()`, `.sort()` and friends **change the list** and return `None`. `sorted(lst)` returns a new list. `b = lst` names the **same** list; `lst.copy()` makes a separate one.
 
 ## Collection Types
 

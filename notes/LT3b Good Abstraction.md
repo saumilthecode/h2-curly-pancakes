@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > Breaking a problem into small, well-named functions. Manage complexity by dividing and conquering.
+> Advantages to quote: easier to **understand**, **debug** (test each function alone) and **reuse**, and it **hides implementation details** behind a name, parameters and a return value.
 
 The mechanics of writing a function (parameters, `return`, scope) are in [[LT3a Functional Abstraction|LT3a]].
 

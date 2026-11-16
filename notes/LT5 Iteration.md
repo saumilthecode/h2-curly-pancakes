@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > `for` repeats a **known** number of times. `while` repeats **until a condition fails**.
+> Input validation is a `while` loop: ask again **while** the input is invalid. See [[LT4a Data validation and verification|LT4a]].
 
 ## `for` vs `while`
 

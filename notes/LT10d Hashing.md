@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > A hash function turns a key into an index. A hash table gives expected `O(1)` insertion and lookup, but collisions must be handled correctly.
+> A good hash function is **deterministic**, spreads keys **uniformly** and **minimises clustering**. Collisions go in a list in the slot (**separate chaining**) or the next free slot (**linear probing**).
 
 ## Two Uses of Hashing
 

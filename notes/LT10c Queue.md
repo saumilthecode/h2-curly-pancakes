@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > Queue = **FIFO**, First In First Out. Add at the tail, remove from the head.
+> Operations: `enqueue`, `dequeue`, `front`, `is_empty`. A **circular** queue wraps its pointers with `% size` so freed slots are reused.
 
 | ← `dequeue` | A | B | C | D | ← `enqueue` |
 | :---------: | :-: | :-: | :-: | :-: | :---------: |

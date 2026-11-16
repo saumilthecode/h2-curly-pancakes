@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > `if` / `elif` / `else` choose between paths. **At most one block runs.**
+> Conditions are tested **top to bottom** and the first `True` one wins, so put the narrowest case first. With `or`, repeat the comparison on both sides.
 
 ## Structure
 

@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > Data abstraction hides **how data is stored** and exposes only the operations needed to use it.
+> An **ADT** is defined by its operations, not its storage. Its functions: **constructor**, **accessor** (getter), **modifier** (setter), **predicate**, **utility**.
 
 ## Two Kinds of Abstraction
 
