@@ -1,0 +1,120 @@
+Title: Walkthrough CP8   Recursion
+Assessment(s): Released assessment teacher walkthrough
+Uploader: YIJC Computing
+YouTube: https://www.youtube.com/watch?v=dgujmQnv75Q
+Assessment source: https://yijc.coursemology.org/courses/3257/assessments/88754
+
+THEORY EXCERPTS
+===============
+EXCERPT 00:24 to 01:08
+[00:22 - 00:26] that you need to check if the value is
+[00:24 - 00:29] less than 2 you'll just return the value
+[00:26 - 00:31] of x itself and you escape the function
+[00:29 - 00:34] so you can think of it like this um you
+[00:31 - 00:36] know x less than 2 since we are doing
+[00:34 - 00:38] doing recursion this is what we define
+[00:36 - 00:40] as the base case
+[00:38 - 00:41] so if it is the base case we'll just
+[00:40 - 00:44] escape the function right and then we
+[00:41 - 00:46] just return the value otherwise you're
+[00:44 - 00:49] actually going to check whether is it an
+[00:46 - 00:50] even number right even number by now you
+[00:49 - 00:53] should be you should know how to check
+[00:50 - 00:55] right so if it is even you'll return
+[00:53 - 00:58] the function you call the function again
+[00:55 - 01:00] but instead of x now you call uh the
+[00:58 - 01:03] function with x over two if it is c but
+[01:00 - 01:05] otherwise right that means this is when
+[01:03 - 01:08] it is odd you actually just return this
+[01:05 - 01:09] one plus the function call it with x
+[01:08 - 01:11] minus one
+[01:09 - 01:15] okay so um
+[01:11 - 01:18] how to code this basically
+
+EXCERPT 10:36 to 12:31
+[10:33 - 10:36] straightforward you just need to do some
+[10:34 - 10:37] conditional check
+[10:36 - 10:39] but as
+[10:37 - 10:40] for any recursive function you need to
+[10:39 - 10:42] have a base case
+[10:40 - 10:44] so what would be a suitable base case
+[10:42 - 10:45] here
+[10:44 - 10:47] they say that it takes in positive
+[10:45 - 10:49] integers so the smallest positive
+[10:47 - 10:51] integer will be
+[10:49 - 10:54] n is equals to
+[10:51 - 10:56] one right so if it is one
+[10:54 - 10:59] what should be the output if you want to
+[10:56 - 11:00] add if the number is divisible by two or
+[10:59 - 11:02] three one just like we mentioned it's
+[11:00 - 11:04] not divisible by two or three so i'll
+[11:02 - 11:06] just return
+[11:04 - 11:08] zero
+[11:06 - 11:09] okay
+[11:08 - 11:11] then
+[11:09 - 11:13] uh we need to check right this is where
+[11:11 - 11:16] the condition comes in check whether or
+[11:13 - 11:18] not this n can it be divided by two
+[11:16 - 11:20] okay divided by two that means this
+[11:18 - 11:22] gives me a zero
+[11:20 - 11:24] but i also can allow it to be divisible
+[11:22 - 11:27] by three so
+[11:24 - 11:29] i can allow this to happen okay for this
+[11:27 - 11:32] thing i must do something
+[11:29 - 11:33] and then else if
+[11:32 - 11:35] they are not divisible then i must do
+[11:33 - 11:37] something so what would be the function
+[11:35 - 11:39] that i put in here definitely i need to
+[11:37 - 11:40] call this function
+[11:39 - 11:43] okay so
+[11:40 - 11:45] uh i think
+[11:43 - 11:48] from one the next one should be two left
+[11:45 - 11:50] so we know that two needs to be counted
+[11:48 - 11:52] by sum right so i definitely need to add
+[11:50 - 11:56] the two and the two that means my n
+[11:52 - 11:56] equals two so i need to actually return
+[11:56 - 11:58] okay
+[11:56 - 12:00] [Music]
+[11:58 - 12:02] turn the number two which is in this
+[12:00 - 12:04] case is the end right and what do i do
+[12:02 - 12:07] next well i need to process it with the
+[12:04 - 12:09] smaller
+[12:07 - 12:11] uh input right because that is what
+[12:09 - 12:13] recursive is all about i need to
+[12:11 - 12:14] um
+[12:13 - 12:16] divide it into a sub problem which is
+[12:14 - 12:18] smaller than the original problem so i
+[12:16 - 12:20] need to reduce it i need to call the
+[12:18 - 12:23] function one more time by reduce the
+[12:20 - 12:25] size so in this case from n because he's
+[12:23 - 12:27] talking about sum i need to plus
+[12:25 - 12:28] okay and then it must be a smaller
+[12:27 - 12:31] problem
+[12:28 - 12:33] n minus one so from two
+[12:31 - 12:34] right if some number is two so less than
+[12:33 - 12:36] two plus
+[12:34 - 12:38] when i put uh
+
+EXCERPT 15:54 to 16:08
+[15:54 - 15:57] but then
+[15:55 - 16:00] if i never change or never update this
+[15:57 - 16:02] end it will forever i will forever be
+[16:00 - 16:05] trapped in the dreamland basically right
+[16:02 - 16:08] okay so i need to reduce it right and
+[16:05 - 16:11] reduce it by one okay
+[16:08 - 16:13] so there is one layer up from the dream
+[16:11 - 16:15] and then i need to actually return the
+
+EXCERPT 17:37 to 17:59
+[17:34 - 17:39] then um you need to practice basically
+[17:37 - 17:41] right remember the important part of a
+[17:39 - 17:44] recursive call is that you must have
+[17:41 - 17:46] base case right so in this case this was
+[17:44 - 17:46] my base case in
+[17:47 - 17:51] right and then after that
+[17:49 - 17:53] you need to call the function one more
+[17:51 - 17:55] time that's the second
+[17:53 - 17:57] or important aspect and lastly you must
+[17:55 - 17:59] reduce
+[17:57 - 18:03] the problem from n become n minus one
+[17:59 - 18:07] okay so uh with that i think i'll just
