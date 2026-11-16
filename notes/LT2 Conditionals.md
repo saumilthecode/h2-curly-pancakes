@@ -54,6 +54,58 @@ elif mark >= 50:
     print("Pass")
 ```
 
+## Nested and Combined Conditions
+
+An `if` can sit inside another block. The inner test only happens when the outer one lets it through:
+
+```python
+name = input('Enter a name: ')
+if name == 'Alice':
+    print('Hi, Alice.')
+else:
+    age = int(input('Enter the age: '))
+    if age < 12:
+        print('You are not Alice, kiddo.')
+    else:
+        print('You are not Alice.')
+```
+
+Often `and` / `or` does the same job in one line:
+
+| Want | Write |
+| ---- | ----- |
+| between 0 and 100 | `0 <= mark <= 100` or `mark >= 0 and mark <= 100` |
+| outside that range | `mark < 0 or mark > 100` |
+| `y` or `Y` | `answer == "y" or answer == "Y"` |
+
+> [!warning] `answer == "y" or "Y"` is always true
+> Python reads it as `(answer == "y") or "Y"`, and a non-empty string counts as `True`. Repeat the comparison on both sides of `or`.
+
+## Worked: a Calculator
+
+`char` picks the operation. The last `else` catches anything unexpected:
+
+```python
+if char == '+':
+    answer = n1 + n2
+elif char == '-':
+    answer = n1 - n2
+elif char == '*':
+    answer = n1 * n2
+else:
+    answer = 'Unknown operator'
+```
+
+Division needs a check first, because dividing by zero crashes. Keep asking until `n2` isn't 0:
+
+```python
+n2 = int(input('n2: '))
+while n2 == 0:
+    print('Division by 0 is not allowed')
+    n2 = int(input('n2: '))
+print('Quotient:', n1 // n2, 'Remainder:', n1 % n2)    # 17 and 5 give 3 and 2
+```
+
 ## Indentation
 
 Indentation defines the block. Use 4 spaces, consistently.
@@ -94,6 +146,9 @@ Every parcel now gets the highest rate. Volume `18000` should charge `weight * 1
 - Putting the broader condition before the narrower one.
 - Using `=` instead of `==` in the condition.
 - Expecting more than one branch to run. Only the first match does.
+- `if answer == "y" or "Y":` instead of repeating `answer ==`.
+- Writing several separate `if`s when the cases exclude each other: use `elif`, or a later `if` can overwrite an earlier result.
+- Dividing before checking the divisor isn't 0.
 
 > [!tip] Flowcharts
 > Dropped in the **y27** syllabus (your one). The old y26 outcomes 1.1.1–1.1.2 required them. Y27 has no mention. Coursemology lists the lecture as **"[old syllabus] LT 2a - Flow Charts"**.

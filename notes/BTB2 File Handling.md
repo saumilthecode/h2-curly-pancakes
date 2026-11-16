@@ -158,28 +158,6 @@ def export(records, filename):
     f.close()
 ```
 
-> [!important] Promo P2 tasks: read a file into a list
-> | Paper | Task | Builds | Marks |
-> | ----- | ---- | ------ | ----- |
-> | 2023 | 3.1 | a list of **lists** (open and close were given) | `[5]` |
-> | 2024 | 2.1 | a list of tuples | `[6]` |
-> | 2025 | 2.1 | a list of tuples | `[6]` |
-> | 2026 Mock | 2.1 | a list of tuples, `Area` left out, readings as `float` | `[4]` |
->
-> What the schemes tick:
->
-> | Step | Code |
-> | ---- | ---- |
-> | open **and close** (2024, 2025) | `f = open(filename)` … `f.close()` |
-> | skip the header | `next(f)` or `lines[1:]` |
-> | strip and split (2m in 2024) | `line.strip().split(',')` |
-> | make a tuple | `tuple(line)` |
-> | start a list and append | `result = []` … `result.append(tup)` |
->
-> 2023 gave its mark for iterating instead of the tuple. The 2024 scheme's code builds `(line[0], line[1], line[3])`, which drops two scores the question asked for. Keep every field the question lists.
->
-> Values come back as **strings**. Converting them with `int()` or `float()` earns a mark.
-
 ## Common Mistakes
 
 - Opening with `"w"` when you meant `"a"`: it wipes the file.

@@ -3,8 +3,6 @@ Assessment(s): BTB 4 - Random Generator
 Linked label(s): Random Generator
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=FeVrxm3mGwk
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -1,12 +1,13 @@
 > [!summary] Quick View
-> A database stores related data in **tables**. Rows are **records**, columns are **fields**. A **primary key** picks out exactly one record.
+> A database stores related data in **tables**. Rows are **records**, columns are **fields**.
+> **Primary key**: a field, or fields, that **uniquely identifies each record**. **Composite key**: a primary key of two or more fields. **Foreign key**: a field that **refers to the primary key of another table**. **Secondary key**: another field used to **search or sort** records, not necessarily unique.
 > SQL is in [[C4-2 Basic SQL]].
 
 > [!important] Syllabus scope: 3.3 Databases
 > | Ref | Outcome | Where |
 > | --- | ------- | ----- |
 > | 3.3.1 | table, record and field | here |
-> | 3.3.2 | primary, secondary, composite and foreign keys | here, except secondary |
+> | 3.3.2 | primary, secondary, composite and foreign keys | here |
 > | 3.3.3–3.3.5 | redundancy, 3NF, ER diagrams | flat-file redundancy here. The rest: [[C4-3a Introduction to Relational Database\|C4-3a]], [[C4-3b Normalisation\|C4-3b]], [[C4-3c ER Diagram\|C4-3c]] |
 > | 3.3.6–3.3.7 | NoSQL | not taught yet |
 > | 3.3.8 | SQL statements | [[C4-2 Basic SQL]], [[C4-4 Advanced SQL]], [[C5a Python with SQLite]] |
@@ -50,17 +51,11 @@ Rules for a table:
 | order of fields and records **does not matter** | - |
 | field names are **one word** | `MobileNo`, not `Mobile No` |
 
-> [!warning]
-> 2025 promo: **1m for "all fields single word"**.
-
 ### Table Description
 
-```text
-STUDENTS (RegNo, Name, Gender, MobileNo)
-          ─────
-```
+STUDENTS (<u>RegNo</u>, Name, Gender, MobileNo)
 
-In the exam the **primary key is underlined** and a **foreign key has a dashed underline**. SLS can't underline, so it types the key as `RegNo_`.
+In the exam the **primary key is underlined** and a **foreign key has a dashed underline**, like <u class="fk">CustomerID</u>. A field that is both gets both lines: <u class="pk fk">MatricNo</u>. SLS can't underline, so it types the key as `RegNo_`.
 
 ## Primary Key
 
@@ -86,16 +81,16 @@ Two or more fields that **together** identify a record. With no `RegNo`, the key
 
 `{Name, Gender}` and `{Gender, MobileNo}` still repeat, so they fail.
 
+### Secondary Key
+
+A field other than the primary key that records are often **searched or sorted** by, such as `Name`. Its values can repeat.
+
 ### Foreign Key
 
 A field that holds another table's primary key, linking the two tables.
 
-```text
-Customers (Id, FirstName, LastName, City, Country, Phone)
-           ──
-Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
-        ──             ----------  ---------
-```
+Customers (<u>Id</u>, FirstName, LastName, City, Country, Phone)
+Orders (<u>Id</u>, OrderDate, <u class="fk">CustomerID</u>, <u class="fk">ProductID</u>, Quantity)
 
 `Orders.CustomerID` refers to `Customers.Id`. In DB Browser, that link stops you deleting a customer who still has orders. See [[C4-2 Basic SQL#C4-2e Delete and Drop|C4-2e]].
 
@@ -108,60 +103,13 @@ Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
 > Start with *field*, not "a value" or "data". Cambridge mark schemes also accept *attribute* for field and *tuple* for record.
 
 > [!important] SLS A5–A7: spot the key
-> **A5** `BALLOONS (Colour_, Price, AmountSold, Stock)`: every colour appears once.
+> **A5** BALLOONS (<u>Colour</u>, Price, AmountSold, Stock): every colour appears once.
 >
 > **A6** `CustomerID`. Postal codes already repeat (`774321` twice), and a name can.
 >
 > **A7** `{CustomerID, Colour, Date}`. `CustomerID` + `Colour` repeats: `AB123` bought Red on 26/08 and 28/09. The rule *"not the same colour on the same day"* puts `Date` in the key. `Quantity` describes the sale. It cannot identify it.
 >
-> ```text
-> SALE (CustomerID, Colour, Quantity, Date)
->       ──────────  ──────            ────
-> ```
-
-> [!important] 2025 Promo P1 Q4(a): ER diagram `[2]`
-> One customer makes many bookings. One villa has many bookings.
->
-> ```mermaid
-> erDiagram
->   direction LR
->   CUSTOMER ||--|{ BOOKING : ""
->   BOOKING }|--|| VILLA : ""
-> ```
->
-> 1m the three entities · 1m both one-to-many links, with the "many" end at `BOOKING`.
-
-> [!important] 2025 Promo P1 Q4(b): table descriptions `[3]`
-> A villa-hire company: `CUSTOMER`, `VILLA`, `BOOKING`.
->
-> ```text
-> CUSTOMER (ID, name, email)
->           ──
-> VILLA (ID, name, cost)
->        ──
-> BOOKING (ID, customerID, villaID, startDate, numberOfDays)
->          ──  ----------  -------
-> ```
->
-> 1m all primary keys · 1m all foreign keys · 1m all fields single word. Three descriptions with none of these score 0.
-
-> [!important] 2024 Promo P1 Q4: `OrderDetails` `[1+2+1+2]`
-> `OrderDetails (CustomerID, ProductID, Quantity, UnitPrice, Date)`
->
-> **(a)** Composite key `{CustomerID, ProductID, Date}`: `C004` bought `P2003` on both 14 and 15 Sep, so the first two alone repeat.
->
-> ```text
-> OrderDetails (CustomerID, ProductID, Quantity, UnitPrice, Date)
->               ──────────  ─────────                       ────
-> ```
->
-> **(b)** Two functions of a PK, 1m each:
-> 1. It **uniquely identifies** a particular record.
-> 2. Records are **sorted by the PK** for easy searching and retrieval.
->
-> **(c)(i)** Add a field `OrderID` `[1]`. **(ii)** New PK `{OrderID}` (1m). Better because it's one value to give instead of three, and faster to sort and search on (1m).
->
-> 2026 Mastery P1 Q4 repeats (a) and (b).
+> SALE (<u>CustomerID</u>, <u>Colour</u>, Quantity, <u>Date</u>)
 
 > [!example]- A-Level keys on link tables: 2020 Q6(b)(iii), 2021 Q2(d), 2023 Q4(b)
 > A table that records *who is linked to what* needs both sides in its key.
@@ -172,27 +120,12 @@ Orders (Id, OrderDate, CustomerID, ProductID, Quantity)
 >
 > **2023 Q4(b)** identify every primary and foreign key `[6]`:
 >
-> ```text
-> Car (RegistrationNumber, Make, Model, CategoryName)
->      ──────────────────               ------------
-> Category (CategoryName, DayRate)
->           ────────────
-> Customer (DriverLicenceNumber, Name, Address, TelephoneNumber)
->           ───────────────────
-> Hire (RegistrationNumber, DriverLicenceNumber, DateHired, DateExpectedBack, DateReturned)
->       ──────────────────  -------------------  ─────────
-> ```
+> Car (<u>RegistrationNumber</u>, Make, Model, <u class="fk">CategoryName</u>)
+> Category (<u>CategoryName</u>, DayRate)
+> Customer (<u>DriverLicenceNumber</u>, Name, Address, TelephoneNumber)
+> Hire (<u class="pk fk">RegistrationNumber</u>, <u class="fk">DriverLicenceNumber</u>, <u>DateHired</u>, DateExpectedBack, DateReturned)
 >
 > A car goes out to one customer at a time, so `{RegistrationNumber, DateHired}` is enough for `Hire`'s key. `RegistrationNumber` is part of that key **and** a foreign key to `Car`.
-
-> [!important] 2026 Mock Promo P1 Q5: course enrolments in a flat file `[2+2+2]`
-> Fields `EnrolmentID, ParticipantName, CourseCode, CourseTitle, Venue`. Five records, and `C08` (Introduction to Coding, Lab 1) appears three times.
->
-> **(a)** `Studio 2` is in the field **Venue** (1m). Record `E1044` is `E1044, Chen, C15, Robotics Basics, Lab 3` (1m).
->
-> **(b)** **Redundancy**: the title and venue for `C08` are stored again in every `C08` row (1m). **Inconsistency**: change one copy without the others, and the same course has conflicting titles or venues (1m).
->
-> **(c)** Candidate key **`EnrolmentID`**: its value uniquely identifies each record (1m). Not `ParticipantName`: the same name can appear in more than one record, as `Aisha` does (1m).
 
 ## Common Mistakes
 

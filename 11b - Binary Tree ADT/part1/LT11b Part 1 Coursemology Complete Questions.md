@@ -1,7 +1,6 @@
 # LT 11b Binary Tree (Part 1) - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88718
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 12
 - **Learning outcomes:** 2.1.3 — Tree operations: Illustrate the use of and implement the create, update (edit, insert, delete), and search operations for binary trees, including binary search trees.
 
@@ -285,8 +284,6 @@ running it will get the following output:
 
 ## Linked code template notebook cells
 
-Starter-code cells copied read-only from the assessment-linked local template notebook(s). Notebook outputs and walkthrough-solution notebooks are excluded.
-
 ### LT11b1.ipynb
 
 #### Code cell 1
@@ -347,3 +344,4 @@ print_tree(five)
 ## 3       8   24
 ##              27
 ```
+

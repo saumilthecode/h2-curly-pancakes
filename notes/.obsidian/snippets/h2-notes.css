@@ -1,0 +1,13 @@
+/* H2 notes: table descriptions.
+   <u>MatricNo</u>                 primary key, solid underline
+   <u class="fk">CivicsClass</u>   foreign key, dashed underline (exam style)
+   <u class="pk fk">MatricNo</u>   both: solid underline with a dashed line under it
+   The site uses the same rules (scripts/render-obsidian.js), so both look the same. */
+u { text-underline-offset: 3px; }
+u.fk { text-decoration-style: dashed; }
+u.pk.fk {
+  text-decoration-style: solid;
+  text-underline-offset: 2px;
+  border-bottom: 1px dashed currentColor;
+  padding-bottom: 3px;
+}

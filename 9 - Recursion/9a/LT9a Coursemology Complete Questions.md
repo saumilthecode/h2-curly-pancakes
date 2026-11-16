@@ -2,7 +2,6 @@
 
 - **Assessment:** LT 9a - Recursion
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88715
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes
 
@@ -302,3 +301,4 @@ def count_sum(n):
 | `count_sum(2)` | `3` |
 | `count_sum(5)` | `15` |
 | `count_sum(10)` | `55` |
+

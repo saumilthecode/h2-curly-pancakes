@@ -3,8 +3,6 @@ Assessment(s): C2b Data Representation (Representing ASCII and Unicode)
 Linked label(s): C2b : Data Representation for ASCII and Unicode
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=q7eLVeTwTaU
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -3,8 +3,6 @@ LT: LT 1b - Basic Python - About Strings
 Linked label: 1. How do we use the index operator - for String
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=kZJiDB6BF9s
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

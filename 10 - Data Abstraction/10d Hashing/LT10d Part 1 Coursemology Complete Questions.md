@@ -1,7 +1,6 @@
 # LT10d About Hashing (Part 1)
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88704
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes and core skills
 
@@ -32,13 +31,11 @@ Please feel free to post questions via the comment box tagged to the lecture vid
 
 Write program code for the function hash(string) to use the Example 1 Simple Hashing algorithm described in slide 4 in compute and return the hash value for the string.
 
-
-
 Note:  This algorithm computes the sum without applying the modulus on the sum.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -58,11 +55,6 @@ hash('abcde') % 10
 Another hashing algorithm is provided in slide 5 to compute the Checksum for a 5-digit number data.
 
 Use a calculator to find the Checksum value manually.
-
-
-
-
-
 
 For a 5-digit number data, 12345, the Checksum value 5 is attached to the 5-digit data and transmitted over the network to the receiver.
 
@@ -87,20 +79,11 @@ Which of the following data has been transmitted correctly without error?
 
 Continue from the previous question:
 
-
-
-
-
-
 For a 5-digit number data, 12345, the Checksum value 5 will be attached to the 5-digit data and be transmitted over the network to the receiver.
-
-
 
 Write program code for the function transmit(data) to compute the Checksum value for the 5-digit data string and return an output with the Checksum attached to the data string.
 
 For example, the output for transmit('12345') should be '123455'.
-
-
 
 Note:
 
@@ -115,7 +98,7 @@ The return output is the transmitted data string, comprising the data and the ch
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -162,8 +145,6 @@ The checksum is computed using the following scheme:
 
 1    Each individual digit in the NRIC is multiplied by 7 fixed numbers: 2, 7, 6, 5, 4, 3, 2 respectively. For S1234567, we would have
 
-
-
 2.      These products are added up as the total.
 
 3.      If the first letter of the NRIC starts with a ‘T’, then 4 is added to the total.
@@ -172,126 +153,60 @@ The checksum is computed using the following scheme:
 
 Remainder
 
-
-
 Letter
-
-
 
 Remainder
 
-
-
 Letter
-
-
-
 
 0
 
-
-
 J
-
-
 
 6
 
-
-
 E
-
-
-
 
 1
 
-
-
 Z
-
-
 
 7
 
-
-
 D
-
-
-
 
 2
 
-
-
 I
-
-
 
 8
 
-
-
 C
-
-
-
 
 3
 
-
-
 H
-
-
 
 9
 
-
-
 B
-
-
-
 
 4
 
-
-
 G
-
-
 
 10
 
-
-
 A
-
-
-
 
 5
 
-
-
 F
-
-
-
-
-
-
-
-
 
 For example:
 
       Input: 'S1234567'      Output: 'D'
       Input: 'T1234567'      Output: 'J'
-
-
 
 Write program code for the function last_letter(nric) to find and return the last letter of the nric number.
 
@@ -301,7 +216,7 @@ Write program code for the function last_letter(nric) to find and return the las
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -344,15 +259,11 @@ A weighted-modulus scheme is used to calculate the check digit as shown in the f
 
 1.     Each individual digit in the ISBN is multiplied by 9 fixed numbers: 10, 9, 8, 7, 6, 5, 4, 3, 2 respectively. For 075154926, we would have
 
-
-
 2.     These products are added up as the total. The total for the above is 214.
 
 3.    The total is then divided by 11 to obtain the remainder, 214 / 11 = 19 remainder 5.
 
 4.     The check digit is the (difference between 11 and the remainder) mod 11.
-
-
 
 If the calculated check digit is 10, it will be replaced with the character ‘X’
 
@@ -365,12 +276,7 @@ For example:
      Input: '184146208'          Output: '184146208X'
      Input: '034085045'          Output: '0340850450'
 
-
-
 Write program code for the function isbn(string) to compute the check digit and return the complete ISBN number.
-
-
-
 
 Note:
 
@@ -383,7 +289,7 @@ An equivalent algorithm described in https://en.wikipedia.org/wiki/Check_digit#I
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -415,3 +321,4 @@ isbn('034085045')
 
 '0340850450'
 ```
+

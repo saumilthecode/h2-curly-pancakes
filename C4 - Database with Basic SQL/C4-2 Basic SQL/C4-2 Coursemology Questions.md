@@ -2,8 +2,6 @@
 
 Source: https://yijc.coursemology.org/courses/3257/assessments/88874
 
-Audited: 12 November 2026. Complete prompt-only archive: 7 questions. Personal answers, feedback, grades, submission state and comments are excluded. Original source wording is retained, including unusual database spellings.
-
 ## Question 1
 
 Write the query statement to find all the customers from UK (in the Northwind.db database).
@@ -181,7 +179,3 @@ write the SQL command to update the unit price of which table with the necessary
 new_prices
 Expected: [('Aniseed Syrup', 11), ('Boston Crab Meat', 19.4), ('Chai', 19), ('Chang', 20), ('Chartreuse verte', 19), ('Chocolade', 13.75), ('Escargots de Bourgogne', 14.25), ('Filo Mix', 8), ('Geitost', 3.5), ('Genen Shouyu', 16.5), ('Gorgonzola Telino', 13.5), ('Guaran\xa0 Fant\xa0stica', 5.5), ('Gula Malacca', 20.45), ('Inlagd Sill', 20), ("Jack's New England Clam Chowder", 10.65), ('Konbu', 7), ('Lakkalik ri', 19), ('Laughing Lumberjack Lager', 15), ('Longlife Tofu', 11), ('Louisiana Hot Spiced Okra', 18), ('Maxilaku', 20), ('NuNuCa Nua-Nougat-Creme', 15), ('Original Frankfurter grne Soae', 14), ('Outback Lager', 16), ('Pavlova', 18.45), ('R d Kaviar', 16), ('Ravioli Angelo', 20.5), ('Rh nbr u Klosterbier', 8.75), ('Rogede sild', 10.5), ('Sasquatch Ale', 15), ('Scottish Longbreads', 13.5), ('Singaporean Hokkien Fried Mee', 15), ("Sir Rodney's Scones", 11), ('Spegesild', 13), ('Steeleye Stout', 19), ('Stroopwafels', 10.75), ('Teatime Chocolate Biscuits', 10.2), ('TourtiSre', 8.45), ('Tunnbr d', 10), ('Valkoinen suklaa', 17.25), ('Zaanse koeken', 10.5)]
 ```
-
-## Source and resource notes
-
-See [Resource audit](Source%20Resources/Resource%20audit.md) for original download links, file comparisons and image provenance. Templates were recovered from the existing source-capture JSON, not from personal answer code; whitespace display markers were normalised. All descriptions and displayed expected outputs were checked against the live assessment.

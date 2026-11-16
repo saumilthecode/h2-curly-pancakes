@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const MarkdownIt = require("markdown-it");
 const anchor = require("markdown-it-anchor");
+const mark = require("markdown-it-mark");
+const katex = require("katex");
 
 const root = process.cwd();
 const notesDir = path.join(root, "notes");
@@ -11,11 +13,102 @@ const md = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: false,
+  breaks: true, // like Obsidian with "Strict line breaks" off (its default)
 })
   .use(anchor, {
     permalink: anchor.permalink.headerLink(),
     slugify: slugify,
+  })
+  .use(mark) // Obsidian's ==highlight==
+  .use(obsidianMath); // Obsidian's $inline$ and $$display$$ maths
+
+const KATEX_CSS = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@${require("katex/package.json").version}/dist/katex.min.css">`;
+
+// Maths the way Obsidian reads it. Inline $…$ only opens when the next character
+// isn't a space, and only closes when the character before isn't a space and the
+// one after isn't a digit, so "$3.00 … $0.22" stays as text. $$…$$ is display
+// maths, on one line or across several. Rendered to HTML here with KaTeX, so the
+// page needs only KaTeX's stylesheet.
+function obsidianMath(md) {
+  const isSpace = (ch) => ch === " " || ch === "\t" || ch === "\n";
+
+  md.inline.ruler.after("escape", "math_inline", (state, silent) => {
+    const src = state.src;
+    if (src[state.pos] !== "$") return false;
+    const display = src[state.pos + 1] === "$";
+    const delimiter = display ? "$$" : "$";
+    const open = state.pos + delimiter.length;
+    if (open >= state.posMax || (!display && isSpace(src[open]))) return false;
+
+    let close = open;
+    for (;;) {
+      close = src.indexOf(delimiter, close);
+      if (close === -1 || close + delimiter.length > state.posMax) return false;
+      const escaped = src[close - 1] === "\\";
+      const badInlineClose = !display && (isSpace(src[close - 1]) || /[0-9]/.test(src[close + 1] || ""));
+      if (!escaped && !badInlineClose) break;
+      close += 1;
+    }
+    if (close === open) return false;
+
+    if (!silent) {
+      const token = state.push(display ? "math_display" : "math_inline", "math", 0);
+      token.content = src.slice(open, close);
+      token.markup = delimiter;
+    }
+    state.pos = close + delimiter.length;
+    return true;
   });
+
+  md.block.ruler.before(
+    "fence",
+    "math_block",
+    (state, startLine, endLine, silent) => {
+      if (state.sCount[startLine] - state.blkIndent >= 4) return false;
+      let pos = state.bMarks[startLine] + state.tShift[startLine];
+      if (state.src.slice(pos, pos + 2) !== "$$") return false;
+
+      const first = state.src.slice(pos + 2, state.eMarks[startLine]).trim();
+      const lines = [];
+      let last = startLine;
+      if (first.length >= 2 && first.endsWith("$$")) {
+        lines.push(first.slice(0, -2)); // $$ … $$ on one line
+      } else {
+        lines.push(first);
+        let closed = false;
+        for (last = startLine + 1; last < endLine; last++) {
+          pos = state.bMarks[last] + state.tShift[last];
+          const line = state.src.slice(pos, state.eMarks[last]).trim();
+          if (line.endsWith("$$")) {
+            lines.push(line.slice(0, -2));
+            closed = true;
+            break;
+          }
+          lines.push(line);
+        }
+        if (!closed) return false;
+      }
+      if (silent) return true;
+
+      const token = state.push("math_display", "math", 0);
+      token.block = true;
+      token.content = lines.join("\n").trim();
+      token.map = [startLine, last + 1];
+      token.markup = "$$";
+      state.line = last + 1;
+      return true;
+    },
+    { alt: ["paragraph", "reference", "blockquote", "list"] }
+  );
+
+  const render = (content, displayMode) =>
+    katex.renderToString(content, { displayMode, throwOnError: false });
+  md.renderer.rules.math_inline = (tokens, idx) => render(tokens[idx].content, false);
+  md.renderer.rules.math_display = (tokens, idx) =>
+    tokens[idx].block
+      ? `<div class="math-block">${render(tokens[idx].content, true)}</div>\n`
+      : render(tokens[idx].content, true);
+}
 
 // A ```mermaid fence is a diagram, not source to display. Obsidian renders these
 // natively; on the site mermaid.js finds them by the .mermaid class.
@@ -74,23 +167,31 @@ function titleFromFile(file) {
   return path.basename(file, ".md");
 }
 
-// The index's "## " headings become the sidebar's groups. Links above the first
-// heading (the Reference Guide tip) sit ungrouped at the top of the sidebar.
+// The sidebar follows the index. Each "## " heading is a section ("LT topics",
+// "C topics", ...) and each "### " heading inside it is a topic ("LT10 Data
+// Abstraction"). Links above the first "## " (the Reference Guide tip) sit
+// ungrouped at the top.
 function readIndexEntries(knownNotes) {
   const indexPath = path.join(notesDir, "index.md");
   if (!fs.existsSync(indexPath)) return [];
 
   const entries = [];
   const wikiLink = /\[\[((?:[^|\]\\]|\\.)+)(?:\|([^\]]+))?\]\]/g;
-  let group = null;
+  let section = null;
+  let topic = null;
 
   for (const part of splitMarkdownSegments(fs.readFileSync(indexPath, "utf8"))) {
     if (part.code) continue;
 
     for (const line of part.text.split("\n")) {
-      const heading = line.match(/^##\s+(.+?)\s*$/);
+      const heading = line.match(/^(#{2,3})\s+(.+?)\s*$/);
       if (heading) {
-        group = heading[1];
+        if (heading[1] === "##") {
+          section = heading[2];
+          topic = null;
+        } else {
+          topic = heading[2];
+        }
         continue;
       }
 
@@ -103,7 +204,8 @@ function readIndexEntries(knownNotes) {
         entries.push({
           file,
           title: (match[2] || target).trim(),
-          group,
+          section,
+          topic,
         });
       }
     }
@@ -288,6 +390,7 @@ function transformObsidianSyntax(source, knownNotes) {
       if (part.code) return part.text;
 
       return part.text
+        .replace(/%%[\s\S]*?%%/g, "") // Obsidian comments never show in a note
         .replace(/!\[\[([^\]]+)\]\]/g, (_all, rawTarget) => {
           const [target, altText] = splitWikiTarget(rawTarget);
           const ext = path.extname(target).toLowerCase();
@@ -402,6 +505,7 @@ function renderMarkdown(file, source, knownNotes, displayTitles, navEntries, sea
   const body = transformCallouts(md.renderer.render(tokens, md.options, env));
   const pageTitle = file === "index.md" ? "H2 Computing Notes" : displayTitles.get(file) || titleFromFile(file);
   const mermaidScript = body.includes('class="mermaid"') ? MERMAID_SCRIPT : "";
+  const katexCss = body.includes('class="katex') ? KATEX_CSS : "";
 
   if (file !== "index.md") searchDocs.push(...searchSections(file, pageTitle, tokens));
 
@@ -413,6 +517,7 @@ function renderMarkdown(file, source, knownNotes, displayTitles, navEntries, sea
   <meta name="color-scheme" content="light dark">
   <title>${escapeHtml(pageTitle)}</title>
   <link rel="stylesheet" href="assets/site.css">
+  ${katexCss}
   <script src="assets/site.js" defer></script>
 </head>
 <body>
@@ -444,9 +549,10 @@ const MERMAID_SCRIPT = `<script type="module">
     mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "neutral", securityLevel: "strict" });
   </script>`;
 
-// Sidebar: ungrouped links first, then one collapsible group per "## " heading in
-// the index. Only the group holding the current page starts open. Notes the index
-// doesn't link to go in a final "Other" group.
+// Sidebar: ungrouped links first, then each section of the index with its label.
+// Inside a section, a topic with one note is a plain link; a topic with several
+// notes is a collapsible group, open only when it holds the current page. Notes
+// the index doesn't link to go in a final "Other" section.
 function renderNav(knownNotes, currentFile, displayTitles, navEntries) {
   const link = (file) => {
     const title = displayTitles.get(file) || titleFromFile(file);
@@ -456,38 +562,51 @@ function renderNav(knownNotes, currentFile, displayTitles, navEntries) {
 
   const seen = new Set(["index.md", "* index.md"]);
   const top = [];
-  const groups = [];
+  const sections = [];
 
   for (const entry of navEntries) {
     if (seen.has(entry.file)) continue;
     seen.add(entry.file);
 
-    if (!entry.group) {
+    if (!entry.section) {
       top.push(entry.file);
       continue;
     }
-    let group = groups.find((g) => g.name === entry.group);
-    if (!group) {
-      group = { name: entry.group, files: [] };
-      groups.push(group);
+    let section = sections.find((s) => s.name === entry.section);
+    if (!section) {
+      section = { name: entry.section, items: [] };
+      sections.push(section);
     }
-    group.files.push(entry.file);
+    // Consecutive links under the same "### " heading form one topic; links
+    // with no topic stay loose in the section.
+    const last = section.items[section.items.length - 1];
+    if (entry.topic && last && last.topic === entry.topic) {
+      last.files.push(entry.file);
+    } else {
+      section.items.push({ topic: entry.topic, files: [entry.file] });
+    }
   }
 
   const others = Array.from(knownNotes.values()).filter((file) => !seen.has(file) && !file.startsWith("."));
-  if (others.length) groups.push({ name: "Other", files: others });
+  if (others.length) sections.push({ name: "Other", items: others.map((file) => ({ topic: null, files: [file] })) });
 
-  const sections = groups.map((group) => {
-    const open = group.files.includes(currentFile) ? " open" : "";
+  const renderItem = (item) => {
+    if (!item.topic || item.files.length === 1) return item.files.map(link).join("\n");
+    const open = item.files.includes(currentFile) ? " open" : "";
     return `<details class="nav-group"${open}>
-<summary>${escapeHtml(group.name)}</summary>
-${group.files.map(link).join("\n")}
+<summary>${escapeHtml(item.topic)}</summary>
+${item.files.map(link).join("\n")}
 </details>`;
-  });
+  };
+
+  const body = sections.map((section) => `<div class="nav-section">
+<p class="nav-section-title">${escapeHtml(section.name)}</p>
+${section.items.map(renderItem).join("\n")}
+</div>`);
 
   return `<nav class="site-nav" aria-label="Notes">
 ${top.map(link).join("\n")}
-${sections.join("\n")}
+${body.join("\n")}
 </nav>`;
 }
 
@@ -654,7 +773,17 @@ body {
   color: var(--text-normal);
 }
 
-.nav-group { margin-top: 4px; }
+.nav-section { margin-top: 18px; }
+
+.nav-section-title {
+  margin: 0 0 4px;
+  padding: 0 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 
 .nav-group > summary {
   display: flex;
@@ -663,10 +792,7 @@ body {
   padding: 7px 10px;
   border-radius: 6px;
   color: var(--text-muted);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 14px;
   list-style: none;
   cursor: pointer;
 }
@@ -724,6 +850,21 @@ mark {
   color: inherit;
   border-radius: 2px;
 }
+
+/* Table descriptions: <u> is a primary key, <u class="fk"> a foreign key (dashed,
+   as in the exam), <u class="pk fk"> both. Same rules as the vault's CSS snippet
+   notes/.obsidian/snippets/h2-notes.css, so Obsidian and the site match. */
+u { text-underline-offset: 3px; }
+u.fk { text-decoration-style: dashed; }
+u.pk.fk {
+  text-decoration-style: solid;
+  text-underline-offset: 2px;
+  border-bottom: 1px dashed currentColor;
+  padding-bottom: 3px;
+}
+
+/* Long display maths scrolls inside the page instead of widening it. */
+.math-block { overflow-x: auto; overflow-y: hidden; }
 
 .markdown-preview-view {
   max-width: 980px;

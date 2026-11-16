@@ -4,11 +4,6 @@ Linked label(s): Complete Beginner's Guide to Big O Notation
 Uploader: Colt Steele
 YouTube: https://www.youtube.com/watch?v=kS_gr2_-ws8
 Coursemology wrapper: https://yijc.coursemology.org/courses/3257/videos/24752
-Published course start: 2026-04-16T13:00:00.000+08:00
-Source: YouTube captions, explicitly selected English (en), retrieved 14 November 2026
-Language: English (en)
-Format: Full timestamped transcript
-Version note: Distinct upload ID retained separately from any similar-title SLS, older, or v2 upload.
 
 TRANSCRIPT
 ==========

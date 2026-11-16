@@ -1,7 +1,6 @@
 # LT 5a - Iteration (for-loop) (2025): Complete Coursemology Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88728
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 12
 
 ## Learning outcomes and assessment context
@@ -333,4 +332,3 @@ def unscramble(string, key):
 
 ---
 
-*Archive scope: complete prompts, choices, prompt code, diagrams/alt text, linked starter templates where supplied, and public tests. Submitted answers, grades, feedback/comments, statistics, and correct-answer markings are excluded.*

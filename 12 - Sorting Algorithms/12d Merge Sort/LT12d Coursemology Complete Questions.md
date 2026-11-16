@@ -1,7 +1,6 @@
 # LT 12d  Merge Sort - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88732
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 8
 - **Learning outcomes:** 1.2 Fundamental Algorithms1.2.1 Implement sort algorithms (insertion sort, bubble sort, quicksort, merge sort)1.2.2 Use examples to explain sort algorithms1.2.5 Compare and describe the efficiencies of the sort and search algorithms using Big-O notation for time complexity (worst case).
 
@@ -148,8 +147,6 @@ Describe how Merge Sort will sort an array of numbers.
 Use the keywords : **divide**, **merge**, **repeat** to assist in your explanation.
 
 ## Linked code template notebook cells
-
-Starter-code cells copied read-only from the assessment-linked local template notebook(s). Notebook outputs and walkthrough-solution notebooks are excluded.
 
 ### LT12d.ipynb
 
@@ -308,3 +305,4 @@ seq4=[("M", 35), ("F", 18), ("M", 23), ("F", 19), ("M", 30), ("M", 17)]
 def merge_lists(list1, list2):
     pass
 ```
+

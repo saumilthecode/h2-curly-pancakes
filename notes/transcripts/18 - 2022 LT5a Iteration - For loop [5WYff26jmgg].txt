@@ -3,8 +3,6 @@ LT: LT 5a - Iteration (for-loop) (2025)
 Linked label: Iteration : For-loop
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=5WYff26jmgg
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

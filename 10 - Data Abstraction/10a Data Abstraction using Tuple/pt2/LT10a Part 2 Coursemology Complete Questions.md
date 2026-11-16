@@ -1,7 +1,6 @@
 # LT 10a Data Abstraction (2) - Reading Data from Text File
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88717
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes and core skills
 
@@ -33,12 +32,7 @@ Write program code for the function read_csv(filename) to return a tuple of tupl
 
 Note: The header in the text file should be excluded.
 
-
-
-
 You may refer to the video and slide for the program code.
-
-
 
 Read the data from the text file result.csv and assign the output tuple to computing_class.
 
@@ -50,7 +44,7 @@ Read the data from the text file result.csv and assign the output tuple to compu
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -93,7 +87,7 @@ Write program code for the following methods:
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -170,7 +164,7 @@ size(group) -> integer
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -211,7 +205,7 @@ size(group) -> integer
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -227,3 +221,4 @@ class_list(computing_class,'05S07')
 
 Show more
 ```
+

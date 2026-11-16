@@ -4,24 +4,16 @@
 
 ## One Pass
 
-`[24, 5, 36, 18, 12]`, brackets mark the pair being compared:
+`[24, 5, 36, 18, 12]`, the pair just compared highlighted:
 
-```text
-(24   5)  36   18   12     swap
-  5 (24   36) 18   12      no swap
-  5  24 (36   18) 12       swap
-  5  24  18 (36   12)      swap
-  5  24  18  12 | 36       36 is now fixed
-                | sorted
-```
+| `i` | Compare | | `[0]` | `[1]` | `[2]` | `[3]` | `[4]` |
+| --- | ------- | - | ----- | ----- | ----- | ----- | ----- |
+| 0 | `24`, `5` | swap | ==5== | ==24== | 36 | 18 | 12 |
+| 1 | `24`, `36` | - | 5 | ==24== | ==36== | 18 | 12 |
+| 2 | `36`, `18` | swap | 5 | 24 | ==18== | ==36== | 12 |
+| 3 | `36`, `12` | swap | 5 | 24 | 18 | ==12== | ==36== |
 
-
-| `i` | Compare | | After |
-| --- | ------- | - | ----- |
-| 0 | `24`, `5` | swap | `5, 24, 36, 18, 12` |
-| 1 | `24`, `36` | - | `5, 24, 36, 18, 12` |
-| 2 | `36`, `18` | swap | `5, 24, 18, 36, 12` |
-| 3 | `36`, `12` | swap | `5, 24, 18, 12, 36` |
+`36` has bubbled to the end and is fixed.
 
 The loop ends at `len(seq) - 2`, or `seq[i + 1]` runs off the end.
 
@@ -29,25 +21,14 @@ The loop ends at `len(seq) - 2`, or `seq[i + 1]` runs off the end.
 
 `[8, 3, 6, 9, 5]`, sorted part **bold**:
 
-| Pass | Array |
-| ---- | ----- |
-| 1 | `3, 6, 8, 5,` **`9`** |
-| 2 | `3, 6, 5,` **`8, 9`** |
-| 3 | `3, 5,` **`6, 8, 9`** |
-| 4 | **`3, 5, 6, 8, 9`** |
+| Pass | Pairs compared | Array after |
+| ---- | -------------- | ----------- |
+| 1 | 4 | `3, 6, 8, 5,` **`9`** |
+| 2 | 3 | `3, 6, 5,` **`8, 9`** |
+| 3 | 2 | `3, 5,` **`6, 8, 9`** |
+| 4 | 1 | **`3, 5, 6, 8, 9`** |
 
-`n` items need **`n - 1`** passes. One pass places the largest remaining element at the end, so the sorted region grows from the **right**.
-
-```text
-the same list, showing how much each pass still compares
-
-pass 1   4 pairs    3  6  8  5 | 9
-pass 2   3 pairs    3  6  5 | 8  9
-pass 3   2 pairs    3  5 | 6  8  9
-pass 4   1 pair     3 | 5  6  8  9      no swap, so optimised stops here
-
- |  is the sorted tail. Simple keeps comparing 4 pairs every pass.
-```
+`n` items need **`n - 1`** passes. One pass places the largest remaining element at the end, so the sorted region grows from the **right** and each pass compares one pair fewer. The simple version below ignores that and compares all 4 pairs every pass.
 
 ## Three Versions
 
@@ -108,28 +89,8 @@ Simple always makes `n(n-1)` comparisons. Improved makes `n(n-1)/2`, the sum `(n
 ## Exam
 
 > [!important] Describe bubble sort
-> Required keywords: **pass**, **compare**, **repeat**, **adjacent**, **swap**. Describe the first three passes.
+> Required keywords: **pass**, **compare**, **repeat**, **adjacent**, **swap**.
 > **Compare** each **adjacent** pair along the list, **swapping** them if they are out of order. That is one **pass**, and it leaves the largest value at the end. **Repeat** on the remaining unsorted part, one fewer element each time, until a pass makes no swaps.
-
-> [!important] 2023 Promo P1 Q2(a)(b): describe, then optimise `[2+1]`
-> **(a)** 1m compare adjacent elements from start to end, swapping if needed · 1m repeat the passes, `n - 1` of them.
-> **(b)** If a pass makes **no swaps**, the array is sorted, so **stop early**.
->
-> Markers: say whether the *comparisons* or the *passes* repeat. For (b), "no swaps means sorted" scored nothing without **terminating early**.
-
-> [!important] 2026 Mock Promo P2 Task 5: bubble sort tuples, descending, counting swaps `[4]`
-> ```python
-> def bubble_sort(samples):
->     swaps = 0
->     for end in range(len(samples) - 1, 0, -1):             # 1m repeated passes
->         for index in range(end):
->             if samples[index][1] < samples[index + 1][1]:  # 1m descending, equal never swaps
->                 samples[index], samples[index + 1] = samples[index + 1], samples[index]
->                 swaps += 1                                 # 1m swap whole tuples and count
->     return swaps                                           # 1m
-> ```
->
-> Strict `<` leaves equal priorities in their original order, as the question demands: `S101` stays ahead of `S103`. The six samples take **6** swaps.
 
 ## Common Mistakes
 

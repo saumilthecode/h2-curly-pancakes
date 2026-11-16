@@ -3,8 +3,6 @@ Assessment(s): LT 12d Merge Sort
 Linked label(s): Unplugged activity for Merge Sort
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=wOQz6GXn9CU
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -3,8 +3,6 @@ LT: LT 6 - Tuples
 Linked label: LT6 Tuples
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=YsDyFG3zq2I
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -1,14 +1,9 @@
 > [!summary] Quick View
 > Queue = **FIFO**, First In First Out. Add at the tail, remove from the head.
 
-```text
-              +---+---+---+---+
-  dequeue <-- | A | B | C | D | <-- enqueue
-              +---+---+---+---+
-                ^           ^
-              head         tail
-              q[0]         q[-1]
-```
+| ← `dequeue` | A | B | C | D | ← `enqueue` |
+| :---------: | :-: | :-: | :-: | :-: | :---------: |
+| | **head**<br>`q[0]` | | | **tail**<br>`q[-1]` | |
 
 ## Core Operations
 
@@ -84,18 +79,12 @@ Same FIFO idea. Only the call style changes: `q.enqueue(x)` instead of `enqueue(
 
 In a **fixed-size array**, every `dequeue` moves the head forward and leaves a dead slot behind it. The queue eventually reports "full" while the front of the array sits empty.
 
-```text
-size 5 - three enqueued, two dequeued
+Size 5, `A B C` enqueued, then two dequeued:
 
-index   0     1     2     3     4
-      +-----+-----+-----+-----+-----+
-      |  .  |  .  |  C  |     |     |
-      +-----+-----+-----+-----+-----+
-         ^     ^     ^     ^
-         |     |     |     +- next free slot (after tail)
-         |     |     +------- head
-         +-----+------------- dead space
-```
+| Index | 0 | 1 | 2 | 3 | 4 |
+| ----- | :-: | :-: | :-: | :-: | :-: |
+| Slot | ~~A~~ | ~~B~~ | C | | |
+| | dead | dead | **head** and **tail** | next free | |
 
 A **circular queue** wraps the pointers back to `0`, so the vacated slots are reused.
 
@@ -125,27 +114,13 @@ head = (head + 1) % size      # dequeue
 >
 > **(ii) After `Dequeue()`, `Enqueue("Togo")`, `Enqueue("USA")`, `Dequeue()`** `[2]`
 >
-> ```text
-> index      0      1      2      3      4
->         +------+------+------+------+------+
-> start   |      |      |China | Oman |      |   H=2  T=3
->         +------+------+------+------+------+
->                          H      T
->
->   Dequeue        China out,  H = 3
->   Enqueue Togo   T = (3+1) % 5 = 4
->   Enqueue USA    T = (4+1) % 5 = 0   <- wraps past the end
->   Dequeue        Oman out,   H = (3+1) % 5 = 4
->
->         +------+------+------+------+------+
-> end     | USA  |      |      |      | Togo |   H=4  T=0
->         +------+------+------+------+------+
->            T                           H
-> ```
->
-> | Index | 0 | 1 | 2 | 3 | 4 |
-> | ----- | - | - | - | - | - |
-> | Data | USA | | | | Togo |
+> | After | 0 | 1 | 2 | 3 | 4 | Head | Tail |
+> | ----- | :-: | :-: | :-: | :-: | :-: | :--: | :--: |
+> | start | | | China | Oman | | 2 | 3 |
+> | `Dequeue()` | | | ~~China~~ | Oman | | `(2+1) % 5 =` ==3== | 3 |
+> | `Enqueue("Togo")` | | | | Oman | Togo | 3 | `(3+1) % 5 =` ==4== |
+> | `Enqueue("USA")` | USA | | | Oman | Togo | 3 | `(4+1) % 5 =` ==0== |
+> | `Dequeue()` | USA | | | ~~Oman~~ | Togo | `(3+1) % 5 =` ==4== | 0 |
 >
 > HeadPointer = `4`, TailPointer = `0`. `USA` wraps to index 0 because the tail was already at 4. That wrap is what the question tests.
 >
@@ -222,10 +197,10 @@ def dequeue():
 | Openings | **one** (in and out at the top) | **two** (in at the tail, out at the head) |
 | Shape | vertical | horizontal |
 
-```text
-Stack: [1, 2, 3] -> pop()     -> 3    (last in)
-Queue: [1, 2, 3] -> dequeue() -> 1    (first in)
-```
+| `[1, 2, 3]`, `1` added first | Remove one | Gives |
+| ---------------------------- | ---------- | ----- |
+| as a stack | `pop()` | `3`, the last in |
+| as a queue | `dequeue()` | `1`, the first in |
 
 ## Applications
 
@@ -249,41 +224,9 @@ item = dequeue(q)
 enqueue(q, item)
 ```
 
-```text
-[A, B, C, D]  ->  rotate  ->  [B, C, D, A]
-```
+`[A, B, C, D]` rotated once is `[B, C, D, A]`.
 
 Pass-the-parcel pattern: rotate `n` times, then dequeue one player, and repeat until one remains.
-
-> [!important] 2025 Promo P2 Task 4: a print queue as a list `[3+5]`
-> `send(tup)`: 1m loop over the jobs · 1m `pqueue.append(job)` · 1m `return len(pqueue)`. A new empty queue or a hand counter scored 0.
->
-> `pprint(n)`: 1m repeat `n` times · 1m **check empty before** dequeuing · 1m `pqueue.pop(0)` · 1m print *"The print queue is empty."* · 1m `return len(pqueue)`.
-
-> [!important] 2026 Mock Promo P2 Task 4: round-robin printing with a queue ADT `[5+3]`
-> `module.py` gives `make_empty_queue()`, `is_empty_queue(queue)`, `enqueue(queue, item)` and `dequeue(queue)` (returns `None` when empty). Use them, not list methods. Each job is `(job_code, pages_remaining)` and prints one page per turn.
->
-> ```python
-> def process_turn(queue):
->     if is_empty_queue(queue):                       # 1m
->         return None
->     job = dequeue(queue)                            # 1m
->     pages_remaining = job[1] - 1                    # 1m
->     if pages_remaining > 0:
->         enqueue(queue, (job[0], pages_remaining))   # 1m a new tuple: tuples can't change
->         return None
->     return job[0]                                   # 1m finished
->
-> def completion_order(queue):
->     completed = []                                  # 1m
->     while not is_empty_queue(queue):                # 1m
->         job_code = process_turn(queue)
->         if job_code is not None:
->             completed.append(job_code)              # 1m
->     return completed
-> ```
->
-> Jobs `("P101", 2), ("P102", 1), ("P103", 3)` finish in the order `['P102', 'P101', 'P103']`.
 
 ## Common Mistakes
 

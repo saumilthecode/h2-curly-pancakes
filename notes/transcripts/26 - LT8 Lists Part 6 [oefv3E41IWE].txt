@@ -3,8 +3,6 @@ LT: LT 7 - Lists
 Linked label: Part 6 : Is it mutated?
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=oefv3E41IWE
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

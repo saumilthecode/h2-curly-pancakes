@@ -3,8 +3,6 @@ LT: LT 1b - Basic Python - About Strings
 Linked label: 3. How do we use the slice operator with Step - for String
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=KHBHunYLVJk
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

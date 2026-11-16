@@ -3,8 +3,6 @@ Assessment(s): [OPTIONAL] LT 12c Selection Sort
 Linked label(s): Selection Sort
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=K8U5rzNHnrw
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

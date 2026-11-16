@@ -3,8 +3,6 @@ Assessment(s): LT 12d Merge Sort
 Linked label(s): Time Complexity - Merge Sort vs Bubble Sort
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=UPQYT8F5wDE
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -3,8 +3,6 @@ LT: LT10d About Hashing (Part 3)
 Linked label: Part 3: Closed Hashing - Linear Probing
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=iNt9vZlmMdg
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

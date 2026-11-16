@@ -3,8 +3,6 @@ Assessment(s): C4 Database and Basic SQL (SLS)
 Section: C4-2a Basic SQL - Create Database and Tables
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=-OexChjx7kg
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

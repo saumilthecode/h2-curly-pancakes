@@ -1,5 +1,6 @@
 > [!summary] Quick View
 > A function is a black box: you need to know **what** it does, not **how** it does it.
+> Values go in through **parameters** and come out through **`return`**. Variables made inside a function are **local** to it.
 
 Writing a *good* abstraction (decomposition, naming, magic numbers) is in [[LT3b Good Abstraction|LT3b]].
 
@@ -43,6 +44,50 @@ The same specification can have different implementations. Both are a valid `squ
 result = x * x
 result = x ** 2
 ```
+
+## Functions Calling Functions
+
+Work from the **inside out**. Each call is replaced by what it returns:
+
+```python
+def square(x):
+    return x * x
+
+def double(x):
+    return x + x
+
+double(square(2)) - square(double(2))
+```
+
+```text
+double(square(2)) - square(double(2))
+double(4)         - square(4)
+8                 - 16
+-8
+```
+
+Build new functions out of ones you already have, without caring how they work inside:
+
+```python
+def area_square(x):
+    if x < 0:
+        return 0
+    return area_rect(x, x)          # a square is a rectangle with equal sides
+
+def is_even_and_positive(x):
+    return not is_odd(x) and not is_negative(x) and x != 0     # 0 is neither
+```
+
+## Parameters, Not `input()`
+
+When a function has parameters, its values arrive **as arguments**. Don't ask for them again:
+
+```python
+def interest(amount, years):        # interest(1000, 3) supplies both
+    amount = int(input("Amount: "))   # WRONG: throws the argument away
+```
+
+Use `input()` only when the question says the **user** enters the value. Hard-coding is the opposite mistake: `checkout(n)` must work for any `n`, not just the example's 4.
 
 ## `return` vs `print`
 
@@ -92,10 +137,27 @@ def increment():
 - Local names go out of scope when the function ends. An object itself remains if
   another reference to it still exists.
 
+## Exam
+
+> [!important] Which definitions are valid? (LT3a Q1)
+> | Definition | Valid? |
+> | ---------- | ------ |
+> | `def foo(a, b):` then `return a + a` | yes, though `b` is unused |
+> | `def foo():` then `return` | yes: returns `None` |
+> | `def foo(a, b, c):` then `a + b + c` | yes, but returns `None`: the sum is never returned |
+> | `def foo:` | no: needs `()` |
+> | `define foo(a):` | no: the keyword is `def` |
+> | `def foo(a)` then `return a` unindented | no: missing `:` and the body isn't indented |
+
+> [!important] Explain the advantages of local variables
+> A local variable exists only inside its function, so the same name can be reused elsewhere without clashing, and changing it can't break code outside the function. The function is self-contained, which makes it easier to test and reuse.
+
 ## Common Mistakes
 
 - Using `print` where `return` is needed.
 - Forgetting `return`, so the function silently gives `None`.
+- Calling `input()` for a value that was passed in as a parameter.
+- Hard-coding the example's values instead of using the parameters.
 - Trying to read a local variable from outside its function.
 - Assigning to a global name inside a function without understanding that Python
   treats it as local unless `global` is used.

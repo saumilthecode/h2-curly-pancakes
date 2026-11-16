@@ -3,8 +3,6 @@ Assessment(s): LT 12b Insertion Sort
 Linked label(s): Insertion Sort unplugged activity
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=QTh2RMHH-T0
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

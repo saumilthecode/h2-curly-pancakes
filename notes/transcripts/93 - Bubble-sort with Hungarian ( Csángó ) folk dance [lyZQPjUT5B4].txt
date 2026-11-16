@@ -3,8 +3,6 @@ Assessment(s): LT 12a Bubble Sort
 Linked label(s): Bubble Sort Hungarian Folk Dance
 Uploader: AlgoRythmics
 YouTube: https://www.youtube.com/watch?v=lyZQPjUT5B4
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -2,10 +2,6 @@
 
 Date: 13 November 2026
 
-Source: transcript currently stored in Anarlog. Paragraph breaks added for readability.
-
-Capture status at export: pending recovery in Anarlog. The original audio is backed up separately.
-
 Okay? And your query can query from one table, can query from multiple tables, right? Under the relational database, right? Advanced SQL. You learn that. Okay? Now what I want to touch on is here. Yeah? Here. This one. Is this is this big enough? Can I see? Okay? So I execute of course the first few lines of a connector. To the database. Hello, hello, hello, lookup. Connecting to a database all those standard. Now then you execute this SQL command. So you select query all the fields from the product file or product labels where IT is equal to one. Now, when you select ID equal to one, how many records do you expect?
 
 One record. So you fetch one. Then you do a fetch one and then you freeze. The item. You assign the C dot Fat1 to this item and you fill item because there's only one item. Fill and take a look. See what you get. What kind of data structure is that? Is that a tupper? Is that a list? Is that a what? Is that a string? You understand what? Watch out on the type. Then let's say I say select estimate, select all the fields from customer. So this customer is the whole customer table. Alright, so I select all the fields from customers so what am I going to print?
@@ -157,3 +153,4 @@ Will ID6 appear? We will now insert into no auto for names 7, 8, and 9. What we 
 So now when you recycle the ID six for name seven, then there may be a possibility that there is a conflict between name six. And name seven. So this is not a good way to handle our database. Now this occurs when we create our table without using auto increment. What will happen if we do the same thing for the one with auto increment? The one with auto increment, let's say we delete the last record, which is ID eight. Let's run the command to delete from the table with auto, where ID eight. Let's check the data. Now we have ID1 to ID seven, ID eight has been deleted.
 
 Time is just now, we will now go and insert two more data into the table with auto. We will insert records for name 9 and name 10. We want to see whether ID8 will be recycled for these two records or not. Let's run the SQL command. Now if you check the data now, ID8 has been deleted. We inserted two more records, name 9 and name 10, but the ID generated is 9 and 10. ID8 is not recycled. So this is good because ID8. 8 is used to refer to the person named 8. So it is not recycled. So in conclusion, when you create a table and the ID you intend it to be auto-increased, and then you do not want it to recycle, you have to specify that when you create the table, by naming the primary key as auto incremental.
+

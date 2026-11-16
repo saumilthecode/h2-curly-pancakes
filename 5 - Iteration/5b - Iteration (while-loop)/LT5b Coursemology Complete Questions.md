@@ -1,7 +1,6 @@
 # LT 5b - Iteration (while-loop) (2025): Complete Coursemology Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88729
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 8
 
 ## Learning outcomes and assessment context
@@ -286,4 +285,3 @@ def fn(n):
 
 ---
 
-*Archive scope: complete prompts, choices, prompt code, diagrams/alt text, linked starter templates where supplied, and public tests. Submitted answers, grades, feedback/comments, statistics, and correct-answer markings are excluded.*

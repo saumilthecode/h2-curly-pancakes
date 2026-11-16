@@ -3,8 +3,6 @@ LT: LT10d About Hashing (Part 1)
 Linked label: Part 1 : About the Hash Value (or Checksum)
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=LR6vgzaSZko
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

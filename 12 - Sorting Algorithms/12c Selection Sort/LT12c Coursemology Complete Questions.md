@@ -1,7 +1,6 @@
 # [OPTIONAL] LT 12c Selection Sort - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88721
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 11
 - **Learning outcomes:** (Selection Sort is NOT in the Syllabus)1.2 Fundamental Algorithms1.2.1 Implement sort algorithms (insertion sort, bubble sort, quicksort, merge sort)1.2.2 Use examples to explain sort algorithms1.2.5 Compare and describe the efficiencies of the sort and search algorithms using Big-O notation for time complexity (worst case).
 
@@ -34,7 +33,6 @@ Please feel free to post questions via the comment box tagged to the lecture vid
 ### Question 1: Which of the following is/are true about selection sort?
 
 - **Type:** MultipleResponse
-
 
 #### Choices
 
@@ -285,3 +283,4 @@ sort_age_s(seq2)
 sort_age_s(seq3)
 sort_age_s(seq4)
 ```
+

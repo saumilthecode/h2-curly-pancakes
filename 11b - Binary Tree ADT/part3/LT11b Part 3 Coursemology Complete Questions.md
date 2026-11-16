@@ -1,7 +1,6 @@
 # LT 11b Binary Tree (Part 3) - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88720
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 5
 - **Learning outcomes:** 2.1.4 — Tree traversals: Illustrate the use of and implement pre-order, in-order, and post-order traversals, including applying in-order traversal to binary search trees.  2.1.5 — Tree searching: Illustrate the use of and implement breadth-first search and depth-first search for binary trees.
 
@@ -183,8 +182,6 @@ You may also import the `queue_module.py` and use `make_empty_queue()`, `make_qu
 
 ## Linked code template notebook cells
 
-Starter-code cells copied read-only from the assessment-linked local template notebook(s). Notebook outputs and walkthrough-solution notebooks are excluded.
-
 ### LT11b3.ipynb
 
 #### Code cell 1
@@ -315,3 +312,4 @@ entry(left_branch(right_branch(t2)))   # expected 6
 ```python
 entry(t3)  # expected 5
 ```
+

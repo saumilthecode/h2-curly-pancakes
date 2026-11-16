@@ -1,5 +1,6 @@
 > [!summary] Quick View
-> A tuple is an **ordered, immutable** collection.
+> A tuple is an **ordered, immutable** collection: you can read it, slice it and loop over it, but not change it.
+> To "add" to a tuple you build a **new** one with `+`. One-element tuples need a comma: `(5,)`.
 
 ## Basics
 
@@ -68,6 +69,40 @@ for ele in tup:
 
 for i in range(len(tup)):
     print(tup[i])
+```
+
+## Building a Tuple in a Loop
+
+Start empty and add with `+`, which makes a new tuple each time. To keep each record together, add a **tuple containing it**:
+
+```python
+items = ()
+for i in range(n):
+    name = input("Item: ")
+    cost = float(input("Cost: "))
+    items = items + ((name, cost),)       # (('bread', 2.5), ('milk', 3.2))
+```
+
+| Line | Result after two items |
+| ---- | ---------------------- |
+| `items = items + ((name, cost),)` | `(('bread', 2.5), ('milk', 3.2))`: a tuple of records |
+| `items = items + (name, cost)` | `('bread', 2.5, 'milk', 3.2)`: the pairs are lost |
+| `items.append((name, cost))` | `AttributeError`: tuples have no `append` |
+
+The other usual slip is leaving `cost` as a string: wrap the `input()` in `float()`.
+
+Accumulating several totals at once works the same way. Return them together at the end:
+
+```python
+def odd_even_sums(t):            # sums of the values at even and odd indexes
+    first = 0
+    second = 0
+    for i in range(len(t)):
+        if i % 2 == 0:
+            first = first + t[i]
+        else:
+            second = second + t[i]
+    return (first, second)       # odd_even_sums((1, 3, 2, 4, 5)) is (8, 7)
 ```
 
 ## Returning Several Values
@@ -144,6 +179,28 @@ tup = (1, 2, 3);  tup2 = tup
 tup += (4, 5, 6)
 tup2              # (1, 2, 3)  - a new tuple was created
 ```
+
+## Exam
+
+> [!important] Equality traps from LT6
+> | Expression | Result | Why |
+> | ---------- | ------ | --- |
+> | `(1, 2, 3) == (1, (2, 3))` | `False` | the second has two elements, not three |
+> | `(1, 2, 3) == (1, 2, (3))` | `True` | `(3)` is just `3`. Only `(3,)` is a tuple |
+> | `('C')` | a string | no comma, so not a tuple |
+> | `('Grand', 'Wizard', )` | a tuple | a trailing comma is allowed |
+> | `my_tuple[4]` on a 3-element tuple | `IndexError` | |
+
+> [!important] "Why use a tuple rather than a list?"
+> The data shouldn't change once created, such as a record read from a file, and immutability guarantees it can't be changed by accident. A tuple can also be a dictionary key, which a list can't.
+
+## Common Mistakes
+
+- `(5)` instead of `(5,)` for a one-element tuple.
+- `tup.append(x)`: use `tup = tup + (x,)`.
+- `items + (name, cost)` when each record should stay together: `items + ((name, cost),)`.
+- Expecting `sorted(tup)` to give a tuple. It gives a list.
+- Using `is` to compare values. Use `==`.
 
 ## Related
 

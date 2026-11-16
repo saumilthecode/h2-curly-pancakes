@@ -1,7 +1,6 @@
 # LT2 Coursemology Complete Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88710
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 7
 
 ## Learning outcomes
@@ -148,4 +147,3 @@ The flowchart must first check that `n2` is not 0 before performing the division
 
 ---
 
-*Archive scope: complete question-facing prompts, choices, diagrams/alt text, and public test cases visible on the authenticated assessment pages. Student submissions, grades, comments, statistics, feedback, and correctness markings are excluded.*

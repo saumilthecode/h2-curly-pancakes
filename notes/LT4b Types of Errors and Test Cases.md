@@ -9,6 +9,19 @@
 | Runtime | a valid line Python can't carry out, e.g. dividing by zero | during execution | program crashes part-way |
 | Logic | the code runs but does the wrong thing | never (it runs fine) | output is wrong |
 
+```mermaid
+flowchart LR
+  C["your code"] --> P{"Python can<br>read it?"}
+  P -- no --> S["syntax error"]
+  P -- yes --> R{"runs to<br>the end?"}
+  R -- no --> RT["runtime error"]
+  R -- yes --> O{"right<br>output?"}
+  O -- no --> L["logic error"]
+  O -- yes --> D["no error found"]
+```
+
+Only testing finds logic errors: Python has nothing to complain about.
+
 ### Syntax Errors
 
 Invalid Python grammar.
@@ -65,6 +78,18 @@ Also: a missing `return` (function silently gives `None`), off-by-one loop bound
 > ```
 >
 > **`true` / `false`**: Python's Booleans are capitalised. Lowercase raises `NameError: name 'true' is not defined` at run time.
+>
+> **`/` where `//` was meant**: for the remainder, `k = larger / smaller` gives a float, so `larger - k * smaller` is always `0.0`. Use `k = larger // smaller`: `remainder(20, 3)` is then `20 - 6 * 3 = 2`.
+>
+> **A wrong condition**: *"divisible by 400, or by 4 but not by 100"* is
+>
+> ```python
+> year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)
+> ```
+>
+> The broken version, `not (year % 4 == 0 and year % 100 == 0)`, calls 2014 a leap year.
+>
+> **Two calls with one argument**: `p3(a, b)` calls `p2(a)`, but `p2` needs two. `TypeError` at run time.
 
 ## Debugging
 
@@ -150,6 +175,30 @@ def percentage(score, total):
 > ```
 >
 > Write your own tests beyond the ones provided.
+
+## Exam
+
+> [!important] "Identify the type of error and correct it"
+> Name the **category**, say **why** it is that category, then give the fixed line.
+> *Logic error: the program runs but `average(100, 20)` returns `110`, because `/` is done before `+`. Fix: `return (x1 + x2) / 2`.*
+
+> [!important] For test data, give the value **and** the expected result
+> For a mark between 0 and 100: normal `57` → accepted · boundary `0` and `100` → accepted · erroneous `-1`, `101`, `"abc"` → rejected. One value per category is not enough when a question asks for both boundaries.
+
+> [!example]- Bugs that cost marks in short coding tasks
+> - **`or "Y"`**: `if answer == "y" or "Y":` is always true, because a non-empty string counts as `True`. Write `if answer == "y" or answer == "Y":`.
+> - **Off by one**: `for i in range(years)` runs `0, 1, 2`. Interest at the end of year 1 needs `i + 1`.
+> - **Hard-coding**: `checkout(n)` must work for any `n` items, not the four in the example.
+> - **`input()` inside a function that already has parameters**: the values arrive as arguments.
+> - **Looping over the wrong thing**: iterate over the `items` parameter, not a global list that happens to exist.
+
+## Common Mistakes
+
+- Calling a crash a logic error. If it stops with an error message, it's **runtime**.
+- Calling wrong output a runtime error. If it finishes, it's **logic**.
+- Test data with no expected result.
+- Testing only one boundary, or a value near the boundary instead of on it.
+- A bare `except:` that hides your own bugs.
 
 ## Related
 

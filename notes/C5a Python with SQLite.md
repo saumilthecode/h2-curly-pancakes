@@ -248,16 +248,9 @@ for item in items:
 
 ## Automatic Id
 
-Leave `Id` out of an `INSERT` and the database generates a unique, sequential integer.
+Leave `Id` out of an `INSERT` and the database generates a unique, sequential integer: the **largest `Id` plus 1**.
 
-Your teacher's question for C5b: delete record 5, then insert. Is the new `Id` 5 or 6?
-
-| Table defined with | Deleted the **last** record | Deleted a **middle** record |
-| ------------------ | --------------------------- | --------------------------- |
-| `PRIMARY KEY(Id)`, as in your tables | **5** again | 6 |
-| `Id INTEGER PRIMARY KEY AUTOINCREMENT` | **6** | 7 |
-
-Your tables give the **largest `Id` plus 1**. `AUTOINCREMENT` never reuses a number.
+Delete the last record and insert again, and your tables reuse its `Id`. A table made with `AUTOINCREMENT` never does. Why that matters: [[C5b Concept Clarification#B. Auto-Increment|C5b]].
 
 ## When It Goes Wrong
 
@@ -301,6 +294,52 @@ If it stays locked:
 > [!important] Create and import first
 > Class, 11 Nov: you are given a file to populate the database, then asked to query it. If you can't create the tables and import the data, the rest of the question scores **zero**.
 
+> [!example]- Specimen 2027 Paper 2 Task 4.1–4.2: create and fill two tables `[5+4]`
+> Student (<u>StudentID</u>, GivenName, FamilyName, <u class="fk">FormGroupID</u>)
+> Form (<u>FormGroupID</u>, TutorID, Year)
+>
+> Sample data comes in `students.txt` and `formgroups.txt`.
+>
+> ```python
+> # Task 4.1
+> from sqlite3 import *
+>
+> db = connect("school.db")
+> c = db.cursor()
+> c.execute('''CREATE TABLE Form (
+>     FormGroupID TEXT,
+>     TutorID TEXT,
+>     Year INTEGER,
+>     PRIMARY KEY (FormGroupID))''')
+> c.execute('''CREATE TABLE Student (
+>     StudentID TEXT,
+>     GivenName TEXT,
+>     FamilyName TEXT,
+>     FormGroupID TEXT,
+>     PRIMARY KEY (StudentID),
+>     FOREIGN KEY (FormGroupID) REFERENCES Form(FormGroupID))''')
+> db.commit()
+> db.close()
+>
+> # Task 4.2
+> from sqlite3 import *
+> from csv import *
+>
+> db = connect("school.db")
+> c = db.cursor()
+> with open("formgroups.txt") as f:          # the parent table first
+>     for row in reader(f):
+>         c.execute("INSERT INTO Form VALUES (?, ?, ?)", row)
+> with open("students.txt") as f:
+>     for row in reader(f):
+>         c.execute("INSERT INTO Student VALUES (?, ?, ?, ?)", row)
+> db.commit()
+> db.close()
+> ```
+>
+> - `Form` is created and filled **first**, because `Student` points at it ([[C5b Concept Clarification#C. Deletion Denied|C5b]]).
+> - Open the text files before you code. If line 1 is a header, skip it with `next()`. Choose `TEXT` or `INTEGER` from what the IDs look like.
+
 ## Common Mistakes
 
 - The overwrite line in every cell.
@@ -313,6 +352,7 @@ If it stays locked:
 
 ## Related
 
+- [[C5b Concept Clarification]]
 - [[C4-2 Basic SQL]]
 - [[C4-4 Advanced SQL]]
 - [[BTB2 File Handling]]

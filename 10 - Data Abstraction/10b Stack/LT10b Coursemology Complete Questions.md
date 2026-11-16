@@ -1,7 +1,6 @@
 # LT 10b - Stack ADT
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88716
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes and core skills
 
@@ -26,7 +25,6 @@ Please feel free to post questions via the comment box tagged to the lecture vid
 
 A stack is an abstract data type that accepts and returns data in a Last In First Out manner. Data that is added in last will be taken out first. Imagine putting chips into a Pringles can. As you stack chips in the can, the first chip put in ends up at the bottom and the last chip will sit at the top. To take out one chip, you have to take the top most chip.
 
-
 Suppose we start with an empty stack and put the following numbers into it, from left to right: 4, 3, 2, 1. What value is at the top of the stack?
 
 ### Options
@@ -41,8 +39,6 @@ Suppose we start with an empty stack and put the following numbers into it, from
 There are two important operations that a stack must support: push and pop.
 
 To add items to the stack, we push them onto the stack, and to get the top element from the stack, we pop it off the stack.
-
-
 
 Which sequence(s) of push and pop operations will result in the following stack?
 3 <-- top
@@ -74,7 +70,7 @@ In addition, define the following predicate function is_empty_stack(stack) that 
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -151,12 +147,11 @@ pop takes in a stack, removes the top item of that stack, and returns that top i
 
 Note: Push and pop actions have to modify the stack itself!
 
-
 The methods implemented in the previous question are available for use.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -208,14 +203,11 @@ clear(stack) modifies the given stack, makes it empty and returns the stack
 
 Define these functions.
 
-
-
-
 Note : make_stack(stack)  and make_empty_stack()  are provided.
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -262,7 +254,7 @@ Note : The make_empty_stack(), is_empty_stack(), push()  and pop() have been cre
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -301,13 +293,11 @@ A stack can be used to help to reverse the order of answers when performing deci
 
 Write code denary_to_binary(n) that uses a stack to convert a decimal number n to a string of the binary number.
 
-
-
 Note : The functions make_empty_stack() , is_empty_stack(), push() and pop() are available to be used. (you need not code them again.)
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -366,7 +356,6 @@ closing symbol and the pairs of parentheses are properly nested.
 
 The above example is an expression with balanced parenthesis.
 
-
 Examples of imbalanced parenthesis are:
 (1+2*(4-3)))
 ((6-3)*4
@@ -389,7 +378,6 @@ Parentheses are used in arithmetic expressions such as
 
 (5+6)∗(7+8)/(4+3)
 
-
 to show the correct order to perform the mathematical operations.
 
 We can use the Stack ADT to check that there the parentheses are used in pairs.
@@ -400,24 +388,15 @@ We can use the Stack ADT to check that there the parentheses are used in pairs.
 
 3. If, on the other hand, a symbol is a closing parenthesis, pop the stack.
 
-
-
-
 As long as it is possible to pop the stack to match every closing symbol, the parentheses remain balanced. If at any time there is no opening symbol on the stack to match a closing symbol, the string is not balanced properly. At the end of the string, when all symbols have been processed, the stack should be empty.
 
-
-
-
 Write a function check_bracket(string) to check the string and return True if it contains a balanced parentheses, else return False.
-
-
-
 
 Note : Use the the constructor make_empty_stack and modifiers push  and pop which you have created. (You need not paste the code here in Coursemology.)
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -473,10 +452,7 @@ False
 Have you watched the second video regarding Postfix Notation? In postfix notation, operators are placed at
 the back of the operands rather than in the middle.
 
-
-
 We will use tuples to represent mathematical expressions, and process them from left to right. A stack will be used to place operands temporarily.
-
 
 (1, 2, '+') in postfix, will be evaluated to 1 + 2 = 3.
 
@@ -503,31 +479,23 @@ In conventional mathematics, we often use infix notation. For this question, we 
 
 We will use tuples to represent mathematical expressions. For example, the following infix expressions can be expressed in postfix notation as:
 
-
 (1 + 2) will be written as (1, 2, '+') in postfix
 ((1 + 5) * 3)  will be written as  (1, 5, '+', 3, '*') in postfix
 (3 * (1 + 2))  will be written as  (3, 1, 2, '+', '*') in postfix
 
-
 You can assume the following:
-
 
 The operators used are only binary operators: '+', '-', '*', '/'
 All inputs are valid math expressions.
 
-
 Write the function calculate(inputs) that takes a math expression written in postfix tuple as the inputs and returns the result of the entire expression as an integer. For this question, we will only calculate expressions that will produce integer answers.
 
-
 You can use the following algorithm to code the function:
-
 
 If the expression contains only one integer, return that integer. Otherwise, create an empty stack.
 Iterate through the tuple, from the left to the right, push each element into the stack, unless it is an operator. If the element is an operator, pop the first two elements out of the stack (the first and second elements popped will be in the right and left of the operands respectively), evaluate the result and push the result into the stack.
 
-
 To illustrate, we take the example (1, 2, '+', 3, '*') below (the stack is initially empty):
-
 
   a. take 1, push 1                                         # stack is [1]
   b. take 2, push 2                                         # stack is [1, 2]
@@ -536,12 +504,11 @@ To illustrate, we take the example (1, 2, '+', 3, '*') below (the stack is initi
   e. take '*', pop 3, pop 3, calculate 3 * 3 = 9, push 9    # stack is [9]
   f. input empty, pop 9, return 9
 
-
 Note : Use the constructor make_empty_stack and modifiers push  and pop which you have created. (You need not paste the code here in Coursemology.)
 
 ### Template attachment
 
-`template.py` (Coursemology download; submitted contents intentionally excluded.)
+`template.py`
 
 ### Public test cases
 
@@ -627,3 +594,4 @@ calculate((5, 1, 20, 2, '+', 23, 12, '-', '/', '+', '*'))
 
 15
 ```
+

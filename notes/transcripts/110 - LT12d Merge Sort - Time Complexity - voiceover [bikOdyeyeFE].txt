@@ -3,8 +3,6 @@ Assessment(s): LT 12d Merge Sort
 Linked label(s): Time Complexity
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=bikOdyeyeFE
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

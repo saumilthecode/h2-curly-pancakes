@@ -3,8 +3,6 @@ Assessment(s): LT 11b Binary Tree (Part 2)
 Linked label(s): LT11b Binary Tree (Part 2)
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=OgQr2uK39MM
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -3,8 +3,6 @@ Assessment(s): C3a Hands-on with Filius Network Simulator
 Linked label(s): Part 3b : About Servers (con't) - DNS, DHCP and Mail Servers
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=MKrz2kQLE7o
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

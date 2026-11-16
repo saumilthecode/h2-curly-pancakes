@@ -39,7 +39,7 @@ erDiagram
 
 These diagrams also put two bars at a "one" end. Your teacher draws a plain line there. Both mean one.
 
-One-to-one hardly matters in this syllabus. The marks are in the other two.
+One-to-one is the rarest. Most marks are in the other two, but the specimen's locker and student are one-to-one ([[#Exam]]).
 
 > [!tip] Class, 11 Nov: stand at one entity and look across
 > At `Customers`: one customer has many orders, because they can order again tomorrow. At `Orders`: one order belongs to one customer. One-to-many, crow's foot at `Orders`.
@@ -84,17 +84,30 @@ erDiagram
 
 ## Exam
 
-> [!important] 2025 Promo P1 Q4(a): ER diagram `[2]`
-> One customer makes many bookings. One villa has many bookings.
+> [!important] Specimen 2027 P1 Q4(a): a college database, ER diagram in 3NF `[5]`
+> Each student has an ID, name, gender and date of birth. Each course has a code and name, each locker a number and combination, each year group level an ID and name. Each student is assigned a year group level, has one locker, and may enrol on several courses. There are many lockers.
 >
 > ```mermaid
 > erDiagram
 >   direction LR
->   CUSTOMER ||--|{ BOOKING : ""
->   BOOKING }|--|| VILLA : ""
+>   YearGroup ||--|{ Student : ""
+>   Locker ||--|| Student : ""
+>   Student ||--|{ Enrolment : ""
+>   Enrolment }|--|| Course : ""
 > ```
 >
-> 1m the three entities · 1m both one-to-many links, with the many end at `BOOKING`.
+> Four entities come straight from the question. Student to course is **many-to-many**, so the linked entity `Enrolment` goes between them. Locker to student is **one-to-one**: a student has one locker, a locker belongs to at most one student.
+
+> [!important] Specimen 2027 P1 Q4(b): table descriptions `[7]`
+> YearGroup (<u>LevelID</u>, LevelName)
+> Locker (<u>LockerNo</u>, Combination)
+> Course (<u>CourseCode</u>, CourseName)
+> Student (<u>StudentID</u>, Name, Gender, DateOfBirth, <u class="fk">LevelID</u>, <u class="fk">LockerNo</u>)
+> Enrolment (<u class="pk fk">StudentID</u>, <u class="pk fk">CourseCode</u>)
+>
+> The foreign keys sit at the crow's feet: `Student` holds `LevelID`, and `Enrolment` holds both sides. `LockerNo` goes in `Student` because every student has exactly one locker. A `StudentID` in `Locker` would sit empty for every unused locker.
+>
+> (c) is in [[C4-4 Advanced SQL#Exam|C4-4]], (d) in [[LT4a Data validation and verification#Exam|LT4a]].
 
 > [!important] SLS C4-3c Library Q1–Q6
 > A school library records each book's ISBN13, title, author and publisher, each student's ID, name, class and email, and each loan's borrow and return dates.
@@ -137,12 +150,10 @@ erDiagram
 >
 > **Q3 Table descriptions.**
 >
-> ```text
-> CUSTOMER (ID_, Name, Email)
-> PRODUCT (ID_, Name, Description, UnitPrice)
-> ORDERS (ID_, CustID*, DeliveryAddress, OrderDate)
-> OrderProduct (OrderID_*, ProductID_*, Quantity)
-> ```
+> CUSTOMER (<u>ID</u>, Name, Email)
+> PRODUCT (<u>ID</u>, Name, Description, UnitPrice)
+> ORDERS (<u>ID</u>, <u class="fk">CustID</u>, DeliveryAddress, OrderDate)
+> OrderProduct (<u class="pk fk">OrderID</u>, <u class="pk fk">ProductID</u>, Quantity)
 >
 > `ProductID` and `Quantity` describe one product in one order, so they move to the linked entity.
 

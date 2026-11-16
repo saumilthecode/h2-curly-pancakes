@@ -90,15 +90,11 @@ def is_whole(rat):
 
 Arithmetic:
 
-```text
-n1/d1 + n2/d2 = (n1*d2 + n2*d1) / (d1*d2)
-n1/d1 - n2/d2 = (n1*d2 - n2*d1) / (d1*d2)
-n1/d1 * n2/d2 = (n1*n2) / (d1*d2)
-n1/d1 / n2/d2 = (n1*d2) / (d1*n2)
+$$\frac{n_1}{d_1} + \frac{n_2}{d_2} = \frac{n_1 d_2 + n_2 d_1}{d_1 d_2} \qquad \frac{n_1}{d_1} - \frac{n_2}{d_2} = \frac{n_1 d_2 - n_2 d_1}{d_1 d_2}$$
 
-equal   when n1*d2 == n2*d1
-whole   when n1 % d1 == 0
-```
+$$\frac{n_1}{d_1} \times \frac{n_2}{d_2} = \frac{n_1 n_2}{d_1 d_2} \qquad \frac{n_1}{d_1} \div \frac{n_2}{d_2} = \frac{n_1 d_2}{d_1 n_2}$$
+
+Equal when `n1 * d2 == n2 * d1`. Whole when `n1 % d1 == 0`.
 
 Simplifying inside the constructor:
 
@@ -124,11 +120,9 @@ def make_rat(n, d):
 > display(point)                 # returns "(x, y)"
 > ```
 >
-> ```text
-> midpoint = ((x1 + x2) / 2, (y1 + y2) / 2)
-> gradient = (y2 - y1) / (x2 - x1)
-> distance = sqrt((x2 - x1)^2 + (y2 - y1)^2)
-> ```
+> $$\text{midpoint} = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right) \qquad \text{gradient} = \frac{y_2 - y_1}{x_2 - x_1}$$
+>
+> $$\text{distance} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 >
 > ```python
 > def make_point(x, y):

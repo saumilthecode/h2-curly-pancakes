@@ -3,8 +3,6 @@ LT: LT 11a Linear and Binary Search
 Linked label: Guess the Magic Number
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=oa98tXuh6fU
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

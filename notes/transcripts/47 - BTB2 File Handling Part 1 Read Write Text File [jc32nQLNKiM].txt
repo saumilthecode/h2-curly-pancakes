@@ -3,8 +3,6 @@ Assessment(s): BTB 2 - File Handling
 Linked label(s): Handling
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=jc32nQLNKiM
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

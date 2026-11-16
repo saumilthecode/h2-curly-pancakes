@@ -3,8 +3,6 @@ Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides); 
 Linked label(s): Embedded slide video; Circuit Switching vs Packet Switching
 Uploader: Sunny Classroom
 YouTube: https://www.youtube.com/watch?v=B1tElYnFqL8
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

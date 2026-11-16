@@ -3,8 +3,6 @@ LT: LT 4a - Data Verification and Validation
 Linked label: LT4a Data Verification and Validation
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=ZK3-rAQmaEg
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -1,31 +1,31 @@
 > [!summary] Quick View
-> Reading pseudocode and turning it into Python. Every construct here comes from your papers and lectures: the 2023 and 2025 promos, the 2027 specimen, the 2020 A-Level, and LT12b/12c.
+> Reading pseudocode and turning it into Python. Paper 1 writes algorithms this way, and Paper 2 sometimes hands you pseudocode to code up.
 
 ## Pseudocode → Python
 
-| Pseudocode | Python | Seen in |
-| ---------- | ------ | ------- |
-| `x ← 5` or `x <- 5` or `x = 5` | `x = 5` | 2025 promo, LT12b, specimen |
-| `IF m = 1` | `if m == 1:` | specimen |
-| `IF x <> -1` | `if x != -1:` | 2020 A-Level |
-| `IF … THEN … ELSE … ENDIF` | `if …:` / `else:` | 2025 promo |
-| `ELSE IF` | `elif` | 2023 promo |
-| `WHILE Lo <= Hi AND …` … `ENDWHILE` | `while lo <= hi and …:` | 2025 promo |
-| `FOR i <- 2 TO n` … `ENDFOR` | `for i in range(2, n + 1):` | LT12b |
-| `FOR counter = 1 to m` … `NEXT counter` | `for counter in range(1, m + 1):` | specimen |
-| `FOR element in lst:` | `for element in lst:` | 2023 promo |
-| `REPEAT` … `UNTIL cond` | `while True:` … `if cond: break` | LT12c |
-| `FUNCTION F(m: INTEGER) RETURNS INTEGER` … `ENDFUNCTION` | `def F(m):` | specimen |
-| `PROCEDURE P(Index: INTEGER)` … `ENDPROCEDURE` | `def P(index):` (returns nothing) | 2020 A-Level |
-| `RETURN x` | `return x` | all |
-| `OUTPUT x` | `print(x)` | 2020 A-Level |
-| `LENGTH(Seq)` | `len(seq)` | 2025 promo |
-| `APPEND element TO Left` | `left.append(element)` | 2023 promo |
-| `< Code to Swap Seq[Lo] with Seq[Hi] >` | `seq[lo], seq[hi] = seq[hi], seq[lo]` | 2025 promo |
+| Pseudocode | Python |
+| ---------- | ------ |
+| `x ← 5` or `x <- 5` or `x = 5` | `x = 5` |
+| `IF m = 1` | `if m == 1:` |
+| `IF x <> -1` | `if x != -1:` |
+| `IF … THEN … ELSE … ENDIF` | `if …:` / `else:` |
+| `ELSE IF` | `elif` |
+| `WHILE Lo <= Hi AND …` … `ENDWHILE` | `while lo <= hi and …:` |
+| `FOR i <- 2 TO n` … `ENDFOR` | `for i in range(2, n + 1):` |
+| `FOR counter = 1 to m` … `NEXT counter` | `for counter in range(1, m + 1):` |
+| `FOR element in lst:` | `for element in lst:` |
+| `REPEAT` … `UNTIL cond` | `while True:` … `if cond: break` |
+| `FUNCTION F(m: INTEGER) RETURNS INTEGER` … `ENDFUNCTION` | `def F(m):` |
+| `PROCEDURE P(Index: INTEGER)` … `ENDPROCEDURE` | `def P(index):` (returns nothing) |
+| `RETURN x` | `return x` |
+| `OUTPUT x` | `print(x)` |
+| `LENGTH(Seq)` | `len(seq)` |
+| `APPEND element TO Left` | `left.append(element)` |
+| `< Code to Swap Seq[Lo] with Seq[Hi] >` | `seq[lo], seq[hi] = seq[hi], seq[lo]` |
 
 > [!warning] Four traps
 > - `=` inside an `IF` is a **comparison**. Write `==`.
-> - `//` after code is a **comment** in the 2025 pseudocode (`// Search upwards …`), but `length(seq) // 2` in the 2023 one is floor division. Read the context.
+> - `//` after code can be a **comment** (`// Search upwards …`), but `LENGTH(Seq) // 2` is floor division. Read the context.
 > - `FOR … TO n` **includes** `n`, so `range` needs `n + 1`.
 > - LT12b and LT12c pseudocode index arrays from **1**. Python starts at `0`.
 
@@ -53,13 +53,6 @@
 > ENDWHILE
 > RETURN total
 > ```
-
-> [!important] Promo P2 tasks: fill the blanks, then code it
-> **2025 Task 5**: partition with the first element as pivot: A `Hi ← Hi - 1`, B swap `Seq[Lo]` and `Seq[Hi]`, C swap `Seq[Start]` and `Seq[Hi]`. Then `QuickSortHelper` A/B are the two recursive calls on `Start … Mid - 1` and `Mid + 1 … End`. See [[LT12e Quick Sort]].
->
-> **2023 Task 5**: merge sort blanks A–H. See [[LT12d Merge Sort#Exam|LT12d]].
->
-> **2023 P1 Q2(d)**: non-in-place quicksort blanks A–D. See [[LT12e Quick Sort#Exam|LT12e]].
 
 ## Related
 

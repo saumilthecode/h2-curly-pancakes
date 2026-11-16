@@ -3,8 +3,6 @@ LT: LT 7 - Lists
 Linked label: Part 2 : List Operations
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=1JXkn_st9n8
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

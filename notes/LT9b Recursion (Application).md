@@ -187,18 +187,6 @@ The base case is the **edge** of the triangle, not a single value. Both `r == 0`
 > [!warning]
 > Test the base case against the *smallest legal input*, not a convenient one. `len(string) == 0` looks right until the recursive step reads `string[1]`.
 
-> [!important] Promo P2 tasks: recursion
-> Every scheme below gives a mark for the **base case**. The rest go to the **smaller call**, the **combining** step, and in 2024 T5 and 2025 T3 to **calling it and displaying** the answer. 2023 split them across the two branches instead.
->
-> | Task | Base case | Smaller call and combine |
-> | ---- | --------- | ------------------------ |
-> | 2024 T4 `sum_of_digits(n)` `[4]` | `n == 0` → `0` | `n % 10 + sum_of_digits(n // 10)` |
-> | 2024 T5 `distance(n)` `[4]` | `n == 1` → `400` | `distance(n - 1) + 7.67`, lane 8 = `453.69` |
-> | 2025 T3 `population(c, m)` `[4]` | `m == 0` → `100` | `round(population(c, m - 1) * 1.2 - c)` |
-> | 2023 T2.1 `oddify(lst)` `[4]` | empty → `[]` | even: `oddify(lst[1:])`, odd: `[lst[0]] + oddify(lst[1:])` |
-> | 2023 T2.2 `str_to_int(s)` `[4]` | one digit → `int(s)` | `int(s[0]) * 10**(len(s) - 1) + str_to_int(s[1:])` |
-> | 2026 Mock T3 `count_character(code, target)` `[5]` | `code == ""` → `0` | `current + count_character(code[1:], target)`, where `current` is `1` if `code[0] == target`, else `0` |
-
 ## Common Mistakes
 
 - Missing a base case when the recurrence reaches back more than one step.

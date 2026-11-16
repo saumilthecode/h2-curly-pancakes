@@ -3,8 +3,6 @@ Assessment(s): C3a Hands-on with Filius Network Simulator (embedded in slides)
 Linked label(s): Embedded slide video
 Uploader: MIT Museum
 YouTube: https://www.youtube.com/watch?v=UVkT59PmRdo
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

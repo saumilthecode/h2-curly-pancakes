@@ -60,14 +60,9 @@ flowchart LR
 
 **Fix:** decompose into three tables.
 
-```text
-Student (MatricNo, Name, Gender, CivicsClass, CivicsTutor, HomeRoom)
-         ────────
-StudentCCA (MatricNo, CCAName)
-            ────────  ───────
-CCAInfo (CCAName, CCATeacherIC)
-         ───────
-```
+Student (<u>MatricNo</u>, Name, Gender, CivicsClass, CivicsTutor, HomeRoom)
+StudentCCA (<u class="pk fk">MatricNo</u>, <u class="pk fk">CCAName</u>)
+CCAInfo (<u>CCAName</u>, CCATeacherIC)
 
 `StudentCCA` keeps the link. Its `MatricNo` is a **foreign key** referencing the primary key of `Student`, and its `CCAName` is a foreign key referencing the primary key of `CCAInfo`.
 
@@ -99,16 +94,10 @@ flowchart TD
   S -->|"3NF"| CV["Civics"]
 ```
 
-```text
-Student (MatricNo, Name, Gender, CivicsClass*)
-         ────────
-Civics (CivicsClass, CivicsTutor, HomeRoom)
-        ───────────
-StudentCCA (MatricNo*, CCAName*)
-            ────────   ───────
-CCAInfo (CCAName, CCATeacherIC)
-         ───────
-```
+Student (<u>MatricNo</u>, Name, Gender, <u class="fk">CivicsClass</u>)
+Civics (<u>CivicsClass</u>, CivicsTutor, HomeRoom)
+StudentCCA (<u class="pk fk">MatricNo</u>, <u class="pk fk">CCAName</u>)
+CCAInfo (<u>CCAName</u>, CCATeacherIC)
 
 | Where | Primary key | Foreign key |
 | ----- | ----------- | ----------- |
@@ -179,30 +168,25 @@ Now 18A10's tutor changes in one record, and a CCA keeps its teacher even with n
 > [!important] SLS C4-3b Q1–Q5: one vet invoice through every form
 > **Q1 Why normalise?** To reduce data redundancy and to prevent data inconsistency.
 >
-> ```text
-> Invoice   Primary Key: (InvoiceID)
+> `Invoice`, primary key `InvoiceID`:
 >
-> InvoiceID  Customer  MembershipLevel  Discount  PetName  Procedure    Amount
-> 987        Sam Cook  Gold             20%       Rover    Vaccination  30.00
->                                                 Rover    Worm Test    24.00
->                                                 Morris   Worm Test    24.00
-> ```
+> | InvoiceID | Customer | MembershipLevel | Discount | PetName | Procedure | Amount |
+> | --------- | -------- | --------------- | -------- | ------- | --------- | ------ |
+> | 987 | Sam Cook | Gold | 20% | Rover | Vaccination | 30.00 |
+> | | | | | Rover | Worm Test | 24.00 |
+> | | | | | Morris | Worm Test | 24.00 |
 >
 > **Q2 Not 1NF.** `PetName`, `Procedure` and `Amount` hold three values in one record. Give each pet-and-procedure its own record in a new table `InvoiceDetail`, with the composite key `{InvoiceID, PetName, Procedure}`.
 >
 > **Q3 `InvoiceDetail` not 2NF.** `Amount` depends only on `Procedure`, which is part of the key: a Worm Test is 24.00 for any pet.
 >
-> ```text
-> InvoiceDetail (InvoiceID_*, PetName_, Procedure_*)
-> Procedure (Name_, Amount)
-> ```
+> InvoiceDetail (<u class="pk fk">InvoiceID</u>, <u>PetName</u>, <u class="pk fk">Procedure</u>)
+> Procedure (<u>Name</u>, Amount)
 >
 > **Q4 `Invoice` not 3NF.** `Discount` depends on `MembershipLevel`, which depends on `InvoiceID`: a transitive dependency.
 >
-> ```text
-> Invoice (InvoiceID_, Customer, MembershipLevel*)
-> Membership (Level_, Discount)
-> ```
+> Invoice (<u>InvoiceID</u>, Customer, <u class="fk">MembershipLevel</u>)
+> Membership (<u>Level</u>, Discount)
 >
 > **Q5 Why these four are fully normalised.** Every field holds one value (1NF). No non-key attribute depends on part of a key: three tables have single-field keys and `InvoiceDetail` has no non-key attribute (2NF). No non-key attribute depends on another non-key attribute (3NF).
 
@@ -224,11 +208,9 @@ Now 18A10's tutor changes in one record, and a CCA keeps its teacher even with n
 >
 > **3NF:** nothing left depends on a non-key attribute.
 >
-> ```text
-> Agent (AgentID_, AgentName)
-> Customer (CustomerID_, CustomerName, CustomerEmail)
-> Purchase (AgentID_*, CustomerID_*, PolicyBought_)
-> ```
+> Agent (<u>AgentID</u>, AgentName)
+> Customer (<u>CustomerID</u>, CustomerName, CustomerEmail)
+> Purchase (<u class="pk fk">AgentID</u>, <u class="pk fk">CustomerID</u>, <u>PolicyBought</u>)
 >
 > If each customer has **exactly one** agent, `AgentID` depends on `CustomerID` alone: `Customer (CustomerID_, CustomerName, CustomerEmail, AgentID*)` and `Purchase (CustomerID_*, PolicyBought_)`. Say which you assumed.
 
@@ -239,12 +221,10 @@ Now 18A10's tutor changes in one record, and a CCA keeps its teacher even with n
 >
 > **3NF:** `OrderNo → CustomerID → CustomerName` is transitive.
 >
-> ```text
-> OrderLine (OrderNo_*, ProductCode_*, Quantity)
-> Product (ProductCode_, ProductName, UnitPrice)
-> Orders (OrderNo_, CustomerID*)
-> Customer (CustomerID_, CustomerName)
-> ```
+> OrderLine (<u class="pk fk">OrderNo</u>, <u class="pk fk">ProductCode</u>, Quantity)
+> Product (<u>ProductCode</u>, ProductName, UnitPrice)
+> Orders (<u>OrderNo</u>, <u class="fk">CustomerID</u>)
+> Customer (<u>CustomerID</u>, CustomerName)
 
 ## Common Mistakes
 

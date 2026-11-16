@@ -48,6 +48,37 @@ def area_of_circle(r):
     return PI * square(r)      # no need to rewrite r * r
 ```
 
+### Building on Helpers
+
+The lesson's exercises stack one function on another, each trusting the one below:
+
+```python
+from math import pi
+
+def circle_area(circum):
+    if circum < 0:
+        return None
+    radius = circum / (2 * pi)
+    return round(pi * square(radius), 3)        # circle_area(34) is 91.992
+
+def bigger_sum2(x, y, z):                       # squares of the two larger numbers
+    if x <= y and x <= z:                       # x is the smallest, so leave it out
+        return sum_of_squares(y, z)
+    elif y <= x and y <= z:
+        return sum_of_squares(x, z)
+    else:
+        return sum_of_squares(x, y)             # bigger_sum2(6, -3, 8) is 100
+```
+
+`//` and `%` pull digits out of a number without turning it into a string. Digit 1 is the rightmost:
+
+```python
+def get_nth_digit(k, n):
+    return (k // 10 ** (n - 1)) % 10            # get_nth_digit(123456, 2) is 5
+```
+
+`// 10 ** (n - 1)` drops the digits to the right. `% 10` keeps the last one left.
+
 ## Solving Problems
 
 **Divide and conquer**: split a problem into smaller, easier subproblems.
@@ -126,10 +157,14 @@ Raising the start fare to `$3.20`, or shrinking the block to 300 m, is now one e
 > [!tip] The lecture's own caveat
 > Naming every constant is *"yes and no"*: worth it for code that will be maintained, overkill for a function run once.
 
-> [!important] 2023 Promo P2 Task 1: a helper function, then reuse it `[3+4]`
-> `discriminant(a, b, c)` returns `b**2 - 4*a*c` if it's `>= 0`, else `None`: 1m calculation · 1m `if`/`else` and return · 1m **three test cases** (one positive, one negative, one zero).
->
-> `quadratic_roots(a, b, c)` must **call `discriminant()`**, not redo the maths: 1m uses the helper · 1m `'No real root.'` when it's `None` · 1m both roots `(-b ± d ** 0.5) / (2 * a)` · 1m rounded to 1 d.p. and returned. The question also wants the **repeated root** case: if the discriminant is `0`, return the one root rounded to 1 d.p., not a tuple.
+## Exam
+
+> [!important] "State three advantages of using functions"
+> Pick three from the list at the top, each with its reason:
+> - **Reuse**: written once, called wherever it's needed, so there's less repeated code.
+> - **Easier debugging**: each function can be tested on its own, so a bug is found in a small piece of code.
+> - **Hides the details**: the caller only needs to know what the function does, not how.
+> - **Easier to understand**: the problem is split into named tasks and subtasks.
 
 ## Common Mistakes
 

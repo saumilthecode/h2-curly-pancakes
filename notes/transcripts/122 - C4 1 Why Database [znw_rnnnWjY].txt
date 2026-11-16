@@ -3,10 +3,6 @@ Assessment(s): C4 Database (supplementary video embedded in slides)
 Section: C4-3a Introduction to Relational Database slides, page 2
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=znw_rnnnWjY
-Source: YouTube captions
-Caption language: English (en), auto-generated
-Format: Full timestamped transcript
-Archived: 12 November 2026
 
 [00:00 - 00:03] hi my name's taylor and i'm going to
 [00:01 - 00:05] give you a high level overview of

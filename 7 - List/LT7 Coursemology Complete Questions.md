@@ -2,7 +2,6 @@
 
 - **Assessment:** LT 7 - Lists
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88730
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 
 ## Learning outcomes
 
@@ -302,3 +301,4 @@ n = [4, 5, 6]
 | Expression | Expected |
 |---|---:|
 | `cross_product(m, n)` | `[-3, 6, -3]` |
+

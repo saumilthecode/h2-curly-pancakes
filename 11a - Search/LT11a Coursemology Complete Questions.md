@@ -1,7 +1,6 @@
 # LT 11a Linear and Binary Search - Complete Coursemology Questions
 
 - **Source URL:** https://yijc.coursemology.org/courses/3257/assessments/88725
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 6
 - **Learning outcomes:** Not explicitly listed on the assessment page.
 
@@ -147,8 +146,6 @@ Write a binary search code, `binary_search(tup, student)`, to check whether a pa
 | `binary_search(class_list, 'Victor Harris')` | `16S12` |
 
 ## Linked code template notebook cells
-
-Starter-code cells copied read-only from the assessment-linked local template notebook(s). Notebook outputs and walkthrough-solution notebooks are excluded.
 
 ### LT11a.ipynb
 
@@ -298,3 +295,4 @@ def binary_search(tup, student):
 ```python
 binary_search(class_list, 'Charlie Brown')   # 16S13
 ```
+

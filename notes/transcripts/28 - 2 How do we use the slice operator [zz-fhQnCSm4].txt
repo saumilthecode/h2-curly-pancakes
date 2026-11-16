@@ -3,8 +3,6 @@ LT: LT 7 - Lists
 Linked label: How do we use the slice operator - List & String
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=zz-fhQnCSm4
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

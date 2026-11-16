@@ -1,7 +1,5 @@
 # C4-2 Basic SQL: Answers and Checks
 
-Checked locally on 11 November 2026 using fresh database downloads from the Coursemology task.
-
 ## Files
 
 - Slides are in [Slides](../Slides/): the four individual C4-2 PDFs and C4-2 Basic SQL.pdf (26 pages). The [Specimen Insert](../../Shared%20Resources/Specimen%20Insert.pdf) is in Shared Resources.
@@ -11,10 +9,6 @@ Checked locally on 11 November 2026 using fresh database downloads from the Cour
 - Source databases contains untouched fresh Northwind.db and dummy.db downloads. Pre-existing databases are retained in [Shared Resources/Databases](../../Shared%20Resources/Databases/).
 - dummy_Q7_completed.db is a separate copy with the Question 7 update applied once.
 - Create Tables.sql, Insert Data.sql, and Database.db reproduce the C4-2a/b table-and-insert examples in the slides. These working files are separate from the shared databases.
-
-## Browser status
-
-All seven answers are entered and were rechecked by returning to every question. The user approved the site's automatic saving after it was discovered. No Check Answer, Submit, or Save Draft button was clicked. Every question still showed Past Answers (0), so no answer was sent for marking.
 
 ## Local checks
 
@@ -112,3 +106,4 @@ The WHERE condition applies to each original price, so only prices originally be
 - ORDER BY sorts ascending by default; DESC sorts descending.
 - LIMIT restricts the number of output rows.
 - Always use a WHERE condition with UPDATE or DELETE when only some records should change.
+

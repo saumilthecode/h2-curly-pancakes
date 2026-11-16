@@ -1,5 +1,7 @@
 > [!summary] Quick View
-> Types, operators, booleans, strings and slicing.
+> Every value has a **type**: `int`, `float`, `bool`, `str` or `None`. `input()` always gives a `str`.
+> `/` always gives a float, `//` and `%` give quotient and remainder. Slices include `start` and stop **before** `stop`.
+> A variable holds one value at a time: assigning again replaces it.
 
 ## Types
 
@@ -23,6 +25,15 @@
 | `int("42")` | `42` |
 | `int("42.5")` | **error**: string must look like an `int` |
 | `int("yijc")` | **error** |
+
+```mermaid
+flowchart LR
+  S["str '42'"] -->|"int()"| I["int 42"]
+  S -->|"float()"| F["float 42.0"]
+  I -->|"float()"| F
+  F -->|"int() drops the decimals"| I
+  I -->|"str()"| S
+```
 
 > [!warning]
 > `int()` truncates towards zero: `int(1.99)` is `1`, not `2`. Use `round()` to round.
@@ -182,6 +193,30 @@ Outcome 1.3.2 asks for **meaningful** names, so `total_score` earns marks where 
 | `del a` | delete the variable |
 | `del x[y]` | delete a list item or dictionary key |
 
+### Tracing
+
+Assignment works right to left: work out the right-hand side with the **current** values, then store it. Track each variable in a trace table:
+
+```python
+a = 1
+b = 3
+c = a + b
+a = a + 5
+b = 2 * b
+c = a + b + c
+```
+
+| Line | `a` | `b` | `c` |
+| ---- | --- | --- | --- |
+| `a = 1` | 1 | | |
+| `b = 3` | 1 | 3 | |
+| `c = a + b` | 1 | 3 | 4 |
+| `a = a + 5` | 6 | 3 | 4 |
+| `b = 2 * b` | 6 | 6 | 4 |
+| `c = a + b + c` | 6 | 6 | **16** |
+
+`c` doesn't change when `a` and `b` do later. It only stored the value `4`.
+
 ## Comments
 
 ```python
@@ -198,11 +233,37 @@ over multiple lines
 
 In Jupyter, `Ctrl` + `/` toggles comments on the selected lines.
 
+## Exam
+
+> [!important] What type is `user_data` after each line? (LT1a)
+> The user types `42`.
+>
+> | Line | Value | Type |
+> | ---- | ----- | ---- |
+> | `user_data = input()` | `'42'` | `str` |
+> | `user_data = int(user_data)` | `42` | `int` |
+> | `user_data = user_data / 2` | `21.0` | `float`: `/` always gives a float |
+> | `user_data = str(user_data)` | `'21.0'` | `str` |
+> | `user_data = 'The user has entered ' + user_data` | `'The user has entered 21.0'` | `str` |
+> | `user_data = print(user_data)` | `None` | `NoneType`: `print()` shows the text but returns nothing |
+
+> [!example]- Comparisons that catch people out (LT1c)
+> | Expression | Result | Why |
+> | ---------- | ------ | --- |
+> | `"Ten" > "One"` | `True` | compares `'T'` with `'O'`, not the numbers |
+> | `"10" < "9"` | `True` | `'1'` comes before `'9'` |
+> | `"Zebra" < "apple"` | `True` | every capital comes before every small letter |
+> | `True == "True"` | `False` | a `bool` and a `str` |
+> | `True + True` | `2` | `True` counts as `1` |
+
 ## Common Mistakes
 
 - Using `=` where `==` is meant.
 - Forgetting `stop` is excluded from a slice.
 - Expecting `int("3.5")` to work: it raises an error.
+- `"Age: " + 17`: a `str` and an `int` can't be joined. Use `str(17)`.
+- Storing the result of `print()`: it's `None`.
+- Comparing numbers that are still strings, so `"10" < "9"`.
 
 ## Related
 

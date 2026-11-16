@@ -3,13 +3,9 @@ Assessment(s): C4-3 Relational Database and C4-4 Advanced SQL (SLS)
 Section: C4-3b Normalisation
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=npIreALkehI
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========
-Caption language: English (en), auto-generated
-English track verified: 12 November 2026
 
 [00:00 - 00:04] Hi, welcome back. Let's continue our
 [00:02 - 00:07] lesson on relational database. Today we

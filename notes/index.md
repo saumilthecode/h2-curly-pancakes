@@ -1,12 +1,12 @@
 # H2 Computing Notes
 
 Singapore–Cambridge **H2 Computing 9569**, first examination 2027.
-Ordered by the 26S13 scheme of work, not by syllabus module.
+Grouped by LT and C topic.
 
 > [!tip] Paper 2
 > [[Reference Guide]]: what the 2027 booklet prints, and what you still have to memorise.
 
-## Term 1
+## LT topics
 
 ### LT1 Basic Python
 
@@ -21,44 +21,31 @@ Ordered by the 26S13 scheme of work, not by syllabus module.
 - [[LT3a Functional Abstraction]]: black box, parameters, `return`, scope
 - [[LT3b Good Abstraction]]: decomposition, reuse, magic numbers
 
-## Term 2
-
 ### LT4 Data Verification and Validation
 
-- [[LT4a Data validation and verification|LT4a Data Verification and Validation]]: verification and validation methods
+- [[LT4a Data validation and verification|LT4a Data Verification and Validation]]: verification and validation methods, check digits
 - [[LT4b Types of Errors and Test Cases|LT4b Types of Error and Test Cases]]: error types, exception handling, test data
 
 ### LT5 Iteration
 
 - [[LT5 Iteration]]: `for` and `while`
 
-### LT6–LT8 Python Collections
+### LT6 Tuples
 
 - [[LT6 Tuple|LT6 Tuples]]: ordered, immutable
+
+### LT7 Lists
+
 - [[LT7 Lists]]: ordered, mutable
+
+### LT8 Dictionary
+
 - [[LT8 Dictionary]]: key-value lookup
-
-### C2 Data Representations
-
-- [[C2 Data representation|C2a–c Data Representation]]: number bases, ASCII, Unicode, UTF-8
 
 ### LT9 Recursion
 
 - [[LT9a Recursion]]: essential features, recursion trees, the call stack
 - [[LT9b Recursion (Application)|LT9b Recursion Applications]]: spotting the smaller problem
-
-### C3 Computer Networking
-
-- [[C3 Computer Network|C3a Computer Networking]]: network fundamentals, Filius
-
-## Term 3
-
-### Back to Basics
-
-- [[BTB1 Pseudocode]]: reading pseudocode and turning it into Python
-- [[BTB2 File Handling]]: text and CSV I/O
-- [[BTB3 Print Formatting]]: `sep`, `end`, `format()`
-- [[BTB4 Random Generator]]: pseudo-random numbers and sampling
 
 ### LT10 Data Abstraction
 
@@ -82,22 +69,33 @@ Ordered by the 26S13 scheme of work, not by syllabus module.
 - [[LT12d Merge Sort]]: divide and merge, always `O(n log n)`
 - [[LT12e Quick Sort]]: pivot and partition, in-place and non-in-place
 
-### C4 Database and Basic SQL
+## C topics
+
+### C2 Data Representations
+
+- [[C2 Data representation|C2a–c Data Representation]]: number bases, ASCII, Unicode, UTF-8
+
+### C3 Computer Networking
+
+- [[C3 Computer Network|C3a Computer Networking]]: network fundamentals, Filius
+
+### C4 Databases
 
 - [[C4-1 Introduction to Database]]: tables, records, fields, primary and foreign keys
 - [[C4-2 Basic SQL|C4-2a–e Basic SQL]]: create, insert, query, update, delete
-
-## Term 4
-
-### C4 Relational Database and Advanced SQL
-
 - [[C4-3a Introduction to Relational Database]]: data integrity, redundancy, the three anomalies, dependencies
 - [[C4-3b Normalisation]]: 1NF, 2NF, 3NF, table descriptions
 - [[C4-3c ER Diagram]]: entities, relationships, linked entities
 - [[C4-4 Advanced SQL]]: linked tables, queries across two and three tables
 
-## J2 Curriculum
-
 ### C5 Python with SQLite
 
 - [[C5a Python with SQLite]]: `sqlite3` from Python: create, insert from CSV, update, delete, fetch
+- [[C5b Concept Clarification]]: null keys, auto-increment, deletion denied, quotes, `?`
+
+## Back to Basics
+
+- [[BTB1 Pseudocode]]: reading pseudocode and turning it into Python
+- [[BTB2 File Handling]]: text and CSV I/O
+- [[BTB3 Print Formatting]]: `sep`, `end`, `format()`
+- [[BTB4 Random Generator]]: pseudo-random numbers and sampling

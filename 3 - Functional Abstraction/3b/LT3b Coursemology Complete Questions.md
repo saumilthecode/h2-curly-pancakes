@@ -1,7 +1,6 @@
 # LT3b Coursemology Complete Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88724
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 6
 
 ## Learning outcomes
@@ -18,7 +17,6 @@ Write a function `square(x)` that takes in a number `x `and returns the square o
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -47,7 +45,6 @@ You may use the `round(x)` inbuilt function in Python (refer to the example here
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -67,7 +64,6 @@ You are to make use of the `square(x)` function that you have written in Qn 1 as
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -90,7 +86,6 @@ Note: Although `min()` `max()` `sorted()` functions exist to help you identify t
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -116,7 +111,6 @@ that accepts a 6 digit number `k`, (i.e. 100000 <= `k` <= 999999) and a single d
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -164,7 +158,6 @@ Check your flowchart by searching and comparing with other flowcharts online.
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -177,4 +170,3 @@ Check your flowchart by searching and comparing with other flowcharts online.
 
 ---
 
-*Archive scope: complete question-facing prompts, choices, diagrams/alt text, and public test cases visible on the authenticated assessment pages. Student submissions, grades, comments, statistics, feedback, and correctness markings are excluded.*

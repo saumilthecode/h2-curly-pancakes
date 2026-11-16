@@ -3,8 +3,6 @@ Assessment(s): C3a Hands-on with Filius Network Simulator
 Linked label(s): Part 1b : Network devices - Switch and Router
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=dnvR3yUqmxQ
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

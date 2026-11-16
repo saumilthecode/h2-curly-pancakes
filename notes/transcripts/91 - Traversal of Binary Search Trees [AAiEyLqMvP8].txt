@@ -3,8 +3,6 @@ Assessment(s): LT 11b Binary Tree (Part 3)
 Linked label(s): LT11b Binary Tree (Part 3)
 Uploader: Jingkai
 YouTube: https://www.youtube.com/watch?v=AAiEyLqMvP8
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

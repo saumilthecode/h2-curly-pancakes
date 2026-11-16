@@ -3,8 +3,6 @@ LT: LT 5b - Iteration (while-loop) (2025)
 Linked label: Iteration : While-loop
 Uploader: YIJC Computing
 YouTube: https://www.youtube.com/watch?v=tubTNWl5g8Y
-Source: YouTube captions
-Format: Full timestamped transcript
 
 TRANSCRIPT
 ==========

@@ -2,11 +2,9 @@
 > Keep a sorted run at the front. Take the next element and swap it leftwards into place. `O(n²)`, `O(n)` on nearly sorted data.
 > Syllabus 2.2.1. Scope, Big-O and the cross-sort comparison are in [[LT12 Sorting Algorithms]].
 
-```text
-sorted            unsorted
-[ 8  23  45  78 | 32   56 ]
-                  ^ insert this one
-```
+| `8` | `23` | `45` | `78` | ==`32`== | `56` |
+| --- | ---- | ---- | ---- | -------- | ---- |
+| sorted | sorted | sorted | sorted | **insert next** | unsorted |
 
 Each pass adds one element to the sorted prefix on the **left**.
 
@@ -61,14 +59,12 @@ This is the lesson's pseudocode word for word. Once `CurrentItem` reaches `0` it
 >
 > Shifting puts `32` into a sorted run without losing it:
 >
-> ```text
-> hold 32, then copy each bigger value one slot right
->
-> [ 8  23  45  78 | 32  56 ]    hold = 32
-> [ 8  23  45  78  78  56 ]     78 copied right
-> [ 8  23  45  45  78  56 ]     45 copied right
-> [ 8  23  32  45  78 | 56 ]    23 <= 32, so drop 32 in
-> ```
+> | Step | `[0]` | `[1]` | `[2]` | `[3]` | `[4]` | `[5]` | `hold` |
+> | ---- | ----- | ----- | ----- | ----- | ----- | ----- | ------ |
+> | start | 8 | 23 | 45 | 78 | 32 | 56 | 32 |
+> | `78 > 32`: copy right | 8 | 23 | 45 | 78 | ==78== | 56 | 32 |
+> | `45 > 32`: copy right | 8 | 23 | 45 | ==45== | 78 | 56 | 32 |
+> | `23 <= 32`: drop `32` in | 8 | 23 | ==32== | 45 | 78 | 56 | |
 >
 > The duplicate is normal. That slot is overwritten when `hold` goes back in.
 
@@ -107,32 +103,6 @@ Reversed is the worst case, `n(n-1)/2 = 15` for `n = 6`. Sorted is `n - 1 = 5`: 
 
 > [!important] Specimen 2027 P1 Q5(d): two factors affecting performance `[2]`
 > The size of the data set, and how nearly sorted it already is.
-
-> [!important] 2025 Promo P1 Q1(a): describe insertion sort on `[25, 54, 33, 65, 73, 87, 80, 82]` `[4]`
-> | Step | Sorted part | Mark |
-> | ---- | ----------- | ---- |
-> | start | `25`: one element is already sorted | 1m |
-> | insert `54` | `25 54`: bigger than `25`, **no shift** | 1m |
-> | insert `33` | `25 33 54`: `54` **shifts right**, `33` stops after `25` | 1m |
-> | `65`, `73`, `87` | each the largest so far, no shift | |
-> | insert `80`, `82` | `25 33 54 65 73 80 82 87` | 1m |
->
-> Marks go to the initial sorted array, one insertion with no shift, one with a shift, and the correct states through to the end.
-
-> [!example]- 2024 Promo P2 Task 3.2: insertion sort on `(date, time, temp)` tuples `[5]`
-> 1m `for` loop from index 1 · 1m `i > 0` · 1m compare the **temperatures** as `int` · 1m swap · 1m `while` loop with `i -= 1`.
->
-> ```python
-> def insertion_sort(lst):
->     for k in range(1, len(lst)):
->         i = k
->         while i > 0 and int(lst[i-1][2]) > int(lst[i][2]):
->             lst[i-1], lst[i] = lst[i], lst[i-1]
->             i -= 1
->     return lst
-> ```
->
-> The question asks for **ascending**. The scheme's code uses `<` in that comparison and sorts descending; `>` as above is ascending.
 
 ## Related
 

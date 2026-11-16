@@ -1,7 +1,6 @@
 # LT3a Coursemology Complete Questions
 
 - **Assessment URL:** https://yijc.coursemology.org/courses/3257/assessments/88734
-- **Extraction date:** 2026-09-01 (Asia/Singapore)
 - **Question count:** 7
 
 ## Learning outcomes
@@ -70,7 +69,6 @@ Do not use the built-in function `print()` to print the greeting, greet(name, la
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -99,7 +97,6 @@ Note: You must use the given function area_rect(x, y) in your solution. You need
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -125,7 +122,6 @@ Note: 0 is neither a positive nor a negative number.
 ### Code template
 
 - File: `template.py`
-- The completed assessment view displayed the student's editor contents rather than a separable pristine starter file. Those submitted contents are intentionally excluded. Any starter code embedded in the prompt above is preserved.
 
 ### Public test cases
 
@@ -175,4 +171,3 @@ print(square(x), x, square(5))
 
 ---
 
-*Archive scope: complete question-facing prompts, choices, diagrams/alt text, and public test cases visible on the authenticated assessment pages. Student submissions, grades, comments, statistics, feedback, and correctness markings are excluded.*
