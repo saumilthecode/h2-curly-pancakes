@@ -289,10 +289,11 @@ If it stays locked:
 > [!important] Explain why the query is parameterised
 > The `?` placeholders keep the user's input **separate from the SQL command**, so it is treated only as **data** and can never run as a command. This prevents **SQL injection**, where an attacker types SQL into an input field to read, change or delete data.
 >
-> Build the string yourself and the input `x' OR '1'='1` in a name search returns all 91 customers. Through `?` it returns none.
+> Build the string yourself and the input `x' OR '1'='1` in a name search returns all 91 customers. Through `?` it returns none. More: [[C5b Concept Clarification#F. SQL Injection|C5b]].
 
 > [!important] Create and import first
 > Class, 11 Nov: you are given a file to populate the database, then asked to query it. If you can't create the tables and import the data, the rest of the question scores **zero**.
+> Class, 17 Nov: in the 2026 A-Level Paper 2, three of the four tasks needed data read from a text file.
 
 > [!example]- Specimen 2027 Paper 2 Task 4.1–4.2: create and fill two tables `[5+4]`
 > Student (<u>StudentID</u>, GivenName, FamilyName, <u class="fk">FormGroupID</u>)
