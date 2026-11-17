@@ -1,0 +1,761 @@
+C5b Concept Clarification: seven lecture transcripts
+
+Source: SLS C5b Concept Clarification, seven pages.
+Original English captions with timestamps. Use C5b Questions and Model Answers.md for checked technical answers: captions can mishear terms or simplify rules. In particular, INTEGER PRIMARY KEY already auto-generates IDs; AUTOINCREMENT controls automatic reuse. Parameter binding treats input as data, not as SQL or automatic input validation.
+
+
+================================================================
+C5b Python with SQL Part 1b - A - voiceover
+https://www.youtube.com/watch?v=Kous3DUa-7s
+================================================================
+
+[00:00 - 00:04] Hi, welcome back. In this part 1B, I
+[00:02 - 00:06] will be trying to clarify some of the
+[00:04 - 00:09] concerns and issues that you encounter
+[00:06 - 00:11] when you are doing C5A basic SQL and C5B
+[00:09 - 00:13] Python with SQL.
+[00:11 - 00:15] The first issue we will be looking at
+[00:13 - 00:18] will be regarding the primary key.
+[00:15 - 00:19] Whether or not the primary key can be
+[00:18 - 00:21] null.
+[00:19 - 00:23] You are provided with the lecture slides
+[00:21 - 00:26] with all the commands to create the
+[00:23 - 00:29] database. I will be using the DB browser
+[00:26 - 00:31] to create the database. Before you can
+[00:29 - 00:33] create the table, first you must create
+[00:31 - 00:36] a new database. I will be calling this
+[00:33 - 00:37] database as testing.
+[00:36 - 00:40] When you are prompted to key in the
+[00:37 - 00:42] information for tables, just cancel. Now
+[00:40 - 00:45] we will be using the SQL command to
+[00:42 - 00:47] execute to create the table and also to
+[00:45 - 00:50] insert the data. Do not attempt to copy
+[00:47 - 00:52] directly from the PDF file and paste it
+[00:50 - 00:54] into your DB browser.
+[00:52 - 00:56] You will encounter many problems. Let me
+[00:54 - 00:59] walk through the steps. First, we're
+[00:56 - 01:01] going to create the table called only
+[00:59 - 01:04] text. In this table, there will be two
+[01:01 - 01:06] fields, the name and class. Both are
+[01:04 - 01:09] text. The name field will be the primary
+[01:06 - 01:11] key. After I have created the
+[01:09 - 01:14] table, I would like to insert one data
+[01:11 - 01:17] into the table. My first record will
+[01:14 - 01:19] have name one in class one.
+[01:17 - 01:21] Let's run this SQL command. Successfully
+[01:19 - 01:23] executed. Let's take a look
+[01:21 - 01:25] at the database structure. Yes, you have
+[01:23 - 01:28] the only text table with two fields.
+[01:25 - 01:31] When we browse the data, you have one
+[01:28 - 01:34] record, name one in class one. I will
+[01:31 - 01:35] now carry on to insert more data.
+[01:34 - 01:38] Now you realize that for each of the
+[01:35 - 01:41] records, I provided the values for both
+[01:38 - 01:43] the fields. Let us run this SQL command.
+[01:41 - 01:45] Let's browse the data. There you can see
+[01:43 - 01:47] there are altogether four records
+[01:45 - 01:49] inserted into the table. So, this is not
+[01:47 - 01:51] anything new.
+[01:49 - 01:54] Now, is it possible to omit one of the
+[01:51 - 01:57] fields and insert into the table? The
+[01:54 - 01:59] answer is yes. Yes, you can do so if the
+[01:57 - 02:02] field is not a primary key and there is
+[01:59 - 02:04] no not none constraint. So, since the
+[02:02 - 02:07] name is the primary key, we will omit
+[02:04 - 02:09] the class because class is not a primary
+[02:07 - 02:11] key. I will insert into only text the
+[02:09 - 02:15] table and there are two fields, which is
+[02:11 - 02:17] name and class, but I will only insert
+[02:15 - 02:19] it to the name giving the values. There
+[02:17 - 02:22] are four more values,
+[02:19 - 02:24] name five, name six, and name seven. So,
+[02:22 - 02:26] there are four more records to be added
+[02:24 - 02:29] into my existing data. Let's run this
+[02:26 - 02:32] command. Check our data. You see when I
+[02:29 - 02:33] insert four more records using name
+[02:32 - 02:36] five, six, and seven for the class
+[02:33 - 02:39] value, they are all indicated as null.
+[02:36 - 02:41] But what happens if I omit the values
+[02:39 - 02:44] for the primary key field? We will now
+[02:41 - 02:45] try it and see what is that the result.
+[02:44 - 02:48] So, I will insert into the only text
+[02:45 - 02:50] table. This time around I key in four
+[02:48 - 02:53] the values for the class. So, actually I
+[02:50 - 02:55] do not have values for the primary key,
+[02:53 - 02:57] which is the name. So, I have class
+[02:55 - 02:58] five, six, seven, eight. Let's run the
+[02:57 - 03:00] code.
+[02:58 - 03:03] Successfully executed. And when you
+[03:00 - 03:05] browse the data, you realize that it is
+[03:03 - 03:07] possible to insert records without
+[03:05 - 03:10] providing the values for the primary
+[03:07 - 03:13] key. This is very weird. The reason is
+[03:10 - 03:15] because SQLite does not enforce the not
+[03:13 - 03:17] null constraint strictly for the case of
+[03:15 - 03:20] the primary key.
+[03:17 - 03:22] Other DBMS will enforce this strictly.
+[03:20 - 03:24] So, what I'm saying is that you are not
+[03:22 - 03:28] supposed to insert records without
+[03:24 - 03:28] values for the primary key field.
+
+
+================================================================
+C5b Python with SQL Part 1b - B - voiceover
+https://www.youtube.com/watch?v=dFe3Bo4JX2Y
+================================================================
+
+[00:00 - 00:04] The next issue that we'll be looking at
+[00:01 - 00:07] will be about this auto increment.
+[00:04 - 00:09] In C5B Python with SQLite part 1A slide
+[00:07 - 00:12] 9, you realize that we actually insert
+[00:09 - 00:14] the record without specifying the value
+[00:12 - 00:17] for the ID. Let's create another table
+[00:14 - 00:18] called no auto using integer ID as the
+[00:17 - 00:20] primary key.
+[00:18 - 00:22] Create table no auto. You have the ID
+[00:20 - 00:25] which is integer and call it as a
+[00:22 - 00:27] primary key, name
+[00:25 - 00:29] I will go ahead and insert multiple data
+[00:27 - 00:31] into this table.
+[00:29 - 00:34] I've provided the values for the ID and
+[00:31 - 00:36] the names and let's run the SQL command.
+[00:34 - 00:38] Under data structure, we have created
+[00:36 - 00:41] another table called no auto.
+[00:38 - 00:44] And when we browse the data for no auto,
+[00:41 - 00:45] you have four records inserted into it.
+[00:44 - 00:48] Now we will try to insert new records
+[00:45 - 00:50] omitting the primary key.
+[00:48 - 00:52] The primary key is the ID. So now I'm
+[00:50 - 00:54] just inserting records into this no auto
+[00:52 - 00:57] table specifying
+[00:54 - 00:58] only the name, name five and name six.
+[00:57 - 01:00] Let's run.
+[00:58 - 01:02] I did not specify the ID, but when we
+[01:00 - 01:04] check on the data for no auto, for name
+[01:02 - 01:06] five and name
+[01:04 - 01:09] six, the ID five and ID six has been
+[01:06 - 01:11] provided. So somehow the ID has been
+[01:09 - 01:13] automatically generated and this is done
+[01:11 - 01:16] by SQLite.
+[01:13 - 01:18] Other DBMS may not do so. So to rely on
+[01:16 - 01:20] SQL to auto generate the ID for you,
+[01:18 - 01:22] this is not the correct way.
+[01:20 - 01:25] We need to create table using the auto
+[01:22 - 01:27] increment for the primary key to help us
+[01:25 - 01:29] generate the
+[01:27 - 01:30] ID. We will now create a table called
+[01:29 - 01:33] with auto.
+[01:30 - 01:35] Create table with auto, ID is integer
+[01:33 - 01:38] and is a primary key and we include this
+[01:35 - 01:40] parameter called auto increment so that
+[01:38 - 01:42] when we don't provide the ID, it will
+[01:40 - 01:44] auto increase.
+[01:42 - 01:46] For the case of name, it's just a text
+[01:44 - 01:48] field. After creating the table, we will
+[01:46 - 01:50] go ahead and insert some data into this
+[01:48 - 01:52] table.
+[01:50 - 01:55] Insert into with auto, just the name
+[01:52 - 01:57] without the ID, name one and name two.
+[01:55 - 01:59] Let's run the commands.
+[01:57 - 02:01] Check on the data structure. We have
+[01:59 - 02:03] this table called with auto. Two fields
+[02:01 - 02:06] ID is auto increment.
+[02:03 - 02:08] Let's browse the data with auto. The IDs
+[02:06 - 02:10] are generated. Now, instead of relying
+[02:08 - 02:13] on the SQL to auto generate the ID,
+[02:10 - 02:16] could we specify a particular ID for a
+[02:13 - 02:18] particular record? The answer is yes.
+[02:16 - 02:21] Let's say now we want to insert into
+[02:18 - 02:22] with auto, name five with ID five. Bear
+[02:21 - 02:24] in mind that we start
+[02:22 - 02:26] off with one and two. So, we're not
+[02:24 - 02:28] going to have three and four, and we're
+[02:26 - 02:30] going to include another record that is
+[02:28 - 02:32] ID five and name five. And we
+[02:30 - 02:33] specifically include that in our SQL
+[02:32 - 02:35] command.
+[02:33 - 02:37] Let's run this command and check our
+[02:35 - 02:39] data in the table. You have the first
+[02:37 - 02:42] two records that is auto generated with
+[02:39 - 02:44] the ID. ID five is specifically included
+[02:42 - 02:46] by us when we execute the command.
+[02:44 - 02:49] Now, what happens if we were to insert
+[02:46 - 02:50] three more data, name six, name seven,
+[02:49 - 02:52] and name eight?
+[02:50 - 02:54] What would the ID be like?
+[02:52 - 02:56] We try to insert into the table with
+[02:54 - 02:58] auto for name six, name seven, and name
+[02:56 - 03:00] eight, and see what
+[02:58 - 03:01] are the ID that they will auto generate
+[03:00 - 03:03] for us.
+[03:01 - 03:05] Let's run this SQL command.
+[03:03 - 03:07] Check the data.
+[03:05 - 03:09] So, for six, seven, eight, it will
+[03:07 - 03:11] follow from name five, the ID five,
+[03:09 - 03:13] increase by one, it becomes six, and
+[03:11 - 03:16] then the auto increase so that you have
+[03:13 - 03:18] ID eight for name eight. So, that is how
+[03:16 - 03:20] auto increment works.
+[03:18 - 03:22] Based on the last entry, it will
+[03:20 - 03:24] increase by one. Now, the next question
+[03:22 - 03:27] we have is that in the event when we
+[03:24 - 03:29] delete a particular record,
+[03:27 - 03:32] will the ID be recycled and used?
+[03:29 - 03:35] Let's work this out with no auto.
+[03:32 - 03:36] Our last record is ID six for name six.
+[03:35 - 03:38] We will now try to delete away this
+[03:36 - 03:41] particular record.
+[03:38 - 03:43] We will delete from no auto. No auto
+[03:41 - 03:45] means that there is no auto increment
+[03:43 - 03:47] where ID is equal to six.
+[03:45 - 03:48] Let's run this SQL command and check our
+[03:47 - 03:51] data.
+[03:48 - 03:53] ID six has been deleted. What happens if
+[03:51 - 03:55] we were to insert new data now?
+[03:53 - 03:57] Will ID 6 appear?
+[03:55 - 03:59] We will now insert into no auto for name
+[03:57 - 04:01] 7, 8, and 9.
+[03:59 - 04:04] What we want to see is what are the ID
+[04:01 - 04:05] generated for name 7, name 8, and name
+[04:04 - 04:07] 9.
+[04:05 - 04:08] Let's run this SQL command browsing the
+[04:07 - 04:11] data.
+[04:08 - 04:14] You realize that for name 7, ID 6 has
+[04:11 - 04:16] been recycled and used for name 7.
+[04:14 - 04:17] And then ID 7 for name 8, ID 8 for name
+[04:16 - 04:19] 9.
+[04:17 - 04:21] So, we see that the deleted ID has been
+[04:19 - 04:24] recycled.
+[04:21 - 04:26] This is no good. Because ID 6 is
+[04:24 - 04:28] supposed to be referring to the person
+[04:26 - 04:31] that we have deleted. Even though it no
+[04:28 - 04:34] longer resides in the database, it is
+[04:31 - 04:36] actually referring to that person.
+[04:34 - 04:39] So, now when you recycle the ID 6 for
+[04:36 - 04:40] name 7, then there may be a possibility
+[04:39 - 04:43] that there
+[04:40 - 04:45] is a conflict between name 6 and name 7.
+[04:43 - 04:47] So, this is not a good way to handle our
+[04:45 - 04:48] database.
+[04:47 - 04:51] Now, this occurs when we create our
+[04:48 - 04:53] table without using auto increment.
+[04:51 - 04:56] What will happen if we do the same thing
+[04:53 - 04:58] for the one with auto increment?
+[04:56 - 05:00] The one with auto increment, let's say
+[04:58 - 05:01] we delete the last record, which is ID
+[05:00 - 05:02] 8.
+[05:01 - 05:05] Let's run the command to delete from the
+[05:02 - 05:07] table with auto, where ID 8.
+[05:05 - 05:10] Let's check the data.
+[05:07 - 05:13] Now, we have ID 1 to ID 7, ID 8 has been
+[05:10 - 05:15] deleted. Same as just now, we will now
+[05:13 - 05:17] go and insert two more data into the
+[05:15 - 05:19] table with auto.
+[05:17 - 05:20] We will insert records for name 9 and
+[05:19 - 05:22] name 10.
+[05:20 - 05:26] We want to see whether ID 8 will be
+[05:22 - 05:28] recycled for these two records or not.
+[05:26 - 05:30] Let's run this SQL command.
+[05:28 - 05:31] Now, if you check the data now, ID 8 has
+[05:30 - 05:33] been deleted.
+[05:31 - 05:36] We inserted two more records, name 9 and
+[05:33 - 05:37] name 10, but the ID generated is 9 and
+[05:36 - 05:40] 10.
+[05:37 - 05:42] ID 8 is not recycled. So, this is good
+[05:40 - 05:44] because ID 8 is used to refer to the
+[05:42 - 05:46] person named 8.
+[05:44 - 05:47] So, it is not recycled.
+[05:46 - 05:49] So, in conclusion, when you create a
+[05:47 - 05:52] table and the ID you intend it to be
+[05:49 - 05:54] auto increased,
+[05:52 - 05:56] and then you do not want it to recycle,
+[05:54 - 05:57] you have to specify that that when you
+[05:56 - 05:59] create the table
+[05:57 - 06:02] by naming the primary key as auto
+[05:59 - 06:02] increment.
+
+
+================================================================
+C5b Python with SQL Part 1b - C - voiceover
+https://www.youtube.com/watch?v=PPfdB3BQlUg
+================================================================
+
+[00:00 - 00:03] The next issue that we will be looking
+[00:01 - 00:05] at is about deletion. There are times
+[00:03 - 00:08] when you try to delete a particular
+[00:05 - 00:11] record or try to drop a table and this
+[00:08 - 00:13] operation of deletion is denied.
+[00:11 - 00:16] Now you can refer that from the C5A base
+[00:13 - 00:19] SQL slide 27 to 29.
+[00:16 - 00:21] To help us understand this issue about
+[00:19 - 00:22] foreign key, I will now create two
+[00:21 - 00:24] tables.
+[00:22 - 00:26] Now based on the table description, the
+[00:24 - 00:27] customer table has two fields ID and
+[00:26 - 00:30] name.
+[00:27 - 00:31] ID is the primary key.
+[00:30 - 00:34] The other table purchase also has two
+[00:31 - 00:37] fields product and CID.
+[00:34 - 00:39] CID stands for the customer ID. Now the
+[00:37 - 00:42] customer ID is a foreign key reference
+[00:39 - 00:44] to the ID in the customer table.
+[00:42 - 00:47] Let's create the customer and the
+[00:44 - 00:49] purchase table. Create table customer ID
+[00:47 - 00:50] integer primary key auto increment name
+[00:49 - 00:51] text.
+[00:50 - 00:54] So nothing new.
+[00:51 - 00:57] Create table purchase product is a text.
+[00:54 - 00:59] The customer ID which is CID integer
+[00:57 - 01:01] references to the customer ID.
+[00:59 - 01:02] References to the ID in the customer
+[01:01 - 01:05] table.
+[01:02 - 01:07] Remember references is with an S. Let's
+[01:05 - 01:09] run this SQL command.
+[01:07 - 01:11] When we check on the database structure,
+[01:09 - 01:13] we can see that we have the customer
+[01:11 - 01:16] table and the purchase table.
+[01:13 - 01:18] For the purchase table, the CID is a
+[01:16 - 01:19] reference to the customer ID.
+[01:18 - 01:22] So there is a reference so you have
+[01:19 - 01:24] created a foreign key. We will now
+[01:22 - 01:26] insert the data into the table that we
+[01:24 - 01:28] have created.
+[01:26 - 01:31] I will insert into the customer table
+[01:28 - 01:34] the two names Adam and Bob. So Adam will
+[01:31 - 01:36] have ID 1, Bob will be ID 2.
+[01:34 - 01:38] Then insert into the purchase table for
+[01:36 - 01:41] the product and customer ID.
+[01:38 - 01:43] The product I will have it as kick.
+[01:41 - 01:46] And then the customer ID who purchased
+[01:43 - 01:48] it will be ID 2, meaning Bob. Let's run
+[01:46 - 01:50] this SQL command.
+[01:48 - 01:53] When we check into the data for customer
+[01:50 - 01:54] table, you have Adam which is ID 1, Bob
+[01:53 - 01:56] ID 2.
+[01:54 - 01:59] For purchase, the product kick has been
+[01:56 - 02:02] purchased by ID2, which is Bob.
+[01:59 - 02:04] Now, after creating the two tables, I
+[02:02 - 02:05] will now want to attempt to delete the
+[02:04 - 02:08] customer.
+[02:05 - 02:10] Can I delete any of these customers?
+[02:08 - 02:12] We will attempt to delete customer with
+[02:10 - 02:14] ID1.
+[02:12 - 02:16] Let's browse the data.
+[02:14 - 02:19] In the customer table, we have ID1 for
+[02:16 - 02:21] Adam, two for Bob. And when we delete
+[02:19 - 02:23] from customer where ID equal to one, we
+[02:21 - 02:25] are deleting away Adam.
+[02:23 - 02:27] Let's run the SQL command.
+[02:25 - 02:29] Let's browse our table.
+[02:27 - 02:32] Adam has been deleted.
+[02:29 - 02:35] So, yes, we can delete Adam. Why?
+[02:32 - 02:36] Because in our purchase table, ID1 has
+[02:35 - 02:38] not been referenced to in our purchase
+[02:36 - 02:39] table.
+[02:38 - 02:43] Let's try to delete from the customer
+[02:39 - 02:44] table where ID2 is for Bob.
+[02:43 - 02:46] Bob purchased the kick.
+[02:44 - 02:48] Let's run this SQL command.
+[02:46 - 02:50] The error message is foreign key
+[02:48 - 02:52] constraint failed.
+[02:50 - 02:56] I hope now you understand that why we
+[02:52 - 02:57] cannot delete away customer with ID2.
+[02:56 - 03:00] Because the table purchase is referring
+[02:57 - 03:02] to this particular record.
+[03:00 - 03:03] This is what we call the referential
+[03:02 - 03:05] integrity.
+[03:03 - 03:08] And it has to be enforced.
+[03:05 - 03:10] Otherwise, after deleting customer ID2,
+[03:08 - 03:12] we will have no idea who purchased the
+[03:10 - 03:13] kick.
+[03:12 - 03:15] So, foreign key actually helps us to
+[03:13 - 03:17] maintain the data integrity by
+[03:15 - 03:20] preventing us deleting the records or
+[03:17 - 03:22] dropping a table wrongly.
+[03:20 - 03:25] It is important to know that when you
+[03:22 - 03:27] are given the table descriptions,
+[03:25 - 03:29] your SQL command must correctly use the
+[03:27 - 03:30] references so that the foreign key will
+[03:29 - 03:33] point to the primary key of another
+[03:30 - 03:33] table.
+[03:33 - 03:38] Now, the referential integrity means
+[03:35 - 03:40] that every record in the child table, in
+[03:38 - 03:42] our case is the purchase table.
+[03:40 - 03:45] Therefore, the child table, there must
+[03:42 - 03:47] be a valid matching record referencing
+[03:45 - 03:49] to the parents table, which is the
+[03:47 - 03:50] customer table.
+[03:49 - 03:52] Now, because of this referential
+[03:50 - 03:55] integrity, we must always populate the
+[03:52 - 03:58] parents table first before populating
+[03:55 - 03:58] the child table.
+
+
+================================================================
+C5b Python with SQL Part 1b - D - voiceover
+https://www.youtube.com/watch?v=HIV0QaSkKvA
+================================================================
+
+[00:00 - 00:04] Some of you, when you're working on C5B
+[00:02 - 00:08] Python with a SQL, starting from slide
+[00:04 - 00:10] 11, there is this confusion about single
+[00:08 - 00:12] quote and double quotes.
+[00:10 - 00:13] So, if a string contains single quote
+[00:12 - 00:16] within that string, then you should use
+[00:13 - 00:17] a double quote to enclose the whole
+[00:16 - 00:19] string.
+[00:17 - 00:22] Conversely, you should use single quotes
+[00:19 - 00:23] to enclose a string that contains double
+[00:22 - 00:25] quotes.
+[00:23 - 00:28] I have two examples for you. String
+[00:25 - 00:31] number one, "This is Mr. Lim's bag."
+[00:28 - 00:33] Now, it contains a single quote.
+[00:31 - 00:36] So, to enclose this string, we have to
+[00:33 - 00:37] use a double quote to enclose it.
+[00:36 - 00:40] For the case of string number two, he
+[00:37 - 00:43] says, "Hello world." "Hello world" is
+[00:40 - 00:45] kept within a double quote. So, this
+[00:43 - 00:48] string contains double quote.
+[00:45 - 00:49] And hence, you need to use single quote
+[00:48 - 00:52] to enclose it.
+[00:49 - 00:54] Now, in the event that a particular
+[00:52 - 00:57] string contains both the single quote
+[00:54 - 00:59] and double quote, so what do we do?
+[00:57 - 01:01] We can either use the triple single
+[00:59 - 01:04] quote or the triple double quotes to
+[01:01 - 01:07] enclose it. So, for example, three and
+[01:04 - 01:08] four, you can have triple single quote
+[01:07 - 01:10] without spacing.
+[01:08 - 01:12] "Mr. Lim's name is John." kept in the
+[01:10 - 01:14] double quote.
+[01:12 - 01:16] Using triple single quote, we'll be able
+[01:14 - 01:18] to enclose the whole string.
+[01:16 - 01:21] Alternatively, you can also use triple
+[01:18 - 01:21] double quotes.
+
+
+================================================================
+C5b Python with SQL Part 1b - E - voiceover
+https://www.youtube.com/watch?v=ujll_gUA_Fc
+================================================================
+
+[00:00 - 00:05] Parameterize and SQL command. Now, in
+[00:02 - 00:07] C5B Python with SQL slides number 12 to
+[00:05 - 00:09] 17, we use {question mark} as a
+[00:07 - 00:13] parameter for the data values when we
+[00:09 - 00:15] insert or update data into the database.
+[00:13 - 00:19] Now, if you refer to the C5B Python with
+[00:15 - 00:21] SQL part one, a slides number 14, where
+[00:19 - 00:24] we are supposed to change Thomas Hardy's
+[00:21 - 00:25] country from UK to Singapore.
+[00:24 - 00:29] Now, in the slide you are given the
+[00:25 - 00:31] command as update customer set customer
+[00:29 - 00:33] equal to {question mark}. And what is
+[00:31 - 00:35] this {question mark}? This {question
+[00:33 - 00:36] mark is Singapore.
+[00:35 - 00:39] Now, we could have written it as update
+[00:36 - 00:41] customer set country equal to Singapore
+[00:39 - 00:43] directly without the use of {question
+[00:41 - 00:45] mark}. So, this
+[00:43 - 00:48] will become a single SQL command. Now,
+[00:45 - 00:51] this will work. This is what we means by
+[00:48 - 00:53] hard-coding it. You hard-coded the value
+[00:51 - 00:56] into the SQL command. There's nothing
+[00:53 - 00:58] wrong with it. But, the only problem is
+[00:56 - 01:00] that we would not be able to get the
+[00:58 - 01:03] user to input any other choice of
+[01:00 - 01:05] country. This command line can only set
+[01:03 - 01:08] the country to Singapore. So, how do we
+[01:05 - 01:11] get the user to input the choice of
+[01:08 - 01:13] country using the same example? Now, we
+[01:11 - 01:16] can create this new variable and allow
+[01:13 - 01:17] the user to input. We prompt the user by
+[01:16 - 01:20] saying, "Enter a new country." So,
+[01:17 - 01:22] whatever the user input, it will be kept
+[01:20 - 01:25] with this variable called new country.
+[01:22 - 01:28] Now, then we run the SQL command update
+[01:25 - 01:30] customer set country equal to {question
+[01:28 - 01:32] mark}. And this {question mark} will
+[01:30 - 01:35] refer to the new country, whatever the
+[01:32 - 01:37] user input. So, using the {question
+[01:35 - 01:41] mark} as a parameter allows us for
+[01:37 - 01:42] collecting and using the user input. You
+[01:41 - 01:46] may want to note that the structure for
+[01:42 - 01:48] the execute command is C .execute a SQL
+[01:46 - 01:50] string. So, this is a SQL string all the
+[01:48 - 01:53] way up here enclosed by triple quote
+[01:50 - 01:56] {comma} followed by the data tuple. Now,
+[01:53 - 01:58] the data must be kept in a tuple even
+[01:56 - 02:00] though it is a single unit. When we ask
+[01:58 - 02:02] the user to input the
+[02:00 - 02:04] country, he will input one single
+[02:02 - 02:07] country. Now, that single country must
+[02:04 - 02:09] be kept in a tuple. That's why we put it
+[02:07 - 02:12] inside a bracket with a comma to
+[02:09 - 02:14] represent it as a tuple. So, where do we
+[02:12 - 02:16] use this question mark as a parameter?
+[02:14 - 02:18] Whenever we
+[02:16 - 02:20] need to insert data values or we want to
+[02:18 - 02:23] update the database with a new data
+[02:20 - 02:26] values. So, both inserting and updating,
+[02:23 - 02:28] you will need to use this question mark
+[02:26 - 02:32] as a parameter. That's all I have for
+[02:28 - 02:32] you for Python with SQL part 1B.
+
+
+================================================================
+Demo SQL Injection v2
+https://www.youtube.com/watch?v=b78_jhA0Ta0
+================================================================
+
+[00:00 - 00:05] Okay, in this video I'm going to talk
+[00:02 - 00:07] about this SQL injection and then the
+[00:05 - 00:10] second issue be going through is this
+[00:07 - 00:12] race condition. Now what is a SQL
+[00:10 - 00:14] injection? Now it happens when you
+[00:12 - 00:17] require the user to input whether his
+[00:14 - 00:19] username or password. Okay, and then
+[00:17 - 00:21] instead of giving you his name, he give
+[00:19 - 00:25] use some kind of code and together with
+[00:21 - 00:26] the backend your SQL command, this will
+[00:25 - 00:29] run into some problem with your
+[00:26 - 00:32] database. I'll now demonstrate to you
+[00:29 - 00:34] how this is being done. Let's say you're
+[00:32 - 00:37] required to enter the name and a
+[00:34 - 00:39] password for Alice for example. Okay, if
+[00:37 - 00:41] you enter them correctly, details will
+[00:39 - 00:43] appear. Let's say I don't know what is
+[00:41 - 00:46] the password and I try to just key in
+[00:43 - 00:49] the dummy password and of course no
+[00:46 - 00:52] detail is achieved. But instead of
+[00:49 - 00:54] keying in the password, this user key in
+[00:52 - 00:56] something like one. It looks weird to
+[00:54 - 00:58] you now, but then with this as a
+[00:56 - 01:01] password, the user will be able to
+[00:58 - 01:03] retrieve the info. Originally the
+[01:01 - 01:06] password should be something like some
+[01:03 - 01:08] complicated password. Okay. So this is
+[01:06 - 01:10] called SQL injection. Now the question
+[01:08 - 01:13] is why why key in this will break into
+[01:10 - 01:15] the database and then retrieve the
+[01:13 - 01:18] details. Okay. I'm going to demonstrate
+[01:15 - 01:20] this again. This time around when I key
+[01:18 - 01:24] in the username Alice and password
+[01:20 - 01:26] instead of retrieving Alice details I'm
+[01:24 - 01:29] going to show you the SQL command in the
+[01:26 - 01:31] back end. Okay, effectively select
+[01:29 - 01:33] everything from the detail table where
+[01:31 - 01:36] name is equal to Alice and the password
+[01:33 - 01:39] equal to password. So this will allows
+[01:36 - 01:41] me to retrieve Alice detail. In the case
+[01:39 - 01:43] of John I key in another password which
+[01:41 - 01:45] is one.
+[01:43 - 01:47] Now over the back end the command now
+[01:45 - 01:49] becomes where names equal to Alice and
+[01:47 - 01:52] password equal to one or one equal to
+[01:49 - 01:55] one. Okay. Now password equal to one
+[01:52 - 01:58] this is obviously not true. So this will
+[01:55 - 02:01] be a false or one equal to 1. One equal
+[01:58 - 02:03] to 1 is true. So a false or true then
+[02:01 - 02:06] this whole thing will become true. Name
+[02:03 - 02:08] equal to Alice and true. So that will
+[02:06 - 02:11] help the intruder to retrieve the data
+[02:08 - 02:13] for Alice without actually knowing what
+[02:11 - 02:16] is Alice password. Okay, so this is
+[02:13 - 02:18] called SQL injection. Just need to load
+[02:16 - 02:22] the backend command and then key in a
+[02:18 - 02:24] some kind of string instead of password.
+[02:22 - 02:27] And then together with the backend
+[02:24 - 02:29] command is able to retrieve the data. So
+[02:27 - 02:31] this is one form of SQL injection.
+[02:29 - 02:34] There's another form of SQL injection
+[02:31 - 02:37] which is more deadly. Now the hacker can
+[02:34 - 02:39] key in something and then within the
+[02:37 - 02:42] code that he keyed in, there's this line
+[02:39 - 02:44] called drop table. Okay, drop table
+[02:42 - 02:47] means that he would delete away the
+[02:44 - 02:50] table and then put a commit. Okay, so
+[02:47 - 02:52] I'm going to demonstrate this again. I'm
+[02:50 - 02:54] going to take this command line and try
+[02:52 - 02:57] to run it in my DB browser. Okay, so
+[02:54 - 02:59] this DB browser contains the data of
+[02:57 - 03:03] Alice and John. I will try to execute
+[02:59 - 03:05] this command. No such table, sum table.
+[03:03 - 03:07] Okay, fortunately the hacker keyed in
+[03:05 - 03:09] and says drop table but does not know
+[03:07 - 03:12] what is the table available in the
+[03:09 - 03:15] database. But suppose he knows there is
+[03:12 - 03:18] a table called commit and this commit
+[03:15 - 03:21] will cause him to save whatever changes
+[03:18 - 03:23] that means dropping of the table and now
+[03:21 - 03:26] this is the portion where there's a
+[03:23 - 03:28] syntax error. Okay. So the whole command
+[03:26 - 03:31] SQL command will run all the way up to
+[03:28 - 03:33] commit before it runs into an error.
+[03:31 - 03:36] Okay. Now in the data structure itself
+[03:33 - 03:38] we have a table called details. We have
+[03:36 - 03:41] another table called log. Okay. So after
+[03:38 - 03:44] executing this SQL command unrecognized
+[03:41 - 03:47] token. Now we mentioned that there is a
+[03:44 - 03:49] syntax error right at the end. But when
+[03:47 - 03:51] you go to the database structure you
+[03:49 - 03:54] realize that the table for details
+[03:51 - 03:57] disappear. Okay. And this is very
+[03:54 - 03:59] damaging. This is very damaging because
+[03:57 - 04:02] the database will be corrupted by the
+[03:59 - 04:02] intruder.
+
+
+================================================================
+Race Condition v2
+https://www.youtube.com/watch?v=4FfZUuVWuiE
+================================================================
+
+[00:00 - 00:03] Next, we will be talking about this race
+[00:02 - 00:05] condition.
+[00:03 - 00:07] What is race condition? Race condition
+[00:05 - 00:10] will occur when two users are trying to
+[00:07 - 00:12] access the same database at the same
+[00:10 - 00:15] time. In the following videos, you will
+[00:12 - 00:18] use the example of a bank account when
+[00:15 - 00:21] the two users are able to retrieve money
+[00:18 - 00:24] from the same account using the two ATM
+[00:21 - 00:25] over at two different ATM. So, imagine
+[00:24 - 00:26] that I've got some data in my bank
+[00:25 - 00:28] account.
+[00:26 - 00:30] The data is storing that right now. This
+[00:28 - 00:31] particular user has $100 in their bank
+[00:30 - 00:34] account. And the person goes up to an
+[00:31 - 00:35] ATM somewhere, and they try to withdraw
+[00:34 - 00:37] $100.
+[00:35 - 00:38] Well, if you are running the bank's
+[00:37 - 00:41] database,
+[00:38 - 00:43] and the user tries to withdraw $100,
+[00:41 - 00:45] what's probably the first query you
+[00:43 - 00:47] should run on this database?
+[00:45 - 00:48] It doesn't have to be a precise query,
+[00:47 - 00:51] but what would you want to know from the
+[00:48 - 00:54] database? If user says, "Please withdraw
+[00:51 - 00:56] $100." Do you have $100? Great question.
+[00:54 - 00:58] So, what might that look like in terms
+[00:56 - 01:01] of a SQL query? Select balance from bank
+[00:58 - 01:02] where user ID equals one. Here, I'm
+[01:01 - 01:04] assuming I've got a table called bank
+[01:02 - 01:06] that's got a column called user ID
+[01:04 - 01:08] representing the user,
+[01:06 - 01:10] and a column called balance. So, imagine
+[01:08 - 01:12] that I have that. So, imagine that this
+[01:10 - 01:13] current user ID is user ID number one,
+[01:12 - 01:15] and I want to select the balance from
+[01:13 - 01:17] the bank to make sure that whatever
+[01:15 - 01:18] balance I get back, it better be at
+[01:17 - 01:21] least $100. Otherwise, I don't want to
+[01:18 - 01:22] let you withdraw $100 from the bank. So,
+[01:21 - 01:24] I run the query, and right now in the
+[01:22 - 01:26] bank account, I have $100. So, the SQL
+[01:24 - 01:28] query gives me back a hundred. We're all
+[01:26 - 01:30] set. Next thing that happens is that I
+[01:28 - 01:33] actually get the $100. But, what query
+[01:30 - 01:35] needs to run now on this table? Updating
+[01:33 - 01:37] exactly. So, I want to update the bank
+[01:35 - 01:40] setting the balance equal to balance
+[01:37 - 01:43] minus 100 where the user ID is equal to
+[01:40 - 01:45] one. So, I update the bank balance. I
+[01:43 - 01:46] want to decrease the balance by 100.
+[01:45 - 01:47] That's what the set is doing. And I
+[01:46 - 01:49] don't want to decrease everyone's
+[01:47 - 01:52] balance by 100. I only want to decrease
+[01:49 - 01:54] by 100 for user ID number one. And so, I
+[01:52 - 01:56] get the $100 back, and my bank account
+[01:54 - 01:58] balance goes was to zero. And that
+[01:56 - 02:00] interaction seems fine. I selected to
+[01:58 - 02:02] make sure I had $100. Then I updated the
+[02:00 - 02:04] bank to make sure that it reflects my
+[02:02 - 02:07] new balance. But what now happens if two
+[02:04 - 02:08] people, for some reason,
+[02:07 - 02:10] are going to different ATMs, but they
+[02:08 - 02:12] both have my ATM card. They're both
+[02:10 - 02:13] using the same ATM card, and they're
+[02:12 - 02:15] going to different ATMs, and they're
+[02:13 - 02:18] doing this at the same time, and they're
+[02:15 - 02:20] both trying to withdraw $100.
+[02:18 - 02:22] What happens? So, you might imagine that
+[02:20 - 02:24] if they both press withdraw at the same
+[02:22 - 02:26] time, same thing will happen on the
+[02:24 - 02:28] first ATM. I need to make sure that I
+[02:26 - 02:30] actually have $100. Select balance from
+[02:28 - 02:32] bank where user ID is equal to one. Do I
+[02:30 - 02:35] actually have $100? Well, yeah, I've got
+[02:32 - 02:37] $100. But then person over here on ATM
+[02:35 - 02:38] number two is doing the same thing.
+[02:37 - 02:40] They're running the same query. They're
+[02:38 - 02:42] also selecting a balance from the bank
+[02:40 - 02:44] where user ID equals one. And maybe this
+[02:42 - 02:46] is happening a split millisecond after
+[02:44 - 02:47] that first select query happened, but it
+[02:46 - 02:49] doesn't matter. There's still $100 in
+[02:47 - 02:51] the bank, and so this still gets me back
+[02:49 - 02:53] $100. So, what happens now over here on
+[02:51 - 02:55] side number one? Maybe right after this
+[02:53 - 02:57] happens and right after that happens,
+[02:55 - 02:58] now we're running our update. We update
+[02:57 - 03:01] the bank, set the balance equal to
+[02:58 - 03:02] balance minus 100 where user ID is equal
+[03:01 - 03:04] to one, same as before. And same as
+[03:02 - 03:07] before, I get the $100 back, and my bank
+[03:04 - 03:09] account balance goes down to zero. But
+[03:07 - 03:11] then the problem comes in over on this
+[03:09 - 03:13] side, because we decided that the way to
+[03:11 - 03:15] withdraw money from the bank was a
+[03:13 - 03:17] two-step process. Number one, select.
+[03:15 - 03:19] Make sure you've got $100. And if you
+[03:17 - 03:22] do, then fine. Update in order to
+[03:19 - 03:24] subtract $100, and then give the user
+[03:22 - 03:26] $100. From the perspective of ATM number
+[03:24 - 03:29] two, I've just selected, and I have
+[03:26 - 03:30] $100. So, we're all set. ATM number two
+[03:29 - 03:33] thinks it's totally fine to withdraw.
+[03:30 - 03:35] So, ATM number two runs update the bank,
+[03:33 - 03:37] decrease the balance by $100, where the
+[03:35 - 03:39] user ID is number one. ATM number two
+[03:37 - 03:41] gets back $100, and the bank account
+[03:39 - 03:43] goes down to -100. But now from a bank
+[03:41 - 03:45] account with $100, I've managed to
+[03:43 - 03:47] extract $200 from it by taking advantage
+[03:45 - 03:49] of race conditions, by running things
+[03:47 - 03:51] simultaneously. And even though the
+[03:49 - 03:53] logic of select make sure I have the
+[03:51 - 03:55] money, and update feels like it's the
+[03:53 - 03:57] right logic when you consider what
+[03:55 - 03:58] happens when there's concurrency, when
+[03:57 - 03:59] multiple things are happening at the
+[03:58 - 04:00] same time.
+[03:59 - 04:02] These are the sorts of concerns that
+[04:00 - 04:04] begin to take place.
+[04:02 - 04:06] So, what's a solution to this? How do we
+[04:04 - 04:09] solve the problem of dealing with
+[04:06 - 04:10] multiple people that could be using the
+[04:09 - 04:12] database at the same time and trying to
+[04:10 - 04:14] prevent something like this where
+[04:12 - 04:16] someone can get $200 from the ATM when
+[04:14 - 04:18] they only have $100 in the bank.
+[04:16 - 04:20] Transactions, exactly. And so, the idea
+[04:18 - 04:21] of a transaction is that I want to or
+[04:20 - 04:23] the idea of
+[04:21 - 04:25] it's transactions. And the idea of
+[04:23 - 04:27] locking the database that I want to lock
+[04:25 - 04:30] the database first to make sure nobody
+[04:27 - 04:33] else can touch the database while I'm
+[04:30 - 04:35] running a transaction, a sequence of SQL
+[04:33 - 04:37] commands. And so, that way I can say,
+[04:35 - 04:39] "All right, I'm starting a transaction
+[04:37 - 04:41] now. Nobody else touch the database. Let
+[04:39 - 04:42] me select the balance, and then let me
+[04:41 - 04:44] update the bank." And now that I'm done
+[04:42 - 04:46] with the transaction, "Now you, ATM
+[04:44 - 04:47] number two, feel free to go ahead." And
+[04:46 - 04:49] then everything's fine because when ATM
+[04:47 - 04:51] number two gets a chance to go to the
+[04:49 - 04:54] bank account, it's at zero. And so, the
+[04:51 - 04:57] select query is going to return a zero
+[04:54 - 04:57] instead of 100.

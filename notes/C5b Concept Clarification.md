@@ -1,5 +1,7 @@
 > [!summary] Quick View
-> Five things that confuse people in [[C5a Python with SQLite|C5a]]: a **primary key must never be empty**, `AUTOINCREMENT` **never reuses** a deleted `Id`, a **foreign key blocks** deleting a record something still points to, **quotes** depend on what's inside the string, and **`?`** lets the user supply the value.
+> Things that confuse people in [[C5a Python with SQLite|C5a]]: a **primary key must never be empty**, `AUTOINCREMENT` **never reuses** a deleted `Id`, a **foreign key blocks** deleting a record something still points to, **quotes** depend on what's inside the string, and **`?`** lets the user supply the value.
+> **SQL injection**: input typed so that it runs as SQL. Stop it with **parameterised (prepared) statements** and **input validation**.
+> **Race condition**: two users change the same data at once, and the result depends on who goes first. Stop it with a **transaction** that **locks** the data.
 > SQLite is more relaxed than other DBMSs. Learn the rule, not what SQLite lets you get away with.
 
 ## A. Can a Primary Key Be NULL?
@@ -142,9 +144,64 @@ c.execute('''UPDATE Customers SET Country=?
           WHERE FirstName="Thomas" AND LastName="Hardy";''', (new_country,))
 ```
 
-The shape is always `c.execute(sql_string, data_tuple)`. Each `?` takes the next value from the tuple. It also stops SQL injection ([[C5a Python with SQLite#Exam|C5a]]).
+The shape is always `c.execute(sql_string, data_tuple)`. Each `?` takes the next value from the tuple. It also stops SQL injection ([[#F. SQL Injection|F]]).
+
+## F. SQL Injection
+
+**SQL injection**: the user types SQL into an input box and the program runs it as part of its own command, so an attacker can read, change or delete data. Never trust user input.
+
+A login that builds its SQL by joining strings:
+
+```python
+name = input("Username: ")
+pw = input("Password: ")
+sql = "SELECT * FROM details WHERE name = '" + name + "' AND (password = '" + pw + "')"
+c.execute(sql)
+```
+
+Type `Alice` and the password `1' OR '1'='1`, and the SQL becomes:
+
+```sql
+SELECT * FROM details WHERE name = 'Alice' AND (password = '1' OR '1'='1')
+```
+
+`'1'='1'` is always true, so the bracket is true and Alice's record comes back without her password.
+
+Worse: as the username, `x'; DROP TABLE details; COMMIT;` ends the `SELECT` and adds a command that deletes the table. DB Browser runs it, and the error at the end comes too late. Python's `execute()` refuses more than one statement, so this one fails there, but the password trick still works.
+
+**Fix: parameterise.**
+
+```python
+sql = "SELECT * FROM details WHERE name = ? AND password = ?"
+c.execute(sql, (name, pw))
+```
+
+The whole input is now just a password to compare. Nobody's password is `1' OR '1'='1`, so no record comes back. **Validate** the input as well (type, length, format: [[LT4a Data validation and verification|LT4a]]).
+
+## G. Race Condition
+
+A **race condition** happens when two users change the same data at the same time, and the result depends on who gets there first.
+
+Withdrawing is two steps: check the balance, then subtract. The account holds 100 dollars, and two ATMs each withdraw 100:
+
+| Step | ATM 1 | ATM 2 | Balance |
+| ---- | ----- | ----- | ------- |
+| 1 | reads 100: enough | | 100 |
+| 2 | | reads 100: enough | 100 |
+| 3 | takes 100, pays out | | 0 |
+| 4 | | takes 100, pays out | ==-100== |
+
+Same idea when two people book the last concert seat in the same millisecond.
+
+**Fix:** run the check and the update as one **transaction**, and **lock** the data until it finishes. ATM 2 waits, then reads 0 and refuses.
+
+Most DBMSs can lock just the record being changed, so everyone else carries on. SQLite locks the whole file: that's the *database is locked* error in [[C5a Python with SQLite#Database Is Locked|C5a]].
 
 ## Exam
+
+> [!important] Specimen 2027 Paper 1 Q7(d) `[2]`
+> *A maliciously crafted login name and password let an attacker change the site's database. Identify the vulnerability and suggest a fix.*
+> **SQL injection.** Use **prepared (parameterised) SQL statements**, so the input is only ever treated as data and never run as SQL.
 
 > [!important] Explain why an `Id` should not be reused
 > The same `Id` would then identify two different records over time, so anything that still refers to the old `Id` would wrongly point to the new record. `AUTOINCREMENT` prevents this by never reusing a value.
@@ -163,10 +220,13 @@ The shape is always `c.execute(sql_string, data_tuple)`. Each `?` takes the next
 - Leaving out the `REFERENCES` clause, so nothing stops a broken link.
 - `'Mr Lim's bag'`: the `'` inside ends the string early.
 - Hard-coding a value that should come from `input()`.
+- Joining user input into the SQL with `+` or an f-string instead of `?`.
+- `(new_country)` with no comma: that's a string, not a tuple.
 
 ## Related
 
 - [[C5a Python with SQLite]]
+- [[LT4a Data validation and verification]]
 - [[C4-1 Introduction to Database]]
 - [[C4-2 Basic SQL]]
 - [[C4-3a Introduction to Relational Database]]

@@ -1,0 +1,170 @@
+comp@com 2
+==========
+Tuesday, November 17, 2026 at 1:49 PM
+Duration: 32m
+
+Memo
+----
+somethign something parameterizing
+
+Transcript
+----------
+Speaker 1: So instead of the example of Alice, Alice has a password very simple, so easy to remember past one people. So in the user case where you access the pure web app or your website, you will be required to key in the username and password. Why not? Okay? And then you ask the server saying simply, uh what happens if you don't
+
+Speaker 1: uh John's uh this uh John's uh password okay you see John's password is uh a little bit more complicated so assuming he has some other unknown password you will access the origin right and so uh if you go back to the uh to the if you go to the back end of the uh SQL coding right how do we retrieve a
+
+Speaker 1: record from how do we retrieve a record from a table we use select right select whatever field from the table details where name equal to at least and then add password equal to whatever password so if this thing matches you find the record get the data right if let's say uh you found the name at one but then the password doesn't match then it's a true and a false so you know
+
+Speaker 1: In the full throw, of course, none, but you will not retrieve any record. Okay, so that is one way that you kind of uh uh uh access the data you need. Um okay, oh yeah. Uh next year when you do your web app, there were there's one uh segment that we will go into detail about how people keep passwords in the database. Normally you don't tag up that anybody open up the database can see that.
+
+Speaker 1: password it is uh kind of scrapboard right so we call it hash the word is fresh the password in such a way that nobody can nobody can test it okay yeah so that part is uh it is how we need to so coming back to here now so if you know that you're using this SPL already now coming in here right so you select from whatever side
+
+Speaker 1: And then it goes to whatever thing you want to do, right? And pass over this. Um putting the actual password, you put some kind of code or that this function, it is a start number one, close code or and then open close code. So we don't think whatever password they chew in as a user you put it will appear as a text. As a text, just a Python as a text.
+
+Speaker 1: So this hex is the word here, so it enters on things that starts in a one. Now when it comes into the extra query that sound, you realize that uh password equal to one. True of course. Any one of the password is a one? Obviously it's a false huh? All one equal to one. This is
+
+Speaker 1: Obviously a true. And because it's all, so password is true. Then this callset is a true menu true. If this is true and the name equal to Alice is also true or the name equal to John name equal to whoever will always be true, right? Because we know the person, right? We know that the person is ID exists. And that over the password side this is true. So true and true. This will only work out if somehow.
+
+Speaker 1: You know that they are using this command. Right? So it must be an inside shop. Or over coffee, the coffee shop, you know, you talk to your friend, I need a coding for this. This is company and other. And someone makes a remote up. You know, you did your SL coding, so it must be one of these kinds of commands. So it just has okay. So uh how do we
+
+Speaker 1: Prevent SQL injection. How do we prevent SQL injection? Do you remember? Parameterized. Remember the question mark? Put a question mark and then equal. Okay? So once you do that, whatever the user input. Okay, when you try to pick into the parameter question mark, you will run into error.
+
+Speaker 1: So when someone is uh he put the password he must be string and not your command like that. So characterized. Okay, so this is this is uh just to pass the uh password portion. Then the uh hacker to is more than a
+
+Speaker 1: So we select the field from this label with a name equal to MP, right? So and then so name because MP does it exist. Don't exist, right? So and then there's a semicolon. The next command. Semi-colon means that you have one command. This is a semi-colon
+
+Speaker 1: Command. The second command is drop table or that's sound table. Assuming you know what table. So usually let's say if you are running an online uh online shop or whatever, show that must be a table called customer. Sure, there must be a table called product. It's either with an S or without S, that's all right. So with some wall guests, you probably did it. So drop table with whatever table name, semi-collar, and then there's a
+
+Speaker 1: Command call me. So once you commit, this thing is safe. The table is dropped. And you try to run the next command. This command doesn't make sense. Error. You understand? So you run one command, run one command, run one run, then error. By the time you hit the error, the table has already dropped. So if you watch the video, right? Originally you have that schema for that table for the details.
+
+Speaker 1: and next moment the neighbor is disappeared. Okay, now so things like this. People can write some kind of command in their username or in the password. Okay? So that's called SQL uh injection. Okay? It happens up I think uh in the uh in the SLS is down did I add in one article, news article, trade side article? Yeah.
+
+Speaker 1: Uh C S A, C S A is computer science, CS Computing Cybersecurity Agency. Yeah, okay. So so the uh this uh recent case. This is quite a recent case. Okay? And yes, they have this this uh uh uh SQL injection. Okay. So it's not a new it's not a new trick or or whatever, it's just that you uh
+
+Speaker 1: uh um programmers are not careful and then they choose an easy way out or sometimes actually what they do is this it's not that the programmer doesn't know the programmer leave a backdoor for itself okay the programmer leave a backdoor for itself I used to work for a company to include a database so every time I want to check the database whether it has been populated or nothing I have to open the file I have to read the file and go to the other
+
+Speaker 1: So I did a shortcut. So I wrote a small little function, the shortcut. I keep that shortcut everything up. And nobody in the company knows my convenience. And then the day where I leave the job, I assume that the shortcut is at the border. So anytime I can go back and do that. It's a shortcut. Yeah. Okay. So it's not like it was a good
+
+Speaker 1: Now they I think uh people take security very seriously. I used to be working in uh MMHQ and uh under my people I take security so I hope if I need to file for my office computer HQ, I dial through modern part code. I tell you about issues. But of course I I forget it because I know password indeed. So only I know how to
+
+Speaker 1: So they don't unauthorized access. Like for example, you cannot just break a long time
+
+Speaker 1: Here and just connect and then set up the whole network. Okay, this is trying yeah that's so it's trying. Uh we used to have computing students who were a wire from this uh
+
+Speaker 1: Oh yeah, uh only segment and then to show you that uh the file will be top. Okay. So all these technically.
+
+Speaker 1: I guess whenever you take a user input, you don't trust the user input. Okay, you don't trust the user input. Okay, so that is one. The other one is the race condition. I think the example given in the SRS is about uh withdrawing money from a bank. Recently I can't I mean nowadays with AI a lot of people generate a lot of animations kind of.
+
+Speaker 1: So other example ac I kind of uh you go online to book a ticket. Even for movies now they now they nobody watch movie. Now they know uh it's uh what's that what's that cinema that goes on? Gold. Cat Asia. Cat A. Uh Asia. Yeah. Cathay Legend, the other one is like golden uh huh. Golden Mouth. No, no, no. Golden village. Oh yeah. So a lot of
+
+Speaker 1: But when you go online to book any uh concept for example, one, two, three minutes. Right? But who of you book their same shape? Who wins the secret sick? So how do you prevent their race conditions? That race condition where you see cannot be this. Even when computer program books at a level of my milliseconds, huh? You can't prevent a situation when both of them
+
+Speaker 1: Click exactly at the same time. There's two a chance, right? A non-zero tries that we click at the same time. So when they click at the same time, who gets it? So it's a problem, right? So the DMS itself, there's a locking mechanism. Okay, we crossed the bottom say that there's a locking mechanism. But DMS management. Okay, so so in general we can say, oh, because when someone tries it, it locks.
+
+Speaker 1: He could lock at the record level. You may not want to lock the whole database. Assuming like you go to Shopping, okay? And then just because you try your seller, you go in and update one of your items. You don't want the whole database, I think the whole world you don't use, right? You only want to lock a particular record. You see that thing? And when someone modifies or updates their purchases and how they just unlock certain possibilities, you don't lock the whole thing.
+
+Speaker 1: Right. But then the SQL light that we're using likely who is locking on. Okay. So the locking mechanism to then ways. Only the one transaction kits, then another transaction is starting. Okay? So that avoided uh people from note two people type snack, only one ticket. Otherwise, the same picket to further and it doesn't. Okay, it's not
+
+Speaker 1: Okay, so uh these are the two uh things and um next year when we talk about uh data protection and network security uh one of the very serious way of uh serious kind of intrusion uh is what we call social engineering. Social engineering
+
+Speaker 1: That means you're not using equipment, you're not using software to steal things, you know. It's as simple as, you know, always sit and start buck up and kind of uh eavesdrop and then listen and look at people, password at the key. Right? Or look at your your colleagues, your friends, you know what's the deal of birth and what's usual password that I always give. If you use a password for this, this after account, you may use the same password and another castle in time against.
+
+Speaker 1: Okay. Recently uh before the Deepabali I I kind of went to uh this storage space uh this storage space and then um because I changed the uh unit and then I don't have access to the I don't have access to that doc. And it's over a weekend, the office is closed. So I call out the security. So I tell us I said hey I need to use this weekend to do my suiting, and you don't let me go into the
+
+Speaker 1: Okay, uh this level, how can I keep? Okay, so the security wha cabra, don't try to find the office people can't find. Then they ask you to try a certain number. I try, say cannot. Then the the one of the security wha, you know, trying to be helpful. He said something. He said 80, you know, you try eight zero, then and I hear from the phone behind somebody shouted at him. And then he shouted, oh no, no, no, no, let me check it. So I heard the number.
+
+Speaker 1: Okay? Can I wait? I'll wait for the instruction. Then it's gonna try. 80808. 08080. It works. Oh my god. Oh my god, that's so sick. Okay? So it is a it's a generic password that all the cards have been using. The night sheet, the morning sheet have been using that. Okay, so if we use the
+
+Speaker 1: A common trial password that you can guess, right? In desperate moments like this, people will try, right? I've never promised myself, but I tried to see. So to today I still hold on to that password. Okay, of course they issue me a calling one show once. Okay, so things like that. Okay, if people get a hint of it, you can guess. And they call over the phone and it sounds very desperate, like myself, right? Very desperate. Then it needs something to do.
+
+Speaker 1: So you don't need to use any technical skills, you know. You can actually break into work network. So social engineering is something that is uh that we have to. Okay. Um done with the uh database. Now so where are we? Okay, let's talk about it, huh? Um this promo paper, I
+
+Speaker 1: I had uh noted down some very common and some uh errors that uh especially for coding one programming one, uh that some uh uh kind of common programming uh bad practices up. But I don't want to go through it just only a group of you, I I want to wait for the rest to come in next year, then we go through. Okay, so make sure you finish it up uh uh uh without I mean even before I go through all those common errors and how they
+
+Speaker 1: You can still complete it. It's just that you're not aware that there are people who make this kind of mistake, and then sometimes you get caught into this stupid you don't have to navigate out. So that's one. So come January when you come back from uh uh from your holiday, uh we will take a session to talk about that. Okay, I think that it will be uh the paper two. Okay, we have completed the database. Now when we talk about database, that it's all the database concept, normalization, anomalies, uh redundancy.
+
+Speaker 1: ER diagrams, label descriptions, very key, foreign keys, okay and then also the uh relational database. So those are theory concepts. Um coming uh Thursday, your checkpoint, uh we will do the IRA. IRA is an MCQ question, then questions that will test you on your theory concepts.
+
+Speaker 1: And then you have a checkpoint which is the coding that will test you on the Python with SQL line. That means it's not only the SQL button, it is the Python. That means you need to do the C or execute. Okay, Keller. So and uh involves reading your text reading of files, uh importing of data into your database. Okay, uh this year, this year a level.
+
+Speaker 1: This is an A level. Out of four questions, out of four questions, three require you to read data from text file. If you can't read data from text file, you can't read it successfully. Three questions. That's it. And there's no reason, there's no reason for competing to go to read data.
+
+Speaker 1: Okay? It's a very in the path, usually it's one out of function that have been done really good. But this time around, we assume that this is a very common knowledge that everybody should do. So whatever is stated over here, right? Uh you're you're right below. And um next week, next week you can
+
+Speaker 1: Have come to school, right? Yeah. But next week is still not holiday yet. We have a study or we believe that you're reading a study. So there is this uh web app 4.1. Uh next year we will be learning web app. We will learn our HTML, CSS, class server, and then the class works with database so that whatever data that you retrieve out of the database, huh?
+
+Speaker 1: You can show it on the browser. You can send it across the network and display on another laptop on the browser. And the person can kind of decide what you want to buy, what you want to buy, regardless, choose library books, follow, whatever, and send back your server, you update your data page. So that is what you're capable of doing. Okay? So uh when we do the web app, you must know your Python with STL lights. So this is a database that we will be using.
+
+Speaker 1: So I need you to make it. Okay, this is an airline database. It's a fully developed airline database. So I need you to spend your next week. Go through the instruction, all the walkthrough videos are there. Just follow step by step and create that database, save that database. Okay, keep all your your program files and all that. The video is recorded.
+
+Speaker 1: But you are required to use Jupyter Notebook to create a file, populate the file to read X file and so on and so forth. Okay? So you can create this database and keep it next year. Sometimes from February onwards, we'll be probably using it. Okay, we'll use this. This is an airline database. Also make sure you can create it and turn up and take it as a practice for you to go through the commands required for items.
+
+Speaker 1: Quality assignment? Okay, this is a free OP tupper. You know tuple, right? Yes. Okay, you know tuple, right? So in the tuple itself, I can have student ID, I can have his name, I can have NIC number, hand phone and so on and so forth, right? So it looks very much like database at that. Okay, we use a tuple to keep all this information. But tuple is never a good way. Right? Tupper is never a good way.
+
+Speaker 1: Because anybody open up the couple can see the text. Right? There's no security involved. You don't get any analysis numbers there, your name is there, everything is there. So there's a way to type all this data. And we call that OOP. Object-oriented programming. So before we deal with object-oriented programming in January, okay the first week of tooth when you come back, you'll be doing OOP. Okay, so if you're holiday, you want to know who some read out and hire or OP, you can. But this is a free.
+
+Speaker 1: Okay? Okay, it's free. That means we are using Tupper to last fate to you what are the things that you can install. And then we don't store that inside the chat. Okay? So these are the uh today they are always here, so there are four things going to be okay. For the remaining uh time of this, right? We end our lesson at three o'clock, right? So we have about 45 minutes. Okay.
+
+Speaker 1: I want you to try to complete all those things that you need to complete. In cosmology, I can see who are those who have not complete. Okay? You want to end the year well, end it by completing all the masks. Second thing is that uh uh coming to say you're doing a checkpoint, right? So before you have your checkpoint, what do you need to do? And then you study, right? And how do you know how do you study to do your own load taking? Can I?
+
+Speaker 1: I you want to, you know, it's as if like you're preparing your chiat cheap. Okay? So I want you to prepare your chi, I want you to prepare your notes, adding your database, and whatever you ask you like Are you going to be allowed to use cheat sheet during checkpoint? Yes. Oh. Okay, no one? So but that doesn't know benefits, right? Okay, you study, you prepare, and then uh you know, even last minute when you leave, you just kept and look at your tables.
+
+Speaker 1: easy rather than click through the files that we're talking. Okay? Can so we can do that this afternoon. Okay. Yeah. But I wanna ask like that. So for you might be done. That's it. Well you can't really be done. Okay, let's go right up. Right down write down the hood.
+
+Speaker 1: Hello. I ran off paper during the math left here yesterday. Might be lagging. Might be lagging just a tad bit. Why do fans turn off? I turned them off.
+
+Speaker 1: I can see who is crying with MG for I was. Nobody got a single piece of paper. What you are? You're not even happy on your keyboard.
+
+Speaker 2: Next, we will be talking about this race.
+
+Speaker 1: I'll help you with that.
+
+Speaker 2: Condition. What is race condition? Race condition will occur when two users are trying to access the same database at the same time. In the following videos, you will use the example of a bank account when the two users are able to retrieve money from the same account using the two ATM over at two different ATM. So imagine that I've got some data in my bank account. The data is stored in that right now. This particular user has $100 in the bank account, and the person goes.
+
+Speaker 1: Actually, for your syllabus, uh other than the SQL database, there is another database that you need to learn. Okay, which I'm not touching it now. So uh next year, somewhere in between our OP and web app, right? Just one session we will deal with this thing called no SQL data. No SQL database. It's theory topic, you're doing okay it's a theory topic
+
+Speaker 2: Up to an ATM somewhere and they try to withdraw $100. Well, if you are running the bank's
+
+Speaker 3: database and the user tries to withdraw $100,000.
+
+Speaker 1: topic um there's no sql then i can forget about no sql okay there are many many different types of no sql okay mongo tv is one of them uh the previous fetch of students learn uh mongo db recording but you are not required but this is so you only learn the concept what is no sql
+
+Speaker 1: Put the lower to the book. Are you doing it? Yeah, because download no idea. No.
+
+Speaker 3: Well yeah, I've got a hundred dollars. But then person over here on ATM number two is doing the same thing.
+
+Speaker 2: They're run the same query. They're also selecting a balance from the bank where user ID equals one. And maybe this is happening a split millisecond after that first select query happened. But it doesn't. There's a hundred dollars in the bank. And so this still gets me back a hundred dollars. So what happens now over here on side number one, maybe right after this happens and right after that happens,
+
+Speaker 1: Our finger is too smaller than Swarm. I can almost start eating it.
+
+Speaker 2: Now we're running our update. We update the bank, set the balance equal to balance minus one hundred, where user ID is equal to one, same as before. And same as before, I get the hundred dollar back, and my bank account balance goes down to zero. But then the problem comes in over on this side. Because we decided that the way to withdraw money from the bank was a two-step process. Number one, select. Make sure you've got a hundred dollars. And if you do, then fine. Update in order to subtract the hundred dollars and then give the user a hundred. From the perspective of ATM number two.
+
+Speaker 1: That's a good one.
+
+Speaker 2: Two, I've just selected, and I have a hundred dollars, so we're all set. ATM number two thinks it's totally fine to withdraw. So ATM number two runs update the bank, decrease the balance by one hundred dollars, where the user ID is number one. ATM number two gets back a hundred dollars, and the bank account goes down to negative one hundred. But now from a bank account with a hundred dollars, I've managed to extract two hundred dollars from it by taking advantage of race conditions, by running things simultaneously. And even though the logic of select makes sure I have the money, an update feels like it's
+
+Speaker 1: Oh this one's so easy. I don't think I don't want to do it. This group had a more human like answer for you. Shh. Even if you do it, everyone thinks I'm gonna have one. Huh?
+
+Speaker 2: Right logic, when you consider what happens when there's concurrency, when multiple things are happening at the same time. These are the sorts of concerns that begin to take place. So, what's this? How do we solve the problem of dealing with multiple people that could be using the database at the same time? And trying to prevent something like this, where someone can get $200 from the ATM when they only have $100 in the bank? Transactions, exactly. And so the idea of a transaction is
+
+Speaker 3: that I want to, or the idea of the
+
+Speaker 1: I need to make the idea the other one as well.
+
+Speaker 3: It's transactions. And the idea of locking the database that I want to lock the
+
+Speaker 2: database first to make sure nobody else can touch the database while I'm running a transaction, a sequence of SQL commands. And so that way I can say, Alright I'm starting a transaction now. Nobody else touched the database. Let me select the balance and then let me update the bank. And now that I'm done with the transaction, now you, ATM number two, feel free to go ahead. And then everything's a
+
+Speaker 1: Do I have to get Fuma? Yeah, me's calling that one. You lock in.
+
+Speaker 2: When ATM number two gets a chance to go to the bank account, it's at zero, and so the select
+
+Speaker 3: query is going to return a zero instead of one hundred.
+
+Speaker 1: Oh easy. Let me show you the answer.
+
+Speaker 1: No, show me all that reading all that goal. Check one. I'm going straight to the front. Next yeah.
+
+Speaker 1: One is six.
+
+Speaker 1: Straight to the end, please.
